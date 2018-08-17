@@ -1,6 +1,10 @@
 nav#main-menu { 
-    padding:8pt;
+    padding:8pt 0 8pt 0;
     background-color:#333;
+    position: sticky;
+    width:auto;
+
+    top:0;
 }
 
 #main-menu a {

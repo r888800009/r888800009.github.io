@@ -10,9 +10,12 @@ hr {
     border: 0;
     height: 1px;
     background-color: #ccc;
-    width: 100%
+    width: 95%
 }
 
+code {
+    font-family: monospace;
+}
 
 a {
     color: #666;
@@ -36,8 +39,8 @@ div#main {
     flex: 1 0 auto;
 }
 
-#main {
-    margin:22pt;
+#content {
+    margin:10pt;
 }
 
 
