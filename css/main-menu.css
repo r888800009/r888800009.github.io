@@ -1,0 +1,12 @@
+nav#main-menu { 
+    padding:8pt;
+    background-color:#333;
+}
+
+#main-menu a {
+    color: #eee;
+}
+
+#main-menu a:hover {
+    color: #fff;
+}

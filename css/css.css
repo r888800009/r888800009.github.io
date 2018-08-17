@@ -2,6 +2,9 @@ html,body {
     height: 100%;
 }
 
+h1 {
+    color: #333;
+}
 
 hr {
     border: 0;
@@ -11,6 +14,19 @@ hr {
 }
 
 
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a#post-link {
+    color: #444; 
+}
+
+a:hover#post-link {
+    color: #555; 
+}
+
 div#main {
     width: 100%;
     max-width: 800px;
@@ -19,6 +35,7 @@ div#main {
     //min-height: 100%;
     flex: 1 0 auto;
 }
+
 #main {
     margin:22pt;
 }
