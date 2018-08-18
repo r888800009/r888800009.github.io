@@ -22,11 +22,11 @@ a {
     text-decoration: none;
 }
 
-a#post-link {
+a.post-link {
     color: #444; 
 }
 
-a:hover#post-link {
+a.post-link:hover {
     color: #555; 
 }
 
@@ -62,4 +62,9 @@ footer {
     margin:0px 0px 0px 0px;
     padding: 22pt 22pt 88pt 22pt;
     flex-shrink: 0;
+}
+
+div.date {
+    color:#aaa;
+    font-size: 10pt;
 }
