@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://r888800009.github.io/posts/online-judge-list/</loc>
+    <lastmod>2019-03-07T00:30:34+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/portfolio/</loc>
     <lastmod>2018-08-18T21:15:58+08:00</lastmod>
   </url>
@@ -13,13 +18,19 @@
   </url>
   
   <url>
+    <loc>https://r888800009.github.io/posts/</loc>
+    <lastmod>2019-03-07T00:30:34+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2018-08-18T21:15:58+08:00</lastmod>
+    <lastmod>2019-03-07T00:30:34+08:00</lastmod>
     <priority>0</priority>
   </url>
   
