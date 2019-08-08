@@ -1,8 +1,9 @@
-html,body {
+html, body {
     height: 100%;
+    color: #444;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     color: #333;
 }
 
@@ -15,19 +16,21 @@ hr {
 
 code {
     font-family: monospace;
+    background: #e0e0e0;
+    padding: 0.2em;
 }
 
 a {
-    color: #666;
+    color: #0994b6;
     text-decoration: none;
 }
 
 a.post-link {
-    color: #444; 
+    color: #444;
 }
 
 a.post-link:hover {
-    color: #555; 
+    color: #555;
 }
 
 div#main {
@@ -68,3 +71,4 @@ div.date {
     color:#aaa;
     font-size: 10pt;
 }
+

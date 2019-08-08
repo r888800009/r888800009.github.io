@@ -27,9 +27,12 @@ if (!doNotTrack) {
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/hybrid.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -51,6 +54,12 @@ if (!doNotTrack) {
 <div id="main">    <h1><a href="https://r888800009.github.io/" class="website-name">r809&#39;s blog</a></h1>
     <hr>
 <div id="content">
+    <h1><a href="https://r888800009.github.io/web-sec/get-start/" class="post-link">[Web安全筆記] 透過docker配置漏洞測試網站</a></h1><hr>
+    <p>為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，在本文當中我們將採用<code>docker</code>來配置測試環境，並安裝<code>WebGoat</code>、<code>Damn Vulnerable Web Application</code>、<code>Broken Web Applications</code>。</p>
+    <div>
+        <a href="/web-sec/get-start/">Read More…</a>
+    </div>
+
     <h1><a href="https://r888800009.github.io/posts/online-judge-list/" class="post-link">Online Judge 列表</a></h1><hr>
      UVa Online Judge LeetCode Codeforces 高中生程式解題系統 台中女中程式解題系統 PKU JudgeOnline Codewars Timus Online Judge  
     <div>
