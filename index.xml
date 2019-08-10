@@ -6,10 +6,19 @@
     <description>Recent content on r809&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 08 Aug 2019 15:08:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2019 22:55:09 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>探討blog或repo作筆記的優缺點</title>
+      <link>https://r888800009.github.io/posts/blog-or-repo-for-notes/</link>
+      <pubDate>Fri, 09 Aug 2019 22:55:09 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/blog-or-repo-for-notes/</guid>
+      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、保存方式、索引方式。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>[Web安全筆記] 透過docker配置漏洞測試網站</title>
@@ -35,7 +44,7 @@
       <pubDate>Sat, 18 Aug 2018 21:15:58 +0800</pubDate>
       
       <guid>https://r888800009.github.io/portfolio/</guid>
-      <description> Stuff  Scientific Notation Generator demo Tetris JS demo Snake JS demo Tree generator demo How Long Ago demo Sokoban JS demo  Practice/Solve  CTF-Solve practice  </description>
+      <description> Stuff  Notes Scientific Notation Generator demo Tetris JS demo Snake JS demo Tree generator demo How Long Ago demo Sokoban JS demo  Practice/Solve  CTF-Solve practice  </description>
     </item>
     
   </channel>

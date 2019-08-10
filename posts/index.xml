@@ -6,10 +6,19 @@
     <description>Recent content in Posts on r809&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 07 Mar 2019 00:30:34 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2019 22:55:09 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>探討blog或repo作筆記的優缺點</title>
+      <link>https://r888800009.github.io/posts/blog-or-repo-for-notes/</link>
+      <pubDate>Fri, 09 Aug 2019 22:55:09 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/blog-or-repo-for-notes/</guid>
+      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、保存方式、索引方式。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Online Judge 列表</title>

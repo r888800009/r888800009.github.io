@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+<link rel="stylesheet" type="text/css" href="/css/header.css">
+<link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+<title>探討blog或repo作筆記的優缺點</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s blog</a></h1>
+<div id="content">
+    <h1><a href="https://r888800009.github.io/posts/blog-or-repo-for-notes/" class="post-link">探討blog或repo作筆記的優缺點</a></h1><div class="date"> 
+        <time datetime="2019-08-09 22:55:09 &#43;0800 CST">Fri, 2019 Aug 9</time>
+    </div> 
+    <p>最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、保存方式、索引方式。</p>
+
+<h2 id="描述方式">描述方式</h2>
+
+<p>兩種形式的差異在於描述文章資訊方式不同，而內文沒有差異。若文章透過blog的形式可以擁有<strong>多重tags</strong>，而純md檔或者gitbook等形式的文章則是使用<strong>目錄</strong>下去管理類別。</p>
+
+<h2 id="保存方式">保存方式</h2>
+
+<p>若內容需要執行網頁程式碼或者需要網頁表單，採用repo會受限於github本身，而透過hugo或靜態網頁產生則可以直接在內文<strong>嵌入</strong>相關的<strong>HTML</strong>。</p>
+
+<p>做於精簡描述程式參數作弊表，似乎兩者都可以達到目的。</p>
+
+<p><strong>無法歸類</strong>的文章適合採用blog的形式下去發布，不適合透過目錄結構歸類，而<strong>相同類別</strong>的可以採用blog的<strong>tags</strong>，也可以透過repo的<strong>目錄結構</strong>下去管理。而一個頁面如果含有<strong>多個主題</strong>，則不適合使用目錄結構下去保存，透過blog的<strong>tags</strong>來涵蓋兩個範圍。</p>
+
+<p>blog其實也有辦法實做目錄結構保存資料的方法，並非只有repo才能做到。</p>
+
+<h2 id="檢索方式">檢索方式</h2>
+
+<p>保存在repo若其他人感到不錯可以透過star的存在自己的github，而blog形式則只能star部落格，或許可以透過<strong>子模塊</strong>達成這種方式。通常這是侷限於特定主題，應該屬於檢索的問題。若其他人想要查詢特定主題，也可以透過tags的方式下去找尋。也可以保存特定主題的tags到書籤或者其他檢索工具。</p>
+
+<p>使用目錄結構管理筆記有一個缺點就是<strong>筆記數量成長到一個數量</strong>之後，無法一眼就找出需要的資料，採用搜尋工具尋找內文，而這樣的話分類似乎就沒有太大的意義，除非將類別拆分到夠細。</p>
+
+<p>採用blog形式似乎會用搜尋、tags等方式下去找尋相關內容，而tags的方式與目錄結構相同，不過優點是可以看到<strong>文章摘要</strong>，如果透過目錄結構精準描述內容也可達到不錯的效果。</p>
+
+<p>文章若要進行修改，blog形式並不會因為文章修改而浮出(或許有方法可以達成)，而repo形式也不會，頂多出現在commit紀錄上面，浮出頂多知道最近出現什麼內容，這部份對於資料的檢索方面似乎沒有太大作用。</p>
+
+<h2 id="方便性">方便性</h2>
+
+<p>資料索引連結的建立，對於兩者來說似乎都差不多，皆是需要手動編寫相關連結。不過也可以透過<strong>tags</strong>的方式自動擷取摘要得到相同的功能。</p>
+
+<p>而部份文件作為程式碼若需要搭配程式碼，和程式碼保存在同一目錄資料夾上比較方便閱讀，blog形式還必須手動建立連結，但這只在檔案數量不超過一定數量時成立。</p>
+
+<h2 id="對於自身現有的筆記做的分析">對於自身現有的筆記做的分析</h2>
+
+<h3 id="解題程式碼">解題程式碼</h3>
+
+<p>如CTF的writeup，或者leetcode的解題紀錄。</p>
+
+<h4 id="write-up">Write Up</h4>
+
+<p>在解決CTF相關題目後，編寫的解題紀錄通常只包含簡略的解題步驟以及思路，作為一個簡短的文章，由於每次添加的內容為一小片段，適合當作一個頁面。</p>
+
+<p>此頁面通常會搭配<strong>許多python腳本</strong>，根據前文所描述或許適合與程式碼放在一個目錄當中。如果將此頁面放在blog的話，需要建立一個連結連到對映的解題目錄，可能會因為修改目錄結構，導致<strong>連結失效</strong>。</p>
+
+<p>不過也可以透過將程式碼寫入文章當中來避免這個問題，不過這樣可能會導致篇幅過長。因為一個writeup通常包含許多題目，題目本身佔用的篇幅就很長，除非每個都水題。</p>
+
+<p>可以透過blog分散解題紀錄，並且利用tags或目錄結構的方式將一系列解題串接在一起。</p>
+
+<h4 id="leetcode或其他online-judge">leetcode或其他online judge</h4>
+
+<p>通常code會放在一個目錄當中，而解題紀錄通常都是以一個online judge為目錄，若解題紀錄寫在單一檔案個人認為太佔用篇幅，而是每題一個文章那種寫法。</p>
+
+<h3 id="快捷鍵-作弊表">快捷鍵/作弊表</h3>
+
+<p><code>vim</code>的快捷鍵列表，<code>bash</code>的指令列表，大部分以一個一篇文章描述語法即可，通常以一個程式或一個指令為檔案名稱，通常屬於單一類別，因此可以使用目錄結構的方式下去保存，也可以透過tags的方始保存。</p>
+
+<h2 id="總結">總結</h2>
+
+<p>似乎用repo與blog兩者的差異在於資料標頭描述的方式，而這並不是什麼大問題。在使用筆記時，檢索才是主要重點，有效率的得到資料比較重要。</p>
+
+<p>若要由repo切換到blog格式似乎也不是太大的問題，可以透過腳本自動補上標頭，而blog切換到repo格式似乎會失去一些資訊，不過筆記還是以精簡為要，在切換的過程也可以多做整理。</p>
+
+<p>為了有效索引，兩種方式似乎都可以達到效果，不過工作的形式不同，必須格外設計索引方式來增加工作效率。</p>
+
+            </div>
+            <hr>
+            <a href="#website-name" style="font-size: 150%; padding-left: 5px">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div><footer>
+    <hr>
+
+    r888800009
+    <i class="far fa-copyright"></i>
+    2019
+</footer>
+</body>
+</html>
