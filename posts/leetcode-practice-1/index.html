@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+<link rel="stylesheet" type="text/css" href="/css/header.css">
+<link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+<title>Leetcode刷題筆記1</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s blog</a></h1>
+<div id="content">
+    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-1/" class="post-link">Leetcode刷題筆記1</a></h1><div class="date"> 
+        <time datetime="2019-08-11 00:04:14 &#43;0800 CST">Sun, 2019 Aug 11</time>
+    </div> 
+    <p>一些leetcode的<code>easy</code>等級的解法。</p>
+
+<h1 id="樹">樹</h1>
+
+<h2 id="path-sum">Path Sum</h2>
+
+<p>找到一個路徑由根到葉節點，並且和為給定的值判斷是否存在。</p>
+
+<h3 id="解法">解法</h3>
+
+<p>透過<code>dfs</code>到葉節點並且在過程加總數值，而dfs找到相等的地方則會返回真。</p>
+
+<h2 id="range-sum-of-bst">Range Sum Of BST</h2>
+
+<p>給予一個<code>BST</code>與最大和最小值並且返回區間和。</p>
+
+<h3 id="解法-1">解法</h3>
+
+<p>透過最大或最小值減少不必要的走訪，若介於這兩個值之間則算入加總，並返回加總。</p>
+
+<h2 id="merge-two-binary-trees">Merge Two Binary Trees</h2>
+
+<p>給予兩顆樹並合併，若同一位置都存在新的節點則為兩者的和。</p>
+
+<h3 id="解法-2">解法</h3>
+
+<p>只要兩個樹其中一個有子節點，就透過向下遞迴回傳加總過的節點，或者複製其中一個節點的值，最後產生新的樹。</p>
+
+<h2 id="symmetric-tree">Symmetric Tree</h2>
+
+<p>給予一個樹，判斷是否鏡像。</p>
+
+<h3 id="解法-3">解法</h3>
+
+<p>直接透過遞迴下去找查節點是否相等，不過兩邊遞迴的方向不同。左樹往左同時右樹要往右，之後方向反過來在做一次。</p>
+
+<h2 id="convert-bst-to-greater-tree">Convert BST To Greater Tree</h2>
+
+<p>給一個二元樹並且讓每個數值加上大於所有本身的值。</p>
+
+<h3 id="解法-4">解法</h3>
+
+<p>透過<code>inorder</code>的方式，累加大於本身的值解決問題。</p>
+
+<h2 id="invert-binary-tree">Invert Binary Tree</h2>
+
+<p>反轉二元樹。</p>
+
+<h3 id="解法-5">解法</h3>
+
+<p>透過遞迴的方式實做，交換左右子樹。</p>
+
+<h1 id="雙指標">雙指標</h1>
+
+<h2 id="remove-duplicates-from-sorted-array">Remove Duplicates From Sorted Array</h2>
+
+<p>移除已排序陣列的當中重複的數值，並且返回新的陣列大小。</p>
+
+<h3 id="解法-6">解法</h3>
+
+<p>透過讀頭寫頭，讀頭在讀到數值變化才會寫入到寫頭，在寫入後遞增寫頭，最後寫頭的數值為處理過的陣列大小。</p>
+
+<h2 id="move-zeroes">Move Zeroes</h2>
+
+<p>給定一個數組，把<code>0</code>移到末端並且保持其他數值的順序。</p>
+
+<h3 id="解法-7">解法</h3>
+
+<p>透過<code>讀頭</code>與<code>寫頭</code>，讀頭讀到非0值時會把數值寫到寫頭並且兩者遞增，否則只遞增讀頭。若讀到末端之後，寫頭將剩餘的空間全寫為0。</p>
+
+<h2 id="linked-list-cycle">Linked List Cycle</h2>
+
+<p>判斷連結串列有無迴圈。</p>
+
+<h3 id="解法-8">解法</h3>
+
+<p>透過<code>快指標</code>與<code>慢指標</code>兩種不同速度的指標，若連結串列含有迴圈，則兩指標最終會交疊。</p>
+
+<h1 id="其他">其他</h1>
+
+<h2 id="min-stack">Min Stack</h2>
+
+<p>一個堆疊要能夠返回最小值以及最上層的數值。</p>
+
+<h3 id="解法-9">解法</h3>
+
+<p>建立兩個堆疊分別保存<code>最小值</code>與<code>堆疊本體</code>，每次放入數值得時候會比較堆疊頂端是否有新的最小值，若有則保存在<code>最小值堆疊</code>當中。</p>
+
+<h2 id="valid-parentheses">Valid Parentheses</h2>
+
+<p>驗證輸入的字串的括號成對是否正確。</p>
+
+<h3 id="解法-10">解法</h3>
+
+<p>透過堆疊下去檢查，遇到左半部則放進堆疊，右半部則移出堆疊並檢查類型是否相等，若不相等則報錯，最後記得檢查堆疊是否為空，避免全部都是左半部的輸入。</p>
+
+<h2 id="merge-two-sorted-lists">Merge Two Sorted Lists</h2>
+
+<p>合併兩個已排序連結串列。</p>
+
+<h3 id="解法-11">解法</h3>
+
+<p>新增一個節點把最小的值複製到當中，並串成新的連結串列，並且需要注意在末端接上<code>NULL</code>。</p>
+
+<h2 id="robot-return-to-origin">Robot Return to Origin</h2>
+
+<p>輸入一串移動的順序，並且判斷是否回到原點。</p>
+
+<h3 id="解法-12">解法</h3>
+
+<p>將移動順序轉成<code>x</code>與<code>y</code>座標上的變化，並在最後判斷是不是在原點。</p>
+
+<h2 id="reverse-linked-list">Reverse Linked List</h2>
+
+<p>反轉連結串列。</p>
+
+<h3 id="解法-13">解法</h3>
+
+<p>透過遞迴找到連結串列的末端並返回該值，並且作為新的連結串列起點，在返回的同時將上一個節點串接到新的新的連結串列之後，最後記得在末端補上<code>NULL</code>，得到反轉連結串列。</p>
+
+<h2 id="single-number">Single Number</h2>
+
+<p>給一個陣列找出只出現單次的數字，並且其他的數字都會出現兩次。</p>
+
+<h3 id="解法-14">解法</h3>
+
+<p>透過<code>xor</code>運算子可以消去出現兩次的bit，全部疊加之後只保留出現單次的數字。</p>
+
+<h2 id="n-th-tribonacci-number">N Th Tribonacci Number</h2>
+
+<p>計算費波那契數列。</p>
+
+<h3 id="解法-15">解法</h3>
+
+<p>透過遞迴計算結果，並且透過動態規劃加快速度。</p>
+
+<h2 id="binary-search">Binary Search</h2>
+
+<p>二分搜一個以排序陣列回傳索引。</p>
+
+<h3 id="解法-16">解法</h3>
+
+<p>二分搜演算法，採用迭代判斷三種情況慢慢縮減範圍，直到找到結果或找不到。</p>
+
+            </div>
+            <hr>
+            <a href="#website-name" style="font-size: 150%; padding-left: 5px">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div><footer>
+    <hr>
+
+    r888800009
+    <i class="far fa-copyright"></i>
+    2019
+</footer>
+</body>
+</html>

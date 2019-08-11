@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stack on r809&#39;s blog</title>
+    <link>https://r888800009.github.io/tags/stack/</link>
+    <description>Recent content in Stack on r809&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 11 Aug 2019 00:04:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode刷題筆記1</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-1/</link>
+      <pubDate>Sun, 11 Aug 2019 00:04:14 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-1/</guid>
+      <description>&lt;p&gt;一些leetcode的&lt;code&gt;easy&lt;/code&gt;等級的解法。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
