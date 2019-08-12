@@ -6,10 +6,19 @@
     <description>Recent content in Posts on r809&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 11 Aug 2019 00:04:14 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Aug 2019 21:07:48 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode刷題筆記2</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-2/</link>
+      <pubDate>Mon, 12 Aug 2019 21:07:48 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-2/</guid>
+      <description>&lt;p&gt;leetcode 解題&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Leetcode刷題筆記1</title>
