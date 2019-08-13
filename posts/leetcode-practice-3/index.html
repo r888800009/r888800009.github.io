@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+<link rel="stylesheet" type="text/css" href="/css/header.css">
+<link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+<title>Leetcode刷題筆記3</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s blog</a></h1>
+<div id="content">
+    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-3/" class="post-link">Leetcode刷題筆記3</a></h1><div class="date"> 
+        <time datetime="2019-08-13 14:33:30 &#43;0800 CST">Tue, 2019 Aug 13</time>
+    </div> 
+    <p>開始刷<code>leetcode</code>一些中等的題目，主要都是刷<code>Top 100</code>的題目。</p>
+
+<h2 id="daily-temperatures">Daily Temperatures</h2>
+
+<p>給定一個溫度數組，計算經過幾天可以回暖，若不可能則以<code>0</code>表示。</p>
+
+<h3 id="解法">解法</h3>
+
+<p>透過堆疊保存先前狀態的特性，找到比目前溫度還要大的數值。由後往前找尋資料，堆疊回溯直到空或頂端大於當前溫度，計算差異，再把當前的值放入堆疊。</p>
+
+<h2 id="permutations">Permutations</h2>
+
+<p>給定一個數組產生所有組合。</p>
+
+<h3 id="解法-1">解法</h3>
+
+<p>很明顯的遞迴題目，也可以透過堆疊迭代，採用遞迴並標記已選取的數值。</p>
+
+<h2 id="intersection-of-two-linked-lists">Intersection of Two Linked Lists</h2>
+
+<p>尋找兩個連結串列的相交節點，若不相交則回傳<code>null</code>。</p>
+
+<h3 id="解法-2">解法</h3>
+
+<p>可以很容易透過<code>hashtable</code>實現，將其中一個連結串列全部放入<code>hashtable</code>之後，遍歷另外一個串列並尋找，交點為第一次遍歷存在的點。</p>
+
+<p>雙指標的解法經過兩次(兩者一樣長只須一次)可以得到相交點，讓指標從兩邊出發，到末端之後指向另一個指標開頭，走訪到相同的點為交點。判斷兩者是不是接上同一連結串列，表示兩者會匯聚到同一個連結串列，在<code>null</code>之前所遇到的節點必須相同。</p>
+
+<h2 id="rotate-image">Rotate Image</h2>
+
+<p>給定一個<code>n*n</code>二維陣列，順時鐘旋轉<code>90度</code>，並且不能宣告格外的矩陣。</p>
+
+<h3 id="解法-3">解法</h3>
+
+<p>透過螺旋以中心旋轉解決，外迴圈處理直徑，內迴圈處理邊長，每次旋轉四個數值，內迴圈必須隨則外迴圈縮減，避免重複旋轉。</p>
+
+<h2 id="find-the-duplicate-number">Find the Duplicate Number</h2>
+
+<p>給定一個陣列(大小為<code>n+1</code>)僅有一個數值重複，並且數值小於陣列大小(<code>1~n</code>)，找出重複的數值。</p>
+
+<h3 id="解法-4">解法</h3>
+
+<p>可以將此陣列視為連結串列，重複的數值可以當成連結串列迴圈指向的地方，並且透過<code>floyd's cycle detection</code>下去找到重複的數字。此算法需要快慢指標，並且找出環的進入點，交叉之後將其中一個指標設為開頭，並且都以速度一行走，此交會點則為進入點。</p>
+
+            </div>
+            <hr>
+            <a href="#website-name" style="font-size: 150%; padding-left: 5px">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div><footer>
+    <hr>
+
+    r888800009
+    <i class="far fa-copyright"></i>
+    2019
+</footer>
+</body>
+</html>

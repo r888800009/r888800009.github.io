@@ -6,10 +6,19 @@
     <description>Recent content on r809&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 12 Aug 2019 21:07:48 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2019 14:33:30 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode刷題筆記3</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-3/</link>
+      <pubDate>Tue, 13 Aug 2019 14:33:30 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-3/</guid>
+      <description>&lt;p&gt;開始刷&lt;code&gt;leetcode&lt;/code&gt;一些中等的題目，主要都是刷&lt;code&gt;Top 100&lt;/code&gt;的題目。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Leetcode刷題筆記2</title>
