@@ -6,10 +6,19 @@
     <description>Recent content in Dynamic programming on r809&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 11 Aug 2019 00:04:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 11:25:25 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/dynamic-programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode刷題筆記4</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-4/</link>
+      <pubDate>Wed, 14 Aug 2019 11:25:25 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-4/</guid>
+      <description>&lt;p&gt;刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Leetcode刷題筆記1</title>

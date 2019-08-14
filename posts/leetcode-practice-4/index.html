@@ -21,7 +21,7 @@ if (!doNotTrack) {
 <link rel="stylesheet" type="text/css" href="/css/css.css">
 <link rel="stylesheet" type="text/css" href="/css/header.css">
 <link rel="stylesheet" type="text/css" href="/css/main-menu.css">
-<title>Recursion</title>
+<title>Leetcode刷題筆記4</title>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
@@ -52,29 +52,30 @@ if (!doNotTrack) {
 </nav>
 <div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s blog</a></h1>
 <div id="content">
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-4/" class="post-link">Leetcode刷題筆記4</a></h1><p>刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。</p>
-    <div>
-        <a href="/posts/leetcode-practice-4/">Read More…</a>
-    </div>
+    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-4/" class="post-link">Leetcode刷題筆記4</a></h1><div class="date"> 
+        <time datetime="2019-08-14 11:25:25 &#43;0800 CST">Wed, 2019 Aug 14</time>
+    </div> 
+    <p>刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。</p>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-3/" class="post-link">Leetcode刷題筆記3</a></h1><p>開始刷<code>leetcode</code>一些中等的題目，主要都是刷<code>Top 100</code>的題目。</p>
-    <div>
-        <a href="/posts/leetcode-practice-3/">Read More…</a>
-    </div>
+<h2 id="unique-paths">Unique Paths</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-1/" class="post-link">Leetcode刷題筆記1</a></h1><p>一些leetcode的<code>easy</code>等級的解法。</p>
-    <div>
-        <a href="/posts/leetcode-practice-1/">Read More…</a>
-    </div>
+<p>給定<code>m</code>與<code>n</code>，找出獨一無二的路徑，<code>n</code>與<code>m</code>最多為<code>100</code>。</p>
 
+<h3 id="解法">解法</h3>
 
-<div style="font-size: 200%; text-align: center">
-    
+<p>排列組合題目，由於計算階乘可能會耗費大量時間，採用巴斯卡定理解決問題，動態規劃產生巴斯卡三角形，由於只要找出終點，只須用一個維度用來計算即可。</p>
 
-    
-</div>
+<h2 id="house-robber-iii">House Robber III</h2>
 
+<p>給定二元樹，小偷必須獲得最大金額，不能連續竊取兩個連接節點。</p>
 
+<h3 id="解法-1">解法</h3>
+
+<p>一開始看起來類似像<code>Min-max heap</code>的概念，但是這樣解得出的結果是錯的。</p>
+
+<p><code>dfs</code>的規則:- 如果已經偷竊，兩個子節點就不能偷竊- 如果沒有偷竊，子節點可偷竊或不偷竊</p>
+
+<p>為了避免重複呼叫組合爆炸，因此採用多回傳的方法編寫，也可以採用哈希表做DP。</p>
 
             </div>
             <hr>

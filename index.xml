@@ -6,10 +6,28 @@
     <description>Recent content on r809&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 13 Aug 2019 14:33:30 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 17:34:18 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>比較SSRF與LFI/RFI</title>
+      <link>https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/</link>
+      <pubDate>Wed, 14 Aug 2019 17:34:18 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/</guid>
+      <description>&lt;p&gt;LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode刷題筆記4</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-4/</link>
+      <pubDate>Wed, 14 Aug 2019 11:25:25 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-4/</guid>
+      <description>&lt;p&gt;刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Leetcode刷題筆記3</title>

