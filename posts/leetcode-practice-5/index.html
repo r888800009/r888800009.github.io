@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+<link rel="stylesheet" type="text/css" href="/css/header.css">
+<link rel="stylesheet" type="text/css" href="/css/main-menu.css">
+<title>Leetcode刷題筆記5</title>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s blog</a></h1>
+<div id="content">
+    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-5/" class="post-link">Leetcode刷題筆記5</a></h1><div class="date"> 
+        <time datetime="2019-08-15 20:28:33 &#43;0800 CST">Thu, 2019 Aug 15</time>
+    </div> 
+    <p>刷leetcode簡單的題目，參考之前用過的手法與學新的手法，如前綴和。</p>
+
+<h2 id="diameter-of-binary-tree">Diameter of Binary Tree</h2>
+
+<p>找出樹中最長的距離(邊)。</p>
+
+<h3 id="解法">解法</h3>
+
+<p>可以透過<code>DFS</code>下去獲得答案，每次遇到節點以該節點為中心算出解答，並且回傳長度，而不是每個節點都要重新算一遍，效能會比較好。</p>
+
+<h4 id="遞迴方法">遞迴方法</h4>
+
+<ul>
+<li>如果以這個節點為中心，數值較大就保存</li>
+<li>回傳左右兩邊最長的路徑</li>
+</ul>
+
+<h2 id="climbing-stairs">Climbing Stairs</h2>
+
+<p>給一個<code>n</code>階階梯算出總共有幾種走法。</p>
+
+<h3 id="解法-1">解法</h3>
+
+<p>可以發現每階都為前面兩個階梯路徑和，為<code>f(n) = f(n - 1) + f(n - 2)</code>可以透過動態規劃的方式實做，不過可以把大小為<code>n</code>的陣列簡化到只須3個變數，即可很快的求出結果。</p>
+
+<h2 id="maximum-subarray">Maximum Subarray</h2>
+
+<p>給予一個陣列，找出最大子陣列和。</p>
+
+<h3 id="解法-2">解法</h3>
+
+<p>可以透過<code>Kadane's Algorithm</code>或<code>Divide and Conquer</code>的方式，前者在運行過程當中會不斷的累加，並且保存最大值，直到變成負數而重新計算，。</p>
+
+<p>後者的算法需要判斷兩種情況</p>
+
+<ul>
+<li>區間穿過中點，左區間由中心往左，右區間由中心往右</li>
+<li>區間沒有穿過中點，即左右</li>
+</ul>
+
+<p>可以透過計算區間加總<strong>(前綴和, prefix sum)</strong>來減少運算量，而不用每次在遞迴的時候重複運算，找出前綴和的最大值(<code>由中向右</code>，可以加總到最多的邊界)，和最小值(<code>由中向左</code>，可以加總最大的情況，因為是<code>右邊-左邊</code>)，透過這些計算方法寫出程式碼。</p>
+
+<h2 id="參考">參考</h2>
+
+<ul>
+<li><a href="https://oi-wiki.org/basic/prefix-sum/">前缀和 &amp; 差分</a></li>
+<li><a href="https://www.tianmaying.com/tutorial/LC53">LeetCode题解 #53 Maximum Subarray</a></li>
+<li><a href="https://leetcode.com/problems/maximum-subarray/discuss/20372/How-to-solve-%22Maximum-Subarray%22-by-using-the-divide-and-conquer-approach">How to solve &ldquo;Maximum Subarray&rdquo; by using the divide and conquer approach ?</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <a href="#website-name" style="font-size: 150%; padding-left: 5px">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div><footer>
+    <hr>
+
+    r888800009
+    <i class="far fa-copyright"></i>
+    2019
+</footer>
+</body>
+</html>
