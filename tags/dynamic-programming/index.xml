@@ -6,10 +6,19 @@
     <description>Recent content in Dynamic programming on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 15 Aug 2019 20:28:33 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2019 23:14:40 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/dynamic-programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode刷題筆記7</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-7/</link>
+      <pubDate>Sun, 18 Aug 2019 23:14:40 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-7/</guid>
+      <description>&lt;p&gt;繼續解leetcode保持進度，有幾題是之前解過類似類型的題目。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Leetcode刷題筆記5</title>

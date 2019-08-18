@@ -19,7 +19,7 @@ if (!doNotTrack) {
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" type="text/css" href="/css/css.css">
-<title>Tags</title>
+<title>Leetcode刷題筆記7</title>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
@@ -50,40 +50,34 @@ if (!doNotTrack) {
 </nav>
 <div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
 <div id="content">
-  <h1>Tags</h1>
-  
-      <a href="https://r888800009.github.io/tags/dynamic-programming/" class="tags">Dynamic programming</a>
-  
-      <a href="https://r888800009.github.io/tags/hugo/" class="tags">Hugo</a>
-  
-      <a href="https://r888800009.github.io/tags/reverse-engineering/" class="tags">Reverse Engineering</a>
-  
-      <a href="https://r888800009.github.io/tags/divide-and-conquer/" class="tags">Divide and Conquer</a>
-  
-      <a href="https://r888800009.github.io/tags/recursion/" class="tags">Recursion</a>
-  
-      <a href="https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/" class="tags">Web安全</a>
-  
-      <a href="https://r888800009.github.io/tags/tree/" class="tags">Tree</a>
-  
-      <a href="https://r888800009.github.io/tags/linked-list/" class="tags">Linked list</a>
-  
-      <a href="https://r888800009.github.io/tags/stack/" class="tags">Stack</a>
-  
-      <a href="https://r888800009.github.io/tags/two-pointers/" class="tags">Two Pointers</a>
-  
-      <a href="https://r888800009.github.io/tags/hash-table/" class="tags">Hash Table</a>
-  
-      <a href="https://r888800009.github.io/tags/bit-manipulation/" class="tags">Bit Manipulation</a>
-  
-      <a href="https://r888800009.github.io/tags/merge/" class="tags">Merge</a>
-  
+    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-7/" class="post-link">Leetcode刷題筆記7</a></h1><div class="date"> 
+        <time datetime="2019-08-18 23:14:40 &#43;0800 CST">Sun, 2019 Aug 18</time>
+    </div> 
+    <p>繼續解leetcode保持進度，有幾題是之前解過類似類型的題目。</p>
 
-  <div style="font-size: 200%; text-align: center">
-      
+<h2 id="house-robber">House Robber</h2>
 
+<p>給一個數組，小偷不能間隔偷，否則觸發警報，獲取最大利益。</p>
+
+<h3 id="解法">解法</h3>
+
+<p>參考<a href="/posts/leetcode-practice-4/">刷題筆記4</a>之前的解法。逆著迭代解，紀錄偷與不偷的金額用來動態規劃，最後會有一開始偷與不偷所獲得的金額並且回傳最大值。</p>
+
+<h2 id="shortest-unsorted-continuous-subarray">Shortest Unsorted Continuous Subarray</h2>
+
+<p>給予一個陣列，找出需要排序的子陣列大小。</p>
+
+<p>這題可以透過如<a href="/posts/leetcode-practice-3/">刷題筆記3</a>堆疊的方式解決。leetcode也有給出空間複雜度為<code>O(1)</code>的結法，不過作為複習這邊採用堆疊解決。</p>
+
+<p>透過兩個方向的堆疊，來找出需要排序的左邊與右邊之後相減得出答案。注意的是當中有重複的值，若在子數組當中為最大(或最小)的數值重複，應該<strong>注意邊界</strong>避免計算多餘的值。注意<strong>完全升序</strong>與<strong>完全降序</strong>的情形，以及左右側有<strong>子陣列</strong><strong>最大值</strong>或<strong>最小值</strong>。</p>
+
+    
+      <hr>
       
-  </div>
+        <a href="https://r888800009.github.io/tags/dynamic-programming" class="tags">Dynamic programming</a>
+      
+    
+
 
             </div>
             <hr>
