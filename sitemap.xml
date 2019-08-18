@@ -3,20 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://r888800009.github.io/posts/leetcode-practice-6/</loc>
-    <lastmod>2019-08-16T23:20:14+08:00</lastmod>
+    <loc>https://r888800009.github.io/tags/hugo/</loc>
+    <lastmod>2019-08-18T21:23:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/posts/hugo/</loc>
+    <lastmod>2019-08-18T21:23:53+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/posts/</loc>
-    <lastmod>2019-08-16T23:20:14+08:00</lastmod>
+    <lastmod>2019-08-18T21:23:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/</loc>
+    <lastmod>2019-08-18T21:23:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2019-08-16T23:20:14+08:00</lastmod>
+    <lastmod>2019-08-18T21:23:53+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/posts/hugo-template/</loc>
+    <lastmod>2019-08-18T21:19:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/posts/ghidra-note/</loc>
+    <lastmod>2019-08-16T23:57:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/reverse-engineering/</loc>
+    <lastmod>2019-08-16T23:57:31+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/posts/leetcode-practice-6/</loc>
+    <lastmod>2019-08-16T23:20:14+08:00</lastmod>
   </url>
   
   <url>
@@ -38,12 +71,6 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/recursion/</loc>
-    <lastmod>2019-08-15T20:28:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/</loc>
     <lastmod>2019-08-15T20:28:33+08:00</lastmod>
     <priority>0</priority>
   </url>

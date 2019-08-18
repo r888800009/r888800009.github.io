@@ -19,7 +19,7 @@ if (!doNotTrack) {
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" type="text/css" href="/css/css.css">
-<title>Dynamic programming</title>
+<title>Ghidra</title>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
@@ -50,28 +50,53 @@ if (!doNotTrack) {
 </nav>
 <div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
 <div id="content">
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-5/" class="post-link">Leetcode刷題筆記5</a></h1><p>刷leetcode簡單的題目，參考之前用過的手法與學新的手法，如前綴和。</p>
-    <div>
-        <a href="/posts/leetcode-practice-5/">Read More…</a>
-    </div>
+    <h1><a href="https://r888800009.github.io/posts/ghidra-note/" class="post-link">Ghidra</a></h1><div class="date"> 
+        <time datetime="2019-08-16 23:57:31 &#43;0800 CST">Fri, 2019 Aug 16</time>
+    </div> 
+    <p><code>Ghidra</code>為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，<a href="https://ghidra-sre.org/">官方網站</a>以及GitHub <a href="https://github.com/NationalSecurityAgency/Ghidra">repo</a>位址。</p>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-4/" class="post-link">Leetcode刷題筆記4</a></h1><p>刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。</p>
-    <div>
-        <a href="/posts/leetcode-practice-4/">Read More…</a>
-    </div>
+<h2 id="安裝">安裝</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-1/" class="post-link">Leetcode刷題筆記1</a></h1><p>一些leetcode的<code>easy</code>等級的解法。</p>
-    <div>
-        <a href="/posts/leetcode-practice-1/">Read More…</a>
-    </div>
+<p>archlinux透過<a href="https://aur.archlinux.org/packages/ghidra/">aur</a>安裝，鍵入。</p>
 
+<pre><code class="language-bash">pacaur -S ghidra
+</code></pre>
 
-<div style="font-size: 200%; text-align: center">
+<h2 id="使用">使用</h2>
+
+<ol>
+<li>建立專案資料夾</li>
+<li>import二進制檔案</li>
+</ol>
+
+<h2 id="功能">功能</h2>
+
+<ul>
+<li><code>Hex檢視器</code></li>
+<li><code>程式流程圖</code></li>
+<li><code>反編譯/反組譯</code></li>
+<li><code>符號樹</code>:可以用來查看函數進入點以及<code>label</code>等資訊。</li>
+</ul>
+
+<h2 id="特色">特色</h2>
+
+<ul>
+<li>點選工具列按鈕，若已經啟動視窗則有醒目提示</li>
+</ul>
+
+<h2 id="相似的工具">相似的工具</h2>
+
+<ul>
+<li><a href="https://www.hex-rays.com/products/ida/">IDA</a></li>
+<li><a href="https://rada.re/r/">radare</a></li>
+</ul>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/reverse-engineering" class="tags">Reverse Engineering</a>
+      
     
-</div>
-
 
 
             </div>

@@ -19,7 +19,7 @@ if (!doNotTrack) {
 <meta name="theme-color" content="#000000">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" type="text/css" href="/css/css.css">
-<title>Dynamic programming</title>
+<title>Hugo模板的一些配置</title>
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
 </script>
@@ -50,28 +50,61 @@ if (!doNotTrack) {
 </nav>
 <div id="main">    <h1 class="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
 <div id="content">
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-5/" class="post-link">Leetcode刷題筆記5</a></h1><p>刷leetcode簡單的題目，參考之前用過的手法與學新的手法，如前綴和。</p>
-    <div>
-        <a href="/posts/leetcode-practice-5/">Read More…</a>
-    </div>
+    <h1><a href="https://r888800009.github.io/posts/hugo-template/" class="post-link">Hugo模板的一些配置</a></h1><div class="date"> 
+        <time datetime="2019-08-18 21:19:58 &#43;0800 CST">Sun, 2019 Aug 18</time>
+    </div> 
+    <p>存放一些<code>hugo</code>配置版模會用到的筆記。</p>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-4/" class="post-link">Leetcode刷題筆記4</a></h1><p>刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。</p>
-    <div>
-        <a href="/posts/leetcode-practice-4/">Read More…</a>
-    </div>
+<h2 id="文章tags">文章Tags</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-1/" class="post-link">Leetcode刷題筆記1</a></h1><p>一些leetcode的<code>easy</code>等級的解法。</p>
-    <div>
-        <a href="/posts/leetcode-practice-1/">Read More…</a>
-    </div>
+<p>透過以下版模顯示文章的<code>tags</code>。</p>
 
+<pre><code class="language-html">{{ with .Params.tags }}
+  {{ range . }}
+    &lt;a href=&quot;{{ &quot;tags/&quot; | absURL }}{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;
+  {{ end }}
+{{ end }}
+</code></pre>
 
-<div style="font-size: 200%; text-align: center">
+<h3 id="參考">參考</h3>
+
+<ul>
+<li><a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a></li>
+</ul>
+
+<h2 id="pagination">Pagination</h2>
+
+<p>控制分頁的功能，可以根據模板設定顯示的數量之類的功能。</p>
+
+<h3 id="參考-1">參考</h3>
+
+<ul>
+<li><a href="https://gohugo.io/templates/pagination/">Pagination</a></li>
+</ul>
+
+<h2 id="清單">清單</h2>
+
+<ul>
+<li><code>Lists</code>: 目前只有發現<code>tags</code>採用這個頁面</li>
+<li><code>Taxonomy Lists</code>: 如<code>tags</code>點進去的每個<code>tag</code>的頁面。</li>
+<li><code>Section Lists</code>: 如每個<code>category</code>的頁面。</li>
+</ul>
+
+<p>以上<code>Section</code>與<code>Taxonomy</code>都有備用與原本的板型，預設套用<code>list.html</code>，詳情參考文檔。</p>
+
+<h3 id="參考-2">參考</h3>
+
+<ul>
+<li><a href="https://www.jakewiesler.com/blog/hugo-taxonomies/">Add Tags to Your Hugo Blog Using Taxonomies</a></li>
+<li><a href="Add Tags to Your Hugo Blog Using Taxonomies">Content List Template</a></li>
+</ul>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/hugo" class="tags">Hugo</a>
+      
     
-</div>
-
 
 
             </div>
