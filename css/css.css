@@ -39,6 +39,7 @@ a.post-link:hover {
 }
 
 div#main {
+    word-wrap: break-word;
     width: 100%;
     max-width: 800px;
     margin: 0px auto;
