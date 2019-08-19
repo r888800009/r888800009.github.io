@@ -25,11 +25,6 @@ if (!doNotTrack) {
 </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
-</script>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
 
@@ -149,5 +144,11 @@ https://vulnerablesite.com/ssrf.php?uri=file:///etc/passwd
     All Rights Reserved.
   </div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
 </body>
 </html>
