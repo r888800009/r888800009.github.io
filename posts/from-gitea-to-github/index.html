@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Posts | r809&#39;s Notes</title>
+<title>Gitea搬到Github | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,29 +47,53 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Posts</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-3/" class="post-link">Leetcode刷題筆記3</a></h1><p>開始刷<code>leetcode</code>一些中等的題目，主要都是刷<code>Top 100</code>的題目。</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Gitea搬到Github</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-26 20:13:11 &#43;0800 CST">Mon, 2019 Aug 26</time>
+    </div> 
+    <p>紀錄一下，從Gitea搬移檔案到GitHub</p>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-2/" class="post-link">Leetcode刷題筆記2</a></h1><p>leetcode 解題</p>
+<h2 id="起因">起因</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-1/" class="post-link">Leetcode刷題筆記1</a></h1><p>一些leetcode的<code>easy</code>等級的解法。</p>
+<p>因為GitHub已經有私有庫，因此將Gitea的東西搬到GitHub上面，並且自己架設的Gitea也已經損壞。為了後續維護方便統一管理，修復Gitea之後將Gitea所有的repo載下來。</p>
 
-    <h1><a href="https://r888800009.github.io/posts/blog-or-repo-for-notes/" class="post-link">探討blog或repo做筆記的優缺點</a></h1><p>最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、保存方式、索引方式。</p>
+<h2 id="移動腳本">移動腳本</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/online-judge-list/" class="post-link">Online Judge 列表</a></h1> UVa Online Judge LeetCode Codeforces 高中生程式解題系統 台中女中程式解題系統 PKU JudgeOnline Codewars Timus Online Judge  
+<p>pull 所有的分支<a href="https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches">參考stack overflow</a></p>
 
+<pre><code class="language-bash">git branch -r | grep -v '\-&gt;' | while read remote; do git branch --track &quot;${remote#origin/}&quot; &quot;$remote&quot;; done
+git fetch --all
+git pull --all
+</code></pre>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<p>寫下腳本</p>
+
+<pre><code class="language-bash">#!/bin/bash
+pwd1=$PWD
+for i in $(ls)
+do
+  cd $i
+  git branch -r | grep -v '\-&gt;' | while read remote; do git branch --track &quot;${remote#origin/}&quot; &quot;$remote&quot;; done
+  git fetch --all
+  git pull --all
+  cd $pwd1
+done
+</code></pre>
+
+<p>設定到GitHub之後，將所有分支推到githug上面</p>
+
+<pre><code class="language-bash">git remote set-url origin git@GitHub.com:r888800009/PixelChemisry.git
+git push --all
+</code></pre>
+
     
-    <a href=/posts/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/git" class="tags">git</a>
+      
+        <a href="https://r888800009.github.io/tags/%E7%B4%80%E9%8C%84" class="tags">紀錄</a>
+      
     
-
-    
-</div>
-
 
 
             </div>
