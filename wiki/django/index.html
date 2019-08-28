@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>Django | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Django</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-28 23:57:23 &#43;0800 CST">Wed, 2019 Aug 28</time>
+    </div> 
+    <p>紀錄Django安裝、新增專案以及使用方式等。</p>
+
+<h2 id="安裝">安裝</h2>
+
+<pre><code class="language-bash"># pip
+pip install django
+
+# archlinux
+sudo pacman -S python-django 
+</code></pre>
+
+<h2 id="使用">使用</h2>
+
+<p>操作基本上透過<code>manage.py</code>去做管理。</p>
+
+<h3 id="建立專案">建立專案</h3>
+
+<p>建立專案，指令的<code>project_name</code>為創造出來專案的名子。</p>
+
+<pre><code class="language-bash">django-admin startproject project_name
+</code></pre>
+
+<p>參見 <a href="https://docs.djangoproject.com/en/2.2/ref/django-admin/#startproject">Docs</a></p>
+
+<h3 id="啟動伺服器">啟動伺服器</h3>
+
+<pre><code class="language-bash">python manage.py runserver
+</code></pre>
+
+<p>預設伺服器在 <a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> 執行</p>
+
+<h3 id="建立app">建立app</h3>
+
+<p>建立app，指令的<code>app_name</code>為app的名子。</p>
+
+<pre><code class="language-bash">python manage.py startapp app_name
+</code></pre>
+
+<h3 id="python-shell">Python Shell</h3>
+
+<p>透過專案的環境變數啟動<code>python</code></p>
+
+<pre><code class="language-bash">python manage.py shell
+</code></pre>
+
+<h3 id="注意事項">注意事項</h3>
+
+<ul>
+<li>確保使用的Python版本與Django互相對映。</li>
+</ul>
+
+<h2 id="templates">Templates</h2>
+
+<p>reader()的<code>context</code>可以將<code>Key: value</code>(dict)對映到網頁上。在模板的html檔案裡面加入<code>{{key}}</code>，views.py會透過<a href="https://docs.djangoproject.com/en/2.2/topics/http/shortcuts/#render">render()</a>相對映的值。</p>
+
+<h3 id="views-py">views.py</h3>
+
+<p>位於所在的<code>app</code>。</p>
+
+<pre><code class="language-python">from django.shortcuts import render
+
+# Create your views here.
+def view_def(request):
+    return render(request, 'template.html', {
+        'key': &quot;value&quot;,
+    })
+</code></pre>
+
+<h3 id="template-html">template.html</h3>
+
+<p>位於資料夾<code>templates</code>，新專案可能需要自己建立一個資料夾。</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    {{key}}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h3 id="urls-py">urls.py</h3>
+
+<p>在<code>urlpatterns</code>定義一個路徑處理。</p>
+
+<pre><code class="language-python">from django.contrib import admin
+from django.urls import path
+from test1.views import view_def
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('test/', view_def)
+]
+</code></pre>
+
+<p><code>view_def</code>是<code>test1.views</code>當中的函數，用來處理頁面回傳response。</p>
+
+<p>瀏覽 <a href="http://localhost:8000/test/">http://localhost:8000/test/</a> 查看結果</p>
+
+<h3 id="注意事項-1">注意事項</h3>
+
+<ul>
+<li><p><code>template</code>可能會因為沒有調整正確的<code>DIRS</code>會出現問題，調整<code>settings.py</code>當中的<code>TEMPLATES</code>。</p>
+
+<pre><code class="language-python">'DIRS': [os.path.join(BASE_DIR, 'templates')]
+</code></pre></li>
+</ul>
+
+<h2 id="models">Models</h2>
+
+<p>透過<code>models.py</code>定義表格。</p>
+
+<h3 id="建立表格">建立表格</h3>
+
+<pre><code>from django.db import models
+
+# Create your models here.
+class TestTable(models.Model):
+    name = models.TextField(default=&quot;jack&quot;)
+    bio = models.TextField(default=&quot;&quot;)
+    date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = &quot;test_table&quot;
+</code></pre>
+
+<p>更新資料庫</p>
+
+<pre><code class="language-bash">python manage.py makemigrations
+python manage.py migrate
+</code></pre>
+
+<h3 id="queryset與返回結果">QuerySet與返回結果</h3>
+
+<p>參考<a href="https://docs.djangoproject.com/en/2.2/ref/models/querysets/">QuerySet API reference</a></p>
+
+<h4 id="常用函數">常用函數</h4>
+
+<ul>
+<li><code>filter()</code>找出符合條件的entry，回傳<code>QuerySet</code></li>
+<li><code>get()</code>取得指定的entry</li>
+<li><code>create()</code>建立新的entry</li>
+<li><code>update()</code>更新<code>QuerySet</code>所有entry</li>
+<li><code>delete()</code>刪除entry</li>
+<li><code>all()</code>取得所有entry，回傳<code>QuerySet</code></li>
+</ul>
+
+<h4 id="獲取內容">獲取內容</h4>
+
+<ul>
+<li>直接用陣列選取entry(models)並且選取欄位<strong>(建議)</strong></li>
+<li>透過<a href="https://docs.djangoproject.com/en/2.2/ref/models/querysets/#django.db.models.query.QuerySet.values"><code>values()</code></a>轉換成<code>list</code>與<code>dict</code>的格式</li>
+<li>獲取內容: <code>欄位內容 = entry.欄位名</code></li>
+</ul>
+
+<h2 id="參考">參考</h2>
+
+<ul>
+<li><a href="https://github.com/twtrubiks/django-tutorial">django-tutorial</a></li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/python" class="tags">Python</a>
+      
+        <a href="https://r888800009.github.io/tags/web" class="tags">Web</a>
+      
+        <a href="https://r888800009.github.io/tags/django" class="tags">Django</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
