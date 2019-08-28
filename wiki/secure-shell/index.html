@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>Secure Shell | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Secure Shell</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-27 11:58:33 &#43;0800 CST">Tue, 2019 Aug 27</time>
+    </div> 
+    <p>SSH筆記</p>
+
+<h2 id="config">Config</h2>
+
+<p>在<code>~/.ssh/config</code>設定以下內容</p>
+
+<pre><code class="language-plaintext">host example
+  Port 22
+  Hostname example.com
+  IdentityFile ~/.ssh/id_example
+</code></pre>
+
+<p>輸入指令<code>ssh user@example</code>將會同等於<code>ssh user@example.com</code>且讀取私鑰檔案。</p>
+
+<h2 id="proxycommand">ProxyCommand</h2>
+
+<p>透過A主機連上B主機</p>
+
+<pre><code class="language-plaintext">host hostA
+  Port 22
+  Hostname example.com
+
+host hostB
+  Port 22
+  Hostname 192.168.1.1
+  ProxyCommand ssh -qW %h:%p hostA
+  IdentityFile ~/.ssh/id_1
+</code></pre>
+
+<ul>
+<li><code>%h</code>主機名</li>
+<li><code>%p</code>端口號</li>
+<li><code>-q</code>安靜模式</li>
+<li><code>-W hostname:port</code>轉發</li>
+<li><code>IdentityFile</code> 放在config的電腦上</li>
+<li><code>gateway</code>為<code>ProxyCommand</code>的<code>hostA</code></li>
+</ul>
+
+<h3 id="直接透過指令轉發">直接透過指令轉發</h3>
+
+<pre><code class="language-bash">ssh -o ProxyCommand=&quot;ssh -qW hostA&quot; hostB
+</code></pre>
+
+<h3 id="連上hostb">連上hostB</h3>
+
+<pre><code class="language-bash">ssh hostB
+</code></pre>
+
+<h2 id="其他常用指令">其他常用指令</h2>
+
+<h3 id="scp">scp</h3>
+
+<pre><code class="language-bash">scp source target
+</code></pre>
+
+<h3 id="sshfs">sshfs</h3>
+
+<pre><code class="language-bash">sshfs user@host:dir mountpoint
+</code></pre>
+
+<h3 id="sock5代理">Sock5代理</h3>
+
+<pre><code class="language-bash">ssh -D 1337 -q -C -N domain
+</code></pre>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+      
+        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+      
+        <a href="https://r888800009.github.io/tags/ssh" class="tags">SSH</a>
+      
+        <a href="https://r888800009.github.io/tags/socks5" class="tags">Socks5</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

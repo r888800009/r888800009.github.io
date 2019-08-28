@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/linux/</link>
-    <description>Recent content in Linux on r809&#39;s Notes</description>
+    <title>SSH on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/ssh/</link>
+    <description>Recent content in SSH on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 27 Aug 2019 11:58:33 +0800</lastBuildDate>
     
-	<atom:link href="https://r888800009.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://r888800009.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://r888800009.github.io/wiki/secure-shell/</guid>
       <description>&lt;p&gt;SSH筆記&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Qemu</title>
-      <link>https://r888800009.github.io/wiki/qemu/</link>
-      <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/wiki/qemu/</guid>
-      <description>&lt;p&gt;QEMU常用參數紀錄&lt;/p&gt;</description>
     </item>
     
   </channel>
