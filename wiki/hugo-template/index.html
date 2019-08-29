@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Leetcode刷題筆記2 | r809&#39;s Notes</title>
+<title>Hugo模板的一些配置 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,46 +47,66 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Leetcode刷題筆記2</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Hugo模板的一些配置</a></h1>
 <div id="content"><div class="date"> 
-        <time datetime="2019-08-12 21:07:48 &#43;0800 CST">Mon, 2019 Aug 12</time>
+        <time datetime="2019-08-18 21:19:58 &#43;0800 CST">Sun, 2019 Aug 18</time>
     </div> 
-    <p>leetcode 解題</p>
+    <p>存放一些<code>hugo</code>配置版模會用到的筆記。</p>
 
-<h2 id="two-sum">Two Sum</h2>
+<h2 id="文章tags">文章Tags</h2>
 
-<p>給定一個數組，找出兩個數值會等於指定的數值。</p>
+<p>透過以下版模顯示文章的<code>tags</code>。</p>
 
-<h3 id="解法">解法</h3>
+<pre><code class="language-html">{{ with .Params.tags }}
+  {{ range . }}
+    &lt;a href=&quot;{{ &quot;tags/&quot; | absURL }}{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;
+  {{ end }}
+{{ end }}
+</code></pre>
 
-<p>透過<code>hashtable</code>，算出自己與目標值的差找尋另外一對，若第一次遍歷沒碰到另一對，就把自己放入<code>hashtable</code>，遍歷另外一對則返回結果。</p>
+<h3 id="參考">參考</h3>
 
-<h2 id="binary-tree-inorder-traversal">Binary Tree Inorder Traversal</h2>
+<ul>
+<li><a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a></li>
+</ul>
 
-<p>中序遍歷樹狀結構，要求透過迭代的方式遍歷。</p>
+<h2 id="pagination">Pagination</h2>
 
-<h3 id="解法-1">解法</h3>
+<p>控制分頁的功能，可以根據模板設定顯示的數量之類的功能。</p>
 
-<p>透過堆疊迭代，建立兩個迴圈分別為往左(內迴圈)與往右(外迴圈)在迭代過程當中內迴圈會不斷往左直到<code>NULL</code>，之後往右。堆疊的內容物總是左邊，依序由葉節點慢慢回到根，過程當中會往右走到底，之後退回一個節點，直到遍歷完成。</p>
+<h3 id="參考-1">參考</h3>
 
-<h2 id="generate-parentheses">Generate Parentheses</h2>
+<ul>
+<li><a href="https://gohugo.io/templates/pagination/">Pagination</a></li>
+</ul>
 
-<p>給定括弧對數量，並且產生合法的括弧對。</p>
+<h2 id="清單">清單</h2>
 
-<h3 id="解法-2">解法</h3>
+<ul>
+<li><code>Lists</code>: 目前只有發現<code>tags</code>採用這個頁面</li>
+<li><code>Taxonomy Lists</code>: 如<code>tags</code>點進去的每個<code>tag</code>的頁面。</li>
+<li><code>Section Lists</code>: 如每個<code>category</code>的頁面。</li>
+</ul>
 
-<p>透過回溯法產生有效序列，並且計算左右括號的數量用來產生可走的下一步，每次只補上合法的字元直到滿足字串長度。</p>
+<p>以上<code>Section</code>與<code>Taxonomy</code>都有備用與原本的板型，預設套用<code>list.html</code>，詳情參考文檔。</p>
+
+<h3 id="參考-2">參考</h3>
+
+<ul>
+<li><a href="https://www.jakewiesler.com/blog/hugo-taxonomies/">Add Tags to Your Hugo Blog Using Taxonomies</a></li>
+<li><a href="Add Tags to Your Hugo Blog Using Taxonomies">Content List Template</a></li>
+</ul>
+
+<h2 id="其他">其他</h2>
+
+<ul>
+<li><a href="https://zwbetz.com/make-a-hugo-blog-from-scratch/#better-title-logic">Make a Hugo blog from scratch</a> 一堆<code>hugo</code>模板的片段</li>
+</ul>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/leetcode" class="tags">LeetCode</a>
-      
-        <a href="https://r888800009.github.io/tags/hash-table" class="tags">Hash Table</a>
-      
-        <a href="https://r888800009.github.io/tags/stack" class="tags">Stack</a>
-      
-        <a href="https://r888800009.github.io/tags/tree" class="tags">Tree</a>
+        <a href="https://r888800009.github.io/tags/hugo" class="tags">Hugo</a>
       
     
 

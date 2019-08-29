@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Network | r809&#39;s Notes</title>
+<title>Hugo | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,21 +47,67 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Network</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/url-obfuscation/" class="post-link">URL Obfuscation</a></h1><p>混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Hugo</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-18 21:23:53 &#43;0800 CST">Sun, 2019 Aug 18</time>
+    </div> 
+    <p>存放一些<code>hugo</code>的指令與筆記</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-fingerprint/" class="post-link">辨識Web伺服與應用程式</a></h1><p>辨識Web伺服器或應用程式的方法。</p>
+<h2 id="指令">指令</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/secure-shell/" class="post-link">Secure Shell</a></h1><p>SSH筆記</p>
+<p>列出所有草稿</p>
 
+<pre><code class="language-bash">hugo list drafts
+</code></pre>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<p>啟動草稿伺服器</p>
+
+<pre><code class="language-bash">hugo -D server
+</code></pre>
+
+<p>建立新文章</p>
+
+<pre><code class="language-bash">hugo new posts/post1.md
+</code></pre>
+
+<h2 id="管理hugo腳本">管理hugo腳本</h2>
+
+<p>以下腳本假設在blog的基目錄運行。</p>
+
+<h3 id="找尋文章符合檔名">找尋文章符合檔名</h3>
+
+<p>找出所有檔名包含<code>leet</code>的文章。</p>
+
+<pre><code class="language-bash">find content -name '*leet*' 
+</code></pre>
+
+<p>批量編輯</p>
+
+<pre><code class="language-bash">vim $(find content -name '*leet*') 
+</code></pre>
+
+<h2 id="文檔語法">文檔語法</h2>
+
+<p>將某個文章檔名轉換成絕對路徑，效果如Wikipadia內部連結類似。</p>
+
+<pre><code class="language-html">{{&lt; relref path=&quot;some-post.md&quot; &gt;}}
+{{&lt; relref &quot;document.md#anchor&quot; &gt;}}
+</code></pre>
+
+<p>細節參見<a href="https://gohugo.io/content-management/cross-references/">官方文檔</a></p>
+
+<h2 id="參見">參見</h2>
+
+<ul>
+<li><a href="https://gohugo.io/commands/">Hugo官方指令文檔</a></li>
+</ul>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/hugo" class="tags">Hugo</a>
+      
     
-</div>
-
 
 
             </div>

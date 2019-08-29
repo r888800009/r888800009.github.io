@@ -6,10 +6,19 @@
     <description>Recent content in Network on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 27 Aug 2019 15:23:28 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 29 Aug 2019 18:05:31 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>URL Obfuscation</title>
+      <link>https://r888800009.github.io/wiki/url-obfuscation/</link>
+      <pubDate>Thu, 29 Aug 2019 18:05:31 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/url-obfuscation/</guid>
+      <description>&lt;p&gt;混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>辨識Web伺服與應用程式</title>

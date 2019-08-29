@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LeetCode on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/leetcode/</link>
+    <description>Recent content in LeetCode on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 18 Aug 2019 23:14:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode刷題筆記7</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-7/</link>
+      <pubDate>Sun, 18 Aug 2019 23:14:40 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-7/</guid>
+      <description>&lt;p&gt;繼續解leetcode保持進度，有幾題是之前解過類似類型的題目。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode刷題筆記5</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-5/</link>
+      <pubDate>Thu, 15 Aug 2019 20:28:33 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-5/</guid>
+      <description>&lt;p&gt;刷leetcode簡單的題目，參考之前用過的手法與學新的手法，如前綴和。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode刷題筆記4</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-4/</link>
+      <pubDate>Wed, 14 Aug 2019 11:25:25 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-4/</guid>
+      <description>&lt;p&gt;刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode刷題筆記3</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-3/</link>
+      <pubDate>Tue, 13 Aug 2019 14:33:30 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-3/</guid>
+      <description>&lt;p&gt;開始刷&lt;code&gt;leetcode&lt;/code&gt;一些中等的題目，主要都是刷&lt;code&gt;Top 100&lt;/code&gt;的題目。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode刷題筆記2</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-2/</link>
+      <pubDate>Mon, 12 Aug 2019 21:07:48 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-2/</guid>
+      <description>&lt;p&gt;leetcode 解題&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode刷題筆記1</title>
+      <link>https://r888800009.github.io/posts/leetcode-practice-1/</link>
+      <pubDate>Sun, 11 Aug 2019 00:04:14 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/leetcode-practice-1/</guid>
+      <description>&lt;p&gt;一些leetcode的&lt;code&gt;easy&lt;/code&gt;等級的解法。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

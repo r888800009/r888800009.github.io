@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Network | r809&#39;s Notes</title>
+<title>URL Obfuscation | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,21 +47,41 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Network</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/url-obfuscation/" class="post-link">URL Obfuscation</a></h1><p>混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">URL Obfuscation</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-29 18:05:31 &#43;0800 CST">Thu, 2019 Aug 29</time>
+    </div> 
+    <p>混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-fingerprint/" class="post-link">辨識Web伺服與應用程式</a></h1><p>辨識Web伺服器或應用程式的方法。</p>
+<h2 id="原理">原理</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/secure-shell/" class="post-link">Secure Shell</a></h1><p>SSH筆記</p>
+<p>將原網址 <a href="http://127.0.0.1">http://127.0.0.1</a> 轉換成8、10、16進位的格式，瀏覽器或應用程式剖析URL的位置時會轉成32位元的整數，混淆式攻擊則是透過這種方式達成。</p>
 
+<h2 id="範例">範例</h2>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<ul>
+<li><a href="http://2130706433">http://2130706433</a></li>
+<li><a href="http://0x7f000001">http://0x7f000001</a></li>
+<li><a href="http://0x7f.0.0.0x1">http://0x7f.0.0.0x1</a></li>
+<li><a href="http://0177.0.0.1">http://0177.0.0.1</a></li>
+<li><a href="http://0x7f.000001">http://0x7f.000001</a></li>
+</ul>
+
+<h2 id="參考">參考</h2>
+
+<ul>
+<li><a href="https://www.symantec.com/connect/blogs/dotted-decimal-url-obfuscation">Dotted Decimal URL Obfuscation</a></li>
+<li><a href="https://blog.wawajohn.net/601.html">混淆式網址 (URL Obfuscation) &amp; 網路釣魚</a></li>
+</ul>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+      
+        <a href="https://r888800009.github.io/tags/network-security" class="tags">Network Security</a>
+      
     
-</div>
-
 
 
             </div>
