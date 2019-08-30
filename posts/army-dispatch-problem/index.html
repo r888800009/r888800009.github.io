@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>軍隊派遣問題 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">軍隊派遣問題</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-31 02:01:14 &#43;0800 CST">Sat, 2019 Aug 31</time>
+    </div> 
+    <p>軍隊派遣人力不可低於需求人力，派遣與調回需要花費金錢，常駐的也需要花錢。派遣當月需要給付常駐補給費，調回不須。給予一個陣列A代表每個月的人力需求，求最低預算。</p>
+
+<h2 id="格式">格式</h2>
+
+<p>第一行四個值:</p>
+
+<ul>
+<li><code>n</code>: 月數</li>
+<li><code>x</code>: 派遣花費</li>
+<li><code>y</code>: 每單位每月消耗</li>
+<li><code>z</code>: 調回消耗</li>
+</ul>
+
+<p>第二行為每月所需人數。</p>
+
+<h2 id="範例">範例</h2>
+
+<p>測資一</p>
+
+<pre><code class="language-plaintext">4 22 14 84
+10 4 14 10
+</code></pre>
+
+<p>測資一結果: 980</p>
+
+<p>測資二</p>
+
+<pre><code class="language-plaintext">3 21 13 84
+10 11 12
+</code></pre>
+
+<p>測資二結果: 681</p>
+
+<p>測資三</p>
+
+<pre><code class="language-plaintext">3 21 13 84
+13 14 15
+</code></pre>
+
+<p>測資三結果: 861</p>
+
+<p>測資四</p>
+
+<pre><code class="language-plaintext">7 10 20 30
+3 7 4 5 1 8 9
+</code></pre>
+
+<p>測資四結果: 1050</p>
+
+<h2 id="解法">解法</h2>
+
+<p>透過dp動態規劃下去處理，計算一個月當中所有可能派遣與調回的情況，以及沒有變化的情況，用上次最小值作為當前計算的基底，迭代的時候求出每次最小值。</p>
+
+<p><a href="https://github.com/r888800009/practice/blob/master/army-dispatch-problem.c">程式碼</a></p>
+
+<p>原先複雜度是<code>O(max(A)*n)</code>，觀察兩個測資發現似乎可以壓到<code>O(n)</code></p>
+
+<p>測資一</p>
+
+<pre><code class="language-plaintext">7 10 20 30
+3 7 4 5 1 8 9
+   x    x    x    x    x    x    x  270  300  330
+   x    x    x    x  440  430  420  410  440  470
+   x    x    x    x    x  570  560  550  580  610
+   x  750  740  730  720  710  700  690  720  750
+   x    x    x    x    x    x    x    x  860  890
+   x    x    x    x    x    x    x    x    x 1050
+1050
+</code></pre>
+
+<p>測資二</p>
+
+<pre><code class="language-plaintext">7 10 20 30
+3 7 4 5 1 8 12
+   x    x    x    x    x    x    x  270  300  330  360  390  420
+   x    x    x    x  440  430  420  410  440  470  500  530  560
+   x    x    x    x    x  570  560  550  580  610  640  670  700
+   x *750**740* 730  720  710  700  690  720  750  780 *810**840*
+   x    x    x    x    x    x    x    x  860  890  920  950  980
+   x    x    x    x    x    x    x    x    x    x    x    x 1140
+1140
+</code></pre>
+
+<p>觀察後發現或許子迴圈超過3個值時可以抓取兩側，算出兩個線性方程式，透過交點找到周圍的最小值，無解就表示兩側有一邊是最小值，透過斜率判斷左邊右邊。</p>
+
+<p>為了確定是不是線性函數</p>
+
+<pre><code class="language-plaintext">solve = dp[i - 1][pre_people] + y * j + z * -(j - pre_people)
+solve = dp[i - 1][pre_people] + y * j + x * (j - pre_people)
+</code></pre>
+
+<p>展開之後重新分配可以得到</p>
+
+<pre><code class="language-plaintext">solve = (dp[i - 1][pre_people] + z * pre_people) + (y - z) * j
+solve = (dp[i - 1][pre_people] - x * pre_people) + (y + x) * j
+</code></pre>
+
+<p>確定是線性(其實不重新分配好像也看得出現性)</p>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/dynamic-programming" class="tags">Dynamic programming</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

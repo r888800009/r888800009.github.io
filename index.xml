@@ -6,10 +6,19 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 30 Aug 2019 05:13:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 31 Aug 2019 02:01:14 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>軍隊派遣問題</title>
+      <link>https://r888800009.github.io/posts/army-dispatch-problem/</link>
+      <pubDate>Sat, 31 Aug 2019 02:01:14 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/army-dispatch-problem/</guid>
+      <description>&lt;p&gt;軍隊派遣人力不可低於需求人力，派遣與調回需要花費金錢，常駐的也需要花錢。派遣當月需要給付常駐補給費，調回不須。給予一個陣列A代表每個月的人力需求，求最低預算。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Vim</title>
