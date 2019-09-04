@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>理解堆疊</title>
+      <link>https://r888800009.github.io/posts/what-can-stack-can-do/</link>
+      <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/what-can-stack-can-do/</guid>
+      <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Gitea搬到Github</title>
       <link>https://r888800009.github.io/posts/from-gitea-to-github/</link>
       <pubDate>Mon, 26 Aug 2019 20:13:11 +0800</pubDate>

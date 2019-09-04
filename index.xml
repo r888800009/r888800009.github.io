@@ -6,10 +6,46 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 31 Aug 2019 02:01:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 06:44:35 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker</title>
+      <link>https://r888800009.github.io/wiki/docker/</link>
+      <pubDate>Thu, 05 Sep 2019 06:44:35 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/docker/</guid>
+      <description>&lt;p&gt;Docker的筆記&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux權限</title>
+      <link>https://r888800009.github.io/wiki/linux-permission/</link>
+      <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
+      <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux文件管理</title>
+      <link>https://r888800009.github.io/wiki/linux-file/</link>
+      <pubDate>Thu, 05 Sep 2019 05:47:01 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/linux-file/</guid>
+      <description>&lt;p&gt;Linux一些常用於文件管理的筆記。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux</title>
+      <link>https://r888800009.github.io/wiki/archlinux/</link>
+      <pubDate>Thu, 05 Sep 2019 05:29:37 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/archlinux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>軍隊派遣問題</title>
@@ -27,6 +63,15 @@
       
       <guid>https://r888800009.github.io/wiki/vim/</guid>
       <description>&lt;p&gt;存放vim的筆記。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>理解堆疊</title>
+      <link>https://r888800009.github.io/posts/what-can-stack-can-do/</link>
+      <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/what-can-stack-can-do/</guid>
+      <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
     </item>
     
     <item>

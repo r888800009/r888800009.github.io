@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux File on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/linux-file/</link>
+    <description>Recent content in Linux File on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 05 Sep 2019 05:57:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/linux-file/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux權限</title>
+      <link>https://r888800009.github.io/wiki/linux-permission/</link>
+      <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
+      <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux文件管理</title>
+      <link>https://r888800009.github.io/wiki/linux-file/</link>
+      <pubDate>Thu, 05 Sep 2019 05:47:01 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/linux-file/</guid>
+      <description>&lt;p&gt;Linux一些常用於文件管理的筆記。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Structures on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/data-structures/</link>
+    <description>Recent content in Data Structures on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 30 Aug 2019 04:13:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/data-structures/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>理解堆疊</title>
+      <link>https://r888800009.github.io/posts/what-can-stack-can-do/</link>
+      <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/what-can-stack-can-do/</guid>
+      <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

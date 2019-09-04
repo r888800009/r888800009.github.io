@@ -6,10 +6,37 @@
     <description>Recent content in Linux on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 30 Aug 2019 05:13:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 05:57:58 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux權限</title>
+      <link>https://r888800009.github.io/wiki/linux-permission/</link>
+      <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
+      <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux文件管理</title>
+      <link>https://r888800009.github.io/wiki/linux-file/</link>
+      <pubDate>Thu, 05 Sep 2019 05:47:01 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/linux-file/</guid>
+      <description>&lt;p&gt;Linux一些常用於文件管理的筆記。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Arch Linux</title>
+      <link>https://r888800009.github.io/wiki/archlinux/</link>
+      <pubDate>Thu, 05 Sep 2019 05:29:37 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/archlinux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Vim</title>

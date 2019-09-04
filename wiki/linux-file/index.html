@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Secure Shell | r809&#39;s Notes</title>
+<title>Linux文件管理 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,94 +47,100 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Secure Shell</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Linux文件管理</a></h1>
 <div id="content"><div class="date"> 
-        <time datetime="2019-08-27 11:58:33 &#43;0800 CST">Tue, 2019 Aug 27</time>
+        <time datetime="2019-09-05 05:47:01 &#43;0800 CST">Thu, 2019 Sep 5</time>
     </div> 
-    <p>SSH筆記</p>
+    <p>Linux一些常用於文件管理的筆記。</p>
 
-<h2 id="config">Config</h2>
+<h2 id="ls">ls</h2>
 
-<p>在<code>~/.ssh/config</code>設定以下內容</p>
+<p>排除指定檔名</p>
 
-<pre><code class="language-plaintext">host example
-  Port 22
-  Hostname example.com
-  IdentityFile ~/.ssh/id_example
+<pre><code class="language-bash">ls -I &quot;*.md&quot;
 </code></pre>
 
-<p>輸入指令<code>ssh user@example</code>將會同等於<code>ssh user@example.com</code>且讀取私鑰檔案。</p>
+<h2 id="fdupes">fdupes</h2>
 
-<h2 id="proxycommand">ProxyCommand</h2>
+<p>找尋重複的檔案</p>
 
-<p>透過A主機連上B主機</p>
-
-<pre><code class="language-plaintext">host hostA
-  Port 22
-  Hostname example.com
-
-host hostB
-  Port 22
-  Hostname 192.168.1.1
-  ProxyCommand ssh -qW %h:%p hostA
-  IdentityFile ~/.ssh/id_1
+<pre><code>fdupes -d ./
 </code></pre>
+
+<h2 id="trash">trash</h2>
+
+<p>垃圾桶的功能，避免直接<code>rm</code>誤刪檔案。</p>
+
+<h2 id="du">du</h2>
+
+<p>用於統計大小。</p>
+
+<p>只顯示一層</p>
+
+<pre><code class="language-bash">du --max-depth=1
+</code></pre>
+
+<p>將輸出的大小轉成kb, mb, gb的格式</p>
+
+<pre><code class="language-bash">du . -h
+</code></pre>
+
+<h2 id="tar">tar</h2>
+
+<p>壓縮解壓縮。</p>
+
+<h3 id="常用參數">常用參數</h3>
 
 <ul>
-<li><code>%h</code>主機名</li>
-<li><code>%p</code>端口號</li>
-<li><code>-q</code>安靜模式</li>
-<li><code>-W hostname:port</code>轉發</li>
-<li><code>IdentityFile</code> 放在config的電腦上</li>
-<li><code>gateway</code>為<code>ProxyCommand</code>的<code>hostA</code></li>
+<li><code>-x</code> 解壓縮</li>
+<li><code>-t</code> 查看內容</li>
+<li><code>-c</code> 壓縮</li>
+<li><code>-f</code> 壓縮檔名</li>
 </ul>
 
-<h3 id="直接透過指令轉發">直接透過指令轉發</h3>
+<h3 id="列出內容">列出內容</h3>
 
-<pre><code class="language-bash">ssh -o ProxyCommand=&quot;ssh -qW hostA&quot; hostB
+<p>列出<code>file.tar</code>裡面的內容</p>
+
+<pre><code class="language-bash">tar -tf file.tar 
 </code></pre>
 
-<h3 id="連上hostb">連上hostB</h3>
+<h2 id="find">find</h2>
 
-<pre><code class="language-bash">ssh hostB
+<p>搜尋該目錄含有<code>linux</code>的文件</p>
+
+<pre><code class="language-bash">find . -exec grep -H &quot;linux&quot; {} \;  
 </code></pre>
 
-<h2 id="其他常用指令">其他常用指令</h2>
+<h2 id="rsync">rsync</h2>
 
-<h3 id="scp">scp</h3>
+<p>同步工具</p>
 
-<pre><code class="language-bash">scp source target
+<pre><code class="language-bash">rsync 參數 來源 目標 
+rsync -avh test1/ test2/  
 </code></pre>
 
-<h3 id="sshfs">sshfs</h3>
+<h2 id="file">file</h2>
 
-<pre><code class="language-bash">sshfs user@host:dir mountpoint
+<p>用於識別檔案類型</p>
+
+<pre><code class="language-bash">file ./a.out
 </code></pre>
 
-<h3 id="sock5代理">Sock5代理</h3>
+<h2 id="參見">參見</h2>
 
-<pre><code class="language-bash">ssh -D 1337 -q -C -N domain
-</code></pre>
-
-<h2 id="問題">問題</h2>
-
-<h3 id="remote-host-identification-has-changed">Remote Host Identification Has Changed</h3>
-
-<p>移除<code>known_hosts</code>裡面的主機</p>
-
-<pre><code class="language-bash">ssh-keygen -R &quot;127.0.0.1&quot;
-</code></pre>
+<ul>
+<li><a href="/wiki/linux-permission/">Linux權限</a></li>
+</ul>
 
     
       <hr>
       
         <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
       
-        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+        <a href="https://r888800009.github.io/tags/linux-file" class="tags">Linux File</a>
       
-        <a href="https://r888800009.github.io/tags/ssh" class="tags">SSH</a>
-      
-        <a href="https://r888800009.github.io/tags/socks5" class="tags">Socks5</a>
+        <a href="https://r888800009.github.io/tags/unix" class="tags">Unix</a>
       
     
 

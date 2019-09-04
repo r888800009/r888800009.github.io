@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Posts | r809&#39;s Notes</title>
+<title>Arch Linux | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,29 +47,41 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Posts</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-3/" class="post-link">Leetcode刷題筆記3</a></h1><p>開始刷<code>leetcode</code>一些中等的題目，主要都是刷<code>Top 100</code>的題目。</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Arch Linux</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-09-05 05:29:37 &#43;0800 CST">Thu, 2019 Sep 5</time>
+    </div> 
+    <h2 id="pacman">Pacman</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-2/" class="post-link">Leetcode刷題筆記2</a></h1><p>leetcode 解題</p>
+<pre><code># 顯示本地包
+pacman -Qqm
 
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-1/" class="post-link">Leetcode刷題筆記1</a></h1><p>一些leetcode的<code>easy</code>等級的解法。</p>
+# 重新安裝一切
+pacman -Syu $(pacman -Qnq)
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/posts/blog-or-repo-for-notes/" class="post-link">探討blog或repo做筆記的優缺點</a></h1><p>最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、保存方式、索引方式。</p>
+<h2 id="java缺少中文字體">java缺少中文字體</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/online-judge-list/" class="post-link">Online Judge 列表</a></h1> UVa Online Judge LeetCode Codeforces 高中生程式解題系統 台中女中程式解題系統 PKU JudgeOnline Codewars Timus Online Judge  
+<pre><code class="language-bash">sudo pacman -S ttf-arphic-uming
+</code></pre>
 
+<h2 id="java-6">java 6</h2>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<p>按照參考1對於<code>/usr/lib/jvm/java-6-jdk/jre/lib/fontconfig.properties</code>進行配置。</p>
+
+<ul>
+<li><a href="http://linux-wiki.cn/wiki/Java%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE">參考1</a></li>
+<li><a href="https://stackoverflow.com/questions/25663165/unicode-char-not-rendering-in-swing-what-font-is-used-in-real">參考2</a></li>
+</ul>
+
     
-    <a href=/posts/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/arch-linux" class="tags">Arch Linux</a>
+      
+        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+      
     
-
-    
-</div>
-
 
 
             </div>
