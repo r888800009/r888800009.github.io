@@ -6,10 +6,19 @@
     <description>Recent content in Posts on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 31 Aug 2019 02:01:14 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2019 22:20:35 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PHP傳入POST與GET導致FPD漏洞</title>
+      <link>https://r888800009.github.io/posts/php-post-get-fpd/</link>
+      <pubDate>Thu, 05 Sep 2019 22:20:35 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/php-post-get-fpd/</guid>
+      <description>&lt;p&gt;php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>軍隊派遣問題</title>
