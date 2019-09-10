@@ -71,7 +71,7 @@ RELRO     : Partial
 
 <p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，也可能是透過其他漏洞如<a href="/wiki/format-string-attack/">格式化字串</a>。</p>
 
-<h2 id="觀察流程">觀察流程</h2>
+<h2 id="指令">指令</h2>
 
 <p>反組譯查看函數</p>
 
@@ -83,12 +83,14 @@ RELRO     : Partial
 <pre><code class="language-bash">gdb ./echo
 </code></pre>
 
-<h2 id="顯示符號表">顯示符號表</h2>
+<h3 id="符號與區段">符號與區段</h3>
+
+<p>顯示符號表</p>
 
 <pre><code class="language-bash">nm ./a.out
 </code></pre>
 
-<h2 id="顯示區段">顯示區段</h2>
+<p>顯示區段</p>
 
 <pre><code class="language-bash">readelf -x .text ./a.out
 objdump -s -j .text ./a.out
@@ -99,6 +101,30 @@ objdump -s -j .text ./a.out
 <ul>
 <li><code>little endian</code>: 高位優先</li>
 <li><code>big endian</code>: 低位優先</li>
+</ul>
+
+<h2 id="aslr繞過">ASLR繞過</h2>
+
+<p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
+
+<h2 id="技巧">技巧</h2>
+
+<h3 id="pwntools指定libc">pwntools指定libc</h3>
+
+<p>可以透過此方式指定使用的libc。</p>
+
+<pre><code class="language-python">c = process('echo2', env={'LD_PRELOAD': 'libc-2.23.so.x86_64'})
+</code></pre>
+
+<h3 id="payload輸入">payload輸入</h3>
+
+<p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
+
+<h2 id="參見">參見</h2>
+
+<ul>
+<li><a href="/wiki/format-string-attack/">格式化字串</a></li>
+<li><a href="/wiki/gcc/#gcc關閉保護">GCC關閉保護</a></li>
 </ul>
 
     

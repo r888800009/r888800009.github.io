@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debug on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/debug/</link>
+    <description>Recent content in Debug on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 29 Aug 2019 02:03:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/debug/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GDB</title>
+      <link>https://r888800009.github.io/wiki/gdb/</link>
+      <pubDate>Thu, 29 Aug 2019 02:03:01 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/gdb/</guid>
+      <description>&lt;p&gt;存放gdb筆記&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

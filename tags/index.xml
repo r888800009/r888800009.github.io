@@ -6,10 +6,82 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 06 Sep 2019 12:24:08 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 10 Sep 2019 11:10:20 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PHP</title>
+      <link>https://r888800009.github.io/tags/php/</link>
+      <pubDate>Tue, 10 Sep 2019 11:10:20 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://r888800009.github.io/tags/web/</link>
+      <pubDate>Tue, 10 Sep 2019 11:10:20 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://r888800009.github.io/tags/tools/</link>
+      <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Version Control</title>
+      <link>https://r888800009.github.io/tags/version-control/</link>
+      <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/version-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information Security</title>
+      <link>https://r888800009.github.io/tags/information-security/</link>
+      <pubDate>Tue, 10 Sep 2019 10:26:29 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/information-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pwn</title>
+      <link>https://r888800009.github.io/tags/pwn/</link>
+      <pubDate>Tue, 10 Sep 2019 10:26:29 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/pwn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://r888800009.github.io/tags/c/</link>
+      <pubDate>Tue, 10 Sep 2019 10:20:31 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://r888800009.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Tue, 10 Sep 2019 10:20:31 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CTF</title>
@@ -21,38 +93,11 @@
     </item>
     
     <item>
-      <title>pwn</title>
-      <link>https://r888800009.github.io/tags/pwn/</link>
-      <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/pwn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Vulnerability</title>
       <link>https://r888800009.github.io/tags/vulnerability/</link>
       <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/vulnerability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PHP</title>
-      <link>https://r888800009.github.io/tags/php/</link>
-      <pubDate>Thu, 05 Sep 2019 22:20:35 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://r888800009.github.io/tags/web/</link>
-      <pubDate>Thu, 05 Sep 2019 22:20:35 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/web/</guid>
       <description></description>
     </item>
     
@@ -161,6 +206,24 @@
       <pubDate>Thu, 29 Aug 2019 18:05:31 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/network-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>https://r888800009.github.io/tags/debug/</link>
+      <pubDate>Thu, 29 Aug 2019 02:03:01 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debugger</title>
+      <link>https://r888800009.github.io/tags/debugger/</link>
+      <pubDate>Thu, 29 Aug 2019 02:03:01 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/debugger/</guid>
       <description></description>
     </item>
     
