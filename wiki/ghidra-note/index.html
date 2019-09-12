@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Wikis | r809&#39;s Notes</title>
+<title>Ghidra | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,43 +47,56 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Wikis</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/archlinux/" class="post-link">Arch Linux</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Ghidra</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-16 23:57:31 &#43;0800 CST">Fri, 2019 Aug 16</time>
+    </div> 
+    <p><code>Ghidra</code>為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，<a href="https://ghidra-sre.org/">官方網站</a>以及GitHub <a href="https://github.com/NationalSecurityAgency/Ghidra">repo</a>位址。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/vim/" class="post-link">Vim</a></h1><p>存放vim的筆記。</p>
+<h2 id="安裝">安裝</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/url-obfuscation/" class="post-link">URL Obfuscation</a></h1><p>混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。</p>
+<p>archlinux透過<a href="https://aur.archlinux.org/packages/ghidra/">aur</a>安裝，鍵入。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/gdb/" class="post-link">GDB</a></h1><p>存放gdb筆記</p>
+<pre><code class="language-bash">pacaur -S ghidra
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/django/" class="post-link">Django</a></h1><p>紀錄Django安裝、新增專案以及使用方式等。</p>
+<h2 id="使用">使用</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-fingerprint/" class="post-link">辨識Web伺服與應用程式</a></h1><p>辨識Web伺服器或應用程式的方法。</p>
+<ol>
+<li>建立專案資料夾</li>
+<li>import二進制檔案</li>
+</ol>
 
-    <h1><a href="https://r888800009.github.io/wiki/secure-shell/" class="post-link">Secure Shell</a></h1><p>SSH筆記</p>
+<h2 id="功能">功能</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/qemu/" class="post-link">Qemu</a></h1><p>QEMU常用參數紀錄</p>
+<ul>
+<li><code>Hex檢視器</code></li>
+<li><code>程式流程圖</code></li>
+<li><code>反編譯/反組譯</code></li>
+<li><code>符號樹</code>:可以用來查看函數進入點以及<code>label</code>等資訊。</li>
+<li><code>Memory Map</code>-&gt;<code>rebase</code>: relocate，替反組譯內容設定基準</li>
+<li>value rename</li>
+</ul>
 
-    <h1><a href="https://r888800009.github.io/wiki/hugo/" class="post-link">Hugo</a></h1><p>存放一些<code>hugo</code>的指令與筆記</p>
+<h2 id="特色">特色</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/hugo-template/" class="post-link">Hugo模板的一些配置</a></h1><p>存放一些<code>hugo</code>配置版模會用到的筆記。</p>
+<ul>
+<li>點選工具列按鈕，若已經啟動視窗則有醒目提示</li>
+</ul>
 
+<h2 id="相似的工具">相似的工具</h2>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<ul>
+<li><a href="https://www.hex-rays.com/products/ida/">IDA</a></li>
+<li><a href="https://rada.re/r/">radare</a></li>
+</ul>
+
     
-    <a href=/wiki/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/reverse-engineering" class="tags">Reverse Engineering</a>
+      
     
-
-    
-    <a href=/wiki/page/3/>
-       &#x3E;
-    </a>
-    
-</div>
-
 
 
             </div>

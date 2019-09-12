@@ -66,15 +66,6 @@
     </item>
     
     <item>
-      <title>Ghidra</title>
-      <link>https://r888800009.github.io/posts/ghidra-note/</link>
-      <pubDate>Fri, 16 Aug 2019 23:57:31 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/posts/ghidra-note/</guid>
-      <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Leetcode刷題筆記6</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-6/</link>
       <pubDate>Fri, 16 Aug 2019 23:20:14 +0800</pubDate>

@@ -48,17 +48,32 @@
   </url>
   
   <url>
+    <loc>https://r888800009.github.io/tags/pwn/</loc>
+    <lastmod>2019-09-10T10:27:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/reverse-engineering/</loc>
+    <lastmod>2019-09-10T10:27:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/windows/</loc>
+    <lastmod>2019-09-10T10:27:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/wiki/windows-pwn-notes/</loc>
+    <lastmod>2019-09-10T10:27:36+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/tags/information-security/</loc>
     <lastmod>2019-09-10T10:26:29+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/wiki/metasploit/</loc>
-    <lastmod>2019-09-10T10:26:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/pwn/</loc>
     <lastmod>2019-09-10T10:26:29+08:00</lastmod>
   </url>
   
@@ -328,12 +343,7 @@
   </url>
   
   <url>
-    <loc>https://r888800009.github.io/posts/ghidra-note/</loc>
-    <lastmod>2019-08-16T23:57:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/reverse-engineering/</loc>
+    <loc>https://r888800009.github.io/wiki/ghidra-note/</loc>
     <lastmod>2019-08-16T23:57:31+08:00</lastmod>
   </url>
   

@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Windows Pwn 筆記</title>
+      <link>https://r888800009.github.io/wiki/windows-pwn-notes/</link>
+      <pubDate>Tue, 10 Sep 2019 10:27:36 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/windows-pwn-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Metasploit</title>
       <link>https://r888800009.github.io/wiki/metasploit/</link>
       <pubDate>Tue, 10 Sep 2019 10:26:29 +0800</pubDate>
@@ -180,6 +189,15 @@
       
       <guid>https://r888800009.github.io/wiki/hugo-template/</guid>
       <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;配置版模會用到的筆記。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ghidra</title>
+      <link>https://r888800009.github.io/wiki/ghidra-note/</link>
+      <pubDate>Fri, 16 Aug 2019 23:57:31 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/ghidra-note/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
     </item>
     
   </channel>
