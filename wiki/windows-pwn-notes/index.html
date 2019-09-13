@@ -58,7 +58,7 @@ if (!doNotTrack) {
 <li><a href="https://github.com/trailofbits/winchecksec">winchecksec</a></li>
 </ul>
 
-<h2 id="x64dbg">X64dbg</h2>
+<h3 id="x64dbg">X64dbg</h3>
 
 <ul>
 <li>註解功能</li>
@@ -67,11 +67,57 @@ if (!doNotTrack) {
 <li>可保存修改完的執行檔</li>
 </ul>
 
-<h2 id="cheat-engine">Cheat Engine</h2>
+<h3 id="cheat-engine">Cheat Engine</h3>
 
 <ul>
 <li>透過不斷篩選得到對映的記憶體位置</li>
 <li>可以更改篩選出來記憶體作用的指令</li>
+</ul>
+
+<h2 id="s-e-h">S.E.H</h2>
+
+<p>SEH為windows下例外處理的結構。</p>
+
+<h3 id="seh結構體-32位元">SEH結構體(32位元)</h3>
+
+<pre><code class="language-plaintext">DWORD: 下筆SEH紀錄
+DWORD: 例外處理
+</code></pre>
+
+<ul>
+<li>保存於系統堆疊中</li>
+<li>線程初始化時，會自動安裝SEH</li>
+<li><code>__try</code>、<code>__except{}</code></li>
+<li>堆疊通常同時存在多個SEH</li>
+<li>堆疊中的SEH為連結單向串列，並且串接TEB的0位元組偏移處</li>
+<li>異常時取出堆頂SEH處理</li>
+<li>SEH失敗則接續下筆SEH</li>
+<li>若程式無法處理錯誤，則crash</li>
+</ul>
+
+<p>以上為32位元應用程式的SEH結構，64位元請<a href="http://www.osronline.com/article.cfm%5earticle=469.htm">參考</a></p>
+
+<h2 id="sehop">SEHOP</h2>
+
+<p>SEHOP為SEH覆蓋保護，避免</p>
+
+<h4 id="啟用的系統">啟用的系統</h4>
+
+<p>在以下Windows版本與後序版本啟用SEHOP，調整關閉啟用參見<a href="https://support.microsoft.com/zh-tw/help/956607/how-to-enable-structured-exception-handling-overwrite-protection-sehop">Microsoft文檔</a>。</p>
+
+<ul>
+<li>Vista SP1 (默認關閉)</li>
+<li>win7 (默認關閉)</li>
+<li>win server 2008 (默認啟用)</li>
+</ul>
+
+<h3 id="參見">參見</h3>
+
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/cpp/cpp/structured-exception-handling-c-cpp">Structured Exception Handling (C/C++)</a></li>
+<li><a href="http://gxkyrftx.xyz/2019/01/07/SEH%E5%AD%A6%E4%B9%A0/">SEH机制学习</a></li>
+<li><a href="https://www.xineting.club/2018/11/03/windows保护机制/">Windows内存安全保护机制</a></li>
+<li>0day安全:软件漏洞分析技术: Windows 異常處理機制(第一版第七章，第二版第六章)</li>
 </ul>
 
 <h2 id="windows-pwn問題">windows pwn問題</h2>

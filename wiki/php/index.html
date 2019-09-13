@@ -51,7 +51,14 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-10 11:10:20 &#43;0800 CST">Tue, 2019 Sep 10</time>
     </div> 
-    <h2 id="php可變函數">php可變函數</h2>
+    <h2 id="php內建伺服器">PHP內建伺服器</h2>
+
+<pre><code class="language-bash">php -S localhost:8080 -t ./
+</code></pre>
+
+<p>點選 <a href="http://localhost:8080/">http://localhost:8080/</a> 訪問，並且注意<code>index.php</code>或<code>index.html</code>存在，否則會產生404錯誤代碼。</p>
+
+<h2 id="php可變函數">php可變函數</h2>
 
 <pre><code class="language-php">echo &quot;trim&quot;(&quot;  111&quot;);
 </code></pre>

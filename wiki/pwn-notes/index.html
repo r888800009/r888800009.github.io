@@ -107,6 +107,12 @@ objdump -s -j .text ./a.out
 
 <p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
 
+<h2 id="shellcode">Shellcode</h2>
+
+<h3 id="nop-sled">Nop Sled</h3>
+
+<p>透過<code>nop</code>指令增加shellcode的命中機率，在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
+
 <h2 id="技巧">技巧</h2>
 
 <h3 id="pwntools指定libc">pwntools指定libc</h3>
