@@ -71,6 +71,13 @@ hugo -D server --bind=0.0.0.0
 <pre><code class="language-bash">hugo new posts/post1.md
 </code></pre>
 
+<p>建立文章透過<code>vim</code>編輯</p>
+
+<pre><code class="language-bash">hugo new wiki/grep.md --editor vim  
+</code></pre>
+
+<p>也可以使用<a href="https://github.com/r888800009/script/blob/master/hugo-new">hugo-new</a>腳本</p>
+
 <h2 id="管理hugo腳本">管理hugo腳本</h2>
 
 <p>以下腳本假設在blog的基目錄運行。</p>
@@ -82,9 +89,10 @@ hugo -D server --bind=0.0.0.0
 <pre><code class="language-bash">find content -name '*leet*' 
 </code></pre>
 
-<p>批量編輯</p>
+<p>批量編輯，參見<a href="/wiki/vim/">vim</a></p>
 
 <pre><code class="language-bash">vim $(find content -name '*leet*') 
+vim $(grep 'linux' content/* -Rl)
 </code></pre>
 
 <h2 id="文檔語法">文檔語法</h2>
@@ -101,6 +109,13 @@ hugo -D server --bind=0.0.0.0
 
 <pre><code class="language-markdown">## link 1 {#link-123}
 [link-123](#link-123)
+</code></pre>
+
+<h2 id="配置檔">配置檔</h2>
+
+<p>啟用git資訊</p>
+
+<pre><code class="language-toml">enableGitInfo = true
 </code></pre>
 
 <h2 id="參見">參見</h2>

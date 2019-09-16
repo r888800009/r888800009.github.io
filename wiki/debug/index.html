@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Vulnerability | r809&#39;s Notes</title>
+<title>除錯 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,23 +47,49 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Vulnerability</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/fuzzing/" class="post-link">Fuzzing</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">除錯</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-09-15 04:39:57 &#43;0800 CST">Sun, 2019 Sep 15</time>
+    </div> 
+    <h2 id="斷言">斷言</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/format-string-attack/" class="post-link">格式化字串攻擊</a></h1><p>格式化字串筆記</p>
+<p>斷言(Assertions)，在C中assert為macro不是function，使用時需要<code>#include &lt;assert.h&gt;</code>，程式出現非預期的數值時則結束程式用於除錯。</p>
 
-    <h1><a href="https://r888800009.github.io/posts/php-post-get-fpd/" class="post-link">PHP傳入POST與GET導致FPD漏洞</a></h1><p>php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。</p>
+<p>以下程式原本<code>square()</code>預期為<code>i * i</code>，但返回卻是<code>i * i + 1</code>，因此斷言則會在下行判斷並且中斷程式。</p>
 
-    <h1><a href="https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/" class="post-link">比較SSRF與LFI/RFI</a></h1><p>LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;assert.h&gt;
 
+int square(int i) {
+  return i * i + 1;  // assert working
+}
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+int main() {
+  int i = square(4);
+  assert(i == 16);
+
+  return 0;
+}
+</code></pre>
+
+<p>禁用<code>assert</code>在<code>#include &lt;assert.h&gt;</code>之前加上<code>#define NDEBUG</code></p>
+
+<pre><code class="language-c">#define NDEBUG
+#include &lt;assert.h&gt;
+</code></pre>
+
+<h3 id="參考">參考</h3>
+
+<ul>
+<li><a href="http://liuyu314.github.io/c/2013/06/12/assertion/">断言的魅力</a></li>
+</ul>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/debug" class="tags">Debug</a>
+      
     
-</div>
-
 
 
             </div>

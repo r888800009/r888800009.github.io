@@ -6,10 +6,91 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Sep 2019 11:10:20 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 12:25:38 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Debug</title>
+      <link>https://r888800009.github.io/tags/debug/</link>
+      <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuzzing</title>
+      <link>https://r888800009.github.io/tags/fuzzing/</link>
+      <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/fuzzing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://r888800009.github.io/tags/testing/</link>
+      <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vulnerability</title>
+      <link>https://r888800009.github.io/tags/vulnerability/</link>
+      <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/vulnerability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://r888800009.github.io/tags/linux/</link>
+      <pubDate>Sun, 15 Sep 2019 11:49:50 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://r888800009.github.io/tags/c/</link>
+      <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://r888800009.github.io/tags/c&#43;&#43;/</link>
+      <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debugger</title>
+      <link>https://r888800009.github.io/tags/debugger/</link>
+      <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/debugger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gdb</title>
+      <link>https://r888800009.github.io/tags/gdb/</link>
+      <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/gdb/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PHP</title>
@@ -84,20 +165,11 @@
     </item>
     
     <item>
-      <title>C</title>
-      <link>https://r888800009.github.io/tags/c/</link>
-      <pubDate>Tue, 10 Sep 2019 10:20:31 +0800</pubDate>
+      <title>Python</title>
+      <link>https://r888800009.github.io/tags/python/</link>
+      <pubDate>Fri, 06 Sep 2019 12:42:42 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/tags/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43;</title>
-      <link>https://r888800009.github.io/tags/c&#43;&#43;/</link>
-      <pubDate>Tue, 10 Sep 2019 10:20:31 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/c&#43;&#43;/</guid>
+      <guid>https://r888800009.github.io/tags/python/</guid>
       <description></description>
     </item>
     
@@ -107,15 +179,6 @@
       <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/ctf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vulnerability</title>
-      <link>https://r888800009.github.io/tags/vulnerability/</link>
-      <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/vulnerability/</guid>
       <description></description>
     </item>
     
@@ -134,15 +197,6 @@
       <pubDate>Thu, 05 Sep 2019 06:44:35 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://r888800009.github.io/tags/linux/</link>
-      <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
@@ -228,38 +282,11 @@
     </item>
     
     <item>
-      <title>Debug</title>
-      <link>https://r888800009.github.io/tags/debug/</link>
-      <pubDate>Thu, 29 Aug 2019 02:03:01 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/debug/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Debugger</title>
-      <link>https://r888800009.github.io/tags/debugger/</link>
-      <pubDate>Thu, 29 Aug 2019 02:03:01 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/debugger/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Django</title>
       <link>https://r888800009.github.io/tags/django/</link>
       <pubDate>Wed, 28 Aug 2019 23:57:23 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/django/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://r888800009.github.io/tags/python/</link>
-      <pubDate>Wed, 28 Aug 2019 23:57:23 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/python/</guid>
       <description></description>
     </item>
     

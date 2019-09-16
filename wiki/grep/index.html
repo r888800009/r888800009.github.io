@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Vulnerability | r809&#39;s Notes</title>
+<title>Grep | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,23 +47,47 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Vulnerability</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/fuzzing/" class="post-link">Fuzzing</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Grep</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-09-15 11:49:50 &#43;0800 CST">Sun, 2019 Sep 15</time>
+    </div> 
+    <h2 id="找內容">找內容</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/format-string-attack/" class="post-link">格式化字串攻擊</a></h1><p>格式化字串筆記</p>
+<p>找到含有<code>linux</code>的檔案</p>
 
-    <h1><a href="https://r888800009.github.io/posts/php-post-get-fpd/" class="post-link">PHP傳入POST與GET導致FPD漏洞</a></h1><p>php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。</p>
+<pre><code class="language-bash">#對檔案filename
+grep 'linux' filename
 
-    <h1><a href="https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/" class="post-link">比較SSRF與LFI/RFI</a></h1><p>LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。</p>
+#對目錄所有檔案
+grep 'linux' *
 
+#忽略大小寫
+grep 'linux' * -i
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+#顯示所在的行數
+grep 'linux' -n
+</code></pre>
+
+<p>只列出檔案名</p>
+
+<pre><code class="language-bash">grep '文字' * -l
+</code></pre>
+
+<h2 id="統計數量">統計數量</h2>
+
+<pre><code class="language-bash">#統計單字&quot;ssh&quot;出現數量
+grep -c 'ssh' *
+
+#列出包含字詞&quot;md&quot;檔案列表
+grep -cl 'md' *
+</code></pre>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+      
     
-</div>
-
 
 
             </div>

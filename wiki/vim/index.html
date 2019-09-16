@@ -60,6 +60,11 @@ if (!doNotTrack) {
 <pre><code>vim -d file1 file2
 </code></pre>
 
+<p>檔案格式轉換(dos to unix)</p>
+
+<pre><code class="language-plaintext">:set ff=unix
+</code></pre>
+
 <h2 id="快捷鍵">快捷鍵</h2>
 
 <p><code>:x</code>同<code>:wq</code>的功能</p>
@@ -121,7 +126,8 @@ if (!doNotTrack) {
 
 <h3 id="多buffer取代">多buffer取代</h3>
 
-<p><code>:bufdo %s/被取代/取代/ge | update</code></p>
+<pre><code class="language-plaintext">:bufdo %s/被取代/取代/ge | update
+</code></pre>
 
 <p>參見<a href="https://vim.fandom.com/wiki/Search_and_replace_in_multiple_buffers">Search and replace in multiple buffers</a></p>
 

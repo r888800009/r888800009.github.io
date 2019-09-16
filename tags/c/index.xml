@@ -6,10 +6,19 @@
     <description>Recent content in C on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Sep 2019 10:20:31 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 11:33:06 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/c/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gdbgui</title>
+      <link>https://r888800009.github.io/wiki/gdbgui/</link>
+      <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/gdbgui/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>GCC</title>

@@ -6,10 +6,19 @@
     <description>Recent content in Linux on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 05 Sep 2019 05:57:58 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Sep 2019 11:49:50 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Grep</title>
+      <link>https://r888800009.github.io/wiki/grep/</link>
+      <pubDate>Sun, 15 Sep 2019 11:49:50 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/grep/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Linux權限</title>

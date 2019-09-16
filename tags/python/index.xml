@@ -6,10 +6,19 @@
     <description>Recent content in Python on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 28 Aug 2019 23:57:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Sep 2019 12:42:42 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python</title>
+      <link>https://r888800009.github.io/wiki/python/</link>
+      <pubDate>Fri, 06 Sep 2019 12:42:42 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Django</title>
