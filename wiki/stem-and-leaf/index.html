@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>R | r809&#39;s Notes</title>
+<title>莖葉圖 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,87 +47,68 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">R</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">莖葉圖</a></h1>
 <div id="content"><div class="date"> 
-        <time datetime="2019-09-10 10:26:15 &#43;0800 CST">Tue, 2019 Sep 10</time>
+        <time datetime="2019-09-23 17:29:20 &#43;0800 CST">Mon, 2019 Sep 23</time>
     </div> 
-    <h2 id="rstudio">RStudio</h2>
+    <h1 id="理解莖葉圖">理解莖葉圖</h1>
 
-<p>安裝</p>
+<p>首先輸入以下兩個指令(以IPSUR作為範例)</p>
 
-<pre><code class="language-bash">pacaur -S rstudio-desktop-bin
+<pre><code class="language-r">sort(rivers)
+stem(rivers)
 </code></pre>
 
-<p><a href="https://aur.archlinux.org/packages/rstudio-desktop-bin/">aur</a></p>
+<p>為了方便觀察莖葉圖，因此將<code>rivers</code>排序，此為<code>sort(rivers)</code>的輸出</p>
 
-<h3 id="快捷鍵">快捷鍵</h3>
-
-<ul>
-<li>取消註解: <code>shift + ctrl + c</code></li>
-<li>執行指令: <code>ctrl + enter</code></li>
-</ul>
-
-<h2 id="r-基本語法">R 基本語法</h2>
-
-<p>賦值符號<code>&lt;-</code></p>
-
-<pre><code class="language-r">n &lt;- 123
+<pre><code class="language-plaintext">  [1]  135  202  210  210  215  217  230  230  233  237  246  250  250
+ [14]  250  255  259  260  260  265  268  270  276  280  280  280  281
+ [27]  286  290  291  300  300  300  301  306  310  310  314  315  320
+ [40]  325  327  329  330  332  336  338  340  350  350  350  350  352
+ [53]  360  360  360  360  375  377  380  380  383  390  390  392  407
+ [66]  410  411  420  420  424  425  430  431  435  444  445  450  460
+ [79]  460  465  470  490  500  500  505  524  525  525  529  538  540
+ [92]  545  560  570  600  600  600  605  610  618  620  625  630  652
+[105]  671  680  696  710  720  720  730  735  735  760  780  800  840
+[118]  850  870  890  900  900  906  981 1000 1038 1054 1100 1171 1205
+[131] 1243 1270 1306 1450 1459 1770 1885 2315 2348 2533 3710
 </code></pre>
 
-<p>顯示陣列各個維度的資訊</p>
+<p>此為<code>stem(rivers)</code>的輸出，以第二位數字作為右邊</p>
 
-<pre><code class="language-r">dim(array)
+<pre><code class="language-plaintext">  The decimal point is 2 digit(s) to the right of the |
+
+   0 | 4
+   2 | 011223334555566667778888899900001111223333344455555666688888999
+   4 | 111222333445566779001233344567
+   6 | 000112233578012234468
+   8 | 045790018
+  10 | 04507
+  12 | 1471
+  14 | 56
+  16 | 7
+  18 | 9
+  20 | 
+  22 | 25
+  24 | 3
+  26 | 
+  28 | 
+  30 | 
+  32 | 
+  34 | 
+  36 | 1
 </code></pre>
 
-<h2 id="安裝ipsur">安裝IPSUR</h2>
+<p>上面所輸出的為莖葉圖，莖的部份為第二位前面的數字，可能會有變化不一定相等，葉的部份<strong>四捨五入</strong>後第二位的值放入。</p>
 
-<h3 id="make報錯">make報錯</h3>
-
-<p>安裝部份package無法編譯，make報錯</p>
-
-<pre><code class="language-bash">sudo pacman -S gcc-fortran
-</code></pre>
-
-<p>解決無法安裝<code>curl</code></p>
-
-<pre><code class="language-bash">install.packages(&quot;https://github.com/jeroen/curl/archive/master.tar.gz&quot;, repos = NULL)
-</code></pre>
-
-<h3 id="找不到ipsur">找不到IPSUR</h3>
-
-<pre><code class="language-bash">cd
-wget https://cran.r-project.org/src/contrib/Archive/IPSUR/IPSUR_3.0.tar.gz
-</code></pre>
-
-<p>然後在<code>rstudio</code>中輸入</p>
-
-<pre><code class="language-r">install.packages(&quot;~/IPSUR_3.0.tar.gz&quot;, repos = NULL, type=&quot;source&quot;)
-</code></pre>
-
-<h3 id="參見">參見</h3>
-
-<ul>
-<li><a href="https://cran.r-project.org/web/packages/IPSUR/index.html">https://cran.r-project.org/web/packages/IPSUR/index.html</a></li>
-<li><a href="https://cran.r-project.org/src/contrib/Archive/IPSUR/">https://cran.r-project.org/src/contrib/Archive/IPSUR/</a></li>
-</ul>
-
-<h2 id="檔案">檔案</h2>
-
-<ul>
-<li><code>.r</code>: R的檔案</li>
-
-<li><p><code>.rmd</code>: R Markdown</p>
-
-<pre><code class="language-r">install.packages(&quot;rmarkdown&quot;)
-</code></pre></li>
-</ul>
+<p>可以對照排序後的結果與莖葉圖之間的關聯。</p>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/big-data" class="tags">Big Data</a>
-      
         <a href="https://r888800009.github.io/tags/r" class="tags">R</a>
+      
+        <a href="https://r888800009.github.io/tags/big-data" class="tags">Big Data</a>
       
     
 

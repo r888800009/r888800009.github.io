@@ -97,6 +97,13 @@ hugo -D server --bind=0.0.0.0
 vim $(grep 'linux' content/* -Rl)
 </code></pre>
 
+<h3 id="內文搜尋">內文搜尋</h3>
+
+<p>透過<code>fzf</code>對內文模糊搜尋，在<code>content</code>目錄進行搜</p>
+
+<pre><code class="language-bash">grep --line-buffered --color=never -r &quot;&quot; * | fzf
+</code></pre>
+
 <h2 id="文檔語法">文檔語法</h2>
 
 <p>將某個文章檔名轉換成絕對路徑，效果如Wikipadia內部連結類似。</p>

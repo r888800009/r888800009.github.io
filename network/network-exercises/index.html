@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.58.1" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>[計網]計算機網路練習實做 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,62 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/metasploit/" class="post-link">Metasploit</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[計網]計算機網路練習實做</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-09-24 19:13:16 &#43;0800 CST">Tue, 2019 Sep 24</time>
+    </div> 
+    <h2 id="透過nc發送email範例">透過nc發送email範例</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/r/" class="post-link">R</a></h1>
+<p>透過<code>nc</code>連上任意SMTP伺服器之後，輸入以下內容。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/gcc/" class="post-link">GCC</a></h1>
+<pre><code class="language-plaintext">HELO smtp.example.com
+MAIL FROM:&lt;example@example.com&gt;
+RCPT TO:&lt;example@example.com&gt;
+DATA
+From: [example] &lt;example@example.com&gt;
+To: [example] &lt;example@example.com&gt;
+Date: Tue, 24 Sep 2019 18:00:00 +0000
+Subject: Test Message
 
-    <h1><a href="https://r888800009.github.io/wiki/python/" class="post-link">Python</a></h1>
+test
 
-    <h1><a href="https://r888800009.github.io/wiki/format-string-attack/" class="post-link">格式化字串攻擊</a></h1><p>格式化字串筆記</p>
+.
+QUIT
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/pwn-notes/" class="post-link">pwn常用指令與概念</a></h1><p>pwn常用指令以及概念紀錄</p>
+<h2 id="tranceroute">tranceroute</h2>
 
-    <h1><a href="https://r888800009.github.io/posts/php-post-get-fpd/" class="post-link">PHP傳入POST與GET導致FPD漏洞</a></h1><p>php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。</p>
+<p>透過<code>ping</code>實做<code>tranceroute</code>，參見<a href="https://github.com/r888800009/practice/blob/master/traceroute.sh">traceroute.sh</a></p>
 
-    <h1><a href="https://r888800009.github.io/wiki/docker/" class="post-link">Docker</a></h1><p>Docker的筆記</p>
+<h2 id="啟用promiscuous-mode監聽封包">啟用Promiscuous Mode監聽封包</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/linux-permission/" class="post-link">Linux權限</a></h1><p>關於Linux權限的筆記</p>
+<p>透過下列指令檢查promisc是否啟用。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/linux-file/" class="post-link">Linux文件管理</a></h1><p>Linux一些常用於文件管理的筆記。</p>
+<pre><code class="language-bash">ip addr show [網卡] | grep -i promisc
+</code></pre>
 
+<p>首先啟用promisc。</p>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<pre><code class="language-bash">sudo ip link set [網卡] promisc on
+</code></pre>
+
+<p>透過wireshark監聽此網卡，可以試試看wireshark的過濾條件如<code>tcp.port == 443</code>、<code>ip.addr == 192.168.1.2</code>等。</p>
+
+<p>為了避免實做結束後浪費性能，關閉promisc。</p>
+
+<pre><code class="language-bash">sudo ip link set [網卡] promisc off
+</code></pre>
+
+<h3 id="常見問題">常見問題</h3>
+
+<p>若網路架構是使用Switch而不是Hub，由於Switch會透過MAC地址判斷來源與目的，Packet Sniffing Attack可能會失效，可以嘗試使用hub進行測試。</p>
+
     
-    <a href=/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+      
     
-
-    
-    <a href=/page/3/>
-       &#x3E;
-    </a>
-    
-</div>
 
 
             </div>
