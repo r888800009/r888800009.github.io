@@ -6,10 +6,19 @@
     <description>Recent content in Web on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 10 Sep 2019 11:10:20 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 05:33:35 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Web網頁漏洞</title>
+      <link>https://r888800009.github.io/wiki/web-vulnerability/</link>
+      <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/web-vulnerability/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>PHP</title>
