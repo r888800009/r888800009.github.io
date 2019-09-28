@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HTTP on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/http/</link>
-    <description>Recent content in HTTP on r809&#39;s Notes</description>
+    <title>Apache on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/apache/</link>
+    <description>Recent content in Apache on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 28 Sep 2019 14:17:50 +0800</lastBuildDate>
     
-	<atom:link href="https://r888800009.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://r888800009.github.io/tags/apache/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://r888800009.github.io/posts/cgi-apache/</guid>
       <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>辨識Web伺服與應用程式</title>
-      <link>https://r888800009.github.io/wiki/web-fingerprint/</link>
-      <pubDate>Tue, 27 Aug 2019 15:23:28 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/wiki/web-fingerprint/</guid>
-      <description>&lt;p&gt;辨識Web伺服器或應用程式的方法。&lt;/p&gt;</description>
     </item>
     
   </channel>

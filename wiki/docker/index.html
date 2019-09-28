@@ -75,6 +75,35 @@ if (!doNotTrack) {
 <pre><code class="language-bash">docker rm 容器ID
 </code></pre>
 
+<h2 id="掛載">掛載</h2>
+
+<p>volumes掛載</p>
+
+<pre><code class="language-bash">docker run -v 主機地址:容器地址 image-name
+</code></pre>
+
+<h2 id="檔案">檔案</h2>
+
+<p>複製容器內部的檔案，以<code>httpd</code>作為範例</p>
+
+<pre><code class="language-bash">sudo docker create --name temp httpd
+sudo docker cp temp:/usr/local/apache2/conf/httpd.conf httpd.conf
+sudo docker rm temp
+</code></pre>
+
+<h2 id="dockerfile">Dockerfile</h2>
+
+<p>建立Dockerfile</p>
+
+<pre><code>FROM httpd
+COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
+</code></pre>
+
+<p>build image</p>
+
+<pre><code class="language-bash">sudo docker build -t my-httpd . 
+</code></pre>
+
     
       <hr>
       
