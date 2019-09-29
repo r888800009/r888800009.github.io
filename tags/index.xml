@@ -6,10 +6,28 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 28 Sep 2019 14:17:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2019 21:21:18 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux</title>
+      <link>https://r888800009.github.io/tags/linux/</link>
+      <pubDate>Sun, 29 Sep 2019 21:21:18 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://r888800009.github.io/tags/network/</link>
+      <pubDate>Sun, 29 Sep 2019 21:21:18 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/network/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Apache</title>
@@ -39,7 +57,7 @@
     </item>
     
     <item>
-      <title>web</title>
+      <title>Web</title>
       <link>https://r888800009.github.io/tags/web/</link>
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
       
@@ -71,15 +89,6 @@
       <pubDate>Fri, 27 Sep 2019 23:30:11 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://r888800009.github.io/tags/network/</link>
-      <pubDate>Tue, 24 Sep 2019 19:13:16 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/network/</guid>
       <description></description>
     </item>
     
@@ -125,15 +134,6 @@
       <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/vulnerability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://r888800009.github.io/tags/linux/</link>
-      <pubDate>Sun, 15 Sep 2019 11:49:50 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
