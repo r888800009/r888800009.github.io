@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Tools | r809&#39;s Notes</title>
+<title>Web滲透測試工具 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,21 +47,52 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Tools</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/web-penetration-testing-tools/" class="post-link">Web滲透測試工具</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Web滲透測試工具</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-10-01 23:30:23 &#43;0800 CST">Tue, 2019 Oct 1</time>
+    </div> 
+    <h2 id="索引">索引</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/git/" class="post-link">Git</a></h1>
+<ul>
+<li>透過<code>wappalyzer</code>辨識<a href="/wiki/web-fingerprint/">指紋</a></li>
+<li><a href="/wiki/sqlmap/">sqlmap</a></li>
+</ul>
 
-    <h1><a href="https://r888800009.github.io/wiki/sqlmap/" class="post-link">Sqlmap</a></h1>
+<h2 id="curl">curl</h2>
 
+<pre><code class="language-bash">curl https://example.com  -X POST --data 'id=1' --cookie 'name=var' -i
+</code></pre>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<ul>
+<li><code>-i</code>: 顯示回應頭</li>
+<li><code>-I</code>: HEAD method</li>
+</ul>
+
+<h3 id="使用情況">使用情況</h3>
+
+<p>透過<code>curl</code>洩漏302 redirect的資訊</p>
+
+<p>比起採用<code>firefox</code>開發工具傳送，<code>curl</code>較為方便修改。</p>
+
+<h2 id="burpsuite">Burpsuite</h2>
+
+<pre><code class="language-bash">pacaur -S burpsuite 
+</code></pre>
+
+<h2 id="hackbar">Hackbar</h2>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/hackbartool/">https://addons.mozilla.org/en-US/firefox/addon/hackbartool/</a></p>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8" class="tags">Web安全</a>
+      
+        <a href="https://r888800009.github.io/tags/tools" class="tags">Tools</a>
+      
+        <a href="https://r888800009.github.io/tags/web" class="tags">Web</a>
+      
     
-</div>
-
 
 
             </div>
