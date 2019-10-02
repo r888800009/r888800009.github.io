@@ -6,24 +6,33 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 01 Oct 2019 23:30:23 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 Oct 2019 13:07:33 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Tools</title>
-      <link>https://r888800009.github.io/tags/tools/</link>
-      <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
+      <title>Vulnerability</title>
+      <link>https://r888800009.github.io/tags/vulnerability/</link>
+      <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/tags/tools/</guid>
+      <guid>https://r888800009.github.io/tags/vulnerability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WAF</title>
+      <link>https://r888800009.github.io/tags/waf/</link>
+      <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/waf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
       <link>https://r888800009.github.io/tags/web/</link>
-      <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
+      <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/web/</guid>
       <description></description>
@@ -32,18 +41,18 @@
     <item>
       <title>Web安全</title>
       <link>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</link>
-      <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
+      <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Vulnerability</title>
-      <link>https://r888800009.github.io/tags/vulnerability/</link>
-      <pubDate>Tue, 01 Oct 2019 23:09:38 +0800</pubDate>
+      <title>Tools</title>
+      <link>https://r888800009.github.io/tags/tools/</link>
+      <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/tags/vulnerability/</guid>
+      <guid>https://r888800009.github.io/tags/tools/</guid>
       <description></description>
     </item>
     
