@@ -57,7 +57,7 @@ if (!doNotTrack) {
 
 <h2 id="利用">利用</h2>
 
-<p>找出<code>argv[0]</code>的地址，並且將<code>argc</code>設為<code>1</code>(按照需求下去決定，打印一個地址只需要顯示一個參數)，<code>argv[0]</code>指向洩漏的資料指標。</p>
+<p>找出<code>argv[0]</code>的地址並指向洩漏的資料指標位置。</p>
 
 <h3 id="方法一">方法一</h3>
 
@@ -74,12 +74,20 @@ if (!doNotTrack) {
 
 <h2 id="常見問題">常見問題</h2>
 
+<h3 id="unknown">Unknown</h3>
+
 <p>似乎找到正確位置卻輸出</p>
 
 <pre><code class="language-plaintext">*** stack smashing detected ***: &lt;unknown&gt; terminated
 </code></pre>
 
 <p>原因? 系統或libc?</p>
+
+<p>經過測試之後(掛其他版本的libc)之後就正常顯示。<a href="/wiki/pwn-notes/#指定libc">掛libc</a></p>
+
+<h3 id="argc">argc</h3>
+
+<p>基本上不用理會<code>argc</code>，因為報錯訊息依然是輸出<code>argv[0]</code>。</p>
 
 <h2 id="參考">參考</h2>
 

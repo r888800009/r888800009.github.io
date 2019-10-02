@@ -115,11 +115,16 @@ objdump -s -j .text ./a.out
 
 <h2 id="技巧">技巧</h2>
 
-<h3 id="pwntools指定libc">pwntools指定libc</h3>
+<h3 id="指定libc">指定libc</h3>
 
-<p>可以透過此方式指定使用的libc。</p>
+<p>pwntools可以透過此方式指定使用的libc。</p>
 
 <pre><code class="language-python">c = process('echo2', env={'LD_PRELOAD': 'libc-2.23.so.x86_64'})
+</code></pre>
+
+<p>shell可以透過此指令</p>
+
+<pre><code class="language-bash">LD_PRELOAD=/tmp/libc-2.23.so.x86_64 ./a.out
 </code></pre>
 
 <h3 id="payload輸入">payload輸入</h3>
