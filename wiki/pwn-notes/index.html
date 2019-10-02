@@ -126,6 +126,16 @@ objdump -s -j .text ./a.out
 
 <p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
 
+<h2 id="pwn常見問題">Pwn常見問題</h2>
+
+<p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
+
+<pre><code class="language-python">from pwn import *
+context.arch='amd64'
+pwn.asm('mov rax, 0x732f2f2f6e69622f')
+pwn.asm('mov rax, 0x732f6e69622f')
+</code></pre>
+
 <h2 id="參見">參見</h2>
 
 <ul>

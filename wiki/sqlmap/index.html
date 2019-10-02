@@ -77,6 +77,23 @@ if (!doNotTrack) {
 <pre><code class="language-plaintext">--dbms MySQL
 </code></pre>
 
+<h2 id="tamper">tamper</h2>
+
+<p>編寫tamper並且放到<code>sqlmap/tamper/</code>。透過參數<code>--tamper tamper.py</code>啟用tamper，可以針對不同waf進行改變，例如<code>Content-Type</code>使用不同編碼繞過waf。</p>
+
+<h3 id="備註">備註</h3>
+
+<ul>
+<li>若tamper本身會編碼，可能要<code>--skip-urlencode</code></li>
+</ul>
+
+<h3 id="參見">參見</h3>
+
+<ul>
+<li><a href="https://payloads.online/archivers/2017-06-08/1#0x01-tamper%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8">如何编写Sqlmap的Tamper脚本?</a></li>
+<li><a href="https://github.com/sqlmapproject/sqlmap/tree/master/tamper">sqlmap/tamper/ github</a></li>
+</ul>
+
 <h2 id="利用">利用</h2>
 
 <p>獲取資料表</p>
