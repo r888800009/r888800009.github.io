@@ -6,10 +6,19 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 02 Oct 2019 13:07:33 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 Oct 2019 19:31:07 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stack Smash</title>
+      <link>https://r888800009.github.io/wiki/stack-smash/</link>
+      <pubDate>Wed, 02 Oct 2019 19:31:07 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/stack-smash/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>WAF繞過</title>
