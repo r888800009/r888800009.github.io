@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>[SP]系統程式筆記2 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP]系統程式筆記2</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-09-24 21:49:03 &#43;0800 CST">Tue, 2019 Sep 24</time>
+    </div> 
+    <h2 id="2-1-assembler">2.1 assembler</h2>
+
+<p>將原始程式翻成machine code</p>
+
+<h3 id="assembler-listing-lst-file">assembler listing (LST file)</h3>
+
+<p>獲得相關的地址給出可辨識的列表，進行cross reference。</p>
+
+<ul>
+<li>x86 的<code>org</code>給起始位置</li>
+<li><code>label</code>、<code>symbol</code></li>
+<li>判斷pseudo instruction: 其不會被翻成機器碼</li>
+</ul>
+
+<p><strong>cross reference</strong>: 定義的label與對映的address列表出來。</p>
+
+<p>linux可以透過此指令輸出assembler listing</p>
+
+<pre><code class="language-bash">as -aln example.s | less  
+</code></pre>
+
+<h3 id="obj-file">obj file</h3>
+
+<p>用於loader載入使用</p>
+
+<h3 id="assembler">assembler</h3>
+
+<ul>
+<li><strong>assembler</strong>: 轉換成機器碼之後，將機器碼與symnlolic lables的關聯對映起來。</li>
+<li><strong>disassembler</strong>: 將機器碼轉為組合語言</li>
+<li><strong>cross assembler</strong>: 透過機器A(如x86)組譯出機器B(arm)的機器碼。</li>
+</ul>
+
+<p>可重定位指令: 載入起始點不同需要計算絕對地址，不過<code>call</code>、<code>jmp</code>、<code>LOOP</code>是計算距離不用relocation。</p>
+
+<h2 id="2-2-sic-assembly">2.2 SIC Assembly</h2>
+
+<h3 id="組譯器指引-assembler-directives">組譯器指引 assembler directives</h3>
+
+<ul>
+<li><code>start</code>: 表示address的起始位置</li>
+<li><code>end</code></li>
+<li><code>byte</code></li>
+<li><code>word</code>: SIC佔用3 bytes</li>
+<li><code>resb</code></li>
+<li><code>resw</code></li>
+</ul>
+
+<h3 id="sic-xe與sic差異">SIC/XE與SIC差異</h3>
+
+<ul>
+<li>基底相對定址 (Base relative)</li>
+<li>type 4: 指令前方補上加號</li>
+</ul>
+
+<p><code>disp</code>主要以<code>pc</code>為基準計算</p>
+
+<p>PC Relative無法描述位置，則使用base reg reloaction。</p>
+
+<ul>
+<li><code>,x</code>: index addressing</li>
+</ul>
+
+<h2 id="2-3-80xx-assembly">2.3 80xx assembly</h2>
+
+<p>在翻譯code時，如disp需要以little endian表示</p>
+
+<ul>
+<li><strong>extern pseudo</strong>: 先以<code>0x0000</code>定義外部地址，直到連結載入填上位置。</li>
+<li><strong>loop</strong>: <code>LOOP</code>使用PC加上offset(二補數)</li>
+</ul>
+
+<h2 id="2-4-assembler-algorithm">2.4 Assembler Algorithm</h2>
+
+<h3 id="組譯器演算法">組譯器演算法</h3>
+
+<ol>
+<li>轉譯指令成機器碼</li>
+<li>獲取symbol對映的address</li>
+<li>解決forward reference問題</li>
+<li>處理 pseudo instructions</li>
+<li>產生obj與assembly listing</li>
+</ol>
+
+<h3 id="通用設計程序">通用設計程序</h3>
+
+<ul>
+<li>軟體生命週期
+<ol>
+<li>需求分析</li>
+<li>軟體規格</li>
+<li>軟體設計</li>
+<li>實做</li>
+<li>軟體測試</li>
+<li>支持與維護</li>
+</ol></li>
+<li>軟體設計
+<ol>
+<li>輸出需求/輸入設計</li>
+<li>資料結構/演算法</li>
+<li>將程式模組化</li>
+</ol></li>
+<li>IO設計
+<ol>
+<li>輸出要求: assembly listing, object</li>
+<li>輸入: 組合語言程式碼</li>
+</ol></li>
+<li>資料結構
+<ul>
+<li><strong>OPTAB</strong>: 存放指令與機器碼對應關聯</li>
+<li><strong>SYMTABLE</strong>: 儲存變數與符號的地址</li>
+<li><strong>LOCCTR</strong>: 保存當前處理的指令地址</li>
+</ul></li>
+</ul>
+
+<h3 id="two-passes-assembler">two passes assembler</h3>
+
+<h4 id="pass1">pass1</h4>
+
+<p>主要找出label與addr對應的位置建立SYMTABLE</p>
+
+<ol>
+<li>判斷指令長度(透過OPTAB)</li>
+<li>計算LOCCTR</li>
+<li>將lable的地址保存到SYMTABLE</li>
+<li>處理pseudo instruction</li>
+</ol>
+
+<h4 id="pass2">pass2</h4>
+
+<p>產生obj1. 透過SYMTAB帶入pass1沒有處理的symbol2. 透過OPTABLE產生機器碼3. 計算LOCCTR4. 產生pseudo定義的數據如BYTE, WORD5. 處理pass1未處理的pseudo</p>
+
+<h2 id="2-5-data-structures">2.5 Data Structures</h2>
+
+<h3 id="需求">需求</h3>
+
+<ol>
+<li>輸入程式碼與輸出obj</li>
+<li>輸出assembly reports 與一些message</li>
+<li>LOCCTR</li>
+<li>OPTAB</li>
+<li>SYMTAB: SIC當中的Type用來判斷是絕對地址或相對地址</li>
+<li>其他輔助表LITTAB(literal name table)</li>
+</ol>
+
+<p>literal為常數，但定址方式不為立即定址immediate addressing，例如<code>foo = bar * 35</code>的35為literal</p>
+
+<h2 id="2-6-machine-independent-assembler">2.6 Machine Independent Assembler</h2>
+
+<h3 id="configuration-table">configuration table</h3>
+
+<p>處理forward reference，透過連結串列紀錄有forward reference的位置，保存指令的<strong>loc</strong>到configuration table，直到對應的addr出現之後，將連結串列透過找到的地址取代。</p>
+
+<p>back認為可能透過1 pass的方式處理，而原始程式forward reference的數量有限，大多數都是接受的情況，因此可以透過configuration table處理。在理論上探討，如在worst case情況下可能效果如同Two pass</p>
+
+<ul>
+<li>label定義就放入表中，並且填入機器碼</li>
+<li>指令中label未定義就先用linked list串接。</li>
+</ul>
+
+<h4 id="1-pass是否有辦法解決">1 pass是否有辦法解決</h4>
+
+<ul>
+<li>實務: 可以透過configuration table</li>
+<li>理論: worst case不能解決</li>
+</ul>
+
+<h3 id="程式重定位">程式重定位</h3>
+
+<ul>
+<li>絕對定址: 程式必須載入到特定的地址</li>
+<li>重新定址: 程式必須根據起始位置下去做重定位
+<ol>
+<li>在載入的時候修改地址(Relative Address)</li>
+<li>採用基底暫存器，而不用修改地址。</li>
+</ol></li>
+</ul>
+
+<h3 id="如何解決-relocation">如何解決 relocation</h3>
+
+<ol>
+<li>加入修改紀錄，保存地址相關的變數，保存在修改紀錄檔內，讓載入器可以讀取。</li>
+<li>採用基底暫存器，不用修改地址。</li>
+<li>使用程式計數器，如SIC</li>
+</ol>
+
+<h2 id="assembler概念">Assembler概念</h2>
+
+<ul>
+<li><strong>forward reference</strong>: 使用後定義的label，當下無法得知地址，需要2 pass</li>
+<li><strong>backward reference</strong>: 使用先定義的label</li>
+</ul>
+
+<h2 id="其他基本概念">其他基本概念</h2>
+
+<ul>
+<li><strong>nibble</strong>: 4 bit，為1個16進位數值。</li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/system-program" class="tags">System Program</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
