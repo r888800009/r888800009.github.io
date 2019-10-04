@@ -53,6 +53,25 @@ if (!doNotTrack) {
     </div> 
     <p>格式化字串筆記</p>
 
+<h2 id="檢測">檢測</h2>
+
+<p>透過大量的<code>%s</code>使程式崩潰，用來確認漏洞的存在。</p>
+
+<pre><code class="language-plaintext">%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
+</code></pre>
+
+<h2 id="利用方式">利用方式</h2>
+
+<ul>
+<li>洩漏堆疊</li>
+<li>洩漏任意地址</li>
+<li>覆蓋任意地址
+<ul>
+<li>劫持GOT</li>
+<li>劫持return address</li>
+</ul></li>
+</ul>
+
 <h2 id="利用格式化字串">利用格式化字串</h2>
 
 <h3 id="階段一">階段一</h3>
@@ -89,6 +108,7 @@ if (!doNotTrack) {
 <h2 id="參考">參考</h2>
 
 <ul>
+<li><strong><a href="https://wiki.x10sec.org/pwn/fmtstr/fmtstr_exploit/">格式化字符串漏洞利用</a></strong></li>
 <li><a href="https://ctf101.org/binary-exploitation/what-is-a-format-string-vulnerability/">Format String Vulnerability</a></li>
 <li><a href="http://mars.run/2014/04/Format_String_Exploitation/#0%C3%9702_%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%94%BB%E5%87%BB">Format String Exploitation 格式化字符漏洞</a></li>
 <li><a href="http://www.cplusplus.com/reference/cstdio/printf/">printf</a></li>
