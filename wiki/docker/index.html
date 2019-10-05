@@ -75,6 +75,11 @@ if (!doNotTrack) {
 <pre><code class="language-bash">docker rm 容器ID
 </code></pre>
 
+<p>搜尋image</p>
+
+<pre><code>docker search 名稱
+</code></pre>
+
 <h2 id="作弊表">作弊表</h2>
 
 <h3 id="危險區">危險區</h3>
@@ -82,6 +87,11 @@ if (!doNotTrack) {
 <p>移除所有未開啟的容器，<strong>請確認沒有要保留的容器在使用此指令!!</strong></p>
 
 <pre><code class="language-bash">sudo docker rm $(sudo docker container ls -a | awk '{ if (NR &gt;= 2) { print $1 } }')
+</code></pre>
+
+<p>移除<code>&lt;none&gt;</code>的image</p>
+
+<pre><code class="language-bash">sudo docker image rm $(sudo docker image ls -a | grep '&lt;none&gt;'| awk '{ print $3 }')
 </code></pre>
 
 <h2 id="bash">bash</h2>
