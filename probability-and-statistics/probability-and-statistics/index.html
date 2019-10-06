@@ -51,7 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-27 23:30:11 &#43;0800 CST">Fri, 2019 Sep 27</time>
     </div> 
-    <h2 id="圖形">圖形</h2>
+    <h2 id="1-2-basic-plots-基本圖形">1.2 Basic plots 基本圖形</h2>
 
 <ul>
 <li>折線圖看趨勢</li>
@@ -59,42 +59,9 @@ if (!doNotTrack) {
 <li><a href="/wiki/stem-and-leaf/">莖葉圖</a></li>
 </ul>
 
-<h2 id="統計量">統計量</h2>
-
-<ul>
-<li>$$\mu$$</li>
-<li>$$\sigma$$</li>
-</ul>
-
-<h3 id="一階">一階</h3>
-
-<p>中心</p>
-
-<ul>
-<li>平均值</li>
-<li>中間值</li>
-<li>眾數</li>
-</ul>
-
-<h3 id="二階">二階</h3>
-
-<p>分佈</p>
-
-<ul>
-<li>標準差</li>
-</ul>
-
-<h3 id="三階">三階</h3>
-
-<p>對稱性</p>
-
-<ul>
-<li>偏度</li>
-</ul>
-
 <h2 id="標準化公式">標準化公式</h2>
 
-<p>$$z_i = \frac{x_i-\mu}{\sigma}$$</p>
+<p>\(z_i = \frac{x_i-\mu}{\sigma}\)</p>
 
 <h2 id="統計">統計</h2>
 
@@ -129,42 +96,9 @@ if (!doNotTrack) {
 <li><code>range()</code>: 最大最小值</li>
 </ul>
 
-<h2 id="統計量-1">統計量</h2>
-
-<ul>
-<li>$$\mu$$</li>
-<li>$$\sigma$$</li>
-</ul>
-
-<h3 id="一階-1">一階</h3>
-
-<p>中心</p>
-
-<ul>
-<li>平均值</li>
-<li>中間值</li>
-<li>眾數</li>
-</ul>
-
-<h3 id="二階-1">二階</h3>
-
-<p>分佈</p>
-
-<ul>
-<li>標準差</li>
-</ul>
-
-<h3 id="三階-1">三階</h3>
-
-<p>對稱性</p>
-
-<ul>
-<li>偏度</li>
-</ul>
-
 <h2 id="標準化公式-1">標準化公式</h2>
 
-<p>$$z_i = \frac{x_i-\mu}{\sigma}$$</p>
+<p>\(z_i = \frac{x_i-\mu}{\sigma}\)</p>
 
 <h2 id="統計-1">統計</h2>
 
@@ -199,18 +133,48 @@ if (!doNotTrack) {
 <li><code>range()</code>: 最大最小值</li>
 </ul>
 
-<h2 id="敘述統計">敘述統計</h2>
+<h2 id="1-4-higher-order-statistics">1.4 Higher-order statistics</h2>
+
+<h3 id="統計量">統計量</h3>
 
 <ul>
-<li>mean: $$\bar{x} = \frac{\Sigma x_i}{\mu}$$</li>
-<li>variance(變異數): $$\sigma ^ 2 = \frac{\Sigma (x_i - \bar{x})^2}{N}$$</li>
-<li>standard deviation(標準差): $$\sigma = \sqrt {\frac{\Sigma (x_i - \bar{x})^2}{N}}$$</li>
+<li>\(\mu\)</li>
+
+<li><p>\(\sigma\)</p></li>
+
+<li><p>一階: 中心</p>
+
+<ul>
+<li>平均值</li>
+<li>中間值</li>
+<li>眾數</li>
+</ul></li>
+
+<li><p>二階: 分佈</p>
+
+<ul>
+<li>標準差</li>
+</ul></li>
+
+<li><p>三階: 對稱性</p>
+
+<ul>
+<li>偏度</li>
+</ul></li>
+</ul>
+
+<h2 id="2-1-basic-descriptive-statistics-敘述統計">2.1 Basic Descriptive Statistics 敘述統計</h2>
+
+<ul>
+<li>mean: \(\bar{x} = \frac{\Sigma x_i}{\mu}\)</li>
+<li>variance(變異數): \(\sigma ^ 2 = \frac{\Sigma (x_i - \bar{x})^2}{N}\)</li>
+<li>standard deviation(標準差): \(\sigma = \sqrt {\frac{\Sigma (x_i - \bar{x})^2}{N}}\)</li>
 <li>mad(): median absolute deviation</li>
 <li>boxplot(): 盒鬚圖</li>
 <li>quantile(): 四分位</li>
 <li>fivenum(): min, Q1, Q2, Q3, max</li>
 <li>summary(): 不同於四分位或fivenum()，沒有Q2</li>
-<li>IQR(): $$Q_3 - Q_1$$</li>
+<li>IQR(): \(Q_3 - Q_1\)</li>
 </ul>
 
 <p>根據median為中心看。</p>
@@ -234,6 +198,33 @@ if (!doNotTrack) {
 <li>potential outliers: 大於1.5倍</li>
 <li>suspected outliers: 大於3倍</li>
 </ul>
+
+<h2 id="3-2-probability-space">3.2 Probability Space</h2>
+
+<p>實驗-&gt;樣本空間 \(\Omega= \{ A \}\)</p>
+
+<p>機率空間 \(S = \{S_i\}\)</p>
+
+<p>樣本事件&rdquo;sample event&rdquo;，\(A_i=\{T,H,T\} \rightarrow P_i /8 \)</p>
+
+<p>\(P_i &gt;= 0, \Sigma P_i = 1\)每個\(A_i\)給機率值\(P_i\)給\(S_i=(A_i, P_i)\)</p>
+
+<ul>
+<li>probspace(A, probs=p)機率空間, 給每個事件賦予機率值，形成機率空間\((A_i, P_i)\)</li>
+<li>probspace(A),等機率</li>
+</ul>
+
+<p>實驗的outcome（產出結果）- ELM(等機率模型)</p>
+
+<h3 id="機率子空間">機率子空間</h3>
+
+<p>\(S_2 = \{S: X_1 + X_3 &gt;= 3\}\)</p>
+
+<ul>
+<li>subset ()不是機率空間，沒有機率值(總和不為1</li>
+</ul>
+
+<p>機率為measure (量度,量度恆正),</p>
 
     
       <hr>
