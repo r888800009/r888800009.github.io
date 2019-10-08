@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.58.3" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>Web爬蟲筆記 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,38 +47,36 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/web-crawler/" class="post-link">Web爬蟲筆記</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Web爬蟲筆記</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-10-08 23:48:49 &#43;0800 CST">Tue, 2019 Oct 8</time>
+    </div> 
+    <h2 id="透過libxml2抓取網頁內容">透過libxml2抓取網頁內容</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/dns/" class="post-link">DNS</a></h1>
+<p>下面示範透過<code>libxml2</code>抓取頁面的連結內容以及連結。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/bash/" class="post-link">Bash</a></h1>
+<pre><code class="language-python">import libxml2
+import requests
 
-    <h1><a href="https://r888800009.github.io/wiki/radare2/" class="post-link">Radare2</a></h1>
+# get html
+URL = 'http://example.com/'
+r = requests.get(url = URL)
+print(r.text)
 
-    <h1><a href="https://r888800009.github.io/wiki/kali-linux/" class="post-link">Kali Linux筆記</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/stack-smash/" class="post-link">Stack Smash</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/web-waf-bypass/" class="post-link">WAF繞過</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/web-penetration-testing-tools/" class="post-link">Web滲透測試工具</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/web-security-notes/" class="post-link">Web安全筆記</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-network/" class="post-link">Linux網路</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
+doc = libxml2.htmlParseDoc(r.text, 'utf8')
+for it in doc.xpathEval('//*/a') 
+    print(it.content)
+    print(it.prop('href'))
+</code></pre>
 
     
-    <a href=/page/2/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/python" class="tags">Python</a>
+      
+        <a href="https://r888800009.github.io/tags/web" class="tags">Web</a>
+      
     
-</div>
 
 
             </div>

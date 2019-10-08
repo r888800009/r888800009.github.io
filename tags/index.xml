@@ -6,10 +6,28 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 07 Oct 2019 19:53:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Oct 2019 23:48:49 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python</title>
+      <link>https://r888800009.github.io/tags/python/</link>
+      <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://r888800009.github.io/tags/web/</link>
+      <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/web/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DNS</title>
@@ -98,15 +116,6 @@
       <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/waf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Web</title>
-      <link>https://r888800009.github.io/tags/web/</link>
-      <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/web/</guid>
       <description></description>
     </item>
     
@@ -296,15 +305,6 @@
       <pubDate>Tue, 10 Sep 2019 10:26:29 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/information-security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://r888800009.github.io/tags/python/</link>
-      <pubDate>Fri, 06 Sep 2019 12:42:42 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/python/</guid>
       <description></description>
     </item>
     
