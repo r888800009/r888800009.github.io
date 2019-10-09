@@ -171,9 +171,110 @@ if (!doNotTrack) {
 
 <p>沒cookie使用Set-cookie header line</p>
 
+<h2 id="2-2-5-網頁快取">2.2.5 網頁快取</h2>
+
 <h3 id="proxy">proxy</h3>
 
 <p>網路可以透過proxy做caching，例如區網架設proxy server</p>
+
+<h3 id="get">GET</h3>
+
+<p><code>if-modified-since</code> Header會傳送本地修改的時間，而伺服器會使用此header進行比對，若比對相同則會回傳<code>304 not modified</code>不傳送資料。</p>
+
+<h2 id="2-3-email">2.3 Email</h2>
+
+<h3 id="user-agents">User-agents</h3>
+
+<ul>
+<li>Mail reader, (Outlook)</li>
+<li>Web mail不使用SMTP,而是web</li>
+</ul>
+
+<h3 id="架構-1">架構</h3>
+
+<ul>
+<li>Client: 送Email到server</li>
+<li>Server: 送信mail server互相傳遞</li>
+</ul>
+
+<h3 id="2-3-1-smtp">2.3.1 SMTP</h3>
+
+<p>SMTP只能送mail而<strong>不可收信</strong>(意思是客戶端不可透過SMTP協議進行收信)，採用<strong>TCP端口25</strong>，並且以<strong>7bit的ASCII</strong>傳送，收到的Mail會以<strong>file</strong>的形式保存。</p>
+
+<ul>
+<li>Mail server之間溝通為SMTP</li>
+<li>Client送email可以透過http或SMTP</li>
+<li>收信不能透過SMTP</li>
+</ul>
+
+<h4 id="比較">比較</h4>
+
+<ul>
+<li>http: pull</li>
+<li>SMTP: push</li>
+</ul>
+
+<h3 id="2-3-3-mail-message-formats">2.3.3 mail message formats</h3>
+
+<p>body必須為ASCII(8bit)</p>
+
+<pre><code class="language-plaintext">From: 
+To:
+Subject:
+
+body
+</code></pre>
+
+<h3 id="2-3-4-pop3">2.3.4 POP3</h3>
+
+<p>POP為<strong>Post Office Protocol</strong>的縮寫，支援<strong>認證登入</strong>以及<strong>下載</strong>郵件，而其他郵件存取(Mail access)可以透過IMAP或WEB client(HTTP)。</p>
+
+<h4 id="transaction-phase">Transaction phase</h4>
+
+<p>協議中與伺服器溝通的語法。</p>
+
+<ul>
+<li><code>list</code>: 回傳id與size</li>
+<li><code>retr</code>: 郵件檢索</li>
+<li><code>dele</code>: 刪除</li>
+<li><code>quit</code>: 離開</li>
+</ul>
+
+<p>更多的指令可以<a href="https://tools.ietf.org/html/rfc1939#page-8">參見</a></p>
+
+<h3 id="2-4-dns">2.4 DNS</h3>
+
+<p>為分散式架構，用於<strong>分散流量</strong>、<strong>延遲</strong>與<strong>管理</strong>，為應用層上的協議。</p>
+
+<h4 id="問題">問題</h4>
+
+<ul>
+<li>集中式儲存與距離問題(Distant Centralized Database)</li>
+<li>伺服器維護管理(maintenance) 尺度(scale)過大</li>
+</ul>
+
+<h4 id="功能">功能</h4>
+
+<ul>
+<li>主機別名(Host aliasing): 如<code>A</code>紀錄</li>
+<li>郵件伺服器別名(Mail server aliasing): <code>MX</code>紀錄可以避免單一郵件伺服器離線時導致郵件無法送出</li>
+<li>負載分散(load distribution)</li>
+</ul>
+
+<h4 id="管轄">管轄</h4>
+
+<ul>
+<li>TLD(top-level): 頂級網域</li>
+<li>authoritative DNS servers: 擁有相關的record</li>
+<li>local DNS server: 如路由器上面的DNS</li>
+</ul>
+
+<h4 id="查詢方式">查詢方式</h4>
+
+<ul>
+<li>iterated query: 通過同一台DNS伺服器下去查詢其他DNS伺服器</li>
+<li>recursive query: 透過多台DNS串連查詢</li>
+</ul>
 
     
       <hr>
