@@ -96,6 +96,14 @@ RELRO     : Partial
 objdump -s -j .text ./a.out
 </code></pre>
 
+<h3 id="pwntools">pwntools</h3>
+
+<p>構造一個<code>echo</code>的shellcode</p>
+
+<pre><code class="language-python">from pwnlib import shellcraft
+shellcraft.echo('hello world!')
+</code></pre>
+
 <h2 id="概念">概念</h2>
 
 <ul>

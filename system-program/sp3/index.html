@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>GDB | r809&#39;s Notes</title>
+<title>[SP]系統程式筆記3 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,66 +47,72 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">GDB</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP]系統程式筆記3</a></h1>
 <div id="content"><div class="date"> 
-        <time datetime="2019-08-29 02:03:01 &#43;0800 CST">Thu, 2019 Aug 29</time>
+        <time datetime="2019-10-10 19:57:27 &#43;0800 CST">Thu, 2019 Oct 10</time>
     </div> 
-    <p>存放gdb筆記</p>
+    <h2 id="3-1-introduction">3.1 Introduction</h2>
 
-<h2 id="工具">工具</h2>
-
-<ul>
-<li><a href="https://github.com/longld/peda">gdb-peda</a></li>
-<li><a href="https://www.gdbgui.com/">gdbgui</a></li>
-</ul>
-
-<h2 id="指令">指令</h2>
+<h3 id="loader四大功能">loader四大功能</h3>
 
 <ul>
-<li><code>finish</code>: 完成當前的函數之後停止</li>
-<li><code>b</code>: 設立中斷點</li>
-<li><code>c</code>: 持續執行到中斷點</li>
+<li>allocation: 分配記憶體給程式</li>
+<li>Linking: 處理external reference，重新解決<strong>符號參考(symbolic reference)</strong></li>
+<li>relocation: 調整 <strong>address-dependent</strong>，進行relocation調整</li>
+<li>Loading:  將程式指令與資料放入記憶體</li>
 </ul>
 
-<p>中斷點使用範例，在特定地址中斷</p>
+<h3 id="linkage-editor">Linkage Editor</h3>
 
-<pre><code class="language-plaintext">b *0x12345678
+<p>行為</p>
+
+<pre><code class="language-plaintext">obj and library -&gt; linkage Editor -&gt; Linked Program (disk file)
 </code></pre>
 
-<h2 id="傳入參數執行">傳入參數執行</h2>
+<p>載入程式</p>
 
-<pre><code>run arg1 arg2 arg3...
-run $(printf &quot;123&quot;)123
-run $(shell)
+<pre><code class="language-plaintext">Linked Program -&gt; Relocation Loader -&gt; Memory
 </code></pre>
 
-<h2 id="gdb界面">gdb界面</h2>
+<h3 id="linking-loader">Linking Loader</h3>
+
+<p>連結載入器直接連結obj file並載入記憶體執行</p>
+
+<pre><code class="language-plaintext">obj and library -&gt; linking Loader  -&gt; Memory
+</code></pre>
+
+<h2 id="3-2-absolute-loader">3.2 absolute Loader</h2>
+
+<p>載入程式時，會將程式擺放到固定的主記憶體絕對位置</p>
+
+<h3 id="四大功能分配">四大功能分配</h3>
+
+<p>absolute loader只做loading不做linking與relocation</p>
 
 <ul>
-<li>Emacs GDB</li>
-<li><a href="http://cgdb.github.io/">cgdb</a></li>
+<li>Loader: loader</li>
+<li>programmer: Allocation, Linking</li>
+<li>assembler: relocation</li>
 </ul>
 
-<h3 id="參考">參考</h3>
+<h3 id="啟動載入器-bootstrap-loader">啟動載入器(Bootstrap Loader)</h3>
 
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/32843449">终端调试哪家强？</a></li>
-</ul>
+<p>載入kernal載入到絕對記憶體位置，如BIOS</p>
+
+<p>流程</p>
+
+<ol>
+<li>開機產生啟動中斷</li>
+<li>PC指向Bootstrap Loader的起始位置</li>
+<li>Bootstrap Loader將kernal載入到主記憶體</li>
+<li>轉交控制權給os</li>
+<li>轉交command Interpreter, shell</li>
+</ol>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/c" class="tags">C</a>
-      
-        <a href="https://r888800009.github.io/tags/c&#43;&#43;" class="tags">C&#43;&#43;</a>
-      
-        <a href="https://r888800009.github.io/tags/debug" class="tags">Debug</a>
-      
-        <a href="https://r888800009.github.io/tags/debugger" class="tags">Debugger</a>
-      
-        <a href="https://r888800009.github.io/tags/gdb" class="tags">gdb</a>
-      
-        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+        <a href="https://r888800009.github.io/tags/system-program" class="tags">System Program</a>
       
     
 
