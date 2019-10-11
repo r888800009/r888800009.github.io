@@ -237,6 +237,67 @@ if (!doNotTrack) {
 <li>使用程式計數器，如SIC</li>
 </ol>
 
+<h2 id="2-7-separate-assemble-and-relocation">2.7 Separate assemble and relocation</h2>
+
+<h3 id="sic-obj紀錄">SIC obj紀錄</h3>
+
+<p>下面以偽代碼表示結構</p>
+
+<ul>
+<li><p>H: 程式頭</p>
+
+<pre><code class="language-plaintext">byte H, nameLen[2], name[11], programSize[4];
+</code></pre></li>
+
+<li><p>T: 機器碼片段</p>
+
+<pre><code class="language-plaintext">byte T, codeStartAddr[4], codeSize[2], code[65];
+</code></pre></li>
+
+<li><p>E: 結束程式</p>
+
+<pre><code class="language-plaintext">byte E, programeStartAddr[4];
+</code></pre></li>
+
+<li><p>M: 重定位資訊，主要用於relocation以及外部參考。</p>
+
+<pre><code class="language-plaintext">byte M, [4], 修訂碼, 外部參考名稱[8]
+// 修訂碼 +-此變數的位置，為program relocation
+// &amp;為與此變數相對位置，因為linking無法算出offset，必須在linking才能處理
+</code></pre></li>
+
+<li><p>R: 外部參考</p>
+
+<pre><code class="language-plaintext">byte R, name[71];
+</code></pre></li>
+
+<li><p>D: 可參考變數</p>
+
+<pre><code class="language-plaintext">byte D, varName[8], varAddr[4], repeat[59];
+// varAddr通常為相對地址
+// repeat: varName and varAddr
+</code></pre></li>
+</ul>
+
+<h3 id="外部參考與內部參考">外部參考與內部參考</h3>
+
+<p>External reference定義在不同function，internal reference定義在相同的function，External definition在function當中定義的symbols，並且其他function有機會使用該symbols</p>
+
+<ul>
+<li>EXTRN: 產生R紀錄(External reference)</li>
+<li>PUBLIC: 產生D紀錄(External definition)</li>
+</ul>
+
+<h3 id="程式重定位-1">程式重定位</h3>
+
+<p>program relocation與linking需要透過linker/loader處理</p>
+
+<ul>
+<li>define recordL 可參考變數</li>
+<li>refer record: 外部參考</li>
+<li>modification record: 修改紀錄</li>
+</ul>
+
 <h2 id="assembler概念">Assembler概念</h2>
 
 <ul>

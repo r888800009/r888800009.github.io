@@ -203,6 +203,8 @@ if (!doNotTrack) {
 <li>TDM單一時間一個資料</li>
 </ul>
 
+<p><strong>計算circuit swirching過載的機率可以透過二項式分佈得出</strong>$$\binom{n}{k}p^k(1-p)^{n-k}$$</p>
+
 <h3 id="比較兩者">比較兩者</h3>
 
 <ul>
@@ -236,7 +238,15 @@ if (!doNotTrack) {
 <p>Packet-Switched網路延遲的公式</p>
 
 <pre><code>d_nodal = d_proc + d_queue + d_trans + d_prop
+
+d_prop = d/s
+d_trans = L/R
 </code></pre>
+
+<ul>
+<li><code>d_prop</code>: 路線延遲</li>
+<li><code>d_trians</code>: 路由器延遲</li>
+</ul>
 
 <p>LN/R</p>
 
