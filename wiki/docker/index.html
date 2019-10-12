@@ -80,6 +80,11 @@ if (!doNotTrack) {
 <pre><code>docker search 名稱
 </code></pre>
 
+<p>獲取容器地址，<a href="https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host">出處</a></p>
+
+<pre><code class="language-bash">docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 容器名稱
+</code></pre>
+
 <h2 id="作弊表">作弊表</h2>
 
 <h3 id="危險區">危險區</h3>

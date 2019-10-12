@@ -6,10 +6,19 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 11 Oct 2019 20:25:23 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2019 19:21:25 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://r888800009.github.io/wiki/mysql/</link>
+      <pubDate>Sat, 12 Oct 2019 19:21:25 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/mysql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>[SP]系統程式參考資料列表</title>
