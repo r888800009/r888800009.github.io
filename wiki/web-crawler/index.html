@@ -69,6 +69,35 @@ for it in doc.xpathEval('//*/a')
     print(it.prop('href'))
 </code></pre>
 
+<h2 id="透過beautifulsoup">透過beautifulsoup</h2>
+
+<p>安裝</p>
+
+<pre><code class="language-bash">pip install beautifulsoup4
+</code></pre>
+
+<p>安裝在家目錄</p>
+
+<pre><code class="language-bash">pip install beautifulsoup4 --user  
+</code></pre>
+
+<p>抓取並且剖析，以下以列出<code>href</code>為範例</p>
+
+<pre><code class="language-python">import requests
+from bs4 import BeautifulSoup
+
+# get html
+URL = 'http://example.com/'
+r = requests.get(url = URL)
+print(r.text)
+
+soup = BeautifulSoup(r.text, 'html.parser')
+
+# get all link
+for tag in soup.find_all('a'):
+  print(tag.get('href'))
+</code></pre>
+
     
       <hr>
       

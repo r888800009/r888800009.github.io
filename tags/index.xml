@@ -6,10 +6,28 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 12 Oct 2019 19:21:25 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2019 21:21:52 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fuzz</title>
+      <link>https://r888800009.github.io/tags/fuzz/</link>
+      <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/fuzz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://r888800009.github.io/tags/python/</link>
+      <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DBMS</title>
@@ -44,15 +62,6 @@
       <pubDate>Fri, 11 Oct 2019 20:25:23 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/system-program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://r888800009.github.io/tags/python/</link>
-      <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/python/</guid>
       <description></description>
     </item>
     

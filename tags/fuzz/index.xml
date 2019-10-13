@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fuzz on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/fuzz/</link>
+    <description>Recent content in Fuzz on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 13 Oct 2019 21:21:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/fuzz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python 模糊搜尋</title>
+      <link>https://r888800009.github.io/wiki/python-fuzz/</link>
+      <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/python-fuzz/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

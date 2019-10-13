@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Wikis | r809&#39;s Notes</title>
+<title>python 模糊搜尋 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,23 +47,46 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Wikis</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/hugo-template/" class="post-link">Hugo模板的一些配置</a></h1><p>存放一些<code>hugo</code>配置版模會用到的筆記，非模板內容參見<a href="/wiki/hugo/">hugo</a>。</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">python 模糊搜尋</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-10-13 21:21:52 &#43;0800 CST">Sun, 2019 Oct 13</time>
+    </div> 
+    <h2 id="安裝fuzzywuzzy">安裝fuzzywuzzy</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/ghidra-note/" class="post-link">Ghidra</a></h1><p><code>Ghidra</code>為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，<a href="https://ghidra-sre.org/">官方網站</a>以及GitHub <a href="https://github.com/NationalSecurityAgency/Ghidra">repo</a>位址。</p>
+<p>fuzzywuzzy，<a href="https://github.com/seatgeek/fuzzywuzzy">github</a>，並且使用下列命令安裝</p>
 
+<pre><code class="language-bash">pip install fuzzywuzzy
+</code></pre>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<p>對使用者安裝</p>
+
+<pre><code class="language-bash">pip install fuzzywuzzy --user
+</code></pre>
+
+<p>比較兩個字串差異，並且輸出相似度</p>
+
+<pre><code class="language-python">from fuzzywuzzy import fuzz
+fuzz.ratio('測試文字', '文字')
+</code></pre>
+
+<p>根據相似度來排列並且輸出字串</p>
+
+<pre><code class="language-python">from fuzzywuzzy import process
+
+list = ['美國總統', '國防部部長', '測試文字', '文字', '中文', '字母']
+rank = process.extract('文字', list)
+for row in rank:
+    print(row)
+</code></pre>
+
     
-    <a href=/wiki/page/4/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/python" class="tags">Python</a>
+      
+        <a href="https://r888800009.github.io/tags/fuzz" class="tags">Fuzz</a>
+      
     
-
-    
-</div>
-
 
 
             </div>
