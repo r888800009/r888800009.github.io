@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.58.3" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>詞法分析 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,61 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/network/network/" class="post-link">[計網]電腦網路與網際網路</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">詞法分析</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-10-14 19:10:49 &#43;0800 CST">Mon, 2019 Oct 14</time>
+    </div> 
+    <h2 id="實做詞法分析">實做詞法分析</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/stem-and-leaf/" class="post-link">莖葉圖</a></h1>
+<ul>
+<li>有限狀態機</li>
+<li>正則</li>
+<li>lex</li>
+</ul>
 
-    <h1><a href="https://r888800009.github.io/system-program/sp/" class="post-link">[SP]系統程式</a></h1>
+<h2 id="組合語言詞法分析">組合語言詞法分析</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/fuzzing/" class="post-link">Fuzzing</a></h1>
+<ul>
+<li>Token table
+<ul>
+<li>Delimiter</li>
+<li>Instruction</li>
+<li>Register</li>
+<li>Pseudo instructions</li>
+</ul></li>
+<li><code>(type, value)</code></li>
+</ul>
 
-    <h1><a href="https://r888800009.github.io/wiki/grep/" class="post-link">Grep</a></h1>
+<h2 id="flex">flex</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/gdbgui/" class="post-link">gdbgui</a></h1>
+<p>安裝</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/debug/" class="post-link">除錯</a></h1>
+<pre><code class="language-bash">sudo pacman -S flex
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-vulnerability/" class="post-link">Web網頁漏洞</a></h1>
+<p>使用stdin輸入</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/php/" class="post-link">PHP</a></h1>
+<pre><code class="language-bash">lex
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/git/" class="post-link">Git</a></h1>
+<p>使用檔案輸入</p>
 
+<pre><code class="language-bash">lex file.l
+</code></pre>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<h3 id="常見問題">常見問題</h3>
+
+<p>出現<code>undefined reference to `yywrap'</code>無法編譯</p>
+
+<pre><code class="language-plaintext">%option noyywrap
+</code></pre>
+
     
-    <a href=/page/2/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/system-program" class="tags">System Program</a>
+      
     
-
-    
-    <a href=/page/4/>
-       &#x3E;
-    </a>
-    
-</div>
 
 
             </div>

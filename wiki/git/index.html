@@ -75,6 +75,25 @@ git merge b
 <pre><code class="language-bash">git rebase -i [SHA]
 </code></pre>
 
+<h2 id="模板">模板</h2>
+
+<p>配置模板</p>
+
+<pre><code class="language-bash">git config commit.template filename
+</code></pre>
+
+<p>全域模板</p>
+
+<pre><code class="language-bash">git config --global commit.template filename
+</code></pre>
+
+<p>移除模板</p>
+
+<pre><code class="language-bash">git config --unset commit.template 
+</code></pre>
+
+<p>若把模板檔案移除之後，會導致git無法commit</p>
+
 <h2 id="git-實用工具列表">Git 實用工具列表</h2>
 
 <ul>

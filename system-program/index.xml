@@ -6,10 +6,19 @@
     <description>Recent content in System-programs on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 11 Oct 2019 20:25:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Oct 2019 19:10:49 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/system-program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>詞法分析</title>
+      <link>https://r888800009.github.io/system-program/lexical-analysis/</link>
+      <pubDate>Mon, 14 Oct 2019 19:10:49 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/system-program/lexical-analysis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>[SP]系統程式參考資料列表</title>
