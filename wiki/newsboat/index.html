@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.58.3" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>newsboat終端機RSS訂閱器 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,57 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/git/" class="post-link">Git</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">newsboat終端機RSS訂閱器</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-10-15 21:56:50 &#43;0800 CST">Tue, 2019 Oct 15</time>
+    </div> 
+    <h2 id="安裝">安裝</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/windows-pwn-notes/" class="post-link">Windows Pwn 筆記</a></h1>
+<pre><code class="language-bash">pacman -S newsboat
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/metasploit/" class="post-link">Metasploit</a></h1>
+<p>參見<a href="https://wiki.archlinux.org/index.php/Newsboat">archlinux wiki</a></p>
 
-    <h1><a href="https://r888800009.github.io/wiki/r/" class="post-link">R</a></h1>
+<h2 id="配置">配置</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/gcc/" class="post-link">GCC</a></h1>
+<p>修改配置資料</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/python/" class="post-link">Python</a></h1>
+<pre><code class="language-bash">mkdir ~/.config/newsboat/ 
+vim ~/.config/newsboat/urls
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/format-string-attack/" class="post-link">格式化字串攻擊</a></h1><p>格式化字串筆記</p>
+<p>加入rss並且保存</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/pwn-notes/" class="post-link">pwn常用指令與概念</a></h1><p>pwn常用指令以及概念紀錄</p>
+<pre><code class="language-plaintext">https://magiclen.org/feed/
+https://soroush.secproject.com/blog/feed/
+https://blog.30cm.tw/feeds/posts/default?alt=rss
+https://paper.seebug.org/rss/
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/posts/php-post-get-fpd/" class="post-link">PHP傳入POST與GET導致FPD漏洞</a></h1><p>php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。</p>
+<p>啟動</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/docker/" class="post-link">Docker</a></h1><p>Docker的筆記</p>
+<pre><code class="language-bash">newsboat
+</code></pre>
 
+<p>進入之後看到rss列表，使用<code>R</code>來載入提取RSS</p>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<h2 id="備註">備註</h2>
+
+<ul>
+<li>wordpress: <code>example.com/feed</code></li>
+<li>blogger <code>example.com/feeds/posts/default?alt=rss</code></li>
+</ul>
+
+<p>其他<a href="https://feed.mikle.com/support/category/platforms/">參見</a></p>
+
     
-    <a href=/page/3/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/rss" class="tags">RSS</a>
+      
+        <a href="https://r888800009.github.io/tags/blog" class="tags">Blog</a>
+      
     
-
-    
-    <a href=/page/5/>
-       &#x3E;
-    </a>
-    
-</div>
 
 
             </div>
