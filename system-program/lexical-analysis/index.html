@@ -72,7 +72,7 @@ if (!doNotTrack) {
 <li><code>(type, value)</code></li>
 </ul>
 
-<h2 id="flex">flex</h2>
+<h2 id="lex">lex</h2>
 
 <p>安裝</p>
 
@@ -88,6 +88,25 @@ if (!doNotTrack) {
 
 <pre><code class="language-bash">lex file.l
 </code></pre>
+
+<h3 id="範例程式">範例程式</h3>
+
+<pre><code class="language-plaintext">%option noyywrap
+%%
+[0-9]+ number(yytext);
+%%
+
+void number(char *str){
+  printf(&quot;hello world: %s\n&quot;, str);
+}
+
+int main() {
+  yylex();
+  return 0;
+}
+</code></pre>
+
+<p><a href="https://github.com/r888800009/practice/blob/master/firstLex.l">原始碼</a></p>
 
 <h3 id="常見問題">常見問題</h3>
 

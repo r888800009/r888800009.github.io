@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.58.3" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>Markdown | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,38 +47,62 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/markdown/" class="post-link">Markdown</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Markdown</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-10-16 21:54:50 &#43;0800 CST">Wed, 2019 Oct 16</time>
+    </div> 
+    <h2 id="markdown轉換其他格式">markdown轉換其他格式</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/newsboat/" class="post-link">newsboat終端機RSS訂閱器</a></h1>
+<p>markdown to docx</p>
 
-    <h1><a href="https://r888800009.github.io/system-program/lexical-analysis/" class="post-link">詞法分析</a></h1>
+<pre><code class="language-bash">pandoc README.md -o test.docx  
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/python-fuzz/" class="post-link">python 模糊搜尋</a></h1>
+<p>markdown to html</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/mysql/" class="post-link">MySQL</a></h1>
+<pre><code class="language-bash">pandoc README.md -o test.html
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/system-program/reference/" class="post-link">[SP]系統程式參考資料列表</a></h1>
+<p>參見<a href="https://pandoc.org/demos.html">Pandoc Demos</a></p>
 
-    <h1><a href="https://r888800009.github.io/system-program/sp3/" class="post-link">[SP]系統程式筆記3</a></h1>
+<h2 id="markdown重音符號">markdown重音符號</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-crawler/" class="post-link">Web爬蟲筆記</a></h1>
+<p>重音符號放置</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/dns/" class="post-link">DNS</a></h1>
+<pre><code class="language-plaintext">``test`test``
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/bash/" class="post-link">Bash</a></h1>
+<p>輸出結果為<code>test`test</code></p>
 
+<p>在code block內放置code block</p>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<pre><code class="language-plaintext">```` plaintext
+``` plaintext
+```
+````
+</code></pre>
+
+<p>輸出結果為</p>
+
+<pre><code class="language-plaintext">``` plaintext
+```
+</code></pre>
+
+<p>多個重音符號</p>
+
+<pre><code class="language-plaintext">```test``test```
+</code></pre>
+
+<p>輸出結果為<code>test``test</code></p>
+
+<p>參見<a href="https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-within-in-line-code-in-markdown">How do I escape a backtick ` within in-line code in Markdown?</a></p>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/markdown" class="tags">Markdown</a>
+      
     
-    <a href=/page/2/>
-       &#x3E;
-    </a>
-    
-</div>
 
 
             </div>
