@@ -53,11 +53,19 @@ if (!doNotTrack) {
     </div> 
     <h2 id="pacman">Pacman</h2>
 
-<pre><code># 顯示本地包
-pacman -Qqm
+<p>顯示本地包</p>
 
-# 重新安裝一切
-pacman -Syu $(pacman -Qnq)
+<pre><code class="language-bash">pacman -Qqm
+</code></pre>
+
+<p>重新安裝一切</p>
+
+<pre><code class="language-bash">pacman -Syu $(pacman -Qnq)
+</code></pre>
+
+<p>清理快取</p>
+
+<pre><code class="language-bash">sudo paccache -r
 </code></pre>
 
 <h2 id="java缺少中文字體">java缺少中文字體</h2>

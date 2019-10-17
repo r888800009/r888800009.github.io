@@ -93,7 +93,7 @@
     </item>
     
     <item>
-      <title>Web</title>
+      <title>web</title>
       <link>https://r888800009.github.io/tags/web/</link>
       <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
       
@@ -327,6 +327,15 @@
     </item>
     
     <item>
+      <title>git</title>
+      <link>https://r888800009.github.io/tags/git/</link>
+      <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Version Control</title>
       <link>https://r888800009.github.io/tags/version-control/</link>
       <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
@@ -467,15 +476,6 @@
       <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/virtual-machine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://r888800009.github.io/tags/git/</link>
-      <pubDate>Mon, 26 Aug 2019 20:13:11 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/git/</guid>
       <description></description>
     </item>
     

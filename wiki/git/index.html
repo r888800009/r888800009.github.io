@@ -94,6 +94,15 @@ git merge b
 
 <p>若把模板檔案移除之後，會導致git無法commit</p>
 
+<h2 id="技巧">技巧</h2>
+
+<h3 id="抓取大repo">抓取大repo</h3>
+
+<p>如果要抓取如linux原始碼的大repo(3G左右)僅僅用來編譯，下載速度太慢以及消耗浪費空間，因此採用只抓最後一個commit可以使用<code>--depth 1</code>的方式只抓取最後一個，commit。</p>
+
+<pre><code class="language-bash">git clone --depth 1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+</code></pre>
+
 <h2 id="git-實用工具列表">Git 實用工具列表</h2>
 
 <ul>
@@ -107,6 +116,8 @@ git merge b
         <a href="https://r888800009.github.io/tags/version-control" class="tags">Version Control</a>
       
         <a href="https://r888800009.github.io/tags/tools" class="tags">Tools</a>
+      
+        <a href="https://r888800009.github.io/tags/git" class="tags">Git</a>
       
     
 
