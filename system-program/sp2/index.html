@@ -246,34 +246,34 @@ if (!doNotTrack) {
 <ul>
 <li><p>H: 程式頭</p>
 
-<pre><code class="language-plaintext">byte H, nameLen[2], name[11], programSize[4];
+<pre><code class="language-plaintext">nibble H, nameLen[2], name[11], programSize[4];
 </code></pre></li>
 
 <li><p>T: 機器碼片段</p>
 
-<pre><code class="language-plaintext">byte T, codeStartAddr[4], codeSize[2], code[65];
+<pre><code class="language-plaintext">nibble T, codeStartAddr[4], codeSize[2], code[65];
 </code></pre></li>
 
 <li><p>E: 結束程式</p>
 
-<pre><code class="language-plaintext">byte E, programeStartAddr[4];
+<pre><code class="language-plaintext">nibble E, programeStartAddr[4];
 </code></pre></li>
 
 <li><p>M: 重定位資訊，主要用於relocation以及外部參考。</p>
 
-<pre><code class="language-plaintext">byte M, [4], 修訂碼, 外部參考名稱[8]
+<pre><code class="language-plaintext">nibble M, [4], 修訂碼, 外部參考名稱[8]
 // 修訂碼 +-此變數的位置，為program relocation
 // &amp;為與此變數相對位置，因為linking無法算出offset，必須在linking才能處理
 </code></pre></li>
 
 <li><p>R: 外部參考</p>
 
-<pre><code class="language-plaintext">byte R, name[71];
+<pre><code class="language-plaintext">nibble R, name[71];
 </code></pre></li>
 
 <li><p>D: 可參考變數</p>
 
-<pre><code class="language-plaintext">byte D, varName[8], varAddr[4], repeat[59];
+<pre><code class="language-plaintext">nibble D, varName[8], varAddr[4], repeat[59];
 // varAddr通常為相對地址
 // repeat: varName and varAddr
 </code></pre></li>
