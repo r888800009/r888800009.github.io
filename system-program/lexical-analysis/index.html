@@ -108,9 +108,44 @@ int main() {
 
 <p><a href="https://github.com/r888800009/practice/blob/master/firstLex.l">原始碼</a></p>
 
+<p>範例二</p>
+
+<pre><code class="language-plaintext">digit ([0-9])
+integer ({digit}+)
+keywords int|float|byte|bool|func|return
+delimiter [,()\[\]{}]
+
+%%
+{integer} {
+  printf(&quot;int: %s\n&quot;, yytext);
+}
+
+{delimiter} {
+  printf(&quot;de: %s\n&quot;, yytext);
+}
+
+{keywords} {
+  printf(&quot;keywords: %s\n&quot;, yytext);
+}
+
+%%
+
+int main() {
+  yylex();
+  return 0;
+}
+</code></pre>
+
 <h3 id="常見問題">常見問題</h3>
 
 <p>出現<code>undefined reference to `yywrap'</code>無法編譯</p>
+
+<p>使用<code>flex</code>要連結<code>-lfl</code></p>
+
+<pre><code class="language-plaintext">gcc lex.yy.c -lfl  
+</code></pre>
+
+<p>或採用<code>noyywrap</code></p>
 
 <pre><code class="language-plaintext">%option noyywrap
 </code></pre>
