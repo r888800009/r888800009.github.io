@@ -101,7 +101,7 @@ if (!doNotTrack) {
 
 <p>最後將kernel安裝到特定位置，可以透過grub去啟動他</p>
 
-<pre><code class="language-bash">make install INSTALLKERNEL=/tmp/kernel 
+<pre><code class="language-bash">make install INSTALL_PATH=/tmp/kernel 
 </code></pre>
 
 <h2 id="busybox編譯">busyBox編譯</h2>
@@ -125,6 +125,92 @@ if (!doNotTrack) {
 
 <pre><code class="language-bash">make install 
 </code></pre>
+
+<h2 id="編譯grub">編譯grub</h2>
+
+<p>首先獲取grub</p>
+
+<pre><code class="language-bash">git clone https://git.savannah.gnu.org/git/grub.git
+cd grub
+</code></pre>
+
+<p>編譯grub</p>
+
+<pre><code class="language-bash">PYTHON=python2 ./bootstrap
+./configure --prefix=`pwd`/local
+make
+make check
+make install
+</code></pre>
+
+<p><code>./configure --prefix=`pwd`/local</code>可以使grub安裝`<code>pwd`/local</code></p>
+
+<p>不知道為什麼一直make check fail，改python2和<code>--disable-werror</code>還是fail，如果有人想告訴我原因可以<a href="https://github.com/r888800009/r888800009.github.io/issues/new">開個issue</a></p>
+
+<pre><code class="language-plaintext">FAIL: iso9660_test
+FAIL: tar_test
+FAIL: grub_func_test
+</code></pre>
+
+<h2 id="將grub安裝到image">將grub安裝到image</h2>
+
+<p>建立映像檔</p>
+
+<pre><code class="language-bash">qemu-img create linux.img 1G   
+</code></pre>
+
+<p>將linux.img掛載到loop0，並且設定分割區可開機</p>
+
+<pre><code class="language-bash">sudo losetup -fP linux.img 
+sudo fdisk /dev/loop0
+</code></pre>
+
+<p>檢查是否成功產生分割區</p>
+
+<pre><code class="language-bash">lsblk
+</code></pre>
+
+<p>格式化</p>
+
+<pre><code class="language-bash">sudo mkfs.ext4 /dev/loop0p1 
+sudo mount /dev/loop0p1 /mnt
+</code></pre>
+
+<p>設定權限使得可寫</p>
+
+<pre><code class="language-bash">sudo chown `whoami`:`users` /mnt/  -R 
+</code></pre>
+
+<p>設定device.map</p>
+
+<pre><code class="language-bash">mkdir -p /mnt/boot/grub
+cat &gt; /mnt/boot/grub/device.map &lt;&lt;EOF
+(hd0)  /dev/loop0
+EOF
+</code></pre>
+
+<p>安裝grub到img，<code>./grub-install</code>應該要在編譯好的grub repo裡面，不加上<code>sudo</code>會導致無法讀取<code>loop0p1</code>之類的</p>
+
+<pre><code class="language-bash">sudo ./grub-install --root-directory=/mnt /dev/loop0 --no-floppy --target=i386-pc
+</code></pre>
+
+<p>清理</p>
+
+<pre><code class="language-bash">sudo chown root:root /mnt/ -R
+sudo umount /mnt                                                         
+sudo losetup -d /dev/loop0
+</code></pre>
+
+<p>執行</p>
+
+<pre><code class="language-bash">qemu-system-x86_64 -drive format=raw,file=linux.img 
+</code></pre>
+
+<h3 id="參考">參考</h3>
+
+<ul>
+<li><a href="https://superuser.com/a/526400">https://superuser.com/a/526400</a></li>
+</ul>
 
 <h2 id="參考資料">參考資料</h2>
 
