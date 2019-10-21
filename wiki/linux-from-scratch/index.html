@@ -212,6 +212,52 @@ sudo losetup -d /dev/loop0
 <li><a href="https://superuser.com/a/526400">https://superuser.com/a/526400</a></li>
 </ul>
 
+<h2 id="將kernel放入映像檔並透過grub啟動">將kernel放入映像檔並透過grub啟動</h2>
+
+<p>先掛載根目錄</p>
+
+<pre><code class="language-bash">sudo losetup -fP linux.img
+sudo mount /dev/loop0p1 /mnt
+sudo chown `whoami`:`users` /mnt/ -R
+lsblk
+</code></pre>
+
+<p>安裝內核到image</p>
+
+<pre><code class="language-bash">make modules_install INSTALL_MOD_PATH=/mnt  
+make install INSTALL_PATH=/mnt/boot 
+</code></pre>
+
+<p>配置grub</p>
+
+<pre><code class="language-bash">cat &gt; /mnt/boot/grub/grub.cfg &lt;&lt; &quot;EOF&quot;
+# Begin /boot/grub/grub.cfg
+set default=0
+set timeout=5
+
+insmod ext2
+set root=(hd0,1)
+
+menuentry &quot;Linux&quot; {
+        linux   /boot/vmlinuz root=/dev/sda1 rw
+}
+EOF
+</code></pre>
+
+<p>參考<a href="http://www.linuxfromscratch.org/lfs/view/development/chapter08/grub.html">LFS grub</a></p>
+
+<p>清理</p>
+
+<pre><code class="language-bash">sudo chown root:root /mnt/ -R
+sudo umount /mnt                                                         
+sudo losetup -d /dev/loop0
+</code></pre>
+
+<p>執行</p>
+
+<pre><code class="language-bash">qemu-system-x86_64 -drive format=raw,file=linux.img
+</code></pre>
+
 <h2 id="參考資料">參考資料</h2>
 
 <h3 id="kernel-1">kernel</h3>
