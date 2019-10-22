@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on r809&#39;s Notes</title>
@@ -6,10 +6,19 @@
     <description>Recent content in C&#43;&#43; on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 15 Sep 2019 11:33:06 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2019 21:55:44 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>各種程式坑集合</title>
+      <link>https://r888800009.github.io/wiki/bug/</link>
+      <pubDate>Tue, 22 Oct 2019 21:55:44 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/bug/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>gdbgui</title>

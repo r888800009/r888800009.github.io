@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.59.0" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>各種程式坑集合 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,35 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/url-obfuscation/" class="post-link">URL Obfuscation</a></h1><p>混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">各種程式坑集合</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-10-22 21:55:44 &#43;0800 CST">Tue, 2019 Oct 22</time>
+    </div> 
+    <h2 id="c">C++</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/gdb/" class="post-link">GDB</a></h1><p>存放gdb筆記</p>
+<h3 id="隱式類型轉換bug">隱式類型轉換bug</h3>
 
-    <h1><a href="https://r888800009.github.io/wiki/django/" class="post-link">Django</a></h1><p>紀錄Django安裝、新增專案以及使用方式等。</p>
+<p><code>vector.size()</code> is unsigend int</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-fingerprint/" class="post-link">辨識Web伺服與應用程式</a></h1><p>辨識Web伺服器或應用程式的方法。</p>
+<h4 id="發生情況">發生情況</h4>
 
-    <h1><a href="https://r888800009.github.io/wiki/secure-shell/" class="post-link">Secure Shell</a></h1><p>SSH筆記</p>
+<pre><code class="language-c++">  // vector is empty
+  int i = 4;
+  if (0 &lt;= i &amp;&amp; i &lt;= vector.size() - 1)
+    cout &lt;&lt; vector.size() &lt;&lt; endl;
+  cout &lt;&lt; i &lt;&lt; endl;
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/qemu/" class="post-link">Qemu</a></h1><p>QEMU常用參數紀錄</p>
+<h3 id="其他問題">其他問題</h3>
 
-    <h1><a href="https://r888800009.github.io/posts/from-gitea-to-github/" class="post-link">Gitea搬到Github</a></h1><p>紀錄一下，從Gitea搬移檔案到GitHub</p>
-
-    <h1><a href="https://r888800009.github.io/posts/heroku-setup-with-flask/" class="post-link">Heroku Setup With Flask</a></h1><p>heroku設定紀錄，透過範例檔案修改成自己的程式。</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/sqlmap/" class="post-link">Sqlmap</a></h1>
-
-    <h1><a href="https://r888800009.github.io/posts/leetcode-practice-7/" class="post-link">Leetcode刷題筆記7</a></h1><p>繼續解leetcode保持進度，有幾題是之前解過類似類型的題目。</p>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/page/5/>
-      &#x3C;
-    </a>
-    
+<p>在宣告class盡量不要使用字串以免型別有問題</p>
 
     
-    <a href=/page/7/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/c&#43;&#43;" class="tags">C&#43;&#43;</a>
+      
     
-</div>
 
 
             </div>
