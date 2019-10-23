@@ -6,10 +6,19 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 22 Oct 2019 21:55:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 21:28:53 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WebAuthn</title>
+      <link>https://r888800009.github.io/wiki/web-authn/</link>
+      <pubDate>Wed, 23 Oct 2019 21:28:53 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/web-authn/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>各種程式坑集合</title>
