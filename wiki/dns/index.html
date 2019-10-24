@@ -99,6 +99,20 @@ if (!doNotTrack) {
 
 <p>參見<a href="https://hub.docker.com/r/sameersbn/bind/">sameersbn/bind</a></p>
 
+<h2 id="nslookup-查詢各種紀錄">nslookup 查詢各種紀錄</h2>
+
+<p>注意參數順序</p>
+
+<pre><code class="language-bash">nslookup -type=NS google.com
+nslookup -type=A google.com
+nslookup -type=MX google.com 
+</code></pre>
+
+<h2 id="dig查詢dns">dig查詢DNS</h2>
+
+<pre><code class="language-bash">dig +norecurse @ns2.google.com any google.com 
+</code></pre>
+
 <h2 id="參考">參考</h2>
 
 <ul>
