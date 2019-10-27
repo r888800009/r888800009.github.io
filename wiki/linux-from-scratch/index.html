@@ -258,6 +258,52 @@ sudo losetup -d /dev/loop0
 <pre><code class="language-bash">qemu-system-x86_64 -drive format=raw,file=linux.img
 </code></pre>
 
+<h2 id="透過內核掛載root並且啟動busybox">透過內核掛載root並且啟動busybox</h2>
+
+<p>先掛載根目錄</p>
+
+<pre><code class="language-bash">sudo losetup -fP linux.img
+sudo mount /dev/loop0p1 /mnt
+sudo chown `whoami`:`users` /mnt/ -R 
+</code></pre>
+
+<p>設定fstab</p>
+
+<pre><code class="language-bash">mkdir -p /mnt/etc
+mkdir -p /mnt/dev
+cat &gt; /mnt/etc/fstab &lt;&lt; &quot;EOF&quot;
+# file system  mount-point  type     options             dump  fsck
+#                                                              order
+
+/dev/sda1     /            ext4    defaults            1     1
+devtmpfs       /dev         devtmpfs mode=0755,nosuid    0     0
+EOF
+</code></pre>
+
+<p>busybox安裝</p>
+
+<pre><code class="language-bash">cd busybox
+make install CONFIG_PREFIX=/mnt/
+</code></pre>
+
+<p>清理</p>
+
+<pre><code class="language-bash">sudo chown root:root /mnt/ -R
+sudo umount /mnt                                                         
+sudo losetup -d /dev/loop0
+</code></pre>
+
+<p>執行</p>
+
+<pre><code class="language-bash">qemu-system-x86_64 -drive format=raw,file=linux.img
+</code></pre>
+
+<p>參見<a href="http://www.linuxfromscratch.org/lfs/view/development/chapter08/fstab.html">LFS fstab</a></p>
+
+<h3 id="修復-no-such-device-tty2-tty3-tty4">修復 No such device tty2, tty3, tty4</h3>
+
+<p>請確定<code>/mnt/dev</code>存在<del>並且fstab擁有devtmpfs</del>(存疑)</p>
+
 <h2 id="參考資料">參考資料</h2>
 
 <h3 id="kernel-1">kernel</h3>
