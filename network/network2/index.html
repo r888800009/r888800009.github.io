@@ -242,18 +242,20 @@ body
 
 <p>更多的指令可以<a href="https://tools.ietf.org/html/rfc1939#page-8">參見</a></p>
 
-<h3 id="2-4-dns">2.4 DNS</h3>
+<h2 id="2-4-dns">2.4 DNS</h2>
 
 <p>為分散式架構，用於<strong>分散流量</strong>、<strong>延遲</strong>與<strong>管理</strong>，為應用層上的協議。</p>
 
-<h4 id="問題">問題</h4>
+<p>DNS為應用層，為了擴充性必須是分散式</p>
+
+<h3 id="問題">問題</h3>
 
 <ul>
 <li>集中式儲存與距離問題(Distant Centralized Database)</li>
 <li>伺服器維護管理(maintenance) 尺度(scale)過大</li>
 </ul>
 
-<h4 id="功能">功能</h4>
+<h3 id="功能">功能</h3>
 
 <ul>
 <li>主機別名(Host aliasing): 如<code>A</code>紀錄</li>
@@ -261,7 +263,7 @@ body
 <li>負載分散(load distribution)</li>
 </ul>
 
-<h4 id="管轄">管轄</h4>
+<h3 id="管轄">管轄</h3>
 
 <ul>
 <li>TLD(top-level): 頂級網域</li>
@@ -269,11 +271,54 @@ body
 <li>local DNS server: 如路由器上面的DNS</li>
 </ul>
 
-<h4 id="查詢方式">查詢方式</h4>
+<h3 id="查詢方式">查詢方式</h3>
 
 <ul>
 <li>iterated query: 通過同一台DNS伺服器下去查詢其他DNS伺服器</li>
 <li>recursive query: 透過多台DNS串連查詢</li>
+</ul>
+
+<p>Local DNS server可以支援<strong>迭代</strong>或<strong>遞迴</strong>,但是TLD只支援迭代查詢</p>
+
+<h3 id="參見">參見</h3>
+
+<ul>
+<li><a href="https://tools.ietf.org/html/rfc2136">RFC 2136</a></li>
+</ul>
+
+<h3 id="封包">封包</h3>
+
+<ul>
+<li>identification: 16bit 查詢編號</li>
+<li>flags: query or reply, recursion desired, recursive available, reply is authoritative</li>
+<li>number of questions</li>
+</ul>
+
+<h3 id="威脅攻擊">威脅攻擊</h3>
+
+<ul>
+<li>阻斷式攻擊： root, TLD</li>
+<li>重定向：中間人，DNS詐欺poisoning</li>
+</ul>
+
+<h2 id="p2p-2-5">p2p 2.5</h2>
+
+<p>沒有 always on server</p>
+
+<p>範例： BitTorrent, VoIP, streaming</p>
+
+<h2 id="2-6-videos-streaming-and-content-distribution-networks-cdns">2.6 videos streaming and content distribution networks (CDNs)</h2>
+
+<ul>
+<li>DASH: dynamic, adaptive streaming over Http</li>
+<li>CDNs,各地資料中心擺放server, 透過DNS server分配server,可能透過查詢者的ip找到比較接近的伺服器</li>
+</ul>
+
+<h3 id="cdn">CDN</h3>
+
+<ul>
+<li>enter deep: 透過在全球各地ISP佈署群集，減少連接數、延遲、吞吐量</li>
+<li>bring home: 放在ISP共通連線的位置，如IXP以降低維護成本，相對的延遲可能會比較高。</li>
 </ul>
 
     
