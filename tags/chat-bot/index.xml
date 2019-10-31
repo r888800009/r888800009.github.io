@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chat Bot on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/chat-bot/</link>
+    <description>Recent content in Chat Bot on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 31 Oct 2019 22:57:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/chat-bot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Line Bot</title>
+      <link>https://r888800009.github.io/wiki/line-bot/</link>
+      <pubDate>Thu, 31 Oct 2019 22:57:26 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/line-bot/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
