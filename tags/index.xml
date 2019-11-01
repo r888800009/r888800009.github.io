@@ -6,10 +6,19 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 31 Oct 2019 22:57:26 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Nov 2019 21:48:55 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python</title>
+      <link>https://r888800009.github.io/tags/python/</link>
+      <pubDate>Fri, 01 Nov 2019 21:48:55 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Chat Bot</title>
@@ -125,15 +134,6 @@
       <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/fuzz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://r888800009.github.io/tags/python/</link>
-      <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/python/</guid>
       <description></description>
     </item>
     

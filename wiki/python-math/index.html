@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Python | r809&#39;s Notes</title>
+<title>Python數學運算與科學運算 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,25 +47,70 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Python</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/python-math/" class="post-link">Python數學運算與科學運算</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Python數學運算與科學運算</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-11-01 21:48:55 &#43;0800 CST">Fri, 2019 Nov 1</time>
+    </div> 
+    <h2 id="常見套件">常見套件</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/python-fuzz/" class="post-link">python 模糊搜尋</a></h1>
+<ul>
+<li>numpy</li>
+<li>matplotlib</li>
+<li>scipy</li>
+</ul>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-crawler/" class="post-link">Web爬蟲筆記</a></h1>
+<h2 id="安裝">安裝</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/python/" class="post-link">Python</a></h1>
+<p>archlinux安裝上面所提到的套件套件</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/django/" class="post-link">Django</a></h1><p>紀錄Django安裝、新增專案以及使用方式等。</p>
+<pre><code class="language-bash">sudo pacman -S python-scipy python-numpy python-matplotlib
+</code></pre>
 
+<h2 id="numpy使用">Numpy使用</h2>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
+<p>匯入<code>numpy</code></p>
+
+<pre><code class="language-python">import numpy as np
+</code></pre>
+
+<p>關於常用的數學函數參見<a href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">numpy的數學函式表</a></p>
+
+<p>定義陣列並且運算，numpy的陣列可以相加或相乘內容，不同於python本身的陣列只是將兩個陣列合而為一。</p>
+
+<pre><code class="language-python">x1 = np.array([1,2,3,4])
+x2 = np.array([1,2,3,4])
+x1 + x2
+x1 * x2
+</code></pre>
+
+<p>二維矩陣相乘</p>
+
+<pre><code class="language-python">x1 = np.array([[2,5],[-1,4]])
+x2 = np.array([[0, -2, 0],[1,-3,6]])
+x1.dot(x2)
+</code></pre>
+
+<p>容易混淆的部份是數學上的相乘應該使用<code>array.dot(array)</code>的方式使用，而不是<code>array1 * array2</code>，下面這個範例可以看出不同。</p>
+
+<pre><code class="language-python">x1 = np.array([[1,2],[3,4]])
+x2 = np.array([[1,2],[3,4]])
+x1 * x2
+x1.dot(x2)
+</code></pre>
+
+<h2 id="參見">參見</h2>
+
+<ul>
+<li><a href="https://numpy.org/devdocs/">NumPy Documentation</a></li>
+<li><a href="https://matplotlib.org/contents.html">matplotlib doc</a></li>
+</ul>
+
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/python" class="tags">Python</a>
+      
     
-</div>
-
 
 
             </div>
