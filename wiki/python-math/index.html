@@ -56,17 +56,25 @@ if (!doNotTrack) {
 <ul>
 <li>numpy</li>
 <li>matplotlib</li>
+<li>sympy</li>
 <li>scipy</li>
 </ul>
+
+<p>也可以使用<a href="/wiki/r/">R語言</a>替代Python</p>
 
 <h2 id="安裝">安裝</h2>
 
 <p>archlinux安裝上面所提到的套件套件</p>
 
-<pre><code class="language-bash">sudo pacman -S python-scipy python-numpy python-matplotlib
+<pre><code class="language-bash">sudo pacman -S python-scipy python-sympy python-numpy python-matplotlib
 </code></pre>
 
 <h2 id="numpy使用">Numpy使用</h2>
+
+<ul>
+<li>n維矩陣</li>
+<li>平均值、變異數、標準差</li>
+</ul>
 
 <p>匯入<code>numpy</code></p>
 
@@ -96,6 +104,40 @@ x1.dot(x2)
 x2 = np.array([[1,2],[3,4]])
 x1 * x2
 x1.dot(x2)
+</code></pre>
+
+<p>平均值、變異數、標準差</p>
+
+<pre><code class="language-python">x = np.array([1, 2, 3, 4])
+np.mean(x)
+np.var(x)
+np.std(x)
+</code></pre>
+
+<h2 id="sympy">Sympy</h2>
+
+<p>微分積分</p>
+
+<p>導入</p>
+
+<pre><code class="language-python">from sympy import *
+</code></pre>
+
+<p>定義符號</p>
+
+<pre><code class="language-python">x, y, z = symbols('x y z')
+</code></pre>
+
+<p>微分與積分</p>
+
+<pre><code class="language-python">diff(sin(x), x)
+integrate(1/x, x)
+</code></pre>
+
+<p>泰勒級數(任何連續函數都可以用多項式表示)</p>
+
+<pre><code class="language-python">expr = sin(x)
+expr.series(x, 0, 4)
 </code></pre>
 
 <h2 id="參見">參見</h2>
