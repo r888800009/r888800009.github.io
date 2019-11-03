@@ -140,6 +140,38 @@ integrate(1/x, x)
 expr.series(x, 0, 4)
 </code></pre>
 
+<h2 id="matplitlib">Matplitlib</h2>
+
+<p>引用Matplitlib與numpy</p>
+
+<pre><code class="language-python">import matplotlib.pyplot as plt
+import numpy as np
+</code></pre>
+
+<p>畫出圖形，可以利用numpy的<code>linspace()</code>來生成點，區間為<code>0~100</code>並且分成20份</p>
+
+<pre><code class="language-python">x = np.linspace(0, 100, 20)
+y = x ** 2
+plt.plot(x, y)
+</code></pre>
+
+<p>設定圖表參數</p>
+
+<pre><code class="language-python">plt.xlabel('X')
+plt.ylabel('f(x) = y')
+plt.title('This is title')
+</code></pre>
+
+<p>可以加上顯示文字，我們將他放置在20,400的位置</p>
+
+<pre><code class="language-python">plt.text(20,400,'(20, 400)')
+</code></pre>
+
+<p>顯示圖表，可能會發現圖形沒有很精準在數值上，可以把<code>linspace()</code>調整精細</p>
+
+<pre><code class="language-python">plt.show()
+</code></pre>
+
 <h2 id="參見">參見</h2>
 
 <ul>
