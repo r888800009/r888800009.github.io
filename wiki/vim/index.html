@@ -57,12 +57,24 @@ if (!doNotTrack) {
 
 <p>比較差異</p>
 
-<pre><code>vim -d file1 file2
+<pre><code class="language-bash">vim -d file1 file2
 </code></pre>
 
 <p>檔案格式轉換(dos to unix)</p>
 
 <pre><code class="language-plaintext">:set ff=unix
+</code></pre>
+
+<h3 id="遠程編輯">遠程編輯</h3>
+
+<p>透過scp協議編輯遠端檔案</p>
+
+<pre><code class="language-bash">vim scp://user@ssh.example.com/file1.txt
+</code></pre>
+
+<p>在vim開啟遠程檔案</p>
+
+<pre><code class="language-plaintext">:e scp://user@ssh.example.com/file1.txt
 </code></pre>
 
 <h3 id="作為二進位編輯器">作為二進位編輯器</h3>
