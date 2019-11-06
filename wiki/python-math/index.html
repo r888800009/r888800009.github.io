@@ -140,6 +140,22 @@ integrate(1/x, x)
 expr.series(x, 0, 4)
 </code></pre>
 
+<p>解方程式</p>
+
+<pre><code class="language-python">x, y = symbols('x y')
+e1 = 2 * x + y
+e2 = 4 * x + y + 2
+solve([e1, e2], [x, y])
+</code></pre>
+
+<p>代入常數或變數</p>
+
+<pre><code class="language-python">x, y = symbols('x y')
+e1 = 2 * x + y
+e1.evalf(subs ={x: 1, y:2})
+e1.evalf(subs ={x: 1, y:x})
+</code></pre>
+
 <h2 id="matplitlib">Matplitlib</h2>
 
 <p>引用Matplitlib與numpy</p>
