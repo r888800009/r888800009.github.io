@@ -152,9 +152,46 @@ solve([e1, e2], [x, y])
 
 <pre><code class="language-python">x, y = symbols('x y')
 e1 = 2 * x + y
-e1.evalf(subs ={x: 1, y:2})
-e1.evalf(subs ={x: 1, y:x})
+e1.evalf(subs={x: 1, y:2})
+e1.evalf(subs={x: 1, y:x})
 </code></pre>
+
+<h3 id="微分方程式求解">微分方程式求解</h3>
+
+<p>先看我們範例程式</p>
+
+<pre><code class="language-python">x = symbols('x')
+y = symbols('y', cls=Function)
+
+diffeq = Eq(y(x).diff(x) + y(x), 5)
+ans = dsolve(diffeq, y(x))
+print(ans)
+</code></pre>
+
+<p>第一步，宣告自變數<strong>x</strong>與應變數<strong>y</strong></p>
+
+<pre><code class="language-python">x = symbols('x')
+y = symbols('y', cls=Function)
+</code></pre>
+
+<p>第二步，定義微分方程式</p>
+
+<pre><code class="language-python">diffeq = Eq(y(x).diff(x) + y(x), 5)
+</code></pre>
+
+<p>第三步，求解</p>
+
+<pre><code class="language-python">ans = dsolve(diffeq, y(x))
+print(ans)
+</code></pre>
+
+<p>進一步解決IVP，第三步請改成以下的程式碼，表示設定一個初始條件<code>y(0) = 1</code></p>
+
+<pre><code class="language-python">ans = dsolve(diffeq, y(x), ics={y(0): 1})
+print(ans)
+</code></pre>
+
+<p>請參見<a href="https://docs.sympy.org/latest/modules/solvers/ode.html">sympy文檔</a></p>
 
 <h2 id="matplitlib">Matplitlib</h2>
 
