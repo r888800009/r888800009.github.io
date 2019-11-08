@@ -114,6 +114,12 @@ np.var(x)
 np.std(x)
 </code></pre>
 
+<p>求總和，不要和sympy的<code>Sum()</code>搞混</p>
+
+<pre><code class="language-python">a = np.array([1,2,3,4])
+np.sum(a)
+</code></pre>
+
 <h2 id="sympy">Sympy</h2>
 
 <p>微分積分</p>
@@ -155,6 +161,28 @@ e1 = 2 * x + y
 e1.evalf(subs={x: 1, y:2})
 e1.evalf(subs={x: 1, y:x})
 </code></pre>
+
+<h3 id="級數">級數</h3>
+
+<p>我們可以透過sympy來求級數，可以使用<code>Sum()</code>這個指令，切記不要和<code>np.sum()</code>搞混。</p>
+
+<p>可以透過以下方法來求總和，我們求一個<code>1, 2, 3, ..., 10</code>數列總和</p>
+
+<pre><code class="language-python">x = symbols('x')
+f = Sum(x, (x, 0, 10))
+f.doit()
+</code></pre>
+
+<p>在上面我們定義了一個等差級數<code>f</code>，並且透過<code>f.doit()</code>求解，而<code>(x, 0, 10)</code>的<code>0</code>和<code>10</code>代表開始與結尾。</p>
+
+<p>而sympy也可以求出無窮級數，使用<code>oo</code>作為無限，我們定義一個<code>e ^ x</code>的泰勒級數，並且採用<code>doit()</code>來產生<code>e ^ x</code>。</p>
+
+<pre><code class="language-python">x, n = symbols('x n')
+f = Sum(x ** n / factorial(n), (n, 0, oo))
+f.doit()
+</code></pre>
+
+<p>執行之後我們可以看出sympy給出了<code>exp(x)</code></p>
 
 <h3 id="微分方程式求解">微分方程式求解</h3>
 
