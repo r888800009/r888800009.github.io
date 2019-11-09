@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>Linux桌面使用 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Linux桌面使用</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-11-09 16:48:26 &#43;0800 CST">Sat, 2019 Nov 9</time>
+    </div> 
+    <h2 id="選單工具">選單工具</h2>
+
+<ul>
+<li>dmenu</li>
+<li><a href="https://github.com/davatorium/rofi">rofi</a>視窗切換器</li>
+</ul>
+
+<h3 id="rofi">rofi</h3>
+
+<ul>
+<li><code>Shift + Right</code>or<code>Shift + Left</code>切換rofi的模式</li>
+</ul>
+
+<h2 id="平鋪式視窗管理器">平鋪式視窗管理器</h2>
+
+<ul>
+<li><a href="https://github.com/baskerville/bspwm">bspwm</a></li>
+<li>i3-wm</li>
+</ul>
+
+<h3 id="bspwm-指令">bspwm 指令</h3>
+
+<p>交換桌面</p>
+
+<pre><code class="language-bash">bspc desktop --swap \^1 
+</code></pre>
+
+<p>移除桌面</p>
+
+<pre><code class="language-bash">bspc desktop \^6 --remove
+</code></pre>
+
+<p>重新命名桌面</p>
+
+<pre><code class="language-bash">bspc desktop focused --rename newname
+</code></pre>
+
+<p>建立桌面</p>
+
+<pre><code class="language-bash">bspc monitor focused --add-desktops 3321
+</code></pre>
+
+<p>將桌面像前後移動</p>
+
+<pre><code class="language-bash">bspc desktop focused --swap prev 
+</code></pre>
+
+<p>取得當前名稱</p>
+
+<pre><code class="language-bash">bspc query -D -d focused --names 
+</code></pre>
+
+<h2 id="繪圖軟體">繪圖軟體</h2>
+
+<ul>
+<li>Krita</li>
+<li>Gimp</li>
+</ul>
+
+<h2 id="終端emulator">終端emulator</h2>
+
+<ul>
+<li><a href="https://github.com/jwilm/alacritty">alacritty</a> GPU加速終端機</li>
+<li>xterm/uxterm</li>
+<li>urxvt</li>
+<li>termite</li>
+</ul>
+
+<h2 id="linux-字形">Linux 字形</h2>
+
+<p>列出可用的字體</p>
+
+<pre><code class="language-bash">fc-list
+</code></pre>
+
+<h2 id="display-manager">Display Manager</h2>
+
+<h3 id="gdm3-大頭照-profile-picture">gdm3 大頭照(profile picture)</h3>
+
+<p>將圖片放在<code>~/.face</code>。</p>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
