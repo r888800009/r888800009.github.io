@@ -59,15 +59,15 @@ if (!doNotTrack) {
 -&gt; machine code
 </code></pre>
 
-<h2 id="lexical-analysis">Lexical Analysis</h2>
+<h3 id="lexical-analysis">Lexical Analysis</h3>
 
 <p>lexical analyzer (Scanner)同一時間內只讀入<strong>一個char</strong>，產生的<strong>最小單位</strong>稱為<strong>token</strong>(type, value)。</p>
 
-<h2 id="syntax-analysis">syntax analysis</h2>
+<h3 id="syntax-analysis">Syntax Analysis</h3>
 
 <p>syntax analyzer (Parser)，文法合法的statements，透過建樹確定文法是否合法，如果能建樹代表符合文法，可以從樹根或樹葉建樹兩個方向皆可。</p>
 
-<h2 id="intermediate-code-generation">intermediate code generation</h2>
+<h3 id="intermediate-code-generation">Intermediate Code Generation</h3>
 
 <p>three address code:</p>
 
@@ -78,7 +78,7 @@ if (!doNotTrack) {
 
 <p>分解statements成多個three address code文法樹的形成引導中間碼(three address code)產生</p>
 
-<h2 id="code-optimization">code optimization</h2>
+<h3 id="code-optimization">Code Optimization</h3>
 
 <p>對<strong>中間碼</strong>與<strong>機器碼</strong>優化，使obj速度更快，並且花費更少空間</p>
 
@@ -86,13 +86,63 @@ if (!doNotTrack) {
 
 <p><code>i++</code>與<code>i = i + 1</code>的速度有待商榷，而現代編譯器大多有優化的功能。</p>
 
-<h2 id="code-generation">code generation</h2>
+<h3 id="code-generation">Code Generation</h3>
 
 <p>如何最佳化暫存器使用，之後產生機器碼之後進行機器碼最佳化</p>
 
-<h2 id="table-management-and-error-handling">table management and error handling</h2>
+<h3 id="table-management-and-error-handling">Table Management And Error Handling</h3>
 
 <p>token, symbol table等建置，編譯器五大功能(或6個 在機器碼進行優化)都做一次，將多個功能合併並可以透過2pass處理，問題是forward reference</p>
+
+<h2 id="5-2-grammar">5.2 Grammar</h2>
+
+<h3 id="文法">文法</h3>
+
+<p>Backus–Naur form Grammar</p>
+
+<pre><code class="language-plaintext">&lt;cond&gt; ::= &lt;cond&gt; * &lt;cond&gt; | &lt;cond&gt; / &lt;cond&gt;
+</code></pre>
+
+<p>terminal symbol (token)non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
+
+<p>將輸入的內容分解non-terminal symbol直到成為terminal symbol (文法批配token)</p>
+
+<h3 id="parse-tree-syntex-tree">Parse Tree (Syntex Tree)</h3>
+
+<ul>
+<li>Precedence: 不同運算子優先順序(*/的優先級大於+-)</li>
+<li>Associativity: 相同運算子，左右方向(<code>=</code>、<code>**</code>(平方)要由右自左，一般的四則運算由左自右)</li>
+</ul>
+
+<h3 id="ambiguous-grammar">Ambiguous Grammar</h3>
+
+<p>混搖不清的文法，相同token可以產生多種不同的parse tree。</p>
+
+<pre><code class="language-plaintext">id - id + id
+((id - id) + id)
+(id - (id + id))
+</code></pre>
+
+<p>如何產生unambigous grammar</p>
+
+<h2 id="5-3-lexical-analysis">5.3 Lexical Analysis</h2>
+
+<p>token類型- identifier- delimiter- reserved word- constant integer, float, string</p>
+
+<h3 id="identifier">Identifier</h3>
+
+<pre><code class="language-plaintext">&lt;ident&gt; ::= &lt;letter&gt; | &lt;ident&gt;&lt;letter&gt; | &lt;ident&gt;&lt;digit&gt;
+&lt;letter&gt; ::= [a-zA-Z]
+&lt;digit&gt; ::= [0-9]
+</code></pre>
+
+<h3 id="token-table">Token Table</h3>
+
+<ul>
+<li>delimiter與reserved word: 根據程式語言定義的delimiter與reserved word建立table</li>
+<li>integer, string</li>
+<li>identifier table (identifier, type保存類型, pointer存放的位置, scope保存勢力範圍)</li>
+</ul>
 
     
       <hr>

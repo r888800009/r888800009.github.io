@@ -65,6 +65,13 @@ if (!doNotTrack) {
 <pre><code class="language-plaintext">:set ff=unix
 </code></pre>
 
+<p>將單行字首轉成大寫</p>
+
+<pre><code class="language-plaintext">s/\&lt;./\u&amp;/g
+</code></pre>
+
+<p>出處<a href="https://stackoverflow.com/a/17440797">Capitalize first letter of each word in a selection using vim</a></p>
+
 <h3 id="遠程編輯">遠程編輯</h3>
 
 <p>透過scp協議編輯遠端檔案</p>
