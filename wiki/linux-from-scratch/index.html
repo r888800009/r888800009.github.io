@@ -271,6 +271,7 @@ sudo chown `whoami`:`users` /mnt/ -R
 
 <pre><code class="language-bash">mkdir -p /mnt/etc
 mkdir -p /mnt/dev
+mkdir -p /mnt/proc
 cat &gt; /mnt/etc/fstab &lt;&lt; &quot;EOF&quot;
 # file system  mount-point  type     options             dump  fsck
 #                                                              order
@@ -303,6 +304,10 @@ sudo losetup -d /dev/loop0
 <h3 id="修復-no-such-device-tty2-tty3-tty4">修復 No such device tty2, tty3, tty4</h3>
 
 <p>請確定<code>/mnt/dev</code>存在<del>並且fstab擁有devtmpfs</del>(存疑)</p>
+
+<h3 id="poweroff無法使用">poweroff無法使用</h3>
+
+<p>請確定<code>/mnt/proc</code>存在</p>
 
 <h2 id="參考資料">參考資料</h2>
 
