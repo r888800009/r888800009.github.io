@@ -92,7 +92,9 @@ if (!doNotTrack) {
 
 <h3 id="table-management-and-error-handling">Table Management And Error Handling</h3>
 
-<p>token, symbol table等建置，編譯器五大功能(或6個 在機器碼進行優化)都做一次，將多個功能合併並可以透過2pass處理，問題是forward reference</p>
+<p>token, symbol table等建置，編譯器五大功能(或6個 在機器碼進行優化)都做一次，將多個功能合併並可以透過2pass處理，問題是forward reference。</p>
+
+<p>翻成機器碼的時候，例如if else無法知道機器碼的長度，需要跳到true與false，而<strong>隱含forward reference</strong>。</p>
 
 <h2 id="5-2-grammar">5.2 Grammar</h2>
 
@@ -124,6 +126,8 @@ if (!doNotTrack) {
 </code></pre>
 
 <p>如何產生unambigous grammar</p>
+
+<p>混淆不清為一個statement,不只一種parse tree</p>
 
 <h2 id="5-3-lexical-analysis">5.3 Lexical Analysis</h2>
 
