@@ -148,6 +148,86 @@ if (!doNotTrack) {
 <li>identifier table (identifier, type保存類型, pointer存放的位置, scope保存勢力範圍)</li>
 </ul>
 
+<h2 id="5-4-syntax-analysis">5.4 Syntax Analysis</h2>
+
+<p>建立剖析樹的方法</p>
+
+<ul>
+<li>Top Down Method: 由root向下(derive/produce)，例如<strong>Recursive Descent Parser</strong></li>
+<li>Bottom Up Method: 由note向上(reduce)，<strong>Operator Precedence Parser</strong></li>
+</ul>
+
+<h3 id="operator-precedence-parser">Operator Precedence Parser</h3>
+
+<ol>
+<li>根據文法(grammar)產生 Precedence Matrix，為bottom up Parser，可以回報混淆不清的文法出現的位置，並且能夠設計者可以進行調整。</li>
+<li>token string 丟給 operator precedence parser 檢查是否符合syntax</li>
+</ol>
+
+<p>假設輸入<code>READ(id)</code>，stack變化，<strong>如果遇到stack top比較大的情況，則可以找出一個文法(問: 在stack top的是不是總是最大？)</strong>，之後就可以做reduce to non terminal symbol</p>
+
+<pre><code class="language-plaintext">&lt;id-list&gt; ::= id
+&lt;read&gt; ::= READ(&lt;id-list&gt;)
+</code></pre>
+
+<pre><code class="language-plaintext">&lt;
+&lt;READ
+&lt;READ = ( 
+&lt;READ = (  &lt;id
+&lt;READ = (  &lt;id&gt; 
+&lt;READ = (  = id-list ) 
+&lt;READ = (  = id-list )&gt;
+read
+</code></pre>
+
+<p>註解: non terminal symbol不需要處理優先級</p>
+
+<p><code>id + id - id</code>為混淆不清的文法，而調整混搖不清的文法，可以有由左至右或由右自左等調整</p>
+
+<pre><code class="language-plaintext">&lt;
+&lt;id
+&lt;term + 
+&lt;term + &lt; id 
+&lt;term + &lt; id &gt;
+&lt;term + term &gt; // top 為 +
+&lt;term - &lt; // 因為 + &gt; -  所以轉non terminal symbol
+&lt;term - &lt; id &gt;
+&lt;term - term &gt;
+term
+</code></pre>
+
+<p>註解: 轉成non terminal symbol當stack empty</p>
+
+<p>reduce to時候就在生成樹</p>
+
+<h4 id="error">Error</h4>
+
+<ol>
+<li>兩token比較為blank entry無法比較大小</li>
+<li>比左邊大且右邊大時必須<strong>reduce to</strong>，但是找不到syntax rule</li>
+</ol>
+
+<h3 id="recursive-descent-parser">Recursive Descent Parser</h3>
+
+<p>為<strong>Top Down Method</strong>從最左邊Match向下找到Syntax，從最起始的<strong>Non Terminal Symbol</strong>向下對映。</p>
+
+<h4 id="left-recursive">Left Recursive</h4>
+
+<p>遇到left recursive情形，將文法作left factory來修改順序即可。</p>
+
+<h2 id="5-5-code-genaration">5.5 Code Genaration</h2>
+
+<p>rule 可以對映code generation routines(或semantic routine)，如果沒辦法容易的翻出機器碼或機器碼太細小，則會先翻譯成intermediate form。</p>
+
+<h2 id="5-6-intermediate-form">5.6 Intermediate Form</h2>
+
+<p>Three address code(Quadruple From)</p>
+
+<p>如<code>&lt;term&gt; = &lt;term&gt;1 + &lt;term&gt;2</code>可以翻成</p>
+
+<pre><code class="language-plaintext">(+, &lt;term&gt;1, &lt;term&gt;2, &lt;term&gt;)
+</code></pre>
+
     
       <hr>
       
