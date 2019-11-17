@@ -82,6 +82,14 @@ objdump -s -j .text ./a.out
 <pre><code class="language-bash">objdump -M intel -d ./a.out | less
 </code></pre>
 
+<h2 id="透過python-提取pe-header">透過python 提取PE header</h2>
+
+<pre><code class="language-python">import pefile
+pe = pefile.PE('./example.exe')
+</code></pre>
+
+<p>參見<a href="https://wenqingfu.me/post/pe_file/">Python pefile 模块读写 PE 文件</a></p>
+
     
       <hr>
       
