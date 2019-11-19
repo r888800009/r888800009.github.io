@@ -105,14 +105,7 @@ if (!doNotTrack) {
 
 <h3 id="tcp">TCP</h3>
 
-<p>多出<strong>source IP, dest. IP</strong>用於辨識來源host</p>
-
-<ul>
-<li>source IP</li>
-<li>source port</li>
-<li>dest. IP</li>
-<li>dest. Port</li>
-</ul>
+<p>connection oriented demux有四個欄位，多出<strong>source IP, dest. IP</strong>用於辨識來源host- source IP- source port- dest. IP- dest. Port</p>
 
 <p>Welcome socket, 可以透過同一個process處理Port監聽</p>
 
@@ -151,6 +144,57 @@ if (!doNotTrack) {
 <li>接受到往app layer送</li>
 <li>送出時往下層送</li>
 </ul>
+
+<h2 id="3-4">3.4</h2>
+
+<ul>
+<li>ACKs:對</li>
+<li>NAks:錯</li>
+</ul>
+
+<h3 id="rdt2-sender">Rdt2 sender</h3>
+
+<ol>
+<li>產生封包送封包</li>
+<li>等nak,ack 決定要不要重送</li>
+<li>收到ack回到原始狀態</li>
+</ol>
+
+<h3 id="rdt2-receiver">Rdt2 receiver</h3>
+
+<ol>
+<li>如果正確會傳ack</li>
+<li>否則回傳nak</li>
+</ol>
+
+<p>Rdt2依然不一定穩定，如ack,nak不一定正確</p>
+
+<h3 id="rdt2-1-sender">Rdt2.1 sender</h3>
+
+<p>如果ack封包錯誤則當成nak處理，不過需要透過編號判斷封包是否正確，stop and wait，確定封包正確再切換編號，處理兩個編號的手法相同，receiver ack與nak要加上checksum</p>
+
+<p><code>corrupt()</code>錯誤封包</p>
+
+<h3 id="rdt2-2">Rdt2.2</h3>
+
+<p>只發送ack，並且nak改成不正確序號的ack，之後接收者只需根據正不正確決定序號</p>
+
+<h3 id="rdt3-0">Rdt3.0</h3>
+
+<p>考慮遺失資料，超時，可以透過發送端決定超時，為了避免重複接收使用序號，如果封包出錯則等到timeout,而timeout都會重新發送封包，收到時將計時器停下，接收端不需要修改。</p>
+
+<p>不過性能不佳，採用pipelining可能缺少足夠的編號，並且需要buffer,</p>
+
+<p>處理相關問題的演算法</p>
+
+<ul>
+<li>go-back-n: 不需buffer但需要重送ack非依序收到的部分</li>
+<li>select repeat: 需要buffer只需要重送錯誤的訊息</li>
+</ul>
+
+<h2 id="3-4-3-go-back-n">3.4.3 go-back-n</h2>
+
+<p>不需要buffer, cumulative ACKs回傳最大收到編號</p>
 
     
       <hr>
