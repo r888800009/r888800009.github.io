@@ -125,6 +125,18 @@ shellcraft.echo('hello world!')
 
 <h2 id="技巧">技巧</h2>
 
+<h3 id="除錯技巧">除錯技巧</h3>
+
+<p>採用<a href="/wiki/gdb/#gdb-script">GDB Script</a>來避免重複的動作，如:</p>
+
+<ol>
+<li>啟動gdb時啟動peda</li>
+<li>peda <code>start</code></li>
+<li>一些script來找到目的位置。</li>
+</ol>
+
+<p>為了檢驗payload是否正常運作而不斷重複以上步驟，將導致效率低下。</p>
+
 <h3 id="指定libc">指定libc</h3>
 
 <p>pwntools可以透過此方式指定使用的libc。</p>

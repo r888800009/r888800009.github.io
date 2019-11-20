@@ -235,6 +235,86 @@ term
 <pre><code class="language-plaintext">(+, &lt;term&gt;1, &lt;term&gt;2, &lt;term&gt;)
 </code></pre>
 
+<h2 id="5-7-machine-independent-compiler-features">5.7 Machine Independent Compiler Features</h2>
+
+<h3 id="storage-allocation">Storage Allocation</h3>
+
+<ul>
+<li><strong>Static Allocation</strong>: 在編譯器時間分配空間</li>
+<li><strong>Dynamic allocation</strong>: 在run time分配空間
+<ul>
+<li>auto: function call: 系統自動分配一個<code>stack</code></li>
+<li>Controlled: malloc(), free()，用<code>heap</code>保存，<code>heap</code>刪除之後就必須要清理垃圾(garbage)。</li>
+</ul></li>
+</ul>
+
+<p>static與非static變數，前者在compiler time處理，後者為dynamic allocation (stack)。</p>
+
+<h3 id="activation-record">Activation Record</h3>
+
+<p>函數被呼叫的時候，系統替函數產生stack內容，為Activation Record。</p>
+
+<p>Activation Record</p>
+
+<ul>
+<li>variables (如 return value, local define)</li>
+<li>return address</li>
+<li>next</li>
+<li>previous</li>
+</ul>
+
+<p>範例: main function的return address會指向OS，並且Next/Previous為空</p>
+
+<p>注: 實際上根據不同系統還是會有所差異。可以用gdb下去查看堆疊結構。</p>
+
+<p><strong>scope</strong>: 為變數有效的範圍</p>
+
+<ul>
+<li>static scope: 根據程式的結構，如存取巢狀結構外層var</li>
+<li>dynamic scope: 根據function被呼叫的次序，不同function call作用的var</li>
+</ul>
+
+<h3 id="prologue-and-epilogue">Prologue and Epilogue</h3>
+
+<p>增加code在call function中</p>
+
+<ul>
+<li>Prologue: 建立activation record</li>
+<li>Epilogue: 移除activation record</li>
+</ul>
+
+<h3 id="structure-variable">Structure Variable</h3>
+
+<p>例如定義<strong>二維陣列</strong>，以<strong>行</strong>優先或以<strong>列</strong>優先，而記憶體中必須以一維保存陣列資料(mapping to memory)。</p>
+
+<p>假設陣列為<code>array[column][row]</code></p>
+
+<ul>
+<li>行優先: 優先排序row</li>
+<li>列優先: 優先排序column</li>
+</ul>
+
+<h4 id="計算公式">計算公式</h4>
+
+<p>定義<code>type B[a-b][c-d]</code>(表示為<code>type B[a:b][c:d]</code>)，定址到<code>B[s][t]</code></p>
+
+<ul>
+<li>Row Major: <code>[(s - a) * (d - c + 1) + (t - c)] * sizeof(Type) + base</code>，假設index起始都是0，代表<code>type B[b][d]</code>，為<code>[s * (d + 1) + t] * sizeof(Type) + base</code></li>
+<li>Column Major: <code>[(t - c) * (b - a + 1) + (s - a)] * sizeof(Type) + base</code>，假設起始為0，<code>[t * (b + 1) + s] * sizeof(Type) + base</code></li>
+</ul>
+
+<p>註: 以<code>a</code>, <code>c</code>做為index的起始，減去代表求長度，<code>(b + 1)</code>的部份是陣列計算大小的方法 c++為Row Major</p>
+
+<h3 id="code-optimization-1">Code Optimization</h3>
+
+<p>對<strong>中間碼</strong>與機器碼進行優化。</p>
+
+<ol>
+<li>Common Sub-Expression: 找出<strong>重複運算</strong>，並且將其提出。</li>
+<li>Loop In-Variants: 迴圈內部<strong>不變</strong>的函數，可以提出迴圈外。</li>
+<li>Reduction in Strength: 將運算<strong>慢的指令</strong>轉成<strong>較快的指令</strong>。</li>
+</ol>
+
     
       <hr>
       

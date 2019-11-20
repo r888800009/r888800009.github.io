@@ -53,6 +53,27 @@ if (!doNotTrack) {
     </div> 
     <p>存放gdb筆記</p>
 
+<h2 id="gdb-script">GDB Script</h2>
+
+<p>透過GDB script來保存重複的行為提昇除錯效率。</p>
+
+<p>這裡假設建立檔案<code>example.gdbscript</code>，內容如下</p>
+
+<pre><code class="language-plaintext">l
+b main
+r
+s
+</code></pre>
+
+<p>之後在<code>gdb</code>當中執行script</p>
+
+<pre><code class="language-plaintext">source example.gdbscript
+</code></pre>
+
+<p><strong>註:gdb在每次除錯的時候會留下<code>.gdb_history</code>，可以用來當成script的素材</strong></p>
+
+<p>其他請參見<a href="https://wwssllabcd.github.io/blog/2013/03/25/how-to-write-gdb-scritp/">簡易 GDB Script 教學，應用</a></p>
+
 <h2 id="工具">工具</h2>
 
 <ul>
