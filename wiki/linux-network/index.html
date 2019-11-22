@@ -81,6 +81,18 @@ if (!doNotTrack) {
 <pre><code class="language-plaintext">set_network 0 psk &quot;pass&quot;
 </code></pre>
 
+<h2 id="端口查看">端口查看</h2>
+
+<p>linux列出特定端口的process</p>
+
+<pre><code class="language-bash">fuser 8080/tcp
+</code></pre>
+
+<p>linux停止特定端口的process</p>
+
+<pre><code class="language-bash">fuser 8080/tcp -k 
+</code></pre>
+
 <h2 id="pppoe上網">PPPoE上網</h2>
 
 <p>安裝<code>ppp</code></p>
