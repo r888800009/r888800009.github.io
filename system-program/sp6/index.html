@@ -61,6 +61,80 @@ if (!doNotTrack) {
 <li>identifier table: subroutine 代表 scope為數值，指向identifier的index</li>
 </ol>
 
+<h2 id="6-2-syntax-analysis">6.2 Syntax Analysis</h2>
+
+<ol>
+<li>token 組成statement，<code>;</code>代表statement結束</li>
+<li>檢查文法是否正確，不正確則回傳錯誤訊息</li>
+<li>保存資料到表格</li>
+</ol>
+
+<h3 id="statement">Statement</h3>
+
+<pre><code class="language-plaintext">PROGRAM GTO
+SUBROUTINE assignment
+VARIABLE CALL
+LABEL INPUT
+DIMENSION OUTPUT
+IF
+</code></pre>
+
+<p>註解 identifier table的pointer指向中間碼的entry</p>
+
+<h3 id="變數宣告">變數宣告</h3>
+
+<pre><code class="language-plaintext">VARIABLE &lt;datatyep&gt;: id{, id};
+</code></pre>
+
+<p>example</p>
+
+<pre><code class="language-plaintext">VARIABLE ARRAY: array1;
+</code></pre>
+
+<p>之後data type, scope, identifier保存進入identifier table，並且產生中間碼。</p>
+
+<pre><code class="language-plaintext">ARRAY 1
+BOOLEAN 2
+INTEGER 4
+LABEL 5
+REAL 6
+</code></pre>
+
+<h3 id="陣列宣告">陣列宣告</h3>
+
+<p>宣告陣列，必須紀錄<strong>陣列各維度大小</strong>、<strong>中間碼</strong></p>
+
+<pre><code class="language-plaintext">DIMENSION &lt;datatype&gt;: &lt;array&gt;{, &lt;array&gt;};
+&lt;array ::= id (number {, number})&gt;
+</code></pre>
+
+<p>範例<code>16 * 5</code>的陣列</p>
+
+<pre><code class="language-plaintext">DIMENSION REAL: A(16, 5);
+</code></pre>
+
+<p>透過 information table 7保存資料，保存<strong>型別</strong>、<strong>維度數量</strong>、<strong>各個維度大小</strong>，並且將pointer 指向information table的元素起始。</p>
+
+<h3 id="label定義">Label定義</h3>
+
+<pre><code class="language-plaintext">LABEL identifier;
+</code></pre>
+
+<p>範例</p>
+
+<pre><code class="language-plaintext">LABEL L91, L92;
+</code></pre>
+
+<p>保存入identifier table，pointer會在最後指向<strong>對映指令的中間碼</strong>的位置，並且產生自己的中間碼。</p>
+
+<h3 id="gto">GTO</h3>
+
+<pre><code class="language-plaintext">GTO labelID;
+GTO L92;
+</code></pre>
+
+<p>GTO的中間碼，前面對應到GTO，後面對應到Label指向的目標。</p>
+
     
       <hr>
       
