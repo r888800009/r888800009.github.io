@@ -93,11 +93,12 @@ IF
 
 <p>之後data type, scope, identifier保存進入identifier table，並且產生中間碼。</p>
 
-<pre><code class="language-plaintext">ARRAY 1
-BOOLEAN 2
-INTEGER 4
-LABEL 5
-REAL 6
+<pre><code class="language-plaintext">ARRAY     1
+BOOLEAN   2
+CHARACTER 3
+INTEGER   4
+LABEL     5
+REAL      6
 </code></pre>
 
 <h3 id="陣列宣告">陣列宣告</h3>
@@ -134,6 +135,30 @@ GTO L92;
 </code></pre>
 
 <p>GTO的中間碼，前面對應到GTO，後面對應到Label指向的目標。</p>
+
+<h2 id="6-3-function-definition-and-function-call">6.3 Function Definition And Function Call</h2>
+
+<h3 id="subroutine">SUBROUTINE</h3>
+
+<pre><code class="language-plaintext">SUBROUTINE S1(INTEGER:X,Y,M);
+</code></pre>
+
+<ul>
+<li>PROGRAM為<code>SUBROUTINE S1</code></li>
+<li>VARIABLE為<code>INTEGER:X,Y,M</code></li>
+<li>Table 5 POITER指向中間碼TABLE6</li>
+<li>Table 5 X,Y,M要設定SUBROUTINE(SCOPE)指向S1的index，並且產生X, Y, M的中間碼。</li>
+</ul>
+
+<h3 id="call">Call</h3>
+
+<pre><code class="language-plaintext">CALL S1(W, 136, A, 57.9)
+</code></pre>
+
+<ul>
+<li>將傳遞參數保存到Information table，如<strong>參數數</strong>，然後每個參數保存<code>(table, value)</code> pair</li>
+<li>產生中間碼: 中間碼為(call function, Subroutine name, information table保存參數位置)</li>
+</ul>
 
     
       <hr>
