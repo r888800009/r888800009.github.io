@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Francis Compiler | r809&#39;s Notes</title>
+<title>[SP]Francis Compiler | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,7 +47,7 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Francis Compiler</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP]Francis Compiler</a></h1>
 <div id="content"><div class="date"> 
         <time datetime="2019-11-23 21:51:23 &#43;0800 CST">Sat, 2019 Nov 23</time>
     </div> 
@@ -159,6 +159,62 @@ GTO L92;
 <li>將傳遞參數保存到Information table，如<strong>參數數</strong>，然後每個參數保存<code>(table, value)</code> pair</li>
 <li>產生中間碼: 中間碼為(call function, Subroutine name, information table保存參數位置)</li>
 </ul>
+
+<h2 id="6-4-assignment">6.4 Assignment</h2>
+
+<p>翻譯 <code>X = Y + Z</code>;</p>
+
+<pre><code class="language-plaintext">(+, Y, Z, X)
+</code></pre>
+
+<p>透過Reverse Polish Notation的方式下去處理，透過<strong>堆疊</strong>。<code>)</code>做push，遇到時<code>(</code>檢查syntax並pop token <code>)</code>，當中有<strong>operand</strong>與<strong>operator</strong>兩個堆疊，分別保存運算元與運算子，為雙堆疊算法。</p>
+
+<h3 id="處理方式">處理方式</h3>
+
+<p>每次pop時提取堆疊上方<strong>兩個運算元一個運算子</strong>，之後將運算結果(暫存器)放回堆疊當成運算元，每次pop產生中間碼。</p>
+
+<p>注意: 暫存編號可能會被覆蓋，可以透過一個堆疊保存尚未使用的暫存編號，以免蓋過先前產生的數值。</p>
+
+<h2 id="6-5-if-statement">6.5 IF Statement</h2>
+
+<h3 id="文法">文法</h3>
+
+<pre><code class="language-plaintext">IF &lt;condition&gt; THEN &lt;statement&gt; ELSE &lt;statement&gt;;
+</code></pre>
+
+<p><code>&lt;condition&gt;</code>可能包含括號，翻出的<strong>statement會有forward reference</strong>，因為沒辦法知道大小，而true的處理區塊後面必須採用<code>GTO</code>跳到false的後面，以免執行false的程式碼。</p>
+
+<h3 id="邏輯運算子">邏輯運算子</h3>
+
+<ul>
+<li><code>GT</code>: <code>&gt;</code></li>
+<li><code>GE</code>: <code>&gt;=</code></li>
+<li><code>LT</code>: <code>&lt;</code></li>
+<li><code>LE</code>: <code>&lt;=</code></li>
+<li><code>EQ</code>: <code>==</code></li>
+<li><code>AND</code>: <code>&amp;&amp;</code></li>
+<li><code>OR</code>: <code>||</code></li>
+<li><code>NOT</code>: <code>!=</code></li>
+</ul>
+
+<h3 id="範例">範例</h3>
+
+<pre><code class="language-plaintext">IF X GT Y AND Q THEN X =  X + 1 ELSE X = X + 2;
+</code></pre>
+
+<h2 id="6-6-array-and-elements">6.6 Array and Elements</h2>
+
+<p>處理陣列元素的statement，算出array元素指向的記憶體位置，產生中間碼。</p>
+
+<p>範例，<code>B(I, J)</code>元素的位置在<code>(J - 1) * M + I</code>產生中間碼。</p>
+
+<pre><code class="language-plaintext">(-, J , 1 , T1)  // T1 = J - 1
+(*, T1, M , T2)  // T2 = T1 * M
+(+, T2, I , T3)  // T3 = T2 + I
+(=, B , T3, T4)  // T4 = B(T3)
+(+, T4, 4 , T5)  // T5 = T4 + 4
+(=, T5,   , X )  // X = T5
+</code></pre>
 
     
       <hr>
