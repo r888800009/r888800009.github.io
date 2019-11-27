@@ -123,11 +123,54 @@ if (!doNotTrack) {
 
 <h3 id="3-3-2-checksum">3.3.2 Checksum</h3>
 
-<p>16 bit，將資料分成多份16bit之後相加，溢位加最後bit，</p>
+<p>16 bit，將資料分成多份16bit之後相加，溢位後加到最小位bit上。</p>
+
+<p>example，傳輸資料為</p>
+
+<pre><code class="language-plaintext">1011 0100 1010 1111 1001 0000 1010 0000
+</code></pre>
+
+<h4 id="step-1">step 1</h4>
+
+<p>將資料以多個16 bit 分組，之後相加如下。</p>
+
+<pre><code class="language-plaintext">   1011 0100 1010 1111
+   1001 0000 1010 0000
+=========================
+ 1 0100 0101 0100 1111
+</code></pre>
+
+<p>可以發現結果多出一個bit，將它加到最小位得到</p>
+
+<pre><code class="language-plaintext"> 0100 0101 0101 0000
+</code></pre>
+
+<h4 id="step-2">step 2</h4>
+
+<p>將總和取<strong>一補數</strong>，得出checksum</p>
+
+<pre><code class="language-plaintext">~(0100 0101 0101 0000)
+=======================
+  1011 1010 1010 1111
+</code></pre>
+
+<h4 id="setp-3-驗證">setp 3 驗證</h4>
+
+<p>checksum與數值相加應該全部都是1才算正確，以下示範驗證。</p>
+
+<pre><code class="language-plaintext"> 0100 0101 0101 0000
+ 1011 1010 1010 1111
+=====================
+ 1111 1111 1111 1111
+</code></pre>
+
+<p>可以看到得出的結果全部都是1</p>
+
+<p>不過Checksum依然有缺陷，如果任意兩個不同的bit在不同的16 bit word中反轉，<code>1011 0100 1010 1110</code>與<code>1001 0000 1010 0001</code>(顛倒了最小位)的總和與原本正確的相同，這時就會被當成正確的傳輸。</p>
 
 <h3 id="3-4-reliable-data-transfer">3.4 Reliable Data Transfer</h3>
 
-<p>接收端檢查，若錯誤則重新傳送。採用FSM</p>
+<p>下層沒有可靠的機制，設計機制讓資料可以可靠傳輸。接收端檢查，若錯誤則重新傳送。採用FSM</p>
 
 <p>不可靠的原因</p>
 
@@ -145,14 +188,12 @@ if (!doNotTrack) {
 <li>送出時往下層送</li>
 </ul>
 
-<h2 id="3-4">3.4</h2>
+<h3 id="rdt2-sender">Rdt2 sender</h3>
 
 <ul>
 <li>ACKs:對</li>
 <li>NAks:錯</li>
 </ul>
-
-<h3 id="rdt2-sender">Rdt2 sender</h3>
 
 <ol>
 <li>產生封包送封包</li>
@@ -171,6 +212,8 @@ if (!doNotTrack) {
 
 <h3 id="rdt2-1-sender">Rdt2.1 sender</h3>
 
+<p>ACK,NAK也可能出現問題，以及重複封包序列。加入錯誤檢查碼，並且回傳ack或nak。</p>
+
 <p>如果ack封包錯誤則當成nak處理，不過需要透過編號判斷封包是否正確，stop and wait，確定封包正確再切換編號，處理兩個編號的手法相同，receiver ack與nak要加上checksum</p>
 
 <p><code>corrupt()</code>錯誤封包</p>
@@ -182,6 +225,8 @@ if (!doNotTrack) {
 <h3 id="rdt3-0">Rdt3.0</h3>
 
 <p>考慮遺失資料，超時，可以透過發送端決定超時，為了避免重複接收使用序號，如果封包出錯則等到timeout,而timeout都會重新發送封包，收到時將計時器停下，接收端不需要修改。</p>
+
+<p>尚未接收到封包無法得知封包是否丟失，透過超時計時器處理，不過可能因此重送，透過序號判斷是否為當前傳送的Data。</p>
 
 <p>不過性能不佳，採用pipelining可能缺少足夠的編號，並且需要buffer,</p>
 
@@ -195,6 +240,18 @@ if (!doNotTrack) {
 <h2 id="3-4-3-go-back-n">3.4.3 go-back-n</h2>
 
 <p>不需要buffer, cumulative ACKs回傳最大收到編號</p>
+
+<h2 id="3-4-4-sr-select-repeat">3.4.4 SR (Select Repeat)</h2>
+
+<p>接受者與發送者都有base index，設封包發送數量為N</p>
+
+<p>最差的情況可能發送者的base為0，但接收者為N</p>
+
+<h2 id="3-5-tcp">3.5 TCP</h2>
+
+<p>In-order, pipelining</p>
+
+<p>Flow control透過window size調整，Receive windows</p>
 
     
       <hr>
