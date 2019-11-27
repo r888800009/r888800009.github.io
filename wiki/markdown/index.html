@@ -51,7 +51,20 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-16 21:54:50 &#43;0800 CST">Wed, 2019 Oct 16</time>
     </div> 
-    <h2 id="markdown轉換其他格式">markdown轉換其他格式</h2>
+    <h2 id="添加腳注">添加腳注</h2>
+
+<p>可以參見Markdown Guide<sup class="footnote-ref" id="fnref:footnote"><a href="#fn:footnote">1</a></sup></p>
+
+<pre><code class="language-markdown">出處[^footnote]
+腳註2[^123 aaa]
+
+[^footnote]: [Markdown Guide Extended Syntax](https://www.markdownguide.org/extended-syntax/#footnotes)
+[^123 aaa]: 這邊放任意文字
+</code></pre>
+
+<p>腳註似乎支援任意格式的輸入</p>
+
+<h2 id="轉換其他格式">轉換其他格式</h2>
 
 <p>markdown to docx</p>
 
@@ -65,7 +78,7 @@ if (!doNotTrack) {
 
 <p>參見<a href="https://pandoc.org/demos.html">Pandoc Demos</a></p>
 
-<h2 id="markdown重音符號">markdown重音符號</h2>
+<h2 id="重音符號">重音符號</h2>
 
 <p>重音符號放置</p>
 
@@ -96,6 +109,14 @@ if (!doNotTrack) {
 <p>輸出結果為<code>test``test</code></p>
 
 <p>參見<a href="https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-within-in-line-code-in-markdown">How do I escape a backtick ` within in-line code in Markdown?</a></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:footnote"><a href="https://www.markdownguide.org/extended-syntax/#footnotes">Markdown Guide Extended Syntax</a> <a class="footnote-return" href="#fnref:footnote"><sup>[return]</sup></a></li>
+</ol>
+</div>
 
     
       <hr>
