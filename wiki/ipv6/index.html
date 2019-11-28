@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Wikis | r809&#39;s Notes</title>
+<title>IPv6 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,43 +47,65 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Wikis</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/bug/" class="post-link">各種程式坑集合</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">IPv6</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-11-28 18:50:49 &#43;0800 CST">Thu, 2019 Nov 28</time>
+    </div> 
+    <h2 id="url表示方法">URL表示方法</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/linux-from-scratch/" class="post-link">從0安裝Linux</a></h1>
+<pre><code class="language-plaintext">http://[::1]:8080/
+</code></pre>
 
-    <h1><a href="https://r888800009.github.io/wiki/http/" class="post-link">HTTP</a></h1>
+<p>詳細資訊請參見RFC 2732<sup class="footnote-ref" id="fnref:RFC-2732"><a href="#fn:RFC-2732">1</a></sup></p>
 
-    <h1><a href="https://r888800009.github.io/wiki/markdown/" class="post-link">Markdown</a></h1>
+<h2 id="應用程式">應用程式</h2>
 
-    <h1><a href="https://r888800009.github.io/wiki/newsboat/" class="post-link">newsboat終端機RSS訂閱器</a></h1>
+<h3 id="瀏覽器">瀏覽器</h3>
 
-    <h1><a href="https://r888800009.github.io/wiki/python-fuzz/" class="post-link">python 模糊搜尋</a></h1>
+<p>瀏覽器大多可以使用RFC 2732<sup class="footnote-ref" id="fnref:RFC-2732"><a href="#fn:RFC-2732">1</a></sup>定義的URL進行連線。如chrome、firefox均支援此URL表示法。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/mysql/" class="post-link">MySQL</a></h1>
+<h3 id="netcat">netcat</h3>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-crawler/" class="post-link">Web爬蟲筆記</a></h1>
+<p>GNU的<code>netcat</code>並不支援IPv6格式地址，因此需要採用nmap所提供的<code>ncat</code>，並且加上<code>-6</code>來採用IPv6。</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/dns/" class="post-link">DNS</a></h1>
+<p>監聽的方式如同GNU netcat</p>
 
-    <h1><a href="https://r888800009.github.io/wiki/bash/" class="post-link">Bash</a></h1>
+<pre><code>ncat -l -p 3333 -6 
+</code></pre>
 
+<p>連線時不需要用中括號包覆IP</p>
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/wiki/>
-      &#x3C;
-    </a>
-    
+<pre><code>ncat -6 ::1 3333
+</code></pre>
 
-    
-    <a href=/wiki/page/3/>
-       &#x3E;
-    </a>
-    
+<h3 id="ssh">SSH</h3>
+
+<p><code>ssh</code>連線時，不需要用中括號將地址包覆</p>
+
+<pre><code class="language-bash">ssh ::1
+</code></pre>
+
+<p><code>scp</code>進行檔案傳輸採用<code>[IPv6]</code>的格式</p>
+
+<pre><code class="language-bash">scp [::1]:~/test ./test
+</code></pre>
+
+<p>註: <code>ssh</code>與<code>scp</code>都支援<code>-6</code>參數，可以強制以IPv6的方式進行連線。</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:RFC-2732"><a href="https://tools.ietf.org/html/rfc2732#section-2">RFC 2732</a> Literal IPv6 Address Format in URL&rsquo;s Syntax <a class="footnote-return" href="#fnref:RFC-2732"><sup>[return]</sup></a></li>
+</ol>
 </div>
 
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+      
+    
 
 
             </div>

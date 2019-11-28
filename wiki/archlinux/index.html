@@ -68,6 +68,20 @@ if (!doNotTrack) {
 <pre><code class="language-bash">sudo paccache -r
 </code></pre>
 
+<h2 id="pacaur">pacaur</h2>
+
+<p>安裝pacaur或更新時可用以下腳本。</p>
+
+<pre><code class="language-bash">cd /tmp
+git clone https://aur.archlinux.org/pacaur.git
+cd pacaur
+makepkg -is
+cd ..
+git clone https://aur.archlinux.org/auracle-git.git
+cd auracle-git
+makepkg -is
+</code></pre>
+
 <h2 id="java缺少中文字體">java缺少中文字體</h2>
 
 <pre><code class="language-bash">sudo pacman -S ttf-arphic-uming
