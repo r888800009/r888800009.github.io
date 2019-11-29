@@ -60,6 +60,14 @@ if (!doNotTrack) {
 
 <p><a href="https://aur.archlinux.org/packages/rstudio-desktop-bin/">aur</a></p>
 
+<h3 id="更新packages">更新packages</h3>
+
+<p>更新，<code>ask = FALSE</code>就跟字面上一樣</p>
+
+<pre><code class="language-r">update.packages(ask = FALSE)
+update.packages()
+</code></pre>
+
 <h3 id="快捷鍵">快捷鍵</h3>
 
 <ul>
@@ -110,6 +118,20 @@ wget https://cran.r-project.org/src/contrib/Archive/IPSUR/IPSUR_3.0.tar.gz
 <li><a href="https://cran.r-project.org/web/packages/IPSUR/index.html">https://cran.r-project.org/web/packages/IPSUR/index.html</a></li>
 <li><a href="https://cran.r-project.org/src/contrib/Archive/IPSUR/">https://cran.r-project.org/src/contrib/Archive/IPSUR/</a></li>
 </ul>
+
+<h2 id="dyn-load-發生錯誤">dyn.load() 發生錯誤</h2>
+
+<p>跟stringi關連，找出<code>dyn.load()</code>載入動態函數<strong>系統還是使用者擁有</strong>。</p>
+
+<p>系統stringi</p>
+
+<pre><code class="language-bash">pacaur -S r-stringi
+</code></pre>
+
+<p>使用者本地stringi</p>
+
+<pre><code class="language-r">install.packages(&quot;stringi&quot;)
+</code></pre>
 
 <h2 id="檔案">檔案</h2>
 

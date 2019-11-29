@@ -148,9 +148,30 @@ if (!doNotTrack) {
 <li><code>i</code>大小寫忽略</li>
 </ul>
 
-<h3 id="部份取代">部份取代</h3>
+<h3 id="部份取代-vim-regex-group">部份取代 (vim regex group)</h3>
 
-<p>比方說<code>gameA</code>、<code>gameB</code>、<code>gameC</code>、<code>gameD</code>取代成<code>mapA</code>、<code>mapB</code>、<code>mapC</code>、<code>mapD</code>，則可以使用:<code>:%s/\(第一部份\)\(第二部份\)/map\2/g</code>來保留第二部份。</p>
+<p>比方說以下內容</p>
+
+<pre><code class="language-plaintext">gameA
+gameB
+gameC
+gameD
+</code></pre>
+
+<p>希望能夠取代成以下內容</p>
+
+<pre><code class="language-plaintext">mapA
+mapB
+mapC
+mapD
+</code></pre>
+
+<p>這時可以鍵入以下指令達成此功能。</p>
+
+<pre><code class="language-plaintext">:%s/\(game\)\(\w\)/map\2/g
+</code></pre>
+
+<p><code>\2</code>代表group 2，<code>\1</code>代表group 1。</p>
 
 <h3 id="多buffer取代">多buffer取代</h3>
 
