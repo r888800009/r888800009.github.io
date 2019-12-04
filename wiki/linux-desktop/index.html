@@ -64,6 +64,14 @@ if (!doNotTrack) {
 <li><code>Shift + Right</code>or<code>Shift + Left</code>切換rofi的模式</li>
 </ul>
 
+<h4 id="透過rofi連上ssh">透過rofi連上ssh</h4>
+
+<p>rofi有兩種模式適用於ssh，分別是<code>ssh</code>與<code>combi</code>，前者僅會有ssh連線相關選項，後者則是通用的切換選項。</p>
+
+<pre><code class="language-bash">rofi -show ssh 
+rofi -show combi
+</code></pre>
+
 <h2 id="平鋪式視窗管理器">平鋪式視窗管理器</h2>
 
 <ul>
@@ -124,6 +132,14 @@ if (!doNotTrack) {
 <p>列出可用的字體</p>
 
 <pre><code class="language-bash">fc-list
+</code></pre>
+
+<h2 id="man網頁輸出">man網頁輸出</h2>
+
+<p>透過瀏覽器檢視<code>man</code>文檔，以html進行排版。以下示範將瀏覽器設定成<code>chromium</code>並讀取<code>less</code>的文檔。</p>
+
+<pre><code class="language-bash">export BROWSER=chromium 
+man -H less  
 </code></pre>
 
 <h2 id="display-manager">Display Manager</h2>
