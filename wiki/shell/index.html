@@ -51,8 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-11-10 23:22:23 &#43;0800 CST">Sun, 2019 Nov 10</time>
     </div> 
-    <h2 id="常用快捷鍵">常用快捷鍵</h2>
-
+    <h2 id="heading">常用快捷鍵</h2>
 <ul>
 <li><code>Ctrl + d</code> EOF</li>
 <li><code>Ctrl + r</code> 找尋歷史指令</li>
@@ -64,91 +63,64 @@ if (!doNotTrack) {
 <li><code>Ctrl + i</code> 同tab</li>
 <li><code>Ctrl + m</code>或<code>Ctrl + j</code> 同Enter</li>
 </ul>
-
 <p>列出可使用的Shell列表</p>
-
-<pre><code class="language-bash">chsh -l
-</code></pre>
-
-<p>修改shell</p>
-
-<pre><code class="language-bash">chsh -s /bin/bash
-</code></pre>
-
-<h2 id="shell-列表">shell 列表</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chsh -l
+</code></pre></div><p>修改shell</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chsh -s /bin/bash
+</code></pre></div><h2 id="shell-">shell 列表</h2>
 <ul>
 <li><a href="/wiki/bash/">bash</a></li>
 <li><a href="/tags/shell">shell分類</a></li>
 </ul>
-
-<h2 id="shell-搜尋技巧">shell 搜尋技巧</h2>
-
+<h2 id="shell-1">shell 搜尋技巧</h2>
 <p>透過<code>Ctrl + r</code>查詢歷史指令，多次<code>Ctrl + r</code>向前查詢歷史。</p>
-
-<h3 id="指令標籤">指令標籤</h3>
-
-<p>這是一個來自<a href="https://unix.stackexchange.com/a/166927">How to cycle through reverse-i-search in BASH?</a>回答者提供的技巧，但此方法僅適用<code>bash</code>而不適合<code>zsh</code>，後者會將<code>#</code>之後的內容傳遞給程式導致錯誤，解決此問題似乎要配置<code>INTERACTIVE_COMMENTS</code><sup class="footnote-ref" id="fnref:zsh"><a href="#fn:zsh">1</a></sup>。</p>
-
+<h3 id="heading1">指令標籤</h3>
+<p>這是一個來自<a href="https://unix.stackexchange.com/a/166927">How to cycle through reverse-i-search in BASH?</a>
+回答者提供的技巧，但此方法僅適用<code>bash</code>而不適合<code>zsh</code>，後者會將<code>#</code>之後的內容傳遞給程式導致錯誤，
+解決此問題似乎要配置<code>INTERACTIVE_COMMENTS</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
 <p>範例如下</p>
-
-<pre><code class="language-bash">ls /       # list root dir
-</code></pre>
-
-<p>以下幾點是針對此方法進行考量，因為沒有嘗試實際應用可能會有思考不周全的部份，列出可能存在的優缺點。</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls /       <span style="color:#75715e"># list root dir</span>
+</code></pre></div><p>以下幾點是針對此方法進行考量，因為沒有嘗試實際應用可能會有思考不周全的部份，
+列出可能存在的優缺點。</p>
 <ul>
 <li>缺點
 <ul>
 <li>適合臨時作為標記</li>
 <li>較常使用的還是建議別名或腳本</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>適當的時機可能在開始一項工作時，為了方便紀錄使用的指令而使用此標記。</p>
-
-<h2 id="配置歷史紀錄">配置歷史紀錄</h2>
-
+<h2 id="heading2">配置歷史紀錄</h2>
 <p>為方便存取指令紀錄，<code>.zshrc</code>添加以下兩行。</p>
-
-<pre><code class="language-zsh">SAVEHIST=4000
-HISTSIZE=$SAVEHIST
-</code></pre>
-
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">SAVEHIST<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span>
+HISTSIZE<span style="color:#f92672">=</span>$SAVEHIST
+</code></pre></div><ul>
 <li><code>SAVEHIST</code>: 保存成檔案的歷史大小</li>
 <li><code>HISTSIZE</code>: 交互界面可查詢(上下鍵，收尋鍵)的大小</li>
 </ul>
-
 <p>註: <code>SAVEHIST</code>似乎為<code>zsh</code>特有參數，而<code>bash</code>無此參數採用<code>HISTSIZE</code>即可</p>
-
-<h2 id="shell-script編寫技巧">shell script編寫技巧</h2>
-
+<h2 id="shell-script">shell script編寫技巧</h2>
 <ol>
-<li><code>history</code>: 列出歷史，編寫script時嘗試以交互模式進行測試，完成之後列出紀錄來輔助編寫，也可以直接檢視<code>history</code>檔案。</li>
+<li><code>history</code>: 列出歷史，編寫script時嘗試以交互模式進行測試，
+完成之後列出紀錄來輔助編寫，也可以直接檢視<code>history</code>檔案。</li>
 </ol>
-
 <h2 id="zsh">zsh</h2>
-
-<pre><code class="language-zsh">#切換到emacs鍵綁定模式
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#75715e">#切換到emacs鍵綁定模式</span>
 set -o emacs 
-</code></pre>
-
-<p>這樣可以兼容<code>bash</code>大部分的鍵綁定</p>
-
-<pre><code class="language-zsh">#切換到vi鍵綁定模式
+</code></pre></div><p>這樣可以兼容<code>bash</code>大部分的鍵綁定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh"><span style="color:#75715e">#切換到vi鍵綁定模式</span>
 set -o vi
-</code></pre>
-
-<p>參見<a href="/wiki/vim/">vim</a>，預設進入zsh為輸入模式，透過<code>Esc</code>切換到<code>normal mode</code>，透過<code>i</code>回到輸入模式</p>
-<div class="footnotes">
-
-<hr />
-
+</code></pre></div><p>參見<a href="/wiki/vim/">vim</a>，預設進入zsh為輸入模式，透過<code>Esc</code>
+切換到<code>normal mode</code>，透過<code>i</code>回到輸入模式</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:zsh"><a href="https://unix.stackexchange.com/questions/33994/zsh-interpret-ignore-commands-beginning-with-as-comments">zsh Interpret/ignore commands beginning with &lsquo;#&rsquo; as comments</a> <a class="footnote-return" href="#fnref:zsh"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://unix.stackexchange.com/questions/33994/zsh-interpret-ignore-commands-beginning-with-as-comments">zsh Interpret/ignore commands beginning with &lsquo;#&rsquo; as comments</a><a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
     
       <hr>

@@ -35,7 +35,8 @@
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
       
       <guid>https://r888800009.github.io/posts/cgi-apache/</guid>
-      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，
+並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,7 +54,9 @@
       <pubDate>Thu, 08 Aug 2019 15:08:09 +0800</pubDate>
       
       <guid>https://r888800009.github.io/web-sec/get-start/</guid>
-      <description>&lt;p&gt;為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，在本文當中我們將採用&lt;code&gt;docker&lt;/code&gt;來配置測試環境，並安裝&lt;code&gt;WebGoat&lt;/code&gt;、&lt;code&gt;Damn Vulnerable Web Application&lt;/code&gt;、&lt;code&gt;Broken Web Applications&lt;/code&gt;。&lt;/p&gt;</description>
+      <description>&lt;p&gt;為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，
+在本文當中我們將採用&lt;code&gt;docker&lt;/code&gt;來配置測試環境，並安裝&lt;code&gt;WebGoat&lt;/code&gt;、
+&lt;code&gt;Damn Vulnerable Web Application&lt;/code&gt;、&lt;code&gt;Broken Web Applications&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     
   </channel>

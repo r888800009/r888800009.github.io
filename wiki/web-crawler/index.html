@@ -51,52 +51,40 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-08 23:48:49 &#43;0800 CST">Tue, 2019 Oct 8</time>
     </div> 
-    <h2 id="透過libxml2抓取網頁內容">透過libxml2抓取網頁內容</h2>
-
+    <h2 id="libxml2">透過libxml2抓取網頁內容</h2>
 <p>下面示範透過<code>libxml2</code>抓取頁面的連結內容以及連結。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> libxml2
+<span style="color:#f92672">import</span> requests
 
-<pre><code class="language-python">import libxml2
-import requests
+<span style="color:#75715e"># get html</span>
+URL <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://example.com/</span><span style="color:#e6db74">&#39;</span>
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">=</span> URL)
+<span style="color:#66d9ef">print</span>(r<span style="color:#f92672">.</span>text)
 
-# get html
-URL = 'http://example.com/'
-r = requests.get(url = URL)
-print(r.text)
-
-doc = libxml2.htmlParseDoc(r.text, 'utf8')
-for it in doc.xpathEval('//*/a') 
-    print(it.content)
-    print(it.prop('href'))
-</code></pre>
-
-<h2 id="透過beautifulsoup">透過beautifulsoup</h2>
-
+doc <span style="color:#f92672">=</span> libxml2<span style="color:#f92672">.</span>htmlParseDoc(r<span style="color:#f92672">.</span>text, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">utf8</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">for</span> it <span style="color:#f92672">in</span> doc<span style="color:#f92672">.</span>xpathEval(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">//*/a</span><span style="color:#e6db74">&#39;</span>) 
+    <span style="color:#66d9ef">print</span>(it<span style="color:#f92672">.</span>content)
+    <span style="color:#66d9ef">print</span>(it<span style="color:#f92672">.</span>prop(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>))
+</code></pre></div><h2 id="beautifulsoup">透過beautifulsoup</h2>
 <p>安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install beautifulsoup4
+</code></pre></div><p>安裝在家目錄</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install beautifulsoup4 --user  
+</code></pre></div><p>抓取並且剖析，以下以列出<code>href</code>為範例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
+<span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
 
-<pre><code class="language-bash">pip install beautifulsoup4
-</code></pre>
+<span style="color:#75715e"># get html</span>
+URL <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">http://example.com/</span><span style="color:#e6db74">&#39;</span>
+r <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url <span style="color:#f92672">=</span> URL)
+<span style="color:#66d9ef">print</span>(r<span style="color:#f92672">.</span>text)
 
-<p>安裝在家目錄</p>
+soup <span style="color:#f92672">=</span> BeautifulSoup(r<span style="color:#f92672">.</span>text, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">html.parser</span><span style="color:#e6db74">&#39;</span>)
 
-<pre><code class="language-bash">pip install beautifulsoup4 --user  
-</code></pre>
-
-<p>抓取並且剖析，以下以列出<code>href</code>為範例</p>
-
-<pre><code class="language-python">import requests
-from bs4 import BeautifulSoup
-
-# get html
-URL = 'http://example.com/'
-r = requests.get(url = URL)
-print(r.text)
-
-soup = BeautifulSoup(r.text, 'html.parser')
-
-# get all link
-for tag in soup.find_all('a'):
-  print(tag.get('href'))
-</code></pre>
+<span style="color:#75715e"># get all link</span>
+<span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>):
+  <span style="color:#66d9ef">print</span>(tag<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>))
+</code></pre></div>
 
     
       <hr>

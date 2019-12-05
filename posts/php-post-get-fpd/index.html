@@ -52,27 +52,18 @@ if (!doNotTrack) {
         <time datetime="2019-09-05 22:20:35 &#43;0800 CST">Thu, 2019 Sep 5</time>
     </div> 
     <p>php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。</p>
-
-<h2 id="發生地點">發生地點</h2>
-
+<h2 id="heading">發生地點</h2>
 <p>GET、POST等傳入參數的位置</p>
-
-<h2 id="描述">描述</h2>
-
+<h2 id="heading1">描述</h2>
 <p>由於可以讓POST或GET傳入數組，如GET參數<code>page=about</code>可以改成<code>page[]=about</code>等方式，若後端沒有進行格外處理則產生錯誤。</p>
-
-<p>程序員直接將使用者GET或POST尚未檢查當成字串下去處理，之後報錯導致FPD漏洞(參見參考的Empty Array)。</p>
-
+<p>程序員直接將使用者GET或POST尚未檢查當成字串下去處理，
+之後報錯導致FPD漏洞(參見參考的Empty Array)。</p>
 <p>該漏洞可能揭露伺服器所使用的作業系統(windows、*nix)。</p>
-
-<h2 id="解決方法">解決方法</h2>
-
+<h2 id="heading2">解決方法</h2>
 <ul>
 <li>禁用錯誤顯示</li>
 </ul>
-
-<h2 id="參考">參考</h2>
-
+<h2 id="heading3">參考</h2>
 <ul>
 <li><a href="http://www.dedecmsok.com/html/n151.html">网站异常页面导致服务器路径泄漏</a></li>
 <li><a href="https://www.owasp.org/index.php/Full_Path_Disclosure">Full Path Disclosure</a></li>

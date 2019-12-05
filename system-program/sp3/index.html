@@ -51,56 +51,34 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-10 19:57:27 &#43;0800 CST">Thu, 2019 Oct 10</time>
     </div> 
-    <h2 id="3-1-introduction">3.1 Introduction</h2>
-
-<h3 id="loader四大功能">loader四大功能</h3>
-
+    <h2 id="31-introduction">3.1 Introduction</h2>
+<h3 id="loader">loader四大功能</h3>
 <ul>
 <li>allocation: 分配記憶體給程式</li>
 <li>Linking: 處理external reference，重新解決<strong>符號參考(symbolic reference)</strong></li>
 <li>relocation: 調整 <strong>address-dependent</strong>，進行relocation調整</li>
 <li>Loading:  將程式指令與資料放入記憶體</li>
 </ul>
-
 <h3 id="linkage-editor">Linkage Editor</h3>
-
 <p>行為</p>
-
-<pre><code class="language-plaintext">obj and library -&gt; linkage Editor -&gt; Linked Program (disk file)
-</code></pre>
-
-<p>載入程式</p>
-
-<pre><code class="language-plaintext">Linked Program -&gt; Relocation Loader -&gt; Memory
-</code></pre>
-
-<h3 id="linking-loader">Linking Loader</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">obj and library -&gt; linkage Editor -&gt; Linked Program (disk file)
+</code></pre></div><p>載入程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Linked Program -&gt; Relocation Loader -&gt; Memory
+</code></pre></div><h3 id="linking-loader">Linking Loader</h3>
 <p>連結載入器直接連結obj file並載入記憶體執行</p>
-
-<pre><code class="language-plaintext">obj and library -&gt; linking Loader  -&gt; Memory
-</code></pre>
-
-<h2 id="3-2-absolute-loader">3.2 absolute Loader</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">obj and library -&gt; linking Loader  -&gt; Memory
+</code></pre></div><h2 id="32-absolute-loader">3.2 absolute Loader</h2>
 <p>載入程式時，會將程式擺放到固定的主記憶體絕對位置</p>
-
-<h3 id="四大功能分配">四大功能分配</h3>
-
+<h3 id="heading">四大功能分配</h3>
 <p>absolute loader只做loading不做linking與relocation</p>
-
 <ul>
 <li>Loader: loader</li>
 <li>programmer: Allocation, Linking</li>
 <li>assembler: relocation</li>
 </ul>
-
-<h3 id="啟動載入器-bootstrap-loader">啟動載入器(Bootstrap Loader)</h3>
-
+<h3 id="bootstrap-loader">啟動載入器(Bootstrap Loader)</h3>
 <p>載入kernal載入到絕對記憶體位置，如BIOS</p>
-
 <p>流程</p>
-
 <ol>
 <li>開機產生啟動中斷</li>
 <li>PC指向Bootstrap Loader的起始位置</li>
@@ -108,101 +86,79 @@ if (!doNotTrack) {
 <li>轉交控制權給os</li>
 <li>轉交command Interpreter, shell</li>
 </ol>
-
-<h2 id="3-3-program-linking">3.3 program linking</h2>
-
-<h3 id="連結">連結</h3>
-
+<h2 id="33-program-linking">3.3 program linking</h2>
+<h3 id="heading1">連結</h3>
 <p>連結用於處理<strong>外部參考</strong>，修改紀錄當中採用&amp;的外部參考必須進行連結。</p>
-
 <p>如果有做relocation時記憶體，連結的obj會擺在前一個obj之後，並且對每個修改紀錄進行修改，而連結的部份則會填上連結obj的symbol位置</p>
-
-<h3 id="重定位relocation">重定位relocation</h3>
-
+<h3 id="relocation">重定位relocation</h3>
 <p>處理程式起始位置的變化</p>
-
 <ul>
 <li>修改紀錄來進行relocation</li>
 <li>機器碼之前擺上relocation bit，每個bit標記nibble(1byte)需要修改，節省修改紀錄的空間</li>
 <li>基底暫存器(Base register或segment register)進行relocation</li>
 </ul>
-
 <p>備註，現代電腦原則上同時採用<strong>修改紀錄</strong>與<strong>基底暫存器</strong>進行relocation</p>
-
-<h3 id="連結檔案">連結檔案</h3>
-
+<h3 id="heading2">連結檔案</h3>
 <p>relocation</p>
-
 <h3 id="address-constant">address constant</h3>
-
 <ul>
 <li>simple relocation: <code>(start addr1 + loc1) - (loc2)</code>，通常為一個修改資料</li>
 <li>複雜重定位:  <code>(start addr1 + loc1) - (start addr2 + loc2)</code>，兩個起始位置不同的相減，兩個以上的修改資料，使用外部參考時需要重定位與連結，產生<strong>兩個以上的修改資料</strong>。</li>
 <li>絕對定址: 兩個地址都被定義在同一個function中，並且相減的結果為absolute address，並且在組譯器處理階段即可處理，因此<strong>不會有修改資料</strong>。<code>(start addr1 + loc1) - (start addr1 + loc2)</code></li>
 </ul>
-
-<h3 id="重點分析">重點分析</h3>
-
+<h3 id="heading3">重點分析</h3>
 <p>如何判斷修改紀錄中是在進行linking或relocation的行為？透過是否使用外部參考進行判斷。</p>
-
 <p><strong>何得出原始程式碼的modification record?</strong></p>
-
-<p>如何知道絕對定址、連結與重定位、重定位？通常牽涉到外部參考的修改資料，大多都是連結與重定位，透過自生程式結尾下去計算的可以算出絕對位置。</p>
-
-<h2 id="3-4-design-linking-loader">3.4 Design Linking Loader</h2>
-
+<p>如何知道絕對定址、連結與重定位、重定位？
+通常牽涉到外部參考的修改資料，大多都是連結與重定位，透過自生程式結尾下去計算的可以算出絕對位置。</p>
+<h2 id="34-design-linking-loader">3.4 Design Linking Loader</h2>
 <h3 id="two-passes-linking-loader">two passes Linking loader</h3>
-
 <ul>
 <li>pass1:  用來assign addresses每個object的external stmbols，找到所有的external address, 進行allocation</li>
 <li>pass2: loading, reloaction, linking</li>
 </ul>
-
-<h3 id="資料結構">資料結構</h3>
-
+<h3 id="heading4">資料結構</h3>
 <ol>
 <li>object program</li>
 <li>external symbol table (ESTAB)</li>
 <li>program Load address (PROGADDR):</li>
 <li>Function address (FADDR): function應該要安排的位置</li>
 </ol>
-
-<h3 id="輸入資料">輸入資料</h3>
-
-<p>轉譯器(language translator)必須提供- T紀錄: 機器碼- H紀錄: 程式長度- D紀錄: public symbol- R紀錄: extrn symbol- M紀錄: modification record</p>
-
-<h4 id="可以去除紀錄">可以去除紀錄</h4>
-
+<h3 id="heading5">輸入資料</h3>
+<p>轉譯器(language translator)必須提供</p>
+<ul>
+<li>T紀錄: 機器碼</li>
+<li>H紀錄: 程式長度</li>
+<li>D紀錄: public symbol</li>
+<li>R紀錄: extrn symbol</li>
+<li>M紀錄: modification record</li>
+</ul>
+<h4 id="heading6">可以去除紀錄</h4>
 <ul>
 <li>Program length: H紀錄</li>
 <li>Extrn symbol: R紀錄</li>
 </ul>
-
 <h3 id="external-symbol-table">external symbol table</h3>
-
 <p>在pass1的時候產生external symbol table，內容為function與function內的D紀錄的地址找出。</p>
-
 <h3 id="pseudo-code">pseudo code</h3>
-
 <p>pass1</p>
-
-<pre><code class="language-plaintext">void pass1() {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">void pass1() {
   faddr = progAddr = os.getProgAddr() // 從作業系統獲取分配的地址
   while (!eof) {
     func = file.headerRecord()
     flth = func.length
     
     find func.name in ESTAB then
-      throw duplicate &quot;External symbol&quot;
+      throw duplicate &#34;External symbol&#34;
     unfounded
       ESTAB[func.name] = func.addr
 
-    while (recode.type != 'E') {
+    while (recode.type != &#39;E&#39;) {
       file.nextRecord()
-      if (record.type == 'D') {
+      if (record.type == &#39;D&#39;) {
         for (symbol in record) {
             find func.name in ESTAB then
-              throw duplicate &quot;External symbol&quot;
+              throw duplicate &#34;External symbol&#34;
             unfounded
                ESTAB[func.name] = func.addr + record.D.address
         }
@@ -210,54 +166,44 @@ if (!doNotTrack) {
     }
   }
 }
-</code></pre>
-
-<p>pass2， loading, reloaction, linking，後兩者要從modification records找</p>
-
-<pre><code class="language-plaintext">void pass2() {
+</code></pre></div><p>pass2， loading, reloaction, linking，後兩者要從modification records找</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">void pass2() {
   faddr = execaddr = progAddr
   while (!eof) {
     func = file.headerRecord()
     flth = func.length
 
-    while (recode.type != 'E') {
+    while (recode.type != &#39;E&#39;) {
       file.nextRecord()
-      if (record.type == 'T') {
+      if (record.type == &#39;T&#39;) {
         faddr[specified addr] =  file.objectCode()
-      } else if (record.type == 'M') {
+      } else if (record.type == &#39;M&#39;) {
         // relocation and linking
         find modifyName in ESTAB then
-          if ('+' or '-') {
+          if (&#39;+&#39; or &#39;-&#39;) {
             faddr[specified addr] =  + or -            
           } else {
             get offset of symbol location            
           }
         unfounded
-          throw duplicate &quot;External symbol&quot;
+          throw duplicate &#34;External symbol&#34;
       }
     }
   }
 }
-</code></pre>
-
-<h2 id="3-5-the-other-loaders">3.5 The other Loaders</h2>
-
+</code></pre></div><h2 id="35-the-other-loaders">3.5 The other Loaders</h2>
 <h3 id="the-other-loaders">The Other Loaders</h3>
-
 <ol>
 <li>Linking Loader: allocation, linking, relocation, loading</li>
 <li>Linkage Editor: Allocation, linking, relocation(透過修改紀錄進行L&amp;R)</li>
 <li>Relocating Loader: allocation, relocation, loading</li>
 </ol>
-
-<p>Linkage Editor備註: start address是透過allocation分配，如com檔案的起始位置<code>0100</code>，而relocation是在處理修改資料與起始位置所進行的工作。</p>
-
+<p>Linkage Editor備註: start address是透過allocation分配，
+如com檔案的起始位置<code>0100</code>，而relocation是在處理修改資料與起始位置所進行的工作。</p>
 <p>現代系統大多採用Linkage Editor與Relocating Loader處理程式載入，</p>
-
 <p>linkage Editor已經確定個別obj載入的位置</p>
-
-<p>若電腦有relocation register(bash register, segment register)，是否能夠去除<code>M</code>紀錄？依然不可能完全去除</p>
-
+<p>若電腦有relocation register(bash register, segment register)，
+是否能夠去除<code>M</code>紀錄？依然不可能完全去除</p>
 <ul>
 <li>可以去除: 都是相同的start address</li>
 <li>無法去除:
@@ -266,18 +212,17 @@ if (!doNotTrack) {
 <li>linking</li>
 <li>負值的(<code>-main</code>)</li>
 <li><code>&amp;</code>符號需要連結</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="dynamic-linker">Dynamic Linker</h3>
-
-<p>直接執行main function，在執行時(run time)需要使用時在進行連結。(binder為 linker的意思)</p>
-
-<p>動態連結會浪費時間，降低程式執行效率，程式無法連結時會導致程式崩潰。</p>
-
+<p>直接執行main function，在執行時(run time)需要使用時在進行連結。
+(binder為 linker的意思)</p>
+<p>動態連結會浪費時間，降低程式執行效率，
+程式無法連結時會導致程式崩潰。</p>
 <h3 id="overlay">Overlay</h3>
-
-<p>早期電腦因為記憶體空間不夠因此需要overlay，共用兩個不會同時呼叫的function記憶體</p>
+<p>早期電腦因為記憶體空間不夠因此需要overlay，
+共用兩個不會同時呼叫的function記憶體</p>
 
     
       <hr>

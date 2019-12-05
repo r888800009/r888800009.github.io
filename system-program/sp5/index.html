@@ -51,135 +51,90 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-11-11 23:06:51 &#43;0800 CST">Mon, 2019 Nov 11</time>
     </div> 
-    <h2 id="5-1-basic-compiler-concepts">5.1 Basic Compiler Concepts</h2>
-
-<pre><code class="language-plaintext">source -&gt; lexical analysis (token) -&gt; syntax analysis (parse tree) 
+    <h2 id="51-basic-compiler-concepts">5.1 Basic Compiler Concepts</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source -&gt; lexical analysis (token) -&gt; syntax analysis (parse tree) 
 -&gt; intermediate code generation (intermediate code) 
 -&gt; code optimization  (intermediate code) -&gt; code generation 
 -&gt; machine code
-</code></pre>
-
-<p>注: 直譯器不做程式碼最佳化，編譯器則會。</p>
-
+</code></pre></div><p>注: 直譯器不做程式碼最佳化，編譯器則會。</p>
 <h3 id="lexical-analysis">Lexical Analysis</h3>
-
-<p>lexical analyzer (Scanner)同一時間內只讀入<strong>一個char</strong>，產生的<strong>最小單位</strong>稱為<strong>token</strong>(type, value)。</p>
-
+<p>lexical analyzer (Scanner)同一時間內只讀入<strong>一個char</strong>，
+產生的<strong>最小單位</strong>稱為<strong>token</strong>(type, value)。</p>
 <h3 id="syntax-analysis">Syntax Analysis</h3>
-
-<p>syntax analyzer (Parser)，文法合法的statements，透過建樹確定文法是否合法，如果能建樹代表符合文法，可以從樹根或樹葉建樹兩個方向皆可。</p>
-
+<p>syntax analyzer (Parser)，文法合法的statements，
+透過建樹確定文法是否合法，如果能建樹代表符合文法，可以從樹根或樹葉建樹兩個方向皆可。</p>
 <h3 id="intermediate-code-generation">Intermediate Code Generation</h3>
-
 <p>three address code:</p>
-
-<pre><code class="language-plaintext">(operator, operand1, operand2, result)
-</code></pre>
-
-<p>註解: tree address代表<code>op1</code>, <code>op2</code>, <code>result</code>的address</p>
-
-<p>分解statements成多個three address code文法樹的形成引導中間碼(three address code)產生</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(operator, operand1, operand2, result)
+</code></pre></div><p>註解: tree address代表<code>op1</code>, <code>op2</code>, <code>result</code>的address</p>
+<p>分解statements成多個three address code
+文法樹的形成引導中間碼(three address code)產生</p>
 <h3 id="code-optimization">Code Optimization</h3>
-
 <p>對<strong>中間碼</strong>與<strong>機器碼</strong>優化，使obj速度更快，並且花費更少空間</p>
-
 <p>中間碼與asm十分相近</p>
-
 <p><code>i++</code>與<code>i = i + 1</code>的速度有待商榷，而現代編譯器大多有優化的功能。</p>
-
 <h3 id="code-generation">Code Generation</h3>
-
 <p>如何最佳化暫存器使用，之後產生機器碼之後進行機器碼最佳化</p>
-
 <h3 id="table-management-and-error-handling">Table Management And Error Handling</h3>
-
-<p>token, symbol table等建置，編譯器五大功能(或6個 在機器碼進行優化)都做一次，將多個功能合併並可以透過2pass處理，問題是forward reference。</p>
-
-<p>翻成機器碼的時候，例如if else無法知道機器碼的長度，需要跳到true與false，而<strong>隱含forward reference</strong>。</p>
-
-<h2 id="5-2-grammar">5.2 Grammar</h2>
-
-<h3 id="文法">文法</h3>
-
+<p>token, symbol table等建置，編譯器五大功能(或6個 在機器碼進行優化)都做一次，
+將多個功能合併並可以透過2pass處理，問題是forward reference。</p>
+<p>翻成機器碼的時候，例如if else無法知道機器碼的長度，
+需要跳到true與false，而<strong>隱含forward reference</strong>。</p>
+<h2 id="52-grammar">5.2 Grammar</h2>
+<h3 id="heading">文法</h3>
 <p>Backus–Naur form Grammar</p>
-
-<pre><code class="language-plaintext">&lt;cond&gt; ::= &lt;cond&gt; * &lt;cond&gt; | &lt;cond&gt; / &lt;cond&gt;
-</code></pre>
-
-<p>terminal symbol (token)non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;cond&gt; ::= &lt;cond&gt; * &lt;cond&gt; | &lt;cond&gt; / &lt;cond&gt;
+</code></pre></div><p>terminal symbol (token)
+non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
 <p>將輸入的內容分解non-terminal symbol直到成為terminal symbol (文法批配token)</p>
-
 <h3 id="parse-tree-syntex-tree">Parse Tree (Syntex Tree)</h3>
-
 <ul>
 <li>Precedence: 不同運算子優先順序(*/的優先級大於+-)</li>
 <li>Associativity: 相同運算子，左右方向(<code>=</code>、<code>**</code>(平方)要由右自左，一般的四則運算由左自右)</li>
 </ul>
-
 <h3 id="ambiguous-grammar">Ambiguous Grammar</h3>
-
 <p>混搖不清的文法，相同token可以產生多種不同的parse tree。</p>
-
-<pre><code class="language-plaintext">id - id + id
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">id - id + id
 ((id - id) + id)
 (id - (id + id))
-</code></pre>
-
-<p>如何產生unambigous grammar</p>
-
+</code></pre></div><p>如何產生unambigous grammar</p>
 <p>混淆不清為一個statement,不只一種parse tree</p>
-
-<h2 id="5-3-lexical-analysis">5.3 Lexical Analysis</h2>
-
+<h2 id="53-lexical-analysis">5.3 Lexical Analysis</h2>
 <p>token類型</p>
-
 <ul>
 <li>identifier</li>
 <li>delimiter</li>
 <li>reserved word</li>
 <li>constant integer, float, string</li>
 </ul>
-
 <h3 id="identifier">Identifier</h3>
-
-<pre><code class="language-plaintext">&lt;ident&gt; ::= &lt;letter&gt; | &lt;ident&gt;&lt;letter&gt; | &lt;ident&gt;&lt;digit&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;ident&gt; ::= &lt;letter&gt; | &lt;ident&gt;&lt;letter&gt; | &lt;ident&gt;&lt;digit&gt;
 &lt;letter&gt; ::= [a-zA-Z]
 &lt;digit&gt; ::= [0-9]
-</code></pre>
-
-<h3 id="token-table">Token Table</h3>
-
+</code></pre></div><h3 id="token-table">Token Table</h3>
 <ul>
 <li>delimiter與reserved word: 根據程式語言定義的delimiter與reserved word建立table</li>
 <li>integer, string</li>
 <li>identifier table (identifier, type保存類型, pointer存放的位置, scope保存勢力範圍)</li>
 </ul>
-
-<h2 id="5-4-syntax-analysis">5.4 Syntax Analysis</h2>
-
+<h2 id="54-syntax-analysis">5.4 Syntax Analysis</h2>
 <p>建立剖析樹的方法</p>
-
 <ul>
 <li>Top Down Method: 由root向下(derive/produce)，例如<strong>Recursive Descent Parser</strong></li>
 <li>Bottom Up Method: 由note向上(reduce)，<strong>Operator Precedence Parser</strong></li>
 </ul>
-
 <h3 id="operator-precedence-parser">Operator Precedence Parser</h3>
-
 <ol>
-<li>根據文法(grammar)產生 Precedence Matrix，為bottom up Parser，可以回報混淆不清的文法出現的位置，並且能夠設計者可以進行調整。</li>
+<li>根據文法(grammar)產生 Precedence Matrix，為bottom up Parser，
+可以回報混淆不清的文法出現的位置，並且能夠設計者可以進行調整。</li>
 <li>token string 丟給 operator precedence parser 檢查是否符合syntax</li>
 </ol>
-
-<p>假設輸入<code>READ(id)</code>，stack變化，<strong>如果遇到stack top比較大的情況，則可以找出一個文法(問: 在stack top的是不是總是最大？)</strong>，之後就可以做reduce to non terminal symbol</p>
-
-<pre><code class="language-plaintext">&lt;id-list&gt; ::= id
+<p>假設輸入<code>READ(id)</code>，stack變化，<strong>如果遇到stack top比較大的情況，
+則可以找出一個文法(問: 在stack top的是不是總是最大？)</strong>，
+之後就可以做reduce to non terminal symbol</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;id-list&gt; ::= id
 &lt;read&gt; ::= READ(&lt;id-list&gt;)
-</code></pre>
-
-<pre><code class="language-plaintext">&lt;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;
 &lt;READ
 &lt;READ = ( 
 &lt;READ = (  &lt;id
@@ -187,13 +142,9 @@ if (!doNotTrack) {
 &lt;READ = (  = id-list ) 
 &lt;READ = (  = id-list )&gt;
 read
-</code></pre>
-
-<p>註解: non terminal symbol不需要處理優先級</p>
-
+</code></pre></div><p>註解: non terminal symbol不需要處理優先級</p>
 <p><code>id + id - id</code>為混淆不清的文法，而調整混搖不清的文法，可以有由左至右或由右自左等調整</p>
-
-<pre><code class="language-plaintext">&lt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;
 &lt;id
 &lt;term + 
 &lt;term + &lt; id 
@@ -203,124 +154,83 @@ read
 &lt;term - &lt; id &gt;
 &lt;term - term &gt;
 term
-</code></pre>
-
-<p>註解: 轉成non terminal symbol當stack empty</p>
-
+</code></pre></div><p>註解: 轉成non terminal symbol當stack empty</p>
 <p>reduce to時候就在生成樹</p>
-
 <h4 id="error">Error</h4>
-
 <ol>
 <li>兩token比較為blank entry無法比較大小</li>
 <li>比左邊大且右邊大時必須<strong>reduce to</strong>，但是找不到syntax rule</li>
 </ol>
-
 <h3 id="recursive-descent-parser">Recursive Descent Parser</h3>
-
 <p>為<strong>Top Down Method</strong>從最左邊Match向下找到Syntax，從最起始的<strong>Non Terminal Symbol</strong>向下對映。</p>
-
 <h4 id="left-recursive">Left Recursive</h4>
-
 <p>遇到left recursive情形，將文法作left factory來修改順序即可。</p>
-
-<h2 id="5-5-code-genaration">5.5 Code Genaration</h2>
-
-<p>rule 可以對映code generation routines(或semantic routine)，如果沒辦法容易的翻出機器碼或機器碼太細小，則會先翻譯成intermediate form。</p>
-
-<h2 id="5-6-intermediate-form">5.6 Intermediate Form</h2>
-
+<h2 id="55-code-genaration">5.5 Code Genaration</h2>
+<p>rule 可以對映code generation routines(或semantic routine)，
+如果沒辦法容易的翻出機器碼或機器碼太細小，則會先翻譯成intermediate form。</p>
+<h2 id="56-intermediate-form">5.6 Intermediate Form</h2>
 <p>Three address code(Quadruple From)</p>
-
 <p>如<code>&lt;term&gt; = &lt;term&gt;1 + &lt;term&gt;2</code>可以翻成</p>
-
-<pre><code class="language-plaintext">(+, &lt;term&gt;1, &lt;term&gt;2, &lt;term&gt;)
-</code></pre>
-
-<h2 id="5-7-machine-independent-compiler-features">5.7 Machine Independent Compiler Features</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(+, &lt;term&gt;1, &lt;term&gt;2, &lt;term&gt;)
+</code></pre></div><h2 id="57-machine-independent-compiler-features">5.7 Machine Independent Compiler Features</h2>
 <h3 id="storage-allocation">Storage Allocation</h3>
-
 <ul>
 <li><strong>Static Allocation</strong>: 在編譯器時間分配空間</li>
 <li><strong>Dynamic allocation</strong>: 在run time分配空間
 <ul>
 <li>auto: function call: 系統自動分配一個<code>stack</code></li>
 <li>Controlled: malloc(), free()，用<code>heap</code>保存，<code>heap</code>刪除之後就必須要清理垃圾(garbage)。</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>static與非static變數，前者在compiler time處理，後者為dynamic allocation (stack)。</p>
-
 <h3 id="activation-record">Activation Record</h3>
-
 <p>函數被呼叫的時候，系統替函數產生stack內容，為Activation Record。</p>
-
-<p>Activation Record存在的目的，在於<strong>保存回傳地址</strong>，<strong>區域變數(Local definition)</strong>, <strong>傳入參數(Pass Parameters)</strong>等，在大多數的系統上都能看到。</p>
-
-<h4 id="activation-record-1">Activation Record</h4>
-
+<p>Activation Record存在的目的，在於<strong>保存回傳地址</strong>，
+<strong>區域變數(Local definition)</strong>, **傳入參數(Pass Parameters)**等，
+在大多數的系統上都能看到。</p>
+<h4 id="activation-record1">Activation Record</h4>
 <ul>
 <li>variables (如 return value, local define)</li>
 <li>return address</li>
 <li>next</li>
 <li>previous</li>
 </ul>
-
 <p>範例: main function的return address會指向OS，並且Next/Previous為空</p>
-
 <p>注: 實際上根據不同系統還是會有所差異。可以用gdb下去查看堆疊結構。</p>
-
 <p><strong>scope</strong>: 為變數有效的範圍</p>
-
 <ul>
 <li>static scope: 根據程式的結構，如存取巢狀結構外層var</li>
 <li>dynamic scope: 根據function被呼叫的次序，不同function call作用的var</li>
 </ul>
-
 <h3 id="prologue-and-epilogue">Prologue and Epilogue</h3>
-
 <p>增加code在call function中</p>
-
 <ul>
 <li>Prologue: 建立activation record</li>
 <li>Epilogue: 移除activation record</li>
 </ul>
-
 <h3 id="structure-variable">Structure Variable</h3>
-
 <p>例如定義<strong>二維陣列</strong>，以<strong>行</strong>優先或以<strong>列</strong>優先，而記憶體中必須以一維保存陣列資料(mapping to memory)。</p>
-
 <p>假設陣列為<code>array[column][row]</code></p>
-
 <ul>
 <li>行優先: 優先排序row</li>
 <li>列優先: 優先排序column</li>
 </ul>
-
-<h4 id="計算公式">計算公式</h4>
-
+<h4 id="heading1">計算公式</h4>
 <p>定義<code>type B[a-b][c-d]</code>(表示為<code>type B[a:b][c:d]</code>)，定址到<code>B[s][t]</code></p>
-
 <ul>
 <li>Row Major: <code>[(s - a) * (d - c + 1) + (t - c)] * sizeof(Type) + base</code>，假設index起始都是0，代表<code>type B[b][d]</code>，為<code>[s * (d + 1) + t] * sizeof(Type) + base</code></li>
 <li>Column Major: <code>[(t - c) * (b - a + 1) + (s - a)] * sizeof(Type) + base</code>，假設起始為0，<code>[t * (b + 1) + s] * sizeof(Type) + base</code></li>
 </ul>
-
 <p>註: 以<code>a</code>, <code>c</code>做為index的起始，減去代表求長度，<code>(b + 1)</code>的部份是陣列計算大小的方法 c++為Row Major</p>
-
-<h3 id="code-optimization-1">Code Optimization</h3>
-
+<h3 id="code-optimization1">Code Optimization</h3>
 <p>對<strong>中間碼</strong>與機器碼進行優化。</p>
-
 <ol>
 <li>Common Sub-Expression: 找出<strong>重複運算</strong>，並且將其提出。</li>
 <li>Loop In-Variants: 迴圈內部<strong>不變</strong>的函數，可以提出迴圈外。</li>
 <li>Reduction in Strength: 將運算<strong>慢的指令</strong>轉成<strong>較快的指令</strong>。</li>
 </ol>
-
-<h3 id="5-8-compiler-design-option">5.8 Compiler Design Option</h3>
-
+<h3 id="58-compiler-design-option">5.8 Compiler Design Option</h3>
 <ol>
 <li>Interpreter: 直接由source執行程式</li>
 <li>p code compiler: Byte Code (機器無關語言)，可<strong>跨平台</strong>，如Java Interpreter與JRM</li>

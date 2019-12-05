@@ -51,56 +51,35 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-05 19:37:18 &#43;0800 CST">Sat, 2019 Oct 5</time>
     </div> 
-    <h2 id="安裝">安裝</h2>
-
+    <h2 id="heading">安裝</h2>
 <p>kali的幾種安裝方式</p>
-
 <ul>
 <li><a href="https://hub.docker.com/r/kalilinux/kali-linux-docker/">docker</a></li>
 <li>預安裝映像檔</li>
 <li>手動安裝</li>
 </ul>
-
-<h2 id="透過docker安裝kali-linux">透過docker安裝Kali Linux</h2>
-
+<h2 id="dockerkali-linux">透過docker安裝Kali Linux</h2>
 <p>查詢docker hub上面的資訊，找到恰當的image</p>
-
-<pre><code class="language-bash">docker search kali 
-</code></pre>
-
-<p>輸出如下方所示，我們抓取第一個image</p>
-
-<pre><code class="language-plaintext">NAME                                                     DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search kali 
+</code></pre></div><p>輸出如下方所示，我們抓取第一個image</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">NAME                                                     DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
 kalilinux/kali-linux-docker                              Kali Linux Rolling Distribution Base Image      669                                     [OK]
 linuxkonsult/kali-metasploit                             Kali base image with metasploit                 69                                      [OK]
 jgamblin/kalibrowser                                     Kali in a Browser                               31
 booyaabes/kali-linux-full                                Kali image with kali-linux-full metapackage …   19
-</code></pre>
-
-<p>抓取image</p>
-
-<pre><code class="language-bash">sudo docker pull kalilinux/kali-linux-docker
-</code></pre>
-
-<p>啟動並開啟<code>bash</code></p>
-
-<pre><code class="language-bash">sudo docker run --name kali1 -it kalilinux/kali-linux-docker bash
-</code></pre>
-
-<p>根據官方所說，預設的docker image為最小基礎安裝板。我們在此安裝<code>metasploit</code>，Kali linux為debian系列的發行板，因此可以採用<code>apt</code>來安裝軟件，Kali的metasploit的<a href="https://pkg.kali.org/pkg/metasploit-framework">軟件包</a>。</p>
-
-<pre><code class="language-bash">apt update
+</code></pre></div><p>抓取image</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull kalilinux/kali-linux-docker
+</code></pre></div><p>啟動並開啟<code>bash</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run --name kali1 -it kalilinux/kali-linux-docker bash
+</code></pre></div><p>根據官方所說，預設的docker image為最小基礎安裝板。
+我們在此安裝<code>metasploit</code>，Kali linux為debian系列的發行板，
+因此可以採用<code>apt</code>來安裝軟件，Kali的metasploit的<a href="https://pkg.kali.org/pkg/metasploit-framework">軟件包</a>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
 apt upgrade
 apt install metasploit-framework
-</code></pre>
-
-<p>再來測試<code>metasploit</code>是否成功安裝</p>
-
-<pre><code class="language-bash">msfconsole
-</code></pre>
-
-<h3 id="參見">參見</h3>
-
+</code></pre></div><p>再來測試<code>metasploit</code>是否成功安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfconsole
+</code></pre></div><h3 id="heading1">參見</h3>
 <ul>
 <li><a href="/wiki/docker/">Docker筆記</a></li>
 </ul>

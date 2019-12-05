@@ -51,16 +51,13 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-14 19:10:49 &#43;0800 CST">Mon, 2019 Oct 14</time>
     </div> 
-    <h2 id="實做詞法分析">實做詞法分析</h2>
-
+    <h2 id="heading">實做詞法分析</h2>
 <ul>
 <li>有限狀態機</li>
 <li>正則</li>
 <li>lex</li>
 </ul>
-
-<h2 id="組合語言詞法分析">組合語言詞法分析</h2>
-
+<h2 id="heading1">組合語言詞法分析</h2>
 <ul>
 <li>Token table
 <ul>
@@ -68,64 +65,49 @@ if (!doNotTrack) {
 <li>Instruction</li>
 <li>Register</li>
 <li>Pseudo instructions</li>
-</ul></li>
+</ul>
+</li>
 <li><code>(type, value)</code></li>
 </ul>
-
 <h2 id="lex">lex</h2>
-
 <p>安裝</p>
-
-<pre><code class="language-bash">sudo pacman -S flex
-</code></pre>
-
-<p>使用stdin輸入</p>
-
-<pre><code class="language-bash">lex
-</code></pre>
-
-<p>使用檔案輸入</p>
-
-<pre><code class="language-bash">lex file.l
-</code></pre>
-
-<h3 id="範例程式">範例程式</h3>
-
-<pre><code class="language-plaintext">%option noyywrap
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S flex
+</code></pre></div><p>使用stdin輸入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex
+</code></pre></div><p>使用檔案輸入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex file.l
+</code></pre></div><h3 id="heading2">範例程式</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%option noyywrap
 %%
 [0-9]+ number(yytext);
 %%
 
 void number(char *str){
-  printf(&quot;hello world: %s\n&quot;, str);
+  printf(&#34;hello world: %s\n&#34;, str);
 }
 
 int main() {
   yylex();
   return 0;
 }
-</code></pre>
-
-<p><a href="https://github.com/r888800009/practice/blob/master/firstLex.l">原始碼</a></p>
-
+</code></pre></div><p><a href="https://github.com/r888800009/practice/blob/master/firstLex.l">原始碼</a></p>
 <p>範例二</p>
-
-<pre><code class="language-plaintext">digit ([0-9])
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">digit ([0-9])
 integer ({digit}+)
 keywords int|float|byte|bool|func|return
 delimiter [,()\[\]{}]
 
 %%
 {integer} {
-  printf(&quot;int: %s\n&quot;, yytext);
+  printf(&#34;int: %s\n&#34;, yytext);
 }
 
 {delimiter} {
-  printf(&quot;de: %s\n&quot;, yytext);
+  printf(&#34;de: %s\n&#34;, yytext);
 }
 
 {keywords} {
-  printf(&quot;keywords: %s\n&quot;, yytext);
+  printf(&#34;keywords: %s\n&#34;, yytext);
 }
 
 %%
@@ -134,21 +116,13 @@ int main() {
   yylex();
   return 0;
 }
-</code></pre>
-
-<h3 id="常見問題">常見問題</h3>
-
+</code></pre></div><h3 id="heading3">常見問題</h3>
 <p>出現<code>undefined reference to `yywrap'</code>無法編譯</p>
-
 <p>使用<code>flex</code>要連結<code>-lfl</code></p>
-
-<pre><code class="language-plaintext">gcc lex.yy.c -lfl  
-</code></pre>
-
-<p>或採用<code>noyywrap</code></p>
-
-<pre><code class="language-plaintext">%option noyywrap
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gcc lex.yy.c -lfl  
+</code></pre></div><p>或採用<code>noyywrap</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%option noyywrap
+</code></pre></div>
 
     
       <hr>

@@ -51,37 +51,27 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-01 23:30:23 &#43;0800 CST">Tue, 2019 Oct 1</time>
     </div> 
-    <h2 id="索引">索引</h2>
-
+    <h2 id="heading">索引</h2>
 <ul>
 <li>透過<code>wappalyzer</code>辨識<a href="/wiki/web-fingerprint/">指紋</a></li>
 <li><a href="/wiki/sqlmap/">sqlmap</a></li>
 </ul>
-
 <h2 id="curl">curl</h2>
-
-<pre><code class="language-bash">curl https://example.com  -X POST --data 'id=1' --cookie 'name=var' -i
-</code></pre>
-
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://example.com  -X POST --data <span style="color:#e6db74">&#39;id=1&#39;</span> --cookie <span style="color:#e6db74">&#39;name=var&#39;</span> -i
+</code></pre></div><ul>
 <li><code>-i</code>: 顯示回應頭</li>
 <li><code>-I</code>: HEAD method</li>
 <li><code>-H</code>: 補上Header，例如<code>Content-Type:</code></li>
 </ul>
-
-<h3 id="使用情況">使用情況</h3>
-
+<h3 id="get">GET</h3>
+<p>送出get資料，自動urlencode編碼。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -X GET -G <span style="color:#e6db74">&#39;http://example.com&#39;</span>  --data-urlencode <span style="color:#e6db74">&#34;some data need encode&#34;</span>  
+</code></pre></div><h3 id="heading1">使用情況</h3>
 <p>透過<code>curl</code>洩漏302 redirect的資訊</p>
-
 <p>比起採用<code>firefox</code>開發工具傳送，<code>curl</code>較為方便修改。</p>
-
 <h2 id="burpsuite">Burpsuite</h2>
-
-<pre><code class="language-bash">pacaur -S burpsuite 
-</code></pre>
-
-<h2 id="hackbar">Hackbar</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacaur -S burpsuite 
+</code></pre></div><h2 id="hackbar">Hackbar</h2>
 <p><a href="https://addons.mozilla.org/en-US/firefox/addon/hackbartool/">https://addons.mozilla.org/en-US/firefox/addon/hackbartool/</a></p>
 
     

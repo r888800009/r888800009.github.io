@@ -51,30 +51,26 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-28 19:37:51 &#43;0800 CST">Mon, 2019 Oct 28</time>
     </div> 
-    <h2 id="xss-類型">XSS 類型</h2>
-
+    <h2 id="xss-">XSS 類型</h2>
 <ul>
-<li>Reflected XSS: 使用者輸入會顯示在頁面上，而反射式XSS則是輸入了payload並且頁面加載payload</li>
+<li>Reflected XSS: 使用者輸入會顯示在頁面上，
+而反射式XSS則是輸入了payload並且頁面加載payload</li>
 <li>Stored XSS: 儲存payload在資料庫，之後使用者訪問頁面被提取出來。</li>
-<li>DOM Based XSS: 發生在客戶端，可能屬於反射式或儲存式，發生在javascript操控DOM產生的XSS漏洞，例如Fragment identifier顯示在頁面上，而攻擊者將payload寫在後面<code>/xss.html#&lt;script&gt;alert(1)&lt;/script&gt;</code></li>
+<li>DOM Based XSS: 發生在客戶端，可能屬於反射式或儲存式，
+發生在javascript操控DOM產生的XSS漏洞，例如Fragment identifier顯示在頁面上，
+而攻擊者將payload寫在後面<code>/xss.html#&lt;script&gt;alert(1)&lt;/script&gt;</code></li>
 </ul>
-
-<h2 id="非script-tag的xss">非script tag的xss</h2>
-
+<h2 id="script-tagxss">非script tag的xss</h2>
 <ul>
 <li><code>svg</code>, <code>img</code>, <code>input</code> tags中的 on系列參數</li>
 <li><code>javascript:alert(1)</code></li>
 </ul>
-
-<h2 id="xss練習資源">XSS練習資源</h2>
-
+<h2 id="xss">XSS練習資源</h2>
 <ul>
 <li><a href="http://prompt.ml/0">prompt(1) to win</a></li>
 <li><a href="http://alf.nu/alert1">alert(1) to win</a></li>
 </ul>
-
-<h2 id="參見">參見</h2>
-
+<h2 id="heading">參見</h2>
 <ul>
 <li><a href="https://www.slideshare.net/GarethHeyes/xss-magic-tricks">XSS Magic tricks</a></li>
 <li><a href="/wiki/web-vulnerability/#xss">Web網頁漏洞#XSS</a></li>

@@ -17,7 +17,8 @@
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
       
       <guid>https://r888800009.github.io/posts/cgi-apache/</guid>
-      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，
+並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,7 +36,9 @@
       <pubDate>Sat, 31 Aug 2019 02:01:14 +0800</pubDate>
       
       <guid>https://r888800009.github.io/posts/army-dispatch-problem/</guid>
-      <description>&lt;p&gt;軍隊派遣人力不可低於需求人力，派遣與調回需要花費金錢，常駐的也需要花錢。派遣當月需要給付常駐補給費，調回不須。給予一個陣列A代表每個月的人力需求，求最低預算。&lt;/p&gt;</description>
+      <description>&lt;p&gt;軍隊派遣人力不可低於需求人力，派遣與調回需要花費金錢，
+常駐的也需要花錢。派遣當月需要給付常駐補給費，調回不須。
+給予一個陣列A代表每個月的人力需求，求最低預算。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,7 +47,8 @@
       <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
       
       <guid>https://r888800009.github.io/posts/what-can-stack-can-do/</guid>
-      <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
+      <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，
+但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -143,7 +147,9 @@
       <pubDate>Fri, 09 Aug 2019 22:55:09 +0800</pubDate>
       
       <guid>https://r888800009.github.io/posts/blog-or-repo-for-notes/</guid>
-      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、保存方式、索引方式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式
+的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、
+保存方式、索引方式。&lt;/p&gt;</description>
     </item>
     
     <item>

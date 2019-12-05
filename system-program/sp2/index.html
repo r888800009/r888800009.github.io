@@ -51,45 +51,29 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-24 21:49:03 &#43;0800 CST">Tue, 2019 Sep 24</time>
     </div> 
-    <h2 id="2-1-assembler">2.1 assembler</h2>
-
+    <h2 id="21-assembler">2.1 assembler</h2>
 <p>將原始程式翻成machine code</p>
-
 <h3 id="assembler-listing-lst-file">assembler listing (LST file)</h3>
-
 <p>獲得相關的地址給出可辨識的列表，進行cross reference。</p>
-
 <ul>
 <li>x86 的<code>org</code>給起始位置</li>
 <li><code>label</code>、<code>symbol</code></li>
 <li>判斷pseudo instruction: 其不會被翻成機器碼</li>
 </ul>
-
 <p><strong>cross reference</strong>: 定義的label與對映的address列表出來。</p>
-
 <p>linux可以透過此指令輸出assembler listing</p>
-
-<pre><code class="language-bash">as -aln example.s | less  
-</code></pre>
-
-<h3 id="obj-file">obj file</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">as -aln example.s | less  
+</code></pre></div><h3 id="obj-file">obj file</h3>
 <p>用於loader載入使用</p>
-
 <h3 id="assembler">assembler</h3>
-
 <ul>
 <li><strong>assembler</strong>: 轉換成機器碼之後，將機器碼與symnlolic lables的關聯對映起來。</li>
 <li><strong>disassembler</strong>: 將機器碼轉為組合語言</li>
 <li><strong>cross assembler</strong>: 透過機器A(如x86)組譯出機器B(arm)的機器碼。</li>
 </ul>
-
 <p>可重定位指令: 載入起始點不同需要計算絕對地址，不過<code>call</code>、<code>jmp</code>、<code>LOOP</code>是計算距離不用relocation。</p>
-
-<h2 id="2-2-sic-assembly">2.2 SIC Assembly</h2>
-
-<h3 id="組譯器指引-assembler-directives">組譯器指引 assembler directives</h3>
-
+<h2 id="22-sic-assembly">2.2 SIC Assembly</h2>
+<h3 id="-assembler-directives">組譯器指引 assembler directives</h3>
 <ul>
 <li><code>start</code>: 表示address的起始位置</li>
 <li><code>end</code></li>
@@ -98,35 +82,24 @@ if (!doNotTrack) {
 <li><code>resb</code></li>
 <li><code>resw</code></li>
 </ul>
-
-<h3 id="sic-xe與sic差異">SIC/XE與SIC差異</h3>
-
+<h3 id="sicxesic">SIC/XE與SIC差異</h3>
 <ul>
 <li>基底相對定址 (Base relative)</li>
 <li>type 4: 指令前方補上加號</li>
 </ul>
-
 <p><code>disp</code>主要以<code>pc</code>為基準計算</p>
-
 <p>PC Relative無法描述位置，則使用base reg reloaction。</p>
-
 <ul>
 <li><code>,x</code>: index addressing</li>
 </ul>
-
-<h2 id="2-3-80xx-assembly">2.3 80xx assembly</h2>
-
+<h2 id="23-80xx-assembly">2.3 80xx assembly</h2>
 <p>在翻譯code時，如disp需要以little endian表示</p>
-
 <ul>
 <li><strong>extern pseudo</strong>: 先以<code>0x0000</code>定義外部地址，直到連結載入填上位置。</li>
 <li><strong>loop</strong>: <code>LOOP</code>使用PC加上offset(二補數)</li>
 </ul>
-
-<h2 id="2-4-assembler-algorithm">2.4 Assembler Algorithm</h2>
-
-<h3 id="組譯器演算法">組譯器演算法</h3>
-
+<h2 id="24-assembler-algorithm">2.4 Assembler Algorithm</h2>
+<h3 id="heading">組譯器演算法</h3>
 <ol>
 <li>轉譯指令成機器碼</li>
 <li>獲取symbol對映的address</li>
@@ -134,9 +107,7 @@ if (!doNotTrack) {
 <li>處理 pseudo instructions</li>
 <li>產生obj與assembly listing</li>
 </ol>
-
-<h3 id="通用設計程序">通用設計程序</h3>
-
+<h3 id="heading1">通用設計程序</h3>
 <ul>
 <li>軟體生命週期
 <ol>
@@ -146,43 +117,40 @@ if (!doNotTrack) {
 <li>實做</li>
 <li>軟體測試</li>
 <li>支持與維護</li>
-</ol></li>
+</ol>
+</li>
 <li>軟體設計
 <ol>
 <li>輸出需求/輸入設計</li>
 <li>資料結構/演算法</li>
 <li>將程式模組化</li>
-</ol></li>
+</ol>
+</li>
 <li>IO設計
 <ol>
 <li>輸出要求: assembly listing, object</li>
 <li>輸入: 組合語言程式碼</li>
-</ol></li>
+</ol>
+</li>
 <li>資料結構
 <ul>
 <li><strong>OPTAB</strong>: 存放指令與機器碼對應關聯</li>
 <li><strong>SYMTABLE</strong>: 儲存變數與符號的地址</li>
 <li><strong>LOCCTR</strong>: 保存當前處理的指令地址</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="two-passes-assembler">two passes assembler</h3>
-
 <h4 id="pass1">pass1</h4>
-
 <p>主要找出label與addr對應的位置建立SYMTABLE</p>
-
 <ol>
 <li>判斷指令長度(透過OPTAB)</li>
 <li>計算LOCCTR</li>
 <li>將lable的地址保存到SYMTABLE</li>
 <li>處理pseudo instruction</li>
 </ol>
-
 <h4 id="pass2">pass2</h4>
-
 <p>產生obj</p>
-
 <ol>
 <li>透過SYMTAB帶入pass1沒有處理的symbol</li>
 <li>透過OPTABLE產生機器碼</li>
@@ -190,11 +158,8 @@ if (!doNotTrack) {
 <li>產生pseudo定義的數據如BYTE, WORD</li>
 <li>處理pass1未處理的pseudo</li>
 </ol>
-
-<h2 id="2-5-data-structures">2.5 Data Structures</h2>
-
-<h3 id="需求">需求</h3>
-
+<h2 id="25-data-structures">2.5 Data Structures</h2>
+<h3 id="heading2">需求</h3>
 <ol>
 <li>輸入程式碼與輸出obj</li>
 <li>輸出assembly reports 與一些message</li>
@@ -203,118 +168,87 @@ if (!doNotTrack) {
 <li>SYMTAB: SIC當中的Type用來判斷是絕對地址或相對地址</li>
 <li>其他輔助表LITTAB(literal name table)</li>
 </ol>
-
-<p>literal為常數，但定址方式不為立即定址immediate addressing，例如<code>foo = bar * 35</code>的35為literal</p>
-
-<h2 id="2-6-machine-independent-assembler">2.6 Machine Independent Assembler</h2>
-
+<p>literal為常數，但定址方式不為立即定址immediate addressing，
+例如<code>foo = bar * 35</code>的35為literal</p>
+<h2 id="26-machine-independent-assembler">2.6 Machine Independent Assembler</h2>
 <h3 id="configuration-table">configuration table</h3>
-
 <p>處理forward reference，透過連結串列紀錄有forward reference的位置，保存指令的<strong>loc</strong>到configuration table，直到對應的addr出現之後，將連結串列透過找到的地址取代。</p>
-
 <p>back認為可能透過1 pass的方式處理，而原始程式forward reference的數量有限，大多數都是接受的情況，因此可以透過configuration table處理。在理論上探討，如在worst case情況下可能效果如同Two pass</p>
-
 <ul>
 <li>label定義就放入表中，並且填入機器碼</li>
 <li>指令中label未定義就先用linked list串接。</li>
 </ul>
-
-<h4 id="1-pass是否有辦法解決">1 pass是否有辦法解決</h4>
-
+<h4 id="1-pass">1 pass是否有辦法解決</h4>
 <ul>
 <li>實務: 可以透過configuration table</li>
 <li>理論: worst case不能解決</li>
 </ul>
-
-<h3 id="程式重定位">程式重定位</h3>
-
+<h3 id="heading3">程式重定位</h3>
 <ul>
 <li>絕對定址: 程式必須載入到特定的地址</li>
 <li>重新定址: 程式必須根據起始位置下去做重定位
 <ol>
 <li>在載入的時候修改地址(Relative Address)</li>
 <li>採用基底暫存器，而不用修改地址。</li>
-</ol></li>
+</ol>
+</li>
 </ul>
-
-<h3 id="如何解決-relocation">如何解決 relocation</h3>
-
+<h3 id="-relocation">如何解決 relocation</h3>
 <ol>
 <li>加入修改紀錄，保存地址相關的變數，保存在修改紀錄檔內，讓載入器可以讀取。</li>
 <li>採用基底暫存器，不用修改地址。</li>
 <li>使用程式計數器，如SIC</li>
 </ol>
-
-<h2 id="2-7-separate-assemble-and-relocation">2.7 Separate assemble and relocation</h2>
-
-<h3 id="sic-obj紀錄">SIC obj紀錄</h3>
-
+<h2 id="27-separate-assemble-and-relocation">2.7 Separate assemble and relocation</h2>
+<h3 id="sic-obj">SIC obj紀錄</h3>
 <p>下面以偽代碼表示結構</p>
-
 <ul>
-<li><p>H: 程式頭</p>
-
-<pre><code class="language-plaintext">nibble H, nameLen[2], name[11], programSize[4];
-</code></pre></li>
-
-<li><p>T: 機器碼片段</p>
-
-<pre><code class="language-plaintext">nibble T, codeStartAddr[4], codeSize[2], code[65];
-</code></pre></li>
-
-<li><p>E: 結束程式</p>
-
-<pre><code class="language-plaintext">nibble E, programeStartAddr[4];
-</code></pre></li>
-
-<li><p>M: 重定位資訊，主要用於relocation以及外部參考。</p>
-
-<pre><code class="language-plaintext">nibble M, [4], 修訂碼, 外部參考名稱[8]
+<li>H: 程式頭</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nibble H, nameLen[2], name[11], programSize[4];
+</code></pre></div><ul>
+<li>T: 機器碼片段</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nibble T, codeStartAddr[4], codeSize[2], code[65];
+</code></pre></div><ul>
+<li>E: 結束程式</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nibble E, programeStartAddr[4];
+</code></pre></div><ul>
+<li>M: 重定位資訊，主要用於relocation以及外部參考。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nibble M, [4], 修訂碼, 外部參考名稱[8]
 // 修訂碼 +-此變數的位置，為program relocation
 // &amp;為與此變數相對位置，因為linking無法算出offset，必須在linking才能處理
-</code></pre></li>
-
-<li><p>R: 外部參考</p>
-
-<pre><code class="language-plaintext">nibble R, name[71];
-</code></pre></li>
-
-<li><p>D: 可參考變數</p>
-
-<pre><code class="language-plaintext">nibble D, varName[8], varAddr[4], repeat[59];
+</code></pre></div><ul>
+<li>R: 外部參考</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nibble R, name[71];
+</code></pre></div><ul>
+<li>D: 可參考變數</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nibble D, varName[8], varAddr[4], repeat[59];
 // varAddr通常為相對地址
 // repeat: varName and varAddr
-</code></pre></li>
-</ul>
-
-<h3 id="外部參考與內部參考">外部參考與內部參考</h3>
-
+</code></pre></div><h3 id="heading4">外部參考與內部參考</h3>
 <p>External reference定義在不同function，internal reference定義在相同的function，External definition在function當中定義的symbols，並且其他function有機會使用該symbols</p>
-
 <ul>
 <li>EXTRN: 產生R紀錄(External reference)</li>
 <li>PUBLIC: 產生D紀錄(External definition)</li>
 </ul>
-
-<h3 id="程式重定位-1">程式重定位</h3>
-
+<h3 id="heading5">程式重定位</h3>
 <p>program relocation與linking需要透過linker/loader處理</p>
-
 <ul>
 <li>define recordL 可參考變數</li>
 <li>refer record: 外部參考</li>
 <li>modification record: 修改紀錄</li>
 </ul>
-
-<h2 id="assembler概念">Assembler概念</h2>
-
+<h2 id="assembler1">Assembler概念</h2>
 <ul>
 <li><strong>forward reference</strong>: 使用後定義的label，當下無法得知地址，需要2 pass</li>
 <li><strong>backward reference</strong>: 使用先定義的label</li>
 </ul>
-
-<h2 id="其他基本概念">其他基本概念</h2>
-
+<h2 id="heading6">其他基本概念</h2>
 <ul>
 <li><strong>nibble</strong>: 4 bit，為1個16進位數值。</li>
 </ul>

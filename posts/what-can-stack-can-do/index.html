@@ -51,29 +51,26 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-08-30 04:13:00 &#43;0800 CST">Fri, 2019 Aug 30</time>
     </div> 
-    <p>堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，但應用堆疊則必須更深入的理解相關算法的原理。</p>
-
-<p>為什麼堆疊可以處理中序式，之前查看中序式轉後序式的算法過程可能沒辦法清楚明白。在解決幾題LeetCode題目之後大概理解其原理。</p>
-
-<h2 id="保存上一狀態">保存上一狀態</h2>
-
-<p>之前在解<a href="/posts/leetcode-practice-7/#shortest-unsorted-continuous-subarray">Shortest Unsorted Continuous Subarray</a>與<a href="/posts/leetcode-practice-3/#daily-temperatures">Daily Temperatures</a>皆是透過堆疊保存上一狀態，在需要的時候回溯到上次的情況。</p>
-
-<p>電腦中記憶體區段中的stack段，保存上一狀態與區域變數等。所以DFS或其他遞迴演算法也是透過堆疊去保存上一狀態，來達成返回上一次狀態的目的。</p>
-
+    <p>堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，
+但應用堆疊則必須更深入的理解相關算法的原理。</p>
+<p>為什麼堆疊可以處理中序式，之前查看中序式轉後序式的算法過程可能沒辦法清楚明白。
+在解決幾題LeetCode題目之後大概理解其原理。</p>
+<h2 id="heading">保存上一狀態</h2>
+<p>之前在解
+<a href="/posts/leetcode-practice-7/#shortest-unsorted-continuous-subarray">Shortest Unsorted Continuous Subarray</a>
+與
+<a href="/posts/leetcode-practice-3/#daily-temperatures">Daily Temperatures</a>
+皆是透過堆疊保存上一狀態，在需要的時候回溯到上次的情況。</p>
+<p>電腦中記憶體區段中的stack段，保存上一狀態與區域變數等。
+所以DFS或其他遞迴演算法也是透過堆疊去保存上一狀態，來達成返回上一次狀態的目的。</p>
 <p>由此可知，堆疊的應用主要用於保存上一次的狀態，並在需要的時候重新取回資料。</p>
-
-<h2 id="中序轉後序">中序轉後序</h2>
-
+<h2 id="heading1">中序轉後序</h2>
 <p>知道堆疊可以回溯上一個狀態之後，再次理解中序轉後序演算法的原理。</p>
-
 <ul>
 <li><code>運算元</code></li>
 <li><code>運算子</code>、<code>(</code>、<code>)</code>: 擁有權重</li>
 </ul>
-
 <p>如<code>1 + 2 * (18 / 9 + 2)</code>我們可以嘗試轉為後序式</p>
-
 <table>
 <thead>
 <tr>
@@ -82,44 +79,36 @@ if (!doNotTrack) {
 <th>output</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>1</td>
 <td><code>+</code></td>
 <td><code>1 2</code></td>
 </tr>
-
 <tr>
 <td>2</td>
 <td><code>+*(/</code></td>
 <td><code>1 2 18 9</code></td>
 </tr>
-
 <tr>
 <td>3</td>
 <td><code>+*(+</code></td>
 <td><code>1 2 18 9 / 2</code></td>
 </tr>
-
 <tr>
 <td>4</td>
 <td><code>+*</code></td>
 <td><code>1 2 18 9 / 2 +</code></td>
 </tr>
-
 <tr>
 <td>5</td>
 <td><code>(empty)</code></td>
-<td><code>1 2 18 9 / 2 + * +</code></td>
+<td><code>1 2 18 9 / 2 + * +</code>|</td>
 </tr>
 </tbody>
 </table>
-
 <p>當2變成3那種情況，因為<code>/</code>的要比<code>+</code>優先輸出，將上次遇到的<code>/</code>優先彈出。</p>
-
 <p>查看第二個式子，<code>1 + 2 * 3 / 3 + 1</code></p>
-
 <table>
 <thead>
 <tr>
@@ -128,32 +117,27 @@ if (!doNotTrack) {
 <th>output</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>1</td>
 <td><code>+</code></td>
 <td><code>1 2</code></td>
 </tr>
-
 <tr>
 <td>2</td>
 <td><code>+/</code></td>
 <td><code>1 2 3 * 3</code></td>
 </tr>
-
 <tr>
 <td>3</td>
 <td><code>+</code></td>
 <td><code>1 2 3 * 3 /</code></td>
 </tr>
-
 <tr>
 <td>4</td>
 <td><code>+</code></td>
 <td><code>1 2 3 * 3 / + 1</code></td>
 </tr>
-
 <tr>
 <td>5</td>
 <td><code>(empty)</code></td>
@@ -161,11 +145,8 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-
 <p>而堆疊在這之中，保存先前的<code>+</code>，之後在<code>*</code>與<code>/</code>輸出之後才將其輸出。</p>
-
-<h2 id="參考">參考</h2>
-
+<h2 id="heading2">參考</h2>
 <ul>
 <li><a href="https://youtu.be/fz7ZgqGFHx4">C++程式設計 [14.1] 利用堆疊將Infix轉Postfix - 步驟</a></li>
 <li><a href="https://openhome.cc/Gossip/AlgorithmGossip/InFixPostfix.htm">中序式轉後序式（前序式）</a></li>

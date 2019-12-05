@@ -52,39 +52,29 @@ if (!doNotTrack) {
         <time datetime="2019-08-26 20:13:11 &#43;0800 CST">Mon, 2019 Aug 26</time>
     </div> 
     <p>紀錄一下，從Gitea搬移檔案到GitHub</p>
-
-<h2 id="起因">起因</h2>
-
-<p>因為GitHub已經有私有庫，因此將Gitea的東西搬到GitHub上面，並且自己架設的Gitea也已經損壞。為了後續維護方便統一管理，修復Gitea之後將Gitea所有的repo載下來。</p>
-
-<h2 id="移動腳本">移動腳本</h2>
-
+<h2 id="heading">起因</h2>
+<p>因為GitHub已經有私有庫，因此將Gitea的東西搬到GitHub上面，並且自己架設的Gitea也已經損壞。
+為了後續維護方便統一管理，修復Gitea之後將Gitea所有的repo載下來。</p>
+<h2 id="heading1">移動腳本</h2>
 <p>pull 所有的分支<a href="https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches">參考stack overflow</a></p>
-
-<pre><code class="language-bash">git branch -r | grep -v '\-&gt;' | while read remote; do git branch --track &quot;${remote#origin/}&quot; &quot;$remote&quot;; done
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -r | grep -v <span style="color:#e6db74">&#39;\-&gt;&#39;</span> | <span style="color:#66d9ef">while</span> read remote; <span style="color:#66d9ef">do</span> git branch --track <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>remote#origin/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$remote<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
 git fetch --all
 git pull --all
-</code></pre>
-
-<p>寫下腳本</p>
-
-<pre><code class="language-bash">#!/bin/bash
-pwd1=$PWD
-for i in $(ls)
-do
+</code></pre></div><p>寫下腳本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>pwd1<span style="color:#f92672">=</span>$PWD
+<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>ls<span style="color:#66d9ef">)</span>
+<span style="color:#66d9ef">do</span>
   cd $i
-  git branch -r | grep -v '\-&gt;' | while read remote; do git branch --track &quot;${remote#origin/}&quot; &quot;$remote&quot;; done
+  git branch -r | grep -v <span style="color:#e6db74">&#39;\-&gt;&#39;</span> | <span style="color:#66d9ef">while</span> read remote; <span style="color:#66d9ef">do</span> git branch --track <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>remote#origin/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$remote<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
   git fetch --all
   git pull --all
   cd $pwd1
-done
-</code></pre>
-
-<p>設定到GitHub之後，將所有分支推到GitHub上面</p>
-
-<pre><code class="language-bash">git remote set-url origin git@GitHub.com:r888800009/PixelChemisry.git
+<span style="color:#66d9ef">done</span>
+</code></pre></div><p>設定到GitHub之後，將所有分支推到GitHub上面</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote set-url origin git@GitHub.com:r888800009/PixelChemisry.git
 git push --all
-</code></pre>
+</code></pre></div>
 
     
       <hr>

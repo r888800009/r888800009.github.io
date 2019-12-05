@@ -51,40 +51,24 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-06 12:42:42 &#43;0800 CST">Fri, 2019 Sep 6</time>
     </div> 
-    <h2 id="自訂模塊">自訂模塊</h2>
-
+    <h2 id="heading">自訂模塊</h2>
 <p>loadTestA.py</p>
-
-<pre><code class="language-python">#!/usr/bin/env python
-import loadTestB
-print('A out')
-</code></pre>
-
-<p>loadTestB.py</p>
-
-<pre><code class="language-python">#!/usr/bin/env python
-print(&quot;B out&quot;)
-</code></pre>
-
-<p>輸入<code>./loadTestA.py</code>執行</p>
-
-<pre><code class="language-plaintext">B out
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
+<span style="color:#f92672">import</span> loadTestB
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">A out</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>loadTestB.py</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">B out</span><span style="color:#e6db74">&#34;</span>)
+</code></pre></div><p>輸入<code>./loadTestA.py</code>執行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">B out
 A out
-</code></pre>
-
-<h2 id="常見問題">常見問題</h2>
-
-<h3 id="如何解決lambda會用到全域變數">如何解決Lambda會用到全域變數</h3>
-
-<pre><code class="language-python">lambda: v=v
-</code></pre>
-
-<h3 id="conda與預設環境衝突">conda與預設環境衝突</h3>
-
+</code></pre></div><h2 id="heading1">常見問題</h2>
+<h3 id="lambda">如何解決Lambda會用到全域變數</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">lambda</span>: v<span style="color:#f92672">=</span>v
+</code></pre></div><h3 id="conda">conda與預設環境衝突</h3>
 <p>從conda環境返回基本環境</p>
-
-<pre><code class="language-bash">conda deactivate
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda deactivate
+</code></pre></div>
 
     
       <hr>

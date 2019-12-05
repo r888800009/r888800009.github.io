@@ -51,43 +51,26 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-15 21:56:50 &#43;0800 CST">Tue, 2019 Oct 15</time>
     </div> 
-    <h2 id="安裝">安裝</h2>
-
-<pre><code class="language-bash">pacman -S newsboat
-</code></pre>
-
-<p>參見<a href="https://wiki.archlinux.org/index.php/Newsboat">archlinux wiki</a></p>
-
-<h2 id="配置">配置</h2>
-
+    <h2 id="heading">安裝</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -S newsboat
+</code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/Newsboat">archlinux wiki</a></p>
+<h2 id="heading1">配置</h2>
 <p>修改配置資料</p>
-
-<pre><code class="language-bash">mkdir ~/.config/newsboat/ 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/.config/newsboat/ 
 vim ~/.config/newsboat/urls
-</code></pre>
-
-<p>加入rss並且保存</p>
-
-<pre><code class="language-plaintext">https://magiclen.org/feed/
+</code></pre></div><p>加入rss並且保存</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">https://magiclen.org/feed/
 https://soroush.secproject.com/blog/feed/
 https://blog.30cm.tw/feeds/posts/default?alt=rss
 https://paper.seebug.org/rss/
-</code></pre>
-
-<p>啟動</p>
-
-<pre><code class="language-bash">newsboat
-</code></pre>
-
-<p>進入之後看到rss列表，使用<code>R</code>來載入提取RSS</p>
-
-<h2 id="備註">備註</h2>
-
+</code></pre></div><p>啟動</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">newsboat
+</code></pre></div><p>進入之後看到rss列表，使用<code>R</code>來載入提取RSS</p>
+<h2 id="heading2">備註</h2>
 <ul>
 <li>wordpress: <code>example.com/feed</code></li>
 <li>blogger <code>example.com/feeds/posts/default?alt=rss</code></li>
 </ul>
-
 <p>其他<a href="https://feed.mikle.com/support/category/platforms/">參見</a></p>
 
     

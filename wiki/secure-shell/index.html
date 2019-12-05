@@ -52,24 +52,17 @@ if (!doNotTrack) {
         <time datetime="2019-08-27 11:58:33 &#43;0800 CST">Tue, 2019 Aug 27</time>
     </div> 
     <p>SSH筆記</p>
-
 <h2 id="config">Config</h2>
-
 <p>在<code>~/.ssh/config</code>設定以下內容</p>
-
-<pre><code class="language-plaintext">host example
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">host example
   Port 22
   Hostname example.com
   IdentityFile ~/.ssh/id_example
-</code></pre>
-
-<p>輸入指令<code>ssh user@example</code>將會同等於<code>ssh user@example.com</code>且讀取私鑰檔案。</p>
-
+</code></pre></div><p>輸入指令<code>ssh user@example</code>將會同等於<code>ssh user@example.com</code>
+且讀取私鑰檔案。</p>
 <h2 id="proxycommand">ProxyCommand</h2>
-
 <p>透過A主機連上B主機</p>
-
-<pre><code class="language-plaintext">host hostA
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">host hostA
   Port 22
   Hostname example.com
 
@@ -78,9 +71,7 @@ host hostB
   Hostname 192.168.1.1
   ProxyCommand ssh -qW %h:%p hostA
   IdentityFile ~/.ssh/id_1
-</code></pre>
-
-<ul>
+</code></pre></div><ul>
 <li><code>%h</code>主機名</li>
 <li><code>%p</code>端口號</li>
 <li><code>-q</code>安靜模式</li>
@@ -88,42 +79,22 @@ host hostB
 <li><code>IdentityFile</code> 放在config的電腦上</li>
 <li><code>gateway</code>為<code>ProxyCommand</code>的<code>hostA</code></li>
 </ul>
-
-<h3 id="直接透過指令轉發">直接透過指令轉發</h3>
-
-<pre><code class="language-bash">ssh -o ProxyCommand=&quot;ssh -qW hostA&quot; hostB
-</code></pre>
-
-<h3 id="連上hostb">連上hostB</h3>
-
-<pre><code class="language-bash">ssh hostB
-</code></pre>
-
-<h2 id="其他常用指令">其他常用指令</h2>
-
+<h3 id="heading">直接透過指令轉發</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -o ProxyCommand<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh -qW hostA&#34;</span> hostB
+</code></pre></div><h3 id="hostb">連上hostB</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh hostB
+</code></pre></div><h2 id="heading1">其他常用指令</h2>
 <h3 id="scp">scp</h3>
-
-<pre><code class="language-bash">scp source target
-</code></pre>
-
-<h3 id="sshfs">sshfs</h3>
-
-<pre><code class="language-bash">sshfs user@host:dir mountpoint
-</code></pre>
-
-<h3 id="sock5代理">Sock5代理</h3>
-
-<pre><code class="language-bash">ssh -D 1337 -q -C -N domain
-</code></pre>
-
-<h2 id="問題">問題</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp source target
+</code></pre></div><h3 id="sshfs">sshfs</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs user@host:dir mountpoint
+</code></pre></div><h3 id="sock5">Sock5代理</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -D <span style="color:#ae81ff">1337</span> -q -C -N domain
+</code></pre></div><h2 id="heading2">問題</h2>
 <h3 id="remote-host-identification-has-changed">Remote Host Identification Has Changed</h3>
-
 <p>移除<code>known_hosts</code>裡面的主機</p>
-
-<pre><code class="language-bash">ssh-keygen -R &quot;127.0.0.1&quot;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -R <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>
+</code></pre></div>
 
     
       <hr>

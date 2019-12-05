@@ -52,119 +52,69 @@ if (!doNotTrack) {
         <time datetime="2019-09-06 04:38:57 &#43;0800 CST">Fri, 2019 Sep 6</time>
     </div> 
     <p>pwn常用指令以及概念紀錄</p>
-
-<h2 id="檢查保護">檢查保護</h2>
-
+<h2 id="heading">檢查保護</h2>
 <p>透過<code>checksec</code>下去檢測有哪些保護啟用</p>
-
-<pre><code class="language-plaintext">gdb-peda$ checksec
-</code></pre>
-
-<p>輸出結果</p>
-
-<pre><code class="language-plaintext">CANARY    : disabled
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gdb-peda$ checksec
+</code></pre></div><p>輸出結果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">CANARY    : disabled
 FORTIFY   : disabled
 NX        : ENABLED
 PIE       : disabled
 RELRO     : Partial
-</code></pre>
-
-<p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，也可能是透過其他漏洞如<a href="/wiki/format-string-attack/">格式化字串</a>。</p>
-
-<h2 id="指令">指令</h2>
-
+</code></pre></div><p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，
+也可能是透過其他漏洞如<a href="/wiki/format-string-attack/">格式化字串</a>。</p>
+<h2 id="heading1">指令</h2>
 <p>反組譯查看函數</p>
-
-<pre><code class="language-bash">objdump -M intel -d ./echo | less
-</code></pre>
-
-<p>透過gdb檢查流程</p>
-
-<pre><code class="language-bash">gdb ./echo
-</code></pre>
-
-<h3 id="符號與區段">符號與區段</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./echo | less
+</code></pre></div><p>透過gdb檢查流程</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gdb ./echo
+</code></pre></div><h3 id="heading2">符號與區段</h3>
 <p>顯示符號表</p>
-
-<pre><code class="language-bash">nm ./a.out
-</code></pre>
-
-<p>顯示區段</p>
-
-<pre><code class="language-bash">readelf -x .text ./a.out
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nm ./a.out
+</code></pre></div><p>顯示區段</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">readelf -x .text ./a.out
 objdump -s -j .text ./a.out
-</code></pre>
-
-<p>其他指令參見<a href="/wiki/reversing/">逆向</a>。</p>
-
+</code></pre></div><p>其他指令參見<a href="/wiki/reversing/">逆向</a>。</p>
 <h3 id="pwntools">pwntools</h3>
-
 <p>構造一個<code>echo</code>的shellcode</p>
-
-<pre><code class="language-python">from pwnlib import shellcraft
-shellcraft.echo('hello world!')
-</code></pre>
-
-<h2 id="概念">概念</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwnlib <span style="color:#f92672">import</span> shellcraft
+shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello world!</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h2 id="heading3">概念</h2>
 <ul>
 <li><code>little endian</code>: 高位優先</li>
 <li><code>big endian</code>: 低位優先</li>
 </ul>
-
-<h2 id="aslr繞過">ASLR繞過</h2>
-
+<h2 id="aslr">ASLR繞過</h2>
 <p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
-
 <h2 id="shellcode">Shellcode</h2>
-
 <h3 id="nop-sled">Nop Sled</h3>
-
-<p>透過<code>nop</code>指令增加shellcode的命中機率，在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
-
-<h2 id="技巧">技巧</h2>
-
-<h3 id="除錯技巧">除錯技巧</h3>
-
-<p>採用<a href="/wiki/gdb/#gdb-script">GDB Script</a>來避免重複的動作，如:</p>
-
+<p>透過<code>nop</code>指令增加shellcode的命中機率，
+在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
+<h2 id="heading4">技巧</h2>
+<h3 id="heading5">除錯技巧</h3>
+<p>採用<a href="/wiki/gdb/#gdb-script">GDB Script</a>來避免重複的動作，
+如:</p>
 <ol>
 <li>啟動gdb時啟動peda</li>
 <li>peda <code>start</code></li>
 <li>一些script來找到目的位置。</li>
 </ol>
-
-<p>為了檢驗payload是否正常運作而不斷重複以上步驟，將導致效率低下。</p>
-
-<h3 id="指定libc">指定libc</h3>
-
+<p>為了檢驗payload是否正常運作而不斷重複以上步驟，
+將導致效率低下。</p>
+<h3 id="libc">指定libc</h3>
 <p>pwntools可以透過此方式指定使用的libc。</p>
-
-<pre><code class="language-python">c = process('echo2', env={'LD_PRELOAD': 'libc-2.23.so.x86_64'})
-</code></pre>
-
-<p>shell可以透過此指令</p>
-
-<pre><code class="language-bash">LD_PRELOAD=/tmp/libc-2.23.so.x86_64 ./a.out
-</code></pre>
-
-<h3 id="payload輸入">payload輸入</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">echo2</span><span style="color:#e6db74">&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LD_PRELOAD</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">libc-2.23.so.x86_64</span><span style="color:#e6db74">&#39;</span>})
+</code></pre></div><p>shell可以透過此指令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">LD_PRELOAD<span style="color:#f92672">=</span>/tmp/libc-2.23.so.x86_64 ./a.out
+</code></pre></div><h3 id="payload">payload輸入</h3>
 <p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
-
-<h2 id="pwn常見問題">Pwn常見問題</h2>
-
+<h2 id="pwn">Pwn常見問題</h2>
 <p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
-
-<pre><code class="language-python">from pwn import *
-context.arch='amd64'
-pwn.asm('mov rax, 0x732f2f2f6e69622f')
-pwn.asm('mov rax, 0x732f6e69622f')
-</code></pre>
-
-<h2 id="參見">參見</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">amd64</span><span style="color:#e6db74">&#39;</span>
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mov rax, 0x732f2f2f6e69622f</span><span style="color:#e6db74">&#39;</span>)
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mov rax, 0x732f6e69622f</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h2 id="heading6">參見</h2>
 <ul>
 <li><a href="/wiki/format-string-attack/">格式化字串</a></li>
 <li><a href="/wiki/gcc/#gcc關閉保護">GCC關閉保護</a></li>

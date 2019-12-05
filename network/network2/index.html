@@ -51,72 +51,53 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-24 23:25:13 &#43;0800 CST">Tue, 2019 Sep 24</time>
     </div> 
-    <h2 id="2-1-網路應用程式原則">2.1 網路應用程式原則</h2>
-
-<h3 id="應用層">應用層</h3>
-
+    <h2 id="21-">2.1 網路應用程式原則</h2>
+<h3 id="heading">應用層</h3>
 <p>人機介面</p>
-
 <ul>
 <li>Client server</li>
 <li>Peer to peer</li>
 </ul>
-
-<h3 id="2-1-1建立網路app">2.1.1建立網路app</h3>
-
+<h3 id="211app">2.1.1建立網路app</h3>
 <p>建立虛擬連線，不需要處理中間傳輸問題</p>
-
 <ul>
 <li>client server
 <ul>
 <li>server: 固定IP address, data center</li>
 <li>Client: 通常為浮動ip</li>
-</ul></li>
+</ul>
+</li>
 <li>P2P: 大多數為非法傳輸，self scalability</li>
 </ul>
-
-<h3 id="2-1-2-process-communication">2.1.2 process communication</h3>
-
+<h3 id="212-process-communication">2.1.2 process communication</h3>
 <p>Client process與Server process溝通，採用Socket programming</p>
-
 <h4 id="addressing-processes">Addressing processes</h4>
-
 <ul>
 <li>client Port 基本上透過隨機產生，用來接收訊息</li>
 <li>port共有16bit(65535</li>
 </ul>
-
-<h3 id="2-1-5-app-layer-protocol">2.1.5 app layer protocol</h3>
-
+<h3 id="215-app-layer-protocol">2.1.5 app layer protocol</h3>
 <p>Protocol四個部分</p>
-
 <ul>
 <li>types of messages exchanged: 定義request與response</li>
 <li>message Syntex:</li>
 <li>message semantics</li>
 <li>rules: 透過rules來規定request與response messages</li>
 </ul>
-
 <p>私人與開放的protocol</p>
-
 <ul>
 <li>私人如Skype</li>
 <li>公開如HTTP, STMP</li>
 </ul>
-
-<h3 id="2-1-3">2.1.3</h3>
-
+<h3 id="213">2.1.3</h3>
 <ul>
 <li>資料正確性data integrity: 有些app需要100%可靠性，有些可能會遺失有些資料</li>
 <li>時間timing: 如電話服務要求低延遲性</li>
 <li>throughput: 多媒體要求有效的throughput</li>
 <li>security: 加密，資料正確性</li>
 </ul>
-
-<h3 id="2-1-4-傳輸要求">2.1.4 傳輸要求</h3>
-
+<h3 id="214-">2.1.4 傳輸要求</h3>
 <h4 id="tcp">TCP</h4>
-
 <ul>
 <li>reliable transport</li>
 <li>Flow control</li>
@@ -124,201 +105,143 @@ if (!doNotTrack) {
 <li>不提供: timing, minimum throughput, guarantee, security</li>
 <li>connection-oriented</li>
 </ul>
-
 <h4 id="udp">UDP</h4>
-
 <ul>
 <li>unreliable data transfer:  只檢查封包</li>
 <li>does not provide: 可靠性</li>
 </ul>
-
-<h4 id="採用">採用</h4>
-
+<h4 id="heading1">採用</h4>
 <ul>
 <li>多媒體，網路電話UDP或TCP</li>
 <li>email, HTTP</li>
 </ul>
-
-<h4 id="安全tcp">安全TCP</h4>
-
+<h4 id="tcp1">安全TCP</h4>
 <p>SSL提供加密的TCP，並且在app應用層</p>
-
-<h2 id="2-2-web-http">2.2 web http</h2>
-
+<h2 id="22-web-http">2.2 web http</h2>
 <ul>
 <li>URL</li>
 <li>Http為stateless的協定，利用cooki</li>
 </ul>
-
 <h3 id="non-persistent-http">non persistent http</h3>
-
-<p>每次傳送都需要建立新的TCP回應時間為2 RTT +file transmit timeRTT: Round Trip time</p>
-
+<p>每次傳送都需要建立新的TCP
+回應時間為2 RTT +file transmit time
+RTT: Round Trip time</p>
 <h3 id="persistent">persistent</h3>
-
 <p>可透過同一tcp傳送</p>
-
-<h3 id="架構">架構</h3>
-
+<h3 id="heading2">架構</h3>
 <ul>
 <li>status line</li>
 <li>header lines</li>
 <li>blank line</li>
 <li>entity body</li>
 </ul>
-
 <h3 id="cookie">Cookie</h3>
-
 <p>沒cookie使用Set-cookie header line</p>
-
-<h2 id="2-2-5-網頁快取">2.2.5 網頁快取</h2>
-
+<h2 id="225-">2.2.5 網頁快取</h2>
 <h3 id="proxy">proxy</h3>
-
 <p>網路可以透過proxy做caching，例如區網架設proxy server</p>
-
 <h3 id="get">GET</h3>
-
-<p><code>if-modified-since</code> Header會傳送本地修改的時間，而伺服器會使用此header進行比對，若比對相同則會回傳<code>304 not modified</code>不傳送資料。</p>
-
-<h2 id="2-3-email">2.3 Email</h2>
-
-<h3 id="user-agents">User-agents</h3>
-
+<p><code>if-modified-since</code> Header會傳送本地修改的時間，而伺服器會使用此header進行比對，
+若比對相同則會回傳<code>304 not modified</code>不傳送資料。</p>
+<h2 id="23-email">2.3 Email</h2>
+<h3 id="useragents">User-agents</h3>
 <ul>
 <li>Mail reader, (Outlook)</li>
 <li>Web mail不使用SMTP,而是web</li>
 </ul>
-
-<h3 id="架構-1">架構</h3>
-
+<h3 id="heading3">架構</h3>
 <ul>
 <li>Client: 送Email到server</li>
 <li>Server: 送信mail server互相傳遞</li>
 </ul>
-
-<h3 id="2-3-1-smtp">2.3.1 SMTP</h3>
-
-<p>SMTP只能送mail而<strong>不可收信</strong>(意思是客戶端不可透過SMTP協議進行收信)，採用<strong>TCP端口25</strong>，並且以<strong>7bit的ASCII</strong>傳送，收到的Mail會以<strong>file</strong>的形式保存。</p>
-
+<h3 id="231-smtp">2.3.1 SMTP</h3>
+<p>SMTP只能送mail而<strong>不可收信</strong>(意思是客戶端不可透過SMTP協議進行收信)，
+採用<strong>TCP端口25</strong>，並且以<strong>7bit的ASCII</strong>傳送，收到的Mail會以<strong>file</strong>的形式保存。</p>
 <ul>
 <li>Mail server之間溝通為SMTP</li>
 <li>Client送email可以透過http或SMTP</li>
 <li>收信不能透過SMTP</li>
 </ul>
-
-<h4 id="比較">比較</h4>
-
+<h4 id="heading4">比較</h4>
 <ul>
 <li>http: pull</li>
 <li>SMTP: push</li>
 </ul>
-
-<h3 id="2-3-3-mail-message-formats">2.3.3 mail message formats</h3>
-
+<h3 id="233-mail-message-formats">2.3.3 mail message formats</h3>
 <p>body必須為ASCII(8bit)</p>
-
-<pre><code class="language-plaintext">From: 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">From: 
 To:
 Subject:
 
 body
-</code></pre>
-
-<h3 id="2-3-4-pop3">2.3.4 POP3</h3>
-
-<p>POP為<strong>Post Office Protocol</strong>的縮寫，支援<strong>認證登入</strong>以及<strong>下載</strong>郵件，而其他郵件存取(Mail access)可以透過IMAP或WEB client(HTTP)。</p>
-
+</code></pre></div><h3 id="234-pop3">2.3.4 POP3</h3>
+<p>POP為<strong>Post Office Protocol</strong>的縮寫，支援<strong>認證登入</strong>以及<strong>下載</strong>郵件，
+而其他郵件存取(Mail access)可以透過IMAP或WEB client(HTTP)。</p>
 <h4 id="transaction-phase">Transaction phase</h4>
-
 <p>協議中與伺服器溝通的語法。</p>
-
 <ul>
 <li><code>list</code>: 回傳id與size</li>
 <li><code>retr</code>: 郵件檢索</li>
 <li><code>dele</code>: 刪除</li>
 <li><code>quit</code>: 離開</li>
 </ul>
-
 <p>更多的指令可以<a href="https://tools.ietf.org/html/rfc1939#page-8">參見</a></p>
-
-<h2 id="2-4-dns">2.4 DNS</h2>
-
+<h2 id="24-dns">2.4 DNS</h2>
 <p>為分散式架構，用於<strong>分散流量</strong>、<strong>延遲</strong>與<strong>管理</strong>，為應用層上的協議。</p>
-
 <p>DNS為應用層，為了擴充性必須是分散式</p>
-
-<h3 id="問題">問題</h3>
-
+<h3 id="heading5">問題</h3>
 <ul>
 <li>集中式儲存與距離問題(Distant Centralized Database)</li>
 <li>伺服器維護管理(maintenance) 尺度(scale)過大</li>
 </ul>
-
-<h3 id="功能">功能</h3>
-
+<h3 id="heading6">功能</h3>
 <ul>
 <li>主機別名(Host aliasing): 如<code>A</code>紀錄</li>
-<li>郵件伺服器別名(Mail server aliasing): <code>MX</code>紀錄可以避免單一郵件伺服器離線時導致郵件無法送出</li>
+<li>郵件伺服器別名(Mail server aliasing): <code>MX</code>紀錄可以避免單一郵件伺服器離線時
+導致郵件無法送出</li>
 <li>負載分散(load distribution)</li>
 </ul>
-
-<h3 id="管轄">管轄</h3>
-
+<h3 id="heading7">管轄</h3>
 <ul>
 <li>TLD(top-level): 頂級網域</li>
 <li>authoritative DNS servers: 擁有相關的record</li>
 <li>local DNS server: 如路由器上面的DNS</li>
 </ul>
-
-<h3 id="查詢方式">查詢方式</h3>
-
+<h3 id="heading8">查詢方式</h3>
 <ul>
 <li>iterated query: 通過同一台DNS伺服器下去查詢其他DNS伺服器</li>
 <li>recursive query: 透過多台DNS串連查詢</li>
 </ul>
-
 <p>Local DNS server可以支援<strong>迭代</strong>或<strong>遞迴</strong>,但是TLD只支援迭代查詢</p>
-
-<h3 id="參見">參見</h3>
-
+<h3 id="heading9">參見</h3>
 <ul>
 <li><a href="https://tools.ietf.org/html/rfc2136">RFC 2136</a></li>
 </ul>
-
-<h3 id="封包">封包</h3>
-
+<h3 id="heading10">封包</h3>
 <ul>
 <li>identification: 16bit 查詢編號</li>
 <li>flags: query or reply, recursion desired, recursive available, reply is authoritative</li>
 <li>number of questions</li>
 </ul>
-
-<h3 id="威脅攻擊">威脅攻擊</h3>
-
+<h3 id="heading11">威脅攻擊</h3>
 <ul>
 <li>阻斷式攻擊： root, TLD</li>
 <li>重定向：中間人，DNS詐欺poisoning</li>
 </ul>
-
-<h2 id="p2p-2-5">p2p 2.5</h2>
-
+<h2 id="p2p-25">p2p 2.5</h2>
 <p>沒有 always on server</p>
-
 <p>範例： BitTorrent, VoIP, streaming</p>
-
-<h2 id="2-6-videos-streaming-and-content-distribution-networks-cdns">2.6 videos streaming and content distribution networks (CDNs)</h2>
-
+<h2 id="26-videos-streaming-and-content-distribution-networks-cdns">2.6 videos streaming and content distribution networks (CDNs)</h2>
 <ul>
 <li>DASH: dynamic, adaptive streaming over Http</li>
-<li>CDNs,各地資料中心擺放server, 透過DNS server分配server,可能透過查詢者的ip找到比較接近的伺服器</li>
+<li>CDNs,各地資料中心擺放server, 透過DNS server分配server,
+可能透過查詢者的ip找到比較接近的伺服器</li>
 </ul>
-
 <h3 id="cdn">CDN</h3>
-
 <ul>
 <li>enter deep: 透過在全球各地ISP佈署群集，減少連接數、延遲、吞吐量</li>
-<li>bring home: 放在ISP共通連線的位置，如IXP以降低維護成本，相對的延遲可能會比較高。</li>
+<li>bring home: 放在ISP共通連線的位置，如IXP以降低維護成本，
+相對的延遲可能會比較高。</li>
 </ul>
 
     

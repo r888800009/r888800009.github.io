@@ -51,259 +51,166 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-11-01 21:48:55 &#43;0800 CST">Fri, 2019 Nov 1</time>
     </div> 
-    <h2 id="常見套件">常見套件</h2>
-
+    <h2 id="heading">常見套件</h2>
 <ul>
 <li>numpy</li>
 <li>matplotlib</li>
 <li>sympy</li>
 <li>scipy</li>
 </ul>
-
 <p>也可以使用<a href="/wiki/r/">R語言</a>替代Python</p>
-
-<h2 id="安裝">安裝</h2>
-
+<h2 id="heading1">安裝</h2>
 <p>archlinux安裝上面所提到的套件套件</p>
-
-<pre><code class="language-bash">sudo pacman -S python-scipy python-sympy python-numpy python-matplotlib
-</code></pre>
-
-<h2 id="numpy使用">Numpy使用</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S python-scipy python-sympy python-numpy python-matplotlib
+</code></pre></div><h2 id="numpy">Numpy使用</h2>
 <ul>
 <li>n維矩陣</li>
 <li>平均值、變異數、標準差</li>
 </ul>
-
 <p>匯入<code>numpy</code></p>
-
-<pre><code class="language-python">import numpy as np
-</code></pre>
-
-<p>關於常用的數學函數參見<a href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">numpy的數學函式表</a></p>
-
-<p>定義陣列並且運算，numpy的陣列可以相加或相乘內容，不同於python本身的陣列只是將兩個陣列合而為一。</p>
-
-<pre><code class="language-python">x1 = np.array([1,2,3,4])
-x2 = np.array([1,2,3,4])
-x1 + x2
-x1 * x2
-</code></pre>
-
-<p>二維矩陣相乘</p>
-
-<pre><code class="language-python">x1 = np.array([[2,5],[-1,4]])
-x2 = np.array([[0, -2, 0],[1,-3,6]])
-x1.dot(x2)
-</code></pre>
-
-<p>容易混淆的部份是數學上的相乘應該使用<code>array.dot(array)</code>的方式使用，而不是<code>array1 * array2</code>，下面這個範例可以看出不同。</p>
-
-<pre><code class="language-python">x1 = np.array([[1,2],[3,4]])
-x2 = np.array([[1,2],[3,4]])
-x1 * x2
-x1.dot(x2)
-</code></pre>
-
-<p>平均值、變異數、標準差</p>
-
-<pre><code class="language-python">x = np.array([1, 2, 3, 4])
-np.mean(x)
-np.var(x)
-np.std(x)
-</code></pre>
-
-<p>求總和，不要和sympy的<code>Sum()</code>搞混</p>
-
-<pre><code class="language-python">a = np.array([1,2,3,4])
-np.sum(a)
-</code></pre>
-
-<h2 id="sympy">Sympy</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+</code></pre></div><p>關於常用的數學函數參見<a href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">numpy的數學函式表</a></p>
+<p>定義陣列並且運算，numpy的陣列可以相加或相乘內容，
+不同於python本身的陣列只是將兩個陣列合而為一。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>])
+x2 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>])
+x1 <span style="color:#f92672">+</span> x2
+x1 <span style="color:#f92672">*</span> x2
+</code></pre></div><p>二維矩陣相乘</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">5</span>],[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>]])
+x2 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">6</span>]])
+x1<span style="color:#f92672">.</span>dot(x2)
+</code></pre></div><p>容易混淆的部份是數學上的相乘應該使用<code>array.dot(array)</code>的方式使用，
+而不是<code>array1 * array2</code>，下面這個範例可以看出不同。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>],[<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]])
+x2 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>],[<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>]])
+x1 <span style="color:#f92672">*</span> x2
+x1<span style="color:#f92672">.</span>dot(x2)
+</code></pre></div><p>平均值、變異數、標準差</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>])
+np<span style="color:#f92672">.</span>mean(x)
+np<span style="color:#f92672">.</span>var(x)
+np<span style="color:#f92672">.</span>std(x)
+</code></pre></div><p>求總和，不要和sympy的<code>Sum()</code>搞混</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>])
+np<span style="color:#f92672">.</span>sum(a)
+</code></pre></div><h2 id="sympy">Sympy</h2>
 <p>微分積分</p>
-
 <p>導入</p>
-
-<pre><code class="language-python">from sympy import *
-</code></pre>
-
-<p>定義符號</p>
-
-<pre><code class="language-python">x, y, z = symbols('x y z')
-</code></pre>
-
-<p>微分與積分</p>
-
-<pre><code class="language-python">diff(sin(x), x)
-integrate(1/x, x)
-</code></pre>
-
-<p>泰勒級數(任何連續函數都可以用多項式表示)</p>
-
-<pre><code class="language-python">expr = sin(x)
-expr.series(x, 0, 4)
-</code></pre>
-
-<p>解方程式</p>
-
-<pre><code class="language-python">x, y = symbols('x y')
-e1 = 2 * x + y
-e2 = 4 * x + y + 2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</code></pre></div><p>定義符號</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y, z <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y z</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>微分與積分</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">diff(sin(x), x)
+integrate(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>x, x)
+</code></pre></div><p>泰勒級數(任何連續函數都可以用多項式表示)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">expr <span style="color:#f92672">=</span> sin(x)
+expr<span style="color:#f92672">.</span>series(x, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>)
+</code></pre></div><p>解方程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y</span><span style="color:#e6db74">&#39;</span>)
+e1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y
+e2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
 solve([e1, e2], [x, y])
-</code></pre>
-
-<p>代入常數或變數</p>
-
-<pre><code class="language-python">x, y = symbols('x y')
-e1 = 2 * x + y
-e1.evalf(subs={x: 1, y:2})
-e1.evalf(subs={x: 1, y:x})
-</code></pre>
-
-<h3 id="級數">級數</h3>
-
-<p>我們可以透過sympy來求級數，可以使用<code>Sum()</code>這個指令，切記不要和<code>np.sum()</code>搞混。</p>
-
+</code></pre></div><p>代入常數或變數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y</span><span style="color:#e6db74">&#39;</span>)
+e1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y
+e1<span style="color:#f92672">.</span>evalf(subs<span style="color:#f92672">=</span>{x: <span style="color:#ae81ff">1</span>, y:<span style="color:#ae81ff">2</span>})
+e1<span style="color:#f92672">.</span>evalf(subs<span style="color:#f92672">=</span>{x: <span style="color:#ae81ff">1</span>, y:x})
+</code></pre></div><h3 id="heading2">級數</h3>
+<p>我們可以透過sympy來求級數，可以使用<code>Sum()</code>這個指令，
+切記不要和<code>np.sum()</code>搞混。</p>
 <p>可以透過以下方法來求總和，我們求一個<code>1, 2, 3, ..., 10</code>數列總和</p>
-
-<pre><code class="language-python">x = symbols('x')
-f = Sum(x, (x, 0, 10))
-f.doit()
-</code></pre>
-
-<p>在上面我們定義了一個等差級數<code>f</code>，並且透過<code>f.doit()</code>求解，而<code>(x, 0, 10)</code>的<code>0</code>和<code>10</code>代表開始與結尾。</p>
-
-<p>而sympy也可以求出無窮級數，使用<code>oo</code>作為無限，我們定義一個<code>e ^ x</code>的泰勒級數，並且採用<code>doit()</code>來產生<code>e ^ x</code>。</p>
-
-<pre><code class="language-python">x, n = symbols('x n')
-f = Sum(x ** n / factorial(n), (n, 0, oo))
-f.doit()
-</code></pre>
-
-<p>執行之後我們可以看出sympy給出了<code>exp(x)</code></p>
-
-<h3 id="微分方程式求解">微分方程式求解</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
+f <span style="color:#f92672">=</span> Sum(x, (x, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>))
+f<span style="color:#f92672">.</span>doit()
+</code></pre></div><p>在上面我們定義了一個等差級數<code>f</code>，並且透過<code>f.doit()</code>求解，
+而<code>(x, 0, 10)</code>的<code>0</code>和<code>10</code>代表開始與結尾。</p>
+<p>而sympy也可以求出無窮級數，使用<code>oo</code>作為無限，我們定義一個
+<code>e ^ x</code>的泰勒級數，並且採用<code>doit()</code>來產生<code>e ^ x</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, n <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x n</span><span style="color:#e6db74">&#39;</span>)
+f <span style="color:#f92672">=</span> Sum(x <span style="color:#f92672">*</span><span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> factorial(n), (n, <span style="color:#ae81ff">0</span>, oo))
+f<span style="color:#f92672">.</span>doit()
+</code></pre></div><p>執行之後我們可以看出sympy給出了<code>exp(x)</code></p>
+<h3 id="heading3">微分方程式求解</h3>
 <p>先看我們範例程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
+y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">y</span><span style="color:#e6db74">&#39;</span>, cls<span style="color:#f92672">=</span>Function)
 
-<pre><code class="language-python">x = symbols('x')
-y = symbols('y', cls=Function)
-
-diffeq = Eq(y(x).diff(x) + y(x), 5)
-ans = dsolve(diffeq, y(x))
-print(ans)
-</code></pre>
-
-<p>第一步，宣告自變數<strong>x</strong>與應變數<strong>y</strong></p>
-
-<pre><code class="language-python">x = symbols('x')
-y = symbols('y', cls=Function)
-</code></pre>
-
-<p>第二步，定義微分方程式</p>
-
-<pre><code class="language-python">diffeq = Eq(y(x).diff(x) + y(x), 5)
-</code></pre>
-
-<p>第三步，求解</p>
-
-<pre><code class="language-python">ans = dsolve(diffeq, y(x))
-print(ans)
-</code></pre>
-
-<p>進一步解決IVP，第三步請改成以下的程式碼，表示設定一個初始條件<code>y(0) = 1</code></p>
-
-<pre><code class="language-python">ans = dsolve(diffeq, y(x), ics={y(0): 1})
-print(ans)
-</code></pre>
-
-<p>請參見<a href="https://docs.sympy.org/latest/modules/solvers/ode.html">sympy文檔</a></p>
-
+diffeq <span style="color:#f92672">=</span> Eq(y(x)<span style="color:#f92672">.</span>diff(x) <span style="color:#f92672">+</span> y(x), <span style="color:#ae81ff">5</span>)
+ans <span style="color:#f92672">=</span> dsolve(diffeq, y(x))
+<span style="color:#66d9ef">print</span>(ans)
+</code></pre></div><p>第一步，宣告自變數<strong>x</strong>與應變數<strong>y</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
+y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">y</span><span style="color:#e6db74">&#39;</span>, cls<span style="color:#f92672">=</span>Function)
+</code></pre></div><p>第二步，定義微分方程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">diffeq <span style="color:#f92672">=</span> Eq(y(x)<span style="color:#f92672">.</span>diff(x) <span style="color:#f92672">+</span> y(x), <span style="color:#ae81ff">5</span>)
+</code></pre></div><p>第三步，求解</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ans <span style="color:#f92672">=</span> dsolve(diffeq, y(x))
+<span style="color:#66d9ef">print</span>(ans)
+</code></pre></div><p>進一步解決IVP，第三步請改成以下的程式碼，
+表示設定一個初始條件<code>y(0) = 1</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ans <span style="color:#f92672">=</span> dsolve(diffeq, y(x), ics<span style="color:#f92672">=</span>{y(<span style="color:#ae81ff">0</span>): <span style="color:#ae81ff">1</span>})
+<span style="color:#66d9ef">print</span>(ans)
+</code></pre></div><p>請參見<a href="https://docs.sympy.org/latest/modules/solvers/ode.html">sympy文檔</a></p>
 <h2 id="matplitlib">Matplitlib</h2>
-
 <p>引用Matplitlib與numpy</p>
-
-<pre><code class="language-python">import matplotlib.pyplot as plt
-import numpy as np
-</code></pre>
-
-<p>畫出圖形，可以利用numpy的<code>linspace()</code>來生成點，區間為<code>0~100</code>並且分成20份</p>
-
-<pre><code class="language-python">x = np.linspace(0, 100, 20)
-y = x ** 2
-plt.plot(x, y)
-</code></pre>
-
-<p>設定圖表參數</p>
-
-<pre><code class="language-python">plt.xlabel('X')
-plt.ylabel('f(x) = y')
-plt.title('This is title')
-</code></pre>
-
-<p>可以加上顯示文字，我們將他放置在20,400的位置</p>
-
-<pre><code class="language-python">plt.text(20,400,'(20, 400)')
-</code></pre>
-
-<p>顯示圖表，可能會發現圖形沒有很精準在數值上，可以把<code>linspace()</code>調整精細</p>
-
-<pre><code class="language-python">plt.show()
-</code></pre>
-
-<h3 id="範例程式">範例程式</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+</code></pre></div><p>畫出圖形，可以利用numpy的<code>linspace()</code>來生成點，區間為<code>0~100</code>並且分成20份</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">20</span>)
+y <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span><span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+plt<span style="color:#f92672">.</span>plot(x, y)
+</code></pre></div><p>設定圖表參數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">X</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">f(x) = y</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">This is title</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>可以加上顯示文字，我們將他放置在20,400的位置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">400</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(20, 400)</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>顯示圖表，可能會發現圖形沒有很精準在數值上，可以把<code>linspace()</code>調整精細</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>show()
+</code></pre></div><h3 id="heading4">範例程式</h3>
 <p>範例程式1</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f</span>(x):
+    y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>x) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>sin(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x)
+    <span style="color:#66d9ef">return</span> y
 
-def f(x):
-    y = np.exp(-x) * np.sin(2 * x)
-    return y
+x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>pi, <span style="color:#ae81ff">100</span>)
+y <span style="color:#f92672">=</span> f(x)
 
-x = np.linspace(0, 2 * np.pi, 100)
-y = f(x)
+plt<span style="color:#f92672">.</span>plot(x, y)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">y</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Plot of the Function f(x) = exp(-x) * sin(2x)</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Copyright@lin</span><span style="color:#e6db74">&#39;</span>)
 
-plt.plot(x, y)
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Plot of the Function f(x) = exp(-x) * sin(2x)')
-plt.text(4, -0.1, 'Copyright@lin')
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p>範例程式2，繪製兩個函數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
 
-plt.show()
-</code></pre>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f1</span>(x):
+    y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>x) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>sin(<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x)
+    <span style="color:#66d9ef">return</span> y
 
-<p>範例程式2，繪製兩個函數</p>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">f2</span>(x):
+    y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>x) <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>cos(<span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> x)
+    <span style="color:#66d9ef">return</span> y
 
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
+x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>pi, <span style="color:#ae81ff">100</span>)
+y1 <span style="color:#f92672">=</span> f1(x)
+y2 <span style="color:#f92672">=</span> f2(x)
 
-def f1(x):
-    y = np.exp(-x) * np.sin(2 * x)
-    return y
+plt<span style="color:#f92672">.</span>plot(x, y1, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span>, x, y2, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">f(x) &amp; g(x)</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Plot of Two Functions</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Copyright@lin</span><span style="color:#e6db74">&#39;</span>)
 
-def f2(x):
-    y = np.exp(-x) * np.cos(3 * x)
-    return y
-
-x = np.linspace(0, 2 * np.pi, 100)
-y1 = f1(x)
-y2 = f2(x)
-
-plt.plot(x, y1, '-', x, y2, '--')
-plt.xlabel('x')
-plt.ylabel('f(x) &amp; g(x)')
-plt.title('Plot of Two Functions')
-plt.text(4, -0.2, 'Copyright@lin')
-
-plt.show()
-</code></pre>
-
-<h2 id="參見">參見</h2>
-
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><h2 id="heading5">參見</h2>
 <ul>
 <li><a href="https://numpy.org/devdocs/">NumPy Documentation</a></li>
 <li><a href="https://matplotlib.org/contents.html">matplotlib doc</a></li>

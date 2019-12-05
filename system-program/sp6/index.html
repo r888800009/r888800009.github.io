@@ -51,8 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-11-23 21:51:23 &#43;0800 CST">Sat, 2019 Nov 23</time>
     </div> 
-    <h2 id="6-1-francis-compiler">6.1  Francis Compiler</h2>
-
+    <h2 id="61--francis-compiler">6.1  Francis Compiler</h2>
 <ol>
 <li>delimiter table</li>
 <li>reserved word table</li>
@@ -60,132 +59,82 @@ if (!doNotTrack) {
 <li>real number table</li>
 <li>identifier table: subroutine 代表 scope為數值，指向identifier的index</li>
 </ol>
-
-<h2 id="6-2-syntax-analysis">6.2 Syntax Analysis</h2>
-
+<h2 id="62-syntax-analysis">6.2 Syntax Analysis</h2>
 <ol>
 <li>token 組成statement，<code>;</code>代表statement結束</li>
 <li>檢查文法是否正確，不正確則回傳錯誤訊息</li>
 <li>保存資料到表格</li>
 </ol>
-
 <h3 id="statement">Statement</h3>
-
-<pre><code class="language-plaintext">PROGRAM GTO
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">PROGRAM GTO
 SUBROUTINE assignment
 VARIABLE CALL
 LABEL INPUT
 DIMENSION OUTPUT
 IF
-</code></pre>
-
-<p>註解 identifier table的pointer指向中間碼的entry</p>
-
-<h3 id="變數宣告">變數宣告</h3>
-
-<pre><code class="language-plaintext">VARIABLE &lt;datatyep&gt;: id{, id};
-</code></pre>
-
-<p>example</p>
-
-<pre><code class="language-plaintext">VARIABLE ARRAY: array1;
-</code></pre>
-
-<p>之後data type, scope, identifier保存進入identifier table，並且產生中間碼。</p>
-
-<pre><code class="language-plaintext">ARRAY     1
+</code></pre></div><p>註解 identifier table的pointer指向中間碼的entry</p>
+<h3 id="heading">變數宣告</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">VARIABLE &lt;datatyep&gt;: id{, id};
+</code></pre></div><p>example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">VARIABLE ARRAY: array1;
+</code></pre></div><p>之後data type, scope, identifier保存進入identifier table，並且產生中間碼。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">ARRAY     1
 BOOLEAN   2
 CHARACTER 3
 INTEGER   4
 LABEL     5
 REAL      6
-</code></pre>
-
-<h3 id="陣列宣告">陣列宣告</h3>
-
+</code></pre></div><h3 id="heading1">陣列宣告</h3>
 <p>宣告陣列，必須紀錄<strong>陣列各維度大小</strong>、<strong>中間碼</strong></p>
-
-<pre><code class="language-plaintext">DIMENSION &lt;datatype&gt;: &lt;array&gt;{, &lt;array&gt;};
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">DIMENSION &lt;datatype&gt;: &lt;array&gt;{, &lt;array&gt;};
 &lt;array ::= id (number {, number})&gt;
-</code></pre>
-
-<p>範例<code>16 * 5</code>的陣列</p>
-
-<pre><code class="language-plaintext">DIMENSION REAL: A(16, 5);
-</code></pre>
-
-<p>透過 information table 7保存資料，保存<strong>型別</strong>、<strong>維度數量</strong>、<strong>各個維度大小</strong>，並且將pointer 指向information table的元素起始。</p>
-
-<h3 id="label定義">Label定義</h3>
-
-<pre><code class="language-plaintext">LABEL identifier;
-</code></pre>
-
-<p>範例</p>
-
-<pre><code class="language-plaintext">LABEL L91, L92;
-</code></pre>
-
-<p>保存入identifier table，pointer會在最後指向<strong>對映指令的中間碼</strong>的位置，並且產生自己的中間碼。</p>
-
+</code></pre></div><p>範例<code>16 * 5</code>的陣列</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">DIMENSION REAL: A(16, 5);
+</code></pre></div><p>透過 information table 7保存資料，保存<strong>型別</strong>、<strong>維度數量</strong>、<strong>各個維度大小</strong>，並且將pointer 指向information table的元素起始。</p>
+<h3 id="label">Label定義</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">LABEL identifier;
+</code></pre></div><p>範例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">LABEL L91, L92;
+</code></pre></div><p>保存入identifier table，pointer會在最後指向<strong>對映指令的中間碼</strong>的位置，並且產生自己的中間碼。</p>
 <h3 id="gto">GTO</h3>
-
-<pre><code class="language-plaintext">GTO labelID;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">GTO labelID;
 GTO L92;
-</code></pre>
-
-<p>GTO的中間碼，前面對應到GTO，後面對應到Label指向的目標。</p>
-
-<h2 id="6-3-function-definition-and-function-call">6.3 Function Definition And Function Call</h2>
-
+</code></pre></div><p>GTO的中間碼，前面對應到GTO，後面對應到Label指向的目標。</p>
+<h2 id="63-function-definition-and-function-call">6.3 Function Definition And Function Call</h2>
 <h3 id="subroutine">SUBROUTINE</h3>
-
-<pre><code class="language-plaintext">SUBROUTINE S1(INTEGER:X,Y,M);
-</code></pre>
-
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">SUBROUTINE S1(INTEGER:X,Y,M);
+</code></pre></div><ul>
 <li>PROGRAM為<code>SUBROUTINE S1</code></li>
 <li>VARIABLE為<code>INTEGER:X,Y,M</code></li>
 <li>Table 5 POITER指向中間碼TABLE6</li>
 <li>Table 5 X,Y,M要設定SUBROUTINE(SCOPE)指向S1的index，並且產生X, Y, M的中間碼。</li>
 </ul>
-
 <h3 id="call">Call</h3>
-
-<pre><code class="language-plaintext">CALL S1(W, 136, A, 57.9)
-</code></pre>
-
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">CALL S1(W, 136, A, 57.9)
+</code></pre></div><ul>
 <li>將傳遞參數保存到Information table，如<strong>參數數</strong>，然後每個參數保存<code>(table, value)</code> pair</li>
 <li>產生中間碼: 中間碼為(call function, Subroutine name, information table保存參數位置)</li>
 </ul>
-
-<h2 id="6-4-assignment">6.4 Assignment</h2>
-
+<h2 id="64-assignment">6.4 Assignment</h2>
 <p>翻譯 <code>X = Y + Z</code>;</p>
-
-<pre><code class="language-plaintext">(+, Y, Z, X)
-</code></pre>
-
-<p>透過Reverse Polish Notation的方式下去處理，透過<strong>堆疊</strong>。<code>)</code>做push，遇到時<code>(</code>檢查syntax並pop token <code>)</code>，當中有<strong>operand</strong>與<strong>operator</strong>兩個堆疊，分別保存運算元與運算子，為雙堆疊算法。</p>
-
-<h3 id="處理方式">處理方式</h3>
-
-<p>每次pop時提取堆疊上方<strong>兩個運算元一個運算子</strong>，之後將運算結果(暫存器)放回堆疊當成運算元，每次pop產生中間碼。</p>
-
-<p>注意: 暫存編號可能會被覆蓋，可以透過一個堆疊保存尚未使用的暫存編號，以免蓋過先前產生的數值。</p>
-
-<h2 id="6-5-if-statement">6.5 IF Statement</h2>
-
-<h3 id="文法">文法</h3>
-
-<pre><code class="language-plaintext">IF &lt;condition&gt; THEN &lt;statement&gt; ELSE &lt;statement&gt;;
-</code></pre>
-
-<p><code>&lt;condition&gt;</code>可能包含括號，翻出的<strong>statement會有forward reference</strong>，因為沒辦法知道大小，而true的處理區塊後面必須採用<code>GTO</code>跳到false的後面，以免執行false的程式碼。</p>
-
-<h3 id="邏輯運算子">邏輯運算子</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(+, Y, Z, X)
+</code></pre></div><p>透過Reverse Polish Notation的方式下去處理，透過<strong>堆疊</strong>。
+<code>)</code>做push，遇到時<code>(</code>檢查syntax並pop token <code>)</code>，
+當中有<strong>operand</strong>與<strong>operator</strong>兩個堆疊，
+分別保存運算元與運算子，為雙堆疊算法。</p>
+<h3 id="heading2">處理方式</h3>
+<p>每次pop時提取堆疊上方<strong>兩個運算元一個運算子</strong>，
+之後將運算結果(暫存器)放回堆疊當成運算元，
+每次pop產生中間碼。</p>
+<p>注意: 暫存編號可能會被覆蓋，可以透過一個堆疊
+保存尚未使用的暫存編號，以免蓋過先前產生的數值。</p>
+<h2 id="65-if-statement">6.5 IF Statement</h2>
+<h3 id="heading3">文法</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">IF &lt;condition&gt; THEN &lt;statement&gt; ELSE &lt;statement&gt;;
+</code></pre></div><p><code>&lt;condition&gt;</code>可能包含括號，翻出的<strong>statement會有forward reference</strong>，
+因為沒辦法知道大小，而true的處理區塊後面必須採用<code>GTO</code>跳到false的後面，
+以免執行false的程式碼。</p>
+<h3 id="heading4">邏輯運算子</h3>
 <ul>
 <li><code>GT</code>: <code>&gt;</code></li>
 <li><code>GE</code>: <code>&gt;=</code></li>
@@ -196,25 +145,19 @@ GTO L92;
 <li><code>OR</code>: <code>||</code></li>
 <li><code>NOT</code>: <code>!=</code></li>
 </ul>
-
-<h3 id="範例">範例</h3>
-
-<pre><code class="language-plaintext">IF X GT Y AND Q THEN X =  X + 1 ELSE X = X + 2;
-</code></pre>
-
-<h2 id="6-6-array-and-elements">6.6 Array and Elements</h2>
-
-<p>處理陣列元素的statement，算出array元素指向的記憶體位置，產生中間碼。</p>
-
+<h3 id="heading5">範例</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">IF X GT Y AND Q THEN X =  X + 1 ELSE X = X + 2;
+</code></pre></div><h2 id="66-array-and-elements">6.6 Array and Elements</h2>
+<p>處理陣列元素的statement，算出array元素指向的記憶體位置，
+產生中間碼。</p>
 <p>範例，<code>B(I, J)</code>元素的位置在<code>(J - 1) * M + I</code>產生中間碼。</p>
-
-<pre><code class="language-plaintext">(-, J , 1 , T1)  // T1 = J - 1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(-, J , 1 , T1)  // T1 = J - 1
 (*, T1, M , T2)  // T2 = T1 * M
 (+, T2, I , T3)  // T3 = T2 + I
 (=, B , T3, T4)  // T4 = B(T3)
 (+, T4, 4 , T5)  // T5 = T4 + 4
 (=, T5,   , X )  // X = T5
-</code></pre>
+</code></pre></div>
 
     
       <hr>

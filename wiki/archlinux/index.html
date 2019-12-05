@@ -52,27 +52,15 @@ if (!doNotTrack) {
         <time datetime="2019-09-05 05:29:37 &#43;0800 CST">Thu, 2019 Sep 5</time>
     </div> 
     <h2 id="pacman">Pacman</h2>
-
 <p>顯示本地包</p>
-
-<pre><code class="language-bash">pacman -Qqm
-</code></pre>
-
-<p>重新安裝一切</p>
-
-<pre><code class="language-bash">pacman -Syu $(pacman -Qnq)
-</code></pre>
-
-<p>清理快取</p>
-
-<pre><code class="language-bash">sudo paccache -r
-</code></pre>
-
-<h2 id="pacaur">pacaur</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Qqm
+</code></pre></div><p>重新安裝一切</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Syu <span style="color:#66d9ef">$(</span>pacman -Qnq<span style="color:#66d9ef">)</span>
+</code></pre></div><p>清理快取</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo paccache -r
+</code></pre></div><h2 id="pacaur">pacaur</h2>
 <p>安裝pacaur或更新時可用以下腳本。</p>
-
-<pre><code class="language-bash">cd /tmp
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /tmp
 git clone https://aur.archlinux.org/pacaur.git
 cd pacaur
 makepkg -is
@@ -80,17 +68,10 @@ cd ..
 git clone https://aur.archlinux.org/auracle-git.git
 cd auracle-git
 makepkg -is
-</code></pre>
-
-<h2 id="java缺少中文字體">java缺少中文字體</h2>
-
-<pre><code class="language-bash">sudo pacman -S ttf-arphic-uming
-</code></pre>
-
-<h2 id="java-6">java 6</h2>
-
+</code></pre></div><h2 id="java">java缺少中文字體</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S ttf-arphic-uming
+</code></pre></div><h2 id="java-6">java 6</h2>
 <p>按照參考1對於<code>/usr/lib/jvm/java-6-jdk/jre/lib/fontconfig.properties</code>進行配置。</p>
-
 <ul>
 <li><a href="http://linux-wiki.cn/wiki/Java%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE">參考1</a></li>
 <li><a href="https://stackoverflow.com/questions/25663165/unicode-char-not-rendering-in-swing-what-font-is-used-in-real">參考2</a></li>

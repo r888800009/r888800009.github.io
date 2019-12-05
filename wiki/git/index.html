@@ -51,60 +51,32 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-10 10:57:37 &#43;0800 CST">Tue, 2019 Sep 10</time>
     </div> 
-    <h2 id="常用指令">常用指令</h2>
-
+    <h2 id="heading">常用指令</h2>
 <p>顯示commit的詳細變化</p>
-
-<pre><code class="language-bash">git log --stat
-</code></pre>
-
-<p>將commit紀錄以可視化的樹狀結構顯示</p>
-
-<pre><code class="language-bash">git log --graph --oneline 
-</code></pre>
-
-<p>合併兩個分支</p>
-
-<pre><code class="language-bash">git merge a b
-# 或
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log --stat
+</code></pre></div><p>將commit紀錄以可視化的樹狀結構顯示</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log --graph --oneline 
+</code></pre></div><p>合併兩個分支</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git merge a b
+<span style="color:#75715e"># 或</span>
 git merge b 
-</code></pre>
-
-<p>移除或修改commit，移除使用<code>drop</code></p>
-
-<pre><code class="language-bash">git rebase -i [SHA]
-</code></pre>
-
-<h2 id="模板">模板</h2>
-
+</code></pre></div><p>移除或修改commit，移除使用<code>drop</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rebase -i <span style="color:#f92672">[</span>SHA<span style="color:#f92672">]</span>
+</code></pre></div><h2 id="heading1">模板</h2>
 <p>配置模板</p>
-
-<pre><code class="language-bash">git config commit.template filename
-</code></pre>
-
-<p>全域模板</p>
-
-<pre><code class="language-bash">git config --global commit.template filename
-</code></pre>
-
-<p>移除模板</p>
-
-<pre><code class="language-bash">git config --unset commit.template 
-</code></pre>
-
-<p>若把模板檔案移除之後，會導致git無法commit</p>
-
-<h2 id="技巧">技巧</h2>
-
-<h3 id="抓取大repo">抓取大repo</h3>
-
-<p>如果要抓取如linux原始碼的大repo(3G左右)僅僅用來編譯，下載速度太慢以及消耗浪費空間，因此採用只抓最後一個commit可以使用<code>--depth 1</code>的方式只抓取最後一個，commit。</p>
-
-<pre><code class="language-bash">git clone --depth 1 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
-</code></pre>
-
-<h2 id="git-實用工具列表">Git 實用工具列表</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config commit.template filename
+</code></pre></div><p>全域模板</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global commit.template filename
+</code></pre></div><p>移除模板</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --unset commit.template 
+</code></pre></div><p>若把模板檔案移除之後，會導致git無法commit</p>
+<h2 id="heading2">技巧</h2>
+<h3 id="repo">抓取大repo</h3>
+<p>如果要抓取如linux原始碼的大repo(3G左右)僅僅用來編譯，下載速度太慢以及
+消耗浪費空間，因此採用只抓最後一個commit可以使用<code>--depth 1</code>的方式只抓取最後一個，
+commit。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --depth <span style="color:#ae81ff">1</span> git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+</code></pre></div><h2 id="git-">Git 實用工具列表</h2>
 <ul>
 <li><a href="https://github.com/rw251/git-summary">git-summary</a>用來檢查git的狀態</li>
 <li><a href="https://gitea.io">Gitea</a>輕量級git程式碼託管</li>

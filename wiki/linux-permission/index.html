@@ -52,23 +52,17 @@ if (!doNotTrack) {
         <time datetime="2019-09-05 05:57:58 &#43;0800 CST">Thu, 2019 Sep 5</time>
     </div> 
     <p>關於Linux權限的筆記</p>
-
-<h2 id="權限">權限</h2>
-
+<h2 id="heading">權限</h2>
 <p>透過<code>ls -l</code>可以看到類似下面所列出的權限。</p>
-
-<pre><code class="language-plaintext">d421421421
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">d421421421
 drwxrwxrwx
 
 ex:
 drwxr---w- = 742
 -rw-r--r-- = 644
 -rwxrwxrwx = 777
-</code></pre>
-
-<p>下表為權限所對映的數字。</p>
-
-<pre><code class="language-plaintext">--- = 0
+</code></pre></div><p>下表為權限所對映的數字。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--- = 0
 --x = 1
 -w- = 2
 -wx = 3
@@ -76,17 +70,13 @@ r-- = 4
 r-x = 5
 rw- = 6
 rwx = 7
-</code></pre>
-
-<h2 id="指令">指令</h2>
-
+</code></pre></div><h2 id="heading1">指令</h2>
 <p>快速重設資料夾與檔案的權限</p>
-
-<pre><code class="language-bash"># 資料夾
-find . -type d -exec chmod 755 {} \;
-# 檔案
-find . -type f -exec chmod 644 {} \;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 資料夾</span>
+find . -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>
+<span style="color:#75715e"># 檔案</span>
+find . -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>
+</code></pre></div>
 
     
       <hr>

@@ -51,55 +51,37 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-08-18 21:19:58 &#43;0800 CST">Sun, 2019 Aug 18</time>
     </div> 
-    <p>存放一些<code>hugo</code>配置版模會用到的筆記，非模板內容參見<a href="/wiki/hugo/">hugo</a>。</p>
-
-<h2 id="文章tags">文章Tags</h2>
-
+    <p>存放一些<code>hugo</code>配置版模會用到的筆記，
+非模板內容參見<a href="/wiki/hugo/">hugo</a>。</p>
+<h2 id="tags">文章Tags</h2>
 <p>透過以下版模顯示文章的<code>tags</code>。</p>
-
-<pre><code class="language-html">{{ with .Params.tags }}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ with .Params.tags }}
   {{ range . }}
-    &lt;a href=&quot;{{ &quot;tags/&quot; | absURL }}{{ . | urlize }}&quot;&gt;{{ . }}&lt;/a&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">tags</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">{</span><span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#960050;background-color:#1e0010">&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt;
   {{ end }}
 {{ end }}
-</code></pre>
-
-<p>參見<a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a></p>
-
+</code></pre></div><p>參見<a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a></p>
 <h2 id="pagination">Pagination</h2>
-
 <p>控制分頁的功能，可以根據模板設定顯示的數量之類的功能。</p>
-
 <p>參見<a href="https://gohugo.io/templates/pagination/">Pagination</a></p>
-
-<h2 id="清單">清單</h2>
-
+<h2 id="heading">清單</h2>
 <ul>
 <li><code>Lists</code>: 目前只有發現<code>tags</code>採用這個頁面</li>
 <li><code>Taxonomy Lists</code>: 如<code>tags</code>點進去的每個<code>tag</code>的頁面。</li>
 <li><code>Section Lists</code>: 如每個<code>category</code>的頁面。</li>
 </ul>
-
-<p>以上<code>Section</code>與<code>Taxonomy</code>都有備用與原本的板型，預設套用<code>list.html</code>，詳情參考文檔。</p>
-
-<h3 id="參考">參考</h3>
-
+<p>以上<code>Section</code>與<code>Taxonomy</code>都有備用與原本的板型，預設套用<code>list.html</code>，
+詳情參考文檔。</p>
+<h3 id="heading1">參考</h3>
 <ul>
 <li><a href="https://www.jakewiesler.com/blog/hugo-taxonomies/">Add Tags to Your Hugo Blog Using Taxonomies</a></li>
-<li><a href="Add Tags to Your Hugo Blog Using Taxonomies">Content List Template</a></li>
+<li>[Content List Template](Add Tags to Your Hugo Blog Using Taxonomies)</li>
 </ul>
-
 <h2 id="table-of-contents">Table of Contents</h2>
-
 <p>顯示內容清單，只在模板作用。</p>
-
-<pre><code class="language-markdown">{{ .TableOfContents }}
-</code></pre>
-
-<p>參見<a href="https://gohugo.io/content-management/toc/">Table of Contents</a></p>
-
-<h2 id="其他">其他</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">{{ .TableOfContents }}
+</code></pre></div><p>參見<a href="https://gohugo.io/content-management/toc/">Table of Contents</a></p>
+<h2 id="heading2">其他</h2>
 <ul>
 <li><a href="https://zwbetz.com/make-a-hugo-blog-from-scratch/#better-title-logic">Make a Hugo blog from scratch</a> 一堆<code>hugo</code>模板的片段</li>
 </ul>

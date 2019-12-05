@@ -51,70 +51,39 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-07 19:53:47 &#43;0800 CST">Mon, 2019 Oct 7</time>
     </div> 
-    <h2 id="arch-linux查dns">Arch Linux查DNS</h2>
-
+    <h2 id="arch-linuxdns">Arch Linux查DNS</h2>
 <p>查詢dns</p>
-
-<pre><code class="language-bash">drill google.com
-</code></pre>
-
-<p>跟蹤模式</p>
-
-<pre><code class="language-bash">drill -T google.com  
-</code></pre>
-
-<p>或者安裝<code>bind-tools</code></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">drill google.com
+</code></pre></div><p>跟蹤模式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">drill -T google.com  
+</code></pre></div><p>或者安裝<code>bind-tools</code></p>
 <p>查詢<code>host</code>，archlinux預設不能直接用<code>host</code>，除非安裝<code>bind-tools</code>，我們可以用下面指令代替</p>
-
-<pre><code class="language-bash">getent hosts google.com
-</code></pre>
-
-<h2 id="透過docker架設bind伺服器">透過Docker架設BIND伺服器</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">getent hosts google.com
+</code></pre></div><h2 id="dockerbind">透過Docker架設BIND伺服器</h2>
 <p>獲取<code>bind</code>伺服器，如果需要其他版本可以用<code>docker search</code>找尋</p>
-
-<pre><code class="language-bash">docker pull sameersbn/bind
-</code></pre>
-
-<p>啟動伺服器</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull sameersbn/bind
+</code></pre></div><p>啟動伺服器</p>
 <pre><code>docker run --name bind -it --rm \
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
   --volume /srv/docker/bind:/data \
   sameersbn/bind
-</code></pre>
-
-<p>訪問 <a href="https://localhost:10000">https://localhost:10000</a> 連上管理界面，預設使用者名稱為<code>root</code>，密碼為<code>password</code>。如果不想啟用管理界面可以使用<code>--env WEBMIN_ENABLED=false</code>。</p>
-
+</code></pre><p>訪問 https://localhost:10000 連上管理界面，預設使用者名稱為<code>root</code>，
+密碼為<code>password</code>。如果不想啟用管理界面可以使用<code>--env WEBMIN_ENABLED=false</code>。</p>
 <p>測試Name Server是否架設成功，若成功應該返回查詢資料。</p>
-
-<pre><code class="language-bash">host google.com 127.0.0.1 
-</code></pre>
-
-<p>嘗試配置<code>ns.example.com</code>與<code>test.example.com</code>並且指向<code>127.0.0.1</code>，在配置完成master zone與A紀錄，確定<strong>重新載入配置</strong>(避免沒有紀錄)之後，透過以下指令確認查詢到<code>127.0.0.1</code>。</p>
-
-<pre><code class="language-bash">host test.example.com 127.0.0.1  
-</code></pre>
-
-<p>參見<a href="https://hub.docker.com/r/sameersbn/bind/">sameersbn/bind</a></p>
-
-<h2 id="nslookup-查詢各種紀錄">nslookup 查詢各種紀錄</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">host google.com 127.0.0.1 
+</code></pre></div><p>嘗試配置<code>ns.example.com</code>與<code>test.example.com</code>並且指向<code>127.0.0.1</code>，
+在配置完成master zone與A紀錄，確定<strong>重新載入配置</strong>(避免沒有紀錄)之後，
+透過以下指令確認查詢到<code>127.0.0.1</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">host test.example.com 127.0.0.1  
+</code></pre></div><p>參見<a href="https://hub.docker.com/r/sameersbn/bind/">sameersbn/bind</a></p>
+<h2 id="nslookup-">nslookup 查詢各種紀錄</h2>
 <p>注意參數順序</p>
-
-<pre><code class="language-bash">nslookup -type=NS google.com
-nslookup -type=A google.com
-nslookup -type=MX google.com 
-</code></pre>
-
-<h2 id="dig查詢dns">dig查詢DNS</h2>
-
-<pre><code class="language-bash">dig +norecurse @ns2.google.com any google.com 
-</code></pre>
-
-<h2 id="參考">參考</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nslookup -type<span style="color:#f92672">=</span>NS google.com
+nslookup -type<span style="color:#f92672">=</span>A google.com
+nslookup -type<span style="color:#f92672">=</span>MX google.com 
+</code></pre></div><h2 id="digdns">dig查詢DNS</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dig +norecurse @ns2.google.com any google.com 
+</code></pre></div><h2 id="heading">參考</h2>
 <ul>
 <li><a href="http://linux.vbird.org/linux_server/0350dns.php#server_settings">鳥哥私房菜:19.3 DNS 伺服器的軟體、種類與 cache only DNS 伺服器設定</a></li>
 <li><a href="http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/">Deploying a DNS Server using Docker</a></li>

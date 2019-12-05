@@ -51,36 +51,28 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-15 11:49:50 &#43;0800 CST">Sun, 2019 Sep 15</time>
     </div> 
-    <h2 id="找內容">找內容</h2>
-
+    <h2 id="heading">找內容</h2>
 <p>找到含有<code>linux</code>的檔案</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#對檔案filename</span>
+grep <span style="color:#e6db74">&#39;linux&#39;</span> filename
 
-<pre><code class="language-bash">#對檔案filename
-grep 'linux' filename
+<span style="color:#75715e">#對目錄所有檔案</span>
+grep <span style="color:#e6db74">&#39;linux&#39;</span> *
 
-#對目錄所有檔案
-grep 'linux' *
+<span style="color:#75715e">#忽略大小寫</span>
+grep <span style="color:#e6db74">&#39;linux&#39;</span> * -i
 
-#忽略大小寫
-grep 'linux' * -i
+<span style="color:#75715e">#顯示所在的行數</span>
+grep <span style="color:#e6db74">&#39;linux&#39;</span> -n
+</code></pre></div><p>只列出檔案名</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep <span style="color:#e6db74">&#39;文字&#39;</span> * -l
+</code></pre></div><h2 id="heading1">統計數量</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#統計單字&#34;ssh&#34;出現數量</span>
+grep -c <span style="color:#e6db74">&#39;ssh&#39;</span> *
 
-#顯示所在的行數
-grep 'linux' -n
-</code></pre>
-
-<p>只列出檔案名</p>
-
-<pre><code class="language-bash">grep '文字' * -l
-</code></pre>
-
-<h2 id="統計數量">統計數量</h2>
-
-<pre><code class="language-bash">#統計單字&quot;ssh&quot;出現數量
-grep -c 'ssh' *
-
-#列出包含字詞&quot;md&quot;檔案列表
-grep -cl 'md' *
-</code></pre>
+<span style="color:#75715e">#列出包含字詞&#34;md&#34;檔案列表</span>
+grep -cl <span style="color:#e6db74">&#39;md&#39;</span> *
+</code></pre></div>
 
     
       <hr>
