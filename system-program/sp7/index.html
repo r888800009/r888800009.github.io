@@ -81,6 +81,38 @@ if (!doNotTrack) {
 <li>Data Dependence: 檔案結構變化之後，必須修改程式</li>
 <li>Data Independence: 檔案結構變化之後，不必修改程式</li>
 </ul>
+<h2 id="72-data-base-definition">7.2 Data Base Definition</h2>
+<p>何謂Database</p>
+<ol>
+<li>一群<strong>關聯資料</strong>集合</li>
+<li><strong>盡可能</strong>避免<strong>資料重複性</strong></li>
+<li>以<strong>最佳化</strong>的型態提供一或多個程式使用</li>
+<li>資料皆為<strong>Data independent</strong>與程式無關，並且能<strong>共通控制</strong>並<strong>增刪修改</strong>。</li>
+</ol>
+<h3 id="heading2">資料庫的優點</h3>
+<ol>
+<li>減少資料重複性、不一致</li>
+<li>共用資料</li>
+<li>提供標準使用工具: Data Definition, Data Manipulation(SQL)</li>
+<li>增加資料私密性(權限管理)</li>
+<li>維護整體性(Integrity): 例如刪除特定資料之後，會自動移除相關的資料</li>
+<li>Data independent</li>
+<li>Concurrency (資源共用) and Recovery</li>
+</ol>
+<h3 id="heading3">保存資料的方式</h3>
+<ol>
+<li>Sequential file 循序檔: 一筆筆擺入資料</li>
+<li>Random access file: 隨機存取檔，可以任意讀取檔案</li>
+<li>Index file: b-tree</li>
+</ol>
+<p>Sequential file與Random access file收尋時，需要花費大量時間，
+透過index file解決key search</p>
+<h3 id="isam-filedatabase">ISAM file與Database差異</h3>
+<ol>
+<li>File Record Layout: 描述item(field)，與Database相同</li>
+<li>file relationship: ISAM必須人工連接關係，Database則是自動處理</li>
+<li>查詢能力: SQL比ISAM方便使用</li>
+</ol>
 
     
       <hr>
