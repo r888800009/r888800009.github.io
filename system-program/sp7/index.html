@@ -113,6 +113,55 @@ if (!doNotTrack) {
 <li>file relationship: ISAM必須人工連接關係，Database則是自動處理</li>
 <li>查詢能力: SQL比ISAM方便使用</li>
 </ol>
+<ul>
+<li>primary key: 必須定義一個，必須獨一無二</li>
+<li>secondary key: k個(k &gt; = 0)</li>
+</ul>
+<h2 id="73-data-base-system-architecture">7.3 Data Base System Architecture</h2>
+<ul>
+<li>DBA 資料庫管理師</li>
+<li>DBMS: 如oracle, MySQL，透過DBMS處理datbase</li>
+<li>Schema: 資料庫架構，並且分配sub schema權限給不同使用者</li>
+<li>DSL(Data sub language):如SQL</li>
+</ul>
+<p>註: DBMS處理database類似file system處理file</p>
+<ul>
+<li>standard storage structure: Access method</li>
+<li>Conceptual Schema (schema): DBA</li>
+<li>External Schema(subschema): DBA與user</li>
+<li>Host Language + Database Utilities (SQL)</li>
+</ul>
+<h3 id="data-base-description-language">Data base Description Language</h3>
+<ol>
+<li>physical Database description Language</li>
+<li>Data Definition Language (DDL): 用來描述<strong>Schema</strong>與<strong>Subschema</strong></li>
+<li>Data manipulation Language(DML)</li>
+</ol>
+<ul>
+<li>Programming Language Extension (Embedded Statement):
+定義database的指令在程式語言</li>
+<li>函數呼叫: 透過函數協助呼叫</li>
+<li>查詢 : SQL語法查詢</li>
+</ul>
+<h2 id="74-data-base-processing">7.4 Data Base Processing</h2>
+<ol>
+<li>必須先定義Schema</li>
+<li>資料必須載入到database</li>
+</ol>
+<h3 id="heading4">步驟</h3>
+<ol>
+<li>user: 程式要求資料，請求DBMS</li>
+<li>DBMS: 找出subschema的描述</li>
+<li>DBMS: 找出schema的描述</li>
+<li>DBMS: 獲取database的Physical database description，找出需要的紀錄</li>
+<li>DBMS: 請求OS給予檔案</li>
+<li>OS: 從次級儲存裝置獲取檔案</li>
+<li>OS: 將資料傳入System buffer</li>
+<li>DBMS: 根據使用個需要內容重建資料</li>
+<li>DBMS: 回傳資料</li>
+<li>DBMS:回傳查詢狀態</li>
+<li>DBMS &amp; OS: 將控制權轉交給應用程式</li>
+</ol>
 
     
       <hr>
