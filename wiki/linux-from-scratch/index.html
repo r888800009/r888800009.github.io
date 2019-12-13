@@ -55,14 +55,14 @@ if (!doNotTrack) {
 <p>練習qemu啟動kernel</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-system-x86_64 --kernel /boot/vmlinuz-linux 
 </code></pre></div><h2 id="kernel">kernel</h2>
-<h3 id="kernel1">抓取kernel</h3>
+<h3 id="kernel-1">抓取kernel</h3>
 <p>花費的空間實在太大也太慢，直接抓取最新的提交，加上<code>-depth 1</code>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --depth <span style="color:#ae81ff">1</span> git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 </code></pre></div><p>如果抓取kernel.org的完整的repo</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 </code></pre></div><p>或torvalds的鏡像</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/torvalds/linux.git 
-</code></pre></div><h3 id="kernel2">編譯kernel</h3>
+</code></pre></div><h3 id="kernel-2">編譯kernel</h3>
 <p>先配置內核設定，這邊使用預設設定所以直接退出</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make menuconfig
 </code></pre></div><p>透過多線程下去編譯內核</p>
@@ -123,7 +123,7 @@ sudo umount /mnt
 sudo losetup -d /dev/loop0
 </code></pre></div><p>執行</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-system-x86_64 -drive format<span style="color:#f92672">=</span>raw,file<span style="color:#f92672">=</span>linux.img 
-</code></pre></div><h3 id="heading1">參考</h3>
+</code></pre></div><h3 id="heading-1">參考</h3>
 <ul>
 <li><a href="https://superuser.com/a/526400">https://superuser.com/a/526400</a></li>
 </ul>
@@ -186,8 +186,8 @@ sudo losetup -d /dev/loop0
 <p>請確定<code>/mnt/dev</code>存在<del>並且fstab擁有devtmpfs</del>(存疑)</p>
 <h3 id="poweroff">poweroff無法使用</h3>
 <p>請確定<code>/mnt/proc</code>存在</p>
-<h2 id="heading2">參考資料</h2>
-<h3 id="kernel3">kernel</h3>
+<h2 id="heading-2">參考資料</h2>
+<h3 id="kernel-3">kernel</h3>
 <ul>
 <li><a href="https://github.com/jasonblog/note/blob/master/qemu/da_zao_shu_yu_zi_ji_de_linux_fa_xing_ban.md">打造屬於自己的linux發行版</a></li>
 <li><a href="https://kernelnewbies.org/KernelBuild">KernelBuild</a></li>

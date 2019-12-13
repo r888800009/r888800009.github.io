@@ -63,12 +63,12 @@ PIE       : disabled
 RELRO     : Partial
 </code></pre></div><p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，
 也可能是透過其他漏洞如<a href="/wiki/format-string-attack/">格式化字串</a>。</p>
-<h2 id="heading1">指令</h2>
+<h2 id="heading-1">指令</h2>
 <p>反組譯查看函數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./echo | less
 </code></pre></div><p>透過gdb檢查流程</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gdb ./echo
-</code></pre></div><h3 id="heading2">符號與區段</h3>
+</code></pre></div><h3 id="heading-2">符號與區段</h3>
 <p>顯示符號表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nm ./a.out
 </code></pre></div><p>顯示區段</p>
@@ -79,7 +79,7 @@ objdump -s -j .text ./a.out
 <p>構造一個<code>echo</code>的shellcode</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwnlib <span style="color:#f92672">import</span> shellcraft
 shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello world!</span><span style="color:#e6db74">&#39;</span>)
-</code></pre></div><h2 id="heading3">概念</h2>
+</code></pre></div><h2 id="heading-3">概念</h2>
 <ul>
 <li><code>little endian</code>: 高位優先</li>
 <li><code>big endian</code>: 低位優先</li>
@@ -90,8 +90,8 @@ shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"><
 <h3 id="nop-sled">Nop Sled</h3>
 <p>透過<code>nop</code>指令增加shellcode的命中機率，
 在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
-<h2 id="heading4">技巧</h2>
-<h3 id="heading5">除錯技巧</h3>
+<h2 id="heading-4">技巧</h2>
+<h3 id="heading-5">除錯技巧</h3>
 <p>採用<a href="/wiki/gdb/#gdb-script">GDB Script</a>來避免重複的動作，
 如:</p>
 <ol>
@@ -114,7 +114,7 @@ shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"><
 context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">amd64</span><span style="color:#e6db74">&#39;</span>
 pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mov rax, 0x732f2f2f6e69622f</span><span style="color:#e6db74">&#39;</span>)
 pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mov rax, 0x732f6e69622f</span><span style="color:#e6db74">&#39;</span>)
-</code></pre></div><h2 id="heading6">參見</h2>
+</code></pre></div><h2 id="heading-6">參見</h2>
 <ul>
 <li><a href="/wiki/format-string-attack/">格式化字串</a></li>
 <li><a href="/wiki/gcc/#gcc關閉保護">GCC關閉保護</a></li>

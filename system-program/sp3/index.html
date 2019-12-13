@@ -87,7 +87,7 @@ if (!doNotTrack) {
 <li>轉交command Interpreter, shell</li>
 </ol>
 <h2 id="33-program-linking">3.3 program linking</h2>
-<h3 id="heading1">連結</h3>
+<h3 id="heading-1">連結</h3>
 <p>連結用於處理<strong>外部參考</strong>，修改紀錄當中採用&amp;的外部參考必須進行連結。</p>
 <p>如果有做relocation時記憶體，連結的obj會擺在前一個obj之後，並且對每個修改紀錄進行修改，而連結的部份則會填上連結obj的symbol位置</p>
 <h3 id="relocation">重定位relocation</h3>
@@ -98,7 +98,7 @@ if (!doNotTrack) {
 <li>基底暫存器(Base register或segment register)進行relocation</li>
 </ul>
 <p>備註，現代電腦原則上同時採用<strong>修改紀錄</strong>與<strong>基底暫存器</strong>進行relocation</p>
-<h3 id="heading2">連結檔案</h3>
+<h3 id="heading-2">連結檔案</h3>
 <p>relocation</p>
 <h3 id="address-constant">address constant</h3>
 <ul>
@@ -106,7 +106,7 @@ if (!doNotTrack) {
 <li>複雜重定位:  <code>(start addr1 + loc1) - (start addr2 + loc2)</code>，兩個起始位置不同的相減，兩個以上的修改資料，使用外部參考時需要重定位與連結，產生<strong>兩個以上的修改資料</strong>。</li>
 <li>絕對定址: 兩個地址都被定義在同一個function中，並且相減的結果為absolute address，並且在組譯器處理階段即可處理，因此<strong>不會有修改資料</strong>。<code>(start addr1 + loc1) - (start addr1 + loc2)</code></li>
 </ul>
-<h3 id="heading3">重點分析</h3>
+<h3 id="heading-3">重點分析</h3>
 <p>如何判斷修改紀錄中是在進行linking或relocation的行為？透過是否使用外部參考進行判斷。</p>
 <p><strong>何得出原始程式碼的modification record?</strong></p>
 <p>如何知道絕對定址、連結與重定位、重定位？
@@ -117,14 +117,14 @@ if (!doNotTrack) {
 <li>pass1:  用來assign addresses每個object的external stmbols，找到所有的external address, 進行allocation</li>
 <li>pass2: loading, reloaction, linking</li>
 </ul>
-<h3 id="heading4">資料結構</h3>
+<h3 id="heading-4">資料結構</h3>
 <ol>
 <li>object program</li>
 <li>external symbol table (ESTAB)</li>
 <li>program Load address (PROGADDR):</li>
 <li>Function address (FADDR): function應該要安排的位置</li>
 </ol>
-<h3 id="heading5">輸入資料</h3>
+<h3 id="heading-5">輸入資料</h3>
 <p>轉譯器(language translator)必須提供</p>
 <ul>
 <li>T紀錄: 機器碼</li>
@@ -133,7 +133,7 @@ if (!doNotTrack) {
 <li>R紀錄: extrn symbol</li>
 <li>M紀錄: modification record</li>
 </ul>
-<h4 id="heading6">可以去除紀錄</h4>
+<h4 id="heading-6">可以去除紀錄</h4>
 <ul>
 <li>Program length: H紀錄</li>
 <li>Extrn symbol: R紀錄</li>

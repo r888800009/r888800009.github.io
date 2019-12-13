@@ -62,7 +62,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">LOCAL START.DONE       ; START 和 DONE兩個symbol
 </code></pre></div><ol start="4">
 <li>或者透過<strong>依序編號</strong>的方式避免重複定義，從0累加</li>
-<li><code>REPT`/</code>ENDM`指令用於展開<strong>重複</strong>的指令</li>
+<li><code>REPT</code>/<code>ENDM</code>指令用於展開<strong>重複</strong>的指令</li>
 </ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">REPT 4
 MOVS STR2, STR1
@@ -83,13 +83,13 @@ ENDM
 </ol>
 <h4 id="macro-call">如何辨識macro call</h4>
 <p>不是executable institution或pseudocode的指令當成Macro call</p>
-<h3 id="heading1">資料結構</h3>
+<h3 id="heading-1">資料結構</h3>
 <ol>
 <li><code>Macro Name Table (NAMTAB)</code>: 保存<strong>名稱</strong>、macro的<strong>起始</strong>與<strong>結束</strong>位置</li>
 <li><code>Macro Definition Table (DEFTAB)</code></li>
 <li><code>Arguments Table (ARGTAB)</code>: 保存傳入的參數，並且進行代換，可以用<code>#1</code>之類的方式來指定特定編號的參數</li>
 </ol>
-<h3 id="heading2">問題</h3>
+<h3 id="heading-2">問題</h3>
 <ul>
 <li>問: Macro是one pass或two passes?</li>
 <li>答: 因為Macro需要在called之前定義，因此可以透過one pass處理</li>
@@ -97,7 +97,7 @@ ENDM
 <h2 id="43-macro-instructions-defines-macro">4.3 Macro instructions defines macro</h2>
 <p>Macro內部出現Macro定義(並非Macro call)的話，將內部的Macro定義到
 <strong>Name Table</strong>，之後就可以對此Macro進行呼叫。</p>
-<h3 id="heading3">處理</h3>
+<h3 id="heading-3">處理</h3>
 <ol>
 <li>遇到Macro定義只處理最外層</li>
 <li>對外層Macro進行呼叫僅展開一層，Macro Define不會展開，

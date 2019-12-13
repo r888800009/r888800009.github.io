@@ -65,8 +65,8 @@ if (!doNotTrack) {
 <pre><code>docker search 名稱
 </code></pre><p>獲取容器地址，<a href="https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host">出處</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker inspect -f <span style="color:#e6db74">&#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> 容器名稱
-</code></pre></div><h2 id="heading1">作弊表</h2>
-<h3 id="heading2">危險區</h3>
+</code></pre></div><h2 id="heading-1">作弊表</h2>
+<h3 id="heading-2">危險區</h3>
 <p>移除所有未開啟的容器，<strong>請確認沒有要保留的容器在使用此指令!!</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker rm <span style="color:#66d9ef">$(</span>sudo docker container ls -a | awk <span style="color:#e6db74">&#39;{ if (NR &gt;= 2) { print $1 } }&#39;</span><span style="color:#66d9ef">)</span>
 </code></pre></div><p>移除<code>&lt;none&gt;</code>的image</p>
@@ -76,10 +76,10 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name http1 -it httpd bash 
 </code></pre></div><p>執行後啟動bash</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it 容器id /bin/bash
-</code></pre></div><h2 id="heading3">掛載</h2>
+</code></pre></div><h2 id="heading-3">掛載</h2>
 <p>volumes掛載</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -v 主機地址:容器地址 image-name
-</code></pre></div><h2 id="heading4">檔案</h2>
+</code></pre></div><h2 id="heading-4">檔案</h2>
 <p>複製容器內部的檔案，以<code>httpd</code>作為範例</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker create --name temp httpd
 sudo docker cp temp:/usr/local/apache2/conf/httpd.conf httpd.conf

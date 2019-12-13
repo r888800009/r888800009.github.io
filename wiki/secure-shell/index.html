@@ -83,14 +83,14 @@ host hostB
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -o ProxyCommand<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ssh -qW hostA&#34;</span> hostB
 </code></pre></div><h3 id="hostb">連上hostB</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh hostB
-</code></pre></div><h2 id="heading1">其他常用指令</h2>
+</code></pre></div><h2 id="heading-1">其他常用指令</h2>
 <h3 id="scp">scp</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp source target
 </code></pre></div><h3 id="sshfs">sshfs</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs user@host:dir mountpoint
 </code></pre></div><h3 id="sock5">Sock5代理</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -D <span style="color:#ae81ff">1337</span> -q -C -N domain
-</code></pre></div><h2 id="heading2">問題</h2>
+</code></pre></div><h2 id="heading-2">問題</h2>
 <h3 id="remote-host-identification-has-changed">Remote Host Identification Has Changed</h3>
 <p>移除<code>known_hosts</code>裡面的主機</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -R <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>

@@ -57,7 +57,7 @@ if (!doNotTrack) {
 <li>正則</li>
 <li>lex</li>
 </ul>
-<h2 id="heading1">組合語言詞法分析</h2>
+<h2 id="heading-1">組合語言詞法分析</h2>
 <ul>
 <li>Token table
 <ul>
@@ -76,7 +76,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex
 </code></pre></div><p>使用檔案輸入</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex file.l
-</code></pre></div><h3 id="heading2">範例程式</h3>
+</code></pre></div><h3 id="heading-2">範例程式</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%option noyywrap
 %%
 [0-9]+ number(yytext);
@@ -116,7 +116,7 @@ int main() {
   yylex();
   return 0;
 }
-</code></pre></div><h3 id="heading3">常見問題</h3>
+</code></pre></div><h3 id="heading-3">常見問題</h3>
 <p>出現<code>undefined reference to `yywrap'</code>無法編譯</p>
 <p>使用<code>flex</code>要連結<code>-lfl</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gcc lex.yy.c -lfl  

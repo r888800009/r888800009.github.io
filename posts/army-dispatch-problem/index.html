@@ -63,7 +63,7 @@ if (!doNotTrack) {
 <li><code>z</code>: 調回消耗</li>
 </ul>
 <p>第二行為每月所需人數。</p>
-<h2 id="heading1">範例</h2>
+<h2 id="heading-1">範例</h2>
 <p>測資一</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">4 22 14 84
 10 4 14 10
@@ -80,7 +80,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">7 10 20 30
 3 7 4 5 1 8 9
 </code></pre></div><p>測資四結果: 1050</p>
-<h2 id="heading2">解法</h2>
+<h2 id="heading-2">解法</h2>
 <p>透過dp動態規劃下去處理，計算一個月當中所有可能派遣與調回的情況，以及
 沒有變化的情況，用上次最小值作為當前計算的基底，
 迭代的時候求出每次最小值。</p>
@@ -106,7 +106,7 @@ if (!doNotTrack) {
    x    x    x    x    x    x    x    x  860  890  920  950  980
    x    x    x    x    x    x    x    x    x    x    x    x 1140
 1140
-</code></pre></div><h3 id="heading3">第一次優化</h3>
+</code></pre></div><h3 id="heading-3">第一次優化</h3>
 <p>觀察後發現或許子迴圈超過3個值時可以抓取兩側，
 算出兩個線性方程式，透過交點找到周圍的最小值，
 無解就表示兩側有一邊是最小值，透過斜率判斷左邊右邊。</p>
@@ -129,7 +129,7 @@ solve = (dp[i - 1][pre_people] - x * pre_people) + (y + x) * j
 1530
 </code></pre></div><p><code>y - z</code>有可能是正或負，可能還需要考慮這種情況
 ，合理的情況<code>y + x</code>恆正(假設花費金額都為正數)，這個時候就是最左側。</p>
-<h3 id="heading4">第二次優化</h3>
+<h3 id="heading-4">第二次優化</h3>
 <p>應該可以從這個<a href="https://github.com/r888800009/practice/blob/6133f11140e3eb4f8b9674bb79ccaa2f262849f2/army-dispatch-problem.c#L29-L33">程式碼</a>
 看出來，是不會有斷層，找交點好像也是多餘的。
 因為交點是根據diff判斷出來，似乎拿上一次的人數來找似乎更簡單。
@@ -137,8 +137,8 @@ solve = (dp[i - 1][pre_people] - x * pre_people) + (y + x) * j
 或小於原本直線的值，右側則大於等於。</p>
 <p><code>diff = j - pre_people</code></p>
 <p>反正任意切，只有左邊小於的情況會在最左側，大於等於的情況會接近diff。</p>
-<h2 id="heading5">優化結論</h2>
-<h3 id="heading6">第一次優化</h3>
+<h2 id="heading-5">優化結論</h2>
+<h3 id="heading-6">第一次優化</h3>
 <ul>
 <li>子迴圈大小為1: 以此值作為上一次最小值</li>
 <li>子迴圈大小大於1:
@@ -149,7 +149,7 @@ solve = (dp[i - 1][pre_people] - x * pre_people) + (y + x) * j
 </ul>
 </li>
 </ul>
-<h3 id="heading7">第二次優化</h3>
+<h3 id="heading-7">第二次優化</h3>
 <p><a href="https://github.com/r888800009/practice/blob/master/army-dispatch-problem-2.c">程式碼</a></p>
 <ul>
 <li><code>y - z</code> 負或0: 盡可能接近diff的可行解</li>

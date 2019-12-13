@@ -98,13 +98,13 @@ DWORD: 例外處理
 <li>若程式無法處理錯誤，則crash</li>
 </ul>
 <p>以上為32位元應用程式的SEH結構，64位元請<a href="http://www.osronline.com/article.cfm%5earticle=469.htm">參考</a></p>
-<h3 id="heading1">備註</h3>
+<h3 id="heading-1">備註</h3>
 <p>學習時可能遇到SafeSEH啟用導致覆蓋過後無法轉跳到shellcode，
 在練習時關閉此保護以降低程式安全性。</p>
 <h2 id="sehop">SEHOP</h2>
 <p>SEHOP為SEH覆蓋保護，透過檢查<code>ntdll</code>的<code>FinalExceptionHandler</code>是否為
 連結串列的末端，若不存在表示被複寫。</p>
-<h3 id="heading2">啟用的系統</h3>
+<h3 id="heading-2">啟用的系統</h3>
 <p>在以下Windows版本與後序版本啟用SEHOP，
 調整關閉啟用參見<a href="https://support.microsoft.com/zh-tw/help/956607/how-to-enable-structured-exception-handling-overwrite-protection-sehop">Microsoft文檔</a>。</p>
 <ul>
@@ -112,14 +112,14 @@ DWORD: 例外處理
 <li>win7 (默認關閉)</li>
 <li>win server 2008 (默認啟用)</li>
 </ul>
-<h3 id="heading3">參見</h3>
+<h3 id="heading-3">參見</h3>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/cpp/cpp/structured-exception-handling-c-cpp">Structured Exception Handling (C/C++)</a></li>
 <li><a href="http://gxkyrftx.xyz/2019/01/07/SEH%E5%AD%A6%E4%B9%A0/">SEH机制学习</a></li>
 <li><a href="https://www.xineting.club/2018/11/03/windows%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/">Windows内存安全保护机制</a></li>
 <li>0day安全:软件漏洞分析技术: Windows 異常處理機制(第一版第七章，第二版第六章)</li>
 </ul>
-<h2 id="safeseh1">SafeSEH</h2>
+<h2 id="safeseh-1">SafeSEH</h2>
 <p>檢查handler是否在SafeSEH表中，啟用可以導致無法劫持SEH handler。</p>
 <h2 id="windows-pwn">windows pwn問題</h2>
 <p>DEP導致無法執行shellcode</p>

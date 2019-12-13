@@ -72,9 +72,9 @@ if (!doNotTrack) {
 <li><a href="/wiki/bash/">bash</a></li>
 <li><a href="/tags/shell">shell分類</a></li>
 </ul>
-<h2 id="shell-1">shell 搜尋技巧</h2>
+<h2 id="shell--1">shell 搜尋技巧</h2>
 <p>透過<code>Ctrl + r</code>查詢歷史指令，多次<code>Ctrl + r</code>向前查詢歷史。</p>
-<h3 id="heading1">指令標籤</h3>
+<h3 id="heading-1">指令標籤</h3>
 <p>這是一個來自<a href="https://unix.stackexchange.com/a/166927">How to cycle through reverse-i-search in BASH?</a>
 回答者提供的技巧，但此方法僅適用<code>bash</code>而不適合<code>zsh</code>，後者會將<code>#</code>之後的內容傳遞給程式導致錯誤，
 解決此問題似乎要配置<code>INTERACTIVE_COMMENTS</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
@@ -91,7 +91,7 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>適當的時機可能在開始一項工作時，為了方便紀錄使用的指令而使用此標記。</p>
-<h2 id="heading2">配置歷史紀錄</h2>
+<h2 id="heading-2">配置歷史紀錄</h2>
 <p>為方便存取指令紀錄，<code>.zshrc</code>添加以下兩行。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">SAVEHIST<span style="color:#f92672">=</span><span style="color:#ae81ff">4000</span>
 HISTSIZE<span style="color:#f92672">=</span>$SAVEHIST
@@ -117,7 +117,7 @@ set -o vi
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p><a href="https://unix.stackexchange.com/questions/33994/zsh-interpret-ignore-commands-beginning-with-as-comments">zsh Interpret/ignore commands beginning with &lsquo;#&rsquo; as comments</a><a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#8617;</a></p>
+<p><a href="https://unix.stackexchange.com/questions/33994/zsh-interpret-ignore-commands-beginning-with-as-comments">zsh Interpret/ignore commands beginning with &lsquo;#&rsquo; as comments</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

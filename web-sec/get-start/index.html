@@ -64,7 +64,7 @@ if (!doNotTrack) {
 <li><a href="http://www.dvwa.co.uk/">Damn Vulnerable Web Application</a></li>
 <li><a href="https://www.owasp.org/index.php/OWASP_Broken_Web_Applications_Project">OWASP Broken Web Applications</a></li>
 </ul>
-<h2 id="heading1">安裝</h2>
+<h2 id="heading-1">安裝</h2>
 <h3 id="webgoat">WebGoat</h3>
 <p>首先我們必須找到WebGoat的映像檔，在這裡我們透過docker的指令收尋</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search webgoat
@@ -110,7 +110,7 @@ vulnerables/web-owasp-mutillidae2   Mutillidae is a deliberately vulnerable web-
 我們會連到<code>database-offline.php</code>，這個時候點選<a href="http://localhost/set-up-database.php">setup/reset the DB</a>
 即可解決問題。</p>
 <p>這樣就完成環境的搭建了。</p>
-<h2 id="heading2">停止</h2>
+<h2 id="heading-2">停止</h2>
 <p>當我們測試好相關漏洞的時候，可能會想要關閉docker容器，我們可以鍵入<code>docker ps</code>來查看開啟的容器。
 並且透過<code>docker stop 容器ID</code>的方法停止容器。</p>
 <p>如果想要移除容器，我們可以鍵入<code>docker container ls -a</code>查看未啟動的容器。並且透過<code>docker rm 容器ID</code>

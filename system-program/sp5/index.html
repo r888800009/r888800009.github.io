@@ -194,7 +194,7 @@ term
 <p>Activation Record存在的目的，在於<strong>保存回傳地址</strong>，
 <strong>區域變數(Local definition)</strong>, **傳入參數(Pass Parameters)**等，
 在大多數的系統上都能看到。</p>
-<h4 id="activation-record1">Activation Record</h4>
+<h4 id="activation-record-1">Activation Record</h4>
 <ul>
 <li>variables (如 return value, local define)</li>
 <li>return address</li>
@@ -221,14 +221,14 @@ term
 <li>行優先: 優先排序row</li>
 <li>列優先: 優先排序column</li>
 </ul>
-<h4 id="heading1">計算公式</h4>
+<h4 id="heading-1">計算公式</h4>
 <p>定義<code>type B[a-b][c-d]</code>(表示為<code>type B[a:b][c:d]</code>)，定址到<code>B[s][t]</code></p>
 <ul>
 <li>Row Major: <code>[(s - a) * (d - c + 1) + (t - c)] * sizeof(Type) + base</code>，假設index起始都是0，代表<code>type B[b][d]</code>，為<code>[s * (d + 1) + t] * sizeof(Type) + base</code></li>
 <li>Column Major: <code>[(t - c) * (b - a + 1) + (s - a)] * sizeof(Type) + base</code>，假設起始為0，<code>[t * (b + 1) + s] * sizeof(Type) + base</code></li>
 </ul>
 <p>註: 以<code>a</code>, <code>c</code>做為index的起始，減去代表求長度，<code>(b + 1)</code>的部份是陣列計算大小的方法 c++為Row Major</p>
-<h3 id="code-optimization1">Code Optimization</h3>
+<h3 id="code-optimization-1">Code Optimization</h3>
 <p>對<strong>中間碼</strong>與機器碼進行優化。</p>
 <ol>
 <li>Common Sub-Expression: 找出<strong>重複運算</strong>，並且將其提出。</li>

@@ -53,17 +53,17 @@ if (!doNotTrack) {
     </div> 
     <h2 id="heading">先決條件</h2>
 <p>記憶體<strong>必須</strong>載入洩漏的資料，<strong>必須</strong>能夠修改stack canary，常見於緩衝區溢位漏洞。</p>
-<h2 id="heading1">利用</h2>
+<h2 id="heading-1">利用</h2>
 <p>找出<code>argv[0]</code>的地址並指向洩漏的資料指標位置。</p>
-<h3 id="heading2">方法一</h3>
+<h3 id="heading-2">方法一</h3>
 <p>透過除錯工具將堆疊打印出來，應該可以發現一個堆疊上的指標透過<strong>另外一個指標</strong>指向<strong>檔名</strong>。
 試圖蓋過<strong>另外一個指標</strong>內容值，使它指向洩漏資料，讓最終指向目的地為洩漏資料。</p>
-<h3 id="heading3">方法二</h3>
+<h3 id="heading-3">方法二</h3>
 <p>可以透過除錯工具傳入<strong>辨識用參數</strong>，
 並且找到相關檔名下面應該是<strong>辨識用參數</strong>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./a.out 辨識用
 </code></pre></div><p>之後透過除錯工具將堆疊打印出來，找出該數值。</p>
-<h2 id="heading4">常見問題</h2>
+<h2 id="heading-4">常見問題</h2>
 <h3 id="unknown">Unknown</h3>
 <p>似乎找到正確位置卻輸出</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">*** stack smashing detected ***: &lt;unknown&gt; terminated
@@ -71,7 +71,7 @@ if (!doNotTrack) {
 <p>經過測試之後(掛其他版本的libc)之後就正常顯示。<a href="/wiki/pwn-notes/#指定libc">掛libc</a></p>
 <h3 id="argc">argc</h3>
 <p>基本上不用理會<code>argc</code>，因為報錯訊息依然是輸出<code>argv[0]</code>。</p>
-<h2 id="heading5">參考</h2>
+<h2 id="heading-5">參考</h2>
 <ul>
 <li><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/fancy-rop-zh/#stack-smash">ROP Tricks</a></li>
 <li><a href="https://www.mi1k7ea.com/2019/03/23/%E8%8A%B1%E5%BC%8F%E6%A0%88%E6%BA%A2%E5%87%BA%E4%B9%8BStack-smash/">花式栈溢出之Stack smash</a></li>

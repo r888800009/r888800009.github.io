@@ -60,19 +60,19 @@ if (!doNotTrack) {
 </code></pre></div><p>將單行字首轉成大寫</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">s/\&lt;./\u&amp;/g
 </code></pre></div><p>出處<a href="https://stackoverflow.com/a/17440797">Capitalize first letter of each word in a selection using vim</a></p>
-<h3 id="heading1">遠程編輯</h3>
+<h3 id="heading-1">遠程編輯</h3>
 <p>透過scp協議編輯遠端檔案</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim scp://user@ssh.example.com/file1.txt
 </code></pre></div><p>在vim開啟遠程檔案</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:e scp://user@ssh.example.com/file1.txt
-</code></pre></div><h3 id="heading2">作為二進位編輯器</h3>
+</code></pre></div><h3 id="heading-2">作為二進位編輯器</h3>
 <ol>
 <li>使用<code>vim -b binary</code>開啟檔案</li>
 <li><code>:%!xxd</code></li>
 <li>修改完成之後輸入<code>:%!xxd -r</code></li>
 <li><code>:x</code>保存並退出</li>
 </ol>
-<h2 id="heading3">快捷鍵</h2>
+<h2 id="heading-3">快捷鍵</h2>
 <p><code>:x</code>
 同<code>:wq</code>的功能</p>
 <ul>
@@ -83,11 +83,11 @@ if (!doNotTrack) {
 <li><code>nyy</code>複製<code>n</code>行，數字<code>n</code>也可以為十位百位。</li>
 <li><code>ndd</code>剪下<code>n</code>行</li>
 <li><code>n&gt;&gt;</code>縮排<code>n</code>行</li>
-<li><code>n` </code>Shift + h<code>游標由上數下來第`n</code></li>
-<li><code>n` </code>Shift + l<code>游標由下數上來第`n</code></li>
+<li><code>n</code> <code>Shift + h</code>游標由上數下來第<code>n</code></li>
+<li><code>n</code> <code>Shift + l</code>游標由下數上來第<code>n</code></li>
 <li><code>gg</code> 檔首</li>
 <li><code>Shift + g</code> 檔末</li>
-<li><code>n` </code>gg<code>，`n</code>為檔案特定行數</li>
+<li><code>n</code> <code>gg</code>，<code>n</code>為檔案特定行數</li>
 <li><code>w</code>: 跳到單字或特殊字元</li>
 <li><code>e</code>: 跳到單字最後面</li>
 <li><code>b</code>: 跳到單字前方</li>
@@ -95,19 +95,19 @@ if (!doNotTrack) {
 <li><code>O</code>在游標那行輸入</li>
 <li><code>0</code>行頭</li>
 <li><code>$</code>行尾</li>
-<li><code>n` </code><!-- raw HTML omitted --><code> (或</code>&lt;Ctrl-^&gt;<code>)切換緩衝區，`n</code>為緩衝區編號</li>
-<li><code>gU`,</code>gu<code>, </code>g~`改變大小寫</li>
+<li><code>n</code> <code>&lt;ctrl-6&gt;</code> (或<code>&lt;Ctrl-^&gt;</code>)切換緩衝區，<code>n</code>為緩衝區編號</li>
+<li><code>gU</code>,<code>gu</code>, <code>g~</code>改變大小寫</li>
 </ul>
-<h3 id="heading4">快速重複製作</h3>
+<h3 id="heading-4">快速重複製作</h3>
 <ul>
-<li><code>no` `n</code>為數字，表示重複內容<code>n</code>次</li>
+<li><code>no</code> <code>n</code>為數字，表示重複內容<code>n</code>次</li>
 </ul>
-<h2 id="heading5">搜尋與取代</h2>
+<h2 id="heading-5">搜尋與取代</h2>
 <ul>
 <li>取代: <code>:[範圍]s/[符合]/[代替]/[模式]</code></li>
 <li>搜尋: <code>/[符合]</code></li>
 </ul>
-<h3 id="heading6">範圍</h3>
+<h3 id="heading-6">範圍</h3>
 <ul>
 <li><code>%</code>全文搜尋</li>
 <li><code>.</code>當前游標行位置</li>
@@ -135,7 +135,7 @@ mapD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:bufdo %s/被取代/取代/ge | update
 </code></pre></div><p>參見<a href="https://vim.fandom.com/wiki/Search_and_replace_in_multiple_buffers">Search and replace in multiple buffers</a></p>
 <!-- raw HTML omitted -->
-<h2 id="heading7">插件</h2>
+<h2 id="heading-7">插件</h2>
 <p>ycm配置</p>
 <pre><code>./install.py --clang-completer --go-completer --java-completer
 </code></pre>

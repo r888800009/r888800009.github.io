@@ -76,6 +76,23 @@ makepkg -is
 <li><a href="http://linux-wiki.cn/wiki/Java%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE">參考1</a></li>
 <li><a href="https://stackoverflow.com/questions/25663165/unicode-char-not-rendering-in-swing-what-font-is-used-in-real">參考2</a></li>
 </ul>
+<h2 id="lts-kernel">採用LTS kernel</h2>
+<p>由於新版的kernel可能會有一些錯誤，為了系統穩定性切換到LTS kernel，
+首先確保安裝lts版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S linux-lts 
+</code></pre></div><p>這裡採用systemd-boot，不必安裝GRUB，可以透過UEFI引導。
+配置一個conf為<code>arch-lts.conf</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">title   Arch Linux LTS
+linux   /vmlinuz-linux-lts
+initrd  /intel-ucode.img
+initrd  /initramfs-linux-lts.img
+options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
+</code></pre></div><p><code>option</code>細節請參見<a href="https://wiki.archlinux.org/index.php/kernel_parameters">archlinux wiki</a></p>
+<p>透過<code>systemctl</code>選定arch-lts進行啟動</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl reboot --boot-loader-entry<span style="color:#f92672">=</span>arch-lts
+</code></pre></div><p>或者修改<code>/boot/loader/loader.conf</code>使預設透過lts啟動</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">default arch-lts
+</code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/systemd-boot#">archliunux wiki</a></p>
 
     
       <hr>

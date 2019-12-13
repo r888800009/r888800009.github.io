@@ -61,12 +61,12 @@ if (!doNotTrack) {
 計算差異，再把當前的值放入堆疊。</p>
 <h2 id="permutations">Permutations</h2>
 <p>給定一個數組產生所有組合。</p>
-<h3 id="heading1">解法</h3>
+<h3 id="heading-1">解法</h3>
 <p>很明顯的遞迴題目，也可以透過堆疊迭代，
 採用遞迴並標記已選取的數值。</p>
 <h2 id="intersection-of-two-linked-lists">Intersection of Two Linked Lists</h2>
 <p>尋找兩個連結串列的相交節點，若不相交則回傳<code>null</code>。</p>
-<h3 id="heading2">解法</h3>
+<h3 id="heading-2">解法</h3>
 <p>可以很容易透過<code>hashtable</code>實現，將其中一個連結串列全部放入
 <code>hashtable</code>之後，遍歷另外一個串列並尋找，交點為第一次遍歷存在的點。</p>
 <p>雙指標的解法經過兩次(兩者一樣長只須一次)可以得到相交點，讓指標從兩邊出發，到末端之後
@@ -75,13 +75,13 @@ if (!doNotTrack) {
 在<code>null</code>之前所遇到的節點必須相同。</p>
 <h2 id="rotate-image">Rotate Image</h2>
 <p>給定一個<code>n*n</code>二維陣列，順時鐘旋轉<code>90度</code>，並且不能宣告格外的矩陣。</p>
-<h3 id="heading3">解法</h3>
+<h3 id="heading-3">解法</h3>
 <p>透過螺旋以中心旋轉解決，外迴圈處理直徑，內迴圈處理邊長，
 每次旋轉四個數值，內迴圈必須隨則外迴圈縮減，避免重複旋轉。</p>
 <h2 id="find-the-duplicate-number">Find the Duplicate Number</h2>
 <p>給定一個陣列(大小為<code>n+1</code>)僅有一個數值重複，並且
 數值小於陣列大小(<code>1~n</code>)，找出重複的數值。</p>
-<h3 id="heading4">解法</h3>
+<h3 id="heading-4">解法</h3>
 <p>可以將此陣列視為連結串列，重複的數值可以當成連結串列迴圈指向的地方
 ，並且透過<code>floyd's cycle detection</code>下去找到重複的數字。
 此算法需要快慢指標，並且找出環的進入點，交叉之後將其中一個指標
