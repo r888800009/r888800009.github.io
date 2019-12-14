@@ -105,7 +105,13 @@ pass
 <p>透過<code>hydra</code>對前面的簡易弱密碼範例進行破解，
 細節請自行參閱手冊。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hydra -L user.txt -P pass.txt 127.0.0.1 -s <span style="color:#ae81ff">8080</span> http-get-form <span style="color:#e6db74">&#34;/index.php:id=^USER^&amp;pw=^PASS^:Incorrect account or password&#34;</span>
-</code></pre></div>
+</code></pre></div><h2 id="heading-3">雜項</h2>
+<h3 id="hash">Hash</h3>
+<p>處理密碼、簽章等CTF經常需要使用hash，
+下面產生相關的hash值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | md5sum
+echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | sha512sum  
+</code></pre></div><p>注意: 請務必加上<code>-n</code>避免<code>\n</code>也被用於計算hash</p>
 
     
       <hr>
