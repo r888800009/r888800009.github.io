@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>[SP]軟體工程 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP]軟體工程</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-12-17 14:24:07 &#43;0800 CST">Tue, 2019 Dec 17</time>
+    </div> 
+    <h2 id="81-software-engineering">8.1 software Engineering</h2>
+<p>降低<strong>花費</strong>, 提昇<strong>生產力</strong>與<strong>可靠度</strong></p>
+<h3 id="heading">軟體生命週期</h3>
+<p>透過 <strong>系統分析師(SA/SD)</strong> 負責</p>
+<ul>
+<li>SA (System Analysis)
+<ul>
+<li>需求分析: 找出軟體系統需要什麼</li>
+<li>系統說明: 功能</li>
+</ul>
+</li>
+<li>SD
+<ul>
+<li>系統設計: 輸出輸入，資料結構演算法，如何分配程式碼</li>
+</ul>
+</li>
+<li>實作: routine必須要有註解增加可讀性，說明<strong>I/O parameter</strong>、<strong>資料結構</strong>、<strong>被呼叫/呼叫</strong>、<strong>演算法</strong></li>
+<li>系統測試</li>
+<li>維護(Maintenance)
+<ul>
+<li>corrective maintenance: 原始程式bug</li>
+<li>perfective maintenance: 改善系統性能，不改變需求</li>
+<li>Adaptive maintenance: 修改系統環境</li>
+<li>Enhancement: 增加功能</li>
+</ul>
+</li>
+</ul>
+<h2 id="82-system-analysis-">8.2 System Analysis 系統分析</h2>
+<p>需求分析步驟</p>
+<ul>
+<li>了解<strong>電腦化</strong>(自動化)需求</li>
+<li>系統分析師由<strong>使用者</strong>角度編寫需求報告</li>
+</ul>
+<p>系統規格步驟</p>
+<ol>
+<li>面談、問卷調查、收集資料</li>
+<li>完成系統規格說明書，必須了解<strong>人工作業流程</strong></li>
+</ol>
+<h3 id="heading-1">系統規格</h3>
+<p>back定義(注: 業界大多採用CMMI)</p>
+<ol>
+<li>輸入、輸出、品質保證</li>
+<li>決策表</li>
+</ol>
+<h3 id="data-flow-diagram">Data Flow Diagram</h3>
+<p>流程，並且盡可能細分流程以便於編寫程式</p>
+<h2 id="83-system-design">8.3 System Design</h2>
+<ol>
+<li>輸出設計</li>
+<li>輸入設計</li>
+<li>檔案設計: 資料結構</li>
+<li>處理程式設計: 演算法</li>
+</ol>
+<h3 id="modular-design">Modular design</h3>
+<p>分而治之，由上自下設計程式，編寫偽代碼。</p>
+<h2 id="84-system-testing-strategies">8.4 System Testing strategies</h2>
+<ol>
+<li>unit testing 單元測試</li>
+<li>black testing 測試功能，不考量程式碼</li>
+<li>white testing 測試所有可能的Statements</li>
+<li>Integration testing 整合測試，測試介面</li>
+<li>System testing 測試整體系統</li>
+<li>Alpha testing 發布外部使用者前，進行測試</li>
+<li>Beta testing 給予特定人士測試</li>
+<li>Acceptance testing</li>
+</ol>
+<h3 id="top-down-testing">top down testing</h3>
+<p>對由整體對組件與函數測試，可以在整合早期發現問題</p>
+<h3 id="bottom-up-testing">bottom up testing</h3>
+<p>由函數、組件、整體往上測試，可以發現個別函數潛在問題</p>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/system-program" class="tags">System Program</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

@@ -6,10 +6,19 @@
     <description>Recent content in System-programs on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 07 Dec 2019 23:42:07 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 14:24:07 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/system-program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[SP]軟體工程</title>
+      <link>https://r888800009.github.io/system-program/sp8/</link>
+      <pubDate>Tue, 17 Dec 2019 14:24:07 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/system-program/sp8/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>[SP]資料庫系統</title>

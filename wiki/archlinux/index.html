@@ -88,7 +88,8 @@ initrd  /intel-ucode.img
 initrd  /initramfs-linux-lts.img
 options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
 </code></pre></div><p><code>option</code>細節請參見<a href="https://wiki.archlinux.org/index.php/kernel_parameters">archlinux wiki</a></p>
-<p>透過<code>systemctl</code>選定arch-lts進行啟動</p>
+<p>開機時按<code>esc</code>切換boot menu</p>
+<p>或透過<code>systemctl</code>選定arch-lts進行啟動</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl reboot --boot-loader-entry<span style="color:#f92672">=</span>arch-lts
 </code></pre></div><p>或者修改<code>/boot/loader/loader.conf</code>使預設透過lts啟動</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">default arch-lts

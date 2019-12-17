@@ -52,57 +52,79 @@ if (!doNotTrack) {
         <time datetime="2019-09-05 05:47:01 &#43;0800 CST">Thu, 2019 Sep 5</time>
     </div> 
     <p>Linux一些常用於文件管理的筆記。</p>
-<h2 id="ls">ls</h2>
+<h2 id="heading">一般文件處理</h2>
+<h3 id="ls">ls</h3>
 <p>排除指定檔名</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -I <span style="color:#e6db74">&#34;*.md&#34;</span>
-</code></pre></div><h2 id="fdupes">fdupes</h2>
-<p>找尋重複的檔案</p>
-<pre><code>fdupes -d ./
-</code></pre><h2 id="trash">trash</h2>
+</code></pre></div><h3 id="trash">trash</h3>
 <p>垃圾桶的功能，避免直接<code>rm</code>誤刪檔案。</p>
-<h2 id="du">du</h2>
+<h3 id="du">du</h3>
 <p>用於統計大小。</p>
 <p>只顯示一層</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du --max-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </code></pre></div><p>將輸出的大小轉成kb, mb, gb的格式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du . -h
-</code></pre></div><h2 id="tar">tar</h2>
+</code></pre></div><h3 id="find">find</h3>
+<p>搜尋該目錄含有<code>linux</code>的文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -exec grep -H <span style="color:#e6db74">&#34;linux&#34;</span> <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>  
+</code></pre></div><h3 id="rsync">rsync</h3>
+<p>同步工具</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync 參數 來源 目標 
+rsync -avh test1/ test2/  
+</code></pre></div><h2 id="heading-1">壓縮</h2>
+<h3 id="tar">tar</h3>
 <p>壓縮解壓縮。</p>
-<h3 id="heading">常用參數</h3>
+<h4 id="heading-2">常用參數</h4>
 <ul>
 <li><code>-x</code> 解壓縮</li>
 <li><code>-t</code> 查看內容</li>
 <li><code>-c</code> 壓縮</li>
 <li><code>-f</code> 壓縮檔名</li>
 </ul>
-<h3 id="heading-1">列出內容</h3>
+<h4 id="heading-3">列出內容</h4>
 <p>列出<code>file.tar</code>裡面的內容</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -tf file.tar 
-</code></pre></div><h2 id="find">find</h2>
-<p>搜尋該目錄含有<code>linux</code>的文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -exec grep -H <span style="color:#e6db74">&#34;linux&#34;</span> <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>  
-</code></pre></div><h2 id="rsync">rsync</h2>
-<p>同步工具</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync 參數 來源 目標 
-rsync -avh test1/ test2/  
 </code></pre></div><h2 id="file">file</h2>
 <p>用於識別檔案類型</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">file ./a.out
-</code></pre></div><h2 id="diff">diff</h2>
-<p>比較兩個檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">diff file1 file2
-</code></pre></div><p>比較兩個資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">diff --brief -r dir1/ dir2/
-</code></pre></div><h2 id="sort">sort</h2>
+</code></pre></div><h2 id="stat">stat</h2>
+<p>顯示文件的詳細資訊，如日期、權限等相關資訊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stat file
+</code></pre></div><h2 id="heading-4">內容處理</h2>
+<h3 id="sort">sort</h3>
 <p>多種排序功能，可依字典序、數字大小等</p>
 <p>數字大小排序</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sort file --numeric-sort  
 </code></pre></div><p>按照字典序</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sort file 
-</code></pre></div><h2 id="stat">stat</h2>
-<p>顯示文件的詳細資訊，如日期、權限等相關資訊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stat file
-</code></pre></div><h2 id="heading-2">參見</h2>
+</code></pre></div><h3 id="fdupes">fdupes</h3>
+<p>找尋重複的檔案</p>
+<pre><code>fdupes -d ./
+</code></pre><h3 id="diff">diff</h3>
+<p>比較兩個檔案</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">diff file1 file2
+</code></pre></div><p>比較兩個資料夾</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">diff --brief -r dir1/ dir2/
+</code></pre></div><h3 id="heading-5">未分類</h3>
+<ul>
+<li><code>shuf</code>: 隨機排序</li>
+<li><code>sed</code></li>
+<li><code>cut</code></li>
+<li><code>wc</code>: 計算字數</li>
+</ul>
+<h2 id="heading-6">檢視與編輯</h2>
+<ul>
+<li><code>less</code>: 檢視輸入(文檔或pipeline等)，<code>:n</code>下個檔案，<code>:p</code>上個檔案</li>
+<li><code>tail</code>/<code>head</code></li>
+</ul>
+<h3 id="heading-7">編輯器</h3>
+<ul>
+<li><code>emacs</code>：注: emacs可充當irc client使用。</li>
+<li><a href="/wiki/vim/">vim</a></li>
+</ul>
+<h2 id="heading-8">搜尋檔案文字內容</h2>
+<p>透過<a href="/wiki/grep/#找內容">grep</a>搜尋或<a href="#find">find</a></p>
+<h2 id="heading-9">參見</h2>
 <ul>
 <li><a href="/wiki/linux-permission/">Linux權限</a></li>
 </ul>

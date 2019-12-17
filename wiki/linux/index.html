@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>Linux | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Linux</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-09-21 23:00:56 &#43;0800 CST">Sat, 2019 Sep 21</time>
+    </div> 
+    <h2 id="heading">索引</h2>
+<ul>
+<li><a href="/tags/linux/">Linux</a></li>
+<li><a href="/tags/linux-file/">Linux檔案相關</a></li>
+<li><a href="/wiki/linux-network/">Linux網路</a></li>
+<li><a href="/wiki/linux-desktop/">Linux桌面使用</a></li>
+<li><a href="/wiki/shell/">Shell</a></li>
+</ul>
+<h2 id="heading-1">模塊</h2>
+<p>列出已加載的模塊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsmod
+</code></pre></div><p>搖桿需要加載模塊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modprobe joydev
+</code></pre></div><h2 id="heading-2">備份考量</h2>
+<pre><code>/home
+/etc
+/boot
+/root
+</code></pre><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="heading-3">工作管理</h2>
+<p>暫停工作<code>Ctrl + z</code>參見<a href="/wiki/shell/">Shell</a></p>
+<h3 id="jobs">jobs</h3>
+<p>在暫停工作之後輸入<code>jobs</code>得出結果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">[1]  - suspended  python
+[2]    suspended  python
+[3]  + suspended  vim
+</code></pre></div><p>透過jobID選擇job</p>
+<pre><code>$ jobs %3
+[3]  + suspended  vim
+$ jobs %1
+[1]  - suspended  python
+</code></pre><h3 id="fgbg">fg/bg</h3>
+<pre><code>$ jobs %+
+[3]    continued  vim
+</code></pre><p><code>bg</code>類似<code>fg</code>不過在背景執行</p>
+<h3 id="kill">kill</h3>
+<p>對job1傳送kill signal</p>
+<pre><code>$ kill %1
+[1]  + terminated  python
+</code></pre><h3 id="ps">ps</h3>
+<p>顯示進程資訊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps ax | grep bash
+</code></pre></div><h2 id="heading-4">檔案系統</h2>
+<p><code>lsblk</code>顯示<code>sdX,大小,標籤名</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsblk -o name,size,label
+</code></pre></div><p>修改分割名稱如<code>ext4</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">e2label /dev/sda1 name111
+</code></pre></div><h2 id="heading-5">雜項指令</h2>
+<p>超時自動結束程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">timeout <span style="color:#66d9ef">$((</span><span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">))</span> ./a.out
+</code></pre></div><p>睡眠至記憶體</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl suspend
+</code></pre></div><h2 id="heading-6">其他問題</h2>
+<h3 id="arduino">Arduino無法連接板子</h3>
+<p>使用下列指令給予權限。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod a+rw /dev/ttyACM0
+</code></pre></div>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
