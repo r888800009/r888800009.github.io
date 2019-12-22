@@ -80,7 +80,9 @@ if (!doNotTrack) {
 <p>volumes掛載</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -v 主機地址:容器地址 image-name
 </code></pre></div><h2 id="heading-4">檔案</h2>
-<p>複製容器內部的檔案，以<code>httpd</code>作為範例</p>
+<p>複製的指令為</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker cp /hostPath container:/containerPath
+</code></pre></div><p>複製容器內部的檔案，以<code>httpd</code>作為範例</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker create --name temp httpd
 sudo docker cp temp:/usr/local/apache2/conf/httpd.conf httpd.conf
 sudo docker rm temp
