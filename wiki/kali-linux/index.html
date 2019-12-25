@@ -58,6 +58,14 @@ if (!doNotTrack) {
 <li>預安裝映像檔</li>
 <li>手動安裝</li>
 </ul>
+<h2 id="virtual-boxova">Virtual Box載入ova</h2>
+<p>下載<a href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/">Kali Linux 64-bit VirtualBox</a></p>
+<p>archlinux lts kernel 執行virtualbox 可能需要安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S linux-lts-headers virtualbox-host-dkms
+</code></pre></div><p>kali預設帳號密碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">帳號: root
+密碼: toor
+</code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/VirtualBox">VirtualBox</a></p>
 <h2 id="dockerkali-linux">透過docker安裝Kali Linux</h2>
 <p>查詢docker hub上面的資訊，找到恰當的image</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search kali 
