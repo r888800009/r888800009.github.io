@@ -6,10 +6,20 @@
     <description>Recent content in Posts on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 28 Sep 2019 14:17:50 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Dec 2019 13:37:49 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>等差級數缺少數字</title>
+      <link>https://r888800009.github.io/posts/progression-series-missing-number/</link>
+      <pubDate>Tue, 31 Dec 2019 13:37:49 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/progression-series-missing-number/</guid>
+      <description>&lt;p&gt;給定一個不完全的等差數列總和，其中缺少一項數字。&lt;/p&gt;
+&lt;p&gt;題目給定總和界限 &lt;code&gt;1 &amp;lt;= sum &amp;lt;= 10 ^ 8&lt;/code&gt;，並要求找出缺少值。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>透過Docker架設Apache啟用CGI</title>

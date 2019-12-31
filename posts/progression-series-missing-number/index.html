@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>等差級數缺少數字 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">等差級數缺少數字</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2019-12-31 13:37:49 &#43;0800 CST">Tue, 2019 Dec 31</time>
+    </div> 
+    <p>給定一個不完全的等差數列總和，其中缺少一項數字。</p>
+<p>題目給定總和界限 <code>1 &lt;= sum &lt;= 10 ^ 8</code>，並要求找出缺少值。</p>
+<h2 id="heading">解法</h2>
+<ol>
+<li>直覺思考找出第一個大於給定總和的數字。</li>
+<li>透過遍歷所有等差級數似乎不切實際，採用二分搜解決。</li>
+</ol>
+<h2 id="heading-1">第一個大於輸入總和的數值</h2>
+<p>第一個大於輸入值的等差級數總和這裡將它命名為<strong>解</strong>，
+並且<strong>解</strong>為<code>n</code>項等差數列(公差設為1)的總和，
+<strong>解</strong>是否為原先輸入值未缺失的總和?</p>
+<p>考慮<strong>大於解</strong>與<strong>小於解</strong>的邊界情況。</p>
+<p><strong>小於解</strong>時，由於輸入皆為等差級數和缺少一項，總和永遠小於<strong>解</strong>，
+而答案只需要找出最小總和即可，因此取得第一個吻合條件的<strong>解</strong>。</p>
+<p><strong>大於解</strong>時，思考邊界情況<strong><code>n+1</code></strong>，並且證明加上大於<code>n</code>的數值就會超過<strong>解</strong>。
+考量一個<strong>n+1</strong>所產生的結果，若缺少<code>n+1</code>實際上只會是<code>n</code>的級數總和，
+而缺少小於<code>n+1</code>的情況，數值總和永遠大於<strong>解</strong>。</p>
+<p><strong>註: 如果以上描述含有邏輯瑕疵，或者有更清楚的證明方法，
+煩請打開一個<a href="https://github.com/r888800009/r888800009.github.io/issues/new">issue</a>
+指正我的邏輯錯誤，筆者感激不盡</strong></p>
+<h2 id="heading-2">求出二分搜上下界限</h2>
+<p>由於題目給定總和界限 <code>1 &lt;= sum &lt;= 10 ^ 8</code>，
+下界設為<code>1</code>即可，而上限必須透過數學下去求解。</p>
+<p>這裡設定一個等式進行求解
+$$
+\frac{n(1 + n)}{2} = 100000000
+$$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<span style="color:#f92672">from</span> mpmath <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+
+n <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#39;</span>)
+e1 <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> n) <span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">100000000</span> 
+solve(e1)
+ans <span style="color:#f92672">=</span> solve(e1)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>evalf()
+ans
+</code></pre></div><p>其中<code>ans</code>結果為<code>14141.6356325698</code>，取<code>14141</code>時無法滿足輸入的最大值，
+因此無條件進位取得<code>14142</code>，其級數和為<code>100005153</code>滿足輸入條件。</p>
+<p>這裡進行驗算，確保<code>log</code>取出的數值大於<code>10 ^ 8</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> <span style="color:#ae81ff">14142</span>
+s <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> n) <span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+s
+mp<span style="color:#f92672">.</span>log10(s)
+</code></pre></div><h2 id="heading-3">編寫程式</h2>
+<p>透過迭代的方式編寫二分搜尋法。</p>
+<p>參見<a href="https://github.com/r888800009/practice/blob/master/progression-series-missing-number.py">範例程式</a></p>
+<h2 id="heading-4">延伸</h2>
+<ol>
+<li>缺少兩個或兩個數字以上要怎麼解？</li>
+</ol>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/binary-search" class="tags">Binary Search</a>
+      
+    
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2019.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
