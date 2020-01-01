@@ -84,6 +84,8 @@ soup <span style="color:#f92672">=</span> BeautifulSoup(r<span style="color:#f92
 <span style="color:#75715e"># get all link</span>
 <span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>):
   <span style="color:#66d9ef">print</span>(tag<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>))
+</code></pre></div><h2 id="xpath">透過命令行剖析xpath</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xmllint --xpath  <span style="color:#e6db74">&#39;/html/body/h3/text()&#39;</span>  --html http://example.com  md5sum | awk <span style="color:#e6db74">&#39;{ print $1 }&#39;</span>
 </code></pre></div>
 
     
@@ -104,7 +106,7 @@ soup <span style="color:#f92672">=</span> BeautifulSoup(r<span style="color:#f92
     <a href="#website-name" class="footer">Top</a>
   </div>
   <div>
-    r888800009©2018-2019.
+    r888800009©2018-2020.
     All Rights Reserved.
   </div>
 </footer>
