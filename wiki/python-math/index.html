@@ -116,6 +116,11 @@ solve([e1, e2], [x, y])
 e1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y
 e1<span style="color:#f92672">.</span>evalf(subs<span style="color:#f92672">=</span>{x: <span style="color:#ae81ff">1</span>, y:<span style="color:#ae81ff">2</span>})
 e1<span style="color:#f92672">.</span>evalf(subs<span style="color:#f92672">=</span>{x: <span style="color:#ae81ff">1</span>, y:x})
+</code></pre></div><p><strong>注意: <code>evalf()</code>進行計算的行為，代換變數採用<code>subs()</code></strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y</span><span style="color:#e6db74">&#39;</span>)
+e1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y
+e1<span style="color:#f92672">.</span>subs({x: <span style="color:#ae81ff">1</span>, y:<span style="color:#ae81ff">2</span>})
+e1<span style="color:#f92672">.</span>subs({x: <span style="color:#ae81ff">1</span>, y:x})
 </code></pre></div><h3 id="heading-2">級數</h3>
 <p>我們可以透過sympy來求級數，可以使用<code>Sum()</code>這個指令，
 切記不要和<code>np.sum()</code>搞混。</p>
