@@ -55,6 +55,7 @@ if (!doNotTrack) {
 <ul>
 <li><code>Ctrl + d</code> EOF</li>
 <li><code>Ctrl + r</code> 找尋歷史指令</li>
+<li><code>Ctrl + X</code> <code>Ctrl + X</code>使用編輯器編輯當前指令</li>
 <li><code>Ctrl + l</code> 清潔</li>
 <li><code>Ctrl + z</code> 暫停當前程式，參見<a href="/wiki/linux/#工作管理">Linux工作管理</a></li>
 <li><code>Ctrl + h</code> 同退回</li>
@@ -118,6 +119,12 @@ set -o vi
 <p>zsh-autosuggestions <a href="https://github.com/zsh-users/zsh-autosuggestions">github</a>，
 安裝請參考<a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md">這篇文檔</a></p>
 <p>按下<code>方向右鍵</code>即可採用建議指令</p>
+<h3 id="heading-3">編輯指令</h3>
+<p><code>.zshrc</code>加入下面配置，如果配置含有<code>bindkey -e</code>等類似的配置請放在之後</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">autoload -z edit-command-line
+zle -N edit-command-line
+bindkey <span style="color:#e6db74">&#34;^X^E&#34;</span> edit-command-line
+</code></pre></div><p>參見 <a href="https://unix.stackexchange.com/a/34251">How to edit command line in full screen editor in ZSH?</a></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
