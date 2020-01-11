@@ -81,7 +81,7 @@ if (!doNotTrack) {
 <p>翻成機器碼的時候，例如if else無法知道機器碼的長度，
 需要跳到true與false，而<strong>隱含forward reference</strong>。</p>
 <h2 id="52-grammar">5.2 Grammar</h2>
-<h3 id="heading">文法</h3>
+<h3 id="文法">文法</h3>
 <p>Backus–Naur form Grammar</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;cond&gt; ::= &lt;cond&gt; * &lt;cond&gt; | &lt;cond&gt; / &lt;cond&gt;
 </code></pre></div><p>terminal symbol (token)
@@ -221,7 +221,7 @@ term
 <li>行優先: 優先排序row</li>
 <li>列優先: 優先排序column</li>
 </ul>
-<h4 id="heading-1">計算公式</h4>
+<h4 id="計算公式">計算公式</h4>
 <p>定義<code>type B[a-b][c-d]</code>(表示為<code>type B[a:b][c:d]</code>)，定址到<code>B[s][t]</code></p>
 <ul>
 <li>Row Major: <code>[(s - a) * (d - c + 1) + (t - c)] * sizeof(Type) + base</code>，假設index起始都是0，代表<code>type B[b][d]</code>，為<code>[s * (d + 1) + t] * sizeof(Type) + base</code></li>

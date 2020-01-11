@@ -51,7 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-08 23:48:49 &#43;0800 CST">Tue, 2019 Oct 8</time>
     </div> 
-    <h2 id="libxml2">透過libxml2抓取網頁內容</h2>
+    <h2 id="透過libxml2抓取網頁內容">透過libxml2抓取網頁內容</h2>
 <p>下面示範透過<code>libxml2</code>抓取頁面的連結內容以及連結。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> libxml2
 <span style="color:#f92672">import</span> requests
@@ -65,7 +65,7 @@ doc <span style="color:#f92672">=</span> libxml2<span style="color:#f92672">.</s
 <span style="color:#66d9ef">for</span> it <span style="color:#f92672">in</span> doc<span style="color:#f92672">.</span>xpathEval(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">//*/a</span><span style="color:#e6db74">&#39;</span>) 
     <span style="color:#66d9ef">print</span>(it<span style="color:#f92672">.</span>content)
     <span style="color:#66d9ef">print</span>(it<span style="color:#f92672">.</span>prop(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>))
-</code></pre></div><h2 id="beautifulsoup">透過beautifulsoup</h2>
+</code></pre></div><h2 id="透過beautifulsoup">透過beautifulsoup</h2>
 <p>安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install beautifulsoup4
 </code></pre></div><p>安裝在家目錄</p>
@@ -84,7 +84,7 @@ soup <span style="color:#f92672">=</span> BeautifulSoup(r<span style="color:#f92
 <span style="color:#75715e"># get all link</span>
 <span style="color:#66d9ef">for</span> tag <span style="color:#f92672">in</span> soup<span style="color:#f92672">.</span>find_all(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>):
   <span style="color:#66d9ef">print</span>(tag<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">href</span><span style="color:#e6db74">&#39;</span>))
-</code></pre></div><h2 id="xpath">透過命令行剖析xpath</h2>
+</code></pre></div><h2 id="透過命令行剖析xpath">透過命令行剖析xpath</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xmllint --xpath  <span style="color:#e6db74">&#39;/html/body/h3/text()&#39;</span>  --html http://example.com  md5sum | awk <span style="color:#e6db74">&#39;{ print $1 }&#39;</span>
 </code></pre></div>
 

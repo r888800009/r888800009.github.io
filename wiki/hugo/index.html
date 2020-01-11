@@ -52,7 +52,7 @@ if (!doNotTrack) {
         <time datetime="2019-08-18 21:23:53 &#43;0800 CST">Sun, 2019 Aug 18</time>
     </div> 
     <p>存放一些<code>hugo</code>的指令與筆記</p>
-<h2 id="heading">指令</h2>
+<h2 id="指令">指令</h2>
 <p>列出所有草稿</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo list drafts
 </code></pre></div><p>啟動草稿伺服器</p>
@@ -64,29 +64,29 @@ hugo -D server --bind<span style="color:#f92672">=</span>0.0.0.0
 </code></pre></div><p>建立文章透過<code>vim</code>編輯</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new wiki/grep.md --editor vim  
 </code></pre></div><p>也可以使用<a href="https://github.com/r888800009/script/blob/master/hugo-new">hugo-new</a>腳本</p>
-<h2 id="hugo">管理hugo腳本</h2>
+<h2 id="管理hugo腳本">管理hugo腳本</h2>
 <p>以下腳本假設在blog的基目錄運行。</p>
-<h3 id="heading-1">找尋文章符合檔名</h3>
+<h3 id="找尋文章符合檔名">找尋文章符合檔名</h3>
 <p>找出所有檔名包含<code>leet</code>的文章。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find content -name <span style="color:#e6db74">&#39;*leet*&#39;</span> 
 </code></pre></div><p>批量編輯，參見<a href="/wiki/vim/">vim</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim <span style="color:#66d9ef">$(</span>find content -name <span style="color:#e6db74">&#39;*leet*&#39;</span><span style="color:#66d9ef">)</span> 
 vim <span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#39;linux&#39;</span> content/* -Rl<span style="color:#66d9ef">)</span>
-</code></pre></div><h3 id="heading-2">內文搜尋</h3>
+</code></pre></div><h3 id="內文搜尋">內文搜尋</h3>
 <p>透過<code>fzf</code>對內文模糊搜尋，在<code>content</code>目錄進行搜</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep --line-buffered --color<span style="color:#f92672">=</span>never -r <span style="color:#e6db74">&#34;&#34;</span> * | fzf
-</code></pre></div><h2 id="heading-3">文檔語法</h2>
+</code></pre></div><h2 id="文檔語法">文檔語法</h2>
 <p>將某個文章檔名轉換成絕對路徑，效果如Wikipadia內部連結類似。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{&lt; <span style="color:#f92672">relref</span> <span style="color:#a6e22e">path</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;some-post.md&#34;</span> &gt;}}
 {{&lt; <span style="color:#f92672">relref</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">document</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">md</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">anchor</span><span style="color:#960050;background-color:#1e0010">&#34;</span> &gt;}}
 </code></pre></div><p>細節參見<a href="https://gohugo.io/content-management/cross-references/">官方文檔</a></p>
-<h3 id="html">設定html錨點</h3>
+<h3 id="設定html錨點">設定html錨點</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="color:#75715e">## link 1 {#link-123}
 </span><span style="color:#75715e"></span>[<span style="color:#f92672">link-123</span>](<span style="color:#a6e22e">#link-123</span>)
-</code></pre></div><h2 id="heading-4">配置檔</h2>
+</code></pre></div><h2 id="配置檔">配置檔</h2>
 <p>啟用git資訊</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">enableGitInfo</span> = <span style="color:#66d9ef">true</span>
-</code></pre></div><h2 id="heading-5">參見</h2>
+</code></pre></div><h2 id="參見">參見</h2>
 <ul>
 <li><a href="https://gohugo.io/commands/">Hugo官方指令文檔</a></li>
 <li><a href="/wiki/markdown/">Markdown</a></li>

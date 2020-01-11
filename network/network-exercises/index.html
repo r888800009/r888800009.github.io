@@ -51,7 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-24 19:13:16 &#43;0800 CST">Tue, 2019 Sep 24</time>
     </div> 
-    <h2 id="ncemail">透過nc發送email範例</h2>
+    <h2 id="透過nc發送email範例">透過nc發送email範例</h2>
 <p>透過<code>nc</code>連上任意SMTP伺服器之後，輸入以下內容。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">HELO smtp.example.com
 MAIL FROM:&lt;example@example.com&gt;
@@ -69,7 +69,7 @@ QUIT
 </code></pre></div><h2 id="tranceroute">tranceroute</h2>
 <p>透過<code>ping</code>實做<code>tranceroute</code>，
 參見<a href="https://github.com/r888800009/practice/blob/master/traceroute.sh">traceroute.sh</a></p>
-<h2 id="promiscuous-mode">啟用Promiscuous Mode監聽封包</h2>
+<h2 id="啟用promiscuous-mode監聽封包">啟用Promiscuous Mode監聽封包</h2>
 <p>透過下列指令檢查promisc是否啟用。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ip addr show <span style="color:#f92672">[</span>網卡<span style="color:#f92672">]</span> | grep -i promisc
 </code></pre></div><p>首先啟用promisc。</p>
@@ -77,7 +77,7 @@ QUIT
 </code></pre></div><p>透過wireshark監聽此網卡，可以試試看wireshark的過濾條件如<code>tcp.port == 443</code>、<code>ip.addr == 192.168.1.2</code>等。</p>
 <p>為了避免實做結束後浪費性能，關閉promisc。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ip link set <span style="color:#f92672">[</span>網卡<span style="color:#f92672">]</span> promisc off
-</code></pre></div><h3 id="heading">常見問題</h3>
+</code></pre></div><h3 id="常見問題">常見問題</h3>
 <p>若網路架構是使用Switch而不是Hub，由於Switch會透過MAC地址判斷來源與目的，
 Packet Sniffing Attack可能會失效，可以嘗試使用hub進行測試。</p>
 

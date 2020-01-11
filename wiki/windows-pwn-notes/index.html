@@ -51,7 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-10 10:27:36 &#43;0800 CST">Tue, 2019 Sep 10</time>
     </div> 
-    <h2 id="heading">工具</h2>
+    <h2 id="工具">工具</h2>
 <ul>
 <li><a href="https://x64dbg.com">x64dbg</a></li>
 <li><a href="https://github.com/trailofbits/winchecksec">winchecksec</a></li>
@@ -76,15 +76,15 @@ if (!doNotTrack) {
 <li><code>setenv /x86</code></li>
 <li><code>cl example.cpp</code></li>
 </ol>
-<h3 id="aslr">禁用ASLR</h3>
+<h3 id="禁用aslr">禁用ASLR</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">cl example.cpp /DYNAMICBASE:NO /link /FIXED 
-</code></pre></div><h3 id="x86">修改成x86環境。</h3>
+</code></pre></div><h3 id="修改成x86環境">修改成x86環境。</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">setenv /x86
-</code></pre></div><h3 id="safeseh">關閉SafeSEH</h3>
+</code></pre></div><h3 id="關閉safeseh">關閉SafeSEH</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">cl example.c /DYNAMICBASE:NO /link /FIXED /SAFESEH:NO 
 </code></pre></div><h2 id="seh">S.E.H</h2>
 <p>SEH為windows下例外處理的結構。</p>
-<h3 id="seh32">SEH結構體(32位元)</h3>
+<h3 id="seh結構體32位元">SEH結構體(32位元)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">DWORD: 下筆SEH紀錄
 DWORD: 例外處理
 </code></pre></div><ul>
@@ -98,13 +98,13 @@ DWORD: 例外處理
 <li>若程式無法處理錯誤，則crash</li>
 </ul>
 <p>以上為32位元應用程式的SEH結構，64位元請<a href="http://www.osronline.com/article.cfm%5earticle=469.htm">參考</a></p>
-<h3 id="heading-1">備註</h3>
+<h3 id="備註">備註</h3>
 <p>學習時可能遇到SafeSEH啟用導致覆蓋過後無法轉跳到shellcode，
 在練習時關閉此保護以降低程式安全性。</p>
 <h2 id="sehop">SEHOP</h2>
 <p>SEHOP為SEH覆蓋保護，透過檢查<code>ntdll</code>的<code>FinalExceptionHandler</code>是否為
 連結串列的末端，若不存在表示被複寫。</p>
-<h3 id="heading-2">啟用的系統</h3>
+<h3 id="啟用的系統">啟用的系統</h3>
 <p>在以下Windows版本與後序版本啟用SEHOP，
 調整關閉啟用參見<a href="https://support.microsoft.com/zh-tw/help/956607/how-to-enable-structured-exception-handling-overwrite-protection-sehop">Microsoft文檔</a>。</p>
 <ul>
@@ -112,21 +112,21 @@ DWORD: 例外處理
 <li>win7 (默認關閉)</li>
 <li>win server 2008 (默認啟用)</li>
 </ul>
-<h3 id="heading-3">參見</h3>
+<h3 id="參見">參見</h3>
 <ul>
 <li><a href="https://docs.microsoft.com/en-us/cpp/cpp/structured-exception-handling-c-cpp">Structured Exception Handling (C/C++)</a></li>
 <li><a href="http://gxkyrftx.xyz/2019/01/07/SEH%E5%AD%A6%E4%B9%A0/">SEH机制学习</a></li>
 <li><a href="https://www.xineting.club/2018/11/03/windows%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6/">Windows内存安全保护机制</a></li>
 <li>0day安全:软件漏洞分析技术: Windows 異常處理機制(第一版第七章，第二版第六章)</li>
 </ul>
-<h2 id="safeseh-1">SafeSEH</h2>
+<h2 id="safeseh">SafeSEH</h2>
 <p>檢查handler是否在SafeSEH表中，啟用可以導致無法劫持SEH handler。</p>
-<h2 id="windows-pwn">windows pwn問題</h2>
+<h2 id="windows-pwn問題">windows pwn問題</h2>
 <p>DEP導致無法執行shellcode</p>
 <ul>
 <li><a href="http://0xdabbad00.com/2012/12/07/dep-data-execution-prevention-explanation/">DEP (Data Execution Prevention) explanation by example</a></li>
 </ul>
-<h2 id="api">常用api</h2>
+<h2 id="常用api">常用api</h2>
 <ul>
 <li><code>LoadLibrary()</code></li>
 </ul>

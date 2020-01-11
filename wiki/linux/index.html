@@ -51,7 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-21 23:00:56 &#43;0800 CST">Sat, 2019 Sep 21</time>
     </div> 
-    <h2 id="heading">索引</h2>
+    <h2 id="索引">索引</h2>
 <ul>
 <li><a href="/tags/linux/">Linux</a></li>
 <li><a href="/tags/linux-file/">Linux檔案相關</a></li>
@@ -59,19 +59,19 @@ if (!doNotTrack) {
 <li><a href="/wiki/linux-desktop/">Linux桌面使用</a></li>
 <li><a href="/wiki/shell/">Shell</a></li>
 </ul>
-<h2 id="heading-1">模塊</h2>
+<h2 id="模塊">模塊</h2>
 <p>列出已加載的模塊</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsmod
 </code></pre></div><p>搖桿需要加載模塊</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modprobe joydev
-</code></pre></div><h2 id="heading-2">備份考量</h2>
+</code></pre></div><h2 id="備份考量">備份考量</h2>
 <pre><code>/home
 /etc
 /boot
 /root
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<h2 id="heading-3">工作管理</h2>
+<h2 id="工作管理">工作管理</h2>
 <p>暫停工作<code>Ctrl + z</code>參見<a href="/wiki/shell/">Shell</a></p>
 <h3 id="jobs">jobs</h3>
 <p>在暫停工作之後輸入<code>jobs</code>得出結果</p>
@@ -94,20 +94,20 @@ $ jobs %1
 </code></pre><h3 id="ps">ps</h3>
 <p>顯示進程資訊</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps ax | grep bash
-</code></pre></div><h2 id="heading-4">檔案系統</h2>
+</code></pre></div><h2 id="檔案系統">檔案系統</h2>
 <p><code>lsblk</code>顯示<code>sdX,大小,標籤名</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsblk -o name,size,label
 </code></pre></div><p>修改分割名稱如<code>ext4</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">e2label /dev/sda1 name111
-</code></pre></div><h2 id="heading-5">雜項指令</h2>
+</code></pre></div><h2 id="雜項指令">雜項指令</h2>
 <p>超時自動結束程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">timeout <span style="color:#66d9ef">$((</span><span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">))</span> ./a.out
 </code></pre></div><p>睡眠至記憶體</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl suspend
 </code></pre></div><p>檢視系統錯誤日誌</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">journalctl -p <span style="color:#ae81ff">3</span> -x 
-</code></pre></div><h2 id="heading-6">其他問題</h2>
-<h3 id="arduino">Arduino無法連接板子</h3>
+</code></pre></div><h2 id="其他問題">其他問題</h2>
+<h3 id="arduino無法連接板子">Arduino無法連接板子</h3>
 <p>使用下列指令給予權限。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod a+rw /dev/ttyACM0
 </code></pre></div>

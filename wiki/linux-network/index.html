@@ -51,14 +51,14 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-29 21:21:18 &#43;0800 CST">Sun, 2019 Sep 29</time>
     </div> 
-    <h2 id="heading">網路與管理</h2>
+    <h2 id="網路與管理">網路與管理</h2>
 <ul>
 <li><code>iptables</code></li>
 <li><a href="/wiki/secure-shell/">ssh</a></li>
 <li><code>ss</code> 查看連接端口與ip，在<code>archlinux</code>作為netstat的替代品</li>
 </ul>
 <h2 id="wifi">WiFi</h2>
-<h3 id="wpa-cli">wpa_cli</h3>
+<h3 id="wpa_cli">wpa_cli</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_cli
 </code></pre></div><p>建立一個新的網路配置，執行之後返回id</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">add_network
@@ -66,12 +66,12 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">set_network 0 ssid &#34;my wifi&#34;
 </code></pre></div><p>設定密碼</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">set_network 0 psk &#34;pass&#34;
-</code></pre></div><h2 id="heading-1">端口查看</h2>
+</code></pre></div><h2 id="端口查看">端口查看</h2>
 <p>linux列出特定端口的process</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fuser 8080/tcp
 </code></pre></div><p>linux停止特定端口的process</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fuser 8080/tcp -k 
-</code></pre></div><h2 id="pppoe">PPPoE上網</h2>
+</code></pre></div><h2 id="pppoe上網">PPPoE上網</h2>
 <p>安裝<code>ppp</code></p>
 
     

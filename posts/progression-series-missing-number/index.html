@@ -53,12 +53,12 @@ if (!doNotTrack) {
     </div> 
     <p>給定一個不完全的等差數列總和，其中缺少一項數字。</p>
 <p>題目給定總和界限 <code>1 &lt;= sum &lt;= 10 ^ 8</code>，並要求找出缺少值。</p>
-<h2 id="heading">解法</h2>
+<h2 id="解法">解法</h2>
 <ol>
 <li>直覺思考找出第一個大於給定總和的數字。</li>
 <li>透過遍歷所有等差級數似乎不切實際，採用二分搜解決。</li>
 </ol>
-<h2 id="heading-1">第一個大於輸入總和的數值</h2>
+<h2 id="第一個大於輸入總和的數值">第一個大於輸入總和的數值</h2>
 <p>第一個大於輸入值的等差級數總和這裡將它命名為<strong>解</strong>，
 並且<strong>解</strong>為<code>n</code>項等差數列(公差設為1)的總和，
 <strong>解</strong>是否為原先輸入值未缺失的總和?</p>
@@ -71,7 +71,7 @@ if (!doNotTrack) {
 <p><strong>註: 如果以上描述含有邏輯瑕疵，或者有更清楚的證明方法，
 煩請打開一個<a href="https://github.com/r888800009/r888800009.github.io/issues/new">issue</a>
 指正我的邏輯錯誤，筆者感激不盡</strong></p>
-<h2 id="heading-2">求出二分搜上下界限</h2>
+<h2 id="求出二分搜上下界限">求出二分搜上下界限</h2>
 <p>由於題目給定總和界限 <code>1 &lt;= sum &lt;= 10 ^ 8</code>，
 下界設為<code>1</code>即可，而上限必須透過數學下去求解。</p>
 <p>這裡設定一個等式進行求解
@@ -93,10 +93,10 @@ ans
 s <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> n) <span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
 s
 mp<span style="color:#f92672">.</span>log10(s)
-</code></pre></div><h2 id="heading-3">編寫程式</h2>
+</code></pre></div><h2 id="編寫程式">編寫程式</h2>
 <p>透過迭代的方式編寫二分搜尋法。</p>
 <p>參見<a href="https://github.com/r888800009/practice/blob/master/progression-series-missing-number.py">範例程式</a></p>
-<h2 id="heading-4">延伸</h2>
+<h2 id="延伸">延伸</h2>
 <ol>
 <li>缺少兩個或兩個數字以上要怎麼解？</li>
 </ol>

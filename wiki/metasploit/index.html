@@ -51,7 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-10 10:26:29 &#43;0800 CST">Tue, 2019 Sep 10</time>
     </div> 
-    <h2 id="shellcode">產生shellcode</h2>
+    <h2 id="產生shellcode">產生shellcode</h2>
 <p>顯示payload列表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -l payload 
 </code></pre></div><p>生成shellcode</p>
@@ -60,7 +60,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00&#39;</span>
 </code></pre></div><p>避免含有換行，注意windows的<code>\r</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/x64/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00\x0a\x0d&#39;</span>
-</code></pre></div><h3 id="heading">注意</h3>
+</code></pre></div><h3 id="注意">注意</h3>
 <p>如果在操作nc時，nc也可能受到<code>\x00</code>、<code>\x0a</code>、<code>\x0d</code>的影響。</p>
 
     

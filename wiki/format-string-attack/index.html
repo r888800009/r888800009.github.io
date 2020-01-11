@@ -52,10 +52,10 @@ if (!doNotTrack) {
         <time datetime="2019-09-06 12:24:08 &#43;0800 CST">Fri, 2019 Sep 6</time>
     </div> 
     <p>格式化字串筆記</p>
-<h2 id="heading">檢測</h2>
+<h2 id="檢測">檢測</h2>
 <p>透過大量的<code>%s</code>使程式崩潰，用來確認漏洞的存在。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
-</code></pre></div><h2 id="heading-1">利用方式</h2>
+</code></pre></div><h2 id="利用方式">利用方式</h2>
 <ul>
 <li>洩漏堆疊</li>
 <li>洩漏任意地址</li>
@@ -66,26 +66,26 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<h2 id="heading-2">利用格式化字串</h2>
-<h3 id="heading-3">階段一</h3>
+<h2 id="利用格式化字串">利用格式化字串</h2>
+<h3 id="階段一">階段一</h3>
 <p>格式化字串漏洞可以透過<code>%x.%x.%x.%x.%x.%x</code>的方法印出內容，
 也可採用<code>%3$x</code>則可任意讀取堆疊(此例子為第三項，為<code>4 * 3</code>)，
 透過數個<code>%x</code>找到可控制堆疊位置。</p>
 <p><code>%x</code>與<code>%p</code>區別，<code>%x</code>為4 bytes，<code>%p</code>(指標)受到系統影響，常見的系統可能為4或8(不確定？)。</p>
-<h3 id="heading-4">階段二</h3>
+<h3 id="階段二">階段二</h3>
 <p>透過<code>%n</code>覆蓋堆疊內容<strong>所指向的位置</strong>(也可以使用<code>%hn</code>、<code>%hhn</code>、<code>%10$n</code>)，
 可以理解<code>printf</code>令某參數為<strong>指標</strong>保存字數(參見參考printf)。</p>
 <p><a href="#%E9%9A%8E%E6%AE%B5%E4%B8%80">階段一</a>找到的可控制堆疊開頭為<strong>輸入內容開頭</strong>，
 因此可傳入格式如<code>\x78\x56\x34\x12</code>指標(32bit)，
 並且透過<code>%n</code>修改<code>0x12345678</code>的內容。</p>
-<h3 id="heading-5">階段三</h3>
+<h3 id="階段三">階段三</h3>
 <p>編寫payload，採用<code>%hhn</code>並且計算每byte的內容，<code>%n</code>是<code>printf</code>當下處理時輸出的總字數，
 採用<code>%hhn</code>比起<code>%n</code>容易溢位，透過這個性質將傳入數值，使用<code>%10c</code>的方式下去輸入，
 上一個字數為<code>240</code>並且現在輸入數值<code>4</code>時，只須打印出<code>(4 - 240) % 256</code>即可抵達對映的字數。</p>
-<h4 id="heading-6">備註</h4>
+<h4 id="備註">備註</h4>
 <p>若採用<code>%x</code>可能沒辦法輸出小於8的值，改用<code>%c</code>。</p>
 <p>在<code>printf</code>時無法中途修改參數內容，只能透過一開始傳入的多個參數進行利用。</p>
-<h2 id="heading-7">習題</h2>
+<h2 id="習題">習題</h2>
 <ul>
 <li>hackme.inndy.tw
 <ul>
@@ -93,7 +93,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<h2 id="heading-8">參考</h2>
+<h2 id="參考">參考</h2>
 <ul>
 <li><strong><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/fmtstr/fmtstr_exploit-zh/">格式化字符串漏洞利用</a></strong></li>
 <li><a href="https://ctf101.org/binary-exploitation/what-is-a-format-string-vulnerability/">Format String Vulnerability</a></li>

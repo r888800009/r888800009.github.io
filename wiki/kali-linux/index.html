@@ -51,14 +51,14 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-05 19:37:18 &#43;0800 CST">Sat, 2019 Oct 5</time>
     </div> 
-    <h2 id="heading">安裝</h2>
+    <h2 id="安裝">安裝</h2>
 <p>kali的幾種安裝方式</p>
 <ul>
 <li><a href="https://hub.docker.com/r/kalilinux/kali-linux-docker/">docker</a></li>
 <li>預安裝映像檔</li>
 <li>手動安裝</li>
 </ul>
-<h2 id="virtual-boxova">Virtual Box載入ova</h2>
+<h2 id="virtual-box載入ova">Virtual Box載入ova</h2>
 <p>下載<a href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/">Kali Linux 64-bit VirtualBox</a></p>
 <p>archlinux lts kernel 執行virtualbox 可能需要安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S linux-lts-headers virtualbox-host-dkms
@@ -66,7 +66,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">帳號: root
 密碼: toor
 </code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/VirtualBox">VirtualBox</a></p>
-<h2 id="dockerkali-linux">透過docker安裝Kali Linux</h2>
+<h2 id="透過docker安裝kali-linux">透過docker安裝Kali Linux</h2>
 <p>查詢docker hub上面的資訊，找到恰當的image</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search kali 
 </code></pre></div><p>輸出如下方所示，我們抓取第一個image</p>
@@ -87,7 +87,7 @@ apt upgrade
 apt install metasploit-framework
 </code></pre></div><p>再來測試<code>metasploit</code>是否成功安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfconsole
-</code></pre></div><h3 id="heading-1">參見</h3>
+</code></pre></div><h3 id="參見">參見</h3>
 <ul>
 <li><a href="/wiki/docker/">Docker筆記</a></li>
 <li><a href="https://www.kali.org/news/official-kali-linux-docker-images/">Official Kali Linux Docker Images Released</a></li>

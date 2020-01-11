@@ -51,13 +51,13 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-14 19:10:49 &#43;0800 CST">Mon, 2019 Oct 14</time>
     </div> 
-    <h2 id="heading">實做詞法分析</h2>
+    <h2 id="實做詞法分析">實做詞法分析</h2>
 <ul>
 <li>有限狀態機</li>
 <li>正則</li>
 <li>lex</li>
 </ul>
-<h2 id="heading-1">組合語言詞法分析</h2>
+<h2 id="組合語言詞法分析">組合語言詞法分析</h2>
 <ul>
 <li>Token table
 <ul>
@@ -76,7 +76,10 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex
 </code></pre></div><p>使用檔案輸入</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex file.l
-</code></pre></div><h3 id="heading-2">範例程式</h3>
+</code></pre></div><h3 id="多次lexing">多次lexing</h3>
+<p>如果要多次lexing需要採用<code>yyrestart(fp)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">yyrestart</span>(FILE <span style="color:#f92672">*</span>pt);
+</code></pre></div><h3 id="範例程式">範例程式</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%option noyywrap
 %%
 [0-9]+ number(yytext);
@@ -116,7 +119,7 @@ int main() {
   yylex();
   return 0;
 }
-</code></pre></div><h3 id="heading-3">常見問題</h3>
+</code></pre></div><h3 id="常見問題">常見問題</h3>
 <p>出現<code>undefined reference to `yywrap'</code>無法編譯</p>
 <p>使用<code>flex</code>要連結<code>-lfl</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gcc lex.yy.c -lfl  

@@ -74,22 +74,22 @@ ENDM
 </ol>
 <h2 id="42-macro-processor-implementation">4.2 Macro processor implementation</h2>
 <p>如何實做Macro processor</p>
-<h3 id="heading">步驟</h3>
+<h3 id="步驟">步驟</h3>
 <ol>
 <li>辨識macro definitions</li>
 <li>保存definitions</li>
 <li>辨識macro call</li>
 <li>展開macro call</li>
 </ol>
-<h4 id="macro-call">如何辨識macro call</h4>
+<h4 id="如何辨識macro-call">如何辨識macro call</h4>
 <p>不是executable institution或pseudocode的指令當成Macro call</p>
-<h3 id="heading-1">資料結構</h3>
+<h3 id="資料結構">資料結構</h3>
 <ol>
 <li><code>Macro Name Table (NAMTAB)</code>: 保存<strong>名稱</strong>、macro的<strong>起始</strong>與<strong>結束</strong>位置</li>
 <li><code>Macro Definition Table (DEFTAB)</code></li>
 <li><code>Arguments Table (ARGTAB)</code>: 保存傳入的參數，並且進行代換，可以用<code>#1</code>之類的方式來指定特定編號的參數</li>
 </ol>
-<h3 id="heading-2">問題</h3>
+<h3 id="問題">問題</h3>
 <ul>
 <li>問: Macro是one pass或two passes?</li>
 <li>答: 因為Macro需要在called之前定義，因此可以透過one pass處理</li>
@@ -97,7 +97,7 @@ ENDM
 <h2 id="43-macro-instructions-defines-macro">4.3 Macro instructions defines macro</h2>
 <p>Macro內部出現Macro定義(並非Macro call)的話，將內部的Macro定義到
 <strong>Name Table</strong>，之後就可以對此Macro進行呼叫。</p>
-<h3 id="heading-3">處理</h3>
+<h3 id="處理">處理</h3>
 <ol>
 <li>遇到Macro定義只處理最外層</li>
 <li>對外層Macro進行呼叫僅展開一層，Macro Define不會展開，
@@ -115,7 +115,7 @@ ENDM
 或
 src -&gt;  Macro &amp; Asm pass1 -&gt; assembler pass2 -&gt; obj
 </code></pre></div><p>Macro processor不處理forward reference</p>
-<h2 id="pass">pass數量</h2>
+<h2 id="pass數量">pass數量</h2>
 <ul>
 <li>Macro<strong>無</strong>向前參考: 1次</li>
 <li>Macro<strong>有</strong>向前參考: 2次</li>

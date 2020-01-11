@@ -51,7 +51,7 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-06 12:42:42 &#43;0800 CST">Fri, 2019 Sep 6</time>
     </div> 
-    <h2 id="heading">自訂模塊</h2>
+    <h2 id="自訂模塊">自訂模塊</h2>
 <p>loadTestA.py</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
 <span style="color:#f92672">import</span> loadTestB
@@ -62,10 +62,12 @@ if (!doNotTrack) {
 </code></pre></div><p>輸入<code>./loadTestA.py</code>執行</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">B out
 A out
-</code></pre></div><h2 id="heading-1">常見問題</h2>
-<h3 id="lambda">如何解決Lambda會用到全域變數</h3>
+</code></pre></div><h2 id="單行for-loop">單行for loop</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#66d9ef">print</span>(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">123</span><span style="color:#e6db74">&#34;</span>]
+</code></pre></div><h2 id="常見問題">常見問題</h2>
+<h3 id="如何解決lambda會用到全域變數">如何解決Lambda會用到全域變數</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">lambda</span>: v<span style="color:#f92672">=</span>v
-</code></pre></div><h3 id="conda">conda與預設環境衝突</h3>
+</code></pre></div><h3 id="conda與預設環境衝突">conda與預設環境衝突</h3>
 <p>從conda環境返回基本環境</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda deactivate
 </code></pre></div>

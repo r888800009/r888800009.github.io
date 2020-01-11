@@ -52,28 +52,28 @@ if (!doNotTrack) {
         <time datetime="2019-08-28 23:57:23 &#43;0800 CST">Wed, 2019 Aug 28</time>
     </div> 
     <p>紀錄Django安裝、新增專案以及使用方式等。</p>
-<h2 id="heading">安裝</h2>
+<h2 id="安裝">安裝</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># pip</span>
 pip install django
 
 <span style="color:#75715e"># archlinux</span>
 sudo pacman -S python-django 
-</code></pre></div><h2 id="heading-1">使用</h2>
+</code></pre></div><h2 id="使用">使用</h2>
 <p>操作基本上透過<code>manage.py</code>去做管理。</p>
-<h3 id="heading-2">建立專案</h3>
+<h3 id="建立專案">建立專案</h3>
 <p>建立專案，指令的<code>project_name</code>為創造出來專案的名子。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">django-admin startproject project_name
 </code></pre></div><p>參見 <a href="https://docs.djangoproject.com/en/2.2/ref/django-admin/#startproject">Docs</a></p>
-<h3 id="heading-3">啟動伺服器</h3>
+<h3 id="啟動伺服器">啟動伺服器</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python manage.py runserver
 </code></pre></div><p>預設伺服器在 http://127.0.0.1:8000/ 執行</p>
-<h3 id="app">建立app</h3>
+<h3 id="建立app">建立app</h3>
 <p>建立app，指令的<code>app_name</code>為app的名子。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python manage.py startapp app_name
 </code></pre></div><h3 id="python-shell">Python Shell</h3>
 <p>透過專案的環境變數啟動<code>python</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python manage.py shell
-</code></pre></div><h3 id="heading-4">注意事項</h3>
+</code></pre></div><h3 id="注意事項">注意事項</h3>
 <ul>
 <li>確保使用的Python版本與Django互相對映。</li>
 </ul>
@@ -115,7 +115,7 @@ urlpatterns <span style="color:#f92672">=</span> [
 ]
 </code></pre></div><p><code>view_def</code>是<code>test1.views</code>當中的函數，用來處理頁面回傳response。</p>
 <p>瀏覽 http://localhost:8000/test/ 查看結果</p>
-<h3 id="heading-5">注意事項</h3>
+<h3 id="注意事項-1">注意事項</h3>
 <ul>
 <li><code>template</code>可能會因為沒有調整正確的<code>DIRS</code>會出現問題，
 調整<code>settings.py</code>當中的<code>TEMPLATES</code>。
@@ -124,7 +124,7 @@ urlpatterns <span style="color:#f92672">=</span> [
 </ul>
 <h2 id="models">Models</h2>
 <p>透過<code>models.py</code>定義表格。</p>
-<h3 id="heading-6">建立表格</h3>
+<h3 id="建立表格">建立表格</h3>
 <pre><code>from django.db import models
 
 # Create your models here.
@@ -138,9 +138,9 @@ class TestTable(models.Model):
 </code></pre><p>更新資料庫</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python manage.py makemigrations
 python manage.py migrate
-</code></pre></div><h3 id="queryset">QuerySet與返回結果</h3>
+</code></pre></div><h3 id="queryset與返回結果">QuerySet與返回結果</h3>
 <p>參考<a href="https://docs.djangoproject.com/en/2.2/ref/models/querysets/">QuerySet API reference</a></p>
-<h4 id="heading-7">常用函數</h4>
+<h4 id="常用函數">常用函數</h4>
 <ul>
 <li><code>filter()</code>找出符合條件的entry，回傳<code>QuerySet</code></li>
 <li><code>get()</code>取得指定的entry</li>
@@ -149,14 +149,14 @@ python manage.py migrate
 <li><code>delete()</code>刪除entry</li>
 <li><code>all()</code>取得所有entry，回傳<code>QuerySet</code></li>
 </ul>
-<h4 id="heading-8">獲取內容</h4>
+<h4 id="獲取內容">獲取內容</h4>
 <ul>
 <li>直接用陣列選取entry(models)並且選取欄位**(建議)**</li>
 <li>透過<a href="https://docs.djangoproject.com/en/2.2/ref/models/querysets/#django.db.models.query.QuerySet.values"><code>values()</code></a>
 轉換成<code>list</code>與<code>dict</code>的格式</li>
 <li>獲取內容: <code>欄位內容 = entry.欄位名</code></li>
 </ul>
-<h2 id="heading-9">參考</h2>
+<h2 id="參考">參考</h2>
 <ul>
 <li><a href="https://github.com/twtrubiks/django-tutorial">django-tutorial</a></li>
 </ul>

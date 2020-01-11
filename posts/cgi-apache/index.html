@@ -53,7 +53,7 @@ if (!doNotTrack) {
     </div> 
     <p>本文將採用docker建立一個apache http伺服器，
 並且透過此伺服器運行CGI程式。</p>
-<h2 id="apache">配置apache</h2>
+<h2 id="配置apache">配置apache</h2>
 <p>找到對應的image並且pull</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker search apache 
 sudo docker pull httpd
@@ -85,7 +85,7 @@ COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 <pre><code>sudo docker build -t my-httpd . 
 </code></pre><p>使用當前目錄作為cgi-bin</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -p 8080:80 -v <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">&#34;</span>:/usr/local/apache2/cgi-bin/ my-httpd
-</code></pre></div><h2 id="heading">測試配置結果</h2>
+</code></pre></div><h2 id="測試配置結果">測試配置結果</h2>
 <p>編寫測試CGI，假設名稱為<code>cgi</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>echo Content-Type: text; charset<span style="color:#f92672">=</span>utf-8

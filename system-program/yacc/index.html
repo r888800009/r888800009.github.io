@@ -51,17 +51,37 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-12-27 23:36:06 &#43;0800 CST">Fri, 2019 Dec 27</time>
     </div> 
-    <h2 id="binson">binson參數</h2>
+    <h2 id="binson參數">binson參數</h2>
 <ul>
 <li><code>-d</code> 可以編寫token definition file</li>
 <li><code>-v</code> 產生除錯檔案<code>檔名.output</code></li>
 </ul>
-<h2 id="heading">衝突</h2>
+<h2 id="衝突">衝突</h2>
 <ul>
 <li>shift/reduce conflicts</li>
 <li>reduce/reduce conflicts</li>
 </ul>
-<h2 id="heading-1">書目</h2>
+<h2 id="與lex結合">與lex結合</h2>
+<p>透過在yacc的<code>%union</code>定義數值，之後可以透過lex在分詞的時候定義</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%union {
+  int intVar;
+  char *str;
+}
+</code></pre></div><p>此時可以保存整數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">yylval.intVar <span style="color:#f92672">=</span> atoi(yytext);
+</code></pre></div><p>字串的話採用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">yylval.str <span style="color:#f92672">=</span> strdup(yytext);
+</code></pre></div><h2 id="yacc採用c">yacc採用c++</h2>
+<p>參考該篇<a href="http://tldp.org/HOWTO/Lex-YACC-HOWTO-5.html">文章</a>
+在yacc中編寫c++，在lex編寫c。</p>
+<p>或採用flex <code>-+</code>方法生成c++檔案</p>
+<h2 id="常見問題">常見問題</h2>
+<p>如果文法有問題</p>
+<ul>
+<li>如if else嘗試看看拆分，如果<code>%prec</code>沒有作用。</li>
+</ul>
+<p>yacc的action也會佔用一個索引。</p>
+<h2 id="書目">書目</h2>
 <ul>
 <li>o'reilly lex &amp; yacc 中譯本</li>
 </ul>

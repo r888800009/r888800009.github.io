@@ -64,12 +64,12 @@ s
 </code></pre></div><p><strong>註:gdb在每次除錯的時候會留下<code>.gdb_history</code>，
 可以用來當成script的素材</strong></p>
 <p>其他請參見<a href="https://wwssllabcd.github.io/blog/2013/03/25/how-to-write-gdb-scritp/">簡易 GDB Script 教學，應用</a></p>
-<h2 id="heading">工具</h2>
+<h2 id="工具">工具</h2>
 <ul>
 <li><a href="https://github.com/longld/peda">gdb-peda</a></li>
 <li><a href="https://www.gdbgui.com/">gdbgui</a></li>
 </ul>
-<h2 id="heading-1">指令</h2>
+<h2 id="指令">指令</h2>
 <ul>
 <li><code>finish</code>: 完成當前的函數之後停止</li>
 <li><code>b</code>: 設立中斷點</li>
@@ -77,16 +77,16 @@ s
 </ul>
 <p>中斷點使用範例，在特定地址中斷</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">b *0x12345678
-</code></pre></div><h2 id="heading-2">傳入參數執行</h2>
+</code></pre></div><h2 id="傳入參數執行">傳入參數執行</h2>
 <pre><code>run arg1 arg2 arg3...
 run $(printf &quot;123&quot;)123
 run $(shell)
-</code></pre><h2 id="gdb">gdb界面</h2>
+</code></pre><h2 id="gdb界面">gdb界面</h2>
 <ul>
 <li>Emacs GDB</li>
 <li><a href="http://cgdb.github.io/">cgdb</a></li>
 </ul>
-<h3 id="heading-3">參考</h3>
+<h3 id="參考">參考</h3>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/32843449">终端调试哪家强？</a></li>
 </ul>

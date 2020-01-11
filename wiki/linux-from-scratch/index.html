@@ -51,18 +51,18 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-10-19 21:50:48 &#43;0800 CST">Sat, 2019 Oct 19</time>
     </div> 
-    <h2 id="heading">工具</h2>
+    <h2 id="工具">工具</h2>
 <p>練習qemu啟動kernel</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-system-x86_64 --kernel /boot/vmlinuz-linux 
 </code></pre></div><h2 id="kernel">kernel</h2>
-<h3 id="kernel-1">抓取kernel</h3>
+<h3 id="抓取kernel">抓取kernel</h3>
 <p>花費的空間實在太大也太慢，直接抓取最新的提交，加上<code>-depth 1</code>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --depth <span style="color:#ae81ff">1</span> git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 </code></pre></div><p>如果抓取kernel.org的完整的repo</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 </code></pre></div><p>或torvalds的鏡像</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/torvalds/linux.git 
-</code></pre></div><h3 id="kernel-2">編譯kernel</h3>
+</code></pre></div><h3 id="編譯kernel">編譯kernel</h3>
 <p>先配置內核設定，這邊使用預設設定所以直接退出</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make menuconfig
 </code></pre></div><p>透過多線程下去編譯內核</p>
@@ -73,7 +73,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make modules -j <span style="color:#ae81ff">4</span>
 </code></pre></div><p>最後將kernel安裝到特定位置，可以透過grub去啟動他</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make install INSTALL_PATH<span style="color:#f92672">=</span>/tmp/kernel 
-</code></pre></div><h2 id="busybox">busyBox編譯</h2>
+</code></pre></div><h2 id="busybox編譯">busyBox編譯</h2>
 <p>下載busybox並且編譯，作為啟動後第一個shell</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://git.busybox.net/busybox
 </code></pre></div><p>透過make進行編譯，配置編譯選項啟用靜態(<code>Settings -&gt; Build Options -&gt; Build static binary</code>)</p>
@@ -82,7 +82,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make
 </code></pre></div><p>安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make install 
-</code></pre></div><h2 id="grub">編譯grub</h2>
+</code></pre></div><h2 id="編譯grub">編譯grub</h2>
 <p>首先獲取grub</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://git.savannah.gnu.org/git/grub.git
 cd grub
@@ -97,7 +97,7 @@ make install
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">FAIL: iso9660_test
 FAIL: tar_test
 FAIL: grub_func_test
-</code></pre></div><h2 id="grubimage">將grub安裝到image</h2>
+</code></pre></div><h2 id="將grub安裝到image">將grub安裝到image</h2>
 <p>建立映像檔</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-img create linux.img 1G   
 </code></pre></div><p>將linux.img掛載到loop0，並且設定分割區可開機</p>
@@ -123,11 +123,11 @@ sudo umount /mnt
 sudo losetup -d /dev/loop0
 </code></pre></div><p>執行</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-system-x86_64 -drive format<span style="color:#f92672">=</span>raw,file<span style="color:#f92672">=</span>linux.img 
-</code></pre></div><h3 id="heading-1">參考</h3>
+</code></pre></div><h3 id="參考">參考</h3>
 <ul>
 <li><a href="https://superuser.com/a/526400">https://superuser.com/a/526400</a></li>
 </ul>
-<h2 id="kernelgrub">將kernel放入映像檔並透過grub啟動</h2>
+<h2 id="將kernel放入映像檔並透過grub啟動">將kernel放入映像檔並透過grub啟動</h2>
 <p>先掛載根目錄</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo losetup -fP linux.img
 sudo mount /dev/loop0p1 /mnt
@@ -156,7 +156,7 @@ sudo umount /mnt
 sudo losetup -d /dev/loop0
 </code></pre></div><p>執行</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-system-x86_64 -drive format<span style="color:#f92672">=</span>raw,file<span style="color:#f92672">=</span>linux.img
-</code></pre></div><h2 id="rootbusybox">透過內核掛載root並且啟動busybox</h2>
+</code></pre></div><h2 id="透過內核掛載root並且啟動busybox">透過內核掛載root並且啟動busybox</h2>
 <p>先掛載根目錄</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo losetup -fP linux.img
 sudo mount /dev/loop0p1 /mnt
@@ -182,12 +182,12 @@ sudo losetup -d /dev/loop0
 </code></pre></div><p>執行</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-system-x86_64 -drive format<span style="color:#f92672">=</span>raw,file<span style="color:#f92672">=</span>linux.img
 </code></pre></div><p>參見<a href="http://www.linuxfromscratch.org/lfs/view/development/chapter08/fstab.html">LFS fstab</a></p>
-<h3 id="-no-such-device-tty2-tty3-tty4">修復 No such device tty2, tty3, tty4</h3>
+<h3 id="修復-no-such-device-tty2-tty3-tty4">修復 No such device tty2, tty3, tty4</h3>
 <p>請確定<code>/mnt/dev</code>存在<del>並且fstab擁有devtmpfs</del>(存疑)</p>
-<h3 id="poweroff">poweroff無法使用</h3>
+<h3 id="poweroff無法使用">poweroff無法使用</h3>
 <p>請確定<code>/mnt/proc</code>存在</p>
-<h2 id="heading-2">參考資料</h2>
-<h3 id="kernel-3">kernel</h3>
+<h2 id="參考資料">參考資料</h2>
+<h3 id="kernel-1">kernel</h3>
 <ul>
 <li><a href="https://github.com/jasonblog/note/blob/master/qemu/da_zao_shu_yu_zi_ji_de_linux_fa_xing_ban.md">打造屬於自己的linux發行版</a></li>
 <li><a href="https://kernelnewbies.org/KernelBuild">KernelBuild</a></li>

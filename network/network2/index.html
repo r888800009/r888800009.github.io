@@ -51,14 +51,14 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-24 23:25:13 &#43;0800 CST">Tue, 2019 Sep 24</time>
     </div> 
-    <h2 id="21-">2.1 網路應用程式原則</h2>
-<h3 id="heading">應用層</h3>
+    <h2 id="21-網路應用程式原則">2.1 網路應用程式原則</h2>
+<h3 id="應用層">應用層</h3>
 <p>人機介面</p>
 <ul>
 <li>Client server</li>
 <li>Peer to peer</li>
 </ul>
-<h3 id="211app">2.1.1建立網路app</h3>
+<h3 id="211建立網路app">2.1.1建立網路app</h3>
 <p>建立虛擬連線，不需要處理中間傳輸問題</p>
 <ul>
 <li>client server
@@ -96,7 +96,7 @@ if (!doNotTrack) {
 <li>throughput: 多媒體要求有效的throughput</li>
 <li>security: 加密，資料正確性</li>
 </ul>
-<h3 id="214-">2.1.4 傳輸要求</h3>
+<h3 id="214-傳輸要求">2.1.4 傳輸要求</h3>
 <h4 id="tcp">TCP</h4>
 <ul>
 <li>reliable transport</li>
@@ -110,12 +110,12 @@ if (!doNotTrack) {
 <li>unreliable data transfer:  只檢查封包</li>
 <li>does not provide: 可靠性</li>
 </ul>
-<h4 id="heading-1">採用</h4>
+<h4 id="採用">採用</h4>
 <ul>
 <li>多媒體，網路電話UDP或TCP</li>
 <li>email, HTTP</li>
 </ul>
-<h4 id="tcp-1">安全TCP</h4>
+<h4 id="安全tcp">安全TCP</h4>
 <p>SSL提供加密的TCP，並且在app應用層</p>
 <h2 id="22-web-http">2.2 web http</h2>
 <ul>
@@ -128,7 +128,7 @@ if (!doNotTrack) {
 RTT: Round Trip time</p>
 <h3 id="persistent">persistent</h3>
 <p>可透過同一tcp傳送</p>
-<h3 id="heading-2">架構</h3>
+<h3 id="架構">架構</h3>
 <ul>
 <li>status line</li>
 <li>header lines</li>
@@ -137,7 +137,7 @@ RTT: Round Trip time</p>
 </ul>
 <h3 id="cookie">Cookie</h3>
 <p>沒cookie使用Set-cookie header line</p>
-<h2 id="225-">2.2.5 網頁快取</h2>
+<h2 id="225-網頁快取">2.2.5 網頁快取</h2>
 <h3 id="proxy">proxy</h3>
 <p>網路可以透過proxy做caching，例如區網架設proxy server</p>
 <h3 id="get">GET</h3>
@@ -149,7 +149,7 @@ RTT: Round Trip time</p>
 <li>Mail reader, (Outlook)</li>
 <li>Web mail不使用SMTP,而是web</li>
 </ul>
-<h3 id="heading-3">架構</h3>
+<h3 id="架構-1">架構</h3>
 <ul>
 <li>Client: 送Email到server</li>
 <li>Server: 送信mail server互相傳遞</li>
@@ -162,7 +162,7 @@ RTT: Round Trip time</p>
 <li>Client送email可以透過http或SMTP</li>
 <li>收信不能透過SMTP</li>
 </ul>
-<h4 id="heading-4">比較</h4>
+<h4 id="比較">比較</h4>
 <ul>
 <li>http: pull</li>
 <li>SMTP: push</li>
@@ -189,41 +189,41 @@ body
 <h2 id="24-dns">2.4 DNS</h2>
 <p>為分散式架構，用於<strong>分散流量</strong>、<strong>延遲</strong>與<strong>管理</strong>，為應用層上的協議。</p>
 <p>DNS為應用層，為了擴充性必須是分散式</p>
-<h3 id="heading-5">問題</h3>
+<h3 id="問題">問題</h3>
 <ul>
 <li>集中式儲存與距離問題(Distant Centralized Database)</li>
 <li>伺服器維護管理(maintenance) 尺度(scale)過大</li>
 </ul>
-<h3 id="heading-6">功能</h3>
+<h3 id="功能">功能</h3>
 <ul>
 <li>主機別名(Host aliasing): 如<code>A</code>紀錄</li>
 <li>郵件伺服器別名(Mail server aliasing): <code>MX</code>紀錄可以避免單一郵件伺服器離線時
 導致郵件無法送出</li>
 <li>負載分散(load distribution)</li>
 </ul>
-<h3 id="heading-7">管轄</h3>
+<h3 id="管轄">管轄</h3>
 <ul>
 <li>TLD(top-level): 頂級網域</li>
 <li>authoritative DNS servers: 擁有相關的record</li>
 <li>local DNS server: 如路由器上面的DNS</li>
 </ul>
-<h3 id="heading-8">查詢方式</h3>
+<h3 id="查詢方式">查詢方式</h3>
 <ul>
 <li>iterated query: 通過同一台DNS伺服器下去查詢其他DNS伺服器</li>
 <li>recursive query: 透過多台DNS串連查詢</li>
 </ul>
 <p>Local DNS server可以支援<strong>迭代</strong>或<strong>遞迴</strong>,但是TLD只支援迭代查詢</p>
-<h3 id="heading-9">參見</h3>
+<h3 id="參見">參見</h3>
 <ul>
 <li><a href="https://tools.ietf.org/html/rfc2136">RFC 2136</a></li>
 </ul>
-<h3 id="heading-10">封包</h3>
+<h3 id="封包">封包</h3>
 <ul>
 <li>identification: 16bit 查詢編號</li>
 <li>flags: query or reply, recursion desired, recursive available, reply is authoritative</li>
 <li>number of questions</li>
 </ul>
-<h3 id="heading-11">威脅攻擊</h3>
+<h3 id="威脅攻擊">威脅攻擊</h3>
 <ul>
 <li>阻斷式攻擊： root, TLD</li>
 <li>重定向：中間人，DNS詐欺poisoning</li>

@@ -73,7 +73,7 @@ if (!doNotTrack) {
 </ul>
 <p>可重定位指令: 載入起始點不同需要計算絕對地址，不過<code>call</code>、<code>jmp</code>、<code>LOOP</code>是計算距離不用relocation。</p>
 <h2 id="22-sic-assembly">2.2 SIC Assembly</h2>
-<h3 id="-assembler-directives">組譯器指引 assembler directives</h3>
+<h3 id="組譯器指引-assembler-directives">組譯器指引 assembler directives</h3>
 <ul>
 <li><code>start</code>: 表示address的起始位置</li>
 <li><code>end</code></li>
@@ -82,7 +82,7 @@ if (!doNotTrack) {
 <li><code>resb</code></li>
 <li><code>resw</code></li>
 </ul>
-<h3 id="sicxesic">SIC/XE與SIC差異</h3>
+<h3 id="sicxe與sic差異">SIC/XE與SIC差異</h3>
 <ul>
 <li>基底相對定址 (Base relative)</li>
 <li>type 4: 指令前方補上加號</li>
@@ -99,7 +99,7 @@ if (!doNotTrack) {
 <li><strong>loop</strong>: <code>LOOP</code>使用PC加上offset(二補數)</li>
 </ul>
 <h2 id="24-assembler-algorithm">2.4 Assembler Algorithm</h2>
-<h3 id="heading">組譯器演算法</h3>
+<h3 id="組譯器演算法">組譯器演算法</h3>
 <ol>
 <li>轉譯指令成機器碼</li>
 <li>獲取symbol對映的address</li>
@@ -107,7 +107,7 @@ if (!doNotTrack) {
 <li>處理 pseudo instructions</li>
 <li>產生obj與assembly listing</li>
 </ol>
-<h3 id="heading-1">通用設計程序</h3>
+<h3 id="通用設計程序">通用設計程序</h3>
 <ul>
 <li>軟體生命週期
 <ol>
@@ -159,7 +159,7 @@ if (!doNotTrack) {
 <li>處理pass1未處理的pseudo</li>
 </ol>
 <h2 id="25-data-structures">2.5 Data Structures</h2>
-<h3 id="heading-2">需求</h3>
+<h3 id="需求">需求</h3>
 <ol>
 <li>輸入程式碼與輸出obj</li>
 <li>輸出assembly reports 與一些message</li>
@@ -178,12 +178,12 @@ if (!doNotTrack) {
 <li>label定義就放入表中，並且填入機器碼</li>
 <li>指令中label未定義就先用linked list串接。</li>
 </ul>
-<h4 id="1-pass">1 pass是否有辦法解決</h4>
+<h4 id="1-pass是否有辦法解決">1 pass是否有辦法解決</h4>
 <ul>
 <li>實務: 可以透過configuration table</li>
 <li>理論: worst case不能解決</li>
 </ul>
-<h3 id="heading-3">程式重定位</h3>
+<h3 id="程式重定位">程式重定位</h3>
 <ul>
 <li>絕對定址: 程式必須載入到特定的地址</li>
 <li>重新定址: 程式必須根據起始位置下去做重定位
@@ -193,14 +193,14 @@ if (!doNotTrack) {
 </ol>
 </li>
 </ul>
-<h3 id="-relocation">如何解決 relocation</h3>
+<h3 id="如何解決-relocation">如何解決 relocation</h3>
 <ol>
 <li>加入修改紀錄，保存地址相關的變數，保存在修改紀錄檔內，讓載入器可以讀取。</li>
 <li>採用基底暫存器，不用修改地址。</li>
 <li>使用程式計數器，如SIC</li>
 </ol>
 <h2 id="27-separate-assemble-and-relocation">2.7 Separate assemble and relocation</h2>
-<h3 id="sic-obj">SIC obj紀錄</h3>
+<h3 id="sic-obj紀錄">SIC obj紀錄</h3>
 <p>下面以偽代碼表示結構</p>
 <ul>
 <li>H: 程式頭</li>
@@ -230,25 +230,25 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">nibble D, varName[8], varAddr[4], repeat[59];
 // varAddr通常為相對地址
 // repeat: varName and varAddr
-</code></pre></div><h3 id="heading-4">外部參考與內部參考</h3>
+</code></pre></div><h3 id="外部參考與內部參考">外部參考與內部參考</h3>
 <p>External reference定義在不同function，internal reference定義在相同的function，External definition在function當中定義的symbols，並且其他function有機會使用該symbols</p>
 <ul>
 <li>EXTRN: 產生R紀錄(External reference)</li>
 <li>PUBLIC: 產生D紀錄(External definition)</li>
 </ul>
-<h3 id="heading-5">程式重定位</h3>
+<h3 id="程式重定位-1">程式重定位</h3>
 <p>program relocation與linking需要透過linker/loader處理</p>
 <ul>
 <li>define recordL 可參考變數</li>
 <li>refer record: 外部參考</li>
 <li>modification record: 修改紀錄</li>
 </ul>
-<h2 id="assembler-1">Assembler概念</h2>
+<h2 id="assembler概念">Assembler概念</h2>
 <ul>
 <li><strong>forward reference</strong>: 使用後定義的label，當下無法得知地址，需要2 pass</li>
 <li><strong>backward reference</strong>: 使用先定義的label</li>
 </ul>
-<h2 id="heading-6">其他基本概念</h2>
+<h2 id="其他基本概念">其他基本概念</h2>
 <ul>
 <li><strong>nibble</strong>: 4 bit，為1個16進位數值。</li>
 </ul>
