@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>String Searching on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/string-searching/</link>
+    <description>Recent content in String Searching on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 14 Jan 2020 03:20:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/string-searching/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rabin-Karp演算法</title>
+      <link>https://r888800009.github.io/posts/rabin-karp/</link>
+      <pubDate>Tue, 14 Jan 2020 03:20:49 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/posts/rabin-karp/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

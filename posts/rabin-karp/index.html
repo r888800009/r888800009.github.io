@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.62.2" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>Rabin-Karp演算法 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,39 +47,35 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/posts/rabin-karp/" class="post-link">Rabin-Karp演算法</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-ime/" class="post-link">Linux輸入法</a></h1>
-
-    <h1><a href="https://r888800009.github.io/posts/progression-series-missing-number/" class="post-link">等差級數缺少數字</a></h1><p>給定一個不完全的等差數列總和，其中缺少一項數字。</p>
-<p>題目給定總和界限 <code>1 &lt;= sum &lt;= 10 ^ 8</code>，並要求找出缺少值。</p>
-
-    <h1><a href="https://r888800009.github.io/system-program/yacc/" class="post-link">Bison Yacc</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/sp8/" class="post-link">[SP]軟體工程</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/verilog/" class="post-link">Verilog</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/password/" class="post-link">密碼安全</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/sp7/" class="post-link">[SP]資料庫系統</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/information-security/" class="post-link">資訊安全</a></h1><p>資訊安全相關索引</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/pentest/" class="post-link">滲透</a></h1><p>Penetration Testing筆記</p>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Rabin-Karp演算法</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-01-14 03:20:49 &#43;0800 CST">Tue, 2020 Jan 14</time>
+    </div> 
+    <h2 id="方法">方法</h2>
+<ol>
+<li>計算匹配字串的hash value</li>
+<li>計算文本的子字串的hash value</li>
+</ol>
+<p>採用前一次子字串的hash value來降低運算次數，
+減去開頭字元的hash value並加上新字元的hash valuse。</p>
+<h2 id="實作">實作</h2>
+<p>可能的資料結構</p>
+<ul>
+<li>佇列: 直接使用輸入文本，並記錄<strong>匹配結尾</strong>與<strong>匹配開頭</strong>。</li>
+<li>hash function: 採用一個大質數來減少碰撞機率，將字元編碼相加。</li>
+</ul>
+<p>範例程式參見<a href="https://github.com/r888800009/practice/blob/master/rabin-karp.py">GitHub</a></p>
 
     
-    <a href=/page/2/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/string-searching" class="tags">String Searching</a>
+      
+        <a href="https://r888800009.github.io/tags/algorithm" class="tags">Algorithm</a>
+      
+        <a href="https://r888800009.github.io/tags/hash" class="tags">Hash</a>
+      
     
-</div>
 
 
             </div>
