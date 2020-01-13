@@ -64,6 +64,10 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du --max-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </code></pre></div><p>將輸出的大小轉成kb, mb, gb的格式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du . -h
+</code></pre></div><h3 id="ncdu">ncdu</h3>
+<p>找出目錄佔有空間的檔案與目錄，並且提供交互界面查看報表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S ncdu
+ncdu .
 </code></pre></div><h3 id="find">find</h3>
 <p>搜尋該目錄含有<code>linux</code>的文件</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -exec grep -H <span style="color:#e6db74">&#34;linux&#34;</span> <span style="color:#f92672">{</span><span style="color:#f92672">}</span> <span style="color:#ae81ff">\;</span>  
