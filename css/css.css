@@ -129,4 +129,11 @@ a.tags {
   display: inline-block;
 }
 
+a.subheader {
+  color: #b3b3b3;
+}
+
+a.subheader:hover {
+  color: #8282ff;
+}
 

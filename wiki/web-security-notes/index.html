@@ -102,7 +102,12 @@ if (!doNotTrack) {
 </code></pre></div></li>
 <li><a href="/wiki/web-vulnerability/#sql-injection">SQL 注入</a></li>
 <li>Template Injection是啥?</li>
-<li>Code Injection是啥?</li>
+<li>Code Injection
+<ul>
+<li><a href="https://www.owasp.org/index.php/Code_Injection">Code Injection - OWASP</a></li>
+<li><a href="https://www.owasp.org/index.php/Testing_for_Code_Injection_(OTG-INPVAL-012)">Testing for Code Injection (OTG-INPVAL-012)</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="其他資訊參考來源">其他資訊/參考來源</h2>
 <ul>
@@ -120,6 +125,21 @@ if (!doNotTrack) {
         <a href="https://r888800009.github.io/tags/vulnerability" class="tags">vulnerability</a>
       
     
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>

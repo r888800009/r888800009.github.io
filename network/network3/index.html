@@ -198,6 +198,51 @@ receiver ack與nak要加上checksum</p>
 <p>Flow control透過window size調整，
 Receive windows</p>
 <p>congestion control: 擁塞控制可以限制TCP發送速度</p>
+<h2 id="36-congestion-control">3.6. congestion control</h2>
+<p>Congestion產生原因</p>
+<p>可能導致</p>
+<ul>
+<li>丟失，因為 queue</li>
+<li>長延遲</li>
+</ul>
+<h3 id="只考慮網路問題">只考慮網路問題</h3>
+<p>無限queue，不會發生重傳</p>
+<h3 id="考慮有限">考慮有限</h3>
+<p>重傳時可以預測一定有queue位置，
+都是packet lost才重送的話，可以使接收速率為<code>R/2</code></p>
+<h3 id="交叉">交叉</h3>
+<h2 id="37-congestion-control">3.7 congestion control</h2>
+<h3 id="進入">進入</h3>
+<ol>
+<li>緩慢增加速度（線性）AIMD，直到壅塞之後減半速度，再次嘗試加速壅塞=》透過 window size進行處理，除2</li>
+<li>Slow start: 每次乘2成，如果壅塞嚴重則退回1 MSS</li>
+</ol>
+<h3 id="tcp-1">TCP</h3>
+<ul>
+<li>嚴重 slow</li>
+<li>普通壅塞 AIMD</li>
+</ul>
+<p>透過擁塞時，除2產生的值作為ssthresh，並且AIMD</p>
+<p>註解：</p>
+<ul>
+<li>duplicate ack不大嚴重因為packet依然可以傳送，雖然可能丟失部分封包</li>
+<li>timeout 代表嚴重無法成功送到，使任何ack都無法收到</li>
+</ul>
+<p>TCP Rene</p>
+<p>TCP Tahoe</p>
+<p>補充：Duplicate ack實際上可能是底下routing路徑修改</p>
+<h2 id="371-網路公平性">3.7.1 網路公平性</h2>
+<p>有效的網路條件</p>
+<ul>
+<li>一個使用者完全使用頻寬</li>
+<li>多個使用者平分</li>
+</ul>
+<p>使用者加入：趨近公平的速度</p>
+<p>TCP不公平</p>
+<ol>
+<li>多個TCP連線在同主機，可能佔用多個頻寬</li>
+<li>網路上可能有UDP封包，而TCP被降速</li>
+</ol>
 
     
       <hr>
@@ -205,6 +250,21 @@ Receive windows</p>
         <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
       
     
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>

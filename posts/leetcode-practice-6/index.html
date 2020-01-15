@@ -69,6 +69,21 @@ if (!doNotTrack) {
 <p><a href="https://blog.csdn.net/yutianzuijin/article/details/53861485">leetcode之Find All Numbers Disappeared in an Array</a></p>
 
     
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>

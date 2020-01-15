@@ -76,6 +76,7 @@ if (!doNotTrack) {
 <p><code>:x</code>
 同<code>:wq</code>的功能</p>
 <ul>
+<li><code>ctrl + c</code>: 退出模式</li>
 <li><code>ctrl + b</code>: 向上1頁</li>
 <li><code>ctrl + f</code>: 向下1頁</li>
 <li><code>ctrl + u</code>: 向上1/2頁</li>
@@ -102,9 +103,11 @@ if (!doNotTrack) {
 <li><code>n</code> <code>&lt;ctrl-6&gt;</code> (或<code>&lt;Ctrl-^&gt;</code>)切換緩衝區，<code>n</code>為緩衝區編號</li>
 <li><code>gU</code>,<code>gu</code>, <code>g~</code>改變大小寫</li>
 </ul>
-<h3 id="快速重複製作">快速重複製作</h3>
+<h3 id="重複動作">重複動作</h3>
 <ul>
 <li><code>no</code> <code>n</code>為數字，表示重複內容<code>n</code>次</li>
+<li><code>np</code> 貼上<code>n</code>份</li>
+<li><code>n</code>+<code>h</code>/<code>j</code>/<code>k</code>/<code>l</code>/<code>w</code>/<code>e</code>/<code>b</code>可以同時移動<code>n</code>個距離</li>
 </ul>
 <h2 id="搜尋與取代">搜尋與取代</h2>
 <ul>
@@ -143,7 +146,7 @@ mapD
 <h2 id="插件">插件</h2>
 <p>ycm配置</p>
 <pre><code>./install.py --clang-completer --go-completer --java-completer
-</code></pre>
+</code></pre><p>採用mkdx輔助編寫markdown文件，含有相關鍵綁定。</p>
 
     
       <hr>
@@ -153,6 +156,21 @@ mapD
         <a href="https://r888800009.github.io/tags/editor" class="tags">Editor</a>
       
     
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>

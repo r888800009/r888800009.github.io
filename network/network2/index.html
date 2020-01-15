@@ -243,6 +243,14 @@ body
 <li>bring home: 放在ISP共通連線的位置，如IXP以降低維護成本，
 相對的延遲可能會比較高。</li>
 </ul>
+<h2 id="相關概念補充">相關概念補充</h2>
+<ul>
+<li>persistent vs multiple connections:
+前者只建立單一連線並多次請求。後者每次請求建立新連線。</li>
+<li>no pipelining vs pipelining:
+兩者皆在單一連線中，前者等待回覆才再次發出請求，
+後者在第一時間同時發出所有請求。</li>
+</ul>
 
     
       <hr>
@@ -250,6 +258,21 @@ body
         <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
       
     
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>

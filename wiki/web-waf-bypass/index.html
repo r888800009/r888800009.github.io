@@ -79,6 +79,21 @@ urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</sp
         <a href="https://r888800009.github.io/tags/waf" class="tags">WAF</a>
       
     
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>
