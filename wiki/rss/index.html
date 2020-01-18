@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Wikis | r809&#39;s Notes</title>
+<title>RSS | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,43 +47,47 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Wikis</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/newsboat/" class="post-link">newsboat終端機RSS訂閱器</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/python-fuzz/" class="post-link">python 模糊搜尋</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/mysql/" class="post-link">MySQL</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/web-crawler/" class="post-link">Web爬蟲筆記</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/dns/" class="post-link">DNS</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/bash/" class="post-link">Bash</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/radare2/" class="post-link">Radare2</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/kali-linux/" class="post-link">Kali Linux筆記</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/stack-smash/" class="post-link">Stack Smash</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/web-waf-bypass/" class="post-link">WAF繞過</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/wiki/page/2/>
-      &#x3C;
-    </a>
-    
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">RSS</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-01-19 05:21:11 &#43;0800 CST">Sun, 2020 Jan 19</time>
+    </div> 
+    <p>RSS 常用資訊</p>
+<h2 id="訂閱器">訂閱器</h2>
+<ul>
+<li><a href="/wiki/newsboat/">newsboat</a></li>
+</ul>
+<h2 id="rss常見路徑">rss常見路徑</h2>
+<p>記錄常見blog採用的rss路徑</p>
+<ul>
+<li>wordpress: <code>/feed</code></li>
+<li>blogger: <code>/feeds/posts/default?alt=rss</code></li>
+<li>hugo: <code>/index.xml</code></li>
+</ul>
+<p>其他平臺<a href="https://feed.mikle.com/support/category/platforms/">參見</a></p>
 
     
-    <a href=/wiki/page/4/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/rss" class="tags">RSS</a>
+      
+        <a href="https://r888800009.github.io/tags/blog" class="tags">Blog</a>
+      
     
-</div>
-
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>

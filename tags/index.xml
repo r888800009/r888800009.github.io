@@ -6,10 +6,28 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 14 Jan 2020 03:20:49 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2020 05:21:11 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog</title>
+      <link>https://r888800009.github.io/tags/blog/</link>
+      <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RSS</title>
+      <link>https://r888800009.github.io/tags/rss/</link>
+      <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/rss/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Algorithm</title>
@@ -197,24 +215,6 @@
       <pubDate>Wed, 16 Oct 2019 21:54:50 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://r888800009.github.io/tags/blog/</link>
-      <pubDate>Tue, 15 Oct 2019 21:56:50 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RSS</title>
-      <link>https://r888800009.github.io/tags/rss/</link>
-      <pubDate>Tue, 15 Oct 2019 21:56:50 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/rss/</guid>
       <description></description>
     </item>
     

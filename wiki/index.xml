@@ -6,10 +6,19 @@
     <description>Recent content in Wikis on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 13 Jan 2020 22:30:37 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2020 05:21:11 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/wiki/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RSS</title>
+      <link>https://r888800009.github.io/wiki/rss/</link>
+      <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/rss/</guid>
+      <description>&lt;p&gt;RSS 常用資訊&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Linux輸入法</title>
