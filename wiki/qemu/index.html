@@ -57,7 +57,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-img create -f qcow2 hdd.img 3G
 </code></pre></div><p>讀取<code>iso</code>檔案</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">-cdrom winxpsp2.iso 
-</code></pre></div><p>完整指令</p>
+</code></pre></div><p>強制qemu從iso啟動</p>
+<pre><code>-boot d
+</code></pre><p>完整指令</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu -m <span style="color:#ae81ff">256</span> -hda winxp.img -cdrom winxpsp2.iso
 </code></pre></div><ul>
 <li><code>-m</code>為記憶體大小(<code>mb</code>)</li>
