@@ -86,6 +86,11 @@ if (!doNotTrack) {
 <p><a href="https://github.com/SidOfc/mkdx"><code>mkdx</code></a>為vim的markdown編輯插件，
 可以輔助插入markdown樣式。</p>
 <p>參見<a href="https://github.com/SidOfc/mkdx#mappings">Mappings</a></p>
+<h2 id="嵌入html">嵌入HTML</h2>
+<p>kbd 標籤，部份markdown渲染會產生顯示結果(CSS)，如github中可用</p>
+<p>使用方法如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">kbd</span>&gt;ctrl&lt;/<span style="color:#f92672">kbd</span>&gt; + &lt;<span style="color:#f92672">kbd</span>&gt;c&lt;/<span style="color:#f92672">kbd</span>&gt;
+</code></pre></div><p>hugo因為安全性，採用html標籤時必須進行相關設定才會顯示。</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
