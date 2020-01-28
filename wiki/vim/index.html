@@ -73,8 +73,9 @@ if (!doNotTrack) {
 <li><code>:x</code>保存並退出</li>
 </ol>
 <h2 id="快捷鍵">快捷鍵</h2>
-<p><code>:x</code>同<code>:wq</code>的功能，也可以<code>ZZ</code></p>
+<p><code>:x</code>同<code>:wq</code>的功能，也可以<code>ZZ</code>，無條件退出採用<code>ZQ</code></p>
 <ul>
+<li><strong><code>i</code>進行插入，<code>a</code>在後面添加</strong></li>
 <li><code>ctrl + c</code>: 退出模式</li>
 <li><code>ctrl + b</code>: 向上1頁</li>
 <li><code>ctrl + f</code>: 向下1頁</li>
@@ -107,6 +108,15 @@ if (!doNotTrack) {
 <li><code>no</code> <code>n</code>為數字，表示重複內容<code>n</code>次</li>
 <li><code>np</code> 貼上<code>n</code>份</li>
 <li><code>n</code>+<code>h</code>/<code>j</code>/<code>k</code>/<code>l</code>/<code>w</code>/<code>e</code>/<code>b</code>可以同時移動<code>n</code>個距離</li>
+<li>採用巨集</li>
+</ul>
+<h2 id="錄製巨集">錄製巨集</h2>
+<ul>
+<li><code>qa</code> 在<code>a</code>暫存器保存巨集，也可使用其他暫存器</li>
+<li>在普通模式按下<code>q</code>結束錄製</li>
+<li><code>@a</code>使用<code>a</code>暫存器的巨集</li>
+<li><code>:reg</code>查詢所有暫存器巨集</li>
+<li><code>&quot;ap</code>將暫存器<code>a</code>的內容貼上</li>
 </ul>
 <h2 id="搜尋與取代">搜尋與取代</h2>
 <ul>
@@ -118,6 +128,7 @@ if (!doNotTrack) {
 <ul>
 <li><code>%</code>全文搜尋</li>
 <li><code>.</code>當前游標行位置</li>
+<li><code>-2,+2s</code>針對上下兩格的放範圍進行指令</li>
 </ul>
 <h3 id="模式gci">模式(g,c,i)</h3>
 <ul>
