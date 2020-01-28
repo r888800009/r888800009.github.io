@@ -180,6 +180,11 @@ plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74"></span>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">400</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(20, 400)</span><span style="color:#e6db74">&#39;</span>)
 </code></pre></div><p>顯示圖表，可能會發現圖形沒有很精準在數值上，可以把<code>linspace()</code>調整精細</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p>另外可以採用<code>savefig()</code>來保存圖示，可以保存為<code>png</code>或<code>svg</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fig.svg</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fig.png</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>採用<code>clf()</code>清理上次所畫出圖</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>clf()
 </code></pre></div><h3 id="範例程式">範例程式</h3>
 <p>範例程式1</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
