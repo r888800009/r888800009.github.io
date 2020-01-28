@@ -54,15 +54,57 @@ if (!doNotTrack) {
     <h2 id="基本步驟">基本步驟</h2>
 <ol>
 <li>統計文字出現頻率</li>
-<li>採用Min Heap對頻率進行排序</li>
+<li>採用Min Heap對頻率進行排序提取節點</li>
 <li>挑取兩個最小的頻率</li>
 <li>建立節點，並且刪除兩個最小頻率，
 樹葉為兩最小頻率，樹根為兩者和並入堆積。</li>
 <li>剩餘根部時完成</li>
 </ol>
-<h2 id="統計字數">統計字數</h2>
+<h2 id="產生編碼">產生編碼</h2>
 <p>在進行霍夫曼編碼時，統計文字頻率並使高頻文字
-生成最少的前綴，而達成壓縮的效果。</p>
+生成最少長度編碼達成壓縮的效果。</p>
+<h3 id="建樹">建樹</h3>
+<p>透過優先佇列用來產生霍夫曼樹，依序提取兩個頻率最小者合併並產生新的樹根，
+將新節點放入優先佇列，其中優先佇列可以採用heap進行實做，這裡採用STL提供的函數庫。</p>
+<h3 id="編碼">編碼</h3>
+<p>當我們完成一個霍夫曼樹時進行遍歷，這裡設往左方編碼為<code>0</code>，
+右方為<code>1</code>，可以採用簡單的遞迴產生編碼表。</p>
+<p>為了探討編碼的保存，以ascii (8 bit)進行計算時，最大編碼長度為255，
+試圖使huffman樹呈現最深的情況將會得到\(n - 1\)(當檔案含有兩種以上的字元)。</p>
+<p>而255 bit至少要32個位元進行保存路徑，也可以透過一些方式繼續縮減大小，
+如保存頻度表可以減少檔頭的大小。</p>
+<p>編碼參見<a href="https://github.com/r888800009/practice/blob/master/huffman.cpp">範例1</a></p>
+<h2 id="壓縮">壓縮</h2>
+<p>這裡定義檔頭，<code>tableSize</code>保存頻率表的大小，<code>frequency</code>保存字元頻率並且要求輸入的頻率表，
+必須由ascii順序排列，避免霍夫曼樹不同。</p>
+<p><code>length</code>用來保存霍夫曼編碼後的檔案長度，單位為bytes。
+<code>eofCounter</code>用來標記結尾，值為右移次數。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">FileHeader</span> {
+  <span style="color:#66d9ef">char</span> tableSize;
+  <span style="color:#66d9ef">int</span> lenght;
+  <span style="color:#66d9ef">char</span> eofCounter;
+};
+
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">FrequencyData</span> {
+  <span style="color:#66d9ef">char</span> c;
+  <span style="color:#66d9ef">int</span> frequency;
+} FrequencyData;
+
+vector<span style="color:#f92672">&lt;</span>FrequencyData<span style="color:#f92672">&gt;</span> frequency;
+</code></pre></div><p>在進行壓縮的時候，這裡先空出一個空間分配給檔頭使用，待資料壓縮完成之後在返回填上，
+而壓縮程式會先把每個字元的頻率寫入檔案當中，一共佔用5 bytes，即為字元與32整數。
+在壓縮原始檔案之前先建立一個表格用來查詢字元對映的霍夫曼編碼，建立完成之後，
+依照原始檔案透過該表轉換。</p>
+<h2 id="解壓縮">解壓縮</h2>
+<p>而解壓縮的部份則僅需要建立霍夫曼樹，並且遍歷到樹葉時即可產生字元。
+當中不需要使用遞迴進行編寫，依序讀入位元(需要一點技巧，進行位元運算並且注意不完整的
+末端)</p>
+<p>在執行時先讀入檔頭，得知檔案總長、頻率表長度、末位元位置，之後方可建樹並解壓縮。</p>
+<p>範例參見<a href="https://github.com/r888800009/practice/blob/master/huffman2.cpp">github</a></p>
+<h2 id="參考">參考</h2>
+<ul>
+<li><a href="https://seanlhlee.gitbooks.io/acosa/gitBook/Algorithms/Compression/huffmancoding_md.html">霍夫曼編碼（Huffman Coding）</a></li>
+</ul>
 
     
       <hr>
@@ -74,6 +116,8 @@ if (!doNotTrack) {
         <a href="https://r888800009.github.io/tags/tree" class="tags">Tree</a>
       
         <a href="https://r888800009.github.io/tags/heap" class="tags">Heap</a>
+      
+        <a href="https://r888800009.github.io/tags/compression" class="tags">Compression</a>
       
     
     <script>
