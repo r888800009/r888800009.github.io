@@ -53,14 +53,33 @@ if (!doNotTrack) {
     </div> 
     <h2 id="特性">特性</h2>
 <ul>
-<li>每次選取最小路徑更新表格</li>
+<li>更新表格時以最短路徑取代</li>
 <li>求出的表格皆為最短路徑</li>
+<li>不含負數權重</li>
 </ul>
 <h2 id="實踐">實踐</h2>
 <ul>
-<li>設一個表格保存s到d的距離，預設為無限，s到s為0Dijkstra 保證正確結果</li>
+<li>設一個表格保存s到d的距離，預設為無限，s到s為0並且Dijkstra 保證正確結果。</li>
 <li>同一點若遇到更優解取代之。</li>
 </ul>
+<h2 id="無向圖實踐">無向圖實踐</h2>
+<p>輸入格式為<code>n</code>代表邊數，輸入兩個節點與權重代表無向圖。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">n
+節點a 節點b 權重
+...
+</code></pre></div><p><img src="dijkstra.svg" alt=""></p>
+<p>輸入範例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">9
+0 2 10
+0 1 9
+1 2 2
+2 3 5
+2 4 11
+4 5 3
+0 5 40
+3 4 2
+3 5 7
+</code></pre></div>
 
     
       <hr>

@@ -137,3 +137,8 @@ a.subheader:hover {
   color: #8282ff;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
