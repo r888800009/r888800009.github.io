@@ -56,17 +56,20 @@ if (!doNotTrack) {
 <li>更新表格時以最短路徑取代</li>
 <li>求出的表格皆為最短路徑</li>
 <li>不含負數權重</li>
+<li>Single-Source Shortest Path演算法</li>
 </ul>
 <h2 id="實踐">實踐</h2>
 <ul>
 <li>設一個表格保存s到d的距離，預設為無限，s到s為0並且Dijkstra 保證正確結果。</li>
 <li>同一點若遇到更優解取代之。</li>
+<li>透過優先佇列選取當前最佳選擇(greedy)。</li>
 </ul>
 <h2 id="無向圖實踐">無向圖實踐</h2>
 <p>輸入格式為<code>n</code>代表邊數，輸入兩個節點與權重代表無向圖。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">n
 節點a 節點b 權重
 ...
+起始節點
 </code></pre></div><p><img src="dijkstra.svg" alt=""></p>
 <p>輸入範例</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">9
@@ -79,12 +82,95 @@ if (!doNotTrack) {
 0 5 40
 3 4 2
 3 5 7
+0
+</code></pre></div><p>這裡採用鄰接矩陣(adjacency matrix)的方式保存無向圖</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">define INF -1</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> adj_matrix[NODE_MAX][NODE_MAX];
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">load_matrix</span>() {
+  <span style="color:#66d9ef">int</span> n;
+  <span style="color:#66d9ef">int</span> node1, node2, weight;
+
+  <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; x <span style="color:#f92672">&lt;</span> NODE_MAX; x<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; y <span style="color:#f92672">&lt;</span> NODE_MAX; y<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) adj_matrix[x][y] <span style="color:#f92672">=</span> INF;
+
+  <span style="color:#75715e">// number of edga
+</span><span style="color:#75715e"></span>  cin <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> n;
+
+  <span style="color:#75715e">// load edga
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span> (n <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+    cin <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> node1 <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> node2 <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> weight;
+    adj_matrix[node1][node2] <span style="color:#f92672">=</span> weight;
+    adj_matrix[node2][node1] <span style="color:#f92672">=</span> weight;
+    n<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+  }
+}
+</code></pre></div><p>dijkstra實做流程如下</p>
+<ol>
+<li>初始化</li>
+<li>設定起始節點放入優先佇列\(Q\)</li>
+<li><code>extractMin</code>取出優先佇列最佳選擇\(u\)</li>
+<li>標記已遍歷的節點，存入\(S\)集合中</li>
+<li>遍歷任何鄰邊，並且更新距離，將未遍歷的節點加入優先佇列中。</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> min_distance[NODE_MAX];
+<span style="color:#66d9ef">int</span> predecessor[NODE_MAX];
+<span style="color:#66d9ef">bool</span> visited[NODE_MAX];
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> start) {
+  priority_queue<span style="color:#f92672">&lt;</span>NodePair, vector<span style="color:#f92672">&lt;</span>NodePair<span style="color:#f92672">&gt;</span>, Compare<span style="color:#f92672">&gt;</span> pq;
+
+  <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> NODE_MAX; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+    min_distance[i] <span style="color:#f92672">=</span> INF;
+    predecessor[i] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    visited[i] <span style="color:#f92672">=</span> false;
+  }
+
+  min_distance[start] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  pq.push({start, <span style="color:#ae81ff">0</span>});
+
+  <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+    <span style="color:#75715e">// extract min
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> u <span style="color:#f92672">=</span> pq.top().nodeIndex;
+    pq.pop();
+
+    <span style="color:#75715e">// mark visited
+</span><span style="color:#75715e"></span>    visited[u] <span style="color:#f92672">=</span> true;
+
+    <span style="color:#75715e">// for each u.adj
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> v <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; v <span style="color:#f92672">&lt;</span> NODE_MAX; v<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+      <span style="color:#66d9ef">if</span> (adj_matrix[u][v] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> INF) <span style="color:#66d9ef">continue</span>;
+
+      <span style="color:#75715e">// relax
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (min_distance[v] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> INF <span style="color:#f92672">|</span><span style="color:#f92672">|</span>
+          min_distance[v] <span style="color:#f92672">&gt;</span> min_distance[u] <span style="color:#f92672">+</span> adj_matrix[u][v]) {
+        predecessor[v] <span style="color:#f92672">=</span> u;
+        min_distance[v] <span style="color:#f92672">=</span> min_distance[u] <span style="color:#f92672">+</span> adj_matrix[u][v];
+      }
+
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>visited[v]) pq.push({v, min_distance[v]});
+    }
+  }
+}
+</code></pre></div><p>範例程式完整原始碼參見<a href="https://github.com/r888800009/practice/blob/master/dijkstra.cpp">github</a></p>
+<p>範例輸出結果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">distance
+	0	1	2	3	4	5	6	7	8	9
+	0	9	10	15	17	20	-1	-1	-1	-1
+predecessor
+	0	1	2	3	4	5	6	7	8	9
+	-1	0	0	2	3	4	-1	-1	-1	-1
 </code></pre></div>
 
     
       <hr>
       
         <a href="https://r888800009.github.io/tags/algorithm" class="tags">Algorithm</a>
+      
+        <a href="https://r888800009.github.io/tags/priority-queue" class="tags">Priority Queue</a>
       
     
     <script>
