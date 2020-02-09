@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.64.0" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>沙箱 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,39 +47,45 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/security-sandbox/" class="post-link">沙箱</a></h1><p>透過沙箱進行惡意軟體分析</p>
-
-    <h1><a href="https://r888800009.github.io/posts/dijkstra/" class="post-link">Dijkstra</a></h1>
-
-    <h1><a href="https://r888800009.github.io/posts/huffman/" class="post-link">霍夫曼編碼</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/keyboard/" class="post-link">鍵盤</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/antlr4/" class="post-link">Antlr4</a></h1><p>antlr4相關筆記</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/chrome/" class="post-link">Chrome</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/rss/" class="post-link">RSS</a></h1><p>RSS 常用資訊</p>
-
-    <h1><a href="https://r888800009.github.io/posts/rabin-karp/" class="post-link">Rabin-Karp演算法</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-ime/" class="post-link">Linux輸入法</a></h1>
-
-    <h1><a href="https://r888800009.github.io/posts/progression-series-missing-number/" class="post-link">等差級數缺少數字</a></h1><p>給定一個不完全的等差數列總和，其中缺少一項數字。</p>
-<p>題目給定總和界限 <code>1 &lt;= sum &lt;= 10 ^ 8</code>，並要求找出缺少值。</p>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">沙箱</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-02-09 23:45:08 &#43;0800 CST">Sun, 2020 Feb 9</time>
+    </div> 
+    <p>透過沙箱進行惡意軟體分析</p>
+<h2 id="性質">性質</h2>
+<ul>
+<li>沙箱可以由硬體、軟體、VM或容器組成</li>
+<li>能夠監控惡意程式碼的行為</li>
+<li>能分析惡意程式的功能</li>
+</ul>
+<h2 id="線上沙箱">線上沙箱</h2>
+<ul>
+<li><a href="https://any.run/">any.run</a></li>
+</ul>
 
     
-    <a href=/page/2/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/information-security" class="tags">Information Security</a>
+      
+        <a href="https://r888800009.github.io/tags/sandbox" class="tags">Sandbox</a>
+      
     
-</div>
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>
