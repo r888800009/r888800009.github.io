@@ -76,6 +76,13 @@ git merge b
 消耗浪費空間，因此採用只抓最後一個commit可以使用<code>--depth 1</code>的方式只抓取最後一個，
 commit。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --depth <span style="color:#ae81ff">1</span> git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+</code></pre></div><h2 id="gpg簽章">GPG簽章</h2>
+<p>啟用commit gpg</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config user.signingkey your_GPG_KEY
+git config commit.gpgsign true
+</code></pre></div><p>測試commit，如果GPG金鑰正確的話應該可以成功commit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">test &gt; test
+git add test ; git commit -m <span style="color:#e6db74">&#34;test gpg&#34;</span>
 </code></pre></div><h2 id="git-實用工具列表">Git 實用工具列表</h2>
 <ul>
 <li><a href="https://github.com/rw251/git-summary">git-summary</a>用來檢查git的狀態</li>
