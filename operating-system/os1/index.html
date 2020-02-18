@@ -51,9 +51,39 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2020-02-17 23:43:40 &#43;0800 CST">Mon, 2020 Feb 17</time>
     </div> 
-    <h1 id="11-什麼是作業系統">1.1 什麼是作業系統</h1>
-<p>由軟體與韌體組成，作為使用者與電腦硬體的操作界面，
-並且管理電腦系統資源</p>
+    <h2 id="11-什麼是作業系統">1.1 什麼是作業系統</h2>
+<p>kernel由<strong>軟體</strong>或<strong>韌體組成</strong>，作為使用者與電腦硬體的操作界面，
+並且管理電腦系統資源。</p>
+<h3 id="四大管理-resources-management">四大管理 (Resources Management)</h3>
+<p>透過作業系統，對裸機(Bare Machine)進行四大管理，
+使電腦能<strong>方便使用</strong>與<strong>最佳效率</strong>。</p>
+<ul>
+<li>Memory management: 決定能夠使用主記憶體的程式。</li>
+<li>Processaor and Process Management: 決定處理元(Process)的運算順序與佇列。</li>
+<li>Device Management: 透過Device Driver驅動Device。</li>
+<li>information Management: 管理儲存媒體的結構內容。</li>
+</ul>
+<p>注: 程式執行時產生兩個以上(含)個process。</p>
+<h3 id="resource-manager">Resource Manager</h3>
+<p>意指Operating System，其功能管理裸機的四大資源。</p>
+<ul>
+<li>紀錄資源狀態</li>
+<li>提供Policy分配資源</li>
+<li>透過Resource Allocator配置資源</li>
+<li>工作結束後，回收資源。</li>
+</ul>
+<h3 id="bootstrap-loader">Bootstrap Loader</h3>
+<p>亦可稱IPL(Inital Program Loader)用於載入作業系統的韌體</p>
+<p>流程</p>
+<ol>
+<li>開機產生中斷使PC指向Bootstrap Loader</li>
+<li>Bootstrap Loader由Disk讀取並載入OS Kernel</li>
+<li>將控制權轉交給Kernel(PC指向kernel)</li>
+<li>OS載入Command Interpreter</li>
+</ol>
+<p>注: 在OS kernel載入完成之後主記憶體會區分出，
+User Area與System Area。</p>
+<p>Command Interpreter用來處理使用者命令。</p>
 
     
       <hr>
