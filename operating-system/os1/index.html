@@ -83,7 +83,18 @@ if (!doNotTrack) {
 </ol>
 <p>注: 在OS kernel載入完成之後主記憶體會區分出，
 User Area與System Area。</p>
-<p>Command Interpreter用來處理使用者命令。</p>
+<h3 id="command-interpreter">Command Interpreter</h3>
+<p>Command Interpreter為作業系統的最前端使用者交互界面界面，
+用來處理使用者命令，亦可稱為<strong>Shell</strong>。</p>
+<p>透過直譯的方式判斷輸入命令文法有無錯誤在進行處理。</p>
+<ul>
+<li>Internal Command: shell載入時同時載入主記憶體中</li>
+<li>External Command: 存放於格外的輔助記憶體，需要時才載入。</li>
+<li>Batch Processing: 將命令寫於檔案內，使用時載入並執行命令。</li>
+</ul>
+<h3 id="accounting">Accounting</h3>
+<p>避免電腦系統被非法使用者存取，以保護電腦系統，
+並且確認使用者資源權限。</p>
 
     
       <hr>
