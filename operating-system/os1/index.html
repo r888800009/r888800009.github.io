@@ -95,6 +95,55 @@ User Area與System Area。</p>
 <h3 id="accounting">Accounting</h3>
 <p>避免電腦系統被非法使用者存取，以保護電腦系統，
 並且確認使用者資源權限。</p>
+<h3 id="program-execution">Program Execution</h3>
+<ul>
+<li>透過shell執行程式</li>
+<li>設定排程或通過Event執行程式，如interrupt</li>
+<li>發生錯誤、硬體損壞、通訊錯誤可透過interrupt處理</li>
+</ul>
+<h3 id="system-call">System Call</h3>
+<p>作為程式與作業系統的界面，以避免<strong>直接</strong>存取系統資源，
+並且限制程式使用資源只能透過System Call，並檢查權限後透過
+作業系統使用資源。</p>
+<ul>
+<li>保護系統資源</li>
+</ul>
+<p>注: 如<code>printf</code>等函數編譯過後轉換成System Call</p>
+<p>DOS Call與BIOS Call與System Call的皆需</p>
+<ul>
+<li>填寫Regisger</li>
+<li>執行中斷呼叫<code>int</code></li>
+</ul>
+<p>但是System Call則嚴密控管系統資源。</p>
+<h3 id="system-protection">System Protection</h3>
+<ul>
+<li>防止為授權使用者存取系統資源以免造成其他程式不正確。</li>
+<li>Dual Mode Protection
+<ul>
+<li>User Mode: 一般使用者只能透過該模式不能直接影響核心</li>
+<li>Monitor/Supervisor Mode: Super User登入使用該模式，進行系統操作</li>
+<li>可透過硬體實做</li>
+</ul>
+</li>
+</ul>
+<p>注: Monitor Mode可稱為Privilegeed Mode、System Mode、Protect Mode</p>
+<p>作業系統</p>
+<ul>
+<li>在監督者模式執行</li>
+<li>Privileged Instruction: Halt System、Turn Interrupt On/Off、Change Mode、I/O</li>
+</ul>
+<p>一般程式</p>
+<ul>
+<li>User Mode</li>
+<li>透過系統呼叫由Monitor Mode處理</li>
+</ul>
+<h2 id="early-system-12">Early System 1.2</h2>
+<ul>
+<li>Job Control Language</li>
+<li>Batch</li>
+<li>Real Time/Time Sharing 分時系統</li>
+<li>Spooling</li>
+</ul>
 
     
       <hr>
