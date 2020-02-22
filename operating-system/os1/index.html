@@ -144,6 +144,48 @@ User Area與System Area。</p>
 <li>Real Time/Time Sharing 分時系統</li>
 <li>Spooling</li>
 </ul>
+<h2 id="terminology">Terminology</h2>
+<ul>
+<li>Batch Processing</li>
+<li>Multiporgramming</li>
+<li>Time Sharing</li>
+<li>Spooling</li>
+<li>Real Time</li>
+<li>Multiprocessing</li>
+<li>Distributed System</li>
+</ul>
+<h3 id="batch-system">Batch System</h3>
+<p>Batch Processing必須透過Job Control Language的方式處理。</p>
+<ul>
+<li>收集多個工作在透過電腦一次執行</li>
+<li>缺乏使用者與程式的交談</li>
+<li>Turnaround Time較長，CPU被閒置</li>
+</ul>
+<p>例子:</p>
+<ul>
+<li>開機處理</li>
+<li>shell command in file</li>
+<li>透過批次處理計算報表</li>
+<li>批次語言: 稱為JCL或Command Language</li>
+</ul>
+<p>Trunaround Time: 意指Submit到電腦工作完成所需的時間(Interval)，
+包含<strong>CPU Time</strong>、<strong>I/O Time</strong>、<strong>等待作業系統時間</strong>等。</p>
+<h3 id="multiprogramming">Multiprogramming</h3>
+<p>多支程式佔有主記憶體時，處理器快速的在多個工作切換。</p>
+<ul>
+<li>如I/O等待時將CPU轉交給其他程式。</li>
+<li>Multioprogramming盡可能使各種設備忙碌，
+以提昇Throughput與CPU Utilization</li>
+</ul>
+<p>注: Throughput指單位時間中完成多少程式(number of processes)</p>
+<h3 id="time-sharing-systems">Time Sharing Systems</h3>
+<p>CPU時間分割成多個Time Slice，
+若有多支程式平分不同時間給不同程式。</p>
+<ul>
+<li>切割time Slice</li>
+<li>程式輪流使用cpu時間片段，限制時間過後由下一個程式存取</li>
+<li>程式提早使用完成片段時(或I/O)，則切換到下一個程式存取。</li>
+</ul>
 
     
       <hr>
