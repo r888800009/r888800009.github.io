@@ -99,7 +99,7 @@ np<span style="color:#f92672">.</span>sum(a)
 <p>導入</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 </code></pre></div><p>定義符號</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y, z <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y z</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y, z <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x y z&#39;</span>)
 </code></pre></div><p>微分與積分</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">diff(sin(x), x)
 integrate(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>x, x)
@@ -107,51 +107,51 @@ integrate(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</spa
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">expr <span style="color:#f92672">=</span> sin(x)
 expr<span style="color:#f92672">.</span>series(x, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>)
 </code></pre></div><p>解方程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x y&#39;</span>)
 e1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y
 e2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>
 solve([e1, e2], [x, y])
 </code></pre></div><p>代入常數或變數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x y&#39;</span>)
 e1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y
 e1<span style="color:#f92672">.</span>evalf(subs<span style="color:#f92672">=</span>{x: <span style="color:#ae81ff">1</span>, y:<span style="color:#ae81ff">2</span>})
 e1<span style="color:#f92672">.</span>evalf(subs<span style="color:#f92672">=</span>{x: <span style="color:#ae81ff">1</span>, y:x})
 </code></pre></div><p><strong>注意: <code>evalf()</code>進行計算的行為，代換變數採用<code>subs()</code></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x y</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x y&#39;</span>)
 e1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">+</span> y
 e1<span style="color:#f92672">.</span>subs({x: <span style="color:#ae81ff">1</span>, y:<span style="color:#ae81ff">2</span>})
 e1<span style="color:#f92672">.</span>subs({x: <span style="color:#ae81ff">1</span>, y:x})
 </code></pre></div><p>左右式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
-eq <span style="color:#f92672">=</span> Eq(x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, x <span style="color:#f92672">*</span><span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x&#39;</span>)
+eq <span style="color:#f92672">=</span> Eq(x <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, x <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>)
 eq<span style="color:#f92672">.</span>lhs
 eq<span style="color:#f92672">.</span>rhs
 </code></pre></div><h3 id="級數">級數</h3>
 <p>我們可以透過sympy來求級數，可以使用<code>Sum()</code>這個指令，
 切記不要和<code>np.sum()</code>搞混。</p>
 <p>可以透過以下方法來求總和，我們求一個<code>1, 2, 3, ..., 10</code>數列總和</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x&#39;</span>)
 f <span style="color:#f92672">=</span> Sum(x, (x, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>))
 f<span style="color:#f92672">.</span>doit()
 </code></pre></div><p>在上面我們定義了一個等差級數<code>f</code>，並且透過<code>f.doit()</code>求解，
 而<code>(x, 0, 10)</code>的<code>0</code>和<code>10</code>代表開始與結尾。</p>
 <p>而sympy也可以求出無窮級數，使用<code>oo</code>作為無限，我們定義一個
 <code>e ^ x</code>的泰勒級數，並且採用<code>doit()</code>來產生<code>e ^ x</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, n <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x n</span><span style="color:#e6db74">&#39;</span>)
-f <span style="color:#f92672">=</span> Sum(x <span style="color:#f92672">*</span><span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> factorial(n), (n, <span style="color:#ae81ff">0</span>, oo))
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x, n <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x n&#39;</span>)
+f <span style="color:#f92672">=</span> Sum(x <span style="color:#f92672">**</span> n <span style="color:#f92672">/</span> factorial(n), (n, <span style="color:#ae81ff">0</span>, oo))
 f<span style="color:#f92672">.</span>doit()
 </code></pre></div><p>執行之後我們可以看出sympy給出了<code>exp(x)</code></p>
 <h3 id="微分方程式求解">微分方程式求解</h3>
 <p>先看我們範例程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
-y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">y</span><span style="color:#e6db74">&#39;</span>, cls<span style="color:#f92672">=</span>Function)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x&#39;</span>)
+y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;y&#39;</span>, cls<span style="color:#f92672">=</span>Function)
 
 diffeq <span style="color:#f92672">=</span> Eq(y(x)<span style="color:#f92672">.</span>diff(x) <span style="color:#f92672">+</span> y(x), <span style="color:#ae81ff">5</span>)
 ans <span style="color:#f92672">=</span> dsolve(diffeq, y(x))
 <span style="color:#66d9ef">print</span>(ans)
 </code></pre></div><p>第一步，宣告自變數<strong>x</strong>與應變數<strong>y</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
-y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">y</span><span style="color:#e6db74">&#39;</span>, cls<span style="color:#f92672">=</span>Function)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;x&#39;</span>)
+y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;y&#39;</span>, cls<span style="color:#f92672">=</span>Function)
 </code></pre></div><p>第二步，定義微分方程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">diffeq <span style="color:#f92672">=</span> Eq(y(x)<span style="color:#f92672">.</span>diff(x) <span style="color:#f92672">+</span> y(x), <span style="color:#ae81ff">5</span>)
 </code></pre></div><p>第三步，求解</p>
@@ -170,19 +170,19 @@ y <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74"></spa
 <span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
 </code></pre></div><p>畫出圖形，可以利用numpy的<code>linspace()</code>來生成點，區間為<code>0~100</code>並且分成20份</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>linspace(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">20</span>)
-y <span style="color:#f92672">=</span> x <span style="color:#f92672">*</span><span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+y <span style="color:#f92672">=</span> x <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
 plt<span style="color:#f92672">.</span>plot(x, y)
 </code></pre></div><p>設定圖表參數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">X</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">f(x) = y</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">This is title</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;X&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;f(x) = y&#39;</span>)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;This is title&#39;</span>)
 </code></pre></div><p>可以加上顯示文字，我們將他放置在20,400的位置</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">400</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(20, 400)</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">400</span>,<span style="color:#e6db74">&#39;(20, 400)&#39;</span>)
 </code></pre></div><p>顯示圖表，可能會發現圖形沒有很精準在數值上，可以把<code>linspace()</code>調整精細</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>show()
 </code></pre></div><p>另外可以採用<code>savefig()</code>來保存圖示，可以保存為<code>png</code>或<code>svg</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fig.svg</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">fig.png</span><span style="color:#e6db74">&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;fig.svg&#39;</span>)
+plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;fig.png&#39;</span>)
 </code></pre></div><p>採用<code>clf()</code>清理上次所畫出圖</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>clf()
 </code></pre></div><h3 id="範例程式">範例程式</h3>
@@ -198,10 +198,10 @@ x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>lin
 y <span style="color:#f92672">=</span> f(x)
 
 plt<span style="color:#f92672">.</span>plot(x, y)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">y</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Plot of the Function f(x) = exp(-x) * sin(2x)</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Copyright@lin</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;x&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;y&#39;</span>)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Plot of the Function f(x) = exp(-x) * sin(2x)&#39;</span>)
+plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.1</span>, <span style="color:#e6db74">&#39;Copyright@lin&#39;</span>)
 
 plt<span style="color:#f92672">.</span>show()
 </code></pre></div><p>範例程式2，繪製兩個函數</p>
@@ -220,11 +220,11 @@ x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>lin
 y1 <span style="color:#f92672">=</span> f1(x)
 y2 <span style="color:#f92672">=</span> f2(x)
 
-plt<span style="color:#f92672">.</span>plot(x, y1, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span>, x, y2, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">--</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">f(x) &amp; g(x)</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Plot of Two Functions</span><span style="color:#e6db74">&#39;</span>)
-plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Copyright@lin</span><span style="color:#e6db74">&#39;</span>)
+plt<span style="color:#f92672">.</span>plot(x, y1, <span style="color:#e6db74">&#39;-&#39;</span>, x, y2, <span style="color:#e6db74">&#39;--&#39;</span>)
+plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;x&#39;</span>)
+plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;f(x) &amp; g(x)&#39;</span>)
+plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Plot of Two Functions&#39;</span>)
+plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">4</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">0.2</span>, <span style="color:#e6db74">&#39;Copyright@lin&#39;</span>)
 
 plt<span style="color:#f92672">.</span>show()
 </code></pre></div><h2 id="laplace-transform">Laplace Transform</h2>
@@ -232,7 +232,7 @@ plt<span style="color:#f92672">.</span>show()
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 <span style="color:#f92672">from</span> sympy.abc <span style="color:#f92672">import</span> t, s
 laplace_transform(t, t, s)
-inverse_laplace_transform(s<span style="color:#f92672">*</span><span style="color:#f92672">*</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), s, t)
+inverse_laplace_transform(s<span style="color:#f92672">**</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>), s, t)
 </code></pre></div><p>註解: <code>Heaviside(t)</code>為單位步階函數\(u(t)\)</p>
 <h2 id="sympy質數">sympy質數</h2>
 <ul>
@@ -247,15 +247,15 @@ isprime(<span style="color:#ae81ff">7</span>)
 prevprime(<span style="color:#ae81ff">10</span>)
 nextprime(<span style="color:#ae81ff">10</span>)
 </code></pre></div><p>輸出</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> [prime(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span>  range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>)]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;&gt;</span> [prime(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span>  range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>)]
 [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>, <span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">19</span>, <span style="color:#ae81ff">23</span>]
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> isprime(<span style="color:#ae81ff">10</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span> isprime(<span style="color:#ae81ff">10</span>)
 False
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> isprime(<span style="color:#ae81ff">7</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span> isprime(<span style="color:#ae81ff">7</span>)
 True
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> prevprime(<span style="color:#ae81ff">10</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span> prevprime(<span style="color:#ae81ff">10</span>)
 <span style="color:#ae81ff">7</span>
-<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> nextprime(<span style="color:#ae81ff">10</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span> nextprime(<span style="color:#ae81ff">10</span>)
 <span style="color:#ae81ff">11</span>
 </code></pre></div><h2 id="參見">參見</h2>
 <ul>

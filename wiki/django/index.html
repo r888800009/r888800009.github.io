@@ -88,8 +88,8 @@ sudo pacman -S python-django
 
 <span style="color:#75715e"># Create your views here.</span>
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">view_def</span>(request):
-    <span style="color:#66d9ef">return</span> render(request, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">template.html</span><span style="color:#e6db74">&#39;</span>, {
-        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">key</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">value</span><span style="color:#e6db74">&#34;</span>,
+    <span style="color:#66d9ef">return</span> render(request, <span style="color:#e6db74">&#39;template.html&#39;</span>, {
+        <span style="color:#e6db74">&#39;key&#39;</span>: <span style="color:#e6db74">&#34;value&#34;</span>,
     })
 </code></pre></div><h3 id="templatehtml">template.html</h3>
 <p>位於資料夾<code>templates</code>，新專案可能需要自己建立一個資料夾。</p>
@@ -110,8 +110,8 @@ sudo pacman -S python-django
 <span style="color:#f92672">from</span> test1.views <span style="color:#f92672">import</span> view_def
 
 urlpatterns <span style="color:#f92672">=</span> [
-    path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">admin/</span><span style="color:#e6db74">&#39;</span>, admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>urls),
-    path(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test/</span><span style="color:#e6db74">&#39;</span>, view_def)
+    path(<span style="color:#e6db74">&#39;admin/&#39;</span>, admin<span style="color:#f92672">.</span>site<span style="color:#f92672">.</span>urls),
+    path(<span style="color:#e6db74">&#39;test/&#39;</span>, view_def)
 ]
 </code></pre></div><p><code>view_def</code>是<code>test1.views</code>當中的函數，用來處理頁面回傳response。</p>
 <p>瀏覽 http://localhost:8000/test/ 查看結果</p>
@@ -119,7 +119,7 @@ urlpatterns <span style="color:#f92672">=</span> [
 <ul>
 <li><code>template</code>可能會因為沒有調整正確的<code>DIRS</code>會出現問題，
 調整<code>settings.py</code>當中的<code>TEMPLATES</code>。
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">DIRS</span><span style="color:#e6db74">&#39;</span>: [os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(BASE_DIR, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">templates</span><span style="color:#e6db74">&#39;</span>)]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#39;DIRS&#39;</span>: [os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(BASE_DIR, <span style="color:#e6db74">&#39;templates&#39;</span>)]
 </code></pre></div></li>
 </ul>
 <h2 id="models">Models</h2>

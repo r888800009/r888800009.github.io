@@ -78,7 +78,7 @@ objdump -s -j .text ./a.out
 <h3 id="pwntools">pwntools</h3>
 <p>構造一個<code>echo</code>的shellcode</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwnlib <span style="color:#f92672">import</span> shellcraft
-shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hello world!</span><span style="color:#e6db74">&#39;</span>)
+shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
 </code></pre></div><h2 id="概念">概念</h2>
 <ul>
 <li><code>little endian</code>: 高位優先</li>
@@ -103,7 +103,7 @@ shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"><
 將導致效率低下。</p>
 <h3 id="指定libc">指定libc</h3>
 <p>pwntools可以透過此方式指定使用的libc。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">echo2</span><span style="color:#e6db74">&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">LD_PRELOAD</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">libc-2.23.so.x86_64</span><span style="color:#e6db74">&#39;</span>})
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;echo2&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;LD_PRELOAD&#39;</span>: <span style="color:#e6db74">&#39;libc-2.23.so.x86_64&#39;</span>})
 </code></pre></div><p>shell可以透過此指令</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">LD_PRELOAD<span style="color:#f92672">=</span>/tmp/libc-2.23.so.x86_64 ./a.out
 </code></pre></div><h3 id="payload輸入">payload輸入</h3>
@@ -111,9 +111,9 @@ shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74"><
 <h2 id="pwn常見問題">Pwn常見問題</h2>
 <p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">amd64</span><span style="color:#e6db74">&#39;</span>
-pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mov rax, 0x732f2f2f6e69622f</span><span style="color:#e6db74">&#39;</span>)
-pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mov rax, 0x732f6e69622f</span><span style="color:#e6db74">&#39;</span>)
+context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;amd64&#39;</span>
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f2f2f6e69622f&#39;</span>)
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f6e69622f&#39;</span>)
 </code></pre></div><h2 id="參見">參見</h2>
 <ul>
 <li><a href="/wiki/format-string-attack/">格式化字串</a></li>

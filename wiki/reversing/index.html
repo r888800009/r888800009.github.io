@@ -66,7 +66,7 @@ objdump -s -j .text ./a.out
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./a.out | less
 </code></pre></div><h2 id="透過python-提取pe-header">透過python 提取PE header</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pefile
-pe <span style="color:#f92672">=</span> pefile<span style="color:#f92672">.</span>PE(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./example.exe</span><span style="color:#e6db74">&#39;</span>)
+pe <span style="color:#f92672">=</span> pefile<span style="color:#f92672">.</span>PE(<span style="color:#e6db74">&#39;./example.exe&#39;</span>)
 </code></pre></div><p>參見<a href="https://wenqingfu.me/post/pe_file/">Python pefile 模块读写 PE 文件</a></p>
 
     
