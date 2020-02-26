@@ -186,6 +186,13 @@ User Area與System Area。</p>
 <li>程式輪流使用cpu時間片段，限制時間過後由下一個程式存取</li>
 <li>程式提早使用完成片段時(或I/O)，則切換到下一個程式存取。</li>
 </ul>
+<p>作業系統在程式使用完時間時，發出<strong>timer interrupt</strong>將資源交給另外一支程式。
+採用queue決定優先順序。</p>
+<p>Time Slice大致採用ms切割時間片段。</p>
+<ul>
+<li>CPU scheduling 與 Multiprogramming (若不同時佔有主記憶體，載入
+會花費大量時間，但Multiprogramming不一定有Time Sharing System)</li>
+</ul>
 
     
       <hr>
