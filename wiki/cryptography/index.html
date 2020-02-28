@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Wikis | r809&#39;s Notes</title>
+<title>密碼學 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,43 +47,55 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Wikis</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/pentest/" class="post-link">滲透</a></h1><p>Penetration Testing筆記</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">密碼學</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-02-28 23:29:26 &#43;0800 CST">Fri, 2020 Feb 28</time>
+    </div> 
+    <h2 id="rsa">RSA</h2>
+<ul>
+<li>公鑰: <code>e</code>, <code>N</code></li>
+<li>私鑰: <code>d</code>, <code>N</code></li>
+</ul>
+<p>公私鑰皆可加密，並且使用相對的密鑰解密。</p>
+<p>參見<a href="https://wsfdl.com/algorithm/2016/02/11/%E7%90%86%E8%A7%A3RSA%E7%AE%97%E6%B3%95.html">理解 RSA 算法</a></p>
+<h3 id="rsa-工具">rsa 工具</h3>
+<ul>
+<li><a href="https://github.com/Ganapati/RsaCtfTool">RsaCtfTool</a></li>
+</ul>
+<h2 id="數位簽署">數位簽署</h2>
+<ul>
+<li>透過發行者的私鑰對資料雜湊值加密產生簽章。</li>
+<li>使用者向發行者索取公鑰，並且對簽章進行解密，
+並且比對其hash值是否與資料相同。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">發行者:
+    file -&gt; encrypt(hash(file), private_key) -&gt; 發行
 
-    <h1><a href="https://r888800009.github.io/wiki/ipv6/" class="post-link">IPv6</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/reversing/" class="post-link">逆向相關資料</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/terminal-tools/" class="post-link">終端機常用工具</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/shell/" class="post-link">Shell</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-desktop/" class="post-link">Linux桌面使用</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/python-math/" class="post-link">Python數學運算與科學運算</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/line-bot/" class="post-link">Line Bot</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/xss/" class="post-link">XSS</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/netcat/" class="post-link">Netcat</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/wiki/>
-      &#x3C;
-    </a>
-    
+使用者:
+    released_file -&gt; decrypt(released_file, public_key) -&gt; 檢查hash值
+</code></pre></div>
 
     
-    <a href=/wiki/page/3/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/information-security" class="tags">Information Security</a>
+      
     
-</div>
-
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>
