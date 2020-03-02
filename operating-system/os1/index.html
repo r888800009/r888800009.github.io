@@ -193,6 +193,19 @@ User Area與System Area。</p>
 <li>CPU scheduling 與 Multiprogramming (若不同時佔有主記憶體，載入
 會花費大量時間，但Multiprogramming不一定有Time Sharing System)</li>
 </ul>
+<h3 id="spooling">Spooling</h3>
+<p>Simultaneous Peripheral Operation On Line用來解決專屬設備共用問題。</p>
+<ul>
+<li>專屬設備: Dedicated Device同時只能被一個程式佔有</li>
+<li>Shared Device: Spooling模擬分享設備，使多個程式佔有
+設備時不會產生輸出問題(如列印資料交疊)</li>
+<li>Spooler: 負責暫存輸出，並依序列印，採用disk作為buffer</li>
+<li>使得<strong>不同程式</strong>中I/O與計算能夠同時進行</li>
+<li>增加CPU與I/O設備的使用率</li>
+</ul>
+<h3 id="real-time">Real Time</h3>
+<h3 id="multiprocessing">Multiprocessing</h3>
+<h3 id="distributed-system">Distributed System</h3>
 
     
       <hr>
