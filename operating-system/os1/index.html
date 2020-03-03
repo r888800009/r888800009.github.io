@@ -203,9 +203,125 @@ User Area與System Area。</p>
 <li>使得<strong>不同程式</strong>中I/O與計算能夠同時進行</li>
 <li>增加CPU與I/O設備的使用率</li>
 </ul>
-<h3 id="real-time">Real Time</h3>
+<h3 id="response-time">Response Time</h3>
+<p>提出請求直到回應的時間。</p>
+<h3 id="on-line--off-line">On Line / Off Line</h3>
+<ul>
+<li>On Line: 設備連接直接由CPU控制</li>
+<li>Off Line: 不與電腦連接</li>
+</ul>
+<h3 id="real-time-system">Real Time System</h3>
+<ul>
+<li>Hard Real Time: 在Trunaround Time內即時反應完成所有工作</li>
+<li>Soft Real Time: 限制時效內反應，更改應用程式的Priority
+使其優先執行。</li>
+</ul>
+<p>立即反應需要On Line，但連線系統不一定即時。</p>
 <h3 id="multiprocessing">Multiprocessing</h3>
+<p>Multiprocessor System，由於同時多個CPU工作可稱為Parallel System。</p>
+<ul>
+<li>緊密性系統: Tightly Coupled System，共用單一電腦中的資源</li>
+<li>多處理器: 增加電腦<strong>產量與可靠度</strong></li>
+<li>優雅衰退: Graceful Degradation，失去部份處理器僅使效能降低。</li>
+<li>軟性失誤: 由於優雅衰退帶有 Fail Soft，避免系統完全停止運作。</li>
+</ul>
+<h4 id="執行方式">執行方式</h4>
+<ul>
+<li>單一程式多CPU</li>
+<li>個別程式個別CPU</li>
+</ul>
+<p>透過Data independent/dependent決定statement能否分配給不同CPU</p>
+<p>若為後者程式需要交流，則由系統進行Synchronous</p>
+<h4 id="作業系統架構">作業系統架構</h4>
+<ul>
+<li>Symmetric Multiprocessing:
+<ul>
+<li>處理器平等(identical)</li>
+</ul>
+</li>
+<li>Asymmetric Multiprocessing (Master/Slave):
+<ul>
+<li>Master Processor: 用於處理作業系統</li>
+<li>Slave Processor: 接收Master命令執行特定工作</li>
+</ul>
+</li>
+</ul>
+<h4 id="frontback-end">Front/Back End</h4>
+<ul>
+<li>Front end Processor: I/O介面卡的CPU</li>
+<li>Back end Processor: Disk controller介面的CPU</li>
+</ul>
+<p>注: 該概念不當成Multiprocessing，<strong>Back End</strong>意指Disk</p>
+<h4 id="duplex-and-dual">Duplex and Dual</h4>
+<ul>
+<li>雙工(Duplex)
+<ul>
+<li>僅使用一套硬體運行，其他硬體作為備用</li>
+<li>支援熱抽換</li>
+<li>為高度容錯系統(Fault Tolerance)，可熱抽換轉用備用，通常可以Nonstop</li>
+</ul>
+</li>
+<li>雙套(Dual)
+<ul>
+<li>適用於正確性保證</li>
+<li>可有兩套以上的系統共同運作，即可稱為Dual System</li>
+<li>比較多個運算結果增加正確性</li>
+</ul>
+</li>
+<li>雙工雙套混合
+<ul>
+<li>以雙套進行運作，損壞時啟用備用系統</li>
+<li>Non stop且運算精確</li>
+</ul>
+</li>
+</ul>
 <h3 id="distributed-system">Distributed System</h3>
+<ul>
+<li>透過Communiaction Lines連接彼此，交換資源。</li>
+<li>電腦網路系統</li>
+</ul>
+<h4 id="multiprocessing比較">Multiprocessing比較</h4>
+<p>Distributed System為<strong>Lossely Coupled System(鬆散性系統)</strong>，彼此不共用
+系統資源(如記憶體)，並且透過Communication Line進行連接。</p>
+<p>Multiprocessing為Tightly Coupled System，其共用系統資源。</p>
+<h4 id="優點">優點</h4>
+<ul>
+<li>Resource Sharing: 可以彼此分享資料來增加可用性</li>
+<li>Computation Speed up:
+<ul>
+<li>Parallel Virtual Machine: 透過多台電腦模擬成單一大型平行處理電腦</li>
+<li>Load sharing: 分散負載</li>
+</ul>
+</li>
+<li>Reliability: 增加可靠性</li>
+<li>Communication</li>
+</ul>
+<h4 id="類型">類型</h4>
+<ul>
+<li>Network Operating System:
+<ul>
+<li>連接在一起的電腦</li>
+<li>共享資源方式: 遠端登入、直接傳輸</li>
+<li>NOS: 可管理網路資源的作業系統</li>
+</ul>
+</li>
+<li>Distrusted Operating System:
+<ul>
+<li><strong>相同作業系統</strong>並連接在一起的電腦</li>
+<li>遠端資源被視為自身的資源</li>
+<li>簡稱DOS</li>
+</ul>
+</li>
+</ul>
+<h3 id="現代作業系統">現代作業系統</h3>
+<ul>
+<li>多使用者</li>
+<li>分散式系統環境(Netwoork)</li>
+<li>支援分時系統</li>
+<li>支援Spoolinog</li>
+<li>即時反應與Priorty</li>
+<li>Batch</li>
+</ul>
 
     
       <hr>
