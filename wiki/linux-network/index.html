@@ -74,9 +74,17 @@ if (!doNotTrack) {
 </code></pre></div><h2 id="pppoe上網">PPPoE上網</h2>
 <p>安裝<code>ppp</code></p>
 <h2 id="iptables">iptables</h2>
-<p>封鎖特定網域</p>
+<p>封鎖特定網域(該方法在背後會轉成IP)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables -A OUTPUT -d <span style="color:#e6db74">&#34;facebook.com&#34;</span> -j DROP
 iptables -A OUTPUT -d <span style="color:#e6db74">&#34;facebook.net&#34;</span> -j DROP
+</code></pre></div><p>批配字串進行丟棄</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables -A OUTPUT -p tcp -m string --string <span style="color:#e6db74">&#34;facebook.com&#34;</span> --algo kmp -j DROP
+iptables -A OUTPUT -p tcp -m string --string <span style="color:#e6db74">&#34;facebook.net&#34;</span> --algo kmp -j DROP
+</code></pre></div><p>保存或編輯<code>iptables.rules</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo iptable-save
+sudo vim /etc/iptables/iptables.rules
+sudo systemctl enable iptables.service
+sudo systemctl start iptables.service
 </code></pre></div><p>移除規則時將<code>-A</code>改成<code>-D</code></p>
 
     

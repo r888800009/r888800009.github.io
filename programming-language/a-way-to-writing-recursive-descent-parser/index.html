@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>編寫Recursive Descent Parser的方法 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">編寫Recursive Descent Parser的方法</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-03-06 12:01:03 &#43;0800 CST">Fri, 2020 Mar 6</time>
+    </div> 
+    <h2 id="前置概念">前置概念</h2>
+<ul>
+<li>BNF/BENF</li>
+<li>文法即function</li>
+<li><strong>拆分Parsing與Scanning</strong></li>
+<li>堆疊操作</li>
+</ul>
+<h2 id="scanner">Scanner</h2>
+<p>採用正則表達式子區分whitespace與Symbol，
+並且建立相關的token table對數值進行保存。</p>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>peekToken()</li>
+<li>getToken()</li>
+</ul>
+<h3 id="延伸">延伸</h3>
+<ol>
+<li>如果Parser總是在成功的時候使用<code>getToken()</code>，
+是否會導致上層遞迴出錯時產生問題呢？</li>
+</ol>
+<h2 id="parser">Parser</h2>
+<p>能臨時保存中間碼確保生成中間碼沒有問題，
+如果在遞迴出錯時也可以還原中間碼，還原
+堆疊以重新建立中間碼。</p>
+<p>在完全批配文法之後，透過中間碼進行計算。</p>
+<h3 id="ebnf">EBNF</h3>
+<ul>
+<li><code>()</code>: 分組</li>
+<li><code>[]</code>: 可選</li>
+<li><code>{}</code>: 重複表達式</li>
+</ul>
+<h3 id="重複表達式">重複表達式</h3>
+<p>意指<code>{}</code>內重複Symbols可以採用<code>while()</code>進行編寫，
+優先peekToken()以確定後面是否為要求的token而進入迴圈。</p>
+<h3 id="中間碼">中間碼</h3>
+<p>在確認文法<strong>正確之後</strong>生成中間碼(於 return 之前或 call funcion 之後)，
+<strong>如果上層文法出錯，透過上層進行還原中間碼流程</strong>。</p>
+<h2 id="參見">參見</h2>
+<ul>
+<li><a href="/system-program/sp5/">[SP] 編譯器</a></li>
+<li><a href="/system-program/sp6/">[SP]Francis Compiler</a></li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/programming-language" class="tags">Programming Language</a>
+      
+        <a href="https://r888800009.github.io/tags/system-program" class="tags">System Program</a>
+      
+        <a href="https://r888800009.github.io/tags/compiler" class="tags">Compiler</a>
+      
+    
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2020.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
