@@ -51,7 +51,8 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-09-15 04:39:57 &#43;0800 CST">Sun, 2019 Sep 15</time>
     </div> 
-    <h2 id="斷言">斷言</h2>
+    <p>筆記各種除錯的方式，如斷言、反向除錯等</p>
+<h2 id="斷言">斷言</h2>
 <p>斷言(Assertions)，在C中assert為macro不是function，使用時需要<code>#include &lt;assert.h&gt;</code>，
 程式出現非預期的數值時則結束程式用於除錯。</p>
 <p>以下程式原本<code>square()</code>預期為<code>i * i</code>，但返回卻是<code>i * i + 1</code>，
@@ -76,6 +77,38 @@ if (!doNotTrack) {
 <ul>
 <li><a href="http://liuyu314.github.io/c/2013/06/12/assertion/">断言的魅力</a></li>
 </ul>
+<h2 id="反向除錯">反向除錯</h2>
+<p>回溯記憶體</p>
+<p>Effective Debugging 建議熟悉反向除錯的技巧，可以節省除錯步驟增加效率<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>而反向除錯實踐技術有重放、反向執行、檢查點等相關<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<h3 id="工具">工具</h3>
+<ul>
+<li><code>gdb</code>: record, checkpoint</li>
+<li><code>Mozilla rr</code>: <a href="https://github.com/mozilla/rr">github</a> 用於錄製
+執行錯誤的過程。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacaur -S rr
+</code></pre></div><h3 id="參見">參見</h3>
+<ul>
+<li><a href="https://github.com/mozilla/rr/wiki/Usage">rr使用手冊</a></li>
+</ul>
+<h2 id="核心傾印">核心傾印</h2>
+<p>Core Dump，核心轉儲內容為崩潰程式的記憶體影像<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<h2 id="延伸">延伸</h2>
+<ul>
+<li><a href="https://maskray.me/blog/2015-03-14-debug-hacks-2">MaskRay 調試技巧2</a></li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Effective Debugging 第四章 除錯技巧 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Engblom, J., 2012, September. A review of reverse debugging. In Proceedings of the 2012 System, Software, SoC and Silicon Debug Conference (pp. 1-6). IEEE. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
     
       <hr>

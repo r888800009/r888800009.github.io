@@ -108,6 +108,8 @@ shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">LD_PRELOAD<span style="color:#f92672">=</span>/tmp/libc-2.23.so.x86_64 ./a.out
 </code></pre></div><h3 id="payload輸入">payload輸入</h3>
 <p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
+<h3 id="反向除錯">反向除錯</h3>
+<p>參見<a href="/wiki/debug/#反向除錯">除錯</a></p>
 <h2 id="pwn常見問題">Pwn常見問題</h2>
 <p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
