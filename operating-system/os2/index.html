@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>[OS] Computer System Structure  | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[OS] Computer System Structure </a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-03-03 17:43:22 &#43;0800 CST">Tue, 2020 Mar 3</time>
+    </div> 
+    <h2 id="21-computer-system-operation">2.1 Computer System Operation</h2>
+<ul>
+<li>執行程式: Disk -&gt; bus -&gt; Main Memory -&gt; CPU執行</li>
+<li>adapter
+<ul>
+<li>Disk Controller: 控制Disk工作</li>
+<li>Interface Card: 控制I/O</li>
+</ul>
+</li>
+</ul>
+<p>Main Memory作為整個系統的中繼點，不單只有CPU可以控制，
+其他I/O設備也可以進行操作。</p>
+<h3 id="現代電腦系統">現代電腦系統</h3>
+<ul>
+<li><strong>並行 (Concurrent)</strong>: CPU, Disk Controller, I/O 都可能同時運作</li>
+<li>主記憶體
+<ul>
+<li>主記憶體只能被一個設備佔用，記憶體控制器安排使用順序</li>
+<li>Memory Controller提供<strong>同步 (Synchronous)</strong></li>
+<li>同步: 依序存取主記憶體，不允許同時存取主記憶體</li>
+</ul>
+</li>
+<li>設備
+<ul>
+<li>設備完成工作並發出<strong>interrupt</strong>通知CPU</li>
+<li>CPU透過<strong>Polling</strong>檢查設備狀態</li>
+<li>DMA: Direct Memory access，以用於大量資料傳輸，取代前兩者</li>
+</ul>
+</li>
+</ul>
+<h4 id="polling">Polling</h4>
+<p>由Master unit circularcheck各個slave單元的狀態</p>
+<h4 id="interrupt">Interrupt</h4>
+<p>設備與程式透過中斷通知CPU，CPU停止當前工作並處理對映工作。</p>
+<ul>
+<li>提高CPU</li>
+<li>事件: 改變CPU執行的次序</li>
+</ul>
+<h4 id="polling-vs-interrupt">Polling vs Interrupt</h4>
+<ul>
+<li>中斷可以提高CPU效率</li>
+<li>CPU必須輪詢以確認多個設備發生中斷的設備進行處理</li>
+</ul>
+<!-- raw HTML omitted -->
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/operating-system" class="tags">Operating System</a>
+      
+    
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2020.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
