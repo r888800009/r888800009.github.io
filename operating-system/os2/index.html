@@ -94,6 +94,46 @@ if (!doNotTrack) {
 <li>中斷可以提高CPU效率</li>
 <li>CPU必須輪詢以確認多個設備發生中斷的設備進行處理</li>
 </ul>
+<h2 id="22-interrupt-service">2.2 Interrupt Service</h2>
+<h3 id="中斷的類型">中斷的類型</h3>
+<p>中斷發生處理流程</p>
+<ol>
+<li>轉回控制權給作業系統</li>
+<li>OS保存<strong>當前</strong>程式CPU狀態(注: 保存的PC為當前執行指令 + 1)</li>
+<li>OS識別中斷，以呼叫Interrupt Service Routine</li>
+<li>完成ISR，並還原CPU狀態</li>
+<li>執行中斷時的下一指令</li>
+</ol>
+<p>注:</p>
+<ul>
+<li>因為指令週期只在最後檢查中斷，因此會完成當前指令。</li>
+<li>由於硬體設計，CPU接收中斷時即可保存當前CPU狀態存入，之後才轉交PC控制權給OS，
+因此不會有保存到OS本身CPU Status的問題
+<ul>
+<li>Program Status Word</li>
+<li>Global Stack</li>
+<li>Global Memory</li>
+</ul>
+</li>
+<li>中斷向量(Interrupt Vector)保存中斷服務函數地址，
+發生時，透過中斷編號找到對映的中斷。</li>
+</ul>
+<h4 id="分類1">分類1</h4>
+<ul>
+<li>External Interrupt: By hardware</li>
+<li>Internal Interrupt: Stack Overflow, Divided by Zero, Protect Violation
+(如存取到不該存取的記憶體)</li>
+<li>Software Interrupt: 軟體中斷，SVC (Supervisor Call)</li>
+</ul>
+<h4 id="分類2">分類2</h4>
+<ul>
+<li>Restart Interrupt</li>
+<li>I/O Interrupt</li>
+<li>External Interrupt: 計時器, Console</li>
+<li>Supervisor Call</li>
+<li>Software Check Interrupt</li>
+<li>Machine Check Interrupt</li>
+</ul>
 <!-- raw HTML omitted -->
 
     
