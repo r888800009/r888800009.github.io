@@ -58,24 +58,33 @@ if (!doNotTrack) {
 <li><strong>拆分Parsing與Scanning</strong></li>
 <li>堆疊操作</li>
 </ul>
+<h2 id="要求">要求</h2>
+<ol>
+<li><strong>每個展開式的the set of first token必須無交集</strong>，使文法可以不往前檢查即可判定錯誤</li>
+<li>無left recursion</li>
+</ol>
 <h2 id="scanner">Scanner</h2>
 <p>採用正則表達式子區分whitespace與Symbol，
 並且建立相關的token table對數值進行保存。</p>
 <h3 id="methods">Methods</h3>
 <ul>
-<li>peekToken()</li>
-<li>getToken()</li>
+<li>peekToken(): 獲取下一個token值</li>
+<li>getToken(): 獲取當前的token值</li>
 </ul>
 <h3 id="延伸">延伸</h3>
 <ol>
 <li>如果Parser總是在成功的時候使用<code>getToken()</code>，
 是否會導致上層遞迴出錯時產生問題呢？</li>
 </ol>
+<p>確保token能使用之後，在取得token，並且根據無交集的文法，
+在進入時判斷正確後在獲取可以避免回溯的問題。</p>
 <h2 id="parser">Parser</h2>
-<p>能臨時保存中間碼確保生成中間碼沒有問題，
+<p><del>能臨時保存中間碼確保生成中間碼沒有問題，
 如果在遞迴出錯時也可以還原中間碼，還原
-堆疊以重新建立中間碼。</p>
+堆疊以重新建立中間碼。</del></p>
+<p>若Parser總是不進行回溯的話，則沒有必要進行回溯的行為。</p>
 <p>在完全批配文法之後，透過中間碼進行計算。</p>
+<p>Function 呼叫即為parser tree因此不必另外建立剖析樹。</p>
 <h3 id="ebnf">EBNF</h3>
 <ul>
 <li><code>()</code>: 分組</li>
