@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book-notes on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/book-notes/</link>
+    <description>Recent content in Book-notes on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 12 Mar 2020 20:40:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/book-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[Exploiting Software] 第六節 製造惡意輸入</title>
+      <link>https://r888800009.github.io/book-notes/exploiting-software/ch6-notes/</link>
+      <pubDate>Thu, 12 Mar 2020 20:40:03 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/book-notes/exploiting-software/ch6-notes/</guid>
+      <description>&lt;p&gt;關於本書閱讀的隨筆筆記，尚有不完備之處&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

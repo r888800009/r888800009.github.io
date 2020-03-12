@@ -135,6 +135,50 @@ if (!doNotTrack) {
 <li>Machine Check Interrupt</li>
 </ul>
 <p>注: console在早期電腦系統中，多為系統管理員操作，雖為I/O設備而有格外的分類。</p>
+<ul>
+<li>cold start: 開啟電源並開機</li>
+<li>warm start: 電腦本來已經擁有電源，重新啟動</li>
+</ul>
+<h3 id="trap">Trap</h3>
+<ul>
+<li>安排過可預期的中斷</li>
+<li>軟中斷</li>
+<li>System Call為典型的trap</li>
+<li>刻意使程式產生錯誤，其發生的中斷也為trap</li>
+</ul>
+<h3 id="system-call的處理">System call的處理</h3>
+<ol>
+<li>程式產生陷阱，進入監督者模式(控制權轉交給OS)</li>
+<li><strong>保存當CPU狀態</strong></li>
+<li>判斷中斷向量</li>
+<li><strong>執行中斷</strong></li>
+<li>復原CPU狀態，並回到Trap繼續執行</li>
+</ol>
+<h3 id="中斷優先級">中斷優先級</h3>
+<p>如何解決同時發生的中斷？</p>
+<ul>
+<li>透過中斷優先級決定是否再次中斷</li>
+</ul>
+<h4 id="如何實現">如何實現</h4>
+<ul>
+<li>Polling: 輪詢時，次序即可決定中斷優先級</li>
+<li>Daisy Chain: 硬體機制，透過串接的and與not邏輯閘(not位於先前的中斷)，
+之後就可以優先輸出前者</li>
+<li>Parrallel Priority Interrupt: 軟體機制，並且在PC上面使用，
+Mask register決定啟用或禁用，啟用的中斷可以執行，<strong>ISP中包含Mask register</strong>
+根據不同優先級對其更改。</li>
+</ul>
+<p>注:</p>
+<ul>
+<li>Daisy Chain: 串連的硬體，如SCSI界面，並且同時只能啟用單一硬體。</li>
+</ul>
+<h3 id="對中斷的反應">對中斷的反應</h3>
+<p>大多數情況中斷發生時都必須立刻處理，不過依然有例外情況。</p>
+<ul>
+<li>Occur: 高優先級，System call， 系統保護</li>
+<li>Pending: I/O</li>
+<li>Ignore: 如溢位處理</li>
+</ul>
 <!-- raw HTML omitted -->
 
     
