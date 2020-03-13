@@ -179,7 +179,18 @@ Mask register決定啟用或禁用，啟用的中斷可以執行，<strong>ISP�
 <li>Pending: I/O</li>
 <li>Ignore: 如溢位處理</li>
 </ul>
-<!-- raw HTML omitted -->
+<h2 id="23-io-interrupts">2.3 I/O Interrupts</h2>
+<ul>
+<li>同步I/O: CPU必須<strong>等待</strong>I/O完成</li>
+<li>非同步I/O: CPU與I/O分離，並且定期檢查是否有I/O內容</li>
+</ul>
+<p>Time Sharing中，CPU在等待I/O時，會優先切換至其他程式中</p>
+<h3 id="data-communication">data communication</h3>
+<ul>
+<li>同步: 收送共用時脈</li>
+<li>非同步: 透過同步訊號(start bit / stop bit)處理資料，
+而同步訊號之間放置資料 Ex: 網路</li>
+</ul>
 
     
       <hr>
