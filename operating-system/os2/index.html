@@ -191,6 +191,47 @@ Mask register決定啟用或禁用，啟用的中斷可以執行，<strong>ISP�
 <li>非同步: 透過同步訊號(start bit / stop bit)處理資料，
 而同步訊號之間放置資料 Ex: 網路</li>
 </ul>
+<h3 id="direct-memory-access">Direct Memory Access</h3>
+<ul>
+<li>中斷不適合處理大量資料傳輸</li>
+<li>適合高速設備傳輸</li>
+<li>直接透過bus傳送資料到main memory</li>
+<li>控制器傳送DMA訊號給CPU，使<strong>CPU閒置</strong>而<strong>不儲存狀態</strong>
+避免影響bus。</li>
+</ul>
+<h4 id="特性">特性</h4>
+<ul>
+<li>一次傳輸大量資料</li>
+<li>高速I/O設備</li>
+<li>增加I/O產能</li>
+<li>減少中斷</li>
+<li>由於CPU閒置，降低CPU產能</li>
+</ul>
+<h3 id="cycle-stealing">Cycle Stealing</h3>
+<ul>
+<li>與DMA的差別，在於閒置時間為一個Memory cycle</li>
+<li>或者在CPU計算時，進行Memory access</li>
+</ul>
+<h3 id="buffer">buffer</h3>
+<p>作為<strong>高低速設備之間</strong>的緩衝，以增加高速設備的效能，
+而低速設備則可以處理數據。</p>
+<p>E.g. 印表機與CPU傳輸資料</p>
+<h4 id="physical-record">Physical Record</h4>
+<ul>
+<li>1 Physical Record = 1 Sector = 1 block = buffer</li>
+<li>N Logical Records (一筆數據)</li>
+<li>Blocking: 將多個Logical record Blocking成一個block</li>
+<li>Blocking factor: block中logical的數量</li>
+<li>每次讀寫Logical records時，填滿之後才會進行Physical I/O</li>
+</ul>
+<p>關於設備</p>
+<ul>
+<li>character device: 每次以char為單位, RS232, USB</li>
+<li>block device: 以block為單位, disk</li>
+</ul>
+<h3 id="double-buffer">Double Buffer</h3>
+<p>兩個buffer個別填滿之後發生中斷，
+其中一個buffer填滿之後，則換填充另一個</p>
 
     
       <hr>
