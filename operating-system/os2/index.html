@@ -232,6 +232,65 @@ Mask register決定啟用或禁用，啟用的中斷可以執行，<strong>ISP�
 <h3 id="double-buffer">Double Buffer</h3>
 <p>兩個buffer個別填滿之後發生中斷，
 其中一個buffer填滿之後，則換填充另一個</p>
+<h2 id="24-storage-structure">2.4 storage structure</h2>
+<ul>
+<li>
+<p>von veumann architecture</p>
+</li>
+<li>
+<p>Main Memory: Volatility</p>
+</li>
+<li>
+<p>Secondary Memory: non Volatility</p>
+</li>
+<li>
+<p>Memory mapped I/O: 對記憶體特定位置進行I/O，進而控制device</p>
+<ul>
+<li>memory 填寫進行I/O</li>
+</ul>
+</li>
+<li>
+<p>Device mapped I/O: Main Memory與I/O的memory分離，並且需要使用I/O instruction</p>
+<ul>
+<li>statement (fucntion call)</li>
+<li>DOS/BIOS call (system call)</li>
+</ul>
+</li>
+</ul>
+<p>進行I/O的方式</p>
+<ul>
+<li>statement (fucntion call)</li>
+<li>DOS/BIOS call (system call)</li>
+<li>memory 填寫進行I/O，需要Protect</li>
+</ul>
+<h3 id="secondary-memory">secondary memory</h3>
+<p>階層式記憶體</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">reg &lt;-&gt; cache &lt;-&gt; Main Memory &lt;-&gt; Secondary Memory
+</code></pre></div><ul>
+<li>由以上4者組成Hierarchical storage</li>
+<li>大小: reg &lt; cache &lt; main memory &lt; Secondary</li>
+<li>Replacemeny Policy: 80~90% hit ratio</li>
+</ul>
+<h3 id="address-space">Address space</h3>
+<p>程式能合法使用的記憶體範圍，
+原則上只能存取本身的記憶體，
+或者透過system call存取其他資源</p>
+<h2 id="25-hardware-protection">2.5 Hardware Protection</h2>
+<p>避免未授權資源受到存取導致異常</p>
+<p>監督者模式執行的命令為privileged instruction</p>
+<ul>
+<li>I/O protection: 透過系統呼叫進行I/O存取其他資源</li>
+<li>Memory Protection: Bounded register的範圍都可以存取，
+否則需要透過System call存取其他資源</li>
+<li>CPU proctection: 避免<strong>停止問題(Halting Problem)</strong>，永不停止的問題，
+Timer用於解決該問題，並且發出<strong>Time out interrupt</strong>
+<ul>
+<li>Time Sharing也能避免完全占用</li>
+</ul>
+</li>
+<li>File Protection: 只能存取授權或自己的目錄，對Access capability保護</li>
+</ul>
+<p>Context Switch: 交換佔有cpu的行為</p>
 
     
       <hr>
