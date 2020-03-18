@@ -6,10 +6,19 @@
     <description>Recent content in Operating-systems on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 03 Mar 2020 17:43:22 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 09:20:08 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/operating-system/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[OS] Operating System Structure</title>
+      <link>https://r888800009.github.io/operating-system/os3/</link>
+      <pubDate>Tue, 17 Mar 2020 09:20:08 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/operating-system/os3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>[OS] Computer System Structure </title>

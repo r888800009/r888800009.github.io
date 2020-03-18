@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.67.0" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>[OS] Operating System Structure | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,51 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/r/" class="post-link">R</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/gcc/" class="post-link">GCC</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/python/" class="post-link">Python</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/format-string-attack/" class="post-link">格式化字串攻擊</a></h1><p>格式化字串筆記</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/pwn-notes/" class="post-link">pwn常用指令與概念</a></h1><p>pwn常用指令以及概念紀錄</p>
-
-    <h1><a href="https://r888800009.github.io/posts/php-post-get-fpd/" class="post-link">PHP傳入POST與GET導致FPD漏洞</a></h1><p>php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/docker/" class="post-link">Docker</a></h1><p>Docker的筆記</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-permission/" class="post-link">Linux權限</a></h1><p>關於Linux權限的筆記</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-file/" class="post-link">Linux文件管理</a></h1><p>Linux一些常用於文件管理的筆記。</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/archlinux/" class="post-link">Arch Linux</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/page/8/>
-      &#x3C;
-    </a>
-    
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[OS] Operating System Structure</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-03-17 09:20:08 &#43;0800 CST">Tue, 2020 Mar 17</time>
+    </div> 
+    <h2 id="31-resource-management">3.1 Resource Management</h2>
+<h3 id="process">Process</h3>
+<ul>
+<li>Program: 一串的指令。 (Passive entity)</li>
+<li>Process: 正在執行的program (Active entity)</li>
+<li>job: 集中多個處理事項一起處理(批次)，可以由
+多個job step (a program)組成</li>
+</ul>
+<h4 id="process-management-的工作">Process Management 的工作</h4>
+<ul>
+<li><strong>cration, deletion, suspension, resumption</strong></li>
+<li>提供機制: process 的<strong>同步</strong>, <strong>溝通</strong>, <strong>死結</strong></li>
+</ul>
+<h3 id="memory-management">Memory Management</h3>
+<ul>
+<li>跟蹤process的使用狀況</li>
+<li>決定process是否獲取記憶體，分配的記憶體數量</li>
+<li>分配與取消分配</li>
+</ul>
 
     
-    <a href=/page/10/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/operating-system" class="tags">Operating System</a>
+      
     
-</div>
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>
