@@ -142,6 +142,11 @@ if (!doNotTrack) {
 <li>Mix Columns: 對每個字節進行混合變換</li>
 <li>Add roundkey: 狀態與key使用xor進行運算</li>
 </ul>
+<h3 id="key-lengths">key lengths</h3>
+<p>過長的長度可能在當下消耗的性能過多成為格外的累綴，
+而在不同的長度提供了彈性，在當下機器還不能有效破解
+金鑰時採用較低的長度，抱持安全性也保持性能，
+並且延長演算法使用年限。</p>
 <h2 id="隨機偽隨機">隨機偽隨機</h2>
 <p>何謂隨機</p>
 <ul>
@@ -169,7 +174,7 @@ if (!doNotTrack) {
 </ol>
 <h2 id="block-cipher">block cipher</h2>
 <ul>
-<li>Electronic Codebook Mode: 透過密碼本，不過當中Block可能有重複，
+<li>Electronic Codebook Mode: 透過相同key進行block的加密，不過當中Block可能有重複，
 會透露出相關性降低安全性</li>
 <li>Cipher Block Chining:
 <ul>
