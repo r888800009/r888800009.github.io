@@ -122,6 +122,37 @@ if (!doNotTrack) {
 <li>External view: 使用者能看到的部份，kernel之上層（不包含</li>
 <li>Internal view: kernel與底下的層</li>
 </ul>
+<h2 id="34-virtual-machine">3.4 Virtual Machine</h2>
+<p>使用者認為虛擬資源都是自己擁有的，並且透過
+作業系統將虛擬資源轉換成實際資源並操縱</p>
+<p>使用者的程式有自己的</p>
+<ul>
+<li>cpu: 背後必須要有Time Sharing</li>
+<li>記憶體: virtual memroy</li>
+<li>支持Spooling</li>
+</ul>
+<p>作業系統提供</p>
+<ul>
+<li>Time Multiplex: 即為time Sharing</li>
+<li>Space Multiplex: 為Multiprogramming</li>
+</ul>
+<p><strong>作業系統提供分層結構，使程式只需要專注於邏輯設計，
+而底層細微操控則由作業系統處理。</strong></p>
+<p>VM其他的概念</p>
+<ul>
+<li>Java Virtual Machine: 也僅需要專注邏輯設計而不與機器相關，也為VM</li>
+<li>電腦模擬不同架構的電腦功能也為VM</li>
+<li>作業系統，模擬其他系統</li>
+</ul>
+<h2 id="35-system-design-and-implementation">3.5 System Design and Implementation</h2>
+<p>作業系統分離<strong>Mechanism</strong>,<strong>Policy</strong></p>
+<ul>
+<li>Mechanism: 能夠使用的基本功能，<strong>如何作(function)</strong></li>
+<li>Policy: 透過機制進行特定工作，<strong>作什麼事情(parameters)</strong></li>
+</ul>
+<p>政策改變僅需要更改參數即可</p>
+<h2 id="36-system-generation-安裝">3.6 System Generation 安裝</h2>
+<p>安裝系統時，可能需要對Policy進行調整等，以批配機器。</p>
 
     
       <hr>
