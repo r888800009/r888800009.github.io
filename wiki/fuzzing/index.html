@@ -70,6 +70,13 @@ if (!doNotTrack) {
 </code></pre></div><h3 id="afl">afl</h3>
 <p>安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S afl
+</code></pre></div><h3 id="afl-1">AFL</h3>
+<p>編譯被測試程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-gcc main.c
+</code></pre></div><p>編寫測資後，測試程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out
+</code></pre></div><p>或使用參數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out @@
 </code></pre></div>
 
     
