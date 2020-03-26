@@ -141,7 +141,29 @@ if (!doNotTrack) {
 <li>all I/O bound: cpu排程器無負荷</li>
 <li>all cpu bound: 極為緩慢，用完time slice</li>
 </ul>
-<!-- raw HTML omitted -->
+<h2 id="43-process-operating">4.3 process operating</h2>
+<p>shell等待直到輸入，
+shell輸入命令後透過fork產生另外一個shell process，
+並且新的process會以預計開啟的程式取代當前process的內容。</p>
+<h3 id="處理元功能">處理元功能</h3>
+<p>System call</p>
+<ul>
+<li><strong>fork</strong></li>
+<li><strong>execve</strong></li>
+<li>wait: parent process等待children process全部執行完畢之後，
+由block切換到readly</li>
+<li>exit: 控制權回到OS</li>
+<li>abort: 結束process，並且有<strong>Cascading Termination</strong></li>
+</ul>
+<h3 id="fork">fork</h3>
+<p>process產生新的process，其程式碼與資源相同，
+新的process由fork之後繼續執行。</p>
+<ul>
+<li>parent process: pid != 0</li>
+<li>children process: pid = 0</li>
+</ul>
+<h3 id="execve">execve</h3>
+<p>透過預定開啟的程式的process蓋過當前的處理元。</p>
 
     
       <hr>
