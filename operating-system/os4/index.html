@@ -164,6 +164,34 @@ shell輸入命令後透過fork產生另外一個shell process，
 </ul>
 <h3 id="execve">execve</h3>
 <p>透過預定開啟的程式的process蓋過當前的處理元。</p>
+<h2 id="44-合作process">4.4 合作process</h2>
+<p>可以<strong>影響</strong>或<strong>被影響</strong>的process之間為cooperating process。</p>
+<p>ex: execve產生的process彼此之間為合作process</p>
+<ul>
+<li>concurrent process: 並行處理元，在time sharing環境process都輪流佔有CPU time slice。</li>
+<li>Independent Process: 相對於cooperating process，不受其他process影響的。</li>
+</ul>
+<h3 id="process-互助的目的">process 互助的目的</h3>
+<ul>
+<li>information sharing</li>
+<li>Computation speedup</li>
+<li>Modularity</li>
+<li>convenience</li>
+</ul>
+<p><strong>合作處理元範例</strong></p>
+<ul>
+<li><strong>pipe</strong>: <code>cat file file2 | sort</code></li>
+</ul>
+<h3 id="producer-and-consumer">Producer and Consumer</h3>
+<p>Producer 與 Consumer的架構， 由於process為非同步因此中間<strong>必須</strong>有buffer，
+選兩個process找出當中的關係。</p>
+<p>buffer透過ring buffer(circuler buffer)處理</p>
+<ul>
+<li>producer: 產生資料，若buffer滿的話，必須讓producer wait</li>
+<li>consumer: 使用資料，若buffer為空，必須讓consumer wait</li>
+</ul>
+<p>注: 由於設備有時間差，為了避免完全填滿或空buffer，
+透過經驗法則去決定何時wait，如7分滿或3分滿時。</p>
 
     
       <hr>
