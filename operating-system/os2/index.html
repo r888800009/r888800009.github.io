@@ -117,6 +117,7 @@ if (!doNotTrack) {
 </li>
 <li>中斷向量(Interrupt Vector)保存中斷服務函數地址，
 發生時，透過中斷編號找到對映的中斷。</li>
+<li>CPU Status: registers, PC, stack..</li>
 </ul>
 <h4 id="分類1">分類1</h4>
 <ul>
@@ -141,8 +142,8 @@ if (!doNotTrack) {
 </ul>
 <h3 id="trap">Trap</h3>
 <ul>
+<li><strong>軟體中斷</strong></li>
 <li>安排過可預期的中斷</li>
-<li>軟中斷</li>
 <li>System Call為典型的trap</li>
 <li>刻意使程式產生錯誤，其發生的中斷也為trap</li>
 </ul>
@@ -206,6 +207,11 @@ Mask register決定啟用或禁用，啟用的中斷可以執行，<strong>ISP�
 <li>增加I/O產能</li>
 <li>減少中斷</li>
 <li>由於CPU閒置，降低CPU產能</li>
+</ul>
+<h4 id="補充">補充</h4>
+<ul>
+<li>傳統cpu有dma訊號線</li>
+<li>如果cpu內有南北橋，可以透過中斷去處理DMA而不用格外DMA訊號線</li>
 </ul>
 <h3 id="cycle-stealing">Cycle Stealing</h3>
 <ul>
