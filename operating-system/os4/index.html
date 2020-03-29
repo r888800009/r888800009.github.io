@@ -52,6 +52,7 @@ if (!doNotTrack) {
         <time datetime="2020-03-23 10:47:48 &#43;0800 CST">Mon, 2020 Mar 23</time>
     </div> 
     <h2 id="41-process-基本概念">4.1 process 基本概念</h2>
+<p>Process為處理程序</p>
 <ul>
 <li>程式做I/O時，System Call會產生I/O Process，所以在大部份情況，
 程式都有兩個或以上個process。</li>
@@ -192,6 +193,92 @@ shell輸入命令後透過fork產生另外一個shell process，
 </ul>
 <p>注: 由於設備有時間差，為了避免完全填滿或空buffer，
 透過經驗法則去決定何時wait，如7分滿或3分滿時。</p>
+<h2 id="45-thread">4.5 Thread</h2>
+<p>Process (Heavy Weight Process, HWP) 遇到的問題</p>
+<ul>
+<li>多個Process在執行相同程式，使得消耗的記憶體比較多。</li>
+<li>Context Switch時，相同程式不同process切換降低了性能 ( Address Space 的切換)。</li>
+</ul>
+<p>Thread (Light Weight Process, LWP)</p>
+<ul>
+<li>Process有1個與以上個Thread</li>
+<li>不需要中斷: Process切換需要中斷</li>
+<li>共用 Address Space
+<ul>
+<li>Code Section</li>
+<li>Data Section</li>
+<li>資源</li>
+</ul>
+</li>
+<li>不共用
+<ul>
+<li>PC</li>
+<li>Register Set</li>
+<li>Stack Space</li>
+</ul>
+</li>
+</ul>
+<p>優點:</p>
+<ol>
+<li>執行<strong>相同的流程</strong></li>
+<li>讓<strong>Context Switch低代價</strong>: 可以讓n個function concurrent</li>
+</ol>
+<p>特性:</p>
+<ul>
+<li>不必生成格外的Address Space，並且依附Process生成與結束</li>
+<li>快速的 Context Switch</li>
+<li>由於資料共用，不必 <strong>Inter Process Communication (IPC)</strong></li>
+<li><strong>無法保護共享資料資料</strong></li>
+</ul>
+<h3 id="分類">分類</h3>
+<ul>
+<li>User Thread
+<ul>
+<li>編寫應用程式的thread</li>
+<li>Thread Scheduler: library大多提供 Context Switch，
+不必中斷使<strong>OS對Process Constext Switch</strong></li>
+<li><strong>Process 分配本身的 time slice 給不同 Thread</strong></li>
+<li>I/O 中斷: 可能導致 Process 當中所有的 thread 被 block</li>
+</ul>
+</li>
+<li>Kernel Thread
+<ul>
+<li>Kernel 管理的 Thread</li>
+<li>必須<strong>消耗中斷 (System Call) 的成本</strong></li>
+<li><strong>由OS排程: Thread 一個 Time slice</strong></li>
+<li>I/O 中斷: Thread 各自 block (OS 各自排程)</li>
+</ul>
+</li>
+</ul>
+<p>參見</p>
+<ul>
+<li><a href="https://www.ibm.com/support/knowledgecenter/en/ssw_aix_72/generalprogramming/kernel_threads_user.html">Kernel Threads and User Threads</a></li>
+<li><a href="https://medium.com/@yovan/os-process-thread-user-kernel-%E7%AD%86%E8%A8%98-aa6e04d35002">OS Process &amp; Thread (user/kernel) 筆記</a></li>
+</ul>
+<h3 id="multithreading-models">Multithreading Models</h3>
+<ul>
+<li>Many to one: 多個 User thread 映射到 一個 kernel thread (Soleris Thread, JVM)，
+Process Block 時導致多個 Thread 無法執行。</li>
+<li>One to one: 缺少 Thread 的優點(NT kernel)</li>
+<li>Many to Many: Block 時保有其他 thread 能夠執行
+<ul>
+<li>Thread 必須依附在 Lightweight Process
+(Solaris OS定義: program 可生成多個 LWP，不同於先前的 LWP 定義)</li>
+<li>Lightweight Process Mapping 到 kernel thread</li>
+<li>Lightweight Process 的 time slice 分配給依附的 thread</li>
+</ul>
+</li>
+</ul>
+<h3 id="補充">補充</h3>
+<ul>
+<li>Hyper Thread: 單核心模擬成兩個CPU，執行兩個thread</li>
+<li>Round Robin: time sharing，並且透過Java Based Round Robin Scheduler (優先級最高)，
+其能夠控制裡面thread 的 priority高低。</li>
+</ul>
+<h2 id="inter-process-communication">Inter Process Communication</h2>
+<p>parent process 與 children proces 透過作業系統通訊，處理 process <strong>communication</strong>，
+與<strong>Synchronize</strong>。</p>
+<p>透過 IPC System call 處理，並且透過 Two way handshaking 的方式處理。</p>
 
     
       <hr>
