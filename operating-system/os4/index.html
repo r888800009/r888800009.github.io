@@ -275,10 +275,64 @@ Process Block 時導致多個 Thread 無法執行。</li>
 <li>Round Robin: time sharing，並且透過Java Based Round Robin Scheduler (優先級最高)，
 其能夠控制裡面thread 的 priority高低。</li>
 </ul>
-<h2 id="inter-process-communication">Inter Process Communication</h2>
+<h2 id="46-inter-process-communication">4.6 Inter Process Communication</h2>
 <p>parent process 與 children proces 透過作業系統通訊，處理 process <strong>communication</strong>，
 與<strong>Synchronize</strong>。</p>
-<p>透過 IPC System call 處理，並且透過 Two way handshaking 的方式處理。</p>
+<p>透過 IPC System call 處理，並且透過 Two way handshaking 的方式處理，
+<strong>以同步 Process</strong>。</p>
+<ul>
+<li>Sender 會 blocked 直到 receiver ACK</li>
+<li>Timeout: 避免 Process 通訊出錯時，導致無窮等待，透過 time interrupt。</li>
+<li>Scrambled Messages: 雜訊導致訊息出錯
+<ul>
+<li>檢查是否出錯
+<ul>
+<li>parity: odd, even，通常在硬體當中設計，並且計算<code>1</code>的數量，檢查錯誤</li>
+<li>Checksum: 通常透過軟體實做</li>
+<li>Cyclical Redundancy Check (CRC)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+</ul>
+</li>
+<li>檢查並且修復
+<ul>
+<li>Error Correction Codeing: 需要透過更多個 bit 來檢查是否出錯。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Exception Condition Handling (Error Recovery): 透過<strong>系統通知與Timeout</strong></li>
+<li>Client/Server Model: client請求server的服務</li>
+</ul>
+<h3 id="remote-procedure-call">Remote Procedure Call</h3>
+<p>RPC，也可稱為Remote Process Communication，<strong>兩個 Process 在不同電腦傳輸通訊</strong>，
+如網路等。</p>
+<p>IPC 也可以以包含RPC來解釋。</p>
+<h3 id="類型">類型</h3>
+<ul>
+<li>Direct communication: 兩個Process，並且需要等待</li>
+<li>Indirect communication: 可以主動傳送，並且處理多個Process</li>
+</ul>
+<h3 id="實現方法">實現方法</h3>
+<ul>
+<li>Common event flags: 透過中斷的手法處理</li>
+<li>Mail box: Indirect communication，並且透過電腦的資源，如Shared Memory下去處理。</li>
+<li>Shared memory</li>
+<li>shared file</li>
+</ul>
+<h3 id="關於-buffer">關於 buffer</h3>
+<ul>
+<li>Zero Capacity (Rendezvous Synchronization): 無 buffer，並且資料會遺失，
+並且<strong>先執行 Receiver 再執行 Sender</strong></li>
+<li>Bound Buffer: 有固定的大小，透過 ring buffer 資料結構實做</li>
+<li>Unbound Buffer: 有固定的大小，但是消耗性能 (不斷 Assign 新的記憶體)</li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>可以參見<a href="/wiki/ctf-forensics/#ihdr-crc修復">CTF CRC</a>來了解相關實例 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
     
       <hr>
