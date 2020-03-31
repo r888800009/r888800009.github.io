@@ -59,6 +59,76 @@ if (!doNotTrack) {
 <li>需要頻繁的修改key: 減少洩漏資料量</li>
 <li>透過密鑰分發技術，修改key並且<strong>安全的分發</strong></li>
 </ul>
+<h3 id="分發方式">分發方式</h3>
+<ol>
+<li>A選key，實體分發給B</li>
+<li>A請求第三方由實體key分發給B</li>
+<li>A使用先前的key加密傳給B 新key</li>
+<li>由第三方選擇key並透過加密連線分發給A, B</li>
+</ol>
+<h3 id="kerberos">Kerberos</h3>
+<ul>
+<li>Authentication: 讓Server與client驗證彼此身份</li>
+<li>Ticket: 用於認證Client的資訊</li>
+<li>key distribution center (KDC): 分發key的可信任第三方
+<ul>
+<li>Authentication Service (AS): 用於認證使用者身份的服務</li>
+<li>Ticket Granting Service (TGS): 製作服務提供者驗證用的資訊</li>
+</ul>
+</li>
+<li>Kerberos realm: 請求本身 KDC 管轄以外的服務，KDC 之間互信以請求另一服務許可</li>
+</ul>
+<h3 id="kerberos-流程">Kerberos 流程</h3>
+<ol>
+<li>使用者對 AS 要求 Ticket</li>
+<li>AS 確認 Client 身份回傳 Ticket (被 TGS 的 key 加密的內容)</li>
+<li>對 TGS 透過先前的 Ticket 請求特定服務許可</li>
+<li>TGS 根據 Ticket 提供許可 (許可為 TGS 選定的 key 加密的內容)</li>
+<li>client 透過 TGS 回傳資訊請求 server</li>
+<li>Server 驗證 Client 之後回傳 Session key</li>
+</ol>
+<h2 id="非對稱分發">非對稱分發</h2>
+<p>要求</p>
+<ul>
+<li>如何取得有效的public key</li>
+<li>公鑰加密法 加密 對稱加密的key</li>
+</ul>
+<h3 id="證書">證書</h3>
+<p>透過可信賴第三發發行證書。</p>
+<ul>
+<li>擁有者的資訊</li>
+<li>擁有者的公鑰</li>
+<li>認證者的資訊 CA</li>
+<li>CA 私鑰加密以上資料的Hash</li>
+</ul>
+<p>認證時，透過CA的public解密並且比較Hash值</p>
+<h3 id="x509證書">X.509證書:</h3>
+<ul>
+<li>有效期間</li>
+<li>X.509 Hierarchy: 證書的從屬認證，
+溯原以認證簽章的正確性</li>
+</ul>
+<h3 id="保護">保護</h3>
+<ul>
+<li>撤銷證書服務</li>
+</ul>
+<h2 id="公鑰基礎設施">公鑰基礎設施</h2>
+<ul>
+<li>End entity:</li>
+<li>CA:</li>
+<li>RA:</li>
+<li>CRL issuer:</li>
+<li>Repository:</li>
+</ul>
+<h3 id="管理">管理</h3>
+<ul>
+<li>Registration:</li>
+<li>initialization:</li>
+<li>certification:</li>
+<li>key pair recovery:</li>
+<li>key pair update:</li>
+<li>revocation request:</li>
+</ul>
 
     
     <script>

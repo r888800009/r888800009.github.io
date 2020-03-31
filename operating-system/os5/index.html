@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Operating-systems | r809&#39;s Notes</title>
+<title>[OS] CPU Scheduling | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,25 +47,37 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Operating-systems</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/operating-system/os5/" class="post-link">[OS] CPU Scheduling</a></h1>
-
-    <h1><a href="https://r888800009.github.io/operating-system/os4/" class="post-link">[OS] Process</a></h1>
-
-    <h1><a href="https://r888800009.github.io/operating-system/os3/" class="post-link">[OS] Operating System Structure</a></h1>
-
-    <h1><a href="https://r888800009.github.io/operating-system/os2/" class="post-link">[OS] Computer System Structure </a></h1>
-
-    <h1><a href="https://r888800009.github.io/operating-system/os1/" class="post-link">[OS]作業系統簡介</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[OS] CPU Scheduling</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-03-31 23:21:09 &#43;0800 CST">Tue, 2020 Mar 31</time>
+    </div> 
+    <h2 id="51-basic-concepts">5.1 Basic Concepts</h2>
+<ul>
+<li>CPU Burst: 使用 CPU 的時間</li>
+<li>I/O Burst: 使用 I/O 的時間</li>
+</ul>
 
     
-</div>
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/operating-system" class="tags">Operating System</a>
+      
+    
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>
