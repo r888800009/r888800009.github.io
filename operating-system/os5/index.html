@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>[OS] CPU Scheduling | r809&#39;s Notes</title>
+<title>[OS] CPU 排程方法 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,7 +47,7 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[OS] CPU Scheduling</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[OS] CPU 排程方法</a></h1>
 <div id="content"><div class="date"> 
         <time datetime="2020-03-31 23:21:09 &#43;0800 CST">Tue, 2020 Mar 31</time>
     </div> 
@@ -55,6 +55,41 @@ if (!doNotTrack) {
 <ul>
 <li>CPU Burst: 使用 CPU 的時間</li>
 <li>I/O Burst: 使用 I/O 的時間</li>
+<li>I/O Bound process: I/O比計算時間多</li>
+<li>CPU Bound process: CPU比I/O時間多</li>
+</ul>
+<h3 id="non-preemptive-and-preemptive">Non-preemptive and Preemptive</h3>
+<ul>
+<li>不可奪取的: Non-preemptive Process，優先級極高使其他Process無法奪取CPU
+<ul>
+<li>進入 <strong>wait state</strong> 或<strong>結束</strong>時可交給其他 process</li>
+</ul>
+</li>
+<li>可奪取的: Preemptive Process，可被奪取
+<ul>
+<li>ready queue 沒有其他 process時，中斷完成後依然有控制權</li>
+</ul>
+</li>
+</ul>
+<p>如果有 interrupt ， Non-preemptive Process 依然會轉交給 OS ，
+完成後OS歸還控制權給原程式。</p>
+<h2 id="52-scheduling-criteria">5.2 Scheduling Criteria</h2>
+<p>選擇的考量</p>
+<ul>
+<li>Maximum CPU Utilization: CPU 使用率</li>
+<li>Maximum Throughput: 吞吐量</li>
+<li>Minimize the Maximum Response Time: 最小的最差反應時間</li>
+<li>Minimize Turnaround Time: submit到完成的時間最小</li>
+<li><strong>Minimize Average Waiting Time: ready queue wait time 最小</strong></li>
+<li>Minimize Variance in the Response Time</li>
+<li>Minimize The Number of Interactive Users: 最多交談使用者</li>
+<li>Minimize System Overhead: 最小負擔</li>
+<li>Balance Resources Used: 平衡資源</li>
+<li>Be Fair: 使排程公平</li>
+</ul>
+<h2 id="53-scheduling-scheme">5.3 Scheduling Scheme</h2>
+<ul>
+<li>FCFS (First Come First Served): 先進先服務，<strong>不可奪取</strong>，<strong>不適合使用者交談與分時系統</strong></li>
 </ul>
 
     
