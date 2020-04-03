@@ -6,10 +6,20 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 18 Aug 2018 21:15:58 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2020 05:35:58 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>術語與符號</title>
+      <link>https://r888800009.github.io/terms-and-symbols/</link>
+      <pubDate>Fri, 03 Apr 2020 05:35:58 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/terms-and-symbols/</guid>
+      <description>&lt;p&gt;收集與定義各種學科的術語與符號，以便更精確的描述
+任何事物。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>打破 Kill Chain</title>
@@ -19,7 +29,7 @@
       <guid>https://r888800009.github.io/posts/breaking-kill-chain/</guid>
       <description>&lt;p&gt;Cyber Kill Chain為Lockheed Martin發展出的framework，
 用於解釋APT攻擊，並且探討如何打破Kill chain進行。&lt;/p&gt;
-&lt;p&gt;該文為 Breaking The Kill Chain: A Defensive Approach
+&lt;p&gt;該文為 &lt;a href=&#34;https://www.youtube.com/watch?v=II91fiUax2g&#34;&gt;Breaking The Kill Chain: A Defensive Approach&lt;/a&gt;
 的筆記與補充&lt;/p&gt;</description>
     </item>
     
