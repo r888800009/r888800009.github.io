@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Wikis | r809&#39;s Notes</title>
+<title>學者網頁索引 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,43 +47,57 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Wikis</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/line-bot/" class="post-link">Line Bot</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/xss/" class="post-link">XSS</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/netcat/" class="post-link">Netcat</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/web-authn/" class="post-link">WebAuthn</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/bug/" class="post-link">各種程式坑集合</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-from-scratch/" class="post-link">從0安裝Linux</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/http/" class="post-link">HTTP</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/markdown/" class="post-link">Markdown</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/newsboat/" class="post-link">newsboat終端機RSS訂閱器</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/python-fuzz/" class="post-link">python 模糊搜尋</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/wiki/page/2/>
-      &#x3C;
-    </a>
-    
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">學者網頁索引</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-04-04 00:40:00 &#43;0800 CST">Sat, 2020 Apr 4</time>
+    </div> 
+    <p>收集各種學界或產業界人士的個人網站，以便了解思想方式。</p>
+<h2 id="索引">索引</h2>
+<p><strong>技巧: 善用收尋引擎收尋以下網頁的內容</strong></p>
+<ul>
+<li><a href="http://chowkafat.net/home.html">周家發</a>: 數學, 語言學</li>
+<li><a href="https://shann.idv.tw/">單維彰</a>: 數學
+<ul>
+<li><a href="https://shann.idv.tw/bookmark.html">單維彰的書籤</a></li>
+</ul>
+</li>
+<li><a href="https://hungsh-ntucsie.blogspot.com/">洪士灝</a>: 平行處理</li>
+<li>黃敬群: 計算機組織, 編譯器, 作業系統
+<ul>
+<li><a href="http://wiki.csie.ncku.edu.tw/User/jserv">jserv (黃敬群) 成大資工 wiki</a></li>
+<li><a href="http://blog.linux.org.tw/jserv/">Jserv&rsquo;s blog</a></li>
+</ul>
+</li>
+<li>陳鍾誠: 計算機組織, 機器學習, 編譯器
+<ul>
+<li><a href="http://ccckmit.wikidot.com/">陳鍾誠的網站</a></li>
+</ul>
+</li>
+</ul>
 
     
-    <a href=/wiki/page/4/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/links" class="tags">links</a>
+      
+        <a href="https://r888800009.github.io/tags/index" class="tags">index</a>
+      
     
-</div>
-
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>
