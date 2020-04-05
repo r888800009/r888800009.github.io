@@ -86,6 +86,16 @@ sudo vim /etc/iptables/iptables.rules
 sudo systemctl enable iptables.service
 sudo systemctl start iptables.service
 </code></pre></div><p>移除規則時將<code>-A</code>改成<code>-D</code></p>
+<h2 id="修改mac">修改MAC</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -i
+ip link set dev eth0 down
+ip link set dev eth0 address 00:11:22:33:44:55
+ip link set dev eth0 up
+</code></pre></div><p>參見</p>
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/MAC_address_spoofing">MAC address spoofing</a></li>
+<li><a href="https://gist.github.com/aallan/b4bb86db86079509e6159810ae9bd3e4">List of MAC addresses with vendors identities</a></li>
+</ul>
 
     
       <hr>
