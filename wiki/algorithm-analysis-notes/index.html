@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>演算法分析筆記 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">演算法分析筆記</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-04-06 02:25:16 &#43;0800 CST">Mon, 2020 Apr 6</time>
+    </div> 
+    <h2 id="數學相關">數學相關</h2>
+<h3 id="級數推導">級數推導</h3>
+<ul>
+<li>等差級數: 反過來相加之後得到2S求S</li>
+<li>等比級數: 嘗試位移項並減去</li>
+<li>Telescoping 級數: 因式分解</li>
+</ul>
+<h3 id="級數和">級數和</h3>
+<ul>
+<li>一次方k: \( \sum_{k=1}^{n} k = \frac{n(n + 1)}{2} \)</li>
+<li>三次方k 為 一次方k級數和平方: \( \sum_{k=1}^{n} k^3 = (\sum_{k=1}^{n} k)^2 \)</li>
+<li>平方k: \( \sum_{k=1}^{n} k^2 = (\sum_{k=1}^{n} k) (\frac{2n + 1}{3}) =
+\frac{n(n + 1)(2n + 1)}{6} \)</li>
+<li>x 的 k 次方: \(\sum_{k=0}^{n} x ^ k = \frac{1-x ^ {n+1}}{1 - x}\)
+<ul>
+<li>上下兩 1 - x ，分子x為 n + 1 次方</li>
+<li><strong>完全二元樹</strong>節點計算可以透過此公式推導</li>
+</ul>
+</li>
+</ul>
+<h3 id="時間複雜度">時間複雜度</h3>
+<p>適用於for迴圈的策略:</p>
+<ol>
+<li>自外而內: 透過\(\sum\)表達每個<strong>迴圈內</strong>的計算次數</li>
+<li>如果是巢狀迴圈，自外而內求解理論上應該由多個\(\sum\)組成求解的運算式</li>
+<li>求解複雜度的運算式，可以由\(\sum 1\)表達，視情況調整範圍</li>
+</ol>
+<h3 id="數學歸納法">數學歸納法</h3>
+<ol>
+<li>基底(初始值): 證明n = k, k = 0 or 1時成立</li>
+<li>歸納用假說: 假設n成立</li>
+<li>步階: 證明n+1時成立，<strong>n+1代入</strong>會等於<strong>n代入遞迴關係求n+1</strong>時成立</li>
+</ol>
+<h3 id="catalan-number">Catalan Number</h3>
+<p>$$b_n = \frac{1}{n + 1} \binom{2n}{n}$$</p>
+<p>適用於</p>
+<ul>
+<li>二元樹變形</li>
+<li>多邊形三角分割法: n = 頂點 - 2, 頂點 &gt;= 3</li>
+<li>運算元括號區分的方法(類似二元樹變形)</li>
+<li>正方棋盤走法</li>
+</ul>
+<h3 id="二項係數分解">二項係數分解</h3>
+<ul>
+<li>大問題: n取k個 \(\binom{n}{k}\) 大問題拆解
+<ul>
+<li>大問題中已經選取: \(\binom{n-1}{k-1}\) 當中 k - 1 代表子問題以外已經選取</li>
+<li>大問題中尚未選取: \(\binom{n-1}{k}\)，而 k 代表在子問題內嘗試選取</li>
+</ul>
+</li>
+</ul>
+<p>綜合以上兩點可得
+$$
+\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}
+$$</p>
+<h2 id="演算法">演算法</h2>
+<h3 id="演算法的條件特性">演算法的條件(特性)</h3>
+<ol>
+<li>輸入: k個輸入, k &gt;= 0</li>
+<li>輸出: k個, k &gt; 0</li>
+<li>明確性: 每個步驟必須<strong>清楚定義</strong></li>
+<li>有限性: 必須在有限的步驟內終結</li>
+<li>有效性: 每個步驟必須<strong>可實現</strong></li>
+</ol>
+<h3 id="演算法的正確性檢驗-correctness-of-algorithms">演算法的正確性檢驗 Correctness of Algorithms</h3>
+<ul>
+<li>Initializaion: 證明初始條件成立</li>
+<li>Maintenance: 中間每個步階行為都必須成立</li>
+<li>Termination: 終結時必須正確</li>
+</ul>
+<h3 id="其他">其他</h3>
+<ul>
+<li>插入排序法: 穩定的, 最糟\( \Theta (n^2)\), 最佳\( \Theta (n^2)\)</li>
+</ul>
+<h2 id="時間複雜度比較">時間複雜度比較</h2>
+<h3 id="先備知識">先備知識</h3>
+<ul>
+<li>log運算常用公式</li>
+<li>級數和</li>
+</ul>
+<h3 id="分類">分類</h3>
+<ul>
+<li>常數</li>
+<li>對數</li>
+<li>多對數</li>
+<li>多項式
+<ul>
+<li>線性</li>
+<li>平方</li>
+<li>立方</li>
+</ul>
+</li>
+<li>指數</li>
+<li>階乘</li>
+</ul>
+<h3 id="常見概念">常見概念</h3>
+<ul>
+<li>\(log(n!) = n\, log(n)\)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>\(n! = n ^ n\) 同一層級，
+可以透過\(log(n!) = n \, log(n) = log(n^n)\)
+並且取反對數理解</li>
+<li>與指數對數相關的，可以<strong>取對數</strong>或指數並且與<strong>接近的對數</strong>比較大小，
+比較時<strong>其他值取對數</strong>，並且把相同的地方(如相乘相同的對數)透過同除等方法去除，
+進行比較</li>
+<li>透過時間反過來推測時間複雜度時，可以觀察不同n時的倍率關係。</li>
+</ul>
+<h3 id="asymptotic-表示法">Asymptotic 表示法</h3>
+<p>比較大小，注意其<strong>等號代表屬於</strong>(∈)何種<strong>集合</strong>，
+大小希臘字母比較的時<strong>大寫可以相等</strong>，小寫則不包含相等的情況。</p>
+<ul>
+<li>上界: \( O \), \( o \)</li>
+<li>介於上下界: \( \Theta \)</li>
+<li>下界: \( \Omega \), \( \omega \)</li>
+</ul>
+<p>Asymptotic 表示法會取\(n_0\)與<strong>正常數</strong>\(c\)，在這個值之後所有的\(n\)代入
+\(c \, g(n)\)後，函數\(f(n)\)為<strong>正常數</strong>並且滿足特定的條件(看取\(O,o, \omega, \Omega \)等等)。</p>
+<h4 id="相加">相加</h4>
+<p>兩個 Asymptotic 表示法相加時，如
+$$ \Omega (n) + O(n)$$
+這代表\(f1(n) \in \Omega (n), f2(n) \in O(n) \)，並且\(f1(n) + f2(n)\)
+總是大於或相同屬於\(\Omega (n)\)的函數，因此可視為\(\Omega (n)\)。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<h3 id="概念釐清">概念釐清</h3>
+<ul>
+<li>positive constant(正常數): \( k\geq 0 \)</li>
+<li>positive integers(正整數): \( k &gt; 0 , k \in \mathbb{Z}\)</li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://stackoverflow.com/a/2095472">Is log(n!) = Θ(n·log(n))?</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://stackoverflow.com/questions/12554278/how-to-add-big-o-and-big-omega">How to add Big O and Big omega</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/algorithm-analysis" class="tags">Algorithm Analysis</a>
+      
+        <a href="https://r888800009.github.io/tags/algorithm" class="tags">Algorithm</a>
+      
+    
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2020.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
