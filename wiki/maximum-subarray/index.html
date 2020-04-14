@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.68.3" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>最大子陣列問題 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,45 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/linux/" class="post-link">Linux</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/sp/" class="post-link">[SP]系統程式</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/fuzzing/" class="post-link">Fuzzing</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/grep/" class="post-link">Grep</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/gdbgui/" class="post-link">gdbgui</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/debug/" class="post-link">除錯</a></h1><p>筆記各種除錯的方式，如斷言、反向除錯等</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/web-vulnerability/" class="post-link">Web網頁漏洞</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/php/" class="post-link">PHP</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/git/" class="post-link">Git</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/windows-pwn-notes/" class="post-link">Windows Pwn 筆記</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/page/8/>
-      &#x3C;
-    </a>
-    
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">最大子陣列問題</a></h1>
+<div id="content"><div class="date"> 
+        <time datetime="2020-04-14 22:36:34 &#43;0800 CST">Tue, 2020 Apr 14</time>
+    </div> 
+    <p>可參見之前的<a href="/posts/leetcode-practice-5/#maximum-subarray">leetcode解題</a>
+<a href="http://github.com/r888800009/practice/blob/master/leetcode/maximum-subarray.cpp">程式碼</a></p>
+<h2 id="思路">思路</h2>
+<p>透過D&amp;C將<strong>最大子陣列</strong>分成三種情況</p>
+<ol>
+<li>位於左側</li>
+<li>位於右側</li>
+<li>橫跨左右</li>
+</ol>
+<p>D&amp;C時，遞迴回傳以上<strong>三種情況</strong>陣列中<strong>最大子陣列範圍</strong>，
+由於不斷呼叫會收斂在單一位置，由下往上比較可以挑選出大的結果。</p>
 
     
-    <a href=/page/10/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/divide-and-conquer" class="tags">Divide and Conquer</a>
+      
+        <a href="https://r888800009.github.io/tags/algorithm" class="tags">Algorithm</a>
+      
     
-</div>
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
 
             </div>

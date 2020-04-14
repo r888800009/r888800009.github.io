@@ -6,7 +6,7 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 06 Apr 2020 02:25:16 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 22:36:34 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Algorithm</title>
       <link>https://r888800009.github.io/tags/algorithm/</link>
-      <pubDate>Mon, 06 Apr 2020 02:25:16 +0800</pubDate>
+      <pubDate>Tue, 14 Apr 2020 22:36:34 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Divide and Conquer</title>
+      <link>https://r888800009.github.io/tags/divide-and-conquer/</link>
+      <pubDate>Tue, 14 Apr 2020 22:36:34 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/divide-and-conquer/</guid>
       <description></description>
     </item>
     
@@ -728,15 +737,6 @@
       <pubDate>Sun, 18 Aug 2019 21:23:53 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Divide and Conquer</title>
-      <link>https://r888800009.github.io/tags/divide-and-conquer/</link>
-      <pubDate>Thu, 15 Aug 2019 20:28:33 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/divide-and-conquer/</guid>
       <description></description>
     </item>
     
