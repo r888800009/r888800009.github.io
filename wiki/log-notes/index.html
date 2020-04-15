@@ -51,10 +51,20 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2020-04-08 22:42:16 &#43;0800 CST">Wed, 2020 Apr 8</time>
     </div> 
-    <h2 id="工具">工具</h2>
-<p>kibana</p>
-<h2 id="siem-security-information-event-management">SIEM (Security Information Event Management)</h2>
+    <h2 id="siem-security-information-event-management">SIEM (Security Information Event Management)</h2>
+<p>資訊安全與事件管理，能處理不同來源的log，
+能找出<strong>可疑事件</strong>，並且視覺化事件關聯。</p>
+<h3 id="工具">工具</h3>
+<ul>
+<li>Elasticsearch</li>
+<li>Logstash</li>
+<li>Kibana</li>
+</ul>
 <h2 id="找出潛在攻擊紀錄">找出潛在攻擊紀錄</h2>
+<h3 id="相關概念">相關概念</h3>
+<ul>
+<li>Kill Chain: 參見<a href="/posts/breaking-kill-chain/">打破 Kill Chain</a></li>
+</ul>
 <h3 id="偵查期">偵查期</h3>
 <ul>
 <li>端口掃描: nmap流量, 嘗試短時間連接多個端口。 <a href="https://attack.mitre.org/techniques/T1046/">T1046</a></li>
