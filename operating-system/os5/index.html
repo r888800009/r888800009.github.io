@@ -88,8 +88,118 @@ if (!doNotTrack) {
 <li>Be Fair: 使排程公平</li>
 </ul>
 <h2 id="53-scheduling-scheme">5.3 Scheduling Scheme</h2>
+<h3 id="fcfs-first-come-first-served">FCFS (First Come First Served)</h3>
+<p>先進先服務，<strong>不可奪取</strong>，<strong>不適合使用者交談與分時系統</strong></p>
 <ul>
-<li>FCFS (First Come First Served): 先進先服務，<strong>不可奪取</strong>，<strong>不適合使用者交談與分時系統</strong></li>
+<li><strong>Turnaround Time: 往返時間 <code>Finish time - Arrival time</code></strong></li>
+<li><strong>Waiting Time: 等待時間 <code>Turnaround time - CPU Burst</code></strong></li>
+<li><strong>Gantt chart: 甘特圖，將Process順序畫成甘特圖，用來求出往返與等待時間</strong></li>
+<li>Arrival Time: 抵達時間</li>
+</ul>
+<h3 id="shortest-job-first">Shortest Job First</h3>
+<p>特性</p>
+<ul>
+<li>最小平均等待時間</li>
+<li>最佳演算法 Optimal Algorithm</li>
+<li>難以實現: 無法預測CPU burst time</li>
+</ul>
+<p>方法:</p>
+<ol>
+<li>CPU Burst time 最小的Process優先佔有CPU</li>
+<li>Burst time 相同者以 FCFS 處理</li>
+</ol>
+<p>類型:</p>
+<ul>
+<li>Preemptive SJF:
+<ul>
+<li>Shortest Remaining Time First: SRTF 最短剩餘時間優先</li>
+<li>適合 Time Sharing 處理</li>
+<li>最小 Burst 者優先，並且能夠搶奪當前的 Process</li>
+</ul>
+</li>
+<li>Non-Preemptive SJF:
+<ul>
+<li>不適合 Time Sharing 處理</li>
+<li>處理時如果更少花費的 Process 抵達，只能在 Queue 前等待</li>
+</ul>
+</li>
+</ul>
+<p>註:</p>
+<ul>
+<li>可奪取時: 先比較與 CPU 執行的 Process 比較</li>
+<li>不可奪取則直接在 Queue 比較</li>
+</ul>
+<h3 id="最高反應時間比率優先">最高反應時間比率優先</h3>
+<p>透過<strong>反應時間</strong>作為<strong>優先等級</strong></p>
+<h4 id="反應時間比率">反應時間比率</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Response Ratio = (Waiting time + CPU Burst Time) / CPU Burst Time
+</code></pre></div><h3 id="priority-排程法">Priority 排程法</h3>
+<ul>
+<li>優先級最高者佔有CPU</li>
+<li>優先級相同者以 FCFS 處理</li>
+<li>依然能有<strong>可奪取</strong>與<strong>不可奪取</strong></li>
+</ul>
+<h4 id="缺點">缺點</h4>
+<ul>
+<li>Indefinite Blocking: 無限懸置，也稱為 Starvation
+<ul>
+<li>透過 Aging 機制解決:
+<ul>
+<li>隨時間降低或升高 Priority</li>
+<li>Dynamic Priority, Floating Priority: 類似<strong>最高反應時間比率</strong>的方式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="round-robin-排程">Round Robin 排程</h3>
+<ul>
+<li>為可搶奪: Time sharing</li>
+<li>透過 Time Sharing 處理 FCFS</li>
+</ul>
+<p>注: time Sharing 可作為 Processor sharing 的方式</p>
+<h4 id="time-slice-選擇">Time Slice 選擇</h4>
+<ul>
+<li>Time Slice 過大: 效果如同 FCFS</li>
+<li>Time Slice 過小: 系統效率差 (Context Switch 過多)</li>
+</ul>
+<h4 id="各種情況">各種情況</h4>
+<ul>
+<li>考量不同 time Slice</li>
+<li>不同的抵達時間</li>
+<li>I/O 處理</li>
+</ul>
+<h3 id="multilevel-queue">Multilevel Queue</h3>
+<p>用於實現 Priority 排程法的方法</p>
+<ul>
+<li>多重 Queue ，並且由高到低優先等級</li>
+<li>原則上採用 Round Robin，最低優先級可能採用 FCFS</li>
+</ul>
+<p>注</p>
+<ul>
+<li>foreground Process: 可交互，需要高優先級，由 RR 排程法處理</li>
+<li>Background Process: 不需要交互的，如 Batch，低優先級，可以用FCFS</li>
+</ul>
+<h4 id="缺點-1">缺點</h4>
+<ul>
+<li>優先等級被固定，容易有 Indefinite Blocking</li>
+</ul>
+<h3 id="multilevel-feedback-queue">Multilevel Feedback Queue</h3>
+<p>加上 Aging 方法，來升降佇列等級</p>
+<h4 id="特性">特性</h4>
+<ul>
+<li>可奪取</li>
+<li>不會有 Indefinite Blocking</li>
+<li>花費時間過多(如 CPU Bound Process )降級</li>
+<li>等待時間過多(如 I/O Bound Process )升級</li>
+</ul>
+<h3 id="總結">總結</h3>
+<ul>
+<li>FCFS: 由先後次序作為優先級</li>
+<li>可奪取 SJF 預估時間作為優先級</li>
+<li>不可奪取 SJF 剩餘時間作為優先級</li>
+<li>最高反應時間:  以反應時間比率作為優先級</li>
+<li>RR: 由 ready Queue 的次序作為優先級</li>
 </ul>
 
     
