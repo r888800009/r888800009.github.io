@@ -201,6 +201,27 @@ if (!doNotTrack) {
 <li>最高反應時間:  以反應時間比率作為優先級</li>
 <li>RR: 由 ready Queue 的次序作為優先級</li>
 </ul>
+<h2 id="54-系統效能評估">5.4 系統效能評估</h2>
+<ul>
+<li>定量模式 (Deterministic Modeling): 收集現有環境中一段時間內的數據，對不同以演算法輸入數據
+找出當中最好的算法。
+<ul>
+<li>收集資料花費許多成本</li>
+</ul>
+</li>
+<li>佇列模式 (Queuing Modeling): 透過Little&rsquo;s formula 評估 <code>n = lambda * omega</code>
+<ul>
+<li>n: 佇列平均長度</li>
+<li>omega: Process 平均等待時間</li>
+<li>lambda: Process 平均出生率，透過統計計算，透過各種機率分佈下去計算</li>
+</ul>
+</li>
+<li>模擬法(Simulations): 透過亂數產生資料，並進行評估
+<ul>
+<li>定量模式法差在該方法透過隨機模擬數據</li>
+</ul>
+</li>
+</ul>
 
     
       <hr>

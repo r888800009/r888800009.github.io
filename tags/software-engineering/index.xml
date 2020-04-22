@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Engineering on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/software-engineering/</link>
+    <description>Recent content in Software Engineering on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 21 Apr 2020 19:07:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>軟體文件產生</title>
+      <link>https://r888800009.github.io/wiki/document-generation/</link>
+      <pubDate>Tue, 21 Apr 2020 19:07:20 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/document-generation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

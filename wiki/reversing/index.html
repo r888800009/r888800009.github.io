@@ -51,7 +51,19 @@ if (!doNotTrack) {
 <div id="content"><div class="date"> 
         <time datetime="2019-11-16 20:31:53 &#43;0800 CST">Sat, 2019 Nov 16</time>
     </div> 
-    <p>找出lib call</p>
+    <h2 id="思路流程">思路流程</h2>
+<ol>
+<li>導出相關資訊
+<ul>
+<li>透過靜態分析工具導出函數表等相關訊息，或者透過動態分析檢查呼叫的API</li>
+</ul>
+</li>
+<li>透過段點與動態分析關鍵程式碼</li>
+</ol>
+<h3 id="關於分析">關於分析</h3>
+<p>程式中的 API 可能代表各種含意，如讀寫檔、連線網路等相關資訊。</p>
+<h2 id="相關指令">相關指令</h2>
+<p>找出lib call</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ltrace ./a.out
 </code></pre></div><p>找出system call</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strace ./a.out
@@ -68,6 +80,10 @@ objdump -s -j .text ./a.out
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pefile
 pe <span style="color:#f92672">=</span> pefile<span style="color:#f92672">.</span>PE(<span style="color:#e6db74">&#39;./example.exe&#39;</span>)
 </code></pre></div><p>參見<a href="https://wenqingfu.me/post/pe_file/">Python pefile 模块读写 PE 文件</a></p>
+<h2 id="相關連結">相關連結</h2>
+<ul>
+<li><a href="https://ctf-wiki.github.io/ctf-wiki/reverse/introduction-zh/">Software Reverse Engineering Introduction | CTF Wiki</a></li>
+</ul>
 
     
       <hr>
