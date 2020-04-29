@@ -99,6 +99,12 @@ $ jobs %1
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsblk -o name,size,label
 </code></pre></div><p>修改分割名稱如<code>ext4</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">e2label /dev/sda1 name111
+</code></pre></div><h3 id="sd-card">SD card</h3>
+<p>先導入模塊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe ohci_hcd
+</code></pre></div><p>重新插入 SD Card並檢查有無<code>mmcblk</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsblk
+ls /dev/mmcb* 
 </code></pre></div><h2 id="雜項指令">雜項指令</h2>
 <p>超時自動結束程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">timeout <span style="color:#66d9ef">$((</span><span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">))</span> ./a.out
