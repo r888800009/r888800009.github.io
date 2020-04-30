@@ -80,6 +80,9 @@ QUIT
 </code></pre></div><h3 id="常見問題">常見問題</h3>
 <p>若網路架構是使用Switch而不是Hub，由於Switch會透過MAC地址判斷來源與目的，
 Packet Sniffing Attack可能會失效，可以嘗試使用hub進行測試。</p>
+<h2 id="網路廣播">網路廣播</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo -n <span style="color:#e6db74">&#34;hello&#34;</span> | ncat -u 192.168.1.255 <span style="color:#ae81ff">1234</span>  
+</code></pre></div><p>透過其他電腦的 wireshark 查看是否接收到封包。</p>
 
     
       <hr>
