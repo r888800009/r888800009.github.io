@@ -53,7 +53,10 @@ if (!doNotTrack) {
     </div>
 
     <aside>
-      <h3>目次</h3>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
       <nav id="TableOfContents">
   <ul>
     <li><a href="#41-basic-macro-processor-functions">4.1 basic macro processor functions</a></li>
@@ -165,6 +168,7 @@ src -&gt;  Macro &amp; Asm pass1 -&gt; assembler pass2 -&gt; obj
         <a href="https://r888800009.github.io/tags/system-program" class="tags">System Program</a>
       
     
+
     <script>
       (function addHeadingLinks(){
         var article = document.getElementById('content');
@@ -179,6 +183,23 @@ src -&gt;  Macro &amp; Asm pass1 -&gt; assembler pass2 -&gt; obj
           }
         });
       })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
     </script>
 
 

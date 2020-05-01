@@ -53,7 +53,10 @@ if (!doNotTrack) {
     </div>
 
     <aside>
-      <h3>目次</h3>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
       <nav id="TableOfContents">
   <ul>
     <li><a href="#漏洞測試環境">漏洞測試環境</a></li>
@@ -142,6 +145,7 @@ vulnerables/web-owasp-mutillidae2   Mutillidae is a deliberately vulnerable web-
         <a href="https://r888800009.github.io/tags/docker" class="tags">Docker</a>
       
     
+
     <script>
       (function addHeadingLinks(){
         var article = document.getElementById('content');
@@ -156,6 +160,23 @@ vulnerables/web-owasp-mutillidae2   Mutillidae is a deliberately vulnerable web-
           }
         });
       })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
     </script>
 
 

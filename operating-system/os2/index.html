@@ -53,7 +53,10 @@ if (!doNotTrack) {
     </div>
 
     <aside>
-      <h3>目次</h3>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
       <nav id="TableOfContents">
   <ul>
     <li><a href="#21-computer-system-operation">2.1 Computer System Operation</a>
@@ -343,6 +346,7 @@ Timer用於解決該問題，並且發出<strong>Time out interrupt</strong>
         <a href="https://r888800009.github.io/tags/operating-system" class="tags">Operating System</a>
       
     
+
     <script>
       (function addHeadingLinks(){
         var article = document.getElementById('content');
@@ -357,6 +361,23 @@ Timer用於解決該問題，並且發出<strong>Time out interrupt</strong>
           }
         });
       })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
     </script>
 
 

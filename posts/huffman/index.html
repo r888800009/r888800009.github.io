@@ -53,7 +53,10 @@ if (!doNotTrack) {
     </div>
 
     <aside>
-      <h3>目次</h3>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
       <nav id="TableOfContents">
   <ul>
     <li><a href="#基本步驟">基本步驟</a></li>
@@ -139,6 +142,7 @@ vector<span style="color:#f92672">&lt;</span>FrequencyData<span style="color:#f9
         <a href="https://r888800009.github.io/tags/compression" class="tags">Compression</a>
       
     
+
     <script>
       (function addHeadingLinks(){
         var article = document.getElementById('content');
@@ -153,6 +157,23 @@ vector<span style="color:#f92672">&lt;</span>FrequencyData<span style="color:#f9
           }
         });
       })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
     </script>
 
 

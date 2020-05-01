@@ -53,7 +53,10 @@ if (!doNotTrack) {
     </div>
 
     <aside>
-      <h3>目次</h3>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
       <nav id="TableOfContents">
   <ul>
     <li><a href="#簡易弱密碼範例">簡易弱密碼範例</a></li>
@@ -140,6 +143,7 @@ echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | sha512sum
         <a href="https://r888800009.github.io/tags/information-security" class="tags">Information Security</a>
       
     
+
     <script>
       (function addHeadingLinks(){
         var article = document.getElementById('content');
@@ -154,6 +158,23 @@ echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | sha512sum
           }
         });
       })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
     </script>
 
 
