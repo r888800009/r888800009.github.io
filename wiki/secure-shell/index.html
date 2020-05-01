@@ -48,9 +48,37 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Secure Shell</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-08-27 11:58:33 &#43;0800 CST">Tue, 2019 Aug 27</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#config">Config</a></li>
+    <li><a href="#proxycommand">ProxyCommand</a>
+      <ul>
+        <li><a href="#直接透過指令轉發">直接透過指令轉發</a></li>
+        <li><a href="#連上hostb">連上hostB</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他常用指令">其他常用指令</a>
+      <ul>
+        <li><a href="#scp">scp</a></li>
+        <li><a href="#sshfs">sshfs</a></li>
+        <li><a href="#sock5代理">Sock5代理</a></li>
+      </ul>
+    </li>
+    <li><a href="#問題">問題</a>
+      <ul>
+        <li><a href="#remote-host-identification-has-changed">Remote Host Identification Has Changed</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+
     <p>SSH筆記</p>
 <h2 id="config">Config</h2>
 <p>在<code>~/.ssh/config</code>設定以下內容</p>

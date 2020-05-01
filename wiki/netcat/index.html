@@ -48,9 +48,23 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Netcat</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-10-26 16:01:06 &#43;0800 CST">Sat, 2019 Oct 26</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#bind-shell">Bind Shell</a></li>
+    <li><a href="#reverse-shell">Reverse Shell</a></li>
+    <li><a href="#tcp">TCP</a></li>
+    <li><a href="#udp">UDP</a></li>
+    <li><a href="#基本概念">基本概念</a></li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="bind-shell">Bind Shell</h2>
 <p>目標</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc -l -p <span style="color:#ae81ff">1234</span> -e <span style="color:#e6db74">&#34;/bin/bash -i&#34;</span>

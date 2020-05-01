@@ -48,9 +48,60 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP] 編譯器</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-11-11 23:06:51 &#43;0800 CST">Mon, 2019 Nov 11</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#51-basic-compiler-concepts">5.1 Basic Compiler Concepts</a>
+      <ul>
+        <li><a href="#lexical-analysis">Lexical Analysis</a></li>
+        <li><a href="#syntax-analysis">Syntax Analysis</a></li>
+        <li><a href="#intermediate-code-generation">Intermediate Code Generation</a></li>
+        <li><a href="#code-optimization">Code Optimization</a></li>
+        <li><a href="#code-generation">Code Generation</a></li>
+        <li><a href="#table-management-and-error-handling">Table Management And Error Handling</a></li>
+      </ul>
+    </li>
+    <li><a href="#52-grammar">5.2 Grammar</a>
+      <ul>
+        <li><a href="#文法">文法</a></li>
+        <li><a href="#parse-tree-syntex-tree">Parse Tree (Syntex Tree)</a></li>
+        <li><a href="#ambiguous-grammar">Ambiguous Grammar</a></li>
+        <li><a href="#precedence-and-associativity">Precedence and Associativity</a></li>
+      </ul>
+    </li>
+    <li><a href="#53-lexical-analysis">5.3 Lexical Analysis</a>
+      <ul>
+        <li><a href="#identifier">Identifier</a></li>
+        <li><a href="#token-table">Token Table</a></li>
+      </ul>
+    </li>
+    <li><a href="#54-syntax-analysis">5.4 Syntax Analysis</a>
+      <ul>
+        <li><a href="#operator-precedence-parser">Operator Precedence Parser</a></li>
+        <li><a href="#recursive-descent-parser">Recursive Descent Parser</a></li>
+      </ul>
+    </li>
+    <li><a href="#55-code-genaration">5.5 Code Genaration</a></li>
+    <li><a href="#56-intermediate-form">5.6 Intermediate Form</a></li>
+    <li><a href="#57-machine-independent-compiler-features">5.7 Machine Independent Compiler Features</a>
+      <ul>
+        <li><a href="#storage-allocation">Storage Allocation</a></li>
+        <li><a href="#activation-record">Activation Record</a></li>
+        <li><a href="#prologue-and-epilogue">Prologue and Epilogue</a></li>
+        <li><a href="#structure-variable">Structure Variable</a></li>
+        <li><a href="#code-optimization-1">Code Optimization</a></li>
+        <li><a href="#58-compiler-design-option">5.8 Compiler Design Option</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="51-basic-compiler-concepts">5.1 Basic Compiler Concepts</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source -&gt; lexical analysis (token) -&gt; syntax analysis (parse tree) 
 -&gt; intermediate code generation (intermediate code) 

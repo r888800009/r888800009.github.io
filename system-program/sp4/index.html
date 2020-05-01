@@ -48,9 +48,34 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP]系統程式筆記4</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-10-26 15:42:52 &#43;0800 CST">Sat, 2019 Oct 26</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#41-basic-macro-processor-functions">4.1 basic macro processor functions</a></li>
+    <li><a href="#42-macro-processor-implementation">4.2 Macro processor implementation</a>
+      <ul>
+        <li><a href="#步驟">步驟</a></li>
+        <li><a href="#資料結構">資料結構</a></li>
+        <li><a href="#問題">問題</a></li>
+      </ul>
+    </li>
+    <li><a href="#43-macro-instructions-defines-macro">4.3 Macro instructions defines macro</a>
+      <ul>
+        <li><a href="#處理">處理</a></li>
+      </ul>
+    </li>
+    <li><a href="#44-macro-call-within-macro">4.4 Macro call within Macro</a></li>
+    <li><a href="#45-macro-processor-within-language-translator">4.5 Macro processor within language translator</a></li>
+    <li><a href="#pass數量">pass數量</a></li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="41-basic-macro-processor-functions">4.1 basic macro processor functions</h2>
 <p>Macro Processor為<strong>copy code facility</strong>複製程式碼的工具，並且與機器無關。</p>
 <p>宣告:<code>MACRO</code>, <code>ENDM</code></p>

@@ -48,9 +48,44 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">從0安裝Linux</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-10-19 21:50:48 &#43;0800 CST">Sat, 2019 Oct 19</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#工具">工具</a></li>
+    <li><a href="#kernel">kernel</a>
+      <ul>
+        <li><a href="#抓取kernel">抓取kernel</a></li>
+        <li><a href="#編譯kernel">編譯kernel</a></li>
+      </ul>
+    </li>
+    <li><a href="#busybox編譯">busyBox編譯</a></li>
+    <li><a href="#編譯grub">編譯grub</a></li>
+    <li><a href="#將grub安裝到image">將grub安裝到image</a>
+      <ul>
+        <li><a href="#參考">參考</a></li>
+      </ul>
+    </li>
+    <li><a href="#將kernel放入映像檔並透過grub啟動">將kernel放入映像檔並透過grub啟動</a></li>
+    <li><a href="#透過內核掛載root並且啟動busybox">透過內核掛載root並且啟動busybox</a>
+      <ul>
+        <li><a href="#修復-no-such-device-tty2-tty3-tty4">修復 No such device tty2, tty3, tty4</a></li>
+        <li><a href="#poweroff無法使用">poweroff無法使用</a></li>
+      </ul>
+    </li>
+    <li><a href="#參考資料">參考資料</a>
+      <ul>
+        <li><a href="#kernel-1">kernel</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="工具">工具</h2>
 <p>練習qemu啟動kernel</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">qemu-system-x86_64 --kernel /boot/vmlinuz-linux 

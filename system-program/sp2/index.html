@@ -48,9 +48,60 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP]系統程式筆記2</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-09-24 21:49:03 &#43;0800 CST">Tue, 2019 Sep 24</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#21-assembler">2.1 assembler</a>
+      <ul>
+        <li><a href="#assembler-listing-lst-file">assembler listing (LST file)</a></li>
+        <li><a href="#obj-file">obj file</a></li>
+        <li><a href="#assembler">assembler</a></li>
+      </ul>
+    </li>
+    <li><a href="#22-sic-assembly">2.2 SIC Assembly</a>
+      <ul>
+        <li><a href="#組譯器指引-assembler-directives">組譯器指引 assembler directives</a></li>
+        <li><a href="#sicxe與sic差異">SIC/XE與SIC差異</a></li>
+      </ul>
+    </li>
+    <li><a href="#23-80xx-assembly">2.3 80xx assembly</a></li>
+    <li><a href="#24-assembler-algorithm">2.4 Assembler Algorithm</a>
+      <ul>
+        <li><a href="#組譯器演算法">組譯器演算法</a></li>
+        <li><a href="#通用設計程序">通用設計程序</a></li>
+        <li><a href="#two-passes-assembler">two passes assembler</a></li>
+      </ul>
+    </li>
+    <li><a href="#25-data-structures">2.5 Data Structures</a>
+      <ul>
+        <li><a href="#需求">需求</a></li>
+      </ul>
+    </li>
+    <li><a href="#26-machine-independent-assembler">2.6 Machine Independent Assembler</a>
+      <ul>
+        <li><a href="#configuration-table">configuration table</a></li>
+        <li><a href="#程式重定位">程式重定位</a></li>
+        <li><a href="#如何解決-relocation">如何解決 relocation</a></li>
+      </ul>
+    </li>
+    <li><a href="#27-separate-assemble-and-relocation">2.7 Separate assemble and relocation</a>
+      <ul>
+        <li><a href="#sic-obj紀錄">SIC obj紀錄</a></li>
+        <li><a href="#外部參考與內部參考">外部參考與內部參考</a></li>
+        <li><a href="#程式重定位-1">程式重定位</a></li>
+      </ul>
+    </li>
+    <li><a href="#assembler概念">Assembler概念</a></li>
+    <li><a href="#其他基本概念">其他基本概念</a></li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="21-assembler">2.1 assembler</h2>
 <p>將原始程式翻成machine code</p>
 <h3 id="assembler-listing-lst-file">assembler listing (LST file)</h3>

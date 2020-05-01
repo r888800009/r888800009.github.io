@@ -48,9 +48,38 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[網路安全] 公鑰與訊息認證</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2020-03-20 23:39:44 &#43;0800 CST">Fri, 2020 Mar 20</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#為何需要認證訊息">為何需要認證訊息</a></li>
+    <li><a href="#確認內容來源">確認內容來源</a>
+      <ul>
+        <li><a href="#可能的方法">可能的方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#secure-hash-function的性質">Secure Hash function的性質</a>
+      <ul>
+        <li><a href="#關於攻擊">關於攻擊</a></li>
+        <li><a href="#sha簡介">SHA簡介</a></li>
+      </ul>
+    </li>
+    <li><a href="#hmac">HMAC</a></li>
+    <li><a href="#ccm">CCM</a></li>
+    <li><a href="#公鑰加密">公鑰加密</a>
+      <ul>
+        <li><a href="#常見公開金鑰加密系統">常見公開金鑰加密系統</a></li>
+        <li><a href="#rsa">RSA</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="為何需要認證訊息">為何需要認證訊息</h2>
 <ul>
 <li>確定訊息來自<strong>受信任的發送者</strong>: secret key</li>

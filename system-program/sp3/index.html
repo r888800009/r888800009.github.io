@@ -48,9 +48,56 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[SP]系統程式筆記3</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-10-10 19:57:27 &#43;0800 CST">Thu, 2019 Oct 10</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#31-introduction">3.1 Introduction</a>
+      <ul>
+        <li><a href="#loader四大功能">loader四大功能</a></li>
+        <li><a href="#linkage-editor">Linkage Editor</a></li>
+        <li><a href="#linking-loader">Linking Loader</a></li>
+      </ul>
+    </li>
+    <li><a href="#32-absolute-loader">3.2 absolute Loader</a>
+      <ul>
+        <li><a href="#四大功能分配">四大功能分配</a></li>
+        <li><a href="#啟動載入器bootstrap-loader">啟動載入器(Bootstrap Loader)</a></li>
+      </ul>
+    </li>
+    <li><a href="#33-program-linking">3.3 program linking</a>
+      <ul>
+        <li><a href="#連結">連結</a></li>
+        <li><a href="#重定位relocation">重定位relocation</a></li>
+        <li><a href="#連結檔案">連結檔案</a></li>
+        <li><a href="#address-constant">address constant</a></li>
+        <li><a href="#重點分析">重點分析</a></li>
+      </ul>
+    </li>
+    <li><a href="#34-design-linking-loader">3.4 Design Linking Loader</a>
+      <ul>
+        <li><a href="#two-passes-linking-loader">two passes Linking loader</a></li>
+        <li><a href="#資料結構">資料結構</a></li>
+        <li><a href="#輸入資料">輸入資料</a></li>
+        <li><a href="#external-symbol-table">external symbol table</a></li>
+        <li><a href="#pseudo-code">pseudo code</a></li>
+      </ul>
+    </li>
+    <li><a href="#35-the-other-loaders">3.5 The other Loaders</a>
+      <ul>
+        <li><a href="#the-other-loaders">The Other Loaders</a></li>
+        <li><a href="#dynamic-linker">Dynamic Linker</a></li>
+        <li><a href="#overlay">Overlay</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="31-introduction">3.1 Introduction</h2>
 <h3 id="loader四大功能">loader四大功能</h3>
 <ul>

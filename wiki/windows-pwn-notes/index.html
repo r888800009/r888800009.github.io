@@ -48,9 +48,46 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Windows Pwn 筆記</a></h1>
-<div id="content"><div class="date"> 
+<div id="content"><div class="date">
         <time datetime="2019-09-10 10:27:36 &#43;0800 CST">Tue, 2019 Sep 10</time>
-    </div> 
+    </div>
+
+    <aside>
+      <h3>目次</h3>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#工具">工具</a>
+      <ul>
+        <li><a href="#x64dbg">X64dbg</a></li>
+        <li><a href="#cheat-engine">Cheat Engine</a></li>
+      </ul>
+    </li>
+    <li><a href="#cl">CL</a>
+      <ul>
+        <li><a href="#禁用aslr">禁用ASLR</a></li>
+        <li><a href="#修改成x86環境">修改成x86環境。</a></li>
+        <li><a href="#關閉safeseh">關閉SafeSEH</a></li>
+      </ul>
+    </li>
+    <li><a href="#seh">S.E.H</a>
+      <ul>
+        <li><a href="#seh結構體32位元">SEH結構體(32位元)</a></li>
+        <li><a href="#備註">備註</a></li>
+      </ul>
+    </li>
+    <li><a href="#sehop">SEHOP</a>
+      <ul>
+        <li><a href="#啟用的系統">啟用的系統</a></li>
+        <li><a href="#參見">參見</a></li>
+      </ul>
+    </li>
+    <li><a href="#safeseh">SafeSEH</a></li>
+    <li><a href="#windows-pwn問題">windows pwn問題</a></li>
+    <li><a href="#常用api">常用api</a></li>
+  </ul>
+</nav>
+    </aside>
+
     <h2 id="工具">工具</h2>
 <ul>
 <li><a href="https://x64dbg.com">x64dbg</a></li>
