@@ -13,40 +13,20 @@
     
     <item>
       <title>逆向相關資料</title>
-      <link>https://r888800009.github.io/wiki/reversing/</link>
+      <link>https://r888800009.github.io/software/reversing/</link>
       <pubDate>Sat, 16 Nov 2019 20:31:53 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/reversing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Radare2</title>
-      <link>https://r888800009.github.io/wiki/radare2/</link>
-      <pubDate>Sat, 05 Oct 2019 19:43:04 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/wiki/radare2/</guid>
+      <guid>https://r888800009.github.io/software/reversing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows Pwn 筆記</title>
-      <link>https://r888800009.github.io/wiki/windows-pwn-notes/</link>
+      <link>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</link>
       <pubDate>Tue, 10 Sep 2019 10:27:36 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/windows-pwn-notes/</guid>
+      <guid>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Ghidra</title>
-      <link>https://r888800009.github.io/wiki/ghidra-note/</link>
-      <pubDate>Fri, 16 Aug 2019 23:57:31 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/wiki/ghidra-note/</guid>
-      <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，
-&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及
-GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
     </item>
     
   </channel>

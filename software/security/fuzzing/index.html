@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>Fuzzing | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Fuzzing</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2019-09-15 12:25:38 &#43;0800 CST">Sun, 2019 Sep 15</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#型類">型類</a></li>
+    <li><a href="#fuzzer">Fuzzer</a>
+      <ul>
+        <li><a href="#radamsa">radamsa</a></li>
+        <li><a href="#afl">afl</a></li>
+        <li><a href="#afl-1">AFL</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+
+    <h2 id="型類">型類</h2>
+<ul>
+<li>file fuzz</li>
+<li>protocol fuzz</li>
+</ul>
+<h2 id="fuzzer">Fuzzer</h2>
+<p>常見的Fuzzer</p>
+<ul>
+<li><a href="http://lcamtuf.coredump.cx/afl/">afl</a> <a href="https://github.com/google/AFL">GitHub</a></li>
+<li><a href="https://gitlab.com/akihe/radamsa">radamsa</a></li>
+</ul>
+<h3 id="radamsa">radamsa</h3>
+<p>安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S radamsa
+</code></pre></div><p>使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;if(x &gt; 8)&#34;</span> | radamsa    
+</code></pre></div><h3 id="afl">afl</h3>
+<p>安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S afl
+</code></pre></div><h3 id="afl-1">AFL</h3>
+<p>編譯被測試程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-gcc main.c
+</code></pre></div><p>編寫測資後，測試程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out
+</code></pre></div><p>或使用參數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out @@
+</code></pre></div>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/debug" class="tags">Debug</a>
+      
+        <a href="https://r888800009.github.io/tags/vulnerability" class="tags">Vulnerability</a>
+      
+        <a href="https://r888800009.github.io/tags/fuzzing" class="tags">Fuzzing</a>
+      
+        <a href="https://r888800009.github.io/tags/testing" class="tags">Testing</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2020.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

@@ -31,28 +31,28 @@
     
     <item>
       <title>Netcat</title>
-      <link>https://r888800009.github.io/wiki/netcat/</link>
+      <link>https://r888800009.github.io/network/netcat/</link>
       <pubDate>Sat, 26 Oct 2019 16:01:06 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/netcat/</guid>
+      <guid>https://r888800009.github.io/network/netcat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTTP</title>
-      <link>https://r888800009.github.io/wiki/http/</link>
+      <link>https://r888800009.github.io/network/http/</link>
       <pubDate>Fri, 18 Oct 2019 21:55:50 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/http/</guid>
+      <guid>https://r888800009.github.io/network/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DNS</title>
-      <link>https://r888800009.github.io/wiki/dns/</link>
+      <link>https://r888800009.github.io/network/dns/</link>
       <pubDate>Mon, 07 Oct 2019 19:53:47 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/dns/</guid>
+      <guid>https://r888800009.github.io/network/dns/</guid>
       <description></description>
     </item>
     
@@ -94,19 +94,19 @@
     
     <item>
       <title>URL Obfuscation</title>
-      <link>https://r888800009.github.io/wiki/url-obfuscation/</link>
+      <link>https://r888800009.github.io/software/security/url-obfuscation/</link>
       <pubDate>Thu, 29 Aug 2019 18:05:31 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/url-obfuscation/</guid>
+      <guid>https://r888800009.github.io/software/security/url-obfuscation/</guid>
       <description>&lt;p&gt;混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>辨識Web伺服與應用程式</title>
-      <link>https://r888800009.github.io/wiki/web-fingerprint/</link>
+      <link>https://r888800009.github.io/software/security/web/fingerprint/</link>
       <pubDate>Tue, 27 Aug 2019 15:23:28 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/web-fingerprint/</guid>
+      <guid>https://r888800009.github.io/software/security/web/fingerprint/</guid>
       <description>&lt;p&gt;辨識Web伺服器或應用程式的方法。&lt;/p&gt;</description>
     </item>
     

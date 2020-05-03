@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>辨識Web伺服與應用程式 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">辨識Web伺服與應用程式</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2019-08-27 15:23:28 &#43;0800 CST">Tue, 2019 Aug 27</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#工具">工具</a>
+      <ul>
+        <li><a href="#wappalyzer">Wappalyzer</a></li>
+      </ul>
+    </li>
+    <li><a href="#辨識github-pages">辨識GitHub Pages</a>
+      <ul>
+        <li><a href="#github-pages-response-headers">GitHub Pages Response Headers</a></li>
+      </ul>
+    </li>
+    <li><a href="#參考">參考</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <p>辨識Web伺服器或應用程式的方法。</p>
+<h2 id="工具">工具</h2>
+<p>使用現成的工具進行檢測</p>
+<ul>
+<li><a href="https://www.wappalyzer.com">wappalyzer</a>瀏覽器插件，點選查看web相關資訊。</li>
+<li>httprint</li>
+</ul>
+<h3 id="wappalyzer">Wappalyzer</h3>
+<p>wappalyzer似乎在辨識hugo本地伺服器有一些問題? 檢測出java。</p>
+<p><strong>預設會回傳匿名資訊，可以設定關閉</strong></p>
+<h2 id="辨識github-pages">辨識GitHub Pages</h2>
+<p>透過<code>wappalyzer</code>或<code>Response Headers</code>，
+網頁若掛了CloudFlare依然可以檢測到GitHub Page</p>
+<h3 id="github-pages-response-headers">GitHub Pages Response Headers</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">x-github-request-id:
+</code></pre></div><p><code>x-request-id</code>參見stack overflow上的<a href="https://stackoverflow.com/questions/25433258/what-is-the-x-request-id-http-header">What is the X-REQUEST-ID http header?</a></p>
+<h2 id="參考">參考</h2>
+<ul>
+<li><a href="https://www.owasp.org/index.php/Fingerprint_Web_Server_(OTG-INFO-002)">Fingerprint Web Server (OTG-INFO-002)</a></li>
+<li><a href="https://www.owasp.org/index.php/Fingerprint_Web_Application_(OTG-INFO-009)">Fingerprint Web Application (OTG-INFO-009)</a></li>
+<li><a href="https://www.freebuf.com/articles/2555.html">浅谈web指纹识别技术</a></li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8" class="tags">web安全</a>
+      
+        <a href="https://r888800009.github.io/tags/http" class="tags">HTTP</a>
+      
+        <a href="https://r888800009.github.io/tags/web" class="tags">Web</a>
+      
+        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2020.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

@@ -13,46 +13,46 @@
     
     <item>
       <title>XSS</title>
-      <link>https://r888800009.github.io/wiki/xss/</link>
+      <link>https://r888800009.github.io/software/security/web/xss/</link>
       <pubDate>Mon, 28 Oct 2019 19:37:51 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/xss/</guid>
+      <guid>https://r888800009.github.io/software/security/web/xss/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WAF繞過</title>
-      <link>https://r888800009.github.io/wiki/web-waf-bypass/</link>
+      <link>https://r888800009.github.io/software/security/web/waf-bypass/</link>
       <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/web-waf-bypass/</guid>
+      <guid>https://r888800009.github.io/software/security/web/waf-bypass/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web滲透測試工具</title>
-      <link>https://r888800009.github.io/wiki/web-penetration-testing-tools/</link>
+      <link>https://r888800009.github.io/software/security/web/penetration-testing-tools/</link>
       <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/web-penetration-testing-tools/</guid>
+      <guid>https://r888800009.github.io/software/security/web/penetration-testing-tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web安全筆記</title>
-      <link>https://r888800009.github.io/wiki/web-security-notes/</link>
+      <link>https://r888800009.github.io/software/security/web/security-notes/</link>
       <pubDate>Tue, 01 Oct 2019 23:09:38 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/web-security-notes/</guid>
+      <guid>https://r888800009.github.io/software/security/web/security-notes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web網頁漏洞</title>
-      <link>https://r888800009.github.io/wiki/web-vulnerability/</link>
+      <link>https://r888800009.github.io/software/security/web/vulnerability/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/web-vulnerability/</guid>
+      <guid>https://r888800009.github.io/software/security/web/vulnerability/</guid>
       <description></description>
     </item>
     
@@ -67,10 +67,10 @@
     
     <item>
       <title>辨識Web伺服與應用程式</title>
-      <link>https://r888800009.github.io/wiki/web-fingerprint/</link>
+      <link>https://r888800009.github.io/software/security/web/fingerprint/</link>
       <pubDate>Tue, 27 Aug 2019 15:23:28 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/wiki/web-fingerprint/</guid>
+      <guid>https://r888800009.github.io/software/security/web/fingerprint/</guid>
       <description>&lt;p&gt;辨識Web伺服器或應用程式的方法。&lt;/p&gt;</description>
     </item>
     
@@ -85,10 +85,10 @@
     
     <item>
       <title>[Web安全筆記] 透過docker配置漏洞測試網站</title>
-      <link>https://r888800009.github.io/web-sec/get-start/</link>
+      <link>https://r888800009.github.io/software/security/web/get-start/</link>
       <pubDate>Thu, 08 Aug 2019 15:08:09 +0800</pubDate>
       
-      <guid>https://r888800009.github.io/web-sec/get-start/</guid>
+      <guid>https://r888800009.github.io/software/security/web/get-start/</guid>
       <description>&lt;p&gt;為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，
 在本文當中我們將採用&lt;code&gt;docker&lt;/code&gt;來配置測試環境，並安裝&lt;code&gt;WebGoat&lt;/code&gt;、
 &lt;code&gt;Damn Vulnerable Web Application&lt;/code&gt;、&lt;code&gt;Broken Web Applications&lt;/code&gt;。&lt;/p&gt;</description>

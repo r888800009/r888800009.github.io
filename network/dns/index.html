@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>DNS | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">DNS</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2019-10-07 19:53:47 &#43;0800 CST">Mon, 2019 Oct 7</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#arch-linux查dns">Arch Linux查DNS</a></li>
+    <li><a href="#透過docker架設bind伺服器">透過Docker架設BIND伺服器</a></li>
+    <li><a href="#nslookup-查詢各種紀錄">nslookup 查詢各種紀錄</a></li>
+    <li><a href="#dig查詢dns">dig查詢DNS</a></li>
+    <li><a href="#參考">參考</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <h2 id="arch-linux查dns">Arch Linux查DNS</h2>
+<p>查詢dns</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">drill google.com
+</code></pre></div><p>跟蹤模式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">drill -T google.com  
+</code></pre></div><p>或者安裝<code>bind-tools</code></p>
+<p>查詢<code>host</code>，archlinux預設不能直接用<code>host</code>，除非安裝<code>bind-tools</code>，我們可以用下面指令代替</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">getent hosts google.com
+</code></pre></div><h2 id="透過docker架設bind伺服器">透過Docker架設BIND伺服器</h2>
+<p>獲取<code>bind</code>伺服器，如果需要其他版本可以用<code>docker search</code>找尋</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull sameersbn/bind
+</code></pre></div><p>啟動伺服器</p>
+<pre><code>docker run --name bind -it --rm \
+  --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
+  --volume /srv/docker/bind:/data \
+  sameersbn/bind
+</code></pre><p>訪問 https://localhost:10000 連上管理界面，預設使用者名稱為<code>root</code>，
+密碼為<code>password</code>。如果不想啟用管理界面可以使用<code>--env WEBMIN_ENABLED=false</code>。</p>
+<p>測試Name Server是否架設成功，若成功應該返回查詢資料。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">host google.com 127.0.0.1 
+</code></pre></div><p>嘗試配置<code>ns.example.com</code>與<code>test.example.com</code>並且指向<code>127.0.0.1</code>，
+在配置完成master zone與A紀錄，確定<strong>重新載入配置</strong>(避免沒有紀錄)之後，
+透過以下指令確認查詢到<code>127.0.0.1</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">host test.example.com 127.0.0.1  
+</code></pre></div><p>參見<a href="https://hub.docker.com/r/sameersbn/bind/">sameersbn/bind</a></p>
+<h2 id="nslookup-查詢各種紀錄">nslookup 查詢各種紀錄</h2>
+<p>注意參數順序</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nslookup -type<span style="color:#f92672">=</span>NS google.com
+nslookup -type<span style="color:#f92672">=</span>A google.com
+nslookup -type<span style="color:#f92672">=</span>MX google.com 
+</code></pre></div><h2 id="dig查詢dns">dig查詢DNS</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dig +norecurse @ns2.google.com any google.com 
+</code></pre></div><h2 id="參考">參考</h2>
+<ul>
+<li><a href="http://linux.vbird.org/linux_server/0350dns.php#server_settings">鳥哥私房菜:19.3 DNS 伺服器的軟體、種類與 cache only DNS 伺服器設定</a></li>
+<li><a href="http://www.damagehead.com/blog/2015/04/28/deploying-a-dns-server-using-docker/">Deploying a DNS Server using Docker</a></li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/dns" class="tags">DNS</a>
+      
+        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2020.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>
