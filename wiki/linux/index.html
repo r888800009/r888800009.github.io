@@ -76,6 +76,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#雜項指令">雜項指令</a></li>
+    <li><a href="#控制-process-使用的核心數量">控制 Process 使用的核心數量</a></li>
     <li><a href="#其他問題">其他問題</a>
       <ul>
         <li><a href="#arduino無法連接板子">Arduino無法連接板子</a></li>
@@ -146,6 +147,9 @@ ls /dev/mmcb*
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl suspend
 </code></pre></div><p>檢視系統錯誤日誌</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">journalctl -p <span style="color:#ae81ff">3</span> -x 
+</code></pre></div><h2 id="控制-process-使用的核心數量">控制 Process 使用的核心數量</h2>
+<p>比方說限制 <code>./a.out</code> 只能使用 CPU 0</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">taskset --cpu-list <span style="color:#ae81ff">0</span> ./a.out 
 </code></pre></div><h2 id="其他問題">其他問題</h2>
 <h3 id="arduino無法連接板子">Arduino無法連接板子</h3>
 <p>使用下列指令給予權限。</p>
