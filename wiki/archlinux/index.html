@@ -65,6 +65,7 @@ if (!doNotTrack) {
     <li><a href="#java缺少中文字體">java缺少中文字體</a></li>
     <li><a href="#java-6">java 6</a></li>
     <li><a href="#採用lts-kernel">採用LTS kernel</a></li>
+    <li><a href="#清理">清理</a></li>
   </ul>
 </nav>
     </aside>
@@ -79,8 +80,6 @@ sh archfi
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Qqm
 </code></pre></div><p>重新安裝一切</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Syu <span style="color:#66d9ef">$(</span>pacman -Qnq<span style="color:#66d9ef">)</span>
-</code></pre></div><p>清理快取</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo paccache -r
 </code></pre></div><h2 id="pacaur">pacaur</h2>
 <p>安裝pacaur或更新時可用以下腳本。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /tmp
@@ -117,6 +116,18 @@ options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
 </code></pre></div><p>或者修改<code>/boot/loader/loader.conf</code>使預設透過lts啟動</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">default arch-lts
 </code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/systemd-boot#">archliunux wiki</a></p>
+<h2 id="清理">清理</h2>
+<p>分析硬碟使用空間</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncdu -x / 
+</code></pre></div><p>分析軟件包花費空間</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacgraph -c   
+</code></pre></div><p>清理快取</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -r
+</code></pre></div><p>只保留快取一個版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -rk1    
+</code></pre></div><p>移除被解除安裝的快取</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -ruk0
+</code></pre></div><p>參考<a href="https://bbs.archlinux.org/viewtopic.php?id=121474">Free up space on root disk</a></p>
 
     
       <hr>
