@@ -70,6 +70,25 @@ if (!doNotTrack) {
         <li><a href="#交易">交易</a></li>
       </ul>
     </li>
+    <li><a href="#62">6.2</a>
+      <ul>
+        <li><a href="#臨界區間要求">臨界區間要求</a></li>
+        <li><a href="#方法">方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#63-硬體解決方法">6.3 硬體解決方法</a></li>
+    <li><a href="#64-65-semaphores">6.4, 6.5 Semaphores</a>
+      <ul>
+        <li><a href="#實做">實做</a></li>
+        <li><a href="#問題與實用">問題與實用</a></li>
+      </ul>
+    </li>
+    <li><a href="#66-critical-region--monitor">6.6 Critical Region / Monitor</a>
+      <ul>
+        <li><a href="#比較">比較</a></li>
+      </ul>
+    </li>
+    <li><a href="#67">6.7</a></li>
   </ul>
 </nav>
     </aside>
@@ -93,6 +112,108 @@ if (!doNotTrack) {
 <p>Process 存取<strong>共用</strong>資源的<strong>程式碼</strong></p>
 <h3 id="交易">交易</h3>
 <p><strong>最細小不可分割</strong>的單位，由一到數個指令組成<strong>邏輯功能</strong></p>
+<h2 id="62">6.2</h2>
+<h3 id="臨界區間要求">臨界區間要求</h3>
+<ul>
+<li>Mutual Exclusion: 同一時間僅一個 Process 存取資源</li>
+<li>Progress: <strong>公平原則</strong>，當 Process 進入並離開 Critical Section 時，
+當前 Process 指向 Remainder code ，重新回到 Enter Statment 時，
+相較之下尚未執行 Remainder code 的 Process 優先進入 Critical Section。
+若其他 Process 不進入 C.S. 不會導致其他 Process 無法進入 C.S.</li>
+<li>Bounded Waiting: n 個 Process 最多等待 n - 1 次</li>
+</ul>
+<h3 id="方法">方法</h3>
+<ul>
+<li>禁止中斷法: 多處理器下不可行，不滿足 Progress, Bounded Waiting</li>
+<li><strong>必須考量非同步並行的問題</strong></li>
+<li>Peterson&rsquo;s solution: 保證 M.E., Progress, B.W. ，任意位置 Context Switch
+不影響運行，<strong>只能處理兩個 Process</strong>。</li>
+<li>Bakery: 滿足 M.E., Progress, B.W. ，不被 Context Switch 影響，
+抽取號碼牌可能有相同的值，編號唯一使同時單一 Process，
+Progress 為 Totally Order， B.W. 也因此為 FCFS 因此進入 C.S. 次數有限。</li>
+</ul>
+<h2 id="63-硬體解決方法">6.3 硬體解決方法</h2>
+<p>透過硬體實現細小運算以免運算次序出錯。</p>
+<ul>
+<li><code>test-and-set()</code> 與 <code>swap()</code> 都能解決互斥，但不滿足 Progress 與 B.W.</li>
+<li>採用 lock ，使只能單一 Process 運行，Progress 透過運行的 Process 解除等待，
+使其他等待的 Process 進行，B.W. 由於循環並依序執行 Process ，因此最多只需要 n - 1
+次等待。</li>
+</ul>
+<h2 id="64-65-semaphores">6.4, 6.5 Semaphores</h2>
+<ul>
+<li>Binary Semaphore: 0, 1, <strong>負值</strong></li>
+<li>Counting Semaphore: 任意正負</li>
+<li>透過不可中斷的細小運算 <code>P</code> 與 <code>V</code></li>
+<li>保護變數 <code>S</code> 僅可被 <code>P</code> 與 <code>V</code> 同步</li>
+<li>Busy waiting: 為 Spin Lock CPU 不斷測試 S 是否符合條件</li>
+<li>Block/Wakeup: 透過佇列處理，符合三個要求，S 負數代表等待的 Process 數量。</li>
+</ul>
+<h3 id="實做">實做</h3>
+<ul>
+<li>最細小運算不可 Context Switch</li>
+<li>硬體實現最細小運算</li>
+<li>軟體需要透過 M.E., Progress, B.W. 三者符合的演算法</li>
+</ul>
+<h3 id="問題與實用">問題與實用</h3>
+<ul>
+<li>Time Dependent Error: 編寫誤用或 Deadlock 導致 Starvation</li>
+<li>同步: 可以透過 Semaphore 進行 IPC ，同步兩 Process 的執行順序</li>
+<li>Producer-Consumer: 解決緩衝區共用，透過 Semaphore 紀錄數量</li>
+<li>讀寫問題</li>
+<li>Dining Philosophers:
+<ul>
+<li>Deadlock
+<ul>
+<li>奇左後右，偶右後左</li>
+<li>同時取左右</li>
+<li>單個放棄</li>
+</ul>
+</li>
+<li>Starvation
+<ul>
+<li>Wait queue</li>
+<li>動態優先級</li>
+<li>超時優先</li>
+</ul>
+</li>
+<li>Deadlock 導致 Starvation</li>
+<li>Deadlock 導致 Starvation, 解決不一定能避免 Starvation</li>
+</ul>
+</li>
+</ul>
+<h2 id="66-critical-region--monitor">6.6 Critical Region / Monitor</h2>
+<p>語言文法定義 Critical Region / Monitor 解決時間相依錯誤的問題。</p>
+<ul>
+<li>宣告於 Monitor 的<strong>變數</strong>、 <strong>Procedure</strong> 管理同步。</li>
+<li>透過 Queue 提供 Block, Waiting</li>
+<li>Monitor 保證 M.E.</li>
+<li>透過 Monitor 管理與執行資料控制。</li>
+</ul>
+<h3 id="比較">比較</h3>
+<ul>
+<li>Critical Region 比 Semaphores 保護程式碼可讀性來的高</li>
+<li>Critical Region 比起 Monitor ， Monitor 可用範圍更大</li>
+<li>Critical Section 代表處理共用資源的程式碼，Critical Section 為程式語言文法，
+代表需要被保護的範圍。</li>
+</ul>
+<h2 id="67">6.7</h2>
+<ul>
+<li>Locking Protocol:
+<ul>
+<li>SLock: Shared Read</li>
+<li>XLock: Exclusive Write</li>
+</ul>
+</li>
+<li>Two Phase Locking: 兩個步驟，個別只能 Lock 或只能 Unlock
+<ul>
+<li>Growing phase: 只能 Lock 不可 Unlock</li>
+<li>Shrinking phase: 只能 Unlock 不可 Lock</li>
+<li>保證 Conflict Serializable, 不保證 Deadlock 不發生</li>
+<li>Time stamp則可以保證 C.S. 與無 Deadlock</li>
+</ul>
+</li>
+</ul>
 
     
       <hr>
