@@ -86,6 +86,7 @@ if (!doNotTrack) {
     <li><a href="#模擬按下">模擬按下</a></li>
     <li><a href="#影片播放">影片播放</a></li>
     <li><a href="#ranger">ranger</a></li>
+    <li><a href="#編輯-pdf-metadata">編輯 PDF metadata</a></li>
   </ul>
 </nav>
     </aside>
@@ -179,6 +180,14 @@ xclip -out -selection primary
 <h2 id="ranger">ranger</h2>
 <p><a href="https://github.com/ranger/ranger/issues/1184#issuecomment-412126170">使用ranger作為預設文件管理器</a></p>
 <p>配置 <code>xdg-open</code> 可以透過 <code>ranger</code> 啟動程式</p>
+<h2 id="編輯-pdf-metadata">編輯 PDF metadata</h2>
+<p>安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S  perl-image-exiftool
+</code></pre></div><p>檢視 metadata</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool file.pdf
+</code></pre></div><p>修改 pdf 標題</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool -Title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new title&#34;</span> pdf
+</code></pre></div>
 
     
       <hr>
