@@ -65,6 +65,7 @@ if (!doNotTrack) {
         <li><a href="#解決-deadlock">解決 Deadlock</a></li>
       </ul>
     </li>
+    <li><a href="#72-預防-deadlock">7.2 預防 Deadlock</a></li>
   </ul>
 </nav>
     </aside>
@@ -94,6 +95,46 @@ if (!doNotTrack) {
 <li>預防 Deadlock: 系統使用協議並免死結</li>
 <li>偵測 Deadlock: 偵測到死結產生後，對死結進行復原</li>
 </ul>
+<h2 id="72-預防-deadlock">7.2 預防 Deadlock</h2>
+<p>使 Deadlock 的四個條件不成立。</p>
+<ol>
+<li>Mutual Exclusion:
+<ul>
+<li>讓資源共用</li>
+<li>不可行: 因為有些資源是無法共用的，必須維持互斥性</li>
+</ul>
+</li>
+<li>Hold and Wait:
+<ul>
+<li>Process 必須獲得所有資源才能運算</li>
+<li>可行低效: 要不到資源先釋放自身所有資源，效率低落</li>
+<li>可能導致 Stravation</li>
+</ul>
+</li>
+<li>Non-Preemtion: 不可行
+<ul>
+<li>釋放自身資源: 低效</li>
+<li>奪取資源:
+<ul>
+<li>如印表機等專屬設備是不可奪取的資源</li>
+<li>共用設備則可以奪取，如 CPU 、 RAM..
+等可奪取的資源 ** (Premptible Resource) **</li>
+</ul>
+</li>
+<li>可能導致 Stravation</li>
+</ul>
+</li>
+<li>Circuler Wait: 可能但務實不可行
+<ul>
+<li>必須依資源編號順序請求資源</li>
+<li>資源編號都是<strong>唯一</strong>的</li>
+<li>反證法: 循環圈產生之後，
+最小編號的資源不可能小於自己的編號因此產生矛盾。
+因此循環等待是不可能產生的。</li>
+<li>難以對資源編號</li>
+</ul>
+</li>
+</ol>
 
     
       <hr>
