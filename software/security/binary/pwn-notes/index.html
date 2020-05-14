@@ -59,36 +59,41 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#檢查保護">檢查保護</a></li>
+    <li><a href="#前置概念">前置概念</a></li>
+    <li><a href="#保護">保護</a>
+      <ul>
+        <li><a href="#aslr繞過">ASLR繞過</a></li>
+      </ul>
+    </li>
+    <li><a href="#利用方法">利用方法</a></li>
     <li><a href="#指令">指令</a>
       <ul>
         <li><a href="#符號與區段">符號與區段</a></li>
         <li><a href="#pwntools">pwntools</a></li>
       </ul>
     </li>
-    <li><a href="#概念">概念</a></li>
-    <li><a href="#aslr繞過">ASLR繞過</a></li>
-    <li><a href="#shellcode">Shellcode</a>
-      <ul>
-        <li><a href="#nop-sled">Nop Sled</a></li>
-      </ul>
-    </li>
     <li><a href="#技巧">技巧</a>
       <ul>
+        <li><a href="#shellcode-nop-sled">Shellcode: Nop Sled</a></li>
         <li><a href="#除錯技巧">除錯技巧</a></li>
         <li><a href="#指定libc">指定libc</a></li>
         <li><a href="#payload輸入">payload輸入</a></li>
         <li><a href="#反向除錯">反向除錯</a></li>
+        <li><a href="#補齊">補齊</a></li>
       </ul>
     </li>
-    <li><a href="#pwn常見問題">Pwn常見問題</a></li>
     <li><a href="#參見">參見</a></li>
   </ul>
 </nav>
     </aside>
 
     <p>pwn常用指令以及概念紀錄</p>
-<h2 id="檢查保護">檢查保護</h2>
+<h2 id="前置概念">前置概念</h2>
+<ul>
+<li><code>little endian</code>: 高位優先</li>
+<li><code>big endian</code>: 低位優先</li>
+</ul>
+<h2 id="保護">保護</h2>
 <p>透過<code>checksec</code>下去檢測有哪些保護啟用</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gdb-peda$ checksec
 </code></pre></div><p>輸出結果</p>
@@ -99,6 +104,44 @@ PIE       : disabled
 RELRO     : Partial
 </code></pre></div><p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，
 也可能是透過其他漏洞如<a href="/software/security/binary/format-string-attack/">格式化字串</a>。</p>
+<h3 id="aslr繞過">ASLR繞過</h3>
+<p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
+<h2 id="利用方法">利用方法</h2>
+<ul>
+<li>Heap <a href="https://paper.seebug.org/1109/">pwn的艺术浅谈（二）：linux堆相关</a></li>
+<li><a href="/software/security/binary/format-string-attack/">Format String</a></li>
+<li><a href="/software/security/binary/windows-pwn-notes/">Windows</a>
+<ul>
+<li>SEH</li>
+<li>VEH</li>
+</ul>
+</li>
+<li>Linux
+<ul>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/gothijack.py">GOT Hijacking</a></li>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2libc.py">ret2libc</a></li>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2plt.py">ret2plt</a></li>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py">ret2shellcode</a></li>
+</ul>
+</li>
+<li><a href="/software/security/binary/stack-smash/">Stack Smash</a></li>
+<li><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/basic-rop-zh/">ROP</a>
+<ul>
+<li>ret2text</li>
+<li>ret2shellcode</li>
+<li>ret2syscall</li>
+<li>ret2libc</li>
+<li>ret2csu</li>
+<li>ret2reg</li>
+<li>BROP: Blind ROP</li>
+<li>ret2_dl_runtime_resolve</li>
+<li>SROP: Sigreturn Oriented Programming</li>
+<li>ret2VDSO: Virtual Dynamically-linked Shared Object</li>
+<li>JOP: Jump-oriented programming</li>
+<li>COP: Call-oriented programming</li>
+</ul>
+</li>
+</ul>
 <h2 id="指令">指令</h2>
 <p>反組譯查看函數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./echo | less
@@ -115,18 +158,10 @@ objdump -s -j .text ./a.out
 <p>構造一個<code>echo</code>的shellcode</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwnlib <span style="color:#f92672">import</span> shellcraft
 shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
-</code></pre></div><h2 id="概念">概念</h2>
-<ul>
-<li><code>little endian</code>: 高位優先</li>
-<li><code>big endian</code>: 低位優先</li>
-</ul>
-<h2 id="aslr繞過">ASLR繞過</h2>
-<p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
-<h2 id="shellcode">Shellcode</h2>
-<h3 id="nop-sled">Nop Sled</h3>
+</code></pre></div><h2 id="技巧">技巧</h2>
+<h3 id="shellcode-nop-sled">Shellcode: Nop Sled</h3>
 <p>透過<code>nop</code>指令增加shellcode的命中機率，
 在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
-<h2 id="技巧">技巧</h2>
 <h3 id="除錯技巧">除錯技巧</h3>
 <p>採用<a href="/software/testing/gdb/#gdb-script">GDB Script</a>來避免重複的動作，
 如:</p>
@@ -146,7 +181,7 @@ shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&
 <p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
 <h3 id="反向除錯">反向除錯</h3>
 <p>參見<a href="/software/testing/debug/#反向除錯">除錯</a></p>
-<h2 id="pwn常見問題">Pwn常見問題</h2>
+<h3 id="補齊">補齊</h3>
 <p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;amd64&#39;</span>
