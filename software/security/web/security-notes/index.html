@@ -76,8 +76,14 @@ if (!doNotTrack) {
 
     <h2 id="索引">索引</h2>
 <ul>
-<li><a href="/software/security/web/vulnerability/">Web網頁漏洞</a></li>
+<li><a href="/software/security/web/vulnerability/">Web網頁漏洞與利用方法</a>
+<ul>
+<li>LFI</li>
+<li>SQL Injection</li>
+<li>XSS</li>
 <li><a href="/software/security/web/vulnerability/#弱型別">弱型別</a></li>
+</ul>
+</li>
 <li><a href="/software/security/web/vulnerability/#sql-injection">SQL 注入</a></li>
 <li><a href="/software/security/web/penetration-testing-tools/">工具</a></li>
 <li><a href="/software/security/web/waf-bypass/">WAF繞過</a></li>
@@ -88,14 +94,13 @@ if (!doNotTrack) {
 <h2 id="流程">流程</h2>
 <ol>
 <li>判斷環境、版本、框架、伺服器等資訊</li>
-<li>找漏洞與fuzz:</li>
-</ol>
+<li>找漏洞與fuzz:
 <ul>
 <li><strong>語言特性</strong>如php弱型態, <strong>框架特性</strong></li>
 <li>邏輯漏洞</li>
 <li>框架漏洞(查CVE</li>
 </ul>
-<ol start="3">
+</li>
 <li>漏洞利用</li>
 </ol>
 <h2 id="偵查階段">偵查階段</h2>

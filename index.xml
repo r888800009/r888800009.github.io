@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>軟體混淆</title>
+      <link>https://r888800009.github.io/software/security/obfuscation/</link>
+      <pubDate>Thu, 14 May 2020 14:15:50 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/obfuscation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>[OS] Deadlock</title>
       <link>https://r888800009.github.io/operating-system/os7/</link>
       <pubDate>Tue, 12 May 2020 21:13:39 +0800</pubDate>
@@ -837,7 +846,7 @@
     </item>
     
     <item>
-      <title>Web網頁漏洞</title>
+      <title>Web 網頁漏洞與利用方法</title>
       <link>https://r888800009.github.io/software/security/web/vulnerability/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
       
