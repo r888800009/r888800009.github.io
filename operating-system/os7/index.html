@@ -66,6 +66,11 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#72-預防-deadlock">7.2 預防 Deadlock</a></li>
+    <li><a href="#73-避免-deadlock">7.3 避免 Deadlock</a>
+      <ul>
+        <li><a href="#配置圖與配置狀態">配置圖與配置狀態</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
@@ -135,6 +140,22 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ol>
+<h2 id="73-避免-deadlock">7.3 避免 Deadlock</h2>
+<p>透過資源配置圖檢查是否處於 Deadlock 或
+Safe State 或 Unsafe State。</p>
+<ul>
+<li>Safe State: 系統透過一些次序分配資源給每 Process ，能夠
+避免 Deadlock</li>
+<li>Unsafe State: 不一定有 Deadlock ，
+但是 Deadlock 一定發生在 Unsafe State</li>
+</ul>
+<p>分配資源時，盡可能給予最少需求的 Process ，以便這些
+Process 能夠釋放更多資源，保持在 Safe State。</p>
+<h3 id="配置圖與配置狀態">配置圖與配置狀態</h3>
+<ul>
+<li>Resource Allocation Graph: 使用一個資源，判斷分配資源後是否會產生迴圈，會則不分配。</li>
+<li>Resource Allocation State: 紀錄使用多個資源，以保持 Safe State</li>
+</ul>
 
     
       <hr>
