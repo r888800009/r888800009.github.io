@@ -69,6 +69,7 @@ if (!doNotTrack) {
     <li><a href="#73-避免-deadlock">7.3 避免 Deadlock</a>
       <ul>
         <li><a href="#配置圖與配置狀態">配置圖與配置狀態</a></li>
+        <li><a href="#bankers-algorithm">Banker&rsquo;s algorithm</a></li>
       </ul>
     </li>
   </ul>
@@ -156,6 +157,30 @@ Process 能夠釋放更多資源，保持在 Safe State。</p>
 <li>Resource Allocation Graph: 使用一個資源，判斷分配資源後是否會產生迴圈，會則不分配。</li>
 <li>Resource Allocation State: 紀錄使用多個資源，以保持 Safe State</li>
 </ul>
+<h3 id="bankers-algorithm">Banker&rsquo;s algorithm</h3>
+<p>系統有 <code>n</code> 個 Process 與 <code>m</code> 種資料</p>
+<ul>
+<li>Allocation: 目前 Process 以使用的資源，<code>m * n</code> 個元素</li>
+<li>Max: 最多需要多少資源</li>
+<li>Need: 還需要多少資源 <code>Max - Allocation = Need</code></li>
+<li>Available: 系統還有多少可用資源，<code>m</code> 個元素</li>
+</ul>
+<h4 id="資源請求演算法">資源請求演算法</h4>
+<ol>
+<li>檢查請求是否合理，比方說需要的資源小於請求的資源。</li>
+<li>計算請求的資源是否在可用的範圍</li>
+<li>計算資源配置狀態</li>
+</ol>
+<h4 id="安全演算法">安全演算法</h4>
+<ol>
+<li>讓 Work 與 Finish 向量長度各為 m 與 n，並初始化</li>
+<li>while (找到一個未完成，並且可以完全提供的)
+<ul>
+<li>取回資源</li>
+</ul>
+</li>
+<li>finish 所有代表系統安全。</li>
+</ol>
 
     
       <hr>
