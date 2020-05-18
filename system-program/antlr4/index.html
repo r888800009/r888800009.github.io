@@ -59,7 +59,13 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#產生適用於python的檔案">產生適用於python的檔案</a></li>
+    <li><a href="#產生適用於python的檔案">產生適用於python的檔案</a>
+      <ul>
+        <li><a href="#參考資料">參考資料</a></li>
+        <li><a href="#header">header</a></li>
+      </ul>
+    </li>
+    <li><a href="#注意事項">注意事項</a></li>
   </ul>
 </nav>
     </aside>
@@ -69,7 +75,40 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S antlr4  python-antlr4
 </code></pre></div><h2 id="產生適用於python的檔案">產生適用於python的檔案</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">antlr4 -Dlanguage<span style="color:#f92672">=</span>Python3 grammar.g4
-</code></pre></div>
+</code></pre></div><p>產生之後可以找到該檔案， <code>Listener</code> 檔案在進去與離開的時候，
+可以觸發各種行為，
+並且透過 <code>getChild(index)</code> 來取得該 Symbol，裡面 Symbol</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ctx<span style="color:#f92672">.</span>getChild(<span style="color:#ae81ff">1</span>)
+</code></pre></div><p>該方法透過 walker 進行處理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">printer <span style="color:#f92672">=</span> ebnf_likeListener()
+walker <span style="color:#f92672">=</span> ParseTreeWalker()
+walker<span style="color:#f92672">.</span>walk(printer, tree)
+</code></pre></div><p>亦可透過類似 yacc 的 action 寫法，在 rule 加入
+<code>{ print('1') }</code> 之類的程式碼，達成執行的效果</p>
+<p>如果要回傳資料</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">example returns [Type valuename]
+  : expr {$valuename = $expr.text}
+  ;
+</code></pre></div><p>而這個方式僅需要呼叫 Parser 的
+root grammar</p>
+<ul>
+<li>lexer rule: lexer 的規則以<strong>大寫</strong>作為開頭</li>
+<li>parse tree</li>
+</ul>
+<h3 id="參考資料">參考資料</h3>
+<ul>
+<li><a href="https://github.com/antlr/antlr4/blob/master/doc/actions.md">Actions and Attributes</a></li>
+<li><a href="https://www.antlr.org/api/Java/org/antlr/v4/runtime/ParserRuleContext.html">ParserRuleContext</a></li>
+</ul>
+<h3 id="header">header</h3>
+<p>使 Parser 與 Lexer 可以載入函數庫
+<a href="https://stackoverflow.com/questions/45138474/how-can-i-import-other-java-lib-with-antlr4">how can I import other java lib with ANTLR4?</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@lexer</span>::header{<span style="color:#f92672">...</span>} 
+<span style="color:#a6e22e">@parser</span>::header{<span style="color:#f92672">...</span>}
+</code></pre></div><h2 id="注意事項">注意事項</h2>
+<p>為了避免 <code>ARG_ACTION</code> 不工作，確保把
+Lexcal rule 都放在後面</p>
+<p><a href="https://stackoverflow.com/questions/16396872/troubles-with-returns-declaration-on-the-first-parser-rule-in-an-antlr4-grammar">Troubles with returns declaration on the first parser rule in an ANTLR4 grammar</a></p>
 
     
       <hr>
