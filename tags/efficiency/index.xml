@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Efficiency on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/efficiency/</link>
+    <description>Recent content in Efficiency on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 19 May 2020 18:26:59 +0800</lastBuildDate>
+    
+	<atom:link href="https://r888800009.github.io/tags/efficiency/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Autojump</title>
+      <link>https://r888800009.github.io/wiki/autojump/</link>
+      <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/autojump/</guid>
+      <description>&lt;p&gt;可容錯輸入部份目錄批配，並且進入目錄&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

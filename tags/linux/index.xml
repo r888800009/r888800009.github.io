@@ -6,10 +6,28 @@
     <description>Recent content in Linux on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 13 Jan 2020 22:30:37 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2020 18:26:59 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Autojump</title>
+      <link>https://r888800009.github.io/wiki/autojump/</link>
+      <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/autojump/</guid>
+      <description>&lt;p&gt;可容錯輸入部份目錄批配，並且進入目錄&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SELinux</title>
+      <link>https://r888800009.github.io/wiki/selinux/</link>
+      <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/selinux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Linux輸入法</title>
