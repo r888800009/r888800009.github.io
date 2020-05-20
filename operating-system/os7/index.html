@@ -72,6 +72,18 @@ if (!doNotTrack) {
         <li><a href="#bankers-algorithm">Banker&rsquo;s algorithm</a></li>
       </ul>
     </li>
+    <li><a href="#deadlock-detection">Deadlock Detection</a>
+      <ul>
+        <li><a href="#偵測方法">偵測方法</a></li>
+        <li><a href="#演算法">演算法</a></li>
+        <li><a href="#偵測時機">偵測時機</a></li>
+      </ul>
+    </li>
+    <li><a href="#recovery">Recovery</a>
+      <ul>
+        <li><a href="#transaction-log">Transaction Log</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
@@ -181,6 +193,58 @@ Process 能夠釋放更多資源，保持在 Safe State。</p>
 </li>
 <li>finish 所有代表系統安全。</li>
 </ol>
+<h2 id="deadlock-detection">Deadlock Detection</h2>
+<ul>
+<li>允許 Deadlock 出現，透過演算法偵測並且消除。</li>
+<li>作業系統必須有解 Deadlock 的方法，透過選擇犧牲者進行回復</li>
+<li>如果 Abort 一個不行，多 Abort 幾個</li>
+<li>Abort 之後必須 Rollback ，並且回到開始執行前的狀態</li>
+</ul>
+<h3 id="偵測方法">偵測方法</h3>
+<ul>
+<li>資源單個: 循環圖，循環圈</li>
+<li>數個資源: Banker&rsquo;s algorithm</li>
+</ul>
+<h3 id="演算法">演算法</h3>
+<p>與 Safe Algorithm 的差異</p>
+<ol>
+<li>第一步驟如果 <code>Aloocation != 0</code> 的時候，
+Finish 會被設定為 false，否則設為 true</li>
+<li>第二步驟差異，在於檢查請求而非所需的資源數量</li>
+<li>第三步驟相同</li>
+<li>Finish[i] == false 代表 Thread_i 發生 Deadlock</li>
+</ol>
+<h3 id="偵測時機">偵測時機</h3>
+<ul>
+<li>無法立即得到資源</li>
+<li>排程時間</li>
+<li>CPU 使用率降低</li>
+</ul>
+<h2 id="recovery">Recovery</h2>
+<p>為一種不預期的結束，並且回復所作的行為</p>
+<p>處理的部份為 <strong>Transaction Failure</strong>，
+其他如 System failure, Media failure.</p>
+<h3 id="transaction-log">Transaction Log</h3>
+<p>用於解決 Transaction Failure，並且把過程紀錄到 Transaction Log 當中</p>
+<ul>
+<li>Commit: 代表 Transaction 成功結束</li>
+<li>Abort: 代表不成功結束，並且進行<strong>Rollback</strong>，還原操作</li>
+</ul>
+<h4 id="紀錄檔需求">紀錄檔需求</h4>
+<p>關於 Write, Ahead, Logging 等行為的資訊，
+其資訊可以用來檢查哪些資料需要回溯。</p>
+<ul>
+<li>Command</li>
+<li>Before Image</li>
+<li>After Image</li>
+</ul>
+<p><strong>檢查 Transaction 是否正常結束</strong>，如果沒有正常結束(缺乏 Commit)，
+就必須 Rollback。</p>
+<h4 id="redo-and-undo">Redo and Undo</h4>
+<ul>
+<li>Undo: start whitout commit</li>
+<li>Redo: start with commit，用於確保資料有成功寫入</li>
+</ul>
 
     
       <hr>
