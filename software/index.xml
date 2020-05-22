@@ -6,10 +6,19 @@
     <description>Recent content in Softwares on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 17 May 2020 20:47:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2020 01:57:49 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Yara</title>
+      <link>https://r888800009.github.io/software/security/yara/</link>
+      <pubDate>Fri, 22 May 2020 01:57:49 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/yara/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>漏洞緩解技術</title>
