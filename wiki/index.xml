@@ -6,10 +6,19 @@
     <description>Recent content in Wikis on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 19 May 2020 18:26:59 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2020 22:54:42 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/wiki/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Json Web Token</title>
+      <link>https://r888800009.github.io/wiki/json-web-token/</link>
+      <pubDate>Sat, 23 May 2020 22:54:42 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/json-web-token/</guid>
+      <description>用途  SSO 一次性認證  誤用  作為 Session  相關資料  RFC 7519  </description>
+    </item>
     
     <item>
       <title>Autojump</title>

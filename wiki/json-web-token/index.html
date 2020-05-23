@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.71.0" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>Json Web Token | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,46 +47,79 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/software/document-generation/" class="post-link">軟體文件產生</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Json Web Token</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2020-05-23 22:54:42 &#43;0800 CST">Sat, 2020 May 23</time>
+    </div>
 
-    <h1><a href="https://r888800009.github.io/software/security/malware-analysis/" class="post-link">惡意程式分析</a></h1>
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#用途">用途</a></li>
+    <li><a href="#誤用">誤用</a></li>
+    <li><a href="#相關資料">相關資料</a></li>
+  </ul>
+</nav>
+    </aside>
 
-    <h1><a href="https://r888800009.github.io/wiki/maximum-subarray/" class="post-link">最大子陣列問題</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/log-notes/" class="post-link">日誌檢視相關筆記</a></h1>
-
-    <h1><a href="https://r888800009.github.io/network-security/net-sec5/" class="post-link">[網路安全] 網路存取控制</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/algorithm-analysis-notes/" class="post-link">演算法分析筆記</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/scholar-index/" class="post-link">學者網頁索引</a></h1><p>收集各種學界或產業界人士的個人網站，以便了解思想方式。</p>
-
-    <h1><a href="https://r888800009.github.io/terms-and-symbols/" class="post-link">術語與符號</a></h1><p>收集與定義各種學科的術語與符號，以便更精確的描述
-任何事物。</p>
-
-    <h1><a href="https://r888800009.github.io/posts/breaking-kill-chain/" class="post-link">打破 Kill Chain</a></h1><p>Cyber Kill Chain為Lockheed Martin發展出的framework，
-用於解釋APT攻擊，並且探討如何打破Kill chain進行。</p>
-<p>該文為 <a href="https://www.youtube.com/watch?v=II91fiUax2g">Breaking The Kill Chain: A Defensive Approach</a>
-的筆記與補充</p>
-
-    <h1><a href="https://r888800009.github.io/operating-system/os5/" class="post-link">[OS] CPU 排程方法</a></h1>
+    <h2 id="用途">用途</h2>
+<ul>
+<li>SSO</li>
+<li><strong>一次性</strong>認證</li>
+</ul>
+<h2 id="誤用">誤用</h2>
+<ul>
+<li>作為 Session</li>
+</ul>
+<h2 id="相關資料">相關資料</h2>
+<ul>
+<li>RFC 7519</li>
+</ul>
 
 
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
     
-    <a href=/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/web" class="tags">Web</a>
+      
     
 
-    
-    <a href=/page/3/>
-       &#x3E;
-    </a>
-    
-</div>
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>
