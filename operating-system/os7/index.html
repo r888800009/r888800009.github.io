@@ -245,6 +245,31 @@ Finish 會被設定為 false，否則設為 true</li>
 <li>Undo: start whitout commit</li>
 <li>Redo: start with commit，用於確保資料有成功寫入</li>
 </ul>
+<h4 id="checkpoint">Checkpoint</h4>
+<p>節省 Transaction Log 所花費的時間，固定時間排程檢查點，
+並且在 Crash 之後回到 Check Point 即可。</p>
+<ol>
+<li>輸出 log Records 寫入 Stable Storage</li>
+<li>將 Modified 寫入 Stable Storage</li>
+<li>輸出 Checkpoint 到 Stable Storage 代表已記憶體內容寫入。</li>
+</ol>
+<p>如果次序錯誤，比方說先做第二步，在做第一步驟，可能會導致已修改但是沒有紀錄的情形發生。</p>
+<h4 id="time-stamp">Time Stamp</h4>
+<p>適用於分散式系統，網路延遲可能導致問題。</p>
+<ul>
+<li>W-timestamp: 資料最後被寫入的時間</li>
+<li>R-timestamp: 最後被讀取的時間</li>
+</ul>
+<p>何時 Rollback</p>
+<ul>
+<li>讀取時: 如果發出請求的時間之後(含)被寫入就做 Rollback</li>
+<li>寫入時: 如果發出請求的時間之後(含)被寫入或讀取就做 Rollback，</li>
+</ul>
+<p>特性</p>
+<ul>
+<li>Serializable</li>
+<li>No Deadlock</li>
+</ul>
 
     
       <hr>
