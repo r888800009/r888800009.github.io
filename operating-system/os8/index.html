@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.71.0" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>[OS] Memory Management | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,71 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/wiki/information-security/" class="post-link">資訊安全</a></h1><p>資訊安全相關索引</p>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[OS] Memory Management</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2020-05-25 23:14:11 &#43;0800 CST">Mon, 2020 May 25</time>
+    </div>
 
-    <h1><a href="https://r888800009.github.io/software/security/pentest/" class="post-link">滲透</a></h1><p>Penetration Testing筆記</p>
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#address-binding">Address Binding</a></li>
+    <li><a href="#logical-and-physical-address-space">Logical and Physical Address space</a></li>
+  </ul>
+</nav>
+    </aside>
 
-    <h1><a href="https://r888800009.github.io/wiki/ipv6/" class="post-link">IPv6</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/sp6/" class="post-link">[SP]Francis Compiler</a></h1>
-
-    <h1><a href="https://r888800009.github.io/software/reversing/" class="post-link">逆向相關資料</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/terminal-tools/" class="post-link">終端機常用工具</a></h1>
-
-    <h1><a href="https://r888800009.github.io/network/network3/" class="post-link">[計網]傳送層</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/sp5/" class="post-link">[SP] 編譯器</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/shell/" class="post-link">Shell</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/linux-desktop/" class="post-link">Linux桌面使用</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/page/5/>
-      &#x3C;
-    </a>
-    
+    <h2 id="address-binding">Address Binding</h2>
+<ul>
+<li>連結與重定位</li>
+<li>Dynmaic Linking: 在執行期間連結</li>
+<li>Overlay: 不會同時被呼叫，就將程式放入相同位置</li>
+</ul>
+<h2 id="logical-and-physical-address-space">Logical and Physical Address space</h2>
 
     
-    <a href=/page/7/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/operating-system" class="tags">Operating System</a>
+      
     
-</div>
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>
