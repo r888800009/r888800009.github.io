@@ -72,6 +72,7 @@ if (!doNotTrack) {
         <li><a href="#ebnf">EBNF</a></li>
         <li><a href="#重複表達式">重複表達式</a></li>
         <li><a href="#可選">可選</a></li>
+        <li><a href="#terminal-symbol">Terminal Symbol</a></li>
         <li><a href="#中間碼">中間碼</a></li>
       </ul>
     </li>
@@ -125,6 +126,9 @@ if (!doNotTrack) {
 優先peekToken()以確定後面是否為要求的token而進入迴圈。</p>
 <h3 id="可選">可選</h3>
 <p>方法類似一般 Symbols 的寫法，如果都沒有 Match 依然回傳 <code>true</code></p>
+<h3 id="terminal-symbol">Terminal Symbol</h3>
+<p>呼叫 Terminal Symbol 之後，如果預計要有對映的 Token ，
+並且尚未獲取該 Token ，透過 Throw Error 的方式處理</p>
 <h3 id="中間碼">中間碼</h3>
 <p>在確認文法<strong>正確之後</strong>生成中間碼(於 return 之前或 call funcion 之後)，
 <strong>如果上層文法出錯，透過上層進行還原中間碼流程</strong>。</p>
