@@ -62,6 +62,13 @@ if (!doNotTrack) {
     <li><a href="#address-binding">Address Binding</a></li>
     <li><a href="#logical-and-physical-address-space">Logical and Physical Address space</a></li>
     <li><a href="#swap-out-and-swap-in">Swap out and Swap in</a></li>
+    <li><a href="#memory-management">Memory Management</a>
+      <ul>
+        <li><a href="#strategies">Strategies</a></li>
+        <li><a href="#storage-allocation">Storage Allocation</a></li>
+        <li><a href="#virtual-and-real-memory">Virtual and Real Memory</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
@@ -73,7 +80,61 @@ if (!doNotTrack) {
 <li>Overlay: 不會同時被呼叫，就將程式放入相同位置</li>
 </ul>
 <h2 id="logical-and-physical-address-space">Logical and Physical Address space</h2>
+<ul>
+<li>Executable Module: Relative Address，並且它的 Address Space 為
+Logical Address Space</li>
+<li>擺入 Physical Address Space 之後，使用的地址是 Physical Address</li>
+</ul>
+<p>透過 Reloaction Register 或 Memory Management Unit 映射到實體地址</p>
 <h2 id="swap-out-and-swap-in">Swap out and Swap in</h2>
+<p>Swapping 提供機制緩解主記憶體不足的問題</p>
+<ul>
+<li>Swap In: Roll In, Memory &lt;- Disk</li>
+<li>Swap Out: 或 Roll Out, Memory -&gt; Disk</li>
+</ul>
+<h2 id="memory-management">Memory Management</h2>
+<h3 id="strategies">Strategies</h3>
+<ul>
+<li>Fetch Strategies: 判斷必須佔有主記憶體的程式，根據各種排程器決定佔有主記憶體的程式
+<ul>
+<li>Demano fetch</li>
+<li>Anticipatory fetch</li>
+</ul>
+</li>
+<li>Placement Strategies: 分配未使用的空間並且加載程- 式</li>
+<li>Replacement Strategies</li>
+</ul>
+<h3 id="storage-allocation">Storage Allocation</h3>
+<ul>
+<li>Contiguous Storage Allocation: 必須有連續的記憶體
+<ul>
+<li>Real storage: 受限於主記憶體大小</li>
+</ul>
+</li>
+<li>Non Contiguous Storage Allocation: 多個 Block 不必連續
+<ul>
+<li>Virtual Memory:: 以 Block 的方式擺入記憶體</li>
+<li>透過一種映射方式到主記憶體</li>
+</ul>
+</li>
+</ul>
+<h3 id="virtual-and-real-memory">Virtual and Real Memory</h3>
+<ul>
+<li>Real
+<ul>
+<li>Single Partition</li>
+<li>Absolute/Relocatable Fixed Partition</li>
+<li>Variable Partition: Compaction or no compaction</li>
+</ul>
+</li>
+<li>Virtual
+<ul>
+<li>Damand Paging</li>
+<li>Demand Segment</li>
+<li>Combine Paging Segment</li>
+</ul>
+</li>
+</ul>
 
     
       <hr>
