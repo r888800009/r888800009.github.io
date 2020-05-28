@@ -67,6 +67,7 @@ if (!doNotTrack) {
         <li><a href="#strategies">Strategies</a></li>
         <li><a href="#storage-allocation">Storage Allocation</a></li>
         <li><a href="#virtual-and-real-memory">Virtual and Real Memory</a></li>
+        <li><a href="#fragmentation">Fragmentation</a></li>
       </ul>
     </li>
   </ul>
@@ -122,9 +123,25 @@ Logical Address Space</li>
 <ul>
 <li>Real
 <ul>
-<li>Single Partition</li>
-<li>Absolute/Relocatable Fixed Partition</li>
-<li>Variable Partition: Compaction or no compaction</li>
+<li>Single Partition:
+<ul>
+<li>剩餘空間擺放 User Program</li>
+<li>不完全使用記憶體</li>
+<li>Process 等待 I/O</li>
+<li>被 Main memory 大小限制</li>
+</ul>
+</li>
+<li>Fixed Partition
+<ul>
+<li>Absolute: 載入到固定段落</li>
+<li>Relocatable: 可任意載入空段落</li>
+</ul>
+</li>
+<li>Variable Partition: Compaction or no compaction
+<ul>
+<li>按照程式大小做分割記憶體</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Virtual
@@ -134,6 +151,20 @@ Logical Address Space</li>
 <li>Combine Paging Segment</li>
 </ul>
 </li>
+</ul>
+<h3 id="fragmentation">Fragmentation</h3>
+<p>程式分散未使用空間多，導致無法載入程式</p>
+<ul>
+<li>Coalescing Holes: 相鄰段落區間的未始用段落</li>
+<li>External Fragmentation:
+<ul>
+<li>分配段落外部的間隔導致的問題</li>
+<li>透過緊湊變動分割法解決</li>
+<li>透過分頁法解決</li>
+</ul>
+</li>
+<li>Internal Fragmentation: 程式小於段落的時未使用的空間浪費導致的問題</li>
+<li>Chunk Fragmentation: 很少被用到的段落程式</li>
 </ul>
 
     
