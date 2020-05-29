@@ -65,6 +65,7 @@ if (!doNotTrack) {
     <li><a href="#memory-management">Memory Management</a>
       <ul>
         <li><a href="#strategies">Strategies</a></li>
+        <li><a href="#storage-placement-strategies">Storage Placement Strategies</a></li>
         <li><a href="#storage-allocation">Storage Allocation</a></li>
         <li><a href="#virtual-and-real-memory">Virtual and Real Memory</a></li>
         <li><a href="#fragmentation">Fragmentation</a></li>
@@ -102,8 +103,14 @@ Logical Address Space</li>
 <li>Anticipatory fetch</li>
 </ul>
 </li>
-<li>Placement Strategies: 分配未使用的空間並且加載程- 式</li>
+<li>Placement Strategies: 分配未使用的空間並且加載程式</li>
 <li>Replacement Strategies</li>
+</ul>
+<h3 id="storage-placement-strategies">Storage Placement Strategies</h3>
+<ul>
+<li>First fit: 由前依序找出第一個可用的未使用段落</li>
+<li>Best fit: 找到最相近的斷落載入</li>
+<li>Worst fit: 找到最大的斷落載入</li>
 </ul>
 <h3 id="storage-allocation">Storage Allocation</h3>
 <ul>
@@ -156,15 +163,42 @@ Logical Address Space</li>
 <p>程式分散未使用空間多，導致無法載入程式</p>
 <ul>
 <li>Coalescing Holes: 相鄰段落區間的未始用段落</li>
-<li>External Fragmentation:
+<li>External Fragmentation:</li>
+<li>分配段落外部的間隔導致的問題
 <ul>
-<li>分配段落外部的間隔導致的問題</li>
 <li>透過緊湊變動分割法解決</li>
 <li>透過分頁法解決</li>
 </ul>
 </li>
 <li>Internal Fragmentation: 程式小於段落的時未使用的空間浪費導致的問題</li>
 <li>Chunk Fragmentation: 很少被用到的段落程式</li>
+</ul>
+<h4 id="非緊湊-variable-partition-問題">非緊湊 Variable Partition 問題</h4>
+<ul>
+<li>External Fragmentation</li>
+<li>尚未使用的空間不一定可容納程式</li>
+<li>Chunk Fragmentiation</li>
+</ul>
+<h4 id="relocatable-partition">Relocatable Partition</h4>
+<p>集中程式在記憶體的一邊，使最大化未使用空間</p>
+<ul>
+<li>Storage Compaction</li>
+<li>Garbage Collection</li>
+</ul>
+<h4 id="重定位分割法一缺點">重定位分割法一缺點</h4>
+<ul>
+<li>優點
+<ul>
+<li>未使用空間較大</li>
+<li>Solved External Fragmentation</li>
+</ul>
+</li>
+<li>缺點
+<ul>
+<li>整理時花費效能，需要硬體加速</li>
+<li>記憶體中程式與資料可能可能不被使用 (Internal F. ?)</li>
+</ul>
+</li>
 </ul>
 
     
