@@ -71,7 +71,13 @@ if (!doNotTrack) {
         <li><a href="#fragmentation">Fragmentation</a></li>
       </ul>
     </li>
-    <li><a href="#分頁法">分頁法</a></li>
+    <li><a href="#分頁法">分頁法</a>
+      <ul>
+        <li><a href="#運作模式">運作模式</a></li>
+        <li><a href="#特性">特性</a></li>
+        <li><a href="#translation-look-aside-buffer-tlbs">Translation Look-aside Buffer (TLBs)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
@@ -205,6 +211,26 @@ Logical Address Space</li>
 <ul>
 <li>輔助記憶體程式切成多個 Page</li>
 <li>主記憶體切成多個 Page Frame ，可以放入多個 Page</li>
+</ul>
+<h3 id="運作模式">運作模式</h3>
+<ul>
+<li>程式執行時查詢第一頁</li>
+<li>執行程式其他部份查詢其他頁框</li>
+<li>Page Fault: 分頁不再主記憶體，找到未使用的頁框載入分頁</li>
+<li>Page Replacement: 發生在所有頁框被用完時</li>
+</ul>
+<h3 id="特性">特性</h3>
+<ul>
+<li>無 External Fragmentation，能夠消除該問題</li>
+<li>大定址虛擬空間</li>
+<li>程式不用完全載入主記憶體</li>
+<li>有 1 / 2 的 Internal Fragmentaion</li>
+<li>4KB 或 2KB ，每頁</li>
+<li>Associative Mapping: Page Number 作為 Search Key， Memory Cycle 中找到 Frame Number</li>
+</ul>
+<h3 id="translation-look-aside-buffer-tlbs">Translation Look-aside Buffer (TLBs)</h3>
+<ul>
+<li>硬體快取</li>
 </ul>
 
     
