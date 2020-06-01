@@ -90,7 +90,39 @@ if (!doNotTrack) {
         <li><a href="#遞迴式的解決方法">遞迴式的解決方法</a></li>
       </ul>
     </li>
-    <li><a href="#動態規劃">動態規劃</a></li>
+    <li><a href="#動態規劃">動態規劃</a>
+      <ul>
+        <li><a href="#複雜度">複雜度</a></li>
+        <li><a href="#assembly-line">Assembly Line</a></li>
+        <li><a href="#切鋼條">切鋼條</a></li>
+        <li><a href="#matrix-chain-multiplication">Matrix-Chain Multiplication</a></li>
+        <li><a href="#lcs">LCS</a></li>
+      </ul>
+    </li>
+    <li><a href="#貪婪法">貪婪法</a>
+      <ul>
+        <li><a href="#可貪婪的">可貪婪的</a></li>
+        <li><a href="#making-change">Making Change</a></li>
+        <li><a href="#huffman-codes">Huffman Codes</a></li>
+        <li><a href="#activity-selection">Activity Selection</a></li>
+        <li><a href="#knapsack">Knapsack</a></li>
+      </ul>
+    </li>
+    <li><a href="#償還分析">償還分析</a>
+      <ul>
+        <li><a href="#potential">Potential</a></li>
+        <li><a href="#accounting">Accounting</a></li>
+        <li><a href="#aggregate">Aggregate</a></li>
+      </ul>
+    </li>
+    <li><a href="#fibonacci-heap">Fibonacci Heap</a>
+      <ul>
+        <li><a href="#struct">Struct</a></li>
+        <li><a href="#union">Union</a></li>
+        <li><a href="#extract-min">Extract-Min</a></li>
+        <li><a href="#decreasing-key">Decreasing-Key</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
@@ -234,7 +266,126 @@ $$ \Omega (n) + O(n)$$
 </li>
 </ul>
 <h2 id="動態規劃">動態規劃</h2>
-<p>LCS的結可以理解在兩個維度走訪，對角代表Match，非斜線代表略過。</p>
+<ol>
+<li>分解大問題成子問題</li>
+<li>列表法</li>
+</ol>
+<h3 id="複雜度">複雜度</h3>
+<p>皆為 Theta</p>
+<ul>
+<li>Assembly Line: n</li>
+<li>Rod Cutting: n^2</li>
+<li>Matrix-Chain Multiplication = Optimal BST: n^3</li>
+<li>LCS = Edit Distance: m * n</li>
+</ul>
+<h3 id="assembly-line">Assembly Line</h3>
+<h3 id="切鋼條">切鋼條</h3>
+<p>從最少開始，並且考慮不同位置切割</p>
+<ul>
+<li>r[目前長度]: 當前利潤 = max{切割利潤 + 先前最大利益}</li>
+<li>s[目前長度] = 最大利潤切割大小</li>
+</ul>
+<p>複雜度: Theta(n^2)</p>
+<h4 id="輸出">輸出</h4>
+<ol>
+<li>給予長度</li>
+<li>找出該長度的最大利潤切割大小</li>
+<li>扣除大小後，重複執行直到相等</li>
+</ol>
+<h3 id="matrix-chain-multiplication">Matrix-Chain Multiplication</h3>
+<p>複雜度: Theta(n^3)</p>
+<ol>
+<li>宣告矩陣 m (最小值) 與 s (最佳解)</li>
+<li>m 對角全填 0</li>
+<li>由對角線往角做計算，往上時分割一次在不同位置取最小得出解</li>
+<li>將分割位置存到 s (最佳解) 中</li>
+</ol>
+<h4 id="輸出-1">輸出</h4>
+<p>S 矩陣的 i, j 項代表分割位置，
+並且透過該分割位置繼續往下分割到相同為止。</p>
+<h3 id="lcs">LCS</h3>
+<p>與 Edit Distance 類似，時間複雜度也類似</p>
+<p>填寫矩陣的 Case</p>
+<ul>
+<li>Default 往上指</li>
+<li>兩字元相等往左上，並且數值+1</li>
+<li>字元不同指向最大</li>
+</ul>
+<p>LCS的解可以理解在兩個維度走訪，對角代表Match，非斜線代表略過。</p>
+<p>複雜度: Theta(m*n)，兩個字串的長度 m, n</p>
+<h2 id="貪婪法">貪婪法</h2>
+<ul>
+<li>選取當下最優解</li>
+<li>不保證最佳解</li>
+</ul>
+<h3 id="可貪婪的">可貪婪的</h3>
+<ul>
+<li>Huffman code</li>
+<li>Activity Selection</li>
+<li>Fractional Knapsack</li>
+</ul>
+<h3 id="making-change">Making Change</h3>
+<p>貪婪法不可行</p>
+<h3 id="huffman-codes">Huffman Codes</h3>
+<p>最佳解</p>
+<ol>
+<li>求出機率</li>
+<li>透過最小優先佇列建樹</li>
+<li>將建立好的節點放入佇列繼續建樹</li>
+</ol>
+<p>Theta(n lg n)</p>
+<h3 id="activity-selection">Activity Selection</h3>
+<p>嘗試找出最大相容子級，意指時間不交疊</p>
+<ul>
+<li>最佳解</li>
+<li>動態規劃 Theta(n^3)</li>
+<li>貪婪法 Theta(n) or Theta(n lg n)</li>
+</ul>
+<h3 id="knapsack">Knapsack</h3>
+<p>每次嘗試取高 V/W</p>
+<p>Fractional knapsack 保證最佳，如果不是的話不保證</p>
+<ul>
+<li>動態規劃 Theta(nW)</li>
+<li>貪婪法 Theta(n lg n)</li>
+</ul>
+<h2 id="償還分析">償還分析</h2>
+<p>計算平均的 worst case</p>
+<h3 id="potential">Potential</h3>
+<h3 id="accounting">Accounting</h3>
+<h3 id="aggregate">Aggregate</h3>
+<h2 id="fibonacci-heap">Fibonacci Heap</h2>
+<p>透過 Doubly Linked List 串接 roots</p>
+<ul>
+<li>Insert</li>
+<li>Extract-Min</li>
+<li>Union</li>
+<li>Decreasing-Key</li>
+<li>Deletion</li>
+</ul>
+<p>時間複雜度</p>
+<ul>
+<li>Theta(1): <strong>Insert</strong>, Decreasing-Key, <strong>Union</strong></li>
+<li>O(lg n): Delete, Extract-Min</li>
+</ul>
+<h3 id="struct">Struct</h3>
+<ul>
+<li>Parent, child, left, right</li>
+<li>degree</li>
+<li>Child Mark</li>
+</ul>
+<h3 id="union">Union</h3>
+<ol>
+<li>將兩個 Heap 相串</li>
+<li>由於兩個 Heap 都有 Min 值，更新 Min 值</li>
+</ol>
+<h3 id="extract-min">Extract-Min</h3>
+<p>Solid Fibonacci Heap 當中的 Tree 分支度(Degree)都不同</p>
+<ol>
+<li>將最小樹根移除後，把子節點串在原位置上</li>
+<li>Consolidate() 操作用來將 Heap 轉成 Solid Heap</li>
+</ol>
+<h3 id="decreasing-key">Decreasing-Key</h3>
+<p>第二次切的非根節點移動到連結串列</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
