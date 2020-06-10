@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>各種程式坑集合 | r809&#39;s Notes</title>
+<title>Ghidra | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,9 +47,9 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">各種程式坑集合</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Ghidra</a></h1>
 <div id="content"><div class="date">
-        <time datetime="2019-10-22 21:55:44 &#43;0800 CST">Tue, 2019 Oct 22</time>
+        <time datetime="2019-08-16 23:57:31 &#43;0800 CST">Fri, 2019 Aug 16</time>
     </div>
 
     <aside>
@@ -59,58 +59,51 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#c">C++</a>
-      <ul>
-        <li><a href="#隱式類型轉換bug">隱式類型轉換bug</a></li>
-        <li><a href="#其他問題">其他問題</a></li>
-        <li><a href="#macro">Macro</a></li>
-      </ul>
-    </li>
+    <li><a href="#安裝">安裝</a></li>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#功能">功能</a></li>
+    <li><a href="#特色">特色</a></li>
+    <li><a href="#相似的工具">相似的工具</a></li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="c">C++</h2>
-<h3 id="隱式類型轉換bug">隱式類型轉換bug</h3>
-<p><code>vector.size()</code> is unsigend int</p>
-<h4 id="發生情況">發生情況</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// vector is empty
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
-  <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> i <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">&lt;=</span> vector.size() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
-    cout <span style="color:#f92672">&lt;&lt;</span> vector.size() <span style="color:#f92672">&lt;&lt;</span> endl;
-  cout <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> endl;
-</code></pre></div><h3 id="其他問題">其他問題</h3>
-<p>在宣告class盡量不要使用字串以免型別有問題</p>
-<h3 id="macro">Macro</h3>
-<p>由於程序員忘記其為巨集導致多次計算</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#define max(a, b) ((x) &gt; (y) ? (x) : (y))</span>
-
-void example<span style="color:#f92672">()</span>
-<span style="color:#f92672">{</span>
-  int x <span style="color:#f92672">=</span> 2, y <span style="color:#f92672">=</span> 10;
-  int z <span style="color:#f92672">=</span> max<span style="color:#f92672">(</span>x, ++y<span style="color:#f92672">)</span> 
-<span style="color:#f92672">}</span>
-</code></pre></div><p>參見以下兩個資源的章節</p>
-<ul>
-<li>The ghost of a codebase past<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
-<li>Macros-Beware<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
-</ul>
-<section class="footnotes" role="doc-endnotes">
-<hr>
+    <p><code>Ghidra</code>為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，
+<a href="https://ghidra-sre.org/">官方網站</a>以及
+GitHub <a href="https://github.com/NationalSecurityAgency/Ghidra">repo</a>位址。</p>
+<h2 id="安裝">安裝</h2>
+<p>archlinux透過<a href="https://aur.archlinux.org/packages/ghidra/">aur</a>安裝，鍵入。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacaur -S ghidra
+</code></pre></div><h2 id="使用">使用</h2>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Goodliffe, P., 2014. Becoming a Better Programmer: A Handbook for People Who Care About Code. &quot; O&rsquo;Reilly Media, Inc.&rdquo;. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>Raymond, E.S., 2003. The art of Unix programming. Addison-Wesley Professional. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
+<li>建立專案資料夾</li>
+<li>import二進制檔案</li>
 </ol>
-</section>
+<h2 id="功能">功能</h2>
+<ul>
+<li><code>Hex檢視器</code></li>
+<li><code>程式流程圖</code></li>
+<li><code>反編譯/反組譯</code></li>
+<li><code>符號樹</code>:可以用來查看函數進入點以及<code>label</code>等資訊。</li>
+<li><code>Memory Map</code>-&gt;<code>rebase</code>: relocate，替反組譯內容設定基準</li>
+<li>value rename</li>
+<li><code>patch instructions</code>: 編輯指令</li>
+<li><code>export program</code>: 匯出程式</li>
+</ul>
+<h2 id="特色">特色</h2>
+<ul>
+<li>點選工具列按鈕，若已經啟動視窗則有醒目提示</li>
+</ul>
+<h2 id="相似的工具">相似的工具</h2>
+<ul>
+<li><a href="https://www.hex-rays.com/products/ida/">IDA</a></li>
+<li><a href="https://rada.re/r/">radare</a></li>
+</ul>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/c&#43;&#43;" class="tags">C&#43;&#43;</a>
+        <a href="https://r888800009.github.io/tags/reverse-engineering" class="tags">Reverse Engineering</a>
       
     
 

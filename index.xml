@@ -6,10 +6,19 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 25 May 2020 23:14:11 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2020 06:44:13 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[OS] Memory Management</title>
+      <link>https://r888800009.github.io/operating-system/os9/</link>
+      <pubDate>Sun, 07 Jun 2020 06:44:13 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/operating-system/os9/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>[OS] Memory Management</title>
@@ -728,6 +737,15 @@
     </item>
     
     <item>
+      <title>Radare2</title>
+      <link>https://r888800009.github.io/software/reversing/radare2/</link>
+      <pubDate>Sat, 05 Oct 2019 19:43:04 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/reversing/radare2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Kali Linux筆記</title>
       <link>https://r888800009.github.io/wiki/kali-linux/</link>
       <pubDate>Sat, 05 Oct 2019 19:37:18 +0800</pubDate>
@@ -1171,6 +1189,17 @@
       <guid>https://r888800009.github.io/wiki/hugo-template/</guid>
       <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;配置版模會用到的筆記，
 非模板內容參見&lt;a href=&#34;https://r888800009.github.io/wiki/hugo/&#34;&gt;hugo&lt;/a&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ghidra</title>
+      <link>https://r888800009.github.io/software/reversing/ghidra/</link>
+      <pubDate>Fri, 16 Aug 2019 23:57:31 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/reversing/ghidra/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，
+&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及
+GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
     </item>
     
     <item>

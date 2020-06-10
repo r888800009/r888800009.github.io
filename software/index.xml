@@ -93,6 +93,15 @@
     </item>
     
     <item>
+      <title>Radare2</title>
+      <link>https://r888800009.github.io/software/reversing/radare2/</link>
+      <pubDate>Sat, 05 Oct 2019 19:43:04 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/reversing/radare2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Stack Smash</title>
       <link>https://r888800009.github.io/software/security/binary/stack-smash/</link>
       <pubDate>Wed, 02 Oct 2019 19:31:07 +0800</pubDate>
@@ -234,6 +243,17 @@
       
       <guid>https://r888800009.github.io/software/security/web/sqlmap/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Ghidra</title>
+      <link>https://r888800009.github.io/software/reversing/ghidra/</link>
+      <pubDate>Fri, 16 Aug 2019 23:57:31 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/reversing/ghidra/</guid>
+      <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，
+&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及
+GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
     </item>
     
     <item>

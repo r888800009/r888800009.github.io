@@ -81,6 +81,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#插件">插件</a></li>
     <li><a href="#modeline">Modeline</a></li>
+    <li><a href="#vim-自動加入-header">vim 自動加入 header</a></li>
   </ul>
 </nav>
     </aside>
@@ -199,7 +200,13 @@ mapD
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:h modeline
 </code></pre></div><p>example 設定檔案格式為<code>markdown</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">; vim: set ft=markdown :
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+</code></pre></div><h2 id="vim-自動加入-header">vim 自動加入 header</h2>
+<p>如 Bash 或 Python</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufNewFile</span> *.<span style="color:#a6e22e">py</span> <span style="color:#ae81ff">0</span>put =\<span style="color:#e6db74">&#34;#!/usr/bin/env python\&lt;nl&gt;\&#34;</span>|$<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufNewFile</span> *.<span style="color:#a6e22e">sh</span> <span style="color:#ae81ff">0</span>put =\<span style="color:#e6db74">&#34;#!/bin/bash\&lt;nl&gt;\&#34;</span>|$<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>參考
+<a href="https://stackoverflow.com/questions/13279520/automatically-inserting-a-header-in-vim">Automatically inserting a header in vim</a></p>
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">

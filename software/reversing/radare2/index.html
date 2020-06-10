@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>各種程式坑集合 | r809&#39;s Notes</title>
+<title>Radare2 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,9 +47,9 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">各種程式坑集合</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Radare2</a></h1>
 <div id="content"><div class="date">
-        <time datetime="2019-10-22 21:55:44 &#43;0800 CST">Tue, 2019 Oct 22</time>
+        <time datetime="2019-10-05 19:43:04 &#43;0800 CST">Sat, 2019 Oct 5</time>
     </div>
 
     <aside>
@@ -59,58 +59,33 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#c">C++</a>
-      <ul>
-        <li><a href="#隱式類型轉換bug">隱式類型轉換bug</a></li>
-        <li><a href="#其他問題">其他問題</a></li>
-        <li><a href="#macro">Macro</a></li>
-      </ul>
-    </li>
+    <li><a href="#安裝">安裝</a></li>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#指令">指令</a></li>
+    <li><a href="#參見">參見</a></li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="c">C++</h2>
-<h3 id="隱式類型轉換bug">隱式類型轉換bug</h3>
-<p><code>vector.size()</code> is unsigend int</p>
-<h4 id="發生情況">發生情況</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// vector is empty
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
-  <span style="color:#66d9ef">if</span> (<span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> i <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">&lt;=</span> vector.size() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
-    cout <span style="color:#f92672">&lt;&lt;</span> vector.size() <span style="color:#f92672">&lt;&lt;</span> endl;
-  cout <span style="color:#f92672">&lt;&lt;</span> i <span style="color:#f92672">&lt;&lt;</span> endl;
-</code></pre></div><h3 id="其他問題">其他問題</h3>
-<p>在宣告class盡量不要使用字串以免型別有問題</p>
-<h3 id="macro">Macro</h3>
-<p>由於程序員忘記其為巨集導致多次計算</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#define max(a, b) ((x) &gt; (y) ? (x) : (y))</span>
-
-void example<span style="color:#f92672">()</span>
-<span style="color:#f92672">{</span>
-  int x <span style="color:#f92672">=</span> 2, y <span style="color:#f92672">=</span> 10;
-  int z <span style="color:#f92672">=</span> max<span style="color:#f92672">(</span>x, ++y<span style="color:#f92672">)</span> 
-<span style="color:#f92672">}</span>
-</code></pre></div><p>參見以下兩個資源的章節</p>
+    <h2 id="安裝">安裝</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S radare2  
+</code></pre></div><h2 id="使用">使用</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">radare2 ./a.out
+</code></pre></div><h2 id="指令">指令</h2>
 <ul>
-<li>The ghost of a codebase past<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
-<li>Macros-Beware<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li><code>a</code>,<code>aa</code>,<code>aaa</code>: 進行分析，越多<code>a</code>分析越詳細</li>
+<li><code>x</code>: hex 檢視</li>
+<li><code>pd</code>: 檢視組合語言</li>
 </ul>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>Goodliffe, P., 2014. Becoming a Better Programmer: A Handbook for People Who Care About Code. &quot; O&rsquo;Reilly Media, Inc.&rdquo;. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>Raymond, E.S., 2003. The art of Unix programming. Addison-Wesley Professional. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+<h2 id="參見">參見</h2>
+<ul>
+<li><a href="https://r2wiki.readthedocs.io/en/latest/home/misc/cheatsheet/">作弊表</a></li>
+</ul>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/c&#43;&#43;" class="tags">C&#43;&#43;</a>
+        <a href="https://r888800009.github.io/tags/reverse-engineering" class="tags">Reverse Engineering</a>
       
     
 

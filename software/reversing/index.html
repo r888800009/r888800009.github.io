@@ -64,6 +64,7 @@ if (!doNotTrack) {
         <li><a href="#關於分析">關於分析</a></li>
       </ul>
     </li>
+    <li><a href="#工具">工具</a></li>
     <li><a href="#相關指令">相關指令</a></li>
     <li><a href="#透過python-提取pe-header">透過python 提取PE header</a></li>
     <li><a href="#相關連結">相關連結</a></li>
@@ -82,12 +83,15 @@ if (!doNotTrack) {
 </ol>
 <h3 id="關於分析">關於分析</h3>
 <p>程式中的 API 可能代表各種含意，如讀寫檔、連線網路等相關資訊。</p>
+<h2 id="工具">工具</h2>
+<ul>
+<li><a href="ghidra">ghidra</a></li>
+<li><a href="radare2">radare2</a></li>
+<li><code>ltrace</code>: 找出 lib call</li>
+<li><code>strace</code>: 找出 system call</li>
+</ul>
 <h2 id="相關指令">相關指令</h2>
-<p>找出lib call</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ltrace ./a.out
-</code></pre></div><p>找出system call</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">strace ./a.out
-</code></pre></div><p>顯示dynamic relocation資料</p>
+<p>顯示dynamic relocation資料</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -R a.out 
 </code></pre></div><p>顯示符號表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nm ./a.out
