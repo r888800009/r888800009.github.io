@@ -6,10 +6,28 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 07 Jun 2020 06:44:13 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2020 00:12:50 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>firmware</title>
+      <link>https://r888800009.github.io/tags/firmware/</link>
+      <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/firmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverse Engineering</title>
+      <link>https://r888800009.github.io/tags/reverse-engineering/</link>
+      <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/reverse-engineering/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Operating System</title>
@@ -413,15 +431,6 @@
       <pubDate>Sat, 16 Nov 2019 20:31:53 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/pwn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reverse Engineering</title>
-      <link>https://r888800009.github.io/tags/reverse-engineering/</link>
-      <pubDate>Sat, 16 Nov 2019 20:31:53 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/reverse-engineering/</guid>
       <description></description>
     </item>
     

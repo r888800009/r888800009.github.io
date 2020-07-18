@@ -62,8 +62,6 @@ if (!doNotTrack) {
     <li><a href="#添加腳注">添加腳注</a></li>
     <li><a href="#轉換其他格式">轉換其他格式</a></li>
     <li><a href="#重音符號">重音符號</a></li>
-    <li><a href="#vim-編輯插件">vim 編輯插件</a></li>
-    <li><a href="#嵌入html">嵌入HTML</a></li>
   </ul>
 </nav>
     </aside>
@@ -87,28 +85,96 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">``test`test``
 </code></pre></div><p>輸出結果為<code>test`test</code></p>
 <p>在code block內放置code block</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">```` plaintext
-``` plaintext
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">​```` plaintext
+​``` plaintext
 ```
 ````
+
 </code></pre></div><p>輸出結果為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">``` plaintext
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">​``` plaintext
 ```
-</code></pre></div><p>多個重音符號</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">```test``test```
-</code></pre></div><p>輸出結果為
-<code>test``test</code></p>
-<p>參見<a href="https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-within-in-line-code-in-markdown">How do I escape a backtick ` within in-line code in Markdown?</a></p>
-<h2 id="vim-編輯插件">vim 編輯插件</h2>
-<p><a href="https://github.com/SidOfc/mkdx"><code>mkdx</code></a>為vim的markdown編輯插件，
-可以輔助插入markdown樣式。</p>
-<p>參見<a href="https://github.com/SidOfc/mkdx#mappings">Mappings</a></p>
-<h2 id="嵌入html">嵌入HTML</h2>
-<p>kbd 標籤，部份markdown渲染會產生顯示結果(CSS)，如github中可用</p>
-<p>使用方法如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">kbd</span>&gt;ctrl&lt;/<span style="color:#f92672">kbd</span>&gt; + &lt;<span style="color:#f92672">kbd</span>&gt;c&lt;/<span style="color:#f92672">kbd</span>&gt;
-</code></pre></div><p>hugo因為安全性，採用html標籤時必須進行相關設定才會顯示。</p>
-<section class="footnotes" role="doc-endnotes">
+</code></pre></div><p>多個重音符號
+​```` plaintext
+​<code>test``test</code></p>
+<pre><code>
+輸出結果為
+```test``test```
+
+參見[How do I escape a backtick ` within in-line code in Markdown?](https://meta.stackexchange.com/questions/82718/how-do-i-escape-a-backtick-within-in-line-code-in-markdown)
+
+## 編輯器
+
+- 可以安裝 typora aur (建議)
+- 採用 vim 插件
+
+### vim 編輯插件
+
+[`mkdx`](https://github.com/SidOfc/mkdx)為vim的markdown編輯插件，
+可以輔助插入markdown樣式。
+
+參見[Mappings](https://github.com/SidOfc/mkdx#mappings)
+
+## 嵌入HTML
+kbd 標籤，部份markdown渲染會產生顯示結果(CSS)，如github中可用
+
+使用方法如下
+``` html
+&lt;kbd&gt;ctrl&lt;/kbd&gt; + &lt;kbd&gt;c&lt;/kbd&gt;
+```
+
+hugo因為安全性，採用html標籤時必須進行相關設定才會顯示。
+
+## 基本範例
+
+`**粗體**`
+
+### 圖片與連結
+```markdown
+圖片![圖片註釋](圖片連結)
+```
+
+### 引用
+``` markdown
+&gt; 123
+&gt;&gt; 321
+&gt;&gt;
+&gt;
+```
+&gt; 123
+&gt;
+&gt; &gt; 321
+&gt; &gt;
+&gt;
+
+---
+``` markdown
+分隔線 
+---
+```
+
+### 段落與換行
+```
+第一行
+相鄰
+```
+第一行
+相鄰
+
+---
+
+```
+這裡後面兩空格  
+段內換行
+```
+這裡後面兩空格  
+段內換行
+
+
+### 表格
+| 預設    |       靠右 | 靠左       |    置中    |
+| ------- | ---------: | :--------- | :--------: |
+| 預設    |       靠右 | 靠左       |    置中    |
+| 預設123 | 靠右 12312 | 靠左321312 | 31312 置中 |</code></pre><section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
