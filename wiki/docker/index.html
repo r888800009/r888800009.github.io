@@ -69,6 +69,7 @@ if (!doNotTrack) {
     <li><a href="#掛載">掛載</a></li>
     <li><a href="#檔案">檔案</a></li>
     <li><a href="#dockerfile">Dockerfile</a></li>
+    <li><a href="#docker-停止與刪除所有容器">docker 停止與刪除所有容器</a></li>
   </ul>
 </nav>
     </aside>
@@ -83,7 +84,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container ls -a
 </code></pre></div><p>移除容器</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rm 容器ID
-</code></pre></div><p>搜尋image</p>
+</code></pre></div><p>搜尋 image</p>
 <pre><code>docker search 名稱
 </code></pre><p>獲取容器地址，<a href="https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host">出處</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker inspect -f <span style="color:#e6db74">&#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> 容器名稱
@@ -114,6 +115,9 @@ sudo docker rm temp
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 </code></pre><p>build image</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker build -t my-httpd . 
+</code></pre></div><h2 id="docker-停止與刪除所有容器">docker 停止與刪除所有容器</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker stop <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
+docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
 </code></pre></div>
 
     
