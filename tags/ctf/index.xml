@@ -6,10 +6,19 @@
     <description>Recent content in CTF on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 28 Feb 2020 23:29:26 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 04:38:37 +0800</lastBuildDate>
     
 	<atom:link href="https://r888800009.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Heap Exploit</title>
+      <link>https://r888800009.github.io/software/security/binary/heap/</link>
+      <pubDate>Mon, 10 Aug 2020 04:38:37 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/binary/heap/</guid>
+      <description>&lt;p&gt;堆積利用筆記&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>密碼學</title>
