@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>pwn常用指令與概念 | r809&#39;s Notes</title>
+<title>PWN 常用指令與概念 | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,7 +47,7 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">pwn常用指令與概念</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">PWN 常用指令與概念</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-09-06 04:38:57 &#43;0800 CST">Fri, 2019 Sep 6</time>
     </div>
@@ -66,7 +66,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#利用方法">利用方法</a></li>
-    <li><a href="#指令">指令</a>
+    <li><a href="#工具">工具</a>
       <ul>
         <li><a href="#符號與區段">符號與區段</a></li>
         <li><a href="#pwntools">pwntools</a></li>
@@ -93,6 +93,7 @@ if (!doNotTrack) {
 <li><code>little endian</code>: 高位優先</li>
 <li><code>big endian</code>: 低位優先</li>
 <li><a href="/software/reversing/">逆向工具使用</a></li>
+<li>hooking: 在運行(通常)時把原函數以新函數取代，以改變程式行為。</li>
 </ul>
 <h2 id="保護">保護</h2>
 <p>透過<code>checksec</code>下去檢測有哪些保護啟用</p>
@@ -105,6 +106,7 @@ PIE       : disabled
 RELRO     : Partial
 </code></pre></div><p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，
 也可能是透過其他漏洞如<a href="/software/security/binary/format-string-attack/">格式化字串</a>。</p>
+<p>另外參見 <a href="/software/security/exploit-mitigation/">漏洞緩解技術</a></p>
 <h3 id="aslr繞過">ASLR繞過</h3>
 <p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
 <h2 id="利用方法">利用方法</h2>
@@ -143,7 +145,7 @@ RELRO     : Partial
 </ul>
 </li>
 </ul>
-<h2 id="指令">指令</h2>
+<h2 id="工具">工具</h2>
 <p>反組譯查看函數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./echo | less
 </code></pre></div><p>透過gdb檢查流程</p>
@@ -200,7 +202,7 @@ pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov 
       
         <a href="https://r888800009.github.io/tags/ctf" class="tags">CTF</a>
       
-        <a href="https://r888800009.github.io/tags/pwn" class="tags">pwn</a>
+        <a href="https://r888800009.github.io/tags/pwn" class="tags">PWN</a>
       
     
 

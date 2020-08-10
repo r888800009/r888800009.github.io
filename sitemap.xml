@@ -14,7 +14,7 @@
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
@@ -24,7 +24,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
@@ -34,7 +34,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/ctf/</loc>
-    <lastmod>2020-08-10T12:08:03+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
@@ -49,17 +49,17 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/pwn/</loc>
-    <lastmod>2020-08-10T12:08:03+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/vulnerability/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
@@ -109,7 +109,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/web/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
   </url>
   
   <url>
@@ -159,12 +159,12 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/exploit-mitigation/</loc>
-    <lastmod>2020-05-17T21:10:18+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/exploit-mitigation/</loc>
-    <lastmod>2020-05-17T21:10:18+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
@@ -734,7 +734,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/sql/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
   </url>
   
   <url>
@@ -794,7 +794,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
   </url>
   
   <url>
@@ -938,18 +938,33 @@
   </url>
   
   <url>
+    <loc>https://r888800009.github.io/tags/csrf/</loc>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/tags/javascript/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/lfi/</loc>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/php/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/web/vulnerability/</loc>
-    <lastmod>2020-08-10T12:10:24+08:00</lastmod>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/xss/</loc>
+    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
   </url>
   
   <url>
@@ -1004,12 +1019,12 @@
   
   <url>
     <loc>https://r888800009.github.io/software/security/binary/format-string-attack/</loc>
-    <lastmod>2020-05-04T00:29:07+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/binary/pwn-notes/</loc>
-    <lastmod>2020-08-10T12:08:03+08:00</lastmod>
+    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
   </url>
   
   <url>
