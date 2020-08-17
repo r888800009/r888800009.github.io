@@ -59,29 +59,30 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#型類">型類</a></li>
     <li><a href="#應用">應用</a></li>
     <li><a href="#相關概念">相關概念</a></li>
-    <li><a href="#fuzzing-的類型">Fuzzing 的類型</a></li>
-    <li><a href="#fuzzer">Fuzzer</a>
+    <li><a href="#fuzzing-的類型">Fuzzing 的類型</a>
+      <ul>
+        <li><a href="#型類">型類</a></li>
+        <li><a href="#測資分類">測資分類</a></li>
+      </ul>
+    </li>
+    <li><a href="#fuzzing-的前置準備">Fuzzing 的前置準備</a></li>
+    <li><a href="#基本的-fuzzer-演算法">基本的 Fuzzer 演算法</a></li>
+    <li><a href="#fuzzers">Fuzzers</a>
       <ul>
         <li><a href="#radamsa">radamsa</a></li>
-        <li><a href="#afl">afl</a></li>
-        <li><a href="#afl-1">AFL</a></li>
+        <li><a href="#afl">AFL</a></li>
       </ul>
     </li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="型類">型類</h2>
-<ul>
-<li>file fuzz</li>
-<li>protocol fuzz</li>
-</ul>
-<h2 id="應用">應用</h2>
+    <h2 id="應用">應用</h2>
 <ul>
 <li>Fuzzit 結合 DevOps</li>
+<li>AI-Based Fuzzing (AIF)</li>
 </ul>
 <h2 id="相關概念">相關概念</h2>
 <ul>
@@ -94,11 +95,33 @@ if (!doNotTrack) {
 <h2 id="fuzzing-的類型">Fuzzing 的類型</h2>
 <ul>
 <li>Blind Fuzzing: 僅透過大量數據觸發崩潰</li>
-<li>Guided Fuzzing: 關注測試數據的品質以提昇測試覆蓋率</li>
+<li>Guided Fuzzing: 關注測試數據的品質以提昇測試覆蓋率，ALF 為此類別。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
 </ul>
-<p>參考 <a href="https://zhuanlan.zhihu.com/p/55066549">简单高效的模糊测试——Fuzzing</a></p>
-<h2 id="fuzzer">Fuzzer</h2>
-<p>常見的Fuzzer</p>
+<h3 id="型類">型類</h3>
+<ul>
+<li>file fuzz</li>
+<li>protocol fuzz</li>
+</ul>
+<h3 id="測資分類">測資分類</h3>
+<ul>
+<li>Generation-based Fuzzing 基於生成，透過協議與界面產生測資</li>
+<li>Mutation-based Fuzzing 基於異變，異變現有的測資產生<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>:</li>
+</ul>
+<h2 id="fuzzing-的前置準備">Fuzzing 的前置準備</h2>
+<ul>
+<li>花費 90% 閱讀文檔，來分析可能出現問題的位置<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+</ul>
+<h2 id="基本的-fuzzer-演算法">基本的 Fuzzer 演算法</h2>
+<ol>
+<li>生成初始種子</li>
+<li>選擇輸入</li>
+<li>異變輸入</li>
+<li>餵食測資</li>
+<li>如果 crash 就保存輸入</li>
+<li>回到第二步驟 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+</ol>
+<h2 id="fuzzers">Fuzzers</h2>
+<p>常見的 Fuzzer</p>
 <ul>
 <li><a href="http://lcamtuf.coredump.cx/afl/">afl</a> <a href="https://github.com/google/AFL">GitHub</a></li>
 <li><a href="https://gitlab.com/akihe/radamsa">radamsa</a></li>
@@ -108,17 +131,29 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S radamsa
 </code></pre></div><p>使用</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;if(x &gt; 8)&#34;</span> | radamsa    
-</code></pre></div><h3 id="afl">afl</h3>
+</code></pre></div><h3 id="afl">AFL</h3>
 <p>安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S afl
-</code></pre></div><h3 id="afl-1">AFL</h3>
-<p>編譯被測試程式</p>
+</code></pre></div><p>編譯被測試程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-gcc main.c
 </code></pre></div><p>編寫測資後，測試程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out
 </code></pre></div><p>或使用參數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out @@
-</code></pre></div>
+</code></pre></div><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>參考 <a href="https://zhuanlan.zhihu.com/p/55066549">简单高效的模糊测试——Fuzzing</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><strong>建議閱讀</strong> <a href="https://ma3k4h3d.top/2018/10/27/Fuzzing%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/">Fuzzing技术总结与工具列表</a>，而該篇應該是轉載自<a href="https://blog.csdn.net/wcventure/article/details/82085251">原始貼文</a> ，而原始貼文似乎有更新過 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://paper.seebug.org/323/">初识 Fuzzing 工具 WinAFL</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
     
       <hr>
@@ -130,6 +165,8 @@ if (!doNotTrack) {
         <a href="https://r888800009.github.io/tags/fuzzing" class="tags">Fuzzing</a>
       
         <a href="https://r888800009.github.io/tags/testing" class="tags">Testing</a>
+      
+        <a href="https://r888800009.github.io/tags/zero-day" class="tags">Zero-Day</a>
       
     
 

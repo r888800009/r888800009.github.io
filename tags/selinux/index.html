@@ -48,77 +48,16 @@ if (!doNotTrack) {
     
 </nav>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">SELinux</a></h1>
-<div id="content"><div class="date">
-        <time datetime="2020-05-18 23:41:08 &#43;0800 CST">Mon, 2020 May 18</time>
-    </div>
+<div id="content">
+    <h1><a href="https://r888800009.github.io/wiki/selinux/" class="post-link">SELinux</a></h1>
 
-    <aside>
-      <span onclick="tocToggle()" id="TOCStyle">
-        <b>目次</b>
-        <span id="TOCState"></span>
-      </span>
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#selinux-特性">SELinux 特性</a></li>
-    <li><a href="#參考來源">參考來源</a></li>
-  </ul>
-</nav>
-    </aside>
 
-    <h2 id="selinux-特性">SELinux 特性</h2>
-<ul>
-<li>針對整個系統，為白名單方法</li>
-<li>可以阻擋 root 權限執行</li>
-<li>為 Mandatory Access Control  (MAC) 與傳統的 Discretionary Access Control 透過身份不同</li>
-<li>安全本文 (Security Context 或 SELinux Label): 存取<strong>主體 (Subject)<strong>與</strong>目標(Object)</strong></li>
-</ul>
-<h2 id="參考來源">參考來源</h2>
-<ul>
-<li>CYBERSEC 2020</li>
-<li><a href="http://linux.vbird.org/linux_basic/0440processcontrol/0440processcontrol-centos5.php">鳥哥的 Linux 私房菜 第十七章、程序管理與 SELinux 初探</a></li>
-</ul>
-
-    
-      <hr>
-      
-        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
-      
-        <a href="https://r888800009.github.io/tags/selinux" class="tags">SELinux</a>
-      
+<div style="font-size: 200%; text-align: center; font-weight: bold;">
     
 
-    <script>
-      (function addHeadingLinks(){
-        var article = document.getElementById('content');
-        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
-        headings.forEach(function(heading){
-          if(heading.id){
-            var a = document.createElement('a');
-            a.innerHTML = '#';
-            a.className = 'subheader';
-            a.href = '#'+heading.id;
-            heading.appendChild(a);
-          }
-        });
-      })();
-    </script>
+    
+</div>
 
-    <script>
-      function tocToggle() {
-        var toc = document.getElementById("TableOfContents");
-        var state = document.getElementById("TOCState");
-        if (toc.style.display === "none") {
-          state.innerHTML = "[hide]";
-          toc.style.display = "block";
-        } else {
-          state.innerHTML = "[show]";
-          toc.style.display = "none";
-        }
-      }
-      
-      tocToggle();
-      tocToggle();
-    </script>
 
 
             </div>

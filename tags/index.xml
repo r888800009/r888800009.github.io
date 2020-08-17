@@ -165,6 +165,15 @@
     </item>
     
     <item>
+      <title>SELinux</title>
+      <link>https://r888800009.github.io/tags/selinux/</link>
+      <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/selinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Exploit Mitigation</title>
       <link>https://r888800009.github.io/tags/exploit-mitigation/</link>
       <pubDate>Sun, 17 May 2020 20:47:41 +0800</pubDate>
@@ -638,6 +647,15 @@
       <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zero-Day</title>
+      <link>https://r888800009.github.io/tags/zero-day/</link>
+      <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/zero-day/</guid>
       <description></description>
     </item>
     

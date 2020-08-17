@@ -4,12 +4,12 @@
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2020-08-17T04:13:09+08:00</lastmod>
+    <lastmod>2020-08-17T17:01:14+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2020-08-17T04:13:09+08:00</lastmod>
+    <lastmod>2020-08-17T17:01:14+08:00</lastmod>
   </url>
   
   <url>
@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://r888800009.github.io/wiki/</loc>
-    <lastmod>2020-08-17T04:13:09+08:00</lastmod>
+    <lastmod>2020-08-17T17:01:14+08:00</lastmod>
   </url>
   
   <url>
@@ -64,12 +64,12 @@
   
   <url>
     <loc>https://r888800009.github.io/software/</loc>
-    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
+    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/vulnerability/</loc>
-    <lastmod>2020-08-10T13:45:21+08:00</lastmod>
+    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
   </url>
   
   <url>
@@ -154,7 +154,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/linux/</loc>
-    <lastmod>2020-06-10T21:42:32+08:00</lastmod>
+    <lastmod>2020-08-17T17:01:14+08:00</lastmod>
   </url>
   
   <url>
@@ -163,8 +163,13 @@
   </url>
   
   <url>
+    <loc>https://r888800009.github.io/tags/selinux/</loc>
+    <lastmod>2020-08-17T17:01:14+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/wiki/selinux/</loc>
-    <lastmod>2020-05-19T15:50:50+08:00</lastmod>
+    <lastmod>2020-08-17T17:01:14+08:00</lastmod>
   </url>
   
   <url>
@@ -894,22 +899,27 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/debug/</loc>
-    <lastmod>2020-08-10T05:26:24+08:00</lastmod>
+    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/fuzzing/</loc>
-    <lastmod>2020-08-10T05:26:24+08:00</lastmod>
+    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/fuzzing/</loc>
-    <lastmod>2020-08-10T05:26:24+08:00</lastmod>
+    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/testing/</loc>
-    <lastmod>2020-08-10T05:26:24+08:00</lastmod>
+    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/zero-day/</loc>
+    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
   </url>
   
   <url>
