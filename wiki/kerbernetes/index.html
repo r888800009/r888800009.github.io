@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.74.3" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>Kerbernetes | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -48,42 +47,70 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/system-program/yacc/" class="post-link">Bison Yacc</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Kerbernetes</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2020-08-23 16:55:35 &#43;0800 CST">Sun, 2020 Aug 23</time>
+    </div>
 
-    <h1><a href="https://r888800009.github.io/system-program/sp8/" class="post-link">[SP]軟體工程</a></h1>
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#參考">參考</a></li>
+  </ul>
+</nav>
+    </aside>
 
-    <h1><a href="https://r888800009.github.io/wiki/verilog/" class="post-link">Verilog</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/password/" class="post-link">密碼安全</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/sp7/" class="post-link">[SP]資料庫系統</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/information-security/" class="post-link">資訊安全</a></h1><p>資訊安全相關索引</p>
-
-    <h1><a href="https://r888800009.github.io/software/security/pentest/" class="post-link">滲透</a></h1><p>Penetration Testing筆記</p>
-
-    <h1><a href="https://r888800009.github.io/wiki/ipv6/" class="post-link">IPv6</a></h1>
-
-    <h1><a href="https://r888800009.github.io/system-program/sp6/" class="post-link">[SP]Francis Compiler</a></h1>
-
-    <h1><a href="https://r888800009.github.io/software/reversing/" class="post-link">逆向相關資料</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
-    
-    <a href=/page/5/>
-      &#x3C;
-    </a>
-    
+    <ul>
+<li>別名: k8s</li>
+</ul>
+<h2 id="參考">參考</h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/">What is Kubernetes?</a></li>
+</ul>
 
     
-    <a href=/page/7/>
-       &#x3E;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/container" class="tags">Container</a>
+      
     
-</div>
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>
