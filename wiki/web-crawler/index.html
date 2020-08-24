@@ -59,14 +59,36 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#前置準備">前置準備</a></li>
+    <li><a href="#簡易爬取工具">簡易爬取工具</a>
+      <ul>
+        <li><a href="#web-scraper">Web Scraper</a></li>
+      </ul>
+    </li>
     <li><a href="#透過libxml2抓取網頁內容">透過libxml2抓取網頁內容</a></li>
     <li><a href="#透過beautifulsoup">透過beautifulsoup</a></li>
     <li><a href="#透過命令行剖析xpath">透過命令行剖析xpath</a></li>
+    <li><a href="#參見-1">參見</a></li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="透過libxml2抓取網頁內容">透過libxml2抓取網頁內容</h2>
+    <h2 id="前置準備">前置準備</h2>
+<ul>
+<li>請專注如何快速應用爬蟲</li>
+</ul>
+<h2 id="簡易爬取工具">簡易爬取工具</h2>
+<h3 id="web-scraper">Web Scraper</h3>
+<p>簡易的 browser 插件，可以直接選取並且爬取，參考官方教學即可。</p>
+<h4 id="參見">參見</h4>
+<ul>
+<li>基本教學
+<ul>
+<li><a href="http://www.woshipm.com/operate/764215.html">新媒体人必会的傻瓜式爬虫工具：上手 Web Scraper 的 5 个步骤</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="透過libxml2抓取網頁內容">透過libxml2抓取網頁內容</h2>
 <p>下面示範透過<code>libxml2</code>抓取頁面的連結內容以及連結。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> libxml2
 <span style="color:#f92672">import</span> requests
@@ -101,7 +123,10 @@ soup <span style="color:#f92672">=</span> BeautifulSoup(r<span style="color:#f92
   <span style="color:#66d9ef">print</span>(tag<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;href&#39;</span>))
 </code></pre></div><h2 id="透過命令行剖析xpath">透過命令行剖析xpath</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xmllint --xpath  <span style="color:#e6db74">&#39;/html/body/h3/text()&#39;</span>  --html http://example.com  md5sum | awk <span style="color:#e6db74">&#39;{ print $1 }&#39;</span>
-</code></pre></div>
+</code></pre></div><h2 id="參見-1">參見</h2>
+<ul>
+<li><a href="https://ithelp.ithome.com.tw/m/articles/10212937">20個網頁抓取工具快速抓取網站</a></li>
+</ul>
 
     
       <hr>

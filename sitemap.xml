@@ -14,17 +14,17 @@
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2020-08-24T15:39:00+08:00</lastmod>
+    <lastmod>2020-08-24T16:19:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2020-08-24T15:39:00+08:00</lastmod>
+    <lastmod>2020-08-24T16:19:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/wiki/</loc>
-    <lastmod>2020-08-24T15:39:00+08:00</lastmod>
+    <lastmod>2020-08-24T16:19:36+08:00</lastmod>
   </url>
   
   <url>
@@ -74,12 +74,12 @@
   
   <url>
     <loc>https://r888800009.github.io/software/</loc>
-    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
+    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/vulnerability/</loc>
-    <lastmod>2020-08-17T14:37:08+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
@@ -129,7 +129,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/web/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T16:19:36+08:00</lastmod>
   </url>
   
   <url>
@@ -193,13 +193,23 @@
   </url>
   
   <url>
+    <loc>https://r888800009.github.io/tags/obfuscate/</loc>
+    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/obfuscator/</loc>
+    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/tags/software/</loc>
-    <lastmod>2020-05-14T14:20:00+08:00</lastmod>
+    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/obfuscation/</loc>
-    <lastmod>2020-05-14T14:20:00+08:00</lastmod>
+    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
   </url>
   
   <url>
@@ -319,7 +329,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/pentest/</loc>
-    <lastmod>2020-05-04T00:29:07+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
@@ -344,7 +354,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/information-security/</loc>
-    <lastmod>2020-08-24T15:39:00+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
@@ -574,7 +584,7 @@
   
   <url>
     <loc>https://r888800009.github.io/wiki/password/</loc>
-    <lastmod>2019-12-14T23:46:30+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
@@ -589,7 +599,7 @@
   
   <url>
     <loc>https://r888800009.github.io/software/security/pentest/</loc>
-    <lastmod>2020-05-04T00:29:07+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
@@ -654,7 +664,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/python/</loc>
-    <lastmod>2020-08-24T15:11:49+08:00</lastmod>
+    <lastmod>2020-08-24T16:19:36+08:00</lastmod>
   </url>
   
   <url>
@@ -754,7 +764,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/sql/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
@@ -769,7 +779,7 @@
   
   <url>
     <loc>https://r888800009.github.io/wiki/web-crawler/</loc>
-    <lastmod>2020-01-01T23:03:08+08:00</lastmod>
+    <lastmod>2020-08-24T16:19:36+08:00</lastmod>
   </url>
   
   <url>
@@ -814,7 +824,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
@@ -964,32 +974,32 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/csrf/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/javascript/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/lfi/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/php/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/web/vulnerability/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/xss/</loc>
-    <lastmod>2020-08-10T13:44:45+08:00</lastmod>
+    <lastmod>2020-08-24T15:44:04+08:00</lastmod>
   </url>
   
   <url>
