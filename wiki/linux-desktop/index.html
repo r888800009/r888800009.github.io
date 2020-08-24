@@ -87,6 +87,7 @@ if (!doNotTrack) {
     <li><a href="#影片播放">影片播放</a></li>
     <li><a href="#ranger">ranger</a></li>
     <li><a href="#編輯-pdf-metadata">編輯 PDF metadata</a></li>
+    <li><a href="#nvidia-optimus">NVIDIA Optimus</a></li>
   </ul>
 </nav>
     </aside>
@@ -187,7 +188,12 @@ xclip -out -selection primary
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool file.pdf
 </code></pre></div><p>修改 pdf 標題</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool -Title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new title&#34;</span> pdf
-</code></pre></div>
+</code></pre></div><h2 id="nvidia-optimus">NVIDIA Optimus</h2>
+<p>在筆電雙顯示卡按需求執行時切換寫卡，比方說 Linux 執行 3D 遊戲，可以使用 Bumblebee</p>
+<ul>
+<li>optirun:  當前 process?</li>
+<li>primusrun: 之後所有 process 也有?</li>
+</ul>
 
     
       <hr>
