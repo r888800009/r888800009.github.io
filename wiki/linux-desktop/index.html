@@ -70,12 +70,17 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#繪圖軟體">繪圖軟體</a></li>
-    <li><a href="#終端emulator">終端emulator</a></li>
+    <li><a href="#終端-emulator">終端 emulator</a></li>
     <li><a href="#linux-字形">Linux 字形</a></li>
-    <li><a href="#man網頁輸出">man網頁輸出</a></li>
+    <li><a href="#man-網頁輸出">man 網頁輸出</a></li>
     <li><a href="#display-manager">Display Manager</a>
       <ul>
         <li><a href="#gdm3-大頭照profile-picture">gdm3 大頭照(profile picture)</a></li>
+      </ul>
+    </li>
+    <li><a href="#xdg-open">xdg-open</a>
+      <ul>
+        <li><a href="#配置-pdf-預設啟動程式">配置 pdf 預設啟動程式</a></li>
       </ul>
     </li>
     <li><a href="#視訊">視訊</a></li>
@@ -95,7 +100,8 @@ if (!doNotTrack) {
     <h2 id="選單工具">選單工具</h2>
 <ul>
 <li>dmenu</li>
-<li><a href="https://github.com/davatorium/rofi">rofi</a>視窗切換器</li>
+<li><a href="https://github.com/davatorium/rofi">rofi</a> 視窗切換器</li>
+<li>albert launcher</li>
 </ul>
 <h3 id="rofi">rofi</h3>
 <ul>
@@ -131,7 +137,7 @@ rofi -show combi
 <li>Krita</li>
 <li>Gimp</li>
 </ul>
-<h2 id="終端emulator">終端emulator</h2>
+<h2 id="終端-emulator">終端 emulator</h2>
 <ul>
 <li><a href="https://github.com/jwilm/alacritty">alacritty</a> GPU加速終端機</li>
 <li>xterm/uxterm</li>
@@ -141,7 +147,7 @@ rofi -show combi
 <h2 id="linux-字形">Linux 字形</h2>
 <p>列出可用的字體</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fc-list
-</code></pre></div><h2 id="man網頁輸出">man網頁輸出</h2>
+</code></pre></div><h2 id="man-網頁輸出">man 網頁輸出</h2>
 <p>透過瀏覽器檢視<code>man</code>文檔，以html進行排版。以下示範將瀏覽器
 設定成<code>chromium</code>並讀取<code>less</code>的文檔。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export BROWSER<span style="color:#f92672">=</span>chromium 
@@ -149,6 +155,20 @@ man -H less
 </code></pre></div><h2 id="display-manager">Display Manager</h2>
 <h3 id="gdm3-大頭照profile-picture">gdm3 大頭照(profile picture)</h3>
 <p>將圖片放在<code>~/.face</code>。</p>
+<h2 id="xdg-open">xdg-open</h2>
+<h3 id="配置-pdf-預設啟動程式">配置 pdf 預設啟動程式</h3>
+<p>查詢 pdf 開啟程式</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime query default application/pdf
+</code></pre></div><p>設定成 evince</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime default org.gnome.Evince.desktop application/pdf
+</code></pre></div><p>無法設定請參考以下指令進行除錯</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">XDG_UTILS_DEBUG_LEVEL<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> xdg-mime query default application/pdf
+vim .config/mimeapps.list
+</code></pre></div><p>參見</p>
+<ul>
+<li><a href="https://bbs.archlinux.org/viewtopic.php?id=241084">Can&rsquo;t stop xdg-open from using Mendeley for PDFs</a></li>
+<li><a href="https://superuser.com/questions/962687/problems-with-using-xdg-mime-default-the-default-was-successfully-set-but-it-is">Problems with using xdg-mime default. The default was successfully set but it is not used via xdg-open</a></li>
+</ul>
 <h2 id="視訊">視訊</h2>
 <ul>
 <li>zart</li>
