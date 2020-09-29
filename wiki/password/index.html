@@ -87,21 +87,21 @@ if (!doNotTrack) {
 </ul>
 <h2 id="簡易弱密碼範例">簡易弱密碼範例</h2>
 <p>保存為<code>index.php</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">&lt;<span style="color:#f92672">form</span>&gt;
-  &lt;<span style="color:#f92672">div</span>&gt;
-    Username: &lt;<span style="color:#f92672">br</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">required</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#a6e22e">Username</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">required</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
 
-  &lt;<span style="color:#f92672">div</span>&gt;
-    Password: &lt;<span style="color:#f92672">br</span>&gt;
-    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pw&#34;</span> <span style="color:#a6e22e">required</span>&gt;
-  &lt;/<span style="color:#f92672">div</span>&gt;
+  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#a6e22e">Password</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pw&#34;</span> <span style="color:#a6e22e">required</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
 
-    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span>&gt;Login&lt;/<span style="color:#f92672">button</span>&gt;
-&lt;/<span style="color:#f92672">form</span>&gt;
+    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Login</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">button</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">form</span><span style="color:#f92672">&gt;</span>
 
-<span style="color:#75715e">&lt;?php</span>
+<span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
 $id <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;id&#39;</span><span style="color:#a6e22e">simple</span><span style="color:#f92672">-</span><span style="color:#a6e22e">login</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span>];
 $pw <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;pw&#39;</span>];
 
@@ -112,8 +112,8 @@ $pw <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;
     <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Incorrect account or password&#34;</span>;
 }
 
-<span style="color:#75715e">?&gt;</span>
-</code></pre></div><p>透過以下指令啟動php臨時伺服器</p>
+<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>透過以下指令啟動php臨時伺服器</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -S 127.0.0.1:8080 -t ./
 </code></pre></div><p>注意: 採用<code>localhost</code>可能會因為伺服器監聽的是IPv6導致無法正常連入。</p>
 <p>現在連到<a href="http://localhost:8080/">剛剛建立的範例</a>

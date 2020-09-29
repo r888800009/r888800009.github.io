@@ -6,11 +6,7 @@
     <description>Recent content in Fuzz on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 13 Oct 2019 21:21:52 +0800</lastBuildDate>
-    
-	<atom:link href="https://r888800009.github.io/tags/fuzz/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 13 Oct 2019 21:21:52 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/fuzz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>python 模糊搜尋</title>
       <link>https://r888800009.github.io/wiki/python-fuzz/</link>
