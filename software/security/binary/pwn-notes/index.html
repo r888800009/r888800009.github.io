@@ -76,7 +76,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#shellcode-nop-sled">Shellcode: Nop Sled</a></li>
         <li><a href="#除錯技巧">除錯技巧</a></li>
-        <li><a href="#指定libc">指定libc</a></li>
+        <li><a href="#指定-libc">指定 libc</a></li>
         <li><a href="#payload輸入">payload輸入</a></li>
         <li><a href="#反向除錯">反向除錯</a></li>
         <li><a href="#補齊">補齊</a></li>
@@ -151,6 +151,8 @@ RELRO     : Partial
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./echo | less
 </code></pre></div><p>透過gdb檢查流程</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gdb ./echo
+</code></pre></div><p>載入 gdb peda</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source /usr/share/peda/peda.py
 </code></pre></div><h3 id="符號與區段">符號與區段</h3>
 <p>顯示符號表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nm ./a.out
@@ -184,12 +186,30 @@ flat({<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;ABC
 </ol>
 <p>為了檢驗payload是否正常運作而不斷重複以上步驟，
 將導致效率低下。</p>
-<h3 id="指定libc">指定libc</h3>
-<p>pwntools可以透過此方式指定使用的libc。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;echo2&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;LD_PRELOAD&#39;</span>: <span style="color:#e6db74">&#39;libc-2.23.so.x86_64&#39;</span>})
-</code></pre></div><p>shell可以透過此指令</p>
+<h3 id="指定-libc">指定 libc</h3>
+<p>pwntools 可以透過此方式指定使用的 libc，有 hooking 的意味，<strong>請務必注意 lib 前面的 <code>./</code></strong>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;echo2&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;LD_PRELOAD&#39;</span>: <span style="color:#e6db74">&#39;./libc-2.23.so.x86_64&#39;</span>})
+<span style="color:#75715e"># 請務必修改 libc 名稱</span>
+c <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;echo2&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;LD_LIBRARY_PATH&#39;</span>: <span style="color:#e6db74">&#39;.&#39;</span>})
+</code></pre></div><p>shell 可以透過此指令</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">LD_PRELOAD<span style="color:#f92672">=</span>/tmp/libc-2.23.so.x86_64 ./a.out
-</code></pre></div><h3 id="payload輸入">payload輸入</h3>
+LD_LIBRARY_PATH<span style="color:#f92672">=</span>. ./a.out
+</code></pre></div><p>採用 <code>LD_LIBRARY_PATH</code> 時請務必修改 libc 的名詞，並且透過 <code>ldd</code> 檢查連結的 library。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mv libc_32.so.6 libc.so.6
+LD_LIBRARY_PATH<span style="color:#f92672">=</span>. ldd ./seethefile
+</code></pre></div><p>輸出會出現以下訊息，代表已經透過該目錄的 libc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">libc.so.6 =&gt; ./libc.so.6
+</code></pre></div><p>如果不修改名詞會導致載入系統上的 libc</p>
+<h4 id="問題">問題</h4>
+<ul>
+<li>遇到 <code>Inconsistency detected by ld.so</code> 暫時沒有找到解法，透過 <code>LD_LIBRARY_PATH</code> 以及修改檔名就沒有遇到問題。</li>
+<li><strong>請務必透過 ldd 檢查是否載入正確的 lib</strong></li>
+</ul>
+<h4 id="參考">參考</h4>
+<ul>
+<li><a href="https://medium.com/fcamels-notes/linux-%E7%B7%A8%E8%AD%AF-shared-library-%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85-cb35844ef331">Linux 編譯 shared library 的方法和注意事項</a></li>
+</ul>
+<h3 id="payload輸入">payload輸入</h3>
 <p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
 <h3 id="反向除錯">反向除錯</h3>
 <p>參見<a href="/software/testing/debug/#反向除錯">除錯</a></p>
