@@ -74,14 +74,22 @@ if (!doNotTrack) {
     </li>
     <li><a href="#技巧">技巧</a>
       <ul>
+        <li><a href="#無法確定記憶體">無法確定記憶體</a></li>
         <li><a href="#shellcode-nop-sled">Shellcode: Nop Sled</a></li>
         <li><a href="#除錯技巧">除錯技巧</a></li>
-        <li><a href="#指定-libc">指定 libc</a></li>
         <li><a href="#payload輸入">payload輸入</a></li>
         <li><a href="#反向除錯">反向除錯</a></li>
         <li><a href="#補齊">補齊</a></li>
+        <li><a href="#查詢-libc-地址">查詢 libc 地址</a></li>
       </ul>
     </li>
+    <li><a href="#指定-libc">指定 libc</a>
+      <ul>
+        <li><a href="#問題">問題</a></li>
+        <li><a href="#參考">參考</a></li>
+      </ul>
+    </li>
+    <li><a href="#指定-ldso">指定 ld.so</a></li>
     <li><a href="#參見">參見</a></li>
   </ul>
 </nav>
@@ -173,6 +181,17 @@ flat({<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;ABC
 <li><a href="https://docs.pwntools.com/en/stable/util/packing.html#pwnlib.util.packing.flat">https://docs.pwntools.com/en/stable/util/packing.html#pwnlib.util.packing.flat</a></li>
 </ul>
 <h2 id="技巧">技巧</h2>
+<h3 id="無法確定記憶體">無法確定記憶體</h3>
+<p>無法確定 libc 記憶體，或者有啟用 ASLR 的時候，根據情況</p>
+<ul>
+<li>可讀 <code>/proc</code> 並且輸出
+<ul>
+<li><code>/proc/self/maps</code> 可以得出記憶體映射</li>
+</ul>
+</li>
+<li>可寫 <code>/proc/self/mem</code> 可以覆蓋 <code>.text</code></li>
+</ul>
+<p>請參見 <a href="https://darkwing.moe/2019/06/20/Pwn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B020-%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF/#%E5%88%A9%E7%94%A8procfs">Pwn学习笔记20:其他一些技术</a></p>
 <h3 id="shellcode-nop-sled">Shellcode: Nop Sled</h3>
 <p>透過<code>nop</code>指令增加shellcode的命中機率，
 在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
@@ -186,7 +205,22 @@ flat({<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;ABC
 </ol>
 <p>為了檢驗payload是否正常運作而不斷重複以上步驟，
 將導致效率低下。</p>
-<h3 id="指定-libc">指定 libc</h3>
+<p>如果採用 pwntools ，可以直接在呼叫 gdb.attach() 時執行指令，來增加效率 。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h3 id="payload輸入">payload輸入</h3>
+<p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
+<h3 id="反向除錯">反向除錯</h3>
+<p>參見<a href="/software/testing/debug/#反向除錯">除錯</a></p>
+<h3 id="補齊">補齊</h3>
+<p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;amd64&#39;</span>
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f2f2f6e69622f&#39;</span>)
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f6e69622f&#39;</span>)
+</code></pre></div><h3 id="查詢-libc-地址">查詢 libc 地址</h3>
+<p>在 gdb 可以透過以下指令查詢 libc 地址，以及連結的 libc</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">info proc mapping
+</code></pre></div><p>參見[<a href="https://reverseengineering.stackexchange.com/questions/6657/why-does-ldd-and-gdb-info-sharedlibrary-show-a-different-library-base-addr">Why does <code>ldd</code> and <code>(gdb) info sharedlibrary</code> show a different library base address?</a>]</p>
+<h2 id="指定-libc">指定 libc</h2>
 <p>pwntools 可以透過此方式指定使用的 libc，有 hooking 的意味，<strong>請務必注意 lib 前面的 <code>./</code></strong>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;echo2&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;LD_PRELOAD&#39;</span>: <span style="color:#e6db74">&#39;./libc-2.23.so.x86_64&#39;</span>})
 <span style="color:#75715e"># 請務必修改 libc 名稱</span>
@@ -200,31 +234,40 @@ LD_LIBRARY_PATH<span style="color:#f92672">=</span>. ldd ./seethefile
 </code></pre></div><p>輸出會出現以下訊息，代表已經透過該目錄的 libc</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">libc.so.6 =&gt; ./libc.so.6
 </code></pre></div><p>如果不修改名詞會導致載入系統上的 libc</p>
-<h4 id="問題">問題</h4>
+<h3 id="問題">問題</h3>
 <ul>
-<li>遇到 <code>Inconsistency detected by ld.so</code> 暫時沒有找到解法，透過 <code>LD_LIBRARY_PATH</code> 以及修改檔名就沒有遇到問題。</li>
+<li>遇到 <code>Inconsistency detected by ld.so</code> 暫時沒有找到解法，請找訊相同版本的 <code>ld.so</code></li>
 <li><strong>請務必透過 ldd 檢查是否載入正確的 lib</strong></li>
 </ul>
-<h4 id="參考">參考</h4>
+<h3 id="參考">參考</h3>
 <ul>
 <li><a href="https://medium.com/fcamels-notes/linux-%E7%B7%A8%E8%AD%AF-shared-library-%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85-cb35844ef331">Linux 編譯 shared library 的方法和注意事項</a></li>
 </ul>
-<h3 id="payload輸入">payload輸入</h3>
-<p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
-<h3 id="反向除錯">反向除錯</h3>
-<p>參見<a href="/software/testing/debug/#反向除錯">除錯</a></p>
-<h3 id="補齊">補齊</h3>
-<p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;amd64&#39;</span>
-pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f2f2f6e69622f&#39;</span>)
-pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f6e69622f&#39;</span>)
-</code></pre></div><h2 id="參見">參見</h2>
+<h2 id="指定-ldso">指定 ld.so</h2>
+<p>關於 pwn 的時 libc 的坑的解決辦法</p>
+<ul>
+<li>透過 docker 處裡環境問題</li>
+<li>執行 libc 找到對映的 ld.so ，執行 <code>./libc.so</code>來獲取版本號，並且下載 deb 包，</li>
+</ul>
+<p>請參考 <a href="http://brieflyx.me/2018/linux-tools/handling-so-hell/">Handling SO Hell in CTF Pwn - BrieflyX&rsquo;s Base</a></p>
+<p>或者在 pwntool 之下，則可以參考以下方法。</p>
+<pre><code class="language-pyth" data-lang="pyth">pwn_file=&quot;./ld-2.29.so --library-path ./lib/ ./babyheap&quot;
+p = process(pwn_file.split())
+</code></pre><p>參見於<a href="https://tianstcht.github.io/pwntools%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">文章</a>提到 starctf2019 的方法</p>
+<h2 id="參見">參見</h2>
 <ul>
 <li><a href="/software/security/binary/format-string-attack/">格式化字串</a></li>
 <li><a href="/wiki/gcc/#gcc關閉保護">GCC關閉保護</a></li>
 <li><a href="/software/security/binary/stack-smash/">Stack Smash</a></li>
 </ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://tianstcht.github.io/pwntools%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7">pwntools的使用技巧</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
     
       <hr>
