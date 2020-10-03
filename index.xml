@@ -6,7 +6,16 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 29 Sep 2020 13:29:42 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Oct 2020 10:35:32 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Honggfuzz</title>
+      <link>https://r888800009.github.io/software/security/honggfuzz/</link>
+      <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/honggfuzz/</guid>
+      <description>&lt;p&gt;Honggfuzz 筆記，透過 docker 執行 Honggfuzz 並啟用 qemu 模式進行 fuzzing。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Angr</title>
       <link>https://r888800009.github.io/software/security/angr/</link>

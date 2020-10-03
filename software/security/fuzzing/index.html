@@ -69,9 +69,13 @@ if (!doNotTrack) {
     </li>
     <li><a href="#fuzzing-的前置準備">Fuzzing 的前置準備</a></li>
     <li><a href="#基本的-fuzzer-演算法">基本的 Fuzzer 演算法</a></li>
-    <li><a href="#fuzzers">Fuzzers</a>
+    <li><a href="#mutator">Mutator</a>
       <ul>
         <li><a href="#radamsa">radamsa</a></li>
+      </ul>
+    </li>
+    <li><a href="#fuzzers">Fuzzers</a>
+      <ul>
         <li><a href="#afl">AFL</a></li>
       </ul>
     </li>
@@ -120,18 +124,23 @@ if (!doNotTrack) {
 <li>如果 crash 就保存輸入</li>
 <li>回到第二步驟 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
 </ol>
-<h2 id="fuzzers">Fuzzers</h2>
-<p>常見的 Fuzzer</p>
+<h2 id="mutator">Mutator</h2>
 <ul>
-<li><a href="http://lcamtuf.coredump.cx/afl/">afl</a> <a href="https://github.com/google/AFL">GitHub</a></li>
 <li><a href="https://gitlab.com/akihe/radamsa">radamsa</a></li>
 </ul>
 <h3 id="radamsa">radamsa</h3>
 <p>安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S radamsa
 </code></pre></div><p>使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;if(x &gt; 8)&#34;</span> | radamsa    
-</code></pre></div><h3 id="afl">AFL</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;if(x &gt; 8)&#34;</span> | radamsa   
+</code></pre></div><p>或許可以搭配自己的 fuzz 腳本使用？</p>
+<h2 id="fuzzers">Fuzzers</h2>
+<p>常見的 Fuzzer</p>
+<ul>
+<li><a href="http://lcamtuf.coredump.cx/afl/">afl</a> <a href="https://github.com/google/AFL">GitHub</a></li>
+<li>另外請見 <a href="/software/security/honggfuzz/">Honggfuzz 筆記</a></li>
+</ul>
+<h3 id="afl">AFL</h3>
 <p>安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S afl
 </code></pre></div><p>編譯被測試程式</p>
