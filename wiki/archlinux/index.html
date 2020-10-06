@@ -60,8 +60,12 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#archlinux-安裝腳本">Archlinux 安裝腳本</a></li>
-    <li><a href="#pacman">Pacman</a></li>
-    <li><a href="#pacaur">pacaur</a></li>
+    <li><a href="#包管理">包管理</a>
+      <ul>
+        <li><a href="#pacman">Pacman</a></li>
+        <li><a href="#pacaur">pacaur</a></li>
+      </ul>
+    </li>
     <li><a href="#java缺少中文字體">java缺少中文字體</a></li>
     <li><a href="#java-6">java 6</a></li>
     <li><a href="#採用lts-kernel">採用LTS kernel</a></li>
@@ -75,12 +79,16 @@ if (!doNotTrack) {
 <a href="https://github.com/MatMoul/archfi">archfi</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget archfi.sf.net/archfi
 sh archfi
-</code></pre></div><h2 id="pacman">Pacman</h2>
+</code></pre></div><h2 id="包管理">包管理</h2>
+<ul>
+<li><a href="http://kmkeen.com/pacgraph/index.html">Pacgraph</a> 用來檢測無用的 package</li>
+</ul>
+<h3 id="pacman">Pacman</h3>
 <p>顯示本地包</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Qqm
 </code></pre></div><p>重新安裝一切</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Syu <span style="color:#66d9ef">$(</span>pacman -Qnq<span style="color:#66d9ef">)</span>
-</code></pre></div><h2 id="pacaur">pacaur</h2>
+</code></pre></div><h3 id="pacaur">pacaur</h3>
 <p>安裝pacaur或更新時可用以下腳本。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /tmp
 git clone https://aur.archlinux.org/pacaur.git
