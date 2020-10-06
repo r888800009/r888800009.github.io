@@ -60,26 +60,45 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#前置概念">前置概念</a></li>
-    <li><a href="#保護">保護</a>
-      <ul>
-        <li><a href="#aslr繞過">ASLR繞過</a></li>
-      </ul>
-    </li>
+    <li><a href="#保護">保護</a></li>
     <li><a href="#利用方法">利用方法</a></li>
     <li><a href="#工具">工具</a>
       <ul>
         <li><a href="#符號與區段">符號與區段</a></li>
-        <li><a href="#pwntools">pwntools</a></li>
+        <li><a href="#procselfmaps">/proc/self/maps</a></li>
+      </ul>
+    </li>
+    <li><a href="#shellcode">Shellcode</a>
+      <ul>
+        <li><a href="#補齊">補齊</a></li>
+        <li><a href="#shellcode-nop-sled">Shellcode: Nop Sled</a></li>
+        <li><a href="#除錯">除錯</a></li>
+      </ul>
+    </li>
+    <li><a href="#elf">ELF</a>
+      <ul>
+        <li><a href="#利用方法-1">利用方法</a></li>
+        <li><a href="#ret2csu">ret2csu</a></li>
+        <li><a href="#參見">參見</a></li>
+      </ul>
+    </li>
+    <li><a href="#aslr繞過">ASLR繞過</a>
+      <ul>
+        <li><a href="#利用方法-2">利用方法</a></li>
+        <li><a href="#無法確定-libc-記憶體">無法確定 libc 記憶體</a></li>
+      </ul>
+    </li>
+    <li><a href="#任意寫">任意寫</a>
+      <ul>
+        <li><a href="#絕對-address">絕對 address</a></li>
+        <li><a href="#相對-address">相對 address</a></li>
       </ul>
     </li>
     <li><a href="#技巧">技巧</a>
       <ul>
-        <li><a href="#無法確定記憶體">無法確定記憶體</a></li>
-        <li><a href="#shellcode-nop-sled">Shellcode: Nop Sled</a></li>
+        <li><a href="#pie-取得-base-address">PIE 取得 base address</a></li>
         <li><a href="#除錯技巧">除錯技巧</a></li>
-        <li><a href="#payload輸入">payload輸入</a></li>
         <li><a href="#反向除錯">反向除錯</a></li>
-        <li><a href="#補齊">補齊</a></li>
         <li><a href="#查詢-libc-地址">查詢 libc 地址</a></li>
       </ul>
     </li>
@@ -90,7 +109,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#指定-ldso">指定 ld.so</a></li>
-    <li><a href="#參見">參見</a></li>
+    <li><a href="#參見-1">參見</a></li>
   </ul>
 </nav>
     </aside>
@@ -116,8 +135,6 @@ RELRO     : Partial
 </code></pre></div><p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，
 也可能是透過其他漏洞如<a href="/software/security/binary/format-string-attack/">格式化字串</a>。</p>
 <p>另外參見 <a href="/software/security/exploit-mitigation/">漏洞緩解技術</a></p>
-<h3 id="aslr繞過">ASLR繞過</h3>
-<p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
 <h2 id="利用方法">利用方法</h2>
 <ul>
 <li><a href="/software/security/binary/heap/">Heap</a></li>
@@ -128,31 +145,8 @@ RELRO     : Partial
 <li>VEH</li>
 </ul>
 </li>
-<li>Linux
-<ul>
-<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/gothijack.py">GOT Hijacking</a></li>
-<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2libc.py">ret2libc</a></li>
-<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2plt.py">ret2plt</a></li>
-<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py">ret2shellcode</a></li>
-</ul>
-</li>
+<li>Linux 請見 ELF 章節</li>
 <li><a href="/software/security/binary/stack-smash/">Stack Smash</a></li>
-<li><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/basic-rop-zh/">ROP</a>
-<ul>
-<li>ret2text</li>
-<li>ret2shellcode</li>
-<li>ret2syscall</li>
-<li>ret2libc</li>
-<li>ret2csu</li>
-<li>ret2reg</li>
-<li>BROP: Blind ROP</li>
-<li>ret2_dl_runtime_resolve</li>
-<li>SROP: Sigreturn Oriented Programming</li>
-<li>ret2VDSO: Virtual Dynamically-linked Shared Object</li>
-<li>JOP: Jump-oriented programming</li>
-<li>COP: Call-oriented programming</li>
-</ul>
-</li>
 </ul>
 <h2 id="工具">工具</h2>
 <p>反組譯查看函數</p>
@@ -161,27 +155,91 @@ RELRO     : Partial
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gdb ./echo
 </code></pre></div><p>載入 gdb peda</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source /usr/share/peda/peda.py
-</code></pre></div><h3 id="符號與區段">符號與區段</h3>
+</code></pre></div><p>註: 如 ida pro 與 ghidra 在某些情況下可能無法得出可以讀的程式碼，可以嘗試不同反編譯工具。</p>
+<h3 id="符號與區段">符號與區段</h3>
 <p>顯示符號表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nm ./a.out
 </code></pre></div><p>顯示區段</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">readelf -x .text ./a.out
 objdump -s -j .text ./a.out
 </code></pre></div><p>其他指令參見<a href="/software/reversing/">逆向</a>。</p>
-<h3 id="pwntools">pwntools</h3>
-<p>構造一個<code>echo</code>的shellcode</p>
+<h3 id="procselfmaps">/proc/self/maps</h3>
+<p>pwntools 可以透過 Process.libs() 來取得 /proc/self/maps ，或許在除錯 PIE 的時候有用</p>
+<p>注:  其他關於 proc 相關的可以參見文檔，想說怎麽不過設計在 proc 中</p>
+<p><a href="https://docs.pwntools.com/en/stable/util/proc.html">https://docs.pwntools.com/en/stable/util/proc.html</a></p>
+<h2 id="shellcode">Shellcode</h2>
+<p>熟悉 pwntools 方便編寫 shellcode ，如構造一個 <code>echo</code> 的 shellcode 如下</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwnlib <span style="color:#f92672">import</span> shellcraft
 shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
-</code></pre></div><h4 id="填充">填充</h4>
-<p>用 <code>flat()</code> 即可，比方說填充 buffer 有用，或者說前面需要擺放 <code>/bin/sh</code> 時可以用來填充一定長度。</p>
+</code></pre></div><p>如果需要填充用 <code>flat()</code> 即可，比方說填充 buffer 有用，或者說前面需要擺放 <code>/bin/sh</code> 時可以用來填充一定長度。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 flat({<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;ABC&#39;</span>, <span style="color:#ae81ff">5</span>: <span style="color:#e6db74">&#39;CBA&#39;</span>}, filler <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39; &#39;</span>, length <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>)
 </code></pre></div><p>參見官方文檔</p>
 <ul>
 <li><a href="https://docs.pwntools.com/en/stable/util/packing.html#pwnlib.util.packing.flat">https://docs.pwntools.com/en/stable/util/packing.html#pwnlib.util.packing.flat</a></li>
 </ul>
-<h2 id="技巧">技巧</h2>
-<h3 id="無法確定記憶體">無法確定記憶體</h3>
+<h3 id="補齊">補齊</h3>
+<p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;amd64&#39;</span>
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f2f2f6e69622f&#39;</span>)
+pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f6e69622f&#39;</span>)
+</code></pre></div><h3 id="shellcode-nop-sled">Shellcode: Nop Sled</h3>
+<p>透過<code>nop</code>指令增加shellcode的命中機率，
+在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
+<h3 id="除錯">除錯</h3>
+<ul>
+<li>系統呼叫 <code>int 0x80</code> 沒有作用時，請檢查呼叫後的 <code>EAX</code> 是否有變化，代表參數可能輸入錯誤</li>
+<li>傳入 <code>\0</code> 或 <code>\n</code> 導致沒辦法完整讀取 payload，可以嘗試放到後面。</li>
+<li>read syscall 如果遇到填充問題，嘗試填滿 buffer，包含前一次的 read。</li>
+</ul>
+<h2 id="elf">ELF</h2>
+<h3 id="利用方法-1">利用方法</h3>
+<ul>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/gothijack.py">GOT Hijacking</a></li>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2libc.py">ret2libc</a></li>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2plt.py">ret2plt</a></li>
+<li>[ret2shellcode](<a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py">https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py</a></li>
+</ul>
+<h3 id="ret2csu">ret2csu</h3>
+<p>.fini 與 .fini_array ，執行順序依序為 .fini_array[1],  .fini_array[0], .fini</p>
+<ul>
+<li>在 main 結束後被呼叫 <code>call QWORD PTR [rbp+rbx*8+0x0]</code></li>
+<li>利用條件: 已知 <code>.fini_array</code> 地址，並且複寫內容</li>
+<li>例題
+<ul>
+<li>fini_array loop: pwnable.tw 3x17</li>
+</ul>
+</li>
+</ul>
+<h3 id="參見">參見</h3>
+<ul>
+<li><a href="https://ctf-wiki.github.io/ctf-wiki/executable/elf/elf-structure-zh/">ELF 文件 - CTF Wiki</a></li>
+<li><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/medium-rop-zh/#ret2csu">中级 ROP ret2csu </a></li>
+</ul>
+<h2 id="aslr繞過">ASLR繞過</h2>
+<p>利用漏洞找到Return Address，並且找到相關如<code>libc</code>、<code>.text</code>、<code>stack</code>的Base用於利用。</p>
+<h3 id="利用方法-2">利用方法</h3>
+<p><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/basic-rop-zh/">ROP</a></p>
+<ul>
+<li>ret2text</li>
+<li>ret2shellcode</li>
+<li>ret2syscall</li>
+<li>ret2libc</li>
+<li>ret2reg</li>
+<li>BROP: Blind ROP
+<ul>
+<li><a href="http://www.scs.stanford.edu/brop/">http://www.scs.stanford.edu/brop/</a></li>
+<li><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/medium-rop-zh/#blind-rop">https://ctf-wiki.github.io/ctf-wiki/pwn/linux/stackoverflow/medium-rop-zh/#blind-rop</a></li>
+</ul>
+</li>
+<li>ret2_dl_runtime_resolve</li>
+<li>SROP: Sigreturn Oriented Programming</li>
+<li>ret2VDSO: Virtual Dynamically-linked Shared Object</li>
+<li>JOP: Jump-oriented programming</li>
+<li>COP: Call-oriented programming</li>
+</ul>
+<h3 id="無法確定-libc-記憶體">無法確定 libc 記憶體</h3>
 <p>無法確定 libc 記憶體，或者有啟用 ASLR 的時候，根據情況</p>
 <ul>
 <li>可讀 <code>/proc</code> 並且輸出
@@ -192,9 +250,39 @@ flat({<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;ABC
 <li>可寫 <code>/proc/self/mem</code> 可以覆蓋 <code>.text</code></li>
 </ul>
 <p>請參見 <a href="https://darkwing.moe/2019/06/20/Pwn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B020-%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF/#%E5%88%A9%E7%94%A8procfs">Pwn学习笔记20:其他一些技术</a></p>
-<h3 id="shellcode-nop-sled">Shellcode: Nop Sled</h3>
-<p>透過<code>nop</code>指令增加shellcode的命中機率，
-在shellcode之前的記憶體放入大量的<code>nop</code>。</p>
+<h2 id="任意寫">任意寫</h2>
+<h3 id="絕對-address">絕對 address</h3>
+<p>bss, data 可以任意寫</p>
+<p>stack pivoting 到可控地址上。</p>
+<ul>
+<li>
+<p>ebp -&gt; esp : leave; ret</p>
+</li>
+<li>
+<p>例題</p>
+<ul>
+<li>pwnable.tw 3x17</li>
+</ul>
+</li>
+</ul>
+<h3 id="相對-address">相對 address</h3>
+<ul>
+<li>
+<p>stack 相對寫入: 可以編寫 ROP，覆蓋地址</p>
+</li>
+<li>
+<p>heap 相對寫入</p>
+</li>
+<li>
+<p>例題</p>
+<ul>
+<li>pwnable.tw calc: stack 相對寫入</li>
+</ul>
+</li>
+</ul>
+<h2 id="技巧">技巧</h2>
+<h3 id="pie-取得-base-address">PIE 取得 base address</h3>
+<p><a href="https://tianstcht.github.io/pwntools">https://tianstcht.github.io/pwntools</a>的使用技巧/</p>
 <h3 id="除錯技巧">除錯技巧</h3>
 <p>採用<a href="/software/testing/gdb/#gdb-script">GDB Script</a>來避免重複的動作，
 如:</p>
@@ -206,17 +294,9 @@ flat({<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;ABC
 <p>為了檢驗payload是否正常運作而不斷重複以上步驟，
 將導致效率低下。</p>
 <p>如果採用 pwntools ，可以直接在呼叫 gdb.attach() 時執行指令，來增加效率 。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<h3 id="payload輸入">payload輸入</h3>
-<p>傳入<code>\0</code>或<code>\n</code>導致沒辦法完整讀取payload，可以嘗試放到後面。</p>
 <h3 id="反向除錯">反向除錯</h3>
 <p>參見<a href="/software/testing/debug/#反向除錯">除錯</a></p>
-<h3 id="補齊">補齊</h3>
-<p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-context<span style="color:#f92672">.</span>arch<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;amd64&#39;</span>
-pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f2f2f6e69622f&#39;</span>)
-pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov rax, 0x732f6e69622f&#39;</span>)
-</code></pre></div><h3 id="查詢-libc-地址">查詢 libc 地址</h3>
+<h3 id="查詢-libc-地址">查詢 libc 地址</h3>
 <p>在 gdb 可以透過以下指令查詢 libc 地址，以及連結的 libc</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">info proc mapping
 </code></pre></div><p>參見[<a href="https://reverseengineering.stackexchange.com/questions/6657/why-does-ldd-and-gdb-info-sharedlibrary-show-a-different-library-base-addr">Why does <code>ldd</code> and <code>(gdb) info sharedlibrary</code> show a different library base address?</a>]</p>
@@ -254,7 +334,7 @@ LD_LIBRARY_PATH<span style="color:#f92672">=</span>. ldd ./seethefile
 <pre><code class="language-pyth" data-lang="pyth">pwn_file=&quot;./ld-2.29.so --library-path ./lib/ ./babyheap&quot;
 p = process(pwn_file.split())
 </code></pre><p>參見於<a href="https://tianstcht.github.io/pwntools%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">文章</a>提到 starctf2019 的方法</p>
-<h2 id="參見">參見</h2>
+<h2 id="參見-1">參見</h2>
 <ul>
 <li><a href="/software/security/binary/format-string-attack/">格式化字串</a></li>
 <li><a href="/wiki/gcc/#gcc關閉保護">GCC關閉保護</a></li>

@@ -67,8 +67,12 @@ if (!doNotTrack) {
     </li>
     <li><a href="#端口查看">端口查看</a></li>
     <li><a href="#pppoe上網">PPPoE上網</a></li>
-    <li><a href="#iptables">iptables</a></li>
-    <li><a href="#修改mac">修改MAC</a></li>
+    <li><a href="#iptables">iptables</a>
+      <ul>
+        <li><a href="#轉發">轉發</a></li>
+      </ul>
+    </li>
+    <li><a href="#修改-mac">修改 MAC</a></li>
   </ul>
 </nav>
     </aside>
@@ -108,7 +112,12 @@ sudo vim /etc/iptables/iptables.rules
 sudo systemctl enable iptables.service
 sudo systemctl start iptables.service
 </code></pre></div><p>移除規則時將<code>-A</code>改成<code>-D</code></p>
-<h2 id="修改mac">修改MAC</h2>
+<h3 id="轉發">轉發</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -j MASQUERADE
+iptables -t nat -A PREROUTING -p tcp --dport <span style="color:#f92672">[</span>port<span style="color:#f92672">]</span> -j DNAT --to-destination <span style="color:#f92672">[</span>LAN ip<span style="color:#f92672">]</span>:<span style="color:#f92672">[</span>port<span style="color:#f92672">]</span>
+</code></pre></div><p>關於 linux 網路</p>
+<h2 id="修改-mac">修改 MAC</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -i
 ip link set dev eth0 down
 ip link set dev eth0 address 00:11:22:33:44:55
