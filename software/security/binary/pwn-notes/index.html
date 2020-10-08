@@ -86,6 +86,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#利用方法-2">利用方法</a></li>
         <li><a href="#無法確定-libc-記憶體">無法確定 libc 記憶體</a></li>
+        <li><a href="#pwntool-設定-base-address">pwntool 設定 base address</a></li>
       </ul>
     </li>
     <li><a href="#任意寫">任意寫</a>
@@ -178,6 +179,7 @@ flat({<span style="color:#ae81ff">0</span>: <span style="color:#e6db74">&#39;ABC
 <ul>
 <li><a href="https://docs.pwntools.com/en/stable/util/packing.html#pwnlib.util.packing.flat">https://docs.pwntools.com/en/stable/util/packing.html#pwnlib.util.packing.flat</a></li>
 </ul>
+<p>大部分 shellcode 都必須編寫 ROP chain，可以採用 <a href="http://docs.pwntools.com/en/dev/rop/rop.html">pwntools 的 ROP</a> 輔助編寫</p>
 <h3 id="補齊">補齊</h3>
 <p>如16位元<code>/bin///sh</code>採用多個<code>/</code>來避免生成的shellcode含有<code>\0</code>字元</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
@@ -250,7 +252,14 @@ pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov 
 <li>可寫 <code>/proc/self/mem</code> 可以覆蓋 <code>.text</code></li>
 </ul>
 <p>請參見 <a href="https://darkwing.moe/2019/06/20/Pwn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B020-%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E6%8A%80%E6%9C%AF/#%E5%88%A9%E7%94%A8procfs">Pwn学习笔记20:其他一些技术</a></p>
-<h2 id="任意寫">任意寫</h2>
+<h3 id="pwntool-設定-base-address">pwntool 設定 base address</h3>
+<p>在 leak address 之後為了方便使用，會設置 base address</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e <span style="color:#f92672">=</span> ELF(<span style="color:#e6db74">&#39;./a.out&#39;</span>)
+e<span style="color:#f92672">.</span>address <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x400000</span>
+</code></pre></div><p>並且在使用 ROP 的時候會需要配置 base adderss</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">base <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x400000</span>
+rop <span style="color:#f92672">=</span> ROP(e, base)
+</code></pre></div><h2 id="任意寫">任意寫</h2>
 <h3 id="絕對-address">絕對 address</h3>
 <p>bss, data 可以任意寫</p>
 <p>stack pivoting 到可控地址上。</p>
@@ -283,6 +292,8 @@ pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov 
 <h2 id="技巧">技巧</h2>
 <h3 id="pie-取得-base-address">PIE 取得 base address</h3>
 <p><a href="https://tianstcht.github.io/pwntools">https://tianstcht.github.io/pwntools</a>的使用技巧/</p>
+<p>如果是透過 ld.so 請透過以下指令</p>
+<p>c.libs()[c.cwd + c.argv[3].decode(&lsquo;utf8&rsquo;).strip('.')]</p>
 <h3 id="除錯技巧">除錯技巧</h3>
 <p>採用<a href="/software/testing/gdb/#gdb-script">GDB Script</a>來避免重複的動作，
 如:</p>
@@ -334,6 +345,9 @@ LD_LIBRARY_PATH<span style="color:#f92672">=</span>. ldd ./seethefile
 <pre><code class="language-pyth" data-lang="pyth">pwn_file=&quot;./ld-2.29.so --library-path ./lib/ ./babyheap&quot;
 p = process(pwn_file.split())
 </code></pre><p>參見於<a href="https://tianstcht.github.io/pwntools%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">文章</a>提到 starctf2019 的方法</p>
+<p>注意: ELF 如果為 x86 ，則 ld, libc 都要為 x86，反之為 x64 都要採用 x64 版本的 ld, libc</p>
+<p>採用此方法載入時如果要找到基準位置請改成</p>
+<p>c.libs()[c.cwd + c.argv[3].decode(&lsquo;utf8&rsquo;).strip('.')]</p>
 <h2 id="參見-1">參見</h2>
 <ul>
 <li><a href="/software/security/binary/format-string-attack/">格式化字串</a></li>
