@@ -76,6 +76,7 @@ if (!doNotTrack) {
     <li><a href="#display-manager">Display Manager</a>
       <ul>
         <li><a href="#gdm3-大頭照profile-picture">gdm3 大頭照(profile picture)</a></li>
+        <li><a href="#kde-大頭貼">KDE 大頭貼</a></li>
       </ul>
     </li>
     <li><a href="#xdg-open">xdg-open</a>
@@ -156,7 +157,10 @@ man -H less
 </code></pre></div><h2 id="display-manager">Display Manager</h2>
 <h3 id="gdm3-大頭照profile-picture">gdm3 大頭照(profile picture)</h3>
 <p>將圖片放在<code>~/.face</code>。</p>
-<h2 id="xdg-open">xdg-open</h2>
+<h3 id="kde-大頭貼">KDE 大頭貼</h3>
+<p>如果使用 gdm3 的位置的話可以建立一個軟連結 <code>~/.face.icon</code>即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ln -s ~/.face ~/.face.icon
+</code></pre></div><h2 id="xdg-open">xdg-open</h2>
 <h3 id="配置-pdf-預設啟動程式">配置 pdf 預設啟動程式</h3>
 <p>查詢 pdf 開啟程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime query default application/pdf
