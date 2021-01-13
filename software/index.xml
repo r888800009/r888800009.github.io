@@ -6,7 +6,16 @@
     <description>Recent content in Softwares on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 03 Oct 2020 10:35:32 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Jan 2021 05:35:39 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac M1 Install Pwntools Could not find &#39;as&#39;</title>
+      <link>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</link>
+      <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</guid>
+      <description>&lt;p&gt;解決 Mac M1 安裝 pwntools 找不到 as 的問題。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Honggfuzz</title>
       <link>https://r888800009.github.io/software/security/honggfuzz/</link>

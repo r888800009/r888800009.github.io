@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Line Bot | r809&#39;s Notes</title>
+<title>Mac M1 Install Pwntools Could not find &#39;as&#39; | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,9 +47,9 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Line Bot</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Mac M1 Install Pwntools Could not find &#39;as&#39;</a></h1>
 <div id="content"><div class="date">
-        <time datetime="2019-10-31 22:57:26 &#43;0800 CST">Thu, 2019 Oct 31</time>
+        <time datetime="2021-01-14 05:35:39 &#43;0800 CST">Thu, 2021 Jan 14</time>
     </div>
 
     <aside>
@@ -57,32 +57,34 @@ if (!doNotTrack) {
         <b>目次</b>
         <span id="TOCState"></span>
       </span>
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#使用">使用</a></li>
-    <li><a href="#常見問題">常見問題</a>
-      <ul>
-        <li><a href="#無法成功驗證並且在驗證的時候會發生錯誤">無法成功驗證，並且在驗證的時候會發生錯誤</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <nav id="TableOfContents"></nav>
     </aside>
 
-    <h2 id="使用">使用</h2>
+    <p>解決 Mac M1 安裝 pwntools 找不到 as 的問題。</p>
+<p>安裝 pwntools</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pwntools
+</code></pre></div><p>MacBook m1 安装 pwntools path 參照這篇</p>
 <ul>
-<li>透過<a href="https://github.com/line/line-bot-sdk-python">line-bot-sdk-python</a>下去編寫</li>
-<li>透過<a href="https://dialogflow.com/">Dialogflow</a>套用</li>
+<li><a href="https://www.mac-soft.cn/t/4259">https://www.mac-soft.cn/t/4259</a></li>
 </ul>
-<h2 id="常見問題">常見問題</h2>
-<h3 id="無法成功驗證並且在驗證的時候會發生錯誤">無法成功驗證，並且在驗證的時候會發生錯誤</h3>
-<p>參見<a href="https://github.com/line/line-bot-sdk-python/issues/145">issues</a>
-驗證時要先移除MessageEvent處理程序，方可正常驗證，之後取消註解即可。</p>
+<p>但是依然會遇到問題</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Could not find <span style="color:#e6db74">&#39;as&#39;</span> installed <span style="color:#66d9ef">for</span> ContextType<span style="color:#f92672">()</span>
+    Try installing binutils <span style="color:#66d9ef">for</span> this architecture:
+    https://docs.pwntools.com/en/stable/install/binutils.html
+</code></pre></div><p>預設 brew 的 binutils 沒有 as ，並且參照官網的單行指令 binuntils 一直安裝失敗，因此必須透過以下方法安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/Gallopsled/pwntools-binutils.git
+cd pwntools-binutils/macos
+./install_all.sh
+</code></pre></div><p>重新開啟 python 並且檢查</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&gt;&gt;&gt; from pwn import *
+&gt;&gt;&gt; asm(&#39;pop eax&#39;)
+b&#39;X&#39;
+</code></pre></div><p>成功組譯</p>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/chat-bot" class="tags">Chat Bot</a>
+        <a href="https://r888800009.github.io/tags/pwn" class="tags">PWN</a>
       
     
 
