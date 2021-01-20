@@ -8,12 +8,12 @@
     <language>zh-tw</language>
     <lastBuildDate>Thu, 14 Jan 2021 05:35:39 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mac M1 Install Pwntools Could not find &#39;as&#39;</title>
+      <title>Mac M1 Install Pwntools, Solve &#39;as&#39; and bus error</title>
       <link>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</link>
       <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
       
       <guid>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</guid>
-      <description>&lt;p&gt;解決 Mac M1 安裝 pwntools 找不到 as 的問題。&lt;/p&gt;</description>
+      <description>&lt;p&gt;解決 Mac M1 安裝 pwntools 找不到 as 的問題，與其他如 bus error 等等的問題。由於 M1 剛出沒多久，配適上可能還沒完成，或許在未來 pwntools 的版本會解決的這些問題，而目前這些方法可以使 pwntools 在 M1 上面運行。&lt;/p&gt;</description>
     </item>
     
     <item>
