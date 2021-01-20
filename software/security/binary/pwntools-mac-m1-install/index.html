@@ -97,7 +97,7 @@ b&#39;X&#39;
 <span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Opening connection to example.com on port 1337: Done
 zsh: bus error  python3 exploit.py
 </code></pre></div><p>我們可以透過 lldb 除錯 python 來定位 bug，並且輸入執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">form pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
 ELF(<span style="color:#e6db74">&#39;./a.out&#39;</span>)
 </code></pre></div><p>這時崩潰，透過 bt 可以發現問題出在 libunicorn.dylib</p>
 <pre><code>* frame #0: 0x0000000108bb7c00
