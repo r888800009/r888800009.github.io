@@ -70,7 +70,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#scp">scp</a></li>
         <li><a href="#sshfs">sshfs</a></li>
-        <li><a href="#sock5代理">Sock5代理</a></li>
+        <li><a href="#sock5-代理">Sock5 代理</a></li>
       </ul>
     </li>
     <li><a href="#問題">問題</a>
@@ -119,8 +119,11 @@ host hostB
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp source target
 </code></pre></div><h3 id="sshfs">sshfs</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs user@host:dir mountpoint
-</code></pre></div><h3 id="sock5代理">Sock5代理</h3>
+</code></pre></div><h3 id="sock5-代理">Sock5 代理</h3>
+<p>如果要透過 ssh server 端進行代理</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -D <span style="color:#ae81ff">1337</span> -q -C -N domain
+</code></pre></div><p>如果要使 ssh clinet 端作為代理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -R <span style="color:#ae81ff">1337</span> domain
 </code></pre></div><h2 id="問題">問題</h2>
 <h3 id="remote-host-identification-has-changed">Remote Host Identification Has Changed</h3>
 <p>移除<code>known_hosts</code>裡面的主機，這裡假設主機為<code>127.0.0.1</code></p>
