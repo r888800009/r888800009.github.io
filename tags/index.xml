@@ -6,7 +6,43 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 14 Jan 2021 05:35:39 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Feb 2021 22:18:18 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploit Mitigation</title>
+      <link>https://r888800009.github.io/tags/exploit-mitigation/</link>
+      <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/exploit-mitigation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intel</title>
+      <link>https://r888800009.github.io/tags/intel/</link>
+      <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/intel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PWN</title>
+      <link>https://r888800009.github.io/tags/pwn/</link>
+      <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/pwn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shadow Stack</title>
+      <link>https://r888800009.github.io/tags/shadow-stack/</link>
+      <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/shadow-stack/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Apple Silicon</title>
       <link>https://r888800009.github.io/tags/apple-silicon/</link>
@@ -22,15 +58,6 @@
       <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PWN</title>
-      <link>https://r888800009.github.io/tags/pwn/</link>
-      <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/pwn/</guid>
       <description></description>
     </item>
     
@@ -247,15 +274,6 @@
       <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/selinux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Exploit Mitigation</title>
-      <link>https://r888800009.github.io/tags/exploit-mitigation/</link>
-      <pubDate>Sun, 17 May 2020 20:47:41 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/exploit-mitigation/</guid>
       <description></description>
     </item>
     
