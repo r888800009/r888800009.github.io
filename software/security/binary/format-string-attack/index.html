@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>格式化字串攻擊 | r809&#39;s Notes</title>
+<title>格式化字串攻擊 (Format String Attack) | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -47,7 +47,7 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">格式化字串攻擊</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">格式化字串攻擊 (Format String Attack)</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-09-06 12:24:08 &#43;0800 CST">Fri, 2019 Sep 6</time>
     </div>
@@ -61,21 +61,30 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#檢測">檢測</a></li>
     <li><a href="#利用方式">利用方式</a></li>
-    <li><a href="#工具">工具</a></li>
-    <li><a href="#利用格式化字串">利用格式化字串</a>
+    <li><a href="#階段一">階段一</a>
       <ul>
-        <li><a href="#階段一">階段一</a></li>
-        <li><a href="#階段二">階段二</a></li>
-        <li><a href="#階段三">階段三</a></li>
+        <li><a href="#如何快速找到-p-在記憶體上面的位置">如何快速找到 %?p 在記憶體上面的位置？</a></li>
       </ul>
     </li>
+    <li><a href="#階段二">階段二</a></li>
+    <li><a href="#階段三">階段三</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#工具">工具</a>
+      <ul>
+        <li><a href="#任意寫入地址">任意寫入地址</a></li>
+      </ul>
+    </li>
+    <li><a href="#除錯">除錯</a></li>
     <li><a href="#習題">習題</a></li>
     <li><a href="#參考">參考</a></li>
   </ul>
 </nav>
     </aside>
 
-    <p>格式化字串筆記</p>
+    <p>格式化字串筆記 Format String Bug</p>
 <h2 id="檢測">檢測</h2>
 <p>透過大量的<code>%s</code>使程式崩潰，用來確認漏洞的存在。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
@@ -85,34 +94,74 @@ if (!doNotTrack) {
 <li>洩漏任意地址</li>
 <li>覆蓋任意地址
 <ul>
-<li>劫持GOT</li>
-<li>劫持return address</li>
+<li>劫持 GOT</li>
+<li>劫持 return address</li>
 </ul>
 </li>
 </ul>
-<h2 id="工具">工具</h2>
-<ul>
-<li><a href="https://docs.pwntools.com/en/stable/fmtstr.html#module-pwnlib.fmtstr"><code>pwnlib.fmtstr</code></a></li>
-</ul>
-<h2 id="利用格式化字串">利用格式化字串</h2>
-<h3 id="階段一">階段一</h3>
+<p>要觸發該漏洞可以透過靜態檢測是否存在 printf 系列函數如 sprintf/dprintf 等等， 若無，如果 <code>RELRO : Partial</code> 或更低的安全性時，蓋寫 GOT 也可以觸發 fmtstr，不過 <code>FORTIFY</code> 必須為 <code>disabled</code></p>
+<p>利用格式化字串參見以下三個階段</p>
+<h2 id="階段一">階段一</h2>
 <p>格式化字串漏洞可以透過<code>%x.%x.%x.%x.%x.%x</code>的方法印出內容，
 也可採用<code>%3$x</code>則可任意讀取堆疊(此例子為第三項，為<code>4 * 3</code>)，
 透過數個<code>%x</code>找到可控制堆疊位置。</p>
 <p><code>%x</code>與<code>%p</code>區別，<code>%x</code>為4 bytes，<code>%p</code>(指標)受到系統影響，常見的系統可能為4或8(不確定？)。</p>
-<h3 id="階段二">階段二</h3>
+<h3 id="如何快速找到-p-在記憶體上面的位置">如何快速找到 %?p 在記憶體上面的位置？</h3>
+<ul>
+<li>根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找 (可能是題目的共通性？原因是什麼？</li>
+<li>通常想 leak 某總資料段的基底地址</li>
+<li>透過腳本簡單迴圈進行 <code>%?$p</code> 的列印，同時透過 gdb 列印 <code>vmmap(proc.libs())</code></li>
+<li>簡單分析地址前綴，輸出結果後可以用 grep 等等方式檢查前綴，基本上 ELF 裡面後三個 nibble 不會變化，這點可以用來檢測 return address，rbp 的值在 stack 中後三 nibble 可能會變化。</li>
+</ul>
+<p>相關腳本範例參見</p>
+<ul>
+<li>BreakAllCTF (腳本尚未公開)
+<ul>
+<li>pwn baby_fmt 腳本 baby_fmt_list.py</li>
+<li>pwn fmt-1 腳本 fmt-1_list.py</li>
+</ul>
+</li>
+</ul>
+<h2 id="階段二">階段二</h2>
 <p>透過<code>%n</code>覆蓋堆疊內容<strong>所指向的位置</strong>(也可以使用<code>%hn</code>、<code>%hhn</code>、<code>%10$n</code>)，
 可以理解<code>printf</code>令某參數為<strong>指標</strong>保存字數(參見參考printf)。</p>
 <p><a href="#%E9%9A%8E%E6%AE%B5%E4%B8%80">階段一</a>找到的可控制堆疊開頭為<strong>輸入內容開頭</strong>，
 因此可傳入格式如<code>\x78\x56\x34\x12</code>指標(32bit)，
 並且透過<code>%n</code>修改<code>0x12345678</code>的內容。</p>
-<h3 id="階段三">階段三</h3>
+<h2 id="階段三">階段三</h2>
 <p>編寫payload，採用<code>%hhn</code>並且計算每byte的內容，<code>%n</code>是<code>printf</code>當下處理時輸出的總字數，
 採用<code>%hhn</code>比起<code>%n</code>容易溢位，透過這個性質將傳入數值，使用<code>%10c</code>的方式下去輸入，
 上一個字數為<code>240</code>並且現在輸入數值<code>4</code>時，只須打印出<code>(4 - 240) % 256</code>即可抵達對映的字數。</p>
 <h4 id="備註">備註</h4>
 <p>若採用<code>%x</code>可能沒辦法輸出小於8的值，改用<code>%c</code>。</p>
 <p>在<code>printf</code>時無法中途修改參數內容，只能透過一開始傳入的多個參數進行利用。</p>
+<h2 id="工具">工具</h2>
+<ul>
+<li><a href="https://docs.pwntools.com/en/stable/fmtstr.html#module-pwnlib.fmtstr"><code>pwnlib.fmtstr</code></a></li>
+</ul>
+<h3 id="任意寫入地址">任意寫入地址</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pwnlib
+fmtstr_payload(<span style="color:#ae81ff">6</span>, {<span style="color:#ae81ff">0x404050</span>: <span style="color:#ae81ff">0xfaceb00c</span>}, write_size<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;byte&#39;</span>, numbwritten<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</code></pre></div><p><code>%?%p</code> 的起始位置為 <code>%1%p</code></p>
+<ul>
+<li>
+<p>6 是可控 buffer 位置在 <code>%6$p</code></p>
+</li>
+<li>
+<p>numbwritten 是 print 已經寫的字元寫才對</p>
+</li>
+</ul>
+<p>該工具使用時機如 BreakAllCTF 的 fmt-2</p>
+<p>而如果並非要寫 int32 的話，透過 <code>pwnlib.fmtstr.make_atoms</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pwn<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_payload_dollar(<span style="color:#ae81ff">2</span>, [pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>AtomWrite(<span style="color:#ae81ff">0x0</span>, <span style="color:#ae81ff">0x1</span>, <span style="color:#ae81ff">0xff</span>), pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>AtomWrite(<span style="color:#ae81ff">0x0</span>, <span style="color:#ae81ff">0x1</span>, <span style="color:#ae81ff">0x10</span>)])
+</code></pre></div><p>該用法在 0x13371111 寫入 0x1234 ，而該方法的 offset 是指向第一個寫入的 address 的意思</p>
+<p>而該方法需要找到傳入的目標 address 所在的 offset ，可以計算前面 fmt 花費多少 byte 進而推導出 offset</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_payload_dollar(<span style="color:#ae81ff">6</span>, pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_atoms({<span style="color:#ae81ff">0x13371111</span>:<span style="color:#ae81ff">0x1234</span>}, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;fast&#39;</span>, []),countersize<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><h2 id="除錯">除錯</h2>
+<ol>
+<li>檢查 printf 的參數，攻擊的 payload 是否有前綴</li>
+<li>若有必須考慮前綴所產生的字元，會導致 payload 所修改的值不是目標數值</li>
+</ol>
 <h2 id="習題">習題</h2>
 <ul>
 <li>hackme.inndy.tw

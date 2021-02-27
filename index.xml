@@ -1058,12 +1058,12 @@
     </item>
     
     <item>
-      <title>格式化字串攻擊</title>
+      <title>格式化字串攻擊 (Format String Attack)</title>
       <link>https://r888800009.github.io/software/security/binary/format-string-attack/</link>
       <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
       
       <guid>https://r888800009.github.io/software/security/binary/format-string-attack/</guid>
-      <description>&lt;p&gt;格式化字串筆記&lt;/p&gt;</description>
+      <description>&lt;p&gt;格式化字串筆記 Format String Bug&lt;/p&gt;</description>
     </item>
     
     <item>
