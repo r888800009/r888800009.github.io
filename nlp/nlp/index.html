@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/css.css">
+
+
+
+<title>自然語言處理 | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/hybrid.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha256-fdcFNFiBMrNfWL6OcAGQz6jDgNTRxnrLEd4vJYFWScE=" crossorigin="anonymous">
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        <i class="fab fa-github"></i>
+        
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+</nav>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">自然語言處理</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2021-06-22 09:29:42 &#43;0800 CST">Tue, 2021 Jun 22</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本概念">基本概念</a></li>
+    <li><a href="#rnn">RNN</a></li>
+    <li><a href="#預訓練模型-pretrained-transformers">預訓練模型 (Pretrained Transformers)</a></li>
+    <li><a href="#chatbot">Chatbot</a>
+      <ul>
+        <li><a href="#根據領域分類">根據領域分類</a></li>
+        <li><a href="#根據目標">根據目標</a></li>
+        <li><a href="#根據回應方法">根據回應方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#dialogue">Dialogue</a></li>
+    <li><a href="#檢索系統">檢索系統</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <h2 id="基本概念">基本概念</h2>
+<ul>
+<li>Word Embedding
+<ul>
+<li>Word2vec:
+<ul>
+<li>可以透過 gensim 實作</li>
+</ul>
+</li>
+<li>BERT</li>
+</ul>
+</li>
+<li>詞袋模型 (Bag of Words Model)</li>
+<li>Topic Model
+<ul>
+<li>LDA</li>
+</ul>
+</li>
+<li>Utterance: 句子</li>
+<li>Tokenizer
+<ul>
+<li>Jieba</li>
+<li>hanlp</li>
+<li>ckiptagger</li>
+</ul>
+</li>
+<li>SOTA model
+<ul>
+<li>State of the art</li>
+<li><a href="https://www.jiqizhixin.com/sota">机器之心SOTA</a> 根據不同領域找出 SOTA 模型</li>
+</ul>
+</li>
+</ul>
+<h2 id="rnn">RNN</h2>
+<ul>
+<li>seq2seq</li>
+<li>GRU: 比 LSTM 快並且不損失太多精準度</li>
+<li>LSTM</li>
+</ul>
+<h2 id="預訓練模型-pretrained-transformers">預訓練模型 (Pretrained Transformers)</h2>
+<ul>
+<li><a href="https://huggingface.co/transformers/model_summary.html">Summary of the models — transformers 4.7.0 documentation</a>
+<ul>
+<li>BERT</li>
+</ul>
+</li>
+<li>句子 (utterance) 相似度:
+<ul>
+<li>Sentence-Transformers</li>
+</ul>
+</li>
+<li>Fine-tuning</li>
+<li>位置嵌入</li>
+</ul>
+<h2 id="chatbot">Chatbot</h2>
+<h3 id="根據領域分類">根據領域分類</h3>
+<ul>
+<li>Open Domain</li>
+<li>Close Domain</li>
+</ul>
+<h3 id="根據目標">根據目標</h3>
+<ul>
+<li>
+<p>Task oriented chatbot</p>
+<ul>
+<li>框架: rasa</li>
+<li>助理機器人</li>
+</ul>
+</li>
+<li>
+<p>Chit-chat bot</p>
+<ul>
+<li>Xiaoice: 大多數是 Retrieval based
+<ul>
+<li><a href="https://arxiv.org/abs/1812.08989">[1812.08989] The Design and Implementation of XiaoIce, an Empathetic Social Chatbot</a></li>
+</ul>
+</li>
+<li>Kuki: AIML</li>
+</ul>
+</li>
+</ul>
+<h3 id="根據回應方法">根據回應方法</h3>
+<ul>
+<li>Rule based (ex: AIML)
+<ul>
+<li>Pandorabots / Kuki / Mitsuku</li>
+</ul>
+</li>
+<li>Retrieval based
+<ul>
+<li>Xiaoice 70% response</li>
+</ul>
+</li>
+<li>Generative Models
+<ul>
+<li>seq2seq chatbot</li>
+<li>DialoGPT: 微軟的對話模型</li>
+<li><a href="https://github.com/yangjianxin1/GPT2-chitchat">yangjianxin1/GPT2-chitchat: GPT2 for Chinese chitchat/用于中文闲聊的GPT2模型(实现了DialoGPT的MMI思想)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="dialogue">Dialogue</h2>
+<p>模塊</p>
+<ul>
+<li>Natural Language Understanding (NLU)
+<ul>
+<li>Intent: 意圖</li>
+</ul>
+</li>
+<li>Natural Language Generation (NLG)</li>
+<li>Response Selector
+<ul>
+<li><a href="https://paperswithcode.com/task/conversational-response-selection">Conversational Response Selection | Papers With Code</a> 可以找到近期的 SOTA</li>
+</ul>
+</li>
+</ul>
+<h2 id="檢索系統">檢索系統</h2>
+<ul>
+<li>
+<p>Lucene</p>
+<ul>
+<li>ElasticSearch 或 Solr</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/facebookresearch/faiss">facebookresearch/faiss: A library for efficient similarity search and clustering of dense vectors.</a></p>
+</li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/nlp" class="tags">NLP</a>
+      
+        <a href="https://r888800009.github.io/tags/transformer" class="tags">Transformer</a>
+      
+        <a href="https://r888800009.github.io/tags/chatbot" class="tags">Chatbot</a>
+      
+        <a href="https://r888800009.github.io/tags/tokenizer" class="tags">Tokenizer</a>
+      
+        <a href="https://r888800009.github.io/tags/seq2seq" class="tags">seq2seq</a>
+      
+        <a href="https://r888800009.github.io/tags/rnn" class="tags">RNN</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <hr>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+    <a href="#website-name" class="footer">Top</a>
+  </div>
+  <div>
+    r888800009©2018-2021.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/haskell.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

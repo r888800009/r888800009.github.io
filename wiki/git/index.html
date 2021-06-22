@@ -83,6 +83,8 @@ if (!doNotTrack) {
 git merge b 
 </code></pre></div><p>移除或修改commit，移除使用<code>drop</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rebase -i <span style="color:#f92672">[</span>SHA<span style="color:#f92672">]</span>
+</code></pre></div><p>檢視變化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log -p
 </code></pre></div><h2 id="模板">模板</h2>
 <p>配置模板</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config commit.template filename

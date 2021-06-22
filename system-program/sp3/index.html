@@ -92,9 +92,9 @@ if (!doNotTrack) {
     </li>
     <li><a href="#35-the-other-loaders">3.5 The other Loaders</a>
       <ul>
-        <li><a href="#the-other-loaders">The other Loaders</a></li>
-        <li><a href="#dynamic-linker">dynamic linker</a></li>
-        <li><a href="#overlay">overlay</a></li>
+        <li><a href="#the-other-loaders">The Other Loaders</a></li>
+        <li><a href="#dynamic-linker">Dynamic Linker</a></li>
+        <li><a href="#overlay">Overlay</a></li>
       </ul>
     </li>
   </ul>
@@ -242,7 +242,7 @@ if (!doNotTrack) {
   }
 }
 </code></pre></div><h2 id="35-the-other-loaders">3.5 The other Loaders</h2>
-<h3 id="the-other-loaders">The other Loaders</h3>
+<h3 id="the-other-loaders">The Other Loaders</h3>
 <ol>
 <li>Linking Loader: allocation, linking, relocation, loading</li>
 <li>Linkage Editor: Allocation, linking, relocation(透過修改紀錄進行L&amp;R)</li>
@@ -265,12 +265,12 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ul>
-<h3 id="dynamic-linker">dynamic linker</h3>
+<h3 id="dynamic-linker">Dynamic Linker</h3>
 <p>直接執行main function，在執行時(run time)需要使用時在進行連結。
 (binder為 linker的意思)</p>
 <p>動態連結會浪費時間，降低程式執行效率，
 程式無法連結時會導致程式崩潰。</p>
-<h3 id="overlay">overlay</h3>
+<h3 id="overlay">Overlay</h3>
 <p>早期電腦因為記憶體空間不夠因此需要overlay，
 共用兩個不會同時呼叫的function記憶體</p>
 
