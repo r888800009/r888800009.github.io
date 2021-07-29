@@ -1,1439 +1,871 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/nlp/</loc>
-    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/nlp/</loc>
-    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/opencc/</loc>
-    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/nlp/opencc-tw-faq/</loc>
-    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/</loc>
-    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/chatbot/</loc>
-    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/rnn/</loc>
-    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/seq2seq/</loc>
-    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/tokenizer/</loc>
-    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/transformer/</loc>
-    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/nlp/nlp/</loc>
-    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/exploit-mitigation/</loc>
-    <lastmod>2021-03-19T16:01:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/intel/</loc>
-    <lastmod>2021-03-19T15:52:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/software/security/binary/intel-sde-cet/</loc>
-    <lastmod>2021-03-19T15:52:59+08:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://r888800009.github.io/tags/pwn/</loc>
-    <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-07-29T23:35:12+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/</loc>
+    <lastmod>2021-07-29T23:35:12+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/software/</loc>
+    <lastmod>2021-07-29T23:35:12+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/</loc>
+    <lastmod>2021-07-29T23:35:12+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/taint-analysis/</loc>
+    <lastmod>2021-07-29T23:35:12+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/software/security/taint-analysis/</loc>
+    <lastmod>2021-07-29T23:35:12+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/nlp/</loc>
+    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/nlp/</loc>
+    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/opencc/</loc>
+    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/nlp/opencc-tw-faq/</loc>
+    <lastmod>2021-07-07T22:42:07+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/chatbot/</loc>
+    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/rnn/</loc>
+    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/seq2seq/</loc>
+    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/tokenizer/</loc>
+    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/transformer/</loc>
+    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/nlp/nlp/</loc>
+    <lastmod>2021-06-22T10:09:29+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/exploit-mitigation/</loc>
+    <lastmod>2021-03-19T16:01:06+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/intel/</loc>
+    <lastmod>2021-03-19T15:52:59+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/software/security/binary/intel-sde-cet/</loc>
+    <lastmod>2021-03-19T15:52:59+08:00</lastmod>
+  </url><url>
     <loc>https://r888800009.github.io/tags/shadow-stack/</loc>
     <lastmod>2021-03-19T15:52:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/software/</loc>
-    <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/apple-silicon/</loc>
     <lastmod>2021-01-21T05:42:59+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</loc>
     <lastmod>2021-01-21T05:42:59+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/macos/</loc>
     <lastmod>2021-01-21T05:42:59+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/fuzzing/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/honggfuzz/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/testing/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/vulnerability/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/zero-day/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/aeg/</loc>
     <lastmod>2020-10-03T06:30:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/angr/</loc>
     <lastmod>2020-10-03T06:30:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/smt/</loc>
     <lastmod>2020-10-03T06:30:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/symbolic-execution/</loc>
     <lastmod>2020-10-03T06:30:23+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/aeg/</loc>
     <lastmod>2020-09-20T22:29:09+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/symbolic-execution/</loc>
     <lastmod>2020-09-20T22:48:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/container/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/kerbernetes/</loc>
     <lastmod>2020-08-23T16:57:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/</loc>
     <lastmod>2021-03-26T10:48:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/terms/</loc>
     <lastmod>2021-03-21T16:33:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/ru-terms/</loc>
     <lastmod>2021-03-21T16:33:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/osint/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/osint/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/reconnaissance/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/ctf/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/heap/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/binary/heap/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/firmware/</loc>
     <lastmod>2020-07-19T00:19:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/firmware/</loc>
     <lastmod>2020-07-19T00:19:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/reverse-engineering/</loc>
     <lastmod>2020-10-03T10:46:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/firmware/reverse/</loc>
     <lastmod>2020-07-19T00:19:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os9/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/operating-system/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os8/</loc>
     <lastmod>2020-06-03T23:47:56+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/json-web-token/</loc>
     <lastmod>2020-05-23T22:59:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/web/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/indicators-of-compromise/</loc>
     <lastmod>2020-05-22T04:24:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/malware-analysis/</loc>
     <lastmod>2020-05-22T04:24:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/yara/</loc>
     <lastmod>2020-05-22T04:24:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/autojump/</loc>
     <lastmod>2020-05-19T18:56:32+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/efficiency/</loc>
     <lastmod>2020-05-19T18:56:32+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/fuzzy-search/</loc>
     <lastmod>2020-05-19T18:56:32+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/linux/</loc>
     <lastmod>2021-03-21T09:34:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/linux-file/</loc>
     <lastmod>2020-05-19T18:56:32+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/selinux/</loc>
     <lastmod>2020-08-23T16:54:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/selinux/</loc>
     <lastmod>2020-08-23T16:54:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/exploit-mitigation/</loc>
     <lastmod>2021-03-19T16:01:06+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/obfuscate/</loc>
     <lastmod>2020-08-24T16:11:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/obfuscator/</loc>
     <lastmod>2020-08-24T16:11:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/software/</loc>
     <lastmod>2020-08-24T16:11:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/obfuscation/</loc>
     <lastmod>2020-08-24T16:11:41+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os7/</loc>
     <lastmod>2020-05-24T23:10:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/algorithm/</loc>
     <lastmod>2020-06-01T17:09:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/divide-and-conquer/</loc>
     <lastmod>2020-05-02T23:34:53+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/dynamic-programming/</loc>
     <lastmod>2020-05-02T23:34:53+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/leetcode/</loc>
     <lastmod>2020-05-02T23:34:53+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-322/</loc>
     <lastmod>2020-05-02T23:34:53+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os6/</loc>
     <lastmod>2020-05-11T06:08:14+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/quantum-computer/</loc>
     <lastmod>2020-04-25T06:05:20+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/software-engineering/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/document-generation/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/malware-analysis/</loc>
     <lastmod>2020-05-22T03:59:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/maximum-subarray/</loc>
     <lastmod>2020-04-14T22:51:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/log-notes/</loc>
     <lastmod>2020-04-16T23:46:20+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network-security/net-sec5/</loc>
     <lastmod>2020-04-07T09:31:08+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network-security/</loc>
     <lastmod>2020-06-15T21:27:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/algorithm-analysis/</loc>
     <lastmod>2020-06-01T17:09:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/algorithm-analysis-notes/</loc>
     <lastmod>2020-06-01T17:09:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/index/</loc>
     <lastmod>2020-05-10T04:11:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/links/</loc>
     <lastmod>2020-05-22T04:03:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/scholar-index/</loc>
     <lastmod>2020-05-10T04:11:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/terms-and-symbols/</loc>
     <lastmod>2020-08-26T11:47:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/apt/</loc>
     <lastmod>2020-04-17T00:39:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/pentest/</loc>
     <lastmod>2020-09-11T14:23:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/breaking-kill-chain/</loc>
     <lastmod>2020-04-17T00:39:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os5/</loc>
     <lastmod>2020-04-23T20:36:10+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network-security/net-sec4/</loc>
     <lastmod>2020-06-15T21:27:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/cryptography/</loc>
     <lastmod>2020-08-24T15:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/information-security/</loc>
     <lastmod>2020-08-24T15:44:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/network-security/</loc>
     <lastmod>2020-06-15T21:27:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os4/</loc>
     <lastmod>2020-03-30T00:06:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network-security/net-sec3/</loc>
     <lastmod>2020-06-15T21:27:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os3/</loc>
     <lastmod>2020-03-24T23:29:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network-security/net-sec2/</loc>
     <lastmod>2020-06-15T21:27:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/book-notes/exploiting-software/ch6-notes/</loc>
     <lastmod>2020-03-12T20:43:45+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/book-notes/</loc>
     <lastmod>2020-03-12T20:43:45+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/exploiting/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network-security/net-sec1/</loc>
     <lastmod>2020-03-10T09:43:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/compiler/</loc>
     <lastmod>2020-05-25T10:16:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/programming-language/</loc>
     <lastmod>2020-05-25T10:16:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/programming-language/</loc>
     <lastmod>2020-05-25T10:16:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/system-program/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/programming-language/a-way-to-writing-recursive-descent-parser/</loc>
     <lastmod>2020-05-25T10:16:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/haskell/</loc>
     <lastmod>2020-03-04T21:23:06+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/haskell/</loc>
     <lastmod>2020-03-04T21:23:06+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os2/</loc>
     <lastmod>2020-03-28T23:34:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/cryptography/</loc>
     <lastmod>2020-08-24T15:39:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/ctf-forensics/</loc>
     <lastmod>2020-02-23T23:02:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/operating-system/os1/</loc>
     <lastmod>2020-05-11T02:46:28+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/sandbox/</loc>
     <lastmod>2020-05-22T03:59:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/sandbox/</loc>
     <lastmod>2020-05-22T03:59:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/dijkstra/</loc>
     <lastmod>2020-04-19T23:58:06+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/priority-queue/</loc>
     <lastmod>2020-04-19T23:58:06+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/compression/</loc>
     <lastmod>2020-01-28T23:51:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/tree/</loc>
     <lastmod>2020-01-28T23:51:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/huffman/</loc>
     <lastmod>2020-01-28T23:51:01+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/keyboard/</loc>
     <lastmod>2020-02-10T23:43:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/antlr4/</loc>
     <lastmod>2020-05-18T23:16:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/browser/</loc>
     <lastmod>2020-01-20T23:28:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/chrome/</loc>
     <lastmod>2020-01-20T23:28:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/blog/</loc>
     <lastmod>2020-04-29T20:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/rss/</loc>
     <lastmod>2020-04-29T20:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/rss/</loc>
     <lastmod>2020-04-29T20:57:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/hash/</loc>
     <lastmod>2020-01-14T03:28:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/rabin-karp/</loc>
     <lastmod>2020-01-14T03:28:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/string-searching/</loc>
     <lastmod>2020-01-14T03:28:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/linux-ime/</loc>
     <lastmod>2020-01-13T22:39:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/binary-search/</loc>
     <lastmod>2019-12-31T14:37:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/progression-series-missing-number/</loc>
     <lastmod>2019-12-31T14:37:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/yacc/</loc>
     <lastmod>2020-01-11T19:09:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp8/</loc>
     <lastmod>2019-12-17T14:26:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/verilog/</loc>
     <lastmod>2020-08-26T11:27:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/veriolog/</loc>
     <lastmod>2020-08-26T11:27:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/password/</loc>
     <lastmod>2020-08-24T15:44:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp7/</loc>
     <lastmod>2019-12-18T18:09:45+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/information-security/</loc>
     <lastmod>2020-05-22T04:03:19+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/pentest/</loc>
     <lastmod>2020-09-11T14:23:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/ipv6/</loc>
     <lastmod>2019-11-28T19:08:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/network/</loc>
     <lastmod>2021-01-30T08:42:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp6/</loc>
     <lastmod>2019-11-26T22:26:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/reversing/</loc>
     <lastmod>2020-06-10T22:02:30+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/tools/</loc>
     <lastmod>2021-03-26T10:48:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/terminal-tools/</loc>
     <lastmod>2019-12-06T23:08:03+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/network3/</loc>
     <lastmod>2020-01-15T10:29:51+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp5/</loc>
     <lastmod>2020-03-06T12:11:53+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/shell/</loc>
     <lastmod>2020-05-19T18:34:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/shell/</loc>
     <lastmod>2020-05-19T18:34:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/linux-desktop/</loc>
     <lastmod>2021-03-21T09:34:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/python/</loc>
     <lastmod>2020-08-24T16:19:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/python-math/</loc>
     <lastmod>2020-05-07T12:25:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/chat-bot/</loc>
     <lastmod>2019-10-31T23:02:46+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/line-bot/</loc>
     <lastmod>2019-10-31T23:02:46+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/netcat/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp4/</loc>
     <lastmod>2019-10-26T15:59:15+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/web-authn/</loc>
     <lastmod>2020-01-18T23:35:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2021-03-09T19:57:55+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/bug/</loc>
     <lastmod>2020-03-12T20:38:46+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/linux-from-scratch/</loc>
     <lastmod>2019-11-13T19:22:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/http/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/markdown/</loc>
     <lastmod>2020-08-26T11:27:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/markdown/</loc>
     <lastmod>2020-08-26T11:27:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/newsboat/</loc>
     <lastmod>2020-01-19T05:38:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/lexical-analysis/</loc>
     <lastmod>2020-01-11T19:09:50+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/fuzz/</loc>
     <lastmod>2019-10-13T21:29:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/python-fuzz/</loc>
     <lastmod>2019-10-13T21:29:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/dbms/</loc>
     <lastmod>2019-10-12T19:42:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/docker/</loc>
     <lastmod>2020-08-05T19:35:14+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/mysql/</loc>
     <lastmod>2019-10-12T19:42:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/sql/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/reference/</loc>
     <lastmod>2019-10-11T20:29:56+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp3/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/web-crawler/</loc>
     <lastmod>2020-08-24T16:19:36+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/dns/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/dns/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/bash/</loc>
     <lastmod>2019-10-05T19:55:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/reversing/radare2/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/kali-linux/</loc>
     <lastmod>2019-12-25T21:17:51+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/binary/stack-smash/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/waf/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/web/waf-bypass/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/web/penetration-testing-tools/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/web/security-notes/</loc>
     <lastmod>2020-05-14T14:20:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/linux-network/</loc>
     <lastmod>2020-10-06T11:52:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/apache/</loc>
     <lastmod>2019-09-28T14:44:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/http/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/cgi-apache/</loc>
     <lastmod>2019-09-28T14:44:44+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/big-data/</loc>
     <lastmod>2019-11-29T22:43:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/probability-and-statistic/</loc>
     <lastmod>2019-10-06T20:05:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/probability-and-statistics/</loc>
     <lastmod>2019-10-06T20:05:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/r/</loc>
     <lastmod>2019-11-29T22:43:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/probability-and-statistics/probability-and-statistics/</loc>
     <lastmod>2019-10-06T20:05:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/network2/</loc>
     <lastmod>2020-01-22T23:48:02+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp2/</loc>
     <lastmod>2019-11-24T01:23:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/network-exercises/</loc>
     <lastmod>2020-04-30T20:47:35+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/network/network/</loc>
     <lastmod>2019-11-29T22:54:08+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/stem-and-leaf/</loc>
     <lastmod>2019-09-27T23:45:53+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/linux/</loc>
     <lastmod>2020-05-08T23:15:24+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/system-program/sp/</loc>
     <lastmod>2020-01-10T15:23:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/debug/</loc>
     <lastmod>2020-10-03T10:45:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/fuzzing/</loc>
     <lastmod>2020-10-03T10:45:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/grep/</loc>
     <lastmod>2019-09-15T12:00:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/c/</loc>
     <lastmod>2021-03-09T19:57:55+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/debugger/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/gdb/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/testing/gdbgui/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/testing/debug/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/csrf/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/exploit/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/javascript/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/lfi/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/php/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/web/vulnerability/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/xss/</loc>
     <lastmod>2020-09-22T09:41:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/php/</loc>
     <lastmod>2019-09-14T03:20:16+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/git/</loc>
     <lastmod>2021-03-26T10:48:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/git/</loc>
     <lastmod>2021-03-26T10:48:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/version-control/</loc>
     <lastmod>2021-03-26T10:48:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/windows/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/metasploit/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/r/</loc>
     <lastmod>2019-11-29T22:43:17+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/gcc/</loc>
     <lastmod>2021-03-09T19:57:55+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/python/</loc>
     <lastmod>2020-08-24T15:11:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/binary/format-string-attack/</loc>
     <lastmod>2021-02-27T17:40:40+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/binary/pwn-notes/</loc>
     <lastmod>2020-10-09T01:31:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/php-post-get-fpd/</loc>
     <lastmod>2020-04-13T23:40:03+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/docker/</loc>
     <lastmod>2020-08-05T19:35:14+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/linux-permission/</loc>
     <lastmod>2019-09-05T06:33:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/unix/</loc>
     <lastmod>2020-05-19T18:34:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/linux-file/</loc>
     <lastmod>2020-05-19T18:34:29+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/arch-linux/</loc>
     <lastmod>2020-10-06T12:30:25+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/archlinux/</loc>
     <lastmod>2020-10-06T12:30:25+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/army-dispatch-problem/</loc>
     <lastmod>2019-08-31T07:34:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/editor/</loc>
     <lastmod>2020-10-06T21:16:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/vim/</loc>
     <lastmod>2020-10-06T21:16:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/data-structures/</loc>
     <lastmod>2019-09-05T06:42:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/stack/</loc>
     <lastmod>2019-09-05T06:42:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/what-can-stack-can-do/</loc>
     <lastmod>2019-09-05T06:42:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/url-obfuscation/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/testing/gdb/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/django/</loc>
     <lastmod>2019-08-29T02:29:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/django/</loc>
     <lastmod>2019-08-29T02:29:11+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/web/fingerprint/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/secure-shell/</loc>
     <lastmod>2021-01-30T08:42:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/socks5/</loc>
     <lastmod>2021-01-30T08:42:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/ssh/</loc>
     <lastmod>2021-01-30T08:42:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/qemu/</loc>
     <lastmod>2020-04-07T21:50:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/qemu/</loc>
     <lastmod>2020-04-07T21:50:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/virtual-machine/</loc>
     <lastmod>2020-04-07T21:50:49+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/from-gitea-to-github/</loc>
     <lastmod>2019-08-26T21:01:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/%E7%B4%80%E9%8C%84/</loc>
     <lastmod>2020-01-06T21:09:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/heroku-setup-with-flask/</loc>
     <lastmod>2021-03-25T08:57:26+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/web/sqlmap/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-practice-7/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/hugo/</loc>
     <lastmod>2020-08-05T19:46:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/hugo/</loc>
     <lastmod>2020-03-06T12:10:13+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/hugo-template/</loc>
     <lastmod>2020-08-05T19:46:58+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/reversing/ghidra/</loc>
     <lastmod>2020-10-03T10:46:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-practice-6/</loc>
     <lastmod>2019-08-16T23:45:28+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-practice-5/</loc>
     <lastmod>2020-04-14T22:51:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/recursion/</loc>
     <lastmod>2020-04-14T22:51:52+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/</loc>
     <lastmod>2019-09-15T11:45:34+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-practice-4/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-practice-3/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/linked-list/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/two-pointers/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/hash-table/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-practice-2/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/bit-manipulation/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/leetcode-practice-1/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/tags/merge/</loc>
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/blog-or-repo-for-notes/</loc>
     <lastmod>2020-01-06T21:09:27+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/software/security/web/get-start/</loc>
     <lastmod>2020-05-04T00:29:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/posts/online-judge-list/</loc>
     <lastmod>2019-09-21T23:36:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/portfolio/</loc>
     <lastmod>2021-07-07T00:08:47+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://r888800009.github.io/categories/</loc>
   </url>
-  
 </urlset>

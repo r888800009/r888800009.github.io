@@ -6,7 +6,16 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 07 Jul 2021 22:37:34 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 23:28:24 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taint Analysis</title>
+      <link>https://r888800009.github.io/software/security/taint-analysis/</link>
+      <pubDate>Thu, 29 Jul 2021 23:28:24 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/taint-analysis/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>OpenCC 臺灣繁體轉換常見問題</title>
       <link>https://r888800009.github.io/nlp/opencc-tw-faq/</link>
