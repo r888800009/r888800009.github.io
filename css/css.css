@@ -162,3 +162,14 @@ img {
 #TOCState {
   color: #888;
 }
+
+blockquote {
+  background-color: #cfd8e8;
+  border-radius: 0.5em;
+  color: #697587;
+  padding: 0.25em 1em 0.25em 1em ;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}

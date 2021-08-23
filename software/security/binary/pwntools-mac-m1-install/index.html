@@ -71,6 +71,13 @@ if (!doNotTrack) {
     </aside>
 
     <p>解決 Mac M1 安裝 pwntools 找不到 as 的問題，與其他如 bus error 等等的問題。由於 M1 剛出沒多久，配適上可能還沒完成，或許在未來 pwntools 的版本會解決的這些問題，而目前這些方法可以使 pwntools 在 M1 上面運行。</p>
+<blockquote>
+<p>備註</p>
+<p>不建議採用 mac m1 作為 x86_64 binary exploit 的主要工具，若採用 docker 是使用 qemu-user，而 binary exploit 對特殊的記憶體地址數值很敏感，可能因為 mapping 的差異導致 leak 無法成功進行 (比方說: 0x40000000)，沒辦法開箱即用，可能需要對 qemu 的原始碼進行修改，如果有人有更好的解決辦法可以聯繫我 (打開 issue 或傳送電子郵件)。</p>
+<p>透過 qemu-system-x86_64 運行 ubuntu，效能與 x86_64 架構的 cpu 差了 10 倍左右的單核心性能 (Geekbench 5)，並且在使用時明顯感覺開發工具緩慢，因此也不是最佳的解決方案。</p>
+<p>目前建議直接透過 m1 ssh 到 x86_64 arch 的 server 進行利用開發。</p>
+<p>(2021 年 8 月 23日 更新)</p>
+</blockquote>
 <h2 id="安裝-pwntools">安裝 pwntools</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pwntools
 </code></pre></div><p>MacBook m1 安装 pwntools path 參照這篇</p>
