@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>Web安全 | r809&#39;s Notes</title>
+<title>About | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -52,33 +52,67 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Web安全</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/software/security/web/waf-bypass/" class="post-link">WAF繞過</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">About</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2021-10-07 14:47:58 &#43;0800 CST">Thu, 2021 Oct 7</time>
+    </div>
 
-    <h1><a href="https://r888800009.github.io/software/security/web/penetration-testing-tools/" class="post-link">Web滲透測試工具</a></h1>
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#interest">Interest</a></li>
+  </ul>
+</nav>
+    </aside>
 
-    <h1><a href="https://r888800009.github.io/software/security/web/security-notes/" class="post-link">Web安全筆記</a></h1>
+    <h1 id="yong-xiang-lin">Yong-Xiang Lin</h1>
+<ul>
+<li><a href="https://twitter.com/linyongxiang1">@LinYongXiang1</a></li>
+<li>CTF Team: <a href="https://ctftime.org/team/150366">XxTSJxX</a>, <a href="https://ctftime.org/team/139610/">NCtfU</a></li>
+</ul>
+<h2 id="interest">Interest</h2>
+<ul>
+<li>Binary Exploitation</li>
+</ul>
 
-    <h1><a href="https://r888800009.github.io/software/security/web/vulnerability/" class="post-link">Web 網頁漏洞與利用方法</a></h1>
-
-    <h1><a href="https://r888800009.github.io/posts/php-post-get-fpd/" class="post-link">PHP傳入POST與GET導致FPD漏洞</a></h1><p>php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。</p>
-
-    <h1><a href="https://r888800009.github.io/software/security/web/fingerprint/" class="post-link">辨識Web伺服與應用程式</a></h1><p>辨識Web伺服器或應用程式的方法。</p>
-
-    <h1><a href="https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/" class="post-link">比較SSRF與LFI/RFI</a></h1><p>LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。</p>
-
-    <h1><a href="https://r888800009.github.io/software/security/web/get-start/" class="post-link">[Web安全筆記] 透過docker配置漏洞測試網站</a></h1><p>為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，
-在本文當中我們將採用<code>docker</code>來配置測試環境，並安裝<code>WebGoat</code>、
-<code>Damn Vulnerable Web Application</code>、<code>Broken Web Applications</code>。</p>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
     
 
-    
-</div>
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
 
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>

@@ -8,6 +8,15 @@
     <language>zh-tw</language>
     <lastBuildDate>Thu, 29 Jul 2021 23:28:24 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About</title>
+      <link>https://r888800009.github.io/about/</link>
+      <pubDate>Thu, 07 Oct 2021 14:47:58 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Taint Analysis</title>
       <link>https://r888800009.github.io/software/security/taint-analysis/</link>
       <pubDate>Thu, 29 Jul 2021 23:28:24 +0800</pubDate>
