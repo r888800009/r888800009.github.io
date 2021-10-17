@@ -81,6 +81,7 @@ if (!doNotTrack) {
     <li><a href="#小黃鴨除錯法">小黃鴨除錯法</a></li>
     <li><a href="#監視點">監視點</a></li>
     <li><a href="#記憶體檢測工具">記憶體檢測工具</a></li>
+    <li><a href="#自動化除錯腳本">自動化除錯腳本</a></li>
     <li><a href="#延伸">延伸</a></li>
   </ul>
 </nav>
@@ -148,7 +149,11 @@ if (!doNotTrack) {
 <h2 id="監視點">監視點</h2>
 <p>監視程式在特定情況時除錯器進行特定行為</p>
 <ul>
-<li>監視(watch): 特定數值被更改之後暫停</li>
+<li>監視(watch): 特定數值被更改之後暫停
+<ul>
+<li>gdb 的 watch syscall 指令</li>
+</ul>
+</li>
 <li>中斷點(breakpoint): 執行到特定指令時暫停</li>
 <li>catch: signal, throw觸發暫停</li>
 </ul>
@@ -156,6 +161,8 @@ if (!doNotTrack) {
 <ul>
 <li>valgrind</li>
 </ul>
+<h2 id="自動化除錯腳本">自動化除錯腳本</h2>
+<p>參見 <a href="/software/testing/gdb/#自動化-gdb-腳本">自動化 gdb 腳本</a></p>
 <h2 id="延伸">延伸</h2>
 <ul>
 <li><a href="https://maskray.me/blog/2015-03-14-debug-hacks-2">MaskRay 調試技巧2</a></li>

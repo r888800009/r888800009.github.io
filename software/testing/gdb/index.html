@@ -64,9 +64,14 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#自動化-gdb-腳本">自動化 GDB 腳本</a></li>
     <li><a href="#gdb-script">GDB Script</a></li>
     <li><a href="#工具">工具</a></li>
-    <li><a href="#指令">指令</a></li>
+    <li><a href="#指令">指令</a>
+      <ul>
+        <li><a href="#watch-point">watch point</a></li>
+      </ul>
+    </li>
     <li><a href="#傳入參數執行">傳入參數執行</a></li>
     <li><a href="#gdb界面">gdb界面</a>
       <ul>
@@ -78,6 +83,15 @@ if (!doNotTrack) {
     </aside>
 
     <p>存放gdb筆記</p>
+<h2 id="自動化-gdb-腳本">自動化 GDB 腳本</h2>
+<p>python 控 gdb 自動化腳本可以透過以下方法使用</p>
+<p>這個確保 <code>-x</code> 這個參數開啟腳本就可以 <code>import gdb</code> 了</p>
+<pre><code>gdb -x debug-script.py
+</code></pre><p>python script 中可以輸入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gdb 
+</code></pre></div><p>相關的 API 可以查詢 <a href="https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html#Python">Python (Debugging with GDB)</a></p>
+<p>也可以在 pwntool 中 <code>pwntool.gdb.attach(foo, api=True)</code> 來啟用 gdb api</p>
+<p>這個部分在 reversing 或 pwn 的時候，可以根據條件進行操作等等</p>
 <h2 id="gdb-script">GDB Script</h2>
 <p>透過GDB script來保存重複的行為提昇除錯效率。</p>
 <p>這裡假設建立檔案<code>example.gdbscript</code>，內容如下</p>
@@ -103,7 +117,10 @@ s
 </ul>
 <p>中斷點使用範例，在特定地址中斷</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">b *0x12345678
-</code></pre></div><h2 id="傳入參數執行">傳入參數執行</h2>
+</code></pre></div><h3 id="watch-point">watch point</h3>
+<p>檢測特定 syscall 呼叫時發生斷點</p>
+<pre><code>catch syscall write
+</code></pre><h2 id="傳入參數執行">傳入參數執行</h2>
 <pre><code>run arg1 arg2 arg3...
 run $(printf &quot;123&quot;)123
 run $(shell)
