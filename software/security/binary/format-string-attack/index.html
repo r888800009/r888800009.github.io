@@ -93,7 +93,8 @@ if (!doNotTrack) {
 <h2 id="檢測">檢測</h2>
 <p>透過大量的<code>%s</code>使程式崩潰，用來確認漏洞的存在。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
-</code></pre></div><h2 id="利用方式">利用方式</h2>
+</code></pre></div><p>或者採用動態分析工具，比方說 gef 的 <a href="https://gef.readthedocs.io/en/master/commands/format-string-helper/">format-string-helper</a> 會在不安全時暫停程式執行。</p>
+<h2 id="利用方式">利用方式</h2>
 <ul>
 <li>洩漏堆疊</li>
 <li>洩漏任意地址</li>
