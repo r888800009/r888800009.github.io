@@ -114,10 +114,34 @@ if (!doNotTrack) {
 <p><code>%x</code>與<code>%p</code>區別，<code>%x</code>為4 bytes，<code>%p</code>(指標)受到系統影響，常見的系統可能為4或8(不確定？)。</p>
 <h3 id="如何快速找到-p-在記憶體上面的位置">如何快速找到 %?p 在記憶體上面的位置？</h3>
 <ul>
-<li>根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找 (可能是題目的共通性？原因是什麼？</li>
-<li>通常想 leak 某總資料段的基底地址</li>
-<li>透過腳本簡單迴圈進行 <code>%?$p</code> 的列印，同時透過 gdb 列印 <code>vmmap(proc.libs())</code></li>
-<li>簡單分析地址前綴，輸出結果後可以用 grep 等等方式檢查前綴，基本上 ELF 裡面後三個 nibble 不會變化，這點可以用來檢測 return address，rbp 的值在 stack 中後三 nibble 可能會變化。</li>
+<li>
+<p>根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找 (可能是題目的共通性？原因是什麼？</p>
+</li>
+<li>
+<p>通常想 leak 某總資料段的基底地址</p>
+</li>
+<li>
+<p>透過腳本簡單迴圈進行 <code>%?$p</code> 的列印，同時透過 gdb 列印 <code>vmmap(proc.libs())</code></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">                         +-----------------+
+                         |     fmtstr      |
++------------+  %{}$p    |    primitive    |
+| for range  +----------&gt;|  +-----------+  |
+|            |           |  |  fmtstr   |  |
++------------+           |  | processes |  |
+                         |  +-----------+  |
++------------+           |                 |
+| stack info |&lt;----------+  +-----------+  |
+|    save    |  0x7f...  |  |  fmtstr   |  |
++------------+           |  |  remote   |  |
+                         |  +-----------+  |
+                         |                 |
+                         +-----------------+
+</code></pre></div></li>
+<li>
+<p>簡單分析地址前綴，輸出結果後可以用 grep 等等方式檢查前綴，基本上 ELF 裡面後三個 nibble 不會變化，這點可以用來檢測 return address，rbp 的值在 stack 中後三 nibble 可能會變化。</p>
+</li>
 </ul>
 <p>相關腳本範例參見</p>
 <ul>
