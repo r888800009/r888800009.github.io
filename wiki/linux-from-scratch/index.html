@@ -22,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>從0安裝Linux | r809&#39;s Notes</title>
+<title>從 0 安裝Linux | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -52,7 +52,7 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">從0安裝Linux</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">從 0 安裝Linux</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-10-19 21:50:48 &#43;0800 CST">Sat, 2019 Oct 19</time>
     </div>
@@ -105,6 +105,8 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 </code></pre></div><p>或torvalds的鏡像</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/torvalds/linux.git 
+</code></pre></div><p>這邊也有寫好的腳本 <a href="https://github.com/r888800009/script/blob/master/linux-clone">linux-clone</a>，可以抓取特定版本的 kernel</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">linux-clone 5.13.4
 </code></pre></div><h3 id="編譯kernel">編譯kernel</h3>
 <p>先配置內核設定，這邊使用預設設定所以直接退出</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make menuconfig

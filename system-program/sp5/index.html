@@ -106,6 +106,7 @@ if (!doNotTrack) {
         <li><a href="#58-compiler-design-option">5.8 Compiler Design Option</a></li>
       </ul>
     </li>
+    <li><a href="#參見">參見</a></li>
   </ul>
 </nav>
     </aside>
@@ -123,11 +124,14 @@ if (!doNotTrack) {
 <p>syntax analyzer (Parser)，文法合法的statements，
 透過建樹確定文法是否合法，如果能建樹代表符合文法，可以從樹根或樹葉建樹兩個方向皆可。</p>
 <h3 id="intermediate-code-generation">Intermediate Code Generation</h3>
+<ul>
+<li>LLVM Intermediate Representation (IR)</li>
+</ul>
 <p>three address code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(operator, operand1, operand2, result)
 </code></pre></div><p>註解: tree address代表<code>op1</code>, <code>op2</code>, <code>result</code>的address</p>
-<p>分解statements成多個three address code
-文法樹的形成引導中間碼(three address code)產生</p>
+<p>分解 statements 成多個 Three Address Code (TAC)
+文法樹的形成引導中間碼 (Intermediate Code) 產生</p>
 <h3 id="code-optimization">Code Optimization</h3>
 <p>對<strong>中間碼</strong>與<strong>機器碼</strong>優化，使obj速度更快，並且花費更少空間</p>
 <p>中間碼與asm十分相近</p>
@@ -287,6 +291,10 @@ term
 <li>Column Major: <code>[(t - c) * (b - a + 1) + (s - a)] * sizeof(Type) + base</code>，假設起始為0，<code>[t * (b + 1) + s] * sizeof(Type) + base</code></li>
 </ul>
 <p>註: 以<code>a</code>, <code>c</code>做為index的起始，減去代表求長度，<code>(b + 1)</code>的部份是陣列計算大小的方法 c++為Row Major</p>
+<h4 id="為什麼需要區分這兩者">為什麼需要區分這兩者</h4>
+<ul>
+<li>可以利用 Locality 性質，提高 cache 與 page 命中的機率</li>
+</ul>
 <h3 id="code-optimization-1">Code Optimization</h3>
 <p>對<strong>中間碼</strong>與機器碼進行優化。</p>
 <ol>
@@ -301,6 +309,10 @@ term
 <li>compiler-compiler: 傳入文法，yacc與lex，透過finite state automata解決問題。</li>
 <li>cross compiler: 在工作站編譯原始程式出其他架構的機器碼。</li>
 </ol>
+<h2 id="參見">參見</h2>
+<ul>
+<li><a href="https://llvm.org/pubs/2002-08-09-LLVMCompilationStrategy.pdf">The LLVM Instruction Set and Compilation Strategy</a></li>
+</ul>
 
     
       <hr>
