@@ -91,7 +91,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gdb 
 </code></pre></div><p>相關的 API 可以查詢 <a href="https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html#Python">Python (Debugging with GDB)</a></p>
 <p>也可以在 pwntool 中 <code>pwntool.gdb.attach(foo, api=True)</code> 來啟用 gdb api</p>
-<p>這個部分在 reversing 或 pwn 的時候，可以根據條件進行操作等等</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pid, gdb2 <span style="color:#f92672">=</span> gdb<span style="color:#f92672">.</span>attach(c, api<span style="color:#f92672">=</span>True)
+gdb2<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#39;c&#39;</span>)
+</code></pre></div><p>這個部分在 reversing 或 pwn 的時候，可以根據條件進行操作等等</p>
 <h2 id="gdb-script">GDB Script</h2>
 <p>透過GDB script來保存重複的行為提昇除錯效率。</p>
 <p>這裡假設建立檔案<code>example.gdbscript</code>，內容如下</p>
