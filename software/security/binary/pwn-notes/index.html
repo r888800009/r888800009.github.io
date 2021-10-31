@@ -75,6 +75,8 @@ if (!doNotTrack) {
     </li>
     <li><a href="#shellcode">Shellcode</a>
       <ul>
+        <li><a href="#產生-shellcode">產生 shellcode</a></li>
+        <li><a href="#pwntools">pwntools</a></li>
         <li><a href="#補齊">補齊</a></li>
         <li><a href="#shellcode-nop-sled">Shellcode: Nop Sled</a></li>
         <li><a href="#除錯">除錯</a></li>
@@ -106,6 +108,7 @@ if (!doNotTrack) {
         <li><a href="#除錯技巧">除錯技巧</a></li>
         <li><a href="#反向除錯">反向除錯</a></li>
         <li><a href="#查詢-libc-地址">查詢 libc 地址</a></li>
+        <li><a href="#在-python-script-切換到-interact">在 python script 切換到 interact</a></li>
       </ul>
     </li>
     <li><a href="#指定-libc">指定 libc</a>
@@ -130,7 +133,9 @@ if (!doNotTrack) {
 <li>Stack Frame</li>
 </ul>
 <h2 id="保護">保護</h2>
-<p>透過<code>checksec</code>下去檢測有哪些保護啟用</p>
+<p>Pwntool 的 <code>pwn checksec</code> 指令，可以簡單測啟用哪些保護</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pwn checksec /bin/sh
+</code></pre></div><p>透過<code>checksec</code>下去檢測有哪些保護啟用</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gdb-peda$ checksec
 </code></pre></div><p>輸出結果</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">CANARY    : disabled
@@ -157,9 +162,9 @@ RELRO     : Partial
 <h2 id="工具">工具</h2>
 <p>反組譯查看函數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./echo | less
-</code></pre></div><p>透過gdb檢查流程</p>
+</code></pre></div><p>透過 gdb 檢查流程</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gdb ./echo
-</code></pre></div><p>載入 gdb peda</p>
+</code></pre></div><p>載入 gdb peda，不過現在比較建議使用 gef 還不錯</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source /usr/share/peda/peda.py
 </code></pre></div><p>註: 如 ida pro 與 ghidra 在某些情況下可能無法得出可以讀的程式碼，可以嘗試不同反編譯工具。</p>
 <h3 id="符號與區段">符號與區段</h3>
@@ -174,7 +179,28 @@ objdump -s -j .text ./a.out
 <p>注:  其他關於 proc 相關的可以參見文檔，想說怎麽不過設計在 proc 中</p>
 <p><a href="https://docs.pwntools.com/en/stable/util/proc.html">https://docs.pwntools.com/en/stable/util/proc.html</a></p>
 <h2 id="shellcode">Shellcode</h2>
-<p>熟悉 pwntools 方便編寫 shellcode ，如構造一個 <code>echo</code> 的 shellcode 如下</p>
+<h3 id="產生-shellcode">產生 shellcode</h3>
+<ul>
+<li>
+<p>參見 <a href="/software/security/metasploit/">msfvenom</a></p>
+</li>
+<li>
+<p>Pwntools</p>
+</li>
+<li>
+<p><code>gef</code> 的 shellcode 指令</p>
+<ul>
+<li>
+<pre><code>shellcode search arm
+shellcode get 904
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="pwntools">pwntools</h3>
+<p>我們可以使用 pwntools 的 <code>pwn</code> 一行產生 shellcode</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pwn shellcraft sh | pwn disasm
+</code></pre></div><p>熟悉 pwntools 方便編寫 shellcode ，如構造一個 <code>echo</code> 的 shellcode 如下</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwnlib <span style="color:#f92672">import</span> shellcraft
 shellcraft<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#39;hello world!&#39;</span>)
 </code></pre></div><p>如果需要填充用 <code>flat()</code> 即可，比方說填充 buffer 有用，或者說前面需要擺放 <code>/bin/sh</code> 時可以用來填充一定長度。</p>
@@ -206,7 +232,7 @@ pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov 
 <li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/gothijack.py">GOT Hijacking</a></li>
 <li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2libc.py">ret2libc</a></li>
 <li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2plt.py">ret2plt</a></li>
-<li>[ret2shellcode](<a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py">https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py</a></li>
+<li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py">ret2shellcode</a></li>
 </ul>
 <h3 id="ret2csu">ret2csu</h3>
 <p>.fini 與 .fini_array ，執行順序依序為 .fini_array[1],  .fini_array[0], .fini</p>
@@ -316,7 +342,15 @@ rop <span style="color:#f92672">=</span> ROP(e, base)
 <p>在 gdb 可以透過以下指令查詢 libc 地址，以及連結的 libc</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">info proc mapping
 </code></pre></div><p>參見[<a href="https://reverseengineering.stackexchange.com/questions/6657/why-does-ldd-and-gdb-info-sharedlibrary-show-a-different-library-base-addr">Why does <code>ldd</code> and <code>(gdb) info sharedlibrary</code> show a different library base address?</a>]</p>
-<h2 id="指定-libc">指定 libc</h2>
+<h3 id="在-python-script-切換到-interact">在 python script 切換到 interact</h3>
+<p>因為大多數在解題的時候，會針對特定程式的 function 寫一個 python function 進行控制，部分題目可能不能輸入 ascii，可以在我們腳本中使用輔助送出結構化的封包。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> code
+<span style="color:#75715e"># ...</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">do_something</span>(a):
+  c<span style="color:#f92672">.</span>sendline(a)
+
+code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
+</code></pre></div><h2 id="指定-libc">指定 libc</h2>
 <p>pwntools 可以透過此方式指定使用的 libc，有 hooking 的意味，<strong>請務必注意 lib 前面的 <code>./</code></strong>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;echo2&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;LD_PRELOAD&#39;</span>: <span style="color:#e6db74">&#39;./libc-2.23.so.x86_64&#39;</span>})
 <span style="color:#75715e"># 請務必修改 libc 名稱</span>

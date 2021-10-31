@@ -70,6 +70,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#型類">型類</a></li>
         <li><a href="#測資分類">測資分類</a></li>
+        <li><a href="#常見的-fuzzer">常見的 Fuzzer</a></li>
       </ul>
     </li>
     <li><a href="#fuzzing-的前置準備">Fuzzing 的前置準備</a></li>
@@ -79,9 +80,12 @@ if (!doNotTrack) {
         <li><a href="#radamsa">radamsa</a></li>
       </ul>
     </li>
-    <li><a href="#fuzzers">Fuzzers</a>
+    <li><a href="#afl">AFL</a>
       <ul>
-        <li><a href="#afl">AFL</a></li>
+        <li><a href="#安裝">安裝</a></li>
+        <li><a href="#白箱測試">白箱測試</a></li>
+        <li><a href="#黑箱測試">黑箱測試</a></li>
+        <li><a href="#常見問題">常見問題</a></li>
       </ul>
     </li>
   </ul>
@@ -116,6 +120,16 @@ if (!doNotTrack) {
 <li>Generation-based Fuzzing 基於生成，透過協議與界面產生測資</li>
 <li>Mutation-based Fuzzing 基於異變，異變現有的測資產生<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>:</li>
 </ul>
+<h3 id="常見的-fuzzer">常見的 Fuzzer</h3>
+<ul>
+<li><a href="http://lcamtuf.coredump.cx/afl/">afl</a> <a href="https://github.com/google/AFL">GitHub</a>
+<ul>
+<li>或 <code>afl++</code></li>
+</ul>
+</li>
+<li>另外請見 <a href="/software/security/honggfuzz/">Honggfuzz 筆記</a></li>
+<li><a href="https://boofuzz.readthedocs.io/">boofuzz</a></li>
+</ul>
 <h2 id="fuzzing-的前置準備">Fuzzing 的前置準備</h2>
 <ul>
 <li>花費 90% 閱讀文檔，來分析可能出現問題的位置<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
@@ -139,22 +153,44 @@ if (!doNotTrack) {
 </code></pre></div><p>使用</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;if(x &gt; 8)&#34;</span> | radamsa   
 </code></pre></div><p>或許可以搭配自己的 fuzz 腳本使用？</p>
-<h2 id="fuzzers">Fuzzers</h2>
-<p>常見的 Fuzzer</p>
-<ul>
-<li><a href="http://lcamtuf.coredump.cx/afl/">afl</a> <a href="https://github.com/google/AFL">GitHub</a></li>
-<li>另外請見 <a href="/software/security/honggfuzz/">Honggfuzz 筆記</a></li>
-</ul>
-<h3 id="afl">AFL</h3>
-<p>安裝</p>
+<h2 id="afl">AFL</h2>
+<h3 id="安裝">安裝</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S afl
-</code></pre></div><p>編譯被測試程式</p>
+</code></pre></div><h3 id="白箱測試">白箱測試</h3>
+<p>編譯被測試程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-gcc main.c
 </code></pre></div><p>編寫測資後，測試程式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out
 </code></pre></div><p>或使用參數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out @@
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+</code></pre></div><h3 id="黑箱測試">黑箱測試</h3>
+<p>黑箱測試可以採用</p>
+<ul>
+<li>afl-dyninst</li>
+<li>afl qemu</li>
+</ul>
+<p>如果需要黑箱測試就必須編譯 qemu，這邊先 pull image</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull aflplusplus/aflplusplus
+docker run -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work aflplusplus/aflplusplus:latest /bin/bash
+docker exec -it $id bash -i
+cd /work
+</code></pre></div><p>之後進入 docker 進行編譯，會把 qemu 之類的東西編譯好</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make
+</code></pre></div><p>之後我們就可以下指令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i ./in -o ./out -Q -- ./a.out
+</code></pre></div><p>或者採用 docker image (不過這個版本，比較舊, 少人使用)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -t -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/fuzz pl0nk/afl-qemu afl-fuzz -i /fuzz/in -o /fuzz/out -Q -- /fuzz/binary
+</code></pre></div><h4 id="persistent-mode">Persistent Mode</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AFL_QEMU_SNAPSHOT<span style="color:#f92672">=</span>0x????
+</code></pre></div><p><a href="https://github.com/AFLplusplus/AFLplusplus/blob/stable/qemu_mode/README.persistent.md">AFLplusplus/README.persistent.md at stable · AFLplusplus/AFLplusplus</a></p>
+<h3 id="常見問題">常見問題</h3>
+<pre><code>Hmm, looks like the target binary terminated before we could complete a
+handshake with the injected code. You can try the following
+</code></pre><p>也可能是 libc 的版本不正確導致無法正常運作</p>
+<p>把 libc, ld 抓出來之後，透過 ld 開始跑，<strong>並且確保</strong> <code>mv libc-2.33.so libc.so.6</code> 不過這樣跑似乎蠻慢的</p>
+<pre><code>afl-fuzz -i ./in -o ./out -Q -- ./ld-2.33.so --library-path . ./binary
+</code></pre><p>啟動持久模式，可以加速 qemu</p>
+<section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">

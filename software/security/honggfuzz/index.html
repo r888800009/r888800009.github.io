@@ -65,6 +65,7 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#persistent-mode">Persistent Mode</a></li>
     <li><a href="#問題">問題</a>
       <ul>
         <li><a href="#exited-with-status-exited-exit-code-255">exited with status: EXITED, exit code: 255</a></li>
@@ -86,13 +87,17 @@ apt update
 apt install libglib2.0-dev libpixman-1-dev
 make
 cd honggfuzz-qemu/ <span style="color:#f92672">&amp;&amp;</span> make
+</code></pre></div><p>如果出現 <code>run if fatal: unable to access 'https://git.qemu.org/git/capstone.git/': server certificate verification failed.</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GIT_SSL_NO_VERIFY<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+make
 </code></pre></div><p>返回並且測試 qemu 模式</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /honggfuzz
 </code></pre></div><p>開始 fuzzing，似乎沒有啟用 qemu 模式也可以找到 crash ，這邊取 pwnable.tw 的題目，可以找到一些 crash 但效率非常低(存疑，等待驗證)。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">honggfuzz -i /work/in/ -t <span style="color:#ae81ff">1</span> -s -- /work/silver_bullet
 </code></pre></div><p>而 qemu 選擇正確的架構集之後，可以修復<code>EXITED, exit code: 255</code> 的問題，而且找非常容易找到 crash，跑30 分鐘大概可以找到 500 左右個獨特的 crash (存疑，等待驗證)。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">honggfuzz -i /work/in/ -t <span style="color:#ae81ff">1</span> -s -- ./qemu_mode/honggfuzz-qemu/i386-linux-user/qemu-i386 /work/hacknote
-</code></pre></div><h2 id="問題">問題</h2>
+</code></pre></div><h2 id="persistent-mode">Persistent Mode</h2>
+<h2 id="問題">問題</h2>
 <h3 id="exited-with-status-exited-exit-code-255">exited with status: EXITED, exit code: 255</h3>
 <p>請確保使用正確的架構，不同架構會導致 qemu 退出</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./qemu_mode/honggfuzz-qemu/x86_64-linux-user/qemu-x86_64 ./a.out

@@ -67,6 +67,7 @@ if (!doNotTrack) {
     <li><a href="#術語">術語</a></li>
     <li><a href="#工具">工具</a></li>
     <li><a href="#安裝工具">安裝工具</a></li>
+    <li><a href="#triton">Triton</a></li>
     <li><a href="#範例">範例</a></li>
     <li><a href="#注意事項">注意事項</a></li>
     <li><a href="#參考">參考</a></li>
@@ -94,7 +95,22 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacaur -S triton-git
 </code></pre></div><p>如果要讀取 elf 可能需要安裝 lief</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacaur -S lief 
-</code></pre></div><h2 id="範例">範例</h2>
+</code></pre></div><h2 id="triton">Triton</h2>
+<p>使用重點</p>
+<ul>
+<li>hooking PLT</li>
+<li>標記 tainted
+<ul>
+<li><code> ctx.taintMemory()</code></li>
+</ul>
+</li>
+<li>檢查 tainted
+<ul>
+<li><code>ctx.isMemoryTainted()</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="範例">範例</h2>
 <p>triton 對 binary taint 的範例</p>
 <ul>
 <li><a href="https://github.com/r888800009/practice/blob/master/pwn/taint.py">https://github.com/r888800009/practice/blob/master/pwn/taint.py</a></li>
