@@ -6,7 +6,16 @@
     <description>Recent content in Information Security on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 30 Mar 2020 21:00:40 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/information-security/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Apr 2020 04:44:29 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/information-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[網路安全] 網路存取控制</title>
+      <link>https://r888800009.github.io/network-security/net-sec5/</link>
+      <pubDate>Tue, 07 Apr 2020 04:44:29 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/network-security/net-sec5/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>[網路安全] 金鑰分發 用戶認證</title>
       <link>https://r888800009.github.io/network-security/net-sec4/</link>
@@ -41,6 +50,15 @@
       
       <guid>https://r888800009.github.io/book-notes/exploiting-software/ch6-notes/</guid>
       <description>&lt;p&gt;關於本書閱讀的隨筆筆記，尚有不完備之處&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[網路安全] 簡介</title>
+      <link>https://r888800009.github.io/network-security/net-sec1/</link>
+      <pubDate>Mon, 09 Mar 2020 22:23:42 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/network-security/net-sec1/</guid>
+      <description></description>
     </item>
     
     <item>

@@ -130,7 +130,11 @@ if (!doNotTrack) {
 <li><code>big endian</code>: 低位優先</li>
 <li><a href="/software/reversing/">逆向工具使用</a></li>
 <li>hooking: 在運行(通常)時把原函數以新函數取代，以改變程式行為。</li>
-<li>Stack Frame</li>
+<li>Stack Frame
+<ul>
+<li>又名 Activation Record instance (ARI)</li>
+</ul>
+</li>
 </ul>
 <h2 id="保護">保護</h2>
 <p>Pwntool 的 <code>pwn checksec</code> 指令，可以簡單測啟用哪些保護</p>
@@ -143,7 +147,7 @@ FORTIFY   : disabled
 NX        : ENABLED
 PIE       : disabled
 RELRO     : Partial
-</code></pre></div><p>可以看到NX啟動，表示可能需要透過ROP的方式下去進行利用，
+</code></pre></div><p>可以看到 NX 啟動，表示可能需要透過 ROP 的方式下去進行利用，
 也可能是透過其他漏洞如<a href="/software/security/binary/format-string-attack/">格式化字串</a>。</p>
 <p>另外參見 <a href="/software/security/exploit-mitigation/">漏洞緩解技術</a></p>
 <h2 id="利用方法">利用方法</h2>
@@ -167,6 +171,7 @@ RELRO     : Partial
 </code></pre></div><p>載入 gdb peda，不過現在比較建議使用 gef 還不錯</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source /usr/share/peda/peda.py
 </code></pre></div><p>註: 如 ida pro 與 ghidra 在某些情況下可能無法得出可以讀的程式碼，可以嘗試不同反編譯工具。</p>
+<p>GEF 可以參考手冊 <a href="https://gef.readthedocs.io/en/master/">Home - GEF - GDB Enhanced Features documentation</a></p>
 <h3 id="符號與區段">符號與區段</h3>
 <p>顯示符號表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nm ./a.out
@@ -235,7 +240,7 @@ pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov 
 <li><a href="https://github.com/r888800009/CTF-Solve/blob/master/isc.taiwan-te.ch/ret2sc.py">ret2shellcode</a></li>
 </ul>
 <h3 id="ret2csu">ret2csu</h3>
-<p>.fini 與 .fini_array ，執行順序依序為 .fini_array[1],  .fini_array[0], .fini</p>
+<p><code>.fini</code> 與 <code>.fini_array</code> ，執行順序依序為 <code>.fini_array[1]</code>,  <code>.fini_array[0]</code>, <code>.fini</code></p>
 <ul>
 <li>在 main 結束後被呼叫 <code>call QWORD PTR [rbp+rbx*8+0x0]</code></li>
 <li>利用條件: 已知 <code>.fini_array</code> 地址，並且複寫內容</li>
