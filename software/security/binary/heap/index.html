@@ -66,7 +66,10 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#前置概念">前置概念</a>
       <ul>
+        <li><a href="#幾個重點">幾個重點</a></li>
+        <li><a href="#bin">Bin</a></li>
         <li><a href="#unsorted-bin">Unsorted Bin</a></li>
+        <li><a href="#small-bin">Small Bin</a></li>
       </ul>
     </li>
     <li><a href="#tools-工具">Tools 工具</a></li>
@@ -83,6 +86,7 @@ if (!doNotTrack) {
     </aside>
 
     <p>堆積利用筆記</p>
+<p>建議先找出各種版本的 glibc source 的檢視器</p>
 <h2 id="前置概念">前置概念</h2>
 <ul>
 <li><strong>bins</strong> 用來組織記憶體 <strong>free chunk</strong>，chunk 代表<strong>可分配 (Free Chunk)</strong> 或 <strong>使用中 (In-use Chunk )</strong> 的記憶體區塊<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，當中 bin 又是透過 linked list 構成，並且根據大小可以分成以下四類<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
@@ -90,7 +94,13 @@ if (!doNotTrack) {
 <li>fast</li>
 <li>small</li>
 <li>large</li>
-<li>unsorted</li>
+<li>unsorted:
+<ul>
+<li>1-bin</li>
+<li><a href="https://code.woboq.org/userspace/glibc/malloc/malloc.c.html#_M/unsorted_chunks">unsorted bin</a></li>
+<li>malloc 會從 unsorted bin 進行整理 <a href="https://elixir.bootlin.com/glibc/glibc-2.31/source/malloc/malloc.c#L3728">glibc-2.31 malloc.c#L3728</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>free chunk:
@@ -102,7 +112,35 @@ if (!doNotTrack) {
 <li>chunk 在 <code>malloc()</code>分配出來，在 <code>free()</code> 時加入 bins <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
 <li>object 於記憶體的相關概念</li>
 </ul>
-<h3 id="unsorted-bin">Unsorted Bin</h3>
+<h3 id="幾個重點">幾個重點</h3>
+<ul>
+<li><a href="https://code.woboq.org/userspace/glibc/malloc/malloc.c.html#_M/bin_at"><code>bin_at(m, i)</code></a>  用於定址 bin</li>
+<li><code>typedef struct malloc_state *mstate</code>
+<ul>
+<li>這個會作為 <code>av</code> 傳入各種參數</li>
+<li><a href="https://code.woboq.org/userspace/glibc/malloc/malloc.c.html#malloc_state"><code>struct malloc_state</code></a></li>
+<li><code>mchunkptr bins[]</code> bins 是好幾個 <code>mchunkptr</code> 所組成</li>
+<li><code>typedef struct malloc_chunk* mchunkptr</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="bin">Bin</h3>
+<p>初始化 bin <a href="https://elixir.bootlin.com/glibc/glibc-2.31/source/malloc/malloc.c#L1794">malloc.c#L1794</a>，可以看到它實際上是 malloc_chunk 的結構，但是 bin_at 每次移動 <code>0x10</code> 所以可以看到類似這樣的記憶體</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+│   fd    │   bk    │   fd    │   bk    │   fd    │   bk    │   fd    │   bk    │
+└─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
+</code></pre></div><p>在 gdb 下面可以看到 <code>bin-&gt;fd = bin-&gt;bk = bin</code>，並且 &amp;fd-0x10 可以對應到 chunk 的 prev_size 的位置，初始化的時候 fd 和 bk 都指向自己</p>
+<pre><code>0x00007f0000000bf0│+0x0010: 0x000055000000b0d0 
+0x00007f0000000bf8│+0x0018: 0x000055000000aae0 
+0x00007f0000000c00│+0x0020: 0x00007f0000000bf0 
+0x00007f0000000c08│+0x0028: 0x00007f0000000bf0 
+0x00007f0000000c10│+0x0030: 0x00007f0000000c00
+0x00007f0000000c18│+0x0038: 0x00007f0000000c00
+0x00007f0000000c20│+0x0040: 0x00007f0000000c10
+0x00007f0000000c28│+0x0048: 0x00007f0000000c10
+0x00007f0000000c30│+0x0050: 0x00007f0000000c20
+</code></pre><h3 id="unsorted-bin">Unsorted Bin</h3>
+<p>為了了解 heap 的運作機制，這邊寫了幾個範例可以使用 gdb 進行分析 <a href="https://github.com/r888800009/practice/tree/master/pwn/allocator">practice/pwn/allocator</a></p>
 <pre><code>┌─────────┬─────────┬─────────┬─────────┐ ┌─────────┬─────────┬─────────┬─────────┐
 │prev_size│  size   │   fd    │   bk    │ │prev_size│  size   │   fd    │   bk    │
 └─────────┴─────────┴───┬─────┴────┬────┘ └─────────┴─────────┴───┬─────┴────┬────┘
@@ -137,7 +175,8 @@ if (!doNotTrack) {
          │payload   │
          │          │
          └──────────┘
-</code></pre><h2 id="tools-工具">Tools 工具</h2>
+</code></pre><h3 id="small-bin">Small Bin</h3>
+<h2 id="tools-工具">Tools 工具</h2>
 <ul>
 <li><a href="https://github.com/wapiflapi/villoc">Villoc</a> 將 heap 變化可視化轉成 html 檔案檢視</li>
 </ul>

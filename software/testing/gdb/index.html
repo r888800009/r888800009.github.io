@@ -96,6 +96,9 @@ gdb2<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#39
 </code></pre></div><p>如果需要進行運算或顯示暫存器可以透過</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gdb<span style="color:#f92672">.</span>parse_and_eval(<span style="color:#e6db74">&#39;$rax + 0x10&#39;</span>)
 </code></pre></div><p>這個部分在 reversing 或 pwn 的時候，可以根據條件進行操作等等</p>
+<p>在 gdb 當中使用 <code>pi</code> 指令可以進入 Python interpreter</p>
+<pre><code>pi print('a')
+</code></pre><p>另外如果要開發的話可以使用 <code>gef.py</code> 裡面的 API</p>
 <h2 id="gdb-script">GDB Script</h2>
 <p>透過GDB script來保存重複的行為提昇除錯效率。</p>
 <p>這裡假設建立檔案<code>example.gdbscript</code>，內容如下</p>

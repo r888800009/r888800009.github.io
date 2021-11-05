@@ -20,10 +20,11 @@ hr {
 }
 
 code {
-    font-family: "Courier New",Courier, monospace;
+    font-family: "Courier New",Courier,  monospace;
     font-size: 9pt;
     background: #e0e0e0;
     padding: 0.2em;
+    color: #444;
 }
 
 a {
