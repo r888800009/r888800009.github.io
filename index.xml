@@ -6,7 +6,16 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 29 Jul 2021 23:28:24 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 03:50:30 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PartitionAlloc</title>
+      <link>https://r888800009.github.io/software/security/binary/partitionalloc/</link>
+      <pubDate>Sat, 06 Nov 2021 03:50:30 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/binary/partitionalloc/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://r888800009.github.io/about/</link>
@@ -1415,7 +1424,7 @@ GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;
       <pubDate>Sat, 18 Aug 2018 21:15:58 +0800</pubDate>
       
       <guid>https://r888800009.github.io/portfolio/</guid>
-      <description>Useful  fcitx-jszhuyin Fcitx Wrapper for jszhuyin  Stuff  Notes Scientific Notation Generator demo Tetris JS demo Snake JS demo Tree generator demo How Long Ago demo Sokoban JS demo  Practice/Solve  CTF-Solve practice  </description>
+      <description>Useful  r888800009/CTF-tool fcitx-jszhuyin Fcitx Wrapper for jszhuyin  Stuff  Notes Scientific Notation Generator demo Tetris JS demo Snake JS demo Tree generator demo How Long Ago demo Sokoban JS demo  Practice/Solve  CTF-Solve practice  </description>
     </item>
     
   </channel>
