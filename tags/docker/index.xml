@@ -45,13 +45,13 @@
     </item>
     
     <item>
-      <title>[Web安全筆記] 透過docker配置漏洞測試網站</title>
+      <title>[Web安全筆記] 透過 docker 配置漏洞測試網站</title>
       <link>https://r888800009.github.io/software/security/web/get-start/</link>
       <pubDate>Thu, 08 Aug 2019 15:08:09 +0800</pubDate>
       
       <guid>https://r888800009.github.io/software/security/web/get-start/</guid>
       <description>&lt;p&gt;為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，
-在本文當中我們將採用&lt;code&gt;docker&lt;/code&gt;來配置測試環境，並安裝&lt;code&gt;WebGoat&lt;/code&gt;、
+在本文當中我們將採用 &lt;code&gt;docker&lt;/code&gt; 來配置測試環境，並安裝 &lt;code&gt;WebGoat&lt;/code&gt;、
 &lt;code&gt;Damn Vulnerable Web Application&lt;/code&gt;、&lt;code&gt;Broken Web Applications&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     

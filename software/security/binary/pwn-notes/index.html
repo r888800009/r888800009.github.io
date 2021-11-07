@@ -231,6 +231,7 @@ pwn<span style="color:#f92672">.</span>asm(<span style="color:#e6db74">&#39;mov 
 <li>系統呼叫 <code>int 0x80</code> 沒有作用時，請檢查呼叫後的 <code>EAX</code> 是否有變化，代表參數可能輸入錯誤</li>
 <li>傳入 <code>\0</code> 或 <code>\n</code> 導致沒辦法完整讀取 payload，可以嘗試放到後面。</li>
 <li>read syscall 如果遇到填充問題，嘗試填滿 buffer，包含前一次的 read。</li>
+<li>如果有的時候 syscall 失效可能需要處理 alignment 0x10</li>
 </ul>
 <h2 id="elf">ELF</h2>
 <h3 id="利用方法-1">利用方法</h3>
