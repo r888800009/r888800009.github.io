@@ -102,7 +102,8 @@ vimagick/webgoat             A deliberately insecure Web Application         2
 </code></pre></div><p>我們挑選穩定版本的 image 為 <code>webgoat/webgoat-7.1</code>，pull 並運行，
 運行後監聽本機 <code>8080</code> 端口。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p 8080:8080 -t webgoat/webgoat-7.1
-</code></pre></div><p>之後我們可以瀏覽 http://localhost:8080/WebGoat 來查看 WebGoat 環境是否搭建完成。</p>
+</code></pre></div><p>之後我們可以瀏覽 http://localhost:8080/WebGoat 來查看 WebGoat 環境是否搭建完成，進入後註冊一個帳號使用。</p>
+<p>關於 webgoat 的解答，可以參考測資 <a href="https://github.com/WebGoat/WebGoat/tree/develop/webgoat-integration-tests/src/test/java/org/owasp/webgoat">WebGoat/webgoat-integration-tests/src/test/java/org/owasp/webgoat</a></p>
 <h3 id="damn-vulnerable-web-application">Damn Vulnerable Web Application</h3>
 <p>這次我們安裝的 image 為 <code>vulnerables/web-dvwa</code>，鍵入以下指令</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -it -p 80:80 vulnerables/web-dvwa

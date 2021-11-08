@@ -6,7 +6,16 @@
     <description>Recent content in System Program on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 06 Mar 2020 12:01:03 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/system-program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Nov 2021 04:08:23 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/system-program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>連結器 (Linker)</title>
+      <link>https://r888800009.github.io/system-program/linker/</link>
+      <pubDate>Tue, 09 Nov 2021 04:08:23 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/system-program/linker/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>編寫Recursive Descent Parser的方法</title>
       <link>https://r888800009.github.io/programming-language/a-way-to-writing-recursive-descent-parser/</link>

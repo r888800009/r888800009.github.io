@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<meta name="generator" content="Hugo 0.80.0" />
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -23,7 +22,7 @@ if (!doNotTrack) {
 
 
 
-<title>r809&#39;s Notes</title>
+<title>連結器 (Linker) | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -53,42 +52,84 @@ if (!doNotTrack) {
     </a>
     
 </nav>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">r809&#39;s Notes</a></h1>
-<div id="content">
-    <h1><a href="https://r888800009.github.io/system-program/reference/" class="post-link">[SP]系統程式參考資料列表</a></h1>
+<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">連結器 (Linker)</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2021-11-09 04:08:23 &#43;0800 CST">Tue, 2021 Nov 9</time>
+    </div>
 
-    <h1><a href="https://r888800009.github.io/system-program/sp3/" class="post-link">[SP]系統程式筆記3</a></h1>
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>目次</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux">Linux</a></li>
+    <li><a href="#macos">MacOS</a></li>
+    <li><a href="#windows">Windows</a></li>
+  </ul>
+</nav>
+    </aside>
 
-    <h1><a href="https://r888800009.github.io/wiki/web-crawler/" class="post-link">Web爬蟲筆記</a></h1>
+    <p>linkage editor, link editor</p>
+<h2 id="linux">Linux</h2>
+<ul>
+<li>GNU linker
+<ul>
+<li><code>ld</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="macos">MacOS</h2>
+<ul>
+<li>the dynamic link editor (dyld)</li>
+</ul>
+<h2 id="windows">Windows</h2>
+<ul>
+<li>MSVC linker (LINK.EXE)</li>
+</ul>
 
-    <h1><a href="https://r888800009.github.io/network/dns/" class="post-link">DNS</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/bash/" class="post-link">Bash</a></h1>
-
-    <h1><a href="https://r888800009.github.io/software/reversing/radare2/" class="post-link">Radare2</a></h1>
-
-    <h1><a href="https://r888800009.github.io/wiki/kali-linux/" class="post-link">Kali Linux筆記</a></h1>
-
-    <h1><a href="https://r888800009.github.io/software/security/binary/stack-smash/" class="post-link">Stack Smash</a></h1>
-
-    <h1><a href="https://r888800009.github.io/software/security/web/waf-bypass/" class="post-link">WAF繞過</a></h1>
-
-    <h1><a href="https://r888800009.github.io/software/security/web/penetration-testing-tools/" class="post-link">Web滲透測試工具</a></h1>
-
-
-<div style="font-size: 200%; text-align: center; font-weight: bold;">
     
-    <a href=/page/9/>
-      &#x3C;
-    </a>
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/linker" class="tags">Linker</a>
+      
+        <a href="https://r888800009.github.io/tags/system-program" class="tags">System Program</a>
+      
     
 
-    
-    <a href=/page/11/>
-       &#x3E;
-    </a>
-    
-</div>
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            var a = document.createElement('a');
+            a.innerHTML = '#';
+            a.className = 'subheader';
+            a.href = '#'+heading.id;
+            heading.appendChild(a);
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>
