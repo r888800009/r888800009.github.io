@@ -78,6 +78,14 @@ if (!doNotTrack) {
         <li><a href="#參考">參考</a></li>
       </ul>
     </li>
+    <li><a href="#跨架構除錯">跨架構除錯</a></li>
+    <li><a href="#kernel-mode-debugging">Kernel-Mode Debugging</a></li>
+    <li><a href="#問題排解">問題排解</a>
+      <ul>
+        <li><a href="#qemu">QEMU</a></li>
+        <li><a href="#參見">參見</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
@@ -139,6 +147,32 @@ run $(shell)
 <h3 id="參考">參考</h3>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/32843449">终端调试哪家强？</a></li>
+</ul>
+<h2 id="跨架構除錯">跨架構除錯</h2>
+<p>我們可以透過 qemu-linux-user 執行 gdb server 之後安裝 gdb-multiarch</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install gdb-multiarch
+</code></pre></div><p>如果是 archlinux</p>
+<pre><code>gpg --recv-keys 92EDB04BFF325CF3
+pacaur -S gdb-multiarch
+</code></pre><h2 id="kernel-mode-debugging">Kernel-Mode Debugging</h2>
+<p>在研究 kernel 或 kernel exploit 時需要透過 Qemu 執行 kernel 並且 attach gdb</p>
+<pre><code>qemu-system-x86_64 --kernel /boot/vmlinuz-linux -nographic -s -S
+</code></pre><p>確保 gdb 擁有 root 權限，否則會出現 <code>[!] Command 'gef-remote' failed to execute properly, reason: [Errno 13] Permission denied: '/proc/1/maps'</code></p>
+<pre><code>sudo gdb
+</code></pre><p>啟動 gdb 並且設置目標主機架構</p>
+<pre><code>set architecture i386:x86-64
+</code></pre><p>透過 gef attach 上 qemu，確保有加上 <code>--qemu-mode</code></p>
+<pre><code>gef-remote --qemu-mode localhost:1234
+</code></pre><h2 id="問題排解">問題排解</h2>
+<h3 id="qemu">QEMU</h3>
+<p>qemu 除錯時，報錯 <code>Command 'context' failed to execute properly, reason: 'NoneType' object has no attribute 'all_registers'</code></p>
+<p>確保 <code>set arch</code> 之後使用 <code>gef-remote --qemu-mode </code> 而不是 <code>target remote</code></p>
+<pre><code>set arch i386:x86-64
+gef-remote --qemu-mode addr:port
+</code></pre><h3 id="參見">參見</h3>
+<ul>
+<li><a href="https://d1nn3r.github.io/2019/07/27/kernelexp/">kernelexp学习笔记 | d1nn3r&rsquo;s Blog</a> 當中包含各種 qemu 除錯的疑難排解</li>
+<li><a href="https://kiprey.github.io/2021/10/kernel_pwn_introduction/">Kernel pwn CTF 入门 | Kiprey&rsquo;s Blog</a> <code>--qemu-mode</code> 從這裡看到的，如果上面的筆記無法排解，可以參見這篇</li>
 </ul>
 
     
