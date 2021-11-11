@@ -3,13 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://r888800009.github.io/tags/linker/</loc>
-    <lastmod>2021-11-09T04:12:42+08:00</lastmod>
+    <loc>https://r888800009.github.io/tags/kernel-exploit/</loc>
+    <lastmod>2021-11-09T10:24:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/software/security/binary/kernel-exploit/</loc>
+    <lastmod>2021-11-09T10:24:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/pwn/</loc>
+    <lastmod>2021-11-09T10:24:58+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2021-11-09T09:56:12+08:00</lastmod>
+    <lastmod>2021-11-10T21:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/software/</loc>
+    <lastmod>2021-11-09T10:24:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/</loc>
+    <lastmod>2021-11-10T21:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/linker/</loc>
+    <lastmod>2021-11-09T04:12:42+08:00</lastmod>
   </url>
   
   <url>
@@ -20,11 +45,6 @@
   <url>
     <loc>https://r888800009.github.io/system-program/</loc>
     <lastmod>2021-11-09T04:12:42+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2021-11-09T09:56:12+08:00</lastmod>
   </url>
   
   <url>
@@ -45,16 +65,6 @@
   <url>
     <loc>https://r888800009.github.io/software/security/binary/partitionalloc/</loc>
     <lastmod>2021-11-06T03:52:33+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/pwn/</loc>
-    <lastmod>2021-11-06T17:05:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/software/</loc>
-    <lastmod>2021-11-09T09:56:12+08:00</lastmod>
   </url>
   
   <url>
@@ -124,7 +134,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/exploit-mitigation/</loc>
-    <lastmod>2021-10-29T04:24:17+08:00</lastmod>
+    <lastmod>2021-11-09T10:23:57+08:00</lastmod>
   </url>
   
   <url>
@@ -224,7 +234,7 @@
   
   <url>
     <loc>https://r888800009.github.io/wiki/</loc>
-    <lastmod>2021-11-01T21:26:43+08:00</lastmod>
+    <lastmod>2021-11-10T21:28:00+08:00</lastmod>
   </url>
   
   <url>
@@ -344,7 +354,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/linux/</loc>
-    <lastmod>2021-11-09T09:56:12+08:00</lastmod>
+    <lastmod>2021-11-09T19:40:40+08:00</lastmod>
   </url>
   
   <url>
@@ -364,7 +374,7 @@
   
   <url>
     <loc>https://r888800009.github.io/software/security/exploit-mitigation/</loc>
-    <lastmod>2021-10-29T04:24:17+08:00</lastmod>
+    <lastmod>2021-11-09T10:23:57+08:00</lastmod>
   </url>
   
   <url>
@@ -453,8 +463,18 @@
   </url>
   
   <url>
+    <loc>https://r888800009.github.io/tags/log/</loc>
+    <lastmod>2021-11-10T21:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/siem/</loc>
+    <lastmod>2021-11-10T21:28:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/wiki/log-notes/</loc>
-    <lastmod>2020-04-16T23:46:20+08:00</lastmod>
+    <lastmod>2021-11-10T21:28:00+08:00</lastmod>
   </url>
   
   <url>
@@ -809,12 +829,12 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/shell/</loc>
-    <lastmod>2020-05-19T18:34:29+08:00</lastmod>
+    <lastmod>2021-11-09T19:40:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/wiki/shell/</loc>
-    <lastmod>2020-05-19T18:34:29+08:00</lastmod>
+    <lastmod>2021-11-09T19:36:38+08:00</lastmod>
   </url>
   
   <url>
@@ -954,7 +974,7 @@
   
   <url>
     <loc>https://r888800009.github.io/wiki/bash/</loc>
-    <lastmod>2019-10-05T19:55:13+08:00</lastmod>
+    <lastmod>2021-11-09T19:40:40+08:00</lastmod>
   </url>
   
   <url>
