@@ -20,6 +20,11 @@ hr {
     width: 95%
 }
 
+
+pre code.hljs {
+    padding: 0.4em !important;
+}
+
 code {
     font-family: "Courier New",Courier,  monospace;
     font-size: 9pt;
