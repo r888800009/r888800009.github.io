@@ -52,6 +52,21 @@ if (!doNotTrack) {
     </a>
     
 </nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[OS] Computer System Structure </a></h1>
 <div id="content"><div class="date">
         <time datetime="2020-03-03 17:43:22 &#43;0800 CST">Tue, 2020 Mar 3</time>

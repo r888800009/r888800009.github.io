@@ -52,6 +52,21 @@ if (!doNotTrack) {
     </a>
     
 </nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">[Web安全筆記] 透過 docker 配置漏洞測試網站</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-08-08 15:08:09 &#43;0800 CST">Thu, 2019 Aug 8</time>
@@ -113,7 +128,7 @@ vimagick/webgoat             A deliberately insecure Web Application         2
 <p>之後我們透過預設密碼登入，即可看到環境。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">帳號: admin
 密碼: password
-</code></pre></div><p>這樣就搭建完成 <code>dvwa</code> 的測試環境了。</p>
+</code></pre></div><p>這樣就搭建完成 <code>dvwa</code> 的測試環境了，DVWA 打不進去的話可以調整難度為 low，預設是 high。</p>
 <h3 id="broken-web-applications">Broken Web Applications</h3>
 <p>直接使用 <code>docker</code> 找尋 image 找尋恰當的版本</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search mutillidae

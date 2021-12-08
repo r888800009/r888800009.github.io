@@ -117,6 +117,7 @@ nav#main-menu {
     position: sticky;
     width:auto;
     top:0;
+    transition: top 0.2s; 
 }
 
 #main-menu a {

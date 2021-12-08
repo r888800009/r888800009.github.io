@@ -52,6 +52,21 @@ if (!doNotTrack) {
     </a>
     
 </nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Arch Linux</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-09-05 05:29:37 &#43;0800 CST">Thu, 2019 Sep 5</time>
@@ -73,7 +88,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#java缺少中文字體">java缺少中文字體</a></li>
     <li><a href="#java-6">java 6</a></li>
-    <li><a href="#採用lts-kernel">採用LTS kernel</a></li>
+    <li><a href="#採用-lts-kernel">採用 LTS kernel</a></li>
     <li><a href="#清理">清理</a></li>
   </ul>
 </nav>
@@ -111,7 +126,7 @@ makepkg -is
 <li><a href="http://linux-wiki.cn/wiki/Java%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE">參考1</a></li>
 <li><a href="https://stackoverflow.com/questions/25663165/unicode-char-not-rendering-in-swing-what-font-is-used-in-real">參考2</a></li>
 </ul>
-<h2 id="採用lts-kernel">採用LTS kernel</h2>
+<h2 id="採用-lts-kernel">採用 LTS kernel</h2>
 <p>由於新版的kernel可能會有一些錯誤，為了系統穩定性切換到LTS kernel，
 首先確保安裝lts版本</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S linux-lts 
@@ -132,7 +147,8 @@ options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
 <h2 id="清理">清理</h2>
 <p>分析硬碟使用空間</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncdu -x / 
-</code></pre></div><p>分析軟件包花費空間</p>
+</code></pre></div><p>類似 ncdu 的工具例如 kdirstat 則有 GUI 介面可視</p>
+<p>分析軟件包花費空間</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacgraph -c   
 </code></pre></div><p>清理快取</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -r

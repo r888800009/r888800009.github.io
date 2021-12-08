@@ -52,6 +52,21 @@ if (!doNotTrack) {
     </a>
     
 </nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Linux文件管理</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-09-05 05:47:01 &#43;0800 CST">Thu, 2019 Sep 5</time>

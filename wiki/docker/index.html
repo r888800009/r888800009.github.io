@@ -52,6 +52,21 @@ if (!doNotTrack) {
     </a>
     
 </nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
 <div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Docker</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-09-05 06:44:35 &#43;0800 CST">Thu, 2019 Sep 5</time>
@@ -80,6 +95,7 @@ if (!doNotTrack) {
     </aside>
 
     <p>Docker的筆記</p>
+<p>初學技術建議先熟悉 docker 指令，剛開始可能會覺得有點小複雜，反正指令都這樣，會使用 docker 之後，可以使用 docker 很快的搭建環境。</p>
 <h2 id="常用指令">常用指令</h2>
 <p>查看開啟的容器</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps
