@@ -84,6 +84,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#文章-tags">文章 Tags</a></li>
     <li><a href="#關於條件判斷式">關於條件判斷式</a></li>
+    <li><a href="#pages">Pages</a></li>
     <li><a href="#pagination">Pagination</a></li>
     <li><a href="#pluralize">Pluralize</a></li>
     <li><a href="#根據修改日期排序">根據修改日期排序</a>
@@ -91,6 +92,7 @@ if (!doNotTrack) {
         <li><a href="#參考">參考</a></li>
       </ul>
     </li>
+    <li><a href="#range">Range</a></li>
     <li><a href="#清單">清單</a>
       <ul>
         <li><a href="#參考-1">參考</a></li>
@@ -115,6 +117,8 @@ if (!doNotTrack) {
 <p>關於 Tags 頁的模板透過 <code>layouts/_default/terms.html</code> 設定</p>
 <h2 id="關於條件判斷式">關於條件判斷式</h2>
 <p>hugo 的 <code>if</code> 當中的 <code>and</code> <code>or</code>是採用波蘭表達式 (Polish Notation)，因此需要把運算子放在前面。</p>
+<h2 id="pages">Pages</h2>
+<p>如果 Section 會多出一個 Section，可能是因為使用到 <code>.Site.Pages</code> 而非 <code>.Site.RegularPages</code></p>
 <h2 id="pagination">Pagination</h2>
 <p>控制分頁的功能，可以根據模板設定顯示的數量之類的功能。</p>
 <p>參見<a href="https://gohugo.io/templates/pagination/">Pagination</a></p>
@@ -131,11 +135,15 @@ if (!doNotTrack) {
 
 {{ range $paginator.Pages }}
 {{ end }}
+</code></pre><p>其實我們可以直接在 where 後面加上 <code>.ByLastmod.Reverse </code>，因為他會是一個 <code>.Pages</code> 的型別，範例如下</p>
+<pre><code>{{ range first 5 (where .Site.RegularPages &quot;Section&quot; .Section).ByLastmod.Reverse }}
 </code></pre><h3 id="參考">參考</h3>
 <ul>
 <li><a href="https://discourse.gohugo.io/t/ordering-content-by-modified-date/3175">Ordering content by modified date? - support - HUGO</a></li>
 <li><a href="https://echorand.me/posts/hugo-reverse-sort-modified/">Sorting pages by last modified date in Hugo</a></li>
 </ul>
+<h2 id="range">Range</h2>
+<p>可以透過 <code>{{ range first 3 (where ...)}}</code> 之類的語法來取得前三個</p>
 <h2 id="清單">清單</h2>
 <ul>
 <li><code>Lists</code>: 目前只有發現<code>tags</code>採用這個頁面</li>

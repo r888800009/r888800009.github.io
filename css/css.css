@@ -83,6 +83,28 @@ a.footer:hover {
     font-family: "Courier New", Courier, 'Noto Sans TC', monospace;
 }
 
+
+p.section-data {
+    margin-bottom:0px;
+}
+
+ul.section-data {
+    color:#000;
+    margin:0px 0px 0px 0px;
+}
+
+li {
+
+  font-family: "Courier New", Courier, 'Noto Sans TC', monospace;
+  list-style-type: '- ';
+}
+
+.section-data {
+    color:#aaa;
+    font-size: 10pt;
+    font-family: "Courier New", Courier, 'Noto Sans TC', monospace;
+}
+
 h1, h2 {
 }
 
