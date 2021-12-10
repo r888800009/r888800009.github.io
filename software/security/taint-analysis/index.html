@@ -160,11 +160,12 @@ if (!doNotTrack) {
         var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
         headings.forEach(function(heading){
           if(heading.id){
-            var a = document.createElement('a');
-            a.innerHTML = '#';
-            a.className = 'subheader';
-            a.href = '#'+heading.id;
-            heading.appendChild(a);
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
           }
         });
       })();
