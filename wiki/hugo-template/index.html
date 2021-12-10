@@ -32,6 +32,8 @@ if (!doNotTrack) {
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/hybrid.min.css">
 
+<a id="website-top"></a>
+
 </head>
     <body><nav id="main-menu">
     
@@ -51,6 +53,7 @@ if (!doNotTrack) {
         Portfolio
     </a>
     
+    <a href="#website-top">Top</a>
 </nav>
 
 <script>
@@ -67,23 +70,29 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main">    <h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Hugo 模板的一些配置</a></h1>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Hugo 模板的一些配置</a></h1>
 <div id="content"><div class="date">
         <time datetime="2019-08-18 21:19:58 &#43;0800 CST">Sun, 2019 Aug 18</time>
     </div>
 
     <aside>
       <span onclick="tocToggle()" id="TOCStyle">
-        <b>目次</b>
+        <b>TOC</b>
         <span id="TOCState"></span>
       </span>
       <nav id="TableOfContents">
   <ul>
     <li><a href="#文章-tags">文章 Tags</a></li>
+    <li><a href="#關於條件判斷式">關於條件判斷式</a></li>
     <li><a href="#pagination">Pagination</a></li>
-    <li><a href="#清單">清單</a>
+    <li><a href="#根據修改日期排序">根據修改日期排序</a>
       <ul>
         <li><a href="#參考">參考</a></li>
+      </ul>
+    </li>
+    <li><a href="#清單">清單</a>
+      <ul>
+        <li><a href="#參考-1">參考</a></li>
       </ul>
     </li>
     <li><a href="#table-of-contents">Table of Contents</a></li>
@@ -103,9 +112,23 @@ if (!doNotTrack) {
 {{ end }}
 </code></pre></div><p>參見<a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a></p>
 <p>關於 Tags 頁的模板透過 <code>layouts/_default/terms.html</code> 設定</p>
+<h2 id="關於條件判斷式">關於條件判斷式</h2>
+<p>hugo 的 if 當中的 <code>and</code> <code>or</code>是採用波蘭表達式 (Polish Notation)</p>
 <h2 id="pagination">Pagination</h2>
 <p>控制分頁的功能，可以根據模板設定顯示的數量之類的功能。</p>
 <p>參見<a href="https://gohugo.io/templates/pagination/">Pagination</a></p>
+<h2 id="根據修改日期排序">根據修改日期排序</h2>
+<p>可以用以下寫法</p>
+<pre><code>{{ $sortedPosts := .Data.Pages.ByLastmod.Reverse  }}
+{{ $paginator := .Paginate $sortedPosts }}
+
+{{ range $paginator.Pages }}
+{{ end }}
+</code></pre><h3 id="參考">參考</h3>
+<ul>
+<li><a href="https://discourse.gohugo.io/t/ordering-content-by-modified-date/3175">Ordering content by modified date? - support - HUGO</a></li>
+<li><a href="https://echorand.me/posts/hugo-reverse-sort-modified/">Sorting pages by last modified date in Hugo</a></li>
+</ul>
 <h2 id="清單">清單</h2>
 <ul>
 <li><code>Lists</code>: 目前只有發現<code>tags</code>採用這個頁面</li>
@@ -114,7 +137,7 @@ if (!doNotTrack) {
 </ul>
 <p>以上<code>Section</code>與<code>Taxonomy</code>都有備用與原本的板型，預設套用<code>list.html</code>，
 詳情參考文檔。</p>
-<h3 id="參考">參考</h3>
+<h3 id="參考-1">參考</h3>
 <ul>
 <li><a href="https://www.jakewiesler.com/blog/hugo-taxonomies/">Add Tags to Your Hugo Blog Using Taxonomies</a></li>
 <li>[Content List Template](Add Tags to Your Hugo Blog Using Taxonomies)</li>
@@ -171,10 +194,8 @@ if (!doNotTrack) {
 
             </div>
         </div><footer>
-  <hr>
   <div>
     <a href="/tags" class="footer">Tags</a>
-    <a href="#website-name" class="footer">Top</a>
   </div>
   <div>
     r888800009©2018-2021.
