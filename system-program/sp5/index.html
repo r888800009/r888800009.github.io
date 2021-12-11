@@ -6,6 +6,8 @@
 
 <link rel="preload stylesheet" as="style" type="text/css" href="/css/css.css">
 
+
+  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -18,6 +20,7 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script>
+
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -136,7 +139,7 @@ if (!doNotTrack) {
 -&gt; machine code
 </code></pre></div><p>注: 直譯器不做程式碼最佳化，編譯器則會。</p>
 <h3 id="lexical-analysis">Lexical Analysis</h3>
-<p>lexical analyzer (Scanner)同一時間內只讀入<strong>一個char</strong>，
+<p>lexical analyzer (Scanner)同一時間內只讀入<strong>一個 char</strong>，
 產生的<strong>最小單位</strong>稱為<strong>token</strong>(type, value)。</p>
 <h3 id="syntax-analysis">Syntax Analysis</h3>
 <p>syntax analyzer (Parser)，文法合法的statements，
@@ -206,8 +209,18 @@ non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
 <h2 id="54-syntax-analysis">5.4 Syntax Analysis</h2>
 <p>建立剖析樹的方法</p>
 <ul>
-<li>Top Down Method: 由root向下(derive/produce)，例如<strong>Recursive Descent Parser</strong></li>
-<li>Bottom Up Method: 由note向上(reduce)，<strong>Operator Precedence Parser</strong></li>
+<li>
+<p>Top Down Method</p>
+<ul>
+<li>由root向下(derive/produce)，例如 <strong>Recursive Descent Parser</strong> ，相關的工具如 Antlr4 屬於這類型的 parser</li>
+</ul>
+</li>
+<li>
+<p>Bottom Up Method</p>
+<ul>
+<li>由note向上(reduce)，<strong>Operator Precedence Parser</strong>，如 yacc/bison 屬於這類工具</li>
+</ul>
+</li>
 </ul>
 <h3 id="operator-precedence-parser">Operator Precedence Parser</h3>
 <ol>
@@ -240,8 +253,8 @@ read
 &lt;term - &lt; id &gt;
 &lt;term - term &gt;
 term
-</code></pre></div><p>註解: 轉成non terminal symbol當stack empty</p>
-<p>reduce to時候就在生成樹</p>
+</code></pre></div><p>註解: 轉成 non terminal symbol 當 stack empty</p>
+<p>reduce to 時候就在生成樹</p>
 <h4 id="error">Error</h4>
 <ol>
 <li>兩token比較為blank entry無法比較大小</li>
@@ -250,7 +263,9 @@ term
 <h3 id="recursive-descent-parser">Recursive Descent Parser</h3>
 <p>為<strong>Top Down Method</strong>從最左邊Match向下找到Syntax，從最起始的<strong>Non Terminal Symbol</strong>向下對映。</p>
 <h4 id="left-recursive">Left Recursive</h4>
-<p>遇到left recursive情形，將文法作left factory來修改順序即可。</p>
+<p>遇到 left recursive 情形，將文法作 left factory 來修改順序即可。</p>
+<h5 id="left-factory-的方法">left factory 的方法</h5>
+<p>待補</p>
 <h2 id="55-code-genaration">5.5 Code Genaration</h2>
 <p>rule 可以對映code generation routines(或semantic routine)，
 如果沒辦法容易的翻出機器碼或機器碼太細小，則會先翻譯成intermediate form。</p>
@@ -271,9 +286,9 @@ term
 </ul>
 <p>static與非static變數，前者在compiler time處理，後者為dynamic allocation (stack)。</p>
 <h3 id="activation-record">Activation Record</h3>
-<p>函數被呼叫的時候，系統替函數產生stack內容，為Activation Record。</p>
-<p>Activation Record存在的目的，在於<strong>保存回傳地址</strong>，
-<strong>區域變數(Local definition)</strong>, **傳入參數(Pass Parameters)**等，
+<p>函數被呼叫的時候，系統替函數產生 stack 內容，為 Activation Record。</p>
+<p>Activation Record 存在的目的，在於<strong>保存回傳地址</strong>，
+<strong>區域變數(Local definition)</strong>, <strong>傳入參數(Pass Parameters)</strong> 等，
 在大多數的系統上都能看到。</p>
 <h4 id="activation-record-1">Activation Record</h4>
 <ul>
@@ -290,10 +305,10 @@ term
 <li>dynamic scope: 根據function被呼叫的次序，不同function call作用的var</li>
 </ul>
 <h3 id="prologue-and-epilogue">Prologue and Epilogue</h3>
-<p>增加code在call function中</p>
+<p>增加 code 在 call function中</p>
 <ul>
-<li>Prologue: 建立activation record</li>
-<li>Epilogue: 移除activation record</li>
+<li>Prologue: 建立 activation record</li>
+<li>Epilogue: 移除 activation record</li>
 </ul>
 <h3 id="structure-variable">Structure Variable</h3>
 <p>例如定義<strong>二維陣列</strong>，以<strong>行</strong>優先或以<strong>列</strong>優先，而記憶體中必須以一維保存陣列資料(mapping to memory)。</p>
@@ -308,7 +323,7 @@ term
 <li>Row Major: <code>[(s - a) * (d - c + 1) + (t - c)] * sizeof(Type) + base</code>，假設index起始都是0，代表<code>type B[b][d]</code>，為<code>[s * (d + 1) + t] * sizeof(Type) + base</code></li>
 <li>Column Major: <code>[(t - c) * (b - a + 1) + (s - a)] * sizeof(Type) + base</code>，假設起始為0，<code>[t * (b + 1) + s] * sizeof(Type) + base</code></li>
 </ul>
-<p>註: 以<code>a</code>, <code>c</code>做為index的起始，減去代表求長度，<code>(b + 1)</code>的部份是陣列計算大小的方法 c++為Row Major</p>
+<p>註: 以<code>a</code>, <code>c</code>做為index的起始，減去代表求長度，<code>(b + 1)</code>的部份是陣列計算大小的方法 c++ 為Row Major</p>
 <h4 id="為什麼需要區分這兩者">為什麼需要區分這兩者</h4>
 <ul>
 <li>可以利用 Locality 性質，提高 cache 與 page 命中的機率</li>
