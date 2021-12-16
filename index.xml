@@ -6,7 +6,25 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 09 Nov 2021 10:14:38 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Dec 2021 10:15:54 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VTable Hijacking</title>
+      <link>https://r888800009.github.io/software/security/binary/vtable-hijacking/</link>
+      <pubDate>Thu, 16 Dec 2021 10:15:54 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/binary/vtable-hijacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphviz</title>
+      <link>https://r888800009.github.io/wiki/graphviz/</link>
+      <pubDate>Thu, 16 Dec 2021 06:05:32 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/graphviz/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Kernel Exploit</title>
       <link>https://r888800009.github.io/software/security/binary/kernel-exploit/</link>

@@ -96,12 +96,19 @@ if (!doNotTrack) {
 </nav>
     </aside>
 
-    <p>汙點分析</p>
+    <p>汙點分析（Taint Analysis），簡單來講裡面有兩個重點，source 與 sink。一開始會把 source 標記為 tained，並且模擬（emulation）程式的運行，每個指令會進行污點傳播，對資料流傳播路徑進行標記 ，並且在 emulation 同時檢查  sink 是否被標記為 tainted。</p>
+<p>而污點分析通常用於 web 應用程式的漏洞檢測 SQLi 或 XSS 等漏洞。</p>
 <h2 id="術語">術語</h2>
 <ul>
 <li>Dynamic Taint Analysis</li>
 <li>Taint Tracking</li>
-<li>Taint sources</li>
+<li>Taint Sources</li>
+<li>Taint Sink</li>
+<li>Hooking
+<ul>
+<li>由於外部函數沒有跟蹤 tained 或者 emulation 的開銷過大，會需要採用 hook 原始函數。</li>
+</ul>
+</li>
 </ul>
 <h2 id="工具">工具</h2>
 <ul>
@@ -117,6 +124,7 @@ if (!doNotTrack) {
 </code></pre></div><p>如果要讀取 elf 可能需要安裝 lief</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacaur -S lief 
 </code></pre></div><h2 id="triton">Triton</h2>
+<p>適用於二進制執行檔進行污點分析。</p>
 <p>使用重點</p>
 <ul>
 <li>hooking PLT</li>

@@ -110,16 +110,37 @@ if (!doNotTrack) {
 <p>建議先找出各種版本的 glibc source 的檢視器</p>
 <h2 id="前置概念">前置概念</h2>
 <ul>
-<li><strong>bins</strong> 用來組織記憶體 <strong>free chunk</strong>，chunk 代表<strong>可分配 (Free Chunk)</strong> 或 <strong>使用中 (In-use Chunk )</strong> 的記憶體區塊<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，當中 bin 又是透過 linked list 構成，並且根據大小可以分成以下四類<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+<li><strong>bins</strong> 用來組織記憶體 <strong>free chunk</strong>，chunk 代表<strong>可分配 (Free Chunk)</strong> 或 <strong>使用中 (In-use Chunk )</strong> 的記憶體區塊<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，當中 bin 又是透過 linked list 構成，並且根據大小可以分成以下幾類<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
 <ul>
-<li>fast</li>
-<li>small</li>
-<li>large</li>
-<li>unsorted:
+<li>tcache
 <ul>
-<li>1-bin</li>
+<li>in heap</li>
+</ul>
+</li>
+<li>fastbins
+<ul>
+<li>In <code>mfastbinptr fastbinsY[NFASTBINS]</code> stored in <code>malloc_state</code></li>
+</ul>
+</li>
+<li>in <code>mchunkptr bins[]</code> stored in  <code>malloc_state</code>
+<ul>
+<li>smallbins
+<ul>
+<li><code>bins[1:63]</code></li>
+</ul>
+</li>
+<li>largebins
+<ul>
+<li><code>bins[63:126]</code></li>
+</ul>
+</li>
+<li>unsortedbins:
+<ul>
+<li><code>bins[0:0]</code> (1-bin)</li>
 <li><a href="https://code.woboq.org/userspace/glibc/malloc/malloc.c.html#_M/unsorted_chunks">unsorted bin</a></li>
 <li>malloc 會從 unsorted bin 進行整理 <a href="https://elixir.bootlin.com/glibc/glibc-2.31/source/malloc/malloc.c#L3728">glibc-2.31 malloc.c#L3728</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -200,8 +221,10 @@ if (!doNotTrack) {
 <h2 id="tools-工具">Tools 工具</h2>
 <ul>
 <li><a href="https://github.com/wapiflapi/villoc">Villoc</a> 將 heap 變化可視化轉成 html 檔案檢視</li>
+<li>自己寫的工具，串接 gef ，尚未公開發佈。</li>
 </ul>
 <h2 id="保護機制">保護機制</h2>
+<p>新版(幾版?)的 ptmalloc 要實踐 unlink attack，因為在 Consolidation 會去檢查 fd 與 bk 是否正常，因此繞過這個機制蠻麻煩的。</p>
 <h2 id="漏洞利用">漏洞利用</h2>
 <ul>
 <li>Use After Free UAF</li>
@@ -222,6 +245,11 @@ if (!doNotTrack) {
 <li>pwnable.tw
 <ul>
 <li>hacknote</li>
+</ul>
+</li>
+<li><a href="https://github.com/r888800009/practice/blob/master/pwn/allocator/uaf.cpp">practice/uaf.cpp</a>
+<ul>
+<li>這個就是簡單做 vtable hijacking，獲取相同大小同一塊之後，去偽造 vtable 達成攻擊。</li>
 </ul>
 </li>
 </ul>

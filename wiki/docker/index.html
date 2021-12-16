@@ -85,6 +85,13 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#一些概念">一些概念</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#docker-的限制">Docker 的限制</a></li>
+    <li><a href="#配置">配置</a></li>
     <li><a href="#常用指令">常用指令</a></li>
     <li><a href="#作弊表">作弊表</a>
       <ul>
@@ -95,13 +102,25 @@ if (!doNotTrack) {
     <li><a href="#掛載">掛載</a></li>
     <li><a href="#檔案">檔案</a></li>
     <li><a href="#dockerfile">Dockerfile</a></li>
-    <li><a href="#docker-停止與刪除所有容器">docker 停止與刪除所有容器</a></li>
+    <li><a href="#docker-停止與刪除所有容器">Docker 停止與刪除所有容器</a></li>
+    <li><a href="#docker-compose">Docker Compose</a></li>
+    <li><a href="#docker-remote">Docker Remote</a></li>
   </ul>
 </nav>
     </aside>
 
     <p>Docker的筆記</p>
 <p>初學技術建議先熟悉 docker 指令，剛開始可能會覺得有點小複雜，反正指令都這樣，會使用 docker 之後，可以使用 docker 很快的搭建環境。</p>
+<h2 id="一些概念">一些概念</h2>
+<h4 id="multi-stage-build">multi-stage build</h4>
+<p>這個可以讓我們在同一個 docker file 分成好幾個 stage ，根據需求去使用，詳情參考
+<a href="https://docs.docker.com/develop/develop-images/multistage-build/#use-a-previous-stage-as-a-new-stage">Use multi-stage builds | Docker Documentation</a></p>
+<h2 id="docker-的限制">Docker 的限制</h2>
+<ul>
+<li>docker hub limit 有哪些?</li>
+</ul>
+<h2 id="配置">配置</h2>
+<p>設定使用者群組，以便之後可以使用 <code>docker</code> 指令而不需要使用 <code>sudo</code>。</p>
 <h2 id="常用指令">常用指令</h2>
 <p>查看開啟的容器</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps
@@ -126,7 +145,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name http1 -it httpd bash 
 </code></pre></div><p>執行後啟動bash</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it 容器id /bin/bash
-</code></pre></div><h2 id="掛載">掛載</h2>
+</code></pre></div><p>ARG 參數
+可以使用 <code>--build-arg</code> 帶入參數</p>
+<h2 id="掛載">掛載</h2>
 <p>volumes掛載</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -v 主機地址:容器地址 image-name
 </code></pre></div><h2 id="檔案">檔案</h2>
@@ -142,10 +163,18 @@ sudo docker rm temp
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 </code></pre><p>build image</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker build -t my-httpd . 
-</code></pre></div><h2 id="docker-停止與刪除所有容器">docker 停止與刪除所有容器</h2>
+</code></pre></div><h2 id="docker-停止與刪除所有容器">Docker 停止與刪除所有容器</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker stop <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
 docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
-</code></pre></div>
+</code></pre></div><h2 id="docker-compose">Docker Compose</h2>
+<h2 id="docker-remote">Docker Remote</h2>
+<p>docker 設定遠程</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker context create &lt;context_name&gt; --docker <span style="color:#e6db74">&#34;host=ssh://user@host:port&#34;</span>
+</code></pre></div><p>切換 context</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker context use &lt;context_name&gt;
+</code></pre></div><p>列出 context 列表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker context list
+</code></pre></div><p>參見文檔 <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Context</a></p>
 
     
       <hr>

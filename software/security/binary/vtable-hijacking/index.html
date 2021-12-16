@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>符號執行 | r809&#39;s Notes</title>
+<title>VTable Hijacking | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,9 +73,9 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">符號執行</a></h1>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">VTable Hijacking</a></h1>
 <div id="content"><div class="date">
-        <time datetime="2020-09-19 04:26:02 &#43;0800 CST">Sat, 2020 Sep 19</time>
+        <time datetime="2021-12-16 10:15:54 &#43;0800 CST">Thu, 2021 Dec 16</time>
     </div>
 
     <aside>
@@ -85,67 +85,36 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#工具">工具</a></li>
-        <li><a href="#smt-solver">SMT solver</a></li>
-      </ul>
-    </li>
-    <li><a href="#aeg">AEG</a>
-      <ul>
-        <li><a href="#stack-based-buffer-overflow">stack-based buffer overflow</a></li>
-      </ul>
-    </li>
-    <li><a href="#參見">參見</a></li>
+    <li><a href="#為什麼需要-vtable">為什麼需要 VTable?</a></li>
+    <li><a href="#vtable-怎麼運作">VTable 怎麼運作?</a></li>
+    <li><a href="#vtable-hijacking">VTable Hijacking</a></li>
   </ul>
 </nav>
     </aside>
 
-    <ul>
-<li>
-<p>符號執行 (Symbolic Execution)</p>
-</li>
-<li>
-<p>Concolic Execution 具體-符號 執行，也稱為 Dynamic Symbolic Execution (DSE)</p>
-</li>
-<li>
-<p>Execution Generated Test (EGT)</p>
-</li>
-</ul>
-<h3 id="工具">工具</h3>
-<ul>
-<li>S2E</li>
-</ul>
-<h3 id="smt-solver">SMT solver</h3>
-<p>Satisfiability Modulo Theories solver</p>
-<ul>
-<li><a href="https://github.com/Z3Prover/z3">z3</a></li>
-<li><a href="https://docs.angr.io/core-concepts/solver">Angr Solver Engine</a></li>
-</ul>
-<h2 id="aeg">AEG</h2>
-<h3 id="stack-based-buffer-overflow">stack-based buffer overflow</h3>
-<p>可以透過 angr 找到 unconstrained state，之後去檢查 program counter 是否為 symbolic</p>
-<p>如果為 symbolic 我們就對該 state 設置 pc 的條件約束，之後進行約束求解得出 PoC input</p>
-<p>範例</p>
-<ul>
-<li><a href="https://github.com/r888800009/practice/tree/master/pwn/AEG">practice/pwn/AEG</a></li>
-</ul>
-<h2 id="參見">參見</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=yRVZPvHYHzw">MIT OpenCourseWare Symbolic Execution</a></li>
-<li><a href="https://www.k0rz3n.com/2019/02/28/%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3%E7%AC%A6%E5%8F%B7%E6%89%A7%E8%A1%8C%E6%8A%80%E6%9C%AF/">简单理解符号执行技术 K0rz3n&rsquo;s Blog</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/26927127">符号执行入门</a></li>
-<li><a href="/software/security/fuzzing/">Fuzzing</a></li>
-</ul>
+    <h2 id="為什麼需要-vtable">為什麼需要 VTable?</h2>
+<p>待補</p>
+<p>使用到 virtual function 需要透過 vtable 管理。</p>
+<h2 id="vtable-怎麼運作">VTable 怎麼運作?</h2>
+<p>Virtual function 透過 vtable 進行管理</p>
+<pre><code> object           vtable
+┌───────┐        ┌────────┐
+│vtable ├────────┤func ptr│
+│obj var│        │func ptr│
+│obj var│        │func ptr│
+│       │        │func ptr│
+│       │        │        │
+└───────┘        └────────┘
+</code></pre><p>call obj 的 virtual function 會透過 vtable 下去找查特定的 func ptr 執行。</p>
+<h2 id="vtable-hijacking">VTable Hijacking</h2>
+<p>如果攻擊者有辦法複寫 obj 當中的 vtable pointer 到 fake vtable，就可以控制 function pointer</p>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/symbolic-execution" class="tags">Symbolic Execution</a>
+        <a href="https://r888800009.github.io/tags/pwn" class="tags">PWN</a>
       
-        <a href="https://r888800009.github.io/tags/aeg" class="tags">AEG</a>
-      
-        <a href="https://r888800009.github.io/tags/smt" class="tags">SMT</a>
+        <a href="https://r888800009.github.io/tags/c&#43;&#43;" class="tags">C&#43;&#43;</a>
       
     
 

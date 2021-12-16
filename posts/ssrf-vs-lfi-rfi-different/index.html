@@ -85,6 +85,12 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#一些相關漏洞">一些相關漏洞</a>
+      <ul>
+        <li><a href="#path-traversal">Path Traversal</a></li>
+        <li><a href="#任意讀檔">任意讀檔</a></li>
+      </ul>
+    </li>
     <li><a href="#本地檔案包含">本地檔案包含</a></li>
     <li><a href="#遠程檔案包含">遠程檔案包含</a></li>
     <li><a href="#伺服器端請求偽造">伺服器端請求偽造</a></li>
@@ -95,6 +101,11 @@ if (!doNotTrack) {
     </aside>
 
     <p>LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。</p>
+<h2 id="一些相關漏洞">一些相關漏洞</h2>
+<h3 id="path-traversal">Path Traversal</h3>
+<p>也可以叫 Directory traversal，中譯路徑遊走、路徑遍歷，或者講目錄遍歷等說法。細節可以參考 <a href="https://cwe.mitre.org/data/definitions/23.html">CWE-23: Relative Path Traversal</a> 已經夠詳細。</p>
+<h3 id="任意讀檔">任意讀檔</h3>
+<p>在 php 中可以使用 <code>file_get_contents()</code> 的函數讀取檔案內容，但是這並不會讓讀入的文件被 php 解釋執行。</p>
 <h2 id="本地檔案包含">本地檔案包含</h2>
 <p>Local File Inclusion (LFI)，
 若客戶端可控制網頁包含本地文件，可能有LFI漏洞。</p>
@@ -141,6 +152,7 @@ php的<code>include</code>支援偽協議，可以執行SSRF攻擊。</p>
 <ul>
 <li><a href="https://www.acunetix.com/blog/articles/local-file-inclusion-lfi/">What is Local File Inclusion (LFI)?</a></li>
 <li><a href="http://wiki.secbug.net/web_lfi.html#%E6%BC%8F%E6%B4%9E%E7%AE%80%E4%BB%8B">本地文件包含（Local File Include）</a></li>
+<li><a href="https://cwe.mitre.org/data/definitions/98.html">CWE-98: Improper Control of Filename for Include/Require Statement in PHP Program (&lsquo;PHP Remote File Inclusion&rsquo;) </a></li>
 </ul>
 </li>
 <li>其他
