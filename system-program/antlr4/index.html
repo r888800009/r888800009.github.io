@@ -85,10 +85,13 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#概念">概念</a></li>
     <li><a href="#產生適用於python的檔案">產生適用於python的檔案</a>
       <ul>
         <li><a href="#參考資料">參考資料</a></li>
         <li><a href="#header">header</a></li>
+        <li><a href="#repeat">repeat</a></li>
+        <li><a href="#中括號">中括號</a></li>
       </ul>
     </li>
     <li><a href="#注意事項">注意事項</a></li>
@@ -98,12 +101,20 @@ if (!doNotTrack) {
 
     <p>antlr4相關筆記</p>
 <p>安裝，其中<code>python-antlr4</code>可以產生適用於python的檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S antlr4  python-antlr4
-</code></pre></div><h2 id="產生適用於python的檔案">產生適用於python的檔案</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S antlr4 python-antlr4
+</code></pre></div><h2 id="概念">概念</h2>
+<ul>
+<li>action
+<ul>
+<li>在語法裡面嵌入程式碼動作等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="產生適用於python的檔案">產生適用於python的檔案</h2>
+<p>範例檔案可以查看 <a href="https://github.com/antlr/grammars-v4">https://github.com/antlr/grammars-v4</a> 並且根據裡面的語法寫下面一個 grammar.g4</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">antlr4 -Dlanguage<span style="color:#f92672">=</span>Python3 grammar.g4
-</code></pre></div><p>產生之後可以找到該檔案， <code>Listener</code> 檔案在進去與離開的時候，
-可以觸發各種行為，
-並且透過 <code>getChild(index)</code> 來取得該 Symbol，裡面 Symbol</p>
+</code></pre></div><p>如果要運行 parser 的話可以從<a href="https://github.com/antlr/antlr4/blob/master/doc/python-target.md">文檔</a>找到範例程式。</p>
+<p>產生之後可以找到該檔案， <code>Listener</code> 檔案在進去與離開的時候，可以觸發各種行為，並且透過 <code>getChild(index)</code> 來取得該 Symbol，裡面 Symbol</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ctx<span style="color:#f92672">.</span>getChild(<span style="color:#ae81ff">1</span>)
 </code></pre></div><p>該方法透過 walker 進行處理</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">printer <span style="color:#f92672">=</span> ebnf_likeListener()
@@ -118,8 +129,15 @@ walker<span style="color:#f92672">.</span>walk(printer, tree)
 </code></pre></div><p>而這個方式僅需要呼叫 Parser 的
 root grammar</p>
 <ul>
-<li>lexer rule: lexer 的規則以<strong>大寫</strong>作為開頭</li>
-<li>parse tree</li>
+<li>
+<p>lexer rule:</p>
+<ul>
+<li>lexer 的規則以<strong>大寫</strong>作為開頭</li>
+</ul>
+</li>
+<li>
+<p>parse tree</p>
+</li>
 </ul>
 <h3 id="參考資料">參考資料</h3>
 <ul>
@@ -131,10 +149,27 @@ root grammar</p>
 <a href="https://stackoverflow.com/questions/45138474/how-can-i-import-other-java-lib-with-antlr4">how can I import other java lib with ANTLR4?</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@lexer</span>::header{<span style="color:#f92672">...</span>} 
 <span style="color:#a6e22e">@parser</span>::header{<span style="color:#f92672">...</span>}
-</code></pre></div><h2 id="注意事項">注意事項</h2>
+</code></pre></div><h3 id="repeat">repeat</h3>
+<p>重複的寫法如下</p>
+<pre><code>example
+  : (expr)*
+  ;
+  
+example2
+  : (expr)+
+  ;
+</code></pre><h3 id="中括號">中括號</h3>
+<p>只需要逃逸後面 <code>]</code> 即可</p>
+<pre><code>Bracket
+  : [[\]]+ 
+  ;
+</code></pre><h2 id="注意事項">注意事項</h2>
 <p>為了避免 <code>ARG_ACTION</code> 不工作，確保把
-Lexcal rule 都放在後面</p>
+Lexical rule 都放在後面</p>
 <p><a href="https://stackoverflow.com/questions/16396872/troubles-with-returns-declaration-on-the-first-parser-rule-in-an-antlr4-grammar">Troubles with returns declaration on the first parser rule in an ANTLR4 grammar</a></p>
+<p><strong>確保 lexical rule 都是大寫開頭</strong></p>
+<p>如果 lexical rule 有重疊的可能性，可能會導致無法正常找到 token</p>
+<p>另外擺放的順序會影響到優先級，可以根據需求決定位置</p>
 
     
       <hr>
