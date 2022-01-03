@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>沙箱 | r809&#39;s Notes</title>
+<title>沙箱 (Sandbox) | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,7 +73,7 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">沙箱</a></h1>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">沙箱 (Sandbox)</a></h1>
 <div id="content"><div class="date">
         <time datetime="2020-02-09 23:45:08 &#43;0800 CST">Sun, 2020 Feb 9</time>
     </div>
@@ -85,32 +85,50 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#性質">性質</a></li>
-    <li><a href="#線上沙箱">線上沙箱</a></li>
-    <li><a href="#動態沙箱">動態沙箱</a></li>
+    <li><a href="#sandbox">Sandbox</a>
+      <ul>
+        <li><a href="#對軟體進行隔離">對軟體進行隔離</a></li>
+      </ul>
+    </li>
+    <li><a href="#將-sandbox-用於惡意程式分析的">將 Sandbox 用於惡意程式分析的</a>
+      <ul>
+        <li><a href="#線上沙箱">線上沙箱</a></li>
+        <li><a href="#動態沙箱">動態沙箱</a></li>
+      </ul>
+    </li>
     <li><a href="#參考資料">參考資料</a></li>
   </ul>
 </nav>
     </aside>
 
-    <p>透過沙箱進行惡意軟體分析</p>
-<h2 id="性質">性質</h2>
+    <h2 id="sandbox">Sandbox</h2>
 <ul>
-<li>沙箱可以由硬體、軟體、VM或容器組成</li>
+<li>沙盒 (Sandbox) 是一種隔離機制 (Isolation)，可以透過各種 Security Policy 、虛擬化技術、軟硬體、容器等進行隔離</li>
+<li>在 Linux 中對於 syscall 層級的 Policy，可以透過 seccomp bpf 等機制進行實踐。</li>
+<li>達成 Privilege separation 的效果</li>
+</ul>
+<h3 id="對軟體進行隔離">對軟體進行隔離</h3>
+<ul>
+<li>Chrome 在 Linux 中的 Renderer Process 透過兩層 sandbox ，當中攻擊面緩解層 (attack surface reduction) 對 syscall exec 等進行限制。</li>
+</ul>
+<h2 id="將-sandbox-用於惡意程式分析的">將 Sandbox 用於惡意程式分析的</h2>
+<p>在沙箱隔離的環境下進行惡意軟體分析，通常惡意程式分析還需要</p>
+<ul>
 <li>能夠監控惡意程式碼的行為</li>
 <li>能分析惡意程式的功能</li>
 </ul>
-<h2 id="線上沙箱">線上沙箱</h2>
+<h3 id="線上沙箱">線上沙箱</h3>
 <ul>
 <li><a href="https://any.run/">any.run</a></li>
 </ul>
-<h2 id="動態沙箱">動態沙箱</h2>
+<h3 id="動態沙箱">動態沙箱</h3>
 <ul>
 <li><a href="https://www.cuckoosandbox.org/">Cuckoo</a> 開源的自動惡意程式分析系統</li>
 </ul>
 <h2 id="參考資料">參考資料</h2>
 <ul>
 <li><a href="https://www.syscom.com.tw/ePaper_New_Content.aspx?id=446&amp;EPID=208&amp;TableName=sgEPArticle">惡意程式分析沙箱 – cuckoo Sandbox</a></li>
+<li><a href="https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/design/sandbox.md">Sandbox</a></li>
 </ul>
 
     
@@ -119,6 +137,12 @@ if (!doNotTrack) {
         <a href="https://r888800009.github.io/tags/information-security" class="tags">Information Security</a>
       
         <a href="https://r888800009.github.io/tags/sandbox" class="tags">Sandbox</a>
+      
+        <a href="https://r888800009.github.io/tags/isolation" class="tags">Isolation</a>
+      
+        <a href="https://r888800009.github.io/tags/seccomp" class="tags">seccomp</a>
+      
+        <a href="https://r888800009.github.io/tags/privilege-separation" class="tags">Privilege Separation</a>
       
     
 
@@ -163,7 +187,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2021.
+    r888800009©2018-2022.
     All Rights Reserved.
   </div>
 </footer>

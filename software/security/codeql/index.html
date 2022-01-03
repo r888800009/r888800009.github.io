@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+
+<link rel="preload stylesheet" as="style" type="text/css" href="/css/css.css">
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+
+<title>CodeQL | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/hybrid.min.css">
+
+<a id="website-top"></a>
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        GitHub
+        
+    </a>
+    
+    <a href="/about/" title="About">
+        
+        About
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+    <a href="#website-top">Top</a>
+</nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 10 || prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">CodeQL</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2021-12-26 08:31:06 &#43;0800 CST">Sun, 2021 Dec 26</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#如何透過-code-ql-分析漏洞">如何透過 Code QL 分析漏洞</a>
+      <ul>
+        <li><a href="#data-flow-analyzing">Data flow analyzing</a></li>
+        <li><a href="#分析-heaps-bin-的類型">分析 heaps bin 的類型</a></li>
+      </ul>
+    </li>
+    <li><a href="#問題">問題</a>
+      <ul>
+        <li><a href="#透過類似-sql-的語法下去查詢-code-之間的關聯性">透過類似 SQL 的語法下去查詢 code 之間的關聯性</a></li>
+        <li><a href="#fortify-與-codeql-的差異">Fortify 與 codeql 的差異?</a></li>
+      </ul>
+    </li>
+    <li><a href="#參見">參見</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <p>可以做白箱分析</p>
+<h2 id="使用">使用</h2>
+<p>使用 docker container</p>
+<p><a href="https://hub.docker.com/_/microsoft-cstsectools-codeql-container">CodeQL Container by Microsoft | Docker Hub</a></p>
+<h2 id="如何透過-code-ql-分析漏洞">如何透過 Code QL 分析漏洞</h2>
+<h3 id="data-flow-analyzing">Data flow analyzing</h3>
+<p>基本需要確定 taint analysis 所需要的 sink source 點，可以進行資料流分析</p>
+<h3 id="分析-heaps-bin-的類型">分析 heaps bin 的類型</h3>
+<h2 id="問題">問題</h2>
+<h3 id="透過類似-sql-的語法下去查詢-code-之間的關聯性">透過類似 SQL 的語法下去查詢 code 之間的關聯性</h3>
+<h3 id="fortify-與-codeql-的差異">Fortify 與 codeql 的差異?</h3>
+<h2 id="參見">參見</h2>
+<ul>
+<li><a href="https://github.com/safe6Sec/CodeqlNote">safe6Sec/CodeqlNote: Codeql学习笔记</a></li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/codeql" class="tags">CodeQL</a>
+      
+        <a href="https://r888800009.github.io/tags/taint-analysis" class="tags">Taint Analysis</a>
+      
+        <a href="https://r888800009.github.io/tags/whitebox" class="tags">Whitebox</a>
+      
+        <a href="https://r888800009.github.io/tags/static-analysis" class="tags">Static Analysis</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+  </div>
+  <div>
+    r888800009©2018-2022.
+    All Rights Reserved.
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/haskell.min.js"></script>
+<script>
+  hljs.highlightAll()
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+</body>
+</html>

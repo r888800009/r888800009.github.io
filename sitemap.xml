@@ -3,38 +3,68 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://r888800009.github.io/tags/operating-system/</loc>
-    <lastmod>2021-12-25T12:20:18+08:00</lastmod>
+    <loc>https://r888800009.github.io/tags/codeql/</loc>
+    <lastmod>2021-12-31T16:40:12+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://r888800009.github.io/operating-system/</loc>
-    <lastmod>2021-12-25T12:20:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/process/</loc>
-    <lastmod>2021-12-25T12:20:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/operating-system/process-address-space/</loc>
-    <lastmod>2021-12-25T12:20:18+08:00</lastmod>
+    <loc>https://r888800009.github.io/software/security/codeql/</loc>
+    <lastmod>2021-12-31T16:40:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2021-12-25T12:20:18+08:00</lastmod>
+    <lastmod>2022-01-02T21:38:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://r888800009.github.io/tags/system-program/</loc>
-    <lastmod>2021-12-25T12:20:18+08:00</lastmod>
+    <loc>https://r888800009.github.io/software/</loc>
+    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/static-analysis/</loc>
+    <lastmod>2021-12-31T16:40:12+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2021-12-25T12:20:18+08:00</lastmod>
+    <lastmod>2022-01-02T21:38:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/taint-analysis/</loc>
+    <lastmod>2021-12-31T16:40:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/whitebox/</loc>
+    <lastmod>2021-12-31T16:40:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/operating-system/</loc>
+    <lastmod>2022-01-02T21:38:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/operating-system/</loc>
+    <lastmod>2022-01-02T21:38:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/process/</loc>
+    <lastmod>2021-12-26T08:33:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/operating-system/process-address-space/</loc>
+    <lastmod>2021-12-26T08:33:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/system-program/</loc>
+    <lastmod>2021-12-26T08:33:33+08:00</lastmod>
   </url>
   
   <url>
@@ -44,12 +74,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/pwn/</loc>
-    <lastmod>2021-12-20T10:25:34+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/software/</loc>
-    <lastmod>2021-12-20T10:25:34+08:00</lastmod>
+    <lastmod>2022-01-02T20:04:14+08:00</lastmod>
   </url>
   
   <url>
@@ -69,7 +94,7 @@
   
   <url>
     <loc>https://r888800009.github.io/wiki/</loc>
-    <lastmod>2021-12-18T09:04:38+08:00</lastmod>
+    <lastmod>2021-12-25T12:45:52+08:00</lastmod>
   </url>
   
   <url>
@@ -114,12 +139,7 @@
   
   <url>
     <loc>https://r888800009.github.io/about/</loc>
-    <lastmod>2021-10-28T01:23:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://r888800009.github.io/tags/taint-analysis/</loc>
-    <lastmod>2021-12-16T01:54:28+08:00</lastmod>
+    <lastmod>2021-12-26T17:44:53+08:00</lastmod>
   </url>
   
   <url>
@@ -229,7 +249,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/vulnerability/</loc>
-    <lastmod>2021-12-16T01:42:41+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
@@ -279,7 +299,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/terms/</loc>
-    <lastmod>2021-03-21T16:33:34+08:00</lastmod>
+    <lastmod>2021-12-31T11:09:17+08:00</lastmod>
   </url>
   
   <url>
@@ -304,7 +324,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/ctf/</loc>
-    <lastmod>2021-12-16T01:42:41+08:00</lastmod>
+    <lastmod>2022-01-02T20:04:14+08:00</lastmod>
   </url>
   
   <url>
@@ -349,7 +369,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/web/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
@@ -409,22 +429,22 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/obfuscate/</loc>
-    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
+    <lastmod>2021-12-25T14:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/obfuscator/</loc>
-    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
+    <lastmod>2021-12-25T14:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/software/</loc>
-    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
+    <lastmod>2021-12-25T14:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/obfuscation/</loc>
-    <lastmod>2020-08-24T16:11:41+08:00</lastmod>
+    <lastmod>2021-12-25T14:48:48+08:00</lastmod>
   </url>
   
   <url>
@@ -519,7 +539,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/information-security/</loc>
-    <lastmod>2021-11-01T20:32:36+08:00</lastmod>
+    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
   </url>
   
   <url>
@@ -558,8 +578,13 @@
   </url>
   
   <url>
+    <loc>https://r888800009.github.io/tags/glossary/</loc>
+    <lastmod>2021-12-31T11:09:17+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://r888800009.github.io/terms-and-symbols/</loc>
-    <lastmod>2020-08-26T11:47:47+08:00</lastmod>
+    <lastmod>2021-12-31T11:09:17+08:00</lastmod>
   </url>
   
   <url>
@@ -619,7 +644,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/exploiting/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
@@ -674,17 +699,32 @@
   
   <url>
     <loc>https://r888800009.github.io/operating-system/os1/</loc>
-    <lastmod>2021-12-25T07:07:35+08:00</lastmod>
+    <lastmod>2022-01-02T21:38:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/isolation/</loc>
+    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/privilege-separation/</loc>
+    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/sandbox/</loc>
-    <lastmod>2020-05-22T03:59:43+08:00</lastmod>
+    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/seccomp/</loc>
+    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/sandbox/</loc>
-    <lastmod>2020-05-22T03:59:43+08:00</lastmod>
+    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
   </url>
   
   <url>
@@ -729,17 +769,17 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/blog/</loc>
-    <lastmod>2020-04-29T20:57:16+08:00</lastmod>
+    <lastmod>2021-12-25T12:45:52+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/rss/</loc>
-    <lastmod>2020-04-29T20:57:16+08:00</lastmod>
+    <lastmod>2021-12-25T12:45:52+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/wiki/rss/</loc>
-    <lastmod>2020-04-29T20:57:16+08:00</lastmod>
+    <lastmod>2021-12-25T12:45:52+08:00</lastmod>
   </url>
   
   <url>
@@ -969,7 +1009,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/sql/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
@@ -1029,7 +1069,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2021-12-11T21:23:29+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
@@ -1164,37 +1204,37 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/csrf/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/exploit/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/javascript/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/lfi/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/php/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/web/vulnerability/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/xss/</loc>
-    <lastmod>2021-11-19T21:47:54+08:00</lastmod>
+    <lastmod>2022-01-02T15:17:06+08:00</lastmod>
   </url>
   
   <url>
@@ -1229,7 +1269,7 @@
   
   <url>
     <loc>https://r888800009.github.io/software/security/metasploit/</loc>
-    <lastmod>2021-11-01T02:41:42+08:00</lastmod>
+    <lastmod>2021-12-31T12:11:14+08:00</lastmod>
   </url>
   
   <url>
@@ -1254,7 +1294,7 @@
   
   <url>
     <loc>https://r888800009.github.io/software/security/binary/pwn-notes/</loc>
-    <lastmod>2021-11-06T17:05:38+08:00</lastmod>
+    <lastmod>2022-01-02T20:04:14+08:00</lastmod>
   </url>
   
   <url>
