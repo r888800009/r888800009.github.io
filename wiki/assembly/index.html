@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>HTTP | r809&#39;s Notes</title>
+<title>Assembly | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,9 +73,9 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">HTTP</a></h1>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Assembly</a></h1>
 <div id="content"><div class="date">
-        <time datetime="2019-10-18 21:55:50 &#43;0800 CST">Fri, 2019 Oct 18</time>
+        <time datetime="2022-01-06 20:25:43 &#43;0800 CST">Thu, 2022 Jan 6</time>
     </div>
 
     <aside>
@@ -85,56 +85,101 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#連線上的限制">連線上的限制</a></li>
-    <li><a href="#postman">postman</a></li>
-    <li><a href="#idempotent">Idempotent</a>
+    <li><a href="#指令週期">指令週期</a></li>
+    <li><a href="#arm">Arm</a></li>
+    <li><a href="#x86x64">x86/x64</a>
       <ul>
-        <li><a href="#意義">意義</a></li>
+        <li><a href="#prologue">prologue</a></li>
+        <li><a href="#calling-convention">calling convention</a></li>
+        <li><a href="#暫存器">暫存器</a></li>
+        <li><a href="#指令">指令</a></li>
       </ul>
     </li>
-    <li><a href="#參考">參考</a></li>
+    <li><a href="#參見">參見</a>
+      <ul>
+        <li><a href="#各種架構的-opcode">各種架構的 <strong>opcode</strong></a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="連線上的限制">連線上的限制</h2>
-<p>客戶端若使用持續性連線，應該要透過伺服器限制同時連線，
-single-user的客戶端不應該同時超過2個連線到任何server或proxy。
-<a href="https://tools.ietf.org/html/rfc2616#section-8.1.4">RFC 2616</a></p>
-<h2 id="postman">postman</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacaur -S postman
-</code></pre></div><h2 id="idempotent">Idempotent</h2>
-<p>有哪些 method</p>
-<ul>
-<li>GET, HEAD, PUT, DELETE</li>
-</ul>
-<p>確保每次回傳結果都是相等的，不影響下次請求 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<h3 id="意義">意義</h3>
-<p>如果連線發生問題，冪等方法可以重新請求，並且預期是相同的</p>
-<h2 id="參考">參考</h2>
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Idempotent">Idempotent - MDN Web Docs Glossary: Definitions of Web-related terms | MDN</a></li>
-<li>RFC
-<ul>
-<li><a href="https://tools.ietf.org/html/rfc2616">RFC 2616</a></li>
-<li><a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a></li>
-</ul>
-</li>
-<li><a href="https://notfalse.net/http-series">HTTP教學</a></li>
-</ul>
-<section class="footnotes" role="doc-endnotes">
-<hr>
+    <h2 id="指令週期">指令週期</h2>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://datatracker.ietf.org/doc/html/rfc7231#section-4.2.2">rfc7231-section-4.2.2</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
+<li>Fetch
+<ol>
+<li>從記憶體取得指令</li>
+<li>Program counter += 1</li>
 </ol>
-</section>
+</li>
+<li>decode</li>
+<li>Execute</li>
+</ol>
+<h2 id="arm">Arm</h2>
+<h2 id="x86x64">x86/x64</h2>
+<h3 id="prologue">prologue</h3>
+<p>存好 old ebp 之後，用新的 esp 當 ebp</p>
+<h3 id="calling-convention">calling convention</h3>
+<p>X86 會 alignment 0x10 ，所以你在反組譯的時候會看到 call 之前會先 sub 某個數值(似乎是 GCC 的設計?)，之後 push 總和會是 0x10</p>
+<p>對於 x32 位元模式必須遵循 <a href="https://www.uclibc.org/docs/psABI-i386.pdf">System V i386 ABI</a>，在調用前確保 alignment 0x10</p>
+<p>下一個 function 的 stack frame 存放</p>
+<ul>
+<li>傳入的參數</li>
+<li>return address</li>
+<li>old ebp</li>
+<li>最後再分配 local var 的空間</li>
+</ul>
+<h3 id="暫存器">暫存器</h3>
+<ul>
+<li>
+<p>Control register</p>
+<ul>
+<li>cr4 register
+<ul>
+<li>page size extension (PSE)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>EFLAGs</p>
+<ul>
+<li>
+<p>OF overflow 的時候會被 set</p>
+</li>
+<li>
+<p>ZF 運算結果為 0 的時候會設置</p>
+</li>
+<li>
+<p>CF: 算術進位的時候</p>
+</li>
+</ul>
+</li>
+<li>
+<p>EBX 會指向 PEB</p>
+</li>
+</ul>
+<h3 id="指令">指令</h3>
+<ul>
+<li>load effective address (lea)
+<ul>
+<li>比如 <code>lea eax, [ebx+16]</code> 會將 eax 設定成 <code>ebx+16</code> 這個地址 (類似設定指標地址，而非指標值的概念)</li>
+</ul>
+</li>
+</ul>
+<h2 id="參見">參見</h2>
+<ul>
+<li><a href="https://www.csie.ntu.edu.tw/~wcchen/asm98/asm/proj/b85506061/chap2/paging.html">記憶體管理／分頁架構</a></li>
+</ul>
+<h3 id="各種架構的-opcode">各種架構的 <strong>opcode</strong></h3>
+<ul>
+<li><a href="http://sparksandflames.com/files/x86InstructionChart.html">Intel x86 Assembler Instruction Set Opcode Table</a></li>
+</ul>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/network" class="tags">Network</a>
+        <a href="https://r888800009.github.io/tags/assembly" class="tags">Assembly</a>
       
     
 
