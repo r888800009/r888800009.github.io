@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>CTF | r809&#39;s Notes</title>
+<title>File System | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,80 +73,68 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">CTF</a></h1>
-<div id="content">
-
-
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/software/security/binary/heap/" class="post-link">Heap Exploit</a></h1>
-      <time class="date" datetime="2022-01-07 01:47:09 &#43;0800 CST">
-        Jan 7, 2022
-      </time>
-
-      <p>堆積利用筆記</p>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">File System</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2022-01-08 22:37:59 &#43;0800 CST">Sat, 2022 Jan 8</time>
     </div>
 
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#參考">參考</a></li>
+  </ul>
+</nav>
+    </aside>
 
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/software/security/binary/pwn-notes/" class="post-link">PWN 常用指令與概念</a></h1>
-      <time class="date" datetime="2022-01-02 20:04:14 &#43;0800 CST">
-        Jan 2, 2022
-      </time>
-
-      <p>pwn常用指令以及概念紀錄</p>
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/software/security/binary/format-string-attack/" class="post-link">格式化字串攻擊 (Format String Attack)</a></h1>
-      <time class="date" datetime="2021-11-01 02:35:52 &#43;0800 CST">
-        Nov 1, 2021
-      </time>
-
-      <p>格式化字串筆記 Format String Bug</p>
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/cryptography/" class="post-link">密碼學</a></h1>
-      <time class="date" datetime="2020-08-24 15:39:00 &#43;0800 CST">
-        Aug 24, 2020
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/software/security/binary/stack-smash/" class="post-link">Stack Smash</a></h1>
-      <time class="date" datetime="2020-05-04 00:29:07 &#43;0800 CST">
-        May 4, 2020
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/ctf-forensics/" class="post-link">CTF鑑識</a></h1>
-      <time class="date" datetime="2020-02-23 23:02:16 &#43;0800 CST">
-        Feb 23, 2020
-      </time>
-
-      
-    </div>
-
-
-<div style="text-align: left;  margin-top: 3em;">
-    
+    <h2 id="參考">參考</h2>
+<p><a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html">ext4 Data Structures and Algorithms — The Linux Kernel documentation</a></p>
 
     
-
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/file-system" class="tags">File System</a>
+      
+        <a href="https://r888800009.github.io/tags/operating-system" class="tags">Operating System</a>
+      
     
-</div>
 
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>

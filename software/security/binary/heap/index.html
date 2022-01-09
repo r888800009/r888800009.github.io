@@ -108,6 +108,7 @@ if (!doNotTrack) {
 
     <p>堆積利用筆記</p>
 <p>建議先找出各種版本的 glibc source 的檢視器</p>
+<p>heap feng shui</p>
 <h2 id="前置概念">前置概念</h2>
 <ul>
 <li><strong>bins</strong> 用來組織記憶體 <strong>free chunk</strong>，chunk 代表<strong>可分配 (Free Chunk)</strong> 或 <strong>使用中 (In-use Chunk )</strong> 的記憶體區塊<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> ，當中 bin 又是透過 linked list 構成，並且根據大小可以分成以下幾類<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>

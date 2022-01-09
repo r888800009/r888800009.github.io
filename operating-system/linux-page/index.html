@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>Assembly | r809&#39;s Notes</title>
+<title>Linux Page | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,9 +73,9 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Assembly</a></h1>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Linux Page</a></h1>
 <div id="content"><div class="date">
-        <time datetime="2022-01-06 20:25:43 &#43;0800 CST">Thu, 2022 Jan 6</time>
+        <time datetime="2022-01-08 22:21:09 &#43;0800 CST">Sat, 2022 Jan 8</time>
     </div>
 
     <aside>
@@ -85,109 +85,89 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#指令週期">指令週期</a></li>
-    <li><a href="#arm">Arm</a></li>
-    <li><a href="#x86x64">x86/x64</a>
-      <ul>
-        <li><a href="#prologue">prologue</a></li>
-        <li><a href="#calling-convention">calling convention</a></li>
-        <li><a href="#暫存器">暫存器</a></li>
-        <li><a href="#指令">指令</a></li>
-      </ul>
-    </li>
-    <li><a href="#參見">參見</a>
-      <ul>
-        <li><a href="#各種架構的-opcode">各種架構的 <strong>opcode</strong></a></li>
-      </ul>
-    </li>
+    <li><a href="#translation-lookaside-buffer-tlb">Translation Lookaside Buffer (TLB)</a></li>
+    <li><a href="#cache">Cache</a></li>
+    <li><a href="#page-table-layout">Page Table Layout</a></li>
+    <li><a href="#ref">ref</a></li>
   </ul>
 </nav>
     </aside>
 
-    <p>CPU 通常有兩個重要的暫存器</p>
-<ul>
-<li>程式計數器</li>
-<li>堆疊指針</li>
-</ul>
-<h2 id="指令週期">指令週期</h2>
-<ol>
-<li>Fetch
-<ol>
-<li>從記憶體取得指令</li>
-<li>Program counter += 1</li>
-</ol>
-</li>
-<li>decode</li>
-<li>Execute</li>
-</ol>
-<h2 id="arm">Arm</h2>
-<h2 id="x86x64">x86/x64</h2>
-<h3 id="prologue">prologue</h3>
-<p>存好 old ebp 之後，用新的 esp 當 ebp</p>
-<h3 id="calling-convention">calling convention</h3>
-<p>X86 會 alignment 0x10 ，所以你在反組譯的時候會看到 call 之前會先 sub 某個數值(似乎是 GCC 的設計?)，之後 push 總和會是 0x10</p>
-<p>對於 x32 位元模式必須遵循 <a href="https://www.uclibc.org/docs/psABI-i386.pdf">System V i386 ABI</a>，在調用前確保 alignment 0x10</p>
-<p>前一個 function stack frame 會增加</p>
-<ul>
-<li>傳入的參數</li>
-</ul>
-<p>下一個 function 的 stack frame 存放</p>
-<ul>
-<li>return address</li>
-<li>old ebp</li>
-<li>最後再分配 local var 的空間</li>
-</ul>
-<h3 id="暫存器">暫存器</h3>
+    <h2 id="translation-lookaside-buffer-tlb">Translation Lookaside Buffer (TLB)</h2>
+<p>一般在 Process 中看到的存取的記憶體是 Logical Address，之後透過 TLB cahce 來加快 page 映射 Physical Address</p>
 <ul>
 <li>
-<p>Control register</p>
+<p>Logical Address</p>
 <ul>
-<li>cr4 register
+<li>高位 virtual page number</li>
+<li>低位 就是直接 offset ，比如可以看到 linux <code>/proc/pid/maps</code> 的 <code>0xfff000</code> 後面三個 0 就是這個 offset</li>
+<li>n-way set associative:
 <ul>
-<li>page size extension (PSE)</li>
+<li><code>tag + set index + offset</code></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<p>EFLAGs</p>
+<p>Physical Address</p>
 <ul>
-<li>
-<p>OF overflow 的時候會被 set</p>
-</li>
-<li>
-<p>ZF 運算結果為 0 的時候會設置</p>
-</li>
-<li>
-<p>CF: 算術進位的時候</p>
-</li>
+<li>高位 也就是 frame number 會透過 TLB 下去取得</li>
+<li>低位直接使用 Logical address 的 offset</li>
 </ul>
 </li>
 <li>
-<p>EBX 會指向 PEB</p>
+<p>Page Table Entries</p>
 </li>
 </ul>
-<h3 id="指令">指令</h3>
+<h2 id="cache">Cache</h2>
 <ul>
-<li>load effective address (lea)
+<li>
+<p>在理解上，要有電路平行的感覺</p>
+</li>
+<li>
+<p>set-associative</p>
 <ul>
-<li>比如 <code>lea eax, [ebx+16]</code> 會將 eax 設定成 <code>ebx+16</code> 這個地址 (類似設定指標地址，而非指標值的概念)</li>
+<li>Cache Set
+<ul>
+<li>透過 logical address 的 set index 進行對應</li>
+<li>有多個 Cache Line (cache entries/block)
+<ul>
+<li>tag array : 透過 logical address 的 tag bit 進行對應</li>
+<li>Data array 保存實際上的資料</li>
 </ul>
 </li>
 </ul>
-<h2 id="參見">參見</h2>
-<ul>
-<li><a href="https://www.csie.ntu.edu.tw/~wcchen/asm98/asm/proj/b85506061/chap2/paging.html">記憶體管理／分頁架構</a></li>
+</li>
 </ul>
-<h3 id="各種架構的-opcode">各種架構的 <strong>opcode</strong></h3>
+</li>
+</ul>
+<h2 id="page-table-layout">Page Table Layout</h2>
 <ul>
-<li><a href="http://sparksandflames.com/files/x86InstructionChart.html">Intel x86 Assembler Instruction Set Opcode Table</a></li>
+<li>PGD Table</li>
+<li>PMD Table</li>
+<li>Page Table entry (PTE Table)</li>
+<li>Data frame (12 bits)</li>
+</ul>
+<h2 id="ref">ref</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/102293437">Cache的基本原理 - 知乎</a></li>
+<li><a href="https://www.kernel.org/doc/gorman/html/understand/understand006.html#toc23">Page Table Management</a></li>
+<li>cache 有關
+<ul>
+<li><a href="https://hackmd.io/@sysprog/HkW3Dr1Rb?type=view">現代處理器設計: Cache 原理和實際影響 - HackMD</a></li>
+<li><a href="https://hackmd.io/@jserv/HkO2ZpIYe?type=view">Programming Small - HackMD</a></li>
+</ul>
+</li>
 </ul>
 
     
       <hr>
       
-        <a href="https://r888800009.github.io/tags/assembly" class="tags">Assembly</a>
+        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+      
+        <a href="https://r888800009.github.io/tags/memory-management" class="tags">Memory Management</a>
+      
+        <a href="https://r888800009.github.io/tags/page" class="tags">Page</a>
       
     
 
