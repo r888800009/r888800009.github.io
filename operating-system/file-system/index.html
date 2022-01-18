@@ -85,13 +85,23 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#ext4">Ext4</a></li>
+    <li><a href="#fat32">FAT32</a></li>
+    <li><a href="#lvm-file-system">LVM file system</a></li>
     <li><a href="#參考">參考</a></li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="參考">參考</h2>
-<p><a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html">ext4 Data Structures and Algorithms — The Linux Kernel documentation</a></p>
+    <h2 id="ext4">Ext4</h2>
+<h2 id="fat32">FAT32</h2>
+<h2 id="lvm-file-system">LVM file system</h2>
+<h2 id="參考">參考</h2>
+<ul>
+<li><a href="https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html">ext4 Data Structures and Algorithms — The Linux Kernel documentation</a></li>
+<li><a href="https://ext4.wiki.kernel.org/index.php/Ext4_Disk_Layout">Ext4 Disk Layout - Ext4</a></li>
+<li><a href="https://elixir.bootlin.com/linux/latest/source/fs/fat/fatent.c">fatent.c - fs/fat/fatent.c - Linux source code (v5.15.13) - Bootlin</a></li>
+</ul>
 
     
       <hr>
@@ -146,6 +156,12 @@ if (!doNotTrack) {
     r888800009©2018-2022.
     All Rights Reserved.
   </div>
+  
+  <div id="sentences-locate">
+  </div>
+
+<br>
+
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
@@ -154,6 +170,30 @@ if (!doNotTrack) {
 <script>
   hljs.highlightAll()
   hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<script>
+  function print_sentence(){
+    document.getElementById('sentences-locate').innerHTML = '<blockquote id="random-sentences"></blockquote>';
+
+    var sentence_list = [
+        {
+            'text': 'Hacker:<p>A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.</p>',
+            'url': 'https://datatracker.ietf.org/doc/html/rfc1392',
+            'ref_title': 'RFC1392 Internet Users\' Glossary'
+        },
+      ]
+    var selected_sentence = sentence_list[0];
+    var footer_sentence = document.getElementById('random-sentences')
+    footer_sentence.innerHTML += selected_sentence['text'];
+    var href1 = "<a href=\"" + selected_sentence['url'] +"\">"
+    footer_sentence.innerHTML +=  "- " + href1 + selected_sentence['ref_title'] + "</a>";
+    footer_sentence.setAttribute("cite", selected_sentence['url']);
+  }
+
+  if (Math.floor(Math.random() * 0x10) == 0)
+    print_sentence();
+
 </script>
 </body>
 </html>

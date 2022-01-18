@@ -140,6 +140,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#指定-ldso">指定 ld.so</a></li>
+    <li><a href="#危險函數">危險函數</a></li>
     <li><a href="#參見-1">參見</a></li>
   </ul>
 </nav>
@@ -416,7 +417,11 @@ p = process(pwn_file.split())
 </code></pre><p>參見於<a href="https://tianstcht.github.io/pwntools%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">文章</a>提到 starctf2019 的方法</p>
 <p>注意: ELF 如果為 x86 ，則 ld, libc 都要為 x86，反之為 x64 都要採用 x64 版本的 ld, libc</p>
 <p>採用此方法載入時如果要找到基準位置請改成</p>
-<p>c.libs()[c.cwd + c.argv[3].decode(&lsquo;utf8&rsquo;).strip('.')]</p>
+<p><code>c.libs()[c.cwd + c.argv[3].decode('utf8').strip('.')]</code></p>
+<h2 id="危險函數">危險函數</h2>
+<ul>
+<li><code>read(0, buf, (uint) -1)</code> 這個觸發條件必須是 32 bit EFL 與 <code>buf+size</code> 之後不會蓋到 kernel space，也因此在 64 bit 的系統載入 32 bit 可以觸發這個漏洞，在 32bit 運行 32bit ELF 因為 <code>unit</code> 大小相加後，會與 kernel space 相疊導致 <code>ok_access()</code> 無法通過，參見 <a href="https://blog.bushwhackers.ru/2manypkts-writeup/">2manypkts write-up (Nuit du Hack CTF Quals 2017)</a> ，這個漏洞在 x86_64 運行 x86 ELF 與 aarch64 運行 arm32 ELF 皆可觸發。</li>
+</ul>
 <h2 id="參見-1">參見</h2>
 <ul>
 <li><a href="/software/security/binary/format-string-attack/">格式化字串</a></li>
@@ -485,6 +490,12 @@ p = process(pwn_file.split())
     r888800009©2018-2022.
     All Rights Reserved.
   </div>
+  
+  <div id="sentences-locate">
+  </div>
+
+<br>
+
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
@@ -493,6 +504,30 @@ p = process(pwn_file.split())
 <script>
   hljs.highlightAll()
   hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<script>
+  function print_sentence(){
+    document.getElementById('sentences-locate').innerHTML = '<blockquote id="random-sentences"></blockquote>';
+
+    var sentence_list = [
+        {
+            'text': 'Hacker:<p>A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.</p>',
+            'url': 'https://datatracker.ietf.org/doc/html/rfc1392',
+            'ref_title': 'RFC1392 Internet Users\' Glossary'
+        },
+      ]
+    var selected_sentence = sentence_list[0];
+    var footer_sentence = document.getElementById('random-sentences')
+    footer_sentence.innerHTML += selected_sentence['text'];
+    var href1 = "<a href=\"" + selected_sentence['url'] +"\">"
+    footer_sentence.innerHTML +=  "- " + href1 + selected_sentence['ref_title'] + "</a>";
+    footer_sentence.setAttribute("cite", selected_sentence['url']);
+  }
+
+  if (Math.floor(Math.random() * 0x10) == 0)
+    print_sentence();
+
 </script>
 </body>
 </html>

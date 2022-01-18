@@ -80,9 +80,19 @@ if (!doNotTrack) {
 
 
     <div class="posts">
+      <h1><a href="https://r888800009.github.io/operating-system/process-address-space/" class="post-link">Process Address Space</a></h1>
+      <time class="date" datetime="2022-01-09 16:53:33 &#43;0800 CST">
+        Jan 9, 2022
+      </time>
+
+      
+    </div>
+
+
+    <div class="posts">
       <h1><a href="https://r888800009.github.io/operating-system/file-system/" class="post-link">File System</a></h1>
-      <time class="date" datetime="2022-01-08 22:41:34 &#43;0800 CST">
-        Jan 8, 2022
+      <time class="date" datetime="2022-01-09 14:27:46 &#43;0800 CST">
+        Jan 9, 2022
       </time>
 
       
@@ -103,16 +113,6 @@ if (!doNotTrack) {
       <h1><a href="https://r888800009.github.io/operating-system/os1/" class="post-link">[OS] 作業系統簡介</a></h1>
       <time class="date" datetime="2022-01-02 21:38:43 &#43;0800 CST">
         Jan 2, 2022
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/operating-system/process-address-space/" class="post-link">Process Address Space</a></h1>
-      <time class="date" datetime="2021-12-26 08:33:33 &#43;0800 CST">
-        Dec 26, 2021
       </time>
 
       
@@ -202,6 +202,12 @@ if (!doNotTrack) {
     r888800009©2018-2022.
     All Rights Reserved.
   </div>
+  
+  <div id="sentences-locate">
+  </div>
+
+<br>
+
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
@@ -210,6 +216,30 @@ if (!doNotTrack) {
 <script>
   hljs.highlightAll()
   hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<script>
+  function print_sentence(){
+    document.getElementById('sentences-locate').innerHTML = '<blockquote id="random-sentences"></blockquote>';
+
+    var sentence_list = [
+        {
+            'text': 'Hacker:<p>A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.</p>',
+            'url': 'https://datatracker.ietf.org/doc/html/rfc1392',
+            'ref_title': 'RFC1392 Internet Users\' Glossary'
+        },
+      ]
+    var selected_sentence = sentence_list[0];
+    var footer_sentence = document.getElementById('random-sentences')
+    footer_sentence.innerHTML += selected_sentence['text'];
+    var href1 = "<a href=\"" + selected_sentence['url'] +"\">"
+    footer_sentence.innerHTML +=  "- " + href1 + selected_sentence['ref_title'] + "</a>";
+    footer_sentence.setAttribute("cite", selected_sentence['url']);
+  }
+
+  if (Math.floor(Math.random() * 0x10) == 0)
+    print_sentence();
+
 </script>
 </body>
 </html>
