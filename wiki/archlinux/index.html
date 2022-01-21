@@ -96,6 +96,7 @@ if (!doNotTrack) {
     <li><a href="#java-6">java 6</a></li>
     <li><a href="#採用-lts-kernel">採用 LTS kernel</a></li>
     <li><a href="#清理">清理</a></li>
+    <li><a href="#package-integrity">package integrity</a></li>
   </ul>
 </nav>
     </aside>
@@ -163,6 +164,10 @@ options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
 </code></pre></div><p>移除被解除安裝的快取</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -ruk0
 </code></pre></div><p>參考<a href="https://bbs.archlinux.org/viewtopic.php?id=121474">Free up space on root disk</a></p>
+<h2 id="package-integrity">package integrity</h2>
+<p>如果 <code>-Syu</code> 時遇到 package integrity 的問題，可以先做以下動作</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S archlinux-keyring
+</code></pre></div><p>之後再嘗試更新基本沒問題</p>
 
     
       <hr>

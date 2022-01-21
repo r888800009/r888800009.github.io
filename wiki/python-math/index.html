@@ -102,6 +102,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#laplace-transform">Laplace Transform</a></li>
     <li><a href="#sympy質數">sympy質數</a></li>
+    <li><a href="#plt-字體異常">plt 字體異常</a></li>
     <li><a href="#參見">參見</a></li>
   </ul>
 </nav>
@@ -317,7 +318,12 @@ True
 <span style="color:#ae81ff">7</span>
 <span style="color:#f92672">&gt;&gt;&gt;</span> nextprime(<span style="color:#ae81ff">10</span>)
 <span style="color:#ae81ff">11</span>
-</code></pre></div><h2 id="參見">參見</h2>
+</code></pre></div><h2 id="plt-字體異常">plt 字體異常</h2>
+<p>參見 <a href="https://dwye.dev/post/matplotlib-font/">Matplotlib 中文字體亂碼問題 · dw&rsquo;s 小站</a></p>
+<p>先檢查可用的字體列表</p>
+<pre><code>import matplotlib.font_manager
+print([f.name for f in matplotlib.font_manager.fontManager.ttflist])
+</code></pre><h2 id="參見">參見</h2>
 <ul>
 <li><a href="https://numpy.org/devdocs/">NumPy Documentation</a></li>
 <li><a href="https://matplotlib.org/contents.html">matplotlib doc</a></li>

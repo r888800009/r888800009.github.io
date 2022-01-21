@@ -6,7 +6,52 @@
     <description>Recent content in Tags on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 08 Jan 2022 22:37:59 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Jan 2022 21:04:27 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emulation</title>
+      <link>https://r888800009.github.io/tags/emulation/</link>
+      <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/emulation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firmware</title>
+      <link>https://r888800009.github.io/tags/firmware/</link>
+      <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/firmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hooking</title>
+      <link>https://r888800009.github.io/tags/hooking/</link>
+      <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/hooking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IoT Security</title>
+      <link>https://r888800009.github.io/tags/iot-security/</link>
+      <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/iot-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reverse Engineering</title>
+      <link>https://r888800009.github.io/tags/reverse-engineering/</link>
+      <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/tags/reverse-engineering/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>File System</title>
       <link>https://r888800009.github.io/tags/file-system/</link>
@@ -391,24 +436,6 @@
       <pubDate>Mon, 10 Aug 2020 04:38:37 +0800</pubDate>
       
       <guid>https://r888800009.github.io/tags/ctf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>firmware</title>
-      <link>https://r888800009.github.io/tags/firmware/</link>
-      <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/firmware/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reverse Engineering</title>
-      <link>https://r888800009.github.io/tags/reverse-engineering/</link>
-      <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/reverse-engineering/</guid>
       <description></description>
     </item>
     

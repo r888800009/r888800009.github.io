@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IoT Security on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/iot-security/</link>
+    <description>Recent content in IoT Security on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 18 Jan 2022 21:04:27 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/iot-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qiling</title>
+      <link>https://r888800009.github.io/firmware/qiling/</link>
+      <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/firmware/qiling/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

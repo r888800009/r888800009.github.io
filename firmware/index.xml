@@ -6,7 +6,16 @@
     <description>Recent content in Firmware on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 07 Jan 2022 02:04:31 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Jan 2022 21:04:27 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qiling</title>
+      <link>https://r888800009.github.io/firmware/qiling/</link>
+      <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/firmware/qiling/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>BIOS and UEFI</title>
       <link>https://r888800009.github.io/firmware/bios-and-uefi/</link>
