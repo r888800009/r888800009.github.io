@@ -89,8 +89,16 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#安裝">安裝</a></li>
         <li><a href="#自定義專案">自定義專案</a></li>
-        <li><a href="#目標-log4j2">目標 log4j2</a></li>
-        <li><a href="#目標-linux-kernel">目標 Linux Kernel</a></li>
+      </ul>
+    </li>
+    <li><a href="#目標-linux-kernel">目標 Linux Kernel</a></li>
+    <li><a href="#目標-glibc">目標 Glibc</a>
+      <ul>
+        <li><a href="#分析-heaps-bin-的類型">分析 heaps bin 的類型</a></li>
+      </ul>
+    </li>
+    <li><a href="#目標-log4j2">目標 log4j2</a>
+      <ul>
         <li><a href="#生成-database">生成 Database</a></li>
         <li><a href="#對-codeql-database-進行查詢">對 CodeQL Database 進行查詢</a></li>
       </ul>
@@ -98,7 +106,6 @@ if (!doNotTrack) {
     <li><a href="#如何透過-codeql-分析漏洞">如何透過 CodeQL 分析漏洞</a>
       <ul>
         <li><a href="#data-flow-analyzing">Data flow analyzing</a></li>
-        <li><a href="#分析-heaps-bin-的類型">分析 heaps bin 的類型</a></li>
       </ul>
     </li>
     <li><a href="#問題">問題</a>
@@ -137,30 +144,37 @@ if (!doNotTrack) {
 <ul>
 <li>須確保含有 <code>Makefile</code> 或 <code>build.ninja</code>等常見編譯檔案</li>
 </ul>
-<h3 id="目標-log4j2">目標 log4j2</h3>
-<p>先找一個有興趣的 repo 下來，比如 apache log4j2，之前需要編譯需要的工具比如 maven，可以參考 <a href="https://logging.apache.org/log4j/2.x/build.html">官方文件</a>，或者自己寫的 <a href="https://github.com/r888800009/codeql-example">Dokcerfile</a>。</p>
+<h2 id="目標-linux-kernel">目標 Linux Kernel</h2>
+<p><a href="https://jofra.6a.pt/articles/codeql-kernel">Using CodeQL to help exploit a linux kernel UAF | jofra</a></p>
+<h2 id="目標-glibc">目標 Glibc</h2>
+<h3 id="分析-heaps-bin-的類型">分析 heaps bin 的類型</h3>
+<h2 id="目標-log4j2">目標 log4j2</h2>
+<p>先找一個有興趣的 repo 下來，比如 apache log4j2，之前需要編譯需要的工具比如 maven，可以參考 <a href="https://logging.apache.org/log4j/2.x/build.html">官方文件</a>，使用 docker 自己寫的 <a href="https://github.com/r888800009/codeql-example">Dokcerfile</a> 比較不會有編譯上的問題。</p>
 <pre><code>git clone https://github.com/apache/logging-log4j2.git
 </code></pre><p>config toolchains jdk path，卻保這些路徑都有</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># cp toolchains-sample-mac.xml ~/.m2/toolchains.xml</span>
 cp ./toolchains-sample-linux.xml ~/.m2/toolchains.xml
 vim ~/.m2/toolchains.xml
-</code></pre></div><p>僅需兩個包 <code>vim pom.xml</code> 然後找到 <code>&lt;modules&gt;</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;modules&gt;</span>
-    <span style="color:#f92672">&lt;module&gt;</span>log4j-api<span style="color:#f92672">&lt;/module&gt;</span>
-    <span style="color:#f92672">&lt;module&gt;</span>log4j-core<span style="color:#f92672">&lt;/module&gt;</span>
-<span style="color:#f92672">&lt;modules&gt;</span>
-</code></pre></div><h3 id="目標-linux-kernel">目標 Linux Kernel</h3>
-<p><a href="https://jofra.6a.pt/articles/codeql-kernel">Using CodeQL to help exploit a linux kernel UAF | jofra</a></p>
+</code></pre></div><p>如果直接用上面寫好的 Dockerfile 只需要從這個步驟下來，據說可以  <code>vim pom.xml</code> 然後找到 <code>&lt;modules&gt;</code> 留下兩個包， core 與 api 會比較快，不過還沒測試成功。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir -p codeql-db
+docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>/codeql-db:/codeql-db codeql-docker
+</code></pre></div><p>接下來可以生成 database，基本上只要確定 core 有成功編譯就可以了</p>
 <h3 id="生成-database">生成 Database</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">codeql database create ./codeql-log4j2-db<span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>	--language<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;java&#34;</span><span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  --source-root<span style="color:#f92672">=</span>./logging-log4j2<span style="color:#ae81ff">\
-</span></code></pre></div><h3 id="對-codeql-database-進行查詢">對 CodeQL Database 進行查詢</h3>
-<p>透過 vs code 的 codeQL 載入 database</p>
-<h2 id="如何透過-codeql-分析漏洞">如何透過 CodeQL 分析漏洞</h2>
+<p>假設透過前面的 Dockerfile 產生好目標，進去 docker 輸入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">codeql database create ./codeql-db/db1 --language<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;java&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	--source-root<span style="color:#f92672">=</span>./logging-log4j2 --overwrite <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --command<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mvn package -Dmaven.test.skip=true&#34;</span>
+</code></pre></div><h3 id="對-codeql-database-進行查詢">對 CodeQL Database 進行查詢</h3>
+<p>透過 vs code 的 codeQL 載入 database ，但是我們需要先建立一個包產生 <code>qlpack.yml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">codeql pack init
+</code></pre></div><p>或者直接使用 ql 用好的語法庫</p>
+<pre><code>git clone https://github.com/github/codeql
+</code></pre><p>然後我們在 <code>codeql/java/ql/src</code> 底下建立一個檔案，之後 codeql 就可以運作了</p>
+<pre><code class="language-codeql" data-lang="codeql">import java
+select &quot;hello&quot;
+</code></pre><h2 id="如何透過-codeql-分析漏洞">如何透過 CodeQL 分析漏洞</h2>
 <h3 id="data-flow-analyzing">Data flow analyzing</h3>
 <p>基本需要確定 taint analysis 所需要的 sink source 點，可以進行資料流分析</p>
-<h3 id="分析-heaps-bin-的類型">分析 heaps bin 的類型</h3>
 <h2 id="問題">問題</h2>
 <h3 id="透過類似-sql-的語法下去查詢-code-之間的關聯性">透過類似 SQL 的語法下去查詢 code 之間的關聯性</h3>
 <h3 id="fortify-與-codeql-的差異">Fortify 與 codeql 的差異?</h3>
