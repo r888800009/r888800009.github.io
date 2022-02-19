@@ -91,6 +91,9 @@ if (!doNotTrack) {
     <li><a href="#指令">指令</a>
       <ul>
         <li><a href="#watch-point">watch point</a></li>
+        <li><a href="#檢視特定-struct">檢視特定 struct</a></li>
+        <li><a href="#檢視-section-相關資訊">檢視 section 相關資訊</a></li>
+        <li><a href="#找出地址所屬的-mapping">找出地址所屬的 mapping</a></li>
       </ul>
     </li>
     <li><a href="#傳入參數執行">傳入參數執行</a></li>
@@ -155,8 +158,15 @@ s
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">b *0x12345678
 </code></pre></div><h3 id="watch-point">watch point</h3>
 <p>檢測特定 syscall 呼叫時發生斷點</p>
-<pre><code>catch syscall write
-</code></pre><h2 id="傳入參數執行">傳入參數執行</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">catch syscall write
+</code></pre></div><h3 id="檢視特定-struct">檢視特定 struct</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">p *(struct link_map*) 0x00123113
+</code></pre></div><h3 id="檢視-section-相關資訊">檢視 section 相關資訊</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">maintenance info sections
+</code></pre></div><h3 id="找出地址所屬的-mapping">找出地址所屬的 mapping</h3>
+<p>採用 gef 提供的 <code>vmmap</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">vmmap 0x0x404040
+</code></pre></div><h2 id="傳入參數執行">傳入參數執行</h2>
 <pre><code>run arg1 arg2 arg3...
 run $(printf &quot;123&quot;)123
 run $(shell)

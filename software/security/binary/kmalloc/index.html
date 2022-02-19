@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>Socks5 | r809&#39;s Notes</title>
+<title>Kmalloc | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,30 +73,79 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Socks5</a></h1>
-<div id="content">
-
-
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/secure-shell/" class="post-link">Secure Shell</a></h1>
-      <time class="date" datetime="2022-02-12 08:10:37 &#43;0800 CST">
-        Feb 12, 2022
-      </time>
-
-      <p>SSH筆記</p>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Kmalloc</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2022-01-25 02:09:21 &#43;0800 CST">Tue, 2022 Jan 25</time>
     </div>
 
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#slab-allocation">Slab allocation</a></li>
+    <li><a href="#case-cve-2021-45608">Case CVE-2021-45608</a></li>
+    <li><a href="#參見">參見</a></li>
+  </ul>
+</nav>
+    </aside>
 
-<div style="text-align: left;  margin-top: 3em;">
+    <h2 id="slab-allocation">Slab allocation</h2>
+<ul>
+<li>SLOB Allocator</li>
+<li>SLUB Allocator</li>
+</ul>
+<h2 id="case-cve-2021-45608">Case CVE-2021-45608</h2>
+<p>kmalloc</p>
+<h2 id="參見">參見</h2>
+<p><a href="https://hackmd.io/@sysprog/linux-memory#slubslabslob">Linux 核心設計: 記憶體管理 - HackMD</a></p>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/kernel-exploit" class="tags">Kernel Exploit</a>
+      
+        <a href="https://r888800009.github.io/tags/heap" class="tags">Heap</a>
+      
+        <a href="https://r888800009.github.io/tags/allocator" class="tags">Allocator</a>
+      
     
 
-    
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
 
-    
-</div>
-
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>

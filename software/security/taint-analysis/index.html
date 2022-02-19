@@ -97,7 +97,7 @@ if (!doNotTrack) {
     </aside>
 
     <p>汙點分析（Taint Analysis），簡單來講裡面有兩個重點，source 與 sink。一開始會把 source 標記為 tained，並且模擬（emulation）程式的運行，每個指令會進行污點傳播，對資料流傳播路徑進行標記 ，並且在 emulation 同時檢查  sink 是否被標記為 tainted。</p>
-<p>而污點分析通常用於 web 應用程式的漏洞檢測 SQLi 或 XSS 等漏洞。</p>
+<p>而污點分析通常用於 web 應用程式的漏洞檢測 SQLi 或 XSS 等漏洞，也可以用來反混淆。</p>
 <h2 id="術語">術語</h2>
 <ul>
 <li>Dynamic Taint Analysis</li>

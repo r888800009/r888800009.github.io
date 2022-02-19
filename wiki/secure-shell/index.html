@@ -96,7 +96,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#scp">scp</a></li>
         <li><a href="#sshfs">sshfs</a></li>
-        <li><a href="#sock5-代理">Sock5 代理</a></li>
+        <li><a href="#socks5-代理">Socks5 代理</a></li>
         <li><a href="#local-forwarding">Local Forwarding</a></li>
       </ul>
     </li>
@@ -146,11 +146,18 @@ host hostB
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp source target
 </code></pre></div><h3 id="sshfs">sshfs</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sshfs user@host:dir mountpoint
-</code></pre></div><h3 id="sock5-代理">Sock5 代理</h3>
-<p>如果要透過 ssh server 端進行代理</p>
+</code></pre></div><h3 id="socks5-代理">Socks5 代理</h3>
+<h4 id="如果要透過-ssh-server-端進行代理">如果要透過 ssh server 端進行代理</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -D <span style="color:#ae81ff">1337</span> -q -C -N domain
-</code></pre></div><p>如果要使 ssh clinet 端作為代理</p>
+</code></pre></div><h4 id="如果要使-ssh-clinet-端作為代理">如果要使 ssh clinet 端作為代理</h4>
+<p>如果要將 sshd server 的流量透過 client 打出去就採用這個</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -R <span style="color:#ae81ff">1337</span> domain
+</code></pre></div><p>之後我們可以複製 proxychains 的檔案配置到 <code>localhost:1337</code></p>
+<pre><code>socks5 	127.0.0.1 1337
+</code></pre><p>之後啟用 proxychins</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">proxychains -f ./proxychains.conf zsh
+</code></pre></div><p>檢查 ip 是否正確</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">proxychains curl ifconfig.me/ip
 </code></pre></div><h3 id="local-forwarding">Local Forwarding</h3>
 <p>如果 ssh client 只能連上  <code>example.com</code> 的 ssh，但在該 sshd server 裡面有其他外網連不上的服務監聽 <code>8000 port</code> ，可以透過以下指令綁定 <code>5000 port</code> 進行 local forwarding。之後我們可以從 ssh client 端綁定一個 5000 端口連上此服務。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -L 5000:localhost:8000 example.com	

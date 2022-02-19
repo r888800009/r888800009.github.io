@@ -6,7 +6,16 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 18 Jan 2022 21:04:27 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2022 02:09:21 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kmalloc</title>
+      <link>https://r888800009.github.io/software/security/binary/kmalloc/</link>
+      <pubDate>Tue, 25 Jan 2022 02:09:21 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/software/security/binary/kmalloc/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Qiling</title>
       <link>https://r888800009.github.io/firmware/qiling/</link>

@@ -85,13 +85,28 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#優缺點">優缺點</a></li>
     <li><a href="#相似工具-related-works">相似工具 (Related Works)</a></li>
     <li><a href="#功能-feature">功能 (Feature)</a></li>
+    <li><a href="#常用-apis">常用 APIs</a></li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="相似工具-related-works">相似工具 (Related Works)</h2>
+    <h2 id="優缺點">優缺點</h2>
+<ul>
+<li>優點
+<ul>
+<li>基於 unicorn 的 qiling framework 可以有各種系統的 System call 如 windows 或 linux 等等，可以做很多 hook</li>
+</ul>
+</li>
+<li>缺點
+<ul>
+<li>速度很慢</li>
+</ul>
+</li>
+</ul>
+<h2 id="相似工具-related-works">相似工具 (Related Works)</h2>
 <ul>
 <li>Unicorn
 <ul>
@@ -101,6 +116,8 @@ if (!doNotTrack) {
 <li>Qemu Usermode
 <ul>
 <li>Qiling 可以動態進行補丁，並且支持更多平台如 MacOS, Windows</li>
+<li>像 Qemu <code>-R</code> 參數可以設定地址大小，但是還是有一定的限制，這時透過 qiling 就可以解決這個問題</li>
+<li>比如在 32 bit 需要使用超過 4G 的大小，如 <code>read(len=-1)</code> 的檢查需要透過這樣子去確定漏洞。</li>
 </ul>
 </li>
 </ul>
@@ -108,6 +125,27 @@ if (!doNotTrack) {
 <ul>
 <li>Emulating other platform executable/shellcode like macOS, Windows, on Linux</li>
 <li>Hooking</li>
+<li>可以 reverse debugging</li>
+</ul>
+<h2 id="常用-apis">常用 APIs</h2>
+<ul>
+<li>
+<p>對於機器的操作</p>
+<ul>
+<li><a href="https://docs.qiling.io/en/latest/register/">Register</a>/<a href="https://docs.qiling.io/en/latest/memory/">Memory</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://docs.qiling.io/en/latest/hijack/#qlpatch">Hijack</a></p>
+<ul>
+<li>Patch ELF 特定的 offset 內容</li>
+<li><code>ql.set_api()</code> 主要用來替換，劫持函數等等</li>
+<li><code>ql.add_fs_mapper()</code> 可以映射到另外一個檔案，或者 python 的 class 上</li>
+</ul>
+</li>
+<li>
+<p>Hook 相關的 api</p>
+</li>
 </ul>
 
     
