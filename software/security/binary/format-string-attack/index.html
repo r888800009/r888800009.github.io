@@ -137,7 +137,7 @@ if (!doNotTrack) {
 <h3 id="如何快速找到-p-在記憶體上面的位置">如何快速找到 %?p 在記憶體上面的位置？</h3>
 <ul>
 <li>
-<p>根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找 (可能是題目的共通性？原因是什麼？</p>
+<p>根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找，原因是什麼？想一下應該是 x86_64 calling conventions 的原因，因為有 rdi, rsi, rdx, rcx, r8, r9 後面 rsi 開始數五個暫存器，後面第七個會被 push 到 stack，因為第一個被 rdi 使用走的，從 rsi 數。</p>
 </li>
 <li>
 <p>通常想 leak 某總資料段的基底地址</p>
@@ -324,7 +324,7 @@ fmtstr_payload(<span style="color:#ae81ff">6</span>, {<span style="color:#ae81ff
     footer_sentence.setAttribute("cite", selected_sentence['url']);
   }
 
-  if (Math.floor(Math.random() * 0x10) == 0)
+  if (Math.floor(Math.random() * 0x100) == 0)
     print_sentence();
 
 </script>

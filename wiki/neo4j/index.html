@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+
+<link rel="preload stylesheet" as="style" type="text/css" href="/css/css.css">
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+
+<title>Neo4j | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/hybrid.min.css">
+
+<a id="website-top"></a>
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        GitHub
+        
+    </a>
+    
+    <a href="/about/" title="About">
+        
+        About
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+    <a href="#website-top">Top</a>
+</nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 10 || prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Neo4j</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2022-03-07 07:54:55 &#43;0800 CST">Mon, 2022 Mar 7</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#開啟-neo4j">開啟 Neo4j</a></li>
+    <li><a href="#其他替代品">其他替代品</a></li>
+    <li><a href="#術語">術語</a></li>
+    <li><a href="#基本語法">基本語法</a>
+      <ul>
+        <li><a href="#create">CREATE</a></li>
+        <li><a href="#match--where">MATCH / WHERE</a></li>
+        <li><a href="#set">SET</a></li>
+      </ul>
+    </li>
+    <li><a href="#driver">Driver</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <h2 id="開啟-neo4j">開啟 Neo4j</h2>
+<p>可以參考官方文件 <a href="https://neo4j.com/developer/docker-run-neo4j/">How-To: Run Neo4j in Docker - Developer Guides</a> 啟動一個 Docker
+之後我們可以連到 http://localhost:7474/browser/ 看到操作介面，並且使用 docker 傳入的帳號密碼 env 進行登入</p>
+<h2 id="其他替代品">其他替代品</h2>
+<ul>
+<li>arangodb</li>
+</ul>
+<h2 id="術語">術語</h2>
+<ul>
+<li>Node</li>
+<li>Relationship</li>
+<li>Type / Label
+<ul>
+<li>語法上，在 Relationship 的為 Type，Node 的為 Label</li>
+</ul>
+</li>
+<li>Properties</li>
+</ul>
+<p>當中 Node 和 Relationship 的 Lable / Type 都可以配置 Properties</p>
+<h2 id="基本語法">基本語法</h2>
+<h3 id="create">CREATE</h3>
+<p>以下建立一個 node 的 label 為 Person，當中 Person 的 Properties 有 name 與 job</p>
+<pre><code>CREATE (n:Person {name: '人名', job: '工程師'})
+</code></pre><p>或者可以直接建立 node 以及關聯性 (Relationship)，下面會建立兩個節點，並且 test ，</p>
+<pre><code>create (a)-[r:test]-&gt;()
+</code></pre><p>也可以同時建立多個路徑，可以參見官方文件的 <a href="https://neo4j.com/docs/cypher-manual/current/clauses/create/#create-create-a-full-path">Create a full path</a></p>
+<h3 id="match--where">MATCH / WHERE</h3>
+<p>為了檢視資料庫，需要透過 match 把相關的圖設定到 c 這個變數，並且透過 return 檢視 c</p>
+<pre><code>match (c) return c
+</code></pre><p>要找到特定目標比如要替 a 創建一個 relationship 到一個新的節點，可以這樣下</p>
+<pre><code>match (a)
+where a.job = &quot;工程師&quot;
+create (a)-[r:test]-&gt;()
+return a
+</code></pre><p>也可以同時 match 兩個節點，並且建立關聯性，參見<a href="https://neo4j.com/docs/cypher-manual/current/clauses/create/#create-create-a-relationship-between-two-nodes">官方文件</a></p>
+<h3 id="set">SET</h3>
+<p>當中可以配置</p>
+<h2 id="driver">Driver</h2>
+<p>如果需要透過 python 或其他語言操作 neo4j 就需要用到 Driver
+官方有提供 <code>Neo4j Python Driver</code> 可以使用</p>
+<p>也可以採用 py2neo</p>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/knowledge-graph" class="tags">Knowledge Graph</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+  </div>
+  <div>
+    r888800009©2018-2022.
+    All Rights Reserved.
+  </div>
+  
+  <div id="sentences-locate">
+  </div>
+
+<br>
+
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/haskell.min.js"></script>
+<script>
+  hljs.highlightAll()
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<script>
+  function print_sentence(){
+    document.getElementById('sentences-locate').innerHTML = '<blockquote id="random-sentences"></blockquote>';
+
+    var sentence_list = [
+        {
+            'text': 'Hacker:<p>A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.</p>',
+            'url': 'https://datatracker.ietf.org/doc/html/rfc1392',
+            'ref_title': 'RFC1392 Internet Users\' Glossary'
+        },
+      ]
+    var selected_sentence = sentence_list[0];
+    var footer_sentence = document.getElementById('random-sentences')
+    footer_sentence.innerHTML += selected_sentence['text'];
+    var href1 = "<a href=\"" + selected_sentence['url'] +"\">"
+    footer_sentence.innerHTML +=  "- " + href1 + selected_sentence['ref_title'] + "</a>";
+    footer_sentence.setAttribute("cite", selected_sentence['url']);
+  }
+
+  if (Math.floor(Math.random() * 0x100) == 0)
+    print_sentence();
+
+</script>
+</body>
+</html>

@@ -90,6 +90,7 @@ if (!doNotTrack) {
         <li><a href="#參見">參見</a></li>
       </ul>
     </li>
+    <li><a href="#fctix">Fctix</a></li>
   </ul>
 </nav>
     </aside>
@@ -104,11 +105,20 @@ if (!doNotTrack) {
 <ul>
 <li><a href="https://sh.alynx.moe/posts/My-RIME/">可能只适合我自己的 RIME 配置</a></li>
 </ul>
+<h2 id="fctix">Fctix</h2>
+<p>FcitxCandidateWord candWord; 候選的 priv 一定要從 0設定起，不然會有 free 的問題，會導致 ime 崩潰</p>
+<p>FcitxCandidateWordSetChooseAndModifier 不能直接填寫大寫, 必須透過 Modifier 才不會有異常, 比如被觸發</p>
+<p>開發 fcitx 插件<br>
+<a href="https://fcitx-im.org/wiki/Create_your_first_Fcitx_addon">https://fcitx-im.org/wiki/Create_your_first_Fcitx_addon</a></p>
 
     
       <hr>
       
         <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
+      
+        <a href="https://r888800009.github.io/tags/linux-desktop" class="tags">Linux Desktop</a>
+      
+        <a href="https://r888800009.github.io/tags/%E8%BC%B8%E5%85%A5%E6%B3%95" class="tags">輸入法</a>
       
     
 
@@ -191,7 +201,7 @@ if (!doNotTrack) {
     footer_sentence.setAttribute("cite", selected_sentence['url']);
   }
 
-  if (Math.floor(Math.random() * 0x10) == 0)
+  if (Math.floor(Math.random() * 0x100) == 0)
     print_sentence();
 
 </script>
