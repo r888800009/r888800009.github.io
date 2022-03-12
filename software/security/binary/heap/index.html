@@ -213,6 +213,7 @@ if (!doNotTrack) {
 <li>malloc(size), size &gt;= 0x20000 會在 mmap 一塊記憶體</li>
 <li>太小的話反之會透過 brk syscall 來擴展</li>
 </ul>
+<p>boundary tag</p>
 <h4 id="prev_size-為了增加效率">prev_size 為了增加效率</h4>
 <ul>
 <li>如果是 allocated chunk，就會給前一個存資料。</li>

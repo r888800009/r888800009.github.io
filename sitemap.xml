@@ -19,17 +19,17 @@
   
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2022-03-08T04:32:11+08:00</lastmod>
+    <lastmod>2022-03-13T02:42:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2022-03-08T04:32:11+08:00</lastmod>
+    <lastmod>2022-03-13T02:42:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/wiki/</loc>
-    <lastmod>2022-03-08T04:32:11+08:00</lastmod>
+    <lastmod>2022-03-13T01:53:40+08:00</lastmod>
   </url>
   
   <url>
@@ -49,7 +49,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/heap/</loc>
-    <lastmod>2022-02-17T21:58:26+08:00</lastmod>
+    <lastmod>2022-03-12T22:47:02+08:00</lastmod>
   </url>
   
   <url>
@@ -64,7 +64,7 @@
   
   <url>
     <loc>https://r888800009.github.io/software/</loc>
-    <lastmod>2022-02-20T03:46:52+08:00</lastmod>
+    <lastmod>2022-03-13T02:42:11+08:00</lastmod>
   </url>
   
   <url>
@@ -124,7 +124,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/linux/</loc>
-    <lastmod>2022-02-24T20:54:12+08:00</lastmod>
+    <lastmod>2022-03-13T01:53:40+08:00</lastmod>
   </url>
   
   <url>
@@ -204,7 +204,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/pwn/</loc>
-    <lastmod>2022-02-20T03:46:52+08:00</lastmod>
+    <lastmod>2022-03-13T02:42:11+08:00</lastmod>
   </url>
   
   <url>
@@ -334,17 +334,17 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/apple-silicon/</loc>
-    <lastmod>2021-08-23T14:19:23+08:00</lastmod>
+    <lastmod>2022-03-13T02:42:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</loc>
-    <lastmod>2021-08-23T14:19:23+08:00</lastmod>
+    <lastmod>2022-03-13T02:42:11+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/macos/</loc>
-    <lastmod>2021-08-23T14:19:23+08:00</lastmod>
+    <lastmod>2022-03-13T02:42:11+08:00</lastmod>
   </url>
   
   <url>
@@ -364,7 +364,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/vulnerability/</loc>
-    <lastmod>2022-02-20T03:46:52+08:00</lastmod>
+    <lastmod>2022-03-12T22:47:02+08:00</lastmod>
   </url>
   
   <url>
@@ -434,12 +434,12 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/ctf/</loc>
-    <lastmod>2022-02-20T03:46:52+08:00</lastmod>
+    <lastmod>2022-03-12T22:47:02+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/binary/heap/</loc>
-    <lastmod>2022-01-21T18:35:47+08:00</lastmod>
+    <lastmod>2022-03-12T22:47:02+08:00</lastmod>
   </url>
   
   <url>
@@ -499,17 +499,22 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/linux-file/</loc>
-    <lastmod>2021-12-18T09:04:38+08:00</lastmod>
+    <lastmod>2022-03-13T01:53:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://r888800009.github.io/tags/mandatory-access-control/</loc>
+    <lastmod>2022-03-13T01:53:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/selinux/</loc>
-    <lastmod>2020-08-23T16:54:43+08:00</lastmod>
+    <lastmod>2022-03-13T01:49:45+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/wiki/selinux/</loc>
-    <lastmod>2020-08-23T16:54:43+08:00</lastmod>
+    <lastmod>2022-03-13T01:49:45+08:00</lastmod>
   </url>
   
   <url>
@@ -629,7 +634,7 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/information-security/</loc>
-    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+    <lastmod>2022-03-13T01:42:49+08:00</lastmod>
   </url>
   
   <url>
@@ -794,27 +799,27 @@
   
   <url>
     <loc>https://r888800009.github.io/tags/isolation/</loc>
-    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+    <lastmod>2022-03-13T01:42:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/privilege-separation/</loc>
-    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+    <lastmod>2022-03-13T01:42:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/sandbox/</loc>
-    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+    <lastmod>2022-03-13T01:42:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/seccomp/</loc>
-    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+    <lastmod>2022-03-13T01:42:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/software/security/sandbox/</loc>
-    <lastmod>2022-01-02T21:36:49+08:00</lastmod>
+    <lastmod>2022-03-13T01:42:49+08:00</lastmod>
   </url>
   
   <url>
@@ -1409,12 +1414,12 @@
   
   <url>
     <loc>https://r888800009.github.io/wiki/linux-permission/</loc>
-    <lastmod>2019-09-05T06:33:07+08:00</lastmod>
+    <lastmod>2022-03-13T01:53:40+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://r888800009.github.io/tags/unix/</loc>
-    <lastmod>2021-12-18T09:04:38+08:00</lastmod>
+    <lastmod>2022-03-13T01:53:40+08:00</lastmod>
   </url>
   
   <url>

@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>SELinux | r809&#39;s Notes</title>
+<title>Mandatory Access Control   | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,91 +73,40 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">SELinux</a></h1>
-<div id="content"><div class="date">
-        <time datetime="2020-05-18 23:41:08 &#43;0800 CST">Mon, 2020 May 18</time>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Mandatory Access Control  </a></h1>
+<div id="content">
+
+
+
+
+    <div class="posts">
+      <h1><a href="https://r888800009.github.io/wiki/linux-permission/" class="post-link">Linux權限</a></h1>
+      <time class="date" datetime="2022-03-13 01:53:40 &#43;0800 CST">
+        Mar 13, 2022
+      </time>
+
+      <p>關於Linux權限的筆記</p>
     </div>
 
-    <aside>
-      <span onclick="tocToggle()" id="TOCStyle">
-        <b>TOC</b>
-        <span id="TOCState"></span>
-      </span>
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#特性">特性</a></li>
-    <li><a href="#指令">指令</a></li>
-    <li><a href="#參考來源">參考來源</a></li>
-  </ul>
-</nav>
-    </aside>
 
-    <h2 id="特性">特性</h2>
-<ul>
-<li>針對整個系統，為白名單方法</li>
-<li>可以阻擋 root 權限執行</li>
-<li>為 Mandatory Access Control (MAC) 與傳統的 Discretionary Access Control 透過身份不同</li>
-<li>安全本文 (Security Context 或 SELinux Label): 存取<strong>主體 (Subject)<strong>與</strong>目標(Object)</strong></li>
-</ul>
-<p>SELinux 連 root 的權限都而可以阻擋</p>
-<h2 id="指令">指令</h2>
-<p>權限設定工具</p>
-<ul>
-<li>Semanage</li>
-</ul>
-<p>顯示 label</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -Z
-ps -Z
-</code></pre></div><h2 id="參考來源">參考來源</h2>
-<ul>
-<li><a href="https://s.itho.me/cybersec/2020/slides/8246.pdf">CYBERSEC 2020 從零開始了解存取控制狂 SELinux</a></li>
-<li><a href="http://linux.vbird.org/linux_basic/0440processcontrol/0440processcontrol-centos5.php">鳥哥的 Linux 私房菜 第十七章、程序管理與 SELinux 初探</a></li>
-</ul>
+    <div class="posts">
+      <h1><a href="https://r888800009.github.io/wiki/selinux/" class="post-link">SELinux</a></h1>
+      <time class="date" datetime="2022-03-13 01:49:45 &#43;0800 CST">
+        Mar 13, 2022
+      </time>
 
-    
-      <hr>
       
-        <a href="https://r888800009.github.io/tags/linux" class="tags">Linux</a>
-      
-        <a href="https://r888800009.github.io/tags/selinux" class="tags">SELinux</a>
-      
-        <a href="https://r888800009.github.io/tags/mandatory-access-control" class="tags">Mandatory Access Control</a>
-      
+    </div>
+
+
+<div style="text-align: left;  margin-top: 3em;">
     
 
-    <script>
-      (function addHeadingLinks(){
-        var article = document.getElementById('content');
-        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
-        headings.forEach(function(heading){
-          if(heading.id){
-            heading.innerHTML =
-                    '<a class="subheader" ' +
-                    'href="' + '#' + heading.id + '"'+
-                    '>'+
-                    heading.innerHTML +
-                    '</a>';
-          }
-        });
-      })();
-    </script>
+    
 
-    <script>
-      function tocToggle() {
-        var toc = document.getElementById("TableOfContents");
-        var state = document.getElementById("TOCState");
-        if (toc.style.display === "none") {
-          state.innerHTML = "[hide]";
-          toc.style.display = "block";
-        } else {
-          state.innerHTML = "[show]";
-          toc.style.display = "none";
-        }
-      }
-      
-      tocToggle();
-      tocToggle();
-    </script>
+    
+</div>
+
 
 
             </div>

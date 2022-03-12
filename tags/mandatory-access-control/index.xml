@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mandatory Access Control   on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/mandatory-access-control/</link>
+    <description>Recent content in Mandatory Access Control   on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 18 May 2020 23:41:08 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/mandatory-access-control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SELinux</title>
+      <link>https://r888800009.github.io/wiki/selinux/</link>
+      <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/selinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux權限</title>
+      <link>https://r888800009.github.io/wiki/linux-permission/</link>
+      <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
+      <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

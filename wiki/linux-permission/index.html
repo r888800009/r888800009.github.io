@@ -85,13 +85,27 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#術語">術語</a></li>
+    <li><a href="#setuid">SetUID</a></li>
     <li><a href="#權限">權限</a></li>
     <li><a href="#指令">指令</a></li>
+    <li><a href="#參見">參見</a></li>
   </ul>
 </nav>
     </aside>
 
     <p>關於Linux權限的筆記</p>
+<p>不只檔案，segment 也存在權限</p>
+<h2 id="術語">術語</h2>
+<ul>
+<li>Mandatory Access Control
+<ul>
+<li>強制存取控制</li>
+</ul>
+</li>
+</ul>
+<h2 id="setuid">SetUID</h2>
+<p>待補</p>
 <h2 id="權限">權限</h2>
 <p>透過<code>ls -l</code>可以看到類似下面所列出的權限。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">d421421421
@@ -116,7 +130,10 @@ rwx = 7
 find . -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
 <span style="color:#75715e"># 檔案</span>
 find . -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</code></pre></div>
+</code></pre></div><h2 id="參見">參見</h2>
+<ul>
+<li><a href="/wiki/selinux/">selinux</a></li>
+</ul>
 
     
       <hr>
@@ -126,6 +143,8 @@ find . -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="c
         <a href="https://r888800009.github.io/tags/linux-file" class="tags">Linux File</a>
       
         <a href="https://r888800009.github.io/tags/unix" class="tags">Unix</a>
+      
+        <a href="https://r888800009.github.io/tags/mandatory-access-control" class="tags">Mandatory Access Control  </a>
       
     
 
