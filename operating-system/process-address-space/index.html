@@ -86,6 +86,11 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#術語">術語</a></li>
+    <li><a href="#segments">Segments</a>
+      <ul>
+        <li><a href="#參見">參見</a></li>
+      </ul>
+    </li>
     <li><a href="#linux-的-address-space">Linux 的 Address space</a></li>
     <li><a href="#要怎麼知道不同程式語言的內存結構">要怎麼知道不同程式語言的內存結構</a></li>
     <li><a href="#reference">Reference</a></li>
@@ -116,6 +121,14 @@ if (!doNotTrack) {
 <li>
 <p>Flat Address Space</p>
 </li>
+</ul>
+<h2 id="segments">Segments</h2>
+<p>對於 elf 當中，會將透過 segment 的機制分配各種權限，並且一個 segment 當中可以放入多個 section，如 bss section 放到可以寫可讀的 segment 當中，在描述上，稱之 <code>.data</code>, <code>.bss</code> 為 section 會比較合理。
+在 ELF format 中，上述幾個 section 也是放在 section 的儲存位置。</p>
+<h3 id="參見">參見</h3>
+<ul>
+<li><a href="https://stackoverflow.com/questions/61582715/section-vs-segment">assembly - Section vs. segment? - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/14361248/whats-the-difference-of-section-and-segment-in-elf-file-format/14382477#14382477">linux - What&rsquo;s the difference of section and segment in ELF file format - Stack Overflow</a></li>
 </ul>
 <h2 id="linux-的-address-space">Linux 的 Address space</h2>
 <p>kernel 的 address space</p>

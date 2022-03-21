@@ -118,7 +118,8 @@ if (!doNotTrack) {
 </code></pre></div><p>或者採用動態分析工具，比方說 gef 的 <a href="https://gef.readthedocs.io/en/master/commands/format-string-helper/">format-string-helper</a> 會在不安全時暫停程式執行。</p>
 <h2 id="利用方式">利用方式</h2>
 <ul>
-<li>洩漏堆疊</li>
+<li>洩漏堆疊
+- fmtstr 可以做 information leaking 當中你可以用他把 stack dump 出來，所以在不知道 remote 的情況下會使用到這種技巧，也可以 leak rbp。</li>
 <li>洩漏任意地址</li>
 <li>覆蓋任意地址
 <ul>
@@ -137,7 +138,7 @@ if (!doNotTrack) {
 <h3 id="如何快速找到-p-在記憶體上面的位置">如何快速找到 %?p 在記憶體上面的位置？</h3>
 <ul>
 <li>
-<p>根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找，原因是什麼？想一下應該是 x86_64 calling conventions 的原因，因為有 rdi, rsi, rdx, rcx, r8, r9 後面 rsi 開始數五個暫存器，後面第七個會被 push 到 stack，因為第一個被 rdi 使用走的，從 rsi 數。</p>
+<p>如果 fmtstr buf 弄在 stack 上面，根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找，原因是什麼？想一下應該是 x86_64 calling conventions 的原因，因為有 rdi, rsi, rdx, rcx, r8, r9 後面 rsi 開始數五個暫存器，後面第七個會被 push 到 stack，因為第一個被 rdi 使用走的，從 rsi 數。</p>
 </li>
 <li>
 <p>通常想 leak 某總資料段的基底地址</p>

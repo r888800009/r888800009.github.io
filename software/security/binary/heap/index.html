@@ -213,7 +213,7 @@ if (!doNotTrack) {
 <li>malloc(size), size &gt;= 0x20000 會在 mmap 一塊記憶體</li>
 <li>太小的話反之會透過 brk syscall 來擴展</li>
 </ul>
-<p>boundary tag</p>
+<p>boundary tag [knuth]</p>
 <h4 id="prev_size-為了增加效率">prev_size 為了增加效率</h4>
 <ul>
 <li>如果是 allocated chunk，就會給前一個存資料。</li>
@@ -362,6 +362,7 @@ if (!doNotTrack) {
 <p><a href="https://darkwing.moe/2019/03/15/Pwn%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B05-%E5%A0%86%E6%BA%A2%E5%87%BA%E4%B8%8EUser-After-Free/">Pwn学习笔记5:堆溢出与User After Free</a></p>
 </li>
 </ul>
+<p><a href="https://cs241.cs.illinois.edu/coursebook/Malloc">CS 241 · Malloc</a></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
