@@ -161,7 +161,10 @@ s
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">catch syscall write
 </code></pre></div><h3 id="檢視特定-struct">檢視特定 struct</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">p *(struct link_map*) 0x00123113
-</code></pre></div><h3 id="檢視-section-相關資訊">檢視 section 相關資訊</h3>
+</code></pre></div><p>如果有除錯符號可以使用  <code>ptype &lt;symbol&gt;</code> 檢視</p>
+<pre><code>ptype fp
+</code></pre><pre><code>ptype FILE
+</code></pre><h3 id="檢視-section-相關資訊">檢視 section 相關資訊</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">maintenance info sections
 </code></pre></div><h3 id="找出地址所屬的-mapping">找出地址所屬的 mapping</h3>
 <p>採用 gef 提供的 <code>vmmap</code></p>
@@ -204,6 +207,7 @@ gef-remote --qemu-mode addr:port
 <ul>
 <li><a href="https://d1nn3r.github.io/2019/07/27/kernelexp/">kernelexp学习笔记 | d1nn3r&rsquo;s Blog</a> 當中包含各種 qemu 除錯的疑難排解</li>
 <li><a href="https://kiprey.github.io/2021/10/kernel_pwn_introduction/">Kernel pwn CTF 入门 | Kiprey&rsquo;s Blog</a> <code>--qemu-mode</code> 從這裡看到的，如果上面的筆記無法排解，可以參見這篇</li>
+<li><a href="https://sourceware.org/gdb/onlinedocs/gdb/Symbols.html">Symbols (Debugging with GDB)</a></li>
 </ul>
 
     

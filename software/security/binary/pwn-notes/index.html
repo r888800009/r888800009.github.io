@@ -88,7 +88,7 @@ if (!doNotTrack) {
     <li><a href="#前置概念">前置概念</a></li>
     <li><a href="#保護">保護</a></li>
     <li><a href="#利用方法">利用方法</a></li>
-    <li><a href="#x86-32-rop">x86 32 ROP</a></li>
+    <li><a href="#x86-32-bit-rop">x86 32 bit ROP</a></li>
     <li><a href="#工具">工具</a>
       <ul>
         <li><a href="#符號與區段">符號與區段</a></li>
@@ -132,6 +132,7 @@ if (!doNotTrack) {
         <li><a href="#查詢-libc-地址">查詢 libc 地址</a></li>
         <li><a href="#在-python-script-切換到-interact">在 python script 切換到 interact</a></li>
         <li><a href="#查詢特定版本的-glibc">查詢特定版本的 glibc</a></li>
+        <li><a href="#計算-offset">計算 offset</a></li>
       </ul>
     </li>
     <li><a href="#指定-libc">指定 libc</a>
@@ -187,7 +188,7 @@ RELRO     : Partial
 <li>Linux 請見 ELF 章節</li>
 <li><a href="/software/security/binary/stack-smash/">Stack Smash</a></li>
 </ul>
-<h2 id="x86-32-rop">x86 32 ROP</h2>
+<h2 id="x86-32-bit-rop">x86 32 bit ROP</h2>
 <pre><code>@plt
 ret pop*2
 parameter1
@@ -195,7 +196,8 @@ parameter2
 @plt
 ret pop*1
 parameter1
-</code></pre><h2 id="工具">工具</h2>
+</code></pre><p>下面兩個 parameter 要 pop 掉，如果後面還有 gadget 的話</p>
+<h2 id="工具">工具</h2>
 <p>反組譯查看函數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./echo | less
 </code></pre></div><p>透過 gdb 檢查流程</p>
@@ -390,6 +392,10 @@ rop <span style="color:#f92672">=</span> ROP(e, base)
 code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
 </code></pre></div><h3 id="查詢特定版本的-glibc">查詢特定版本的 glibc</h3>
 <p>可以透過 <a href="https://elixir.bootlin.com/glibc/latest/source">此網站</a> 來找特定版本的 glibc</p>
+<h3 id="計算-offset">計算 offset</h3>
+<ul>
+<li>pwntools 有提供 cyclic_find()，可以輔助計算 offset</li>
+</ul>
 <h2 id="指定-libc">指定 libc</h2>
 <p>pwntools 可以透過此方式指定使用的 libc，有 hooking 的意味，<strong>請務必注意 lib 前面的 <code>./</code></strong>。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> process(<span style="color:#e6db74">&#39;echo2&#39;</span>, env<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;LD_PRELOAD&#39;</span>: <span style="color:#e6db74">&#39;./libc-2.23.so.x86_64&#39;</span>})
