@@ -85,6 +85,7 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#概念">概念</a></li>
     <li><a href="#檢測">檢測</a></li>
     <li><a href="#利用方式">利用方式</a></li>
     <li><a href="#階段一">階段一</a>
@@ -111,7 +112,11 @@ if (!doNotTrack) {
 </nav>
     </aside>
 
-    <p>格式化字串筆記 Format String Bug</p>
+    <p>格式化字串筆記 Format String Bug (FSB)</p>
+<h2 id="概念">概念</h2>
+<ul>
+<li>ebp/rbp chain</li>
+</ul>
 <h2 id="檢測">檢測</h2>
 <p>透過大量的<code>%s</code>使程式崩潰，用來確認漏洞的存在。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
@@ -129,7 +134,8 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>要觸發該漏洞可以透過靜態檢測是否存在 printf 系列函數如 sprintf/dprintf 等等， 若無，如果 <code>RELRO : Partial</code> 或更低的安全性時，蓋寫 GOT 也可以觸發 fmtstr，不過 <code>FORTIFY</code> 必須為 <code>disabled</code></p>
-<p>利用格式化字串參見以下三個階段</p>
+<p>而 fmtstr 在利用上會根據<strong>可控字串</strong>是否在堆疊上，基本上如果堆疊保存可控字串，可以傳入特定地址，如果堆疊不保存可控字串就必須控制 rbp chain 進行利用。</p>
+<p>利用<strong>可控堆疊</strong>格式化字串參見以下三個階段</p>
 <h2 id="階段一">階段一</h2>
 <p>格式化字串漏洞可以透過<code>%x.%x.%x.%x.%x.%x</code>的方法印出內容，
 也可採用<code>%3$x</code>則可任意讀取堆疊(此例子為第三項，為<code>4 * 3</code>)，
@@ -138,7 +144,7 @@ if (!doNotTrack) {
 <h3 id="如何快速找到-p-在記憶體上面的位置">如何快速找到 %?p 在記憶體上面的位置？</h3>
 <ul>
 <li>
-<p>如果 fmtstr buf 弄在 stack 上面，根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找，原因是什麼？想一下應該是 x86_64 calling conventions 的原因，因為有 rdi, rsi, rdx, rcx, r8, r9 後面 rsi 開始數五個暫存器，後面第七個會被 push 到 stack，因為第一個被 rdi 使用走的，從 rsi 數。</p>
+<p>如果 fmtstr buf 弄在 stack 上面，由於 calling convention，根據經驗，通常 x64 stack 可寫的部份大概會在  <code>%6$p</code> 左右，可以從該值開始尋找，原因是什麼？想一下應該是 x86_64 calling conventions 的原因，因為有 rdi, rsi, rdx, rcx, r8, r9 後面 rsi 開始數五個暫存器，後面第七個會被 push 到 stack，因為第一個被 rdi 使用走的，從 rsi 數。</p>
 </li>
 <li>
 <p>通常想 leak 某總資料段的基底地址</p>
@@ -182,12 +188,12 @@ if (!doNotTrack) {
 因此可傳入格式如<code>\x78\x56\x34\x12</code>指標(32bit)，
 並且透過<code>%n</code>修改<code>0x12345678</code>的內容。</p>
 <h2 id="階段三">階段三</h2>
-<p>編寫payload，採用<code>%hhn</code>並且計算每byte的內容，<code>%n</code>是<code>printf</code>當下處理時輸出的總字數，
+<p>編寫payload，採用<code>%hhn</code>並且計算每 byte 的內容，<code>%n</code>是<code>printf</code>當下處理時輸出的總字數，
 採用<code>%hhn</code>比起<code>%n</code>容易溢位，透過這個性質將傳入數值，使用<code>%10c</code>的方式下去輸入，
 上一個字數為<code>240</code>並且現在輸入數值<code>4</code>時，只須打印出<code>(4 - 240) % 256</code>即可抵達對映的字數。</p>
 <h4 id="備註">備註</h4>
-<p>若採用<code>%x</code>可能沒辦法輸出小於8的值，改用<code>%c</code>。</p>
-<p>在<code>printf</code>時無法中途修改參數內容，只能透過一開始傳入的多個參數進行利用。</p>
+<p>若採用<code>%x</code>可能沒辦法輸出小於 8 的值，改用<code>%c</code>。</p>
+<p>在 <code>printf</code> 時無法中途修改參數內容，只能透過一開始傳入的多個參數進行利用。</p>
 <h2 id="工具">工具</h2>
 <ul>
 <li><a href="https://docs.pwntools.com/en/stable/fmtstr.html#module-pwnlib.fmtstr"><code>pwnlib.fmtstr</code></a></li>
