@@ -27,7 +27,7 @@ if (!doNotTrack) {
 
 
 
-<title>Wiki | r809&#39;s Notes</title>
+<title>SSH Protocol | r809&#39;s Notes</title>
 
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
@@ -73,131 +73,61 @@ if (!doNotTrack) {
     prevScrollpos = currentScrollPos;
   }
 </script>
-<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">Wiki</a></h1>
-<div id="content">
-
-
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/docker/" class="post-link">Docker</a></h1>
-      <time class="date" datetime="2021-12-12 01:48:04 &#43;0800 CST">
-        Dec 12, 2021
-      </time>
-
-      <p>Docker的筆記</p>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">SSH Protocol</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2022-03-30 01:38:23 &#43;0800 CST">Wed, 2022 Mar 30</time>
     </div>
 
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents"></nav>
+    </aside>
 
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/hugo-template/" class="post-link">Hugo 模板的一些配置</a></h1>
-      <time class="date" datetime="2021-12-11 15:53:17 &#43;0800 CST">
-        Dec 11, 2021
-      </time>
-
-      <p>存放一些<code>hugo</code>配置版模會用到的筆記，
-非模板內容參見 <a href="/wiki/hugo/">hugo</a>。</p>
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/linux-from-scratch/" class="post-link">從 0 安裝Linux</a></h1>
-      <time class="date" datetime="2021-12-03 23:22:54 &#43;0800 CST">
-        Dec 3, 2021
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/log-notes/" class="post-link">日誌檢視相關筆記</a></h1>
-      <time class="date" datetime="2021-11-10 21:28:00 &#43;0800 CST">
-        Nov 10, 2021
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/vim/" class="post-link">Vim</a></h1>
-      <time class="date" datetime="2021-11-01 21:26:43 &#43;0800 CST">
-        Nov 1, 2021
-      </time>
-
-      <p>存放vim的筆記。</p>
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/terminal-tools/" class="post-link">終端機常用工具</a></h1>
-      <time class="date" datetime="2021-11-01 03:50:34 &#43;0800 CST">
-        Nov 1, 2021
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/algorithm-analysis-notes/" class="post-link">演算法分析筆記</a></h1>
-      <time class="date" datetime="2021-09-08 17:50:17 &#43;0800 CST">
-        Sep 8, 2021
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/git/" class="post-link">Git</a></h1>
-      <time class="date" datetime="2021-03-26 10:48:52 &#43;0800 CST">
-        Mar 26, 2021
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/osint/" class="post-link">OSINT</a></h1>
-      <time class="date" datetime="2021-03-25 08:57:26 &#43;0800 CST">
-        Mar 25, 2021
-      </time>
-
-      <p>Open-Source Intelligence 公開來源情報</p>
-    </div>
-
-
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/ru-terms/" class="post-link">俄文資訊科學與資訊安全專有名詞收集</a></h1>
-      <time class="date" datetime="2021-03-21 16:33:34 &#43;0800 CST">
-        Mar 21, 2021
-      </time>
-
-      
-    </div>
-
-
-<div style="text-align: left;  margin-top: 3em;">
-    
-    <a href=/wiki/page/2/>
-      Prev
-    </a>
-    
+    <p><a href="https://www.ssh.com/academy/ssh/protocol">SSH protocol is the standard for strong authentication, secure connection, and encrypted file transfers. We developed it.</a></p>
 
     
-    /
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/ssh" class="tags">SSH</a>
+      
     
 
-    
-    <a href=/wiki/page/4/>
-      Next
-    </a>
-    
-</div>
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
 
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
 
 
             </div>

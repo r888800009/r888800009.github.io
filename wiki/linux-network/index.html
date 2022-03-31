@@ -86,6 +86,7 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#網路與管理">網路與管理</a></li>
+    <li><a href="#monitor-mode">Monitor Mode</a></li>
     <li><a href="#wifi">WiFi</a>
       <ul>
         <li><a href="#wpa_cli">wpa_cli</a></li>
@@ -109,7 +110,16 @@ if (!doNotTrack) {
 <li><a href="/wiki/secure-shell/">ssh</a></li>
 <li><code>ss</code> 查看連接端口與ip，在<code>archlinux</code>作為netstat的替代品</li>
 </ul>
-<h2 id="wifi">WiFi</h2>
+<h2 id="monitor-mode">Monitor Mode</h2>
+<p>啟用 monitor mode</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ip link set down dev &lt;interface&gt;
+sudo iw &lt;interface&gt; set monitor none
+sudo ip link set up dev &lt;interface&gt;
+</code></pre></div><p>還原</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ip link set down dev &lt;interface&gt;
+sudo iw &lt;interface&gt; set type managed
+sudo ip link set up dev &lt;interface&gt;
+</code></pre></div><h2 id="wifi">WiFi</h2>
 <h3 id="wpa_cli">wpa_cli</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_cli
 </code></pre></div><p>建立一個新的網路配置，執行之後返回id</p>
