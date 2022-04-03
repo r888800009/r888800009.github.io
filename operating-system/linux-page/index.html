@@ -96,8 +96,7 @@ if (!doNotTrack) {
     <h2 id="translation-lookaside-buffer-tlb">Translation Lookaside Buffer (TLB)</h2>
 <p>一般在 Process 中看到的存取的記憶體是 Logical Address，之後透過 TLB cahce 來加快 page 映射 Physical Address</p>
 <ul>
-<li>
-<p>Logical Address</p>
+<li>Logical Address
 <ul>
 <li>高位 virtual page number</li>
 <li>低位 就是直接 offset ，比如可以看到 linux <code>/proc/pid/maps</code> 的 <code>0xfff000</code> 後面三個 0 就是這個 offset</li>
@@ -108,24 +107,18 @@ if (!doNotTrack) {
 </li>
 </ul>
 </li>
-<li>
-<p>Physical Address</p>
+<li>Physical Address
 <ul>
 <li>高位 也就是 frame number 會透過 TLB 下去取得</li>
 <li>低位直接使用 Logical address 的 offset</li>
 </ul>
 </li>
-<li>
-<p>Page Table Entries</p>
-</li>
+<li>Page Table Entries</li>
 </ul>
 <h2 id="cache">Cache</h2>
 <ul>
-<li>
-<p>在理解上，要有電路平行的感覺</p>
-</li>
-<li>
-<p>set-associative</p>
+<li>在理解上，要有電路平行的感覺</li>
+<li>set-associative
 <ul>
 <li>Cache Set
 <ul>

@@ -214,7 +214,7 @@ parameter1
 objdump -s -j .text ./a.out
 </code></pre></div><p>其他指令參見<a href="/software/reversing/">逆向</a>。</p>
 <h3 id="procselfmaps">/proc/self/maps</h3>
-<p>pwntools 可以透過 Process.libs() 來取得 /proc/self/maps ，或許在除錯 PIE 的時候有用</p>
+<p>pwntools 可以透過 <code>Process.libs()</code> 來取得 <code>/proc/self/maps</code> ，或許在除錯 PIE 的時候有用</p>
 <p>注:  其他關於 proc 相關的可以參見文檔，想說怎麽不過設計在 proc 中</p>
 <p><a href="https://docs.pwntools.com/en/stable/util/proc.html">https://docs.pwntools.com/en/stable/util/proc.html</a></p>
 <h2 id="shellcode">Shellcode</h2>
