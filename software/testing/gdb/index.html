@@ -204,7 +204,10 @@ pacaur -S gdb-multiarch
 <p>確保 <code>set arch</code> 之後使用 <code>gef-remote --qemu-mode </code> 而不是 <code>target remote</code></p>
 <pre><code>set arch i386:x86-64
 gef-remote --qemu-mode addr:port
-</code></pre><h3 id="參見">參見</h3>
+</code></pre><p>pwndbg 似乎直接 target remote 就可以，並且可以看到 stack，但 gdb 不行</p>
+<pre><code>target remote:3333
+</code></pre><p>不過 pwndbg 和 gef 如果運作不正常可以嘗試用 root 執行</p>
+<h3 id="參見">參見</h3>
 <ul>
 <li><a href="https://d1nn3r.github.io/2019/07/27/kernelexp/">kernelexp学习笔记 | d1nn3r&rsquo;s Blog</a> 當中包含各種 qemu 除錯的疑難排解</li>
 <li><a href="https://kiprey.github.io/2021/10/kernel_pwn_introduction/">Kernel pwn CTF 入门 | Kiprey&rsquo;s Blog</a> <code>--qemu-mode</code> 從這裡看到的，如果上面的筆記無法排解，可以參見這篇</li>

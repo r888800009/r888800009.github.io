@@ -208,10 +208,10 @@ if (!doNotTrack) {
 <li>而 Main thread 沒有 _heap_info ，因此很少用到</li>
 </ul>
 <h3 id="chunk">Chunk</h3>
-<p>Heap 預設透過 mmap 先分配一段大小，滿了之後 glic 根據大小</p>
+<p>Heap 預設透過 mmap 先分配一段大小，滿了之後 glibc 根據大小</p>
 <ul>
 <li>malloc(size), size &gt;= 0x20000 會在 mmap 一塊記憶體</li>
-<li>太小的話反之會透過 brk syscall 來擴展</li>
+<li>如果一般大小的 chunk ，當可用的 heap 空間太小的話反之會透過 brk syscall 來擴展</li>
 </ul>
 <p>boundary tag [knuth]</p>
 <h4 id="prev_size-為了增加效率">prev_size 為了增加效率</h4>
@@ -302,7 +302,7 @@ if (!doNotTrack) {
 </ul>
 <h2 id="tools-工具">Tools 工具</h2>
 <ul>
-<li><a href="https://github.com/wapiflapi/villoc">Villoc</a> 將 heap 變化可視化轉成 html 檔案檢視</li>
+<li><a href="https://github.com/wapiflapi/villoc">Villoc</a> 將 heap 變化可視化轉成 html 檔案檢視，可以即時顯示 (使用 <code>|&amp;</code>  運算元)</li>
 <li>自己寫的工具，串接 gef ，尚未公開發佈。</li>
 </ul>
 <h2 id="保護機制">保護機制</h2>
@@ -337,6 +337,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>AIS3 EOF2022 myfs-1, myfs-2, myfs-3</li>
+<li><a href="https://ctftime.org/task/16892">RARCTF 2021 Unintended</a></li>
 </ul>
 </li>
 </ul>
