@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+
+<link rel="preload stylesheet" as="style" type="text/css" href="/css/css.css">
+
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-19124306-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+
+<title>System Security Lab List | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/hybrid.min.css">
+
+<a id="website-top"></a>
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        GitHub
+        
+    </a>
+    
+    <a href="/about/" title="About">
+        
+        About
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+    <a href="#website-top">Top</a>
+</nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 10 || prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
+<div id="main"><h1 class="website-name" id="website-name"><a href="https://r888800009.github.io/" class="website-name">System Security Lab List</a></h1>
+<div id="content"><div class="date">
+        <time datetime="2022-11-06 02:23:50 &#43;0800 CST">Sun, 2022 Nov 6</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#list">List</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <p>I collected some lab I interested, about the system security, fuzzing, vulnerability discovery, symbolic execution or taint.</p>
+<h2 id="list">List</h2>
+<ul>
+<li>Georgia Tech
+<ul>
+<li><a href="https://gts3.org/">Systems Software and Security Lab</a> (SSlab) <a href="https://gts3.org/pages/publications.html#/">publications</a> <a href="https://gts3.org/pages/projects.html">projects</a></li>
+</ul>
+</li>
+<li>National Yang Ming Chiao Tung University
+<ul>
+<li><a href="https://sqlab.web.nctu.edu.tw/">Software Quality Lab</a> (SQLab)</li>
+<li><a href="https://sense.cs.nctu.edu.tw/index.php">SEcurity aNd SystEms</a>(SENSE)</li>
+</ul>
+</li>
+<li>National Taiwan University
+<ul>
+<li><a href="https://nslab.csie.ntu.edu.tw/">Network Security Lab</a> (NSLab)</li>
+</ul>
+</li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="https://r888800009.github.io/tags/research" class="tags">Research</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+  </div>
+  <div>
+    r888800009©2018-2023.
+    All Rights Reserved.
+  </div>
+  
+  <div id="sentences-locate">
+  </div>
+
+<br>
+
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/haskell.min.js"></script>
+<script>
+  hljs.highlightAll()
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<script>
+  function print_sentence(){
+    document.getElementById('sentences-locate').innerHTML = '<blockquote id="random-sentences"></blockquote>';
+
+    var sentence_list = [
+        {
+            'text': 'Hacker:<p>A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.</p>',
+            'url': 'https://datatracker.ietf.org/doc/html/rfc1392',
+            'ref_title': 'RFC1392 Internet Users\' Glossary'
+        },
+      ]
+    var selected_sentence = sentence_list[0];
+    var footer_sentence = document.getElementById('random-sentences')
+    footer_sentence.innerHTML += selected_sentence['text'];
+    var href1 = "<a href=\"" + selected_sentence['url'] +"\">"
+    footer_sentence.innerHTML +=  "- " + href1 + selected_sentence['ref_title'] + "</a>";
+    footer_sentence.setAttribute("cite", selected_sentence['url']);
+  }
+
+  if (Math.floor(Math.random() * 0x100) == 0)
+    print_sentence();
+
+</script>
+</body>
+</html>

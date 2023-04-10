@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -143,17 +142,17 @@ if (!doNotTrack) {
 <li><code>cl example.cpp</code></li>
 </ol>
 <h3 id="禁用aslr">禁用ASLR</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">cl example.cpp /DYNAMICBASE:NO /link /FIXED 
-</code></pre></div><h3 id="修改成x86環境">修改成x86環境。</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">setenv /x86
-</code></pre></div><h3 id="關閉safeseh">關閉SafeSEH</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">cl example.c /DYNAMICBASE:NO /link /FIXED /SAFESEH:NO 
-</code></pre></div><h2 id="seh">S.E.H</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>cl example.cpp /DYNAMICBASE:NO /link /FIXED 
+</span></span></code></pre></div><h3 id="修改成x86環境">修改成x86環境。</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>setenv /x86
+</span></span></code></pre></div><h3 id="關閉safeseh">關閉SafeSEH</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>cl example.c /DYNAMICBASE:NO /link /FIXED /SAFESEH:NO 
+</span></span></code></pre></div><h2 id="seh">S.E.H</h2>
 <p>SEH為windows下例外處理的結構。</p>
 <h3 id="seh結構體32位元">SEH結構體(32位元)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">DWORD: 下筆SEH紀錄
-DWORD: 例外處理
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>DWORD: 下筆SEH紀錄
+</span></span><span style="display:flex;"><span>DWORD: 例外處理
+</span></span></code></pre></div><ul>
 <li>保存於系統堆疊中</li>
 <li>線程初始化時，會自動安裝SEH</li>
 <li><code>__try</code>、<code>__except{}</code></li>
@@ -249,7 +248,7 @@ DWORD: 例外處理
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

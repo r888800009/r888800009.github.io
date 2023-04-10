@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -170,7 +169,7 @@ if (!doNotTrack) {
 </ul>
 </li>
 <li>
-<p>chunk 在 <code>malloc()</code>分配出來並且對其 0x10，在 <code>free()</code> 時加入 bins <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>chunk 在 <code>malloc()</code>分配出來並且對其 0x10，在 <code>free()</code> 時加入 bins <sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 </li>
 <li>
 <p>object 於記憶體的相關概念</p>
@@ -240,11 +239,11 @@ if (!doNotTrack) {
 </ul>
 <h3 id="bin">Bin</h3>
 <p>初始化 bin <a href="https://elixir.bootlin.com/glibc/glibc-2.31/source/malloc/malloc.c#L1794">malloc.c#L1794</a>，可以看到它實際上是 malloc_chunk 的結構，但是 bin_at 每次移動 <code>0x10</code> 所以可以看到類似這樣的記憶體</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-│   fd    │   bk    │   fd    │   bk    │   fd    │   bk    │   fd    │   bk    │
-└─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
-</code></pre></div><p>在 gdb 下面可以看到 <code>bin-&gt;fd = bin-&gt;bk = bin</code>，並且 &amp;fd-0x10 可以對應到 chunk 的 prev_size 的位置，初始化的時候 fd 和 bk 都指向自己</p>
-<pre><code>0x00007f0000000bf0│+0x0010: 0x000055000000b0d0 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+</span></span><span style="display:flex;"><span>│   fd    │   bk    │   fd    │   bk    │   fd    │   bk    │   fd    │   bk    │
+</span></span><span style="display:flex;"><span>└─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┴─────────┘
+</span></span></code></pre></div><p>在 gdb 下面可以看到 <code>bin-&gt;fd = bin-&gt;bk = bin</code>，並且 &amp;fd-0x10 可以對應到 chunk 的 prev_size 的位置，初始化的時候 fd 和 bk 都指向自己</p>
+<pre tabindex="0"><code>0x00007f0000000bf0│+0x0010: 0x000055000000b0d0 
 0x00007f0000000bf8│+0x0018: 0x000055000000aae0 
 0x00007f0000000c00│+0x0020: 0x00007f0000000bf0 
 0x00007f0000000c08│+0x0028: 0x00007f0000000bf0 
@@ -256,45 +255,45 @@ if (!doNotTrack) {
 </code></pre><h3 id="unsorted-bin">Unsorted Bin</h3>
 <p>Free 之後一率放到 unsorted bin， 之後才有機會放入 small bin large bin</p>
 <p>為了了解 heap 的運作機制，這邊寫了幾個範例可以使用 gdb 進行分析 <a href="https://github.com/r888800009/practice/tree/master/pwn/allocator">practice/pwn/allocator</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">┌───────────────────────────────────────────────────────────────────────────────────────┐
-│                                  malloc_state aka arena                               │
-│ ┌─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┐ │
-│ │prev_size│  size   │   fd    │   bk    │   │prev_size│  size   │   fd    │   bk    │ │
-│ └─────────┴─────────┴───┬─────┴────┬────┘   └─────────┴─────────┴───┬─────┴────┬────┘ │
-│  ▲ ▲                    │          │         ▲ ▲                    │          │      │
-│  │ │                    │          │         │ │                    │          │      │
-└──┼─┼────────────────────┼──────────┼─────────┼─┼────────────────────┼──────────┼──────┘
-   │ │                    │          │         │ │                    │          │
-   │ │     ┌──────────┐   │          │         │ │     ┌──────────┐   │          │
-   │ │ ┌──►│prev_size │◄──┘          │         │ │   ┌►│prev_size │◄──┘          │
-   │ │ │   │size      │              │         │ │   │ │size      │              │
-   │ │ │   │fd        ├─┐            │         │ │   │ │fd        ├─┐            │
-   └─┼─┼───┤bk        │ │            │         └─┼───┼─┤bk        │ │            │
-     │ │   │          │ │            │           │   │ │          │ │            │
-     │ │   │payload   │ │            │           │   │ │payload   │ │            │
-     │ │   │          │ │            │           │   │ │          │ │            │
-     │ │   └──────────┘ │            │           │   │ └──────────┘ │            │
-     │ │                │            │           │   │              │            │
-     │ │   ┌──────────┐ │            │           │   │ ┌──────────┐ │            │
-     │ │ ┌►│prev_size │◄┘            │           │   │ │prev_size │◄└────────────┘
-     │ │ │ │size      │              │           │   │ │size      │
-     │ │ │ │fd        ├─┐            │           └───┼─┤fd        │
-     │ └─┼─┤bk        │ │            │               └─┤bk        │
-     │   │ │          │ │            │                 │          │
-     │   │ │payload   │ │            │                 │payload   │
-     │   │ │          │ │            │                 │          │
-     │   │ └──────────┘ │            │                 └──────────┘
-     │   │              │            │
-     │   │ ┌──────────┐ │            │
-     │   │ │prev_size │◄└────────────┘
-     │   │ │size      │
-     └───┼─┤fd        │
-         └─┤bk        │
-           │          │
-           │payload   │
-           │          │
-           └──────────┘
-</code></pre></div><h3 id="small-bin">Small Bin</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>┌───────────────────────────────────────────────────────────────────────────────────────┐
+</span></span><span style="display:flex;"><span>│                                  malloc_state aka arena                               │
+</span></span><span style="display:flex;"><span>│ ┌─────────┬─────────┬─────────┬─────────┐   ┌─────────┬─────────┬─────────┬─────────┐ │
+</span></span><span style="display:flex;"><span>│ │prev_size│  size   │   fd    │   bk    │   │prev_size│  size   │   fd    │   bk    │ │
+</span></span><span style="display:flex;"><span>│ └─────────┴─────────┴───┬─────┴────┬────┘   └─────────┴─────────┴───┬─────┴────┬────┘ │
+</span></span><span style="display:flex;"><span>│  ▲ ▲                    │          │         ▲ ▲                    │          │      │
+</span></span><span style="display:flex;"><span>│  │ │                    │          │         │ │                    │          │      │
+</span></span><span style="display:flex;"><span>└──┼─┼────────────────────┼──────────┼─────────┼─┼────────────────────┼──────────┼──────┘
+</span></span><span style="display:flex;"><span>   │ │                    │          │         │ │                    │          │
+</span></span><span style="display:flex;"><span>   │ │     ┌──────────┐   │          │         │ │     ┌──────────┐   │          │
+</span></span><span style="display:flex;"><span>   │ │ ┌──►│prev_size │◄──┘          │         │ │   ┌►│prev_size │◄──┘          │
+</span></span><span style="display:flex;"><span>   │ │ │   │size      │              │         │ │   │ │size      │              │
+</span></span><span style="display:flex;"><span>   │ │ │   │fd        ├─┐            │         │ │   │ │fd        ├─┐            │
+</span></span><span style="display:flex;"><span>   └─┼─┼───┤bk        │ │            │         └─┼───┼─┤bk        │ │            │
+</span></span><span style="display:flex;"><span>     │ │   │          │ │            │           │   │ │          │ │            │
+</span></span><span style="display:flex;"><span>     │ │   │payload   │ │            │           │   │ │payload   │ │            │
+</span></span><span style="display:flex;"><span>     │ │   │          │ │            │           │   │ │          │ │            │
+</span></span><span style="display:flex;"><span>     │ │   └──────────┘ │            │           │   │ └──────────┘ │            │
+</span></span><span style="display:flex;"><span>     │ │                │            │           │   │              │            │
+</span></span><span style="display:flex;"><span>     │ │   ┌──────────┐ │            │           │   │ ┌──────────┐ │            │
+</span></span><span style="display:flex;"><span>     │ │ ┌►│prev_size │◄┘            │           │   │ │prev_size │◄└────────────┘
+</span></span><span style="display:flex;"><span>     │ │ │ │size      │              │           │   │ │size      │
+</span></span><span style="display:flex;"><span>     │ │ │ │fd        ├─┐            │           └───┼─┤fd        │
+</span></span><span style="display:flex;"><span>     │ └─┼─┤bk        │ │            │               └─┤bk        │
+</span></span><span style="display:flex;"><span>     │   │ │          │ │            │                 │          │
+</span></span><span style="display:flex;"><span>     │   │ │payload   │ │            │                 │payload   │
+</span></span><span style="display:flex;"><span>     │   │ │          │ │            │                 │          │
+</span></span><span style="display:flex;"><span>     │   │ └──────────┘ │            │                 └──────────┘
+</span></span><span style="display:flex;"><span>     │   │              │            │
+</span></span><span style="display:flex;"><span>     │   │ ┌──────────┐ │            │
+</span></span><span style="display:flex;"><span>     │   │ │prev_size │◄└────────────┘
+</span></span><span style="display:flex;"><span>     │   │ │size      │
+</span></span><span style="display:flex;"><span>     └───┼─┤fd        │
+</span></span><span style="display:flex;"><span>         └─┤bk        │
+</span></span><span style="display:flex;"><span>           │          │
+</span></span><span style="display:flex;"><span>           │payload   │
+</span></span><span style="display:flex;"><span>           │          │
+</span></span><span style="display:flex;"><span>           └──────────┘
+</span></span></code></pre></div><h3 id="small-bin">Small Bin</h3>
 <h3 id="large-bin">Large bin</h3>
 <ul>
 <li>內含 subbin 有多種不同 size 的 bin</li>
@@ -364,17 +363,17 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p><a href="https://cs241.cs.illinois.edu/coursebook/Malloc">CS 241 · Malloc</a></p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>參見 <a href="https://hackmd.io/@ljP_AG30SzmQE5qO-cjcpQ/HkICAjeJg?type=view#bin%E7%B0%A1%E4%BB%8B">針對多執行緒環境設計的 Memory allocator</a> 的 bins 區段，以及 <a href="https://hackmd.io/@sysprog/c-memory?type=view#glibc-%E7%9A%84-mallocfree-%E5%AF%A6%E4%BD%9C">你所不知道的 C 語言：記憶體管理、對齊及硬體特性</a>，對於理解記憶體管理機制很有幫助。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>參見 <a href="https://hackmd.io/@ljP_AG30SzmQE5qO-cjcpQ/HkICAjeJg?type=view#bin%E7%B0%A1%E4%BB%8B">針對多執行緒環境設計的 Memory allocator</a> 的 bins 區段，以及 <a href="https://hackmd.io/@sysprog/c-memory?type=view#glibc-%E7%9A%84-mallocfree-%E5%AF%A6%E4%BD%9C">你所不知道的 C 語言：記憶體管理、對齊及硬體特性</a>，對於理解記憶體管理機制很有幫助。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p><strong>Angel Boy <a href="https://www.slideshare.net/AngelBoy1/heap-exploitation-51891400">Heap Exploitation</a></strong> 推薦參閱該份簡報 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p><strong>Angel Boy <a href="https://www.slideshare.net/AngelBoy1/heap-exploitation-51891400">Heap Exploitation</a></strong> 推薦參閱該份簡報&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
     
       <hr>
@@ -430,7 +429,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

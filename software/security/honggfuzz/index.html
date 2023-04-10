@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -101,29 +100,29 @@ if (!doNotTrack) {
 <h2 id="getting-started">Getting Started</h2>
 <p>理論基礎請參見 <a href="/software/security/fuzzing/">Fuzzing 筆記</a></p>
 <p>透過 docker 安裝並且執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work --privileged zjuchenyuan/honggfuzz:latest /bin/bash
-</code></pre></div><p>為了黑箱測試必須啟用 qemu 模式，相關模塊需要另外編譯 。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd qemu_mode/
-apt update
-apt install libglib2.0-dev libpixman-1-dev
-make
-cd honggfuzz-qemu/ <span style="color:#f92672">&amp;&amp;</span> make
-</code></pre></div><p>如果出現 <code>run if fatal: unable to access 'https://git.qemu.org/git/capstone.git/': server certificate verification failed.</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export GIT_SSL_NO_VERIFY<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-make
-</code></pre></div><p>返回並且測試 qemu 模式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /honggfuzz
-</code></pre></div><p>開始 fuzzing，似乎沒有啟用 qemu 模式也可以找到 crash ，這邊取 pwnable.tw 的題目，可以找到一些 crash 但效率非常低(存疑，等待驗證)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">honggfuzz -i /work/in/ -t <span style="color:#ae81ff">1</span> -s -- /work/silver_bullet
-</code></pre></div><p>而 qemu 選擇正確的架構集之後，可以修復<code>EXITED, exit code: 255</code> 的問題，而且找非常容易找到 crash，跑30 分鐘大概可以找到 500 左右個獨特的 crash (存疑，等待驗證)。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">honggfuzz -i /work/in/ -t <span style="color:#ae81ff">1</span> -s -- ./qemu_mode/honggfuzz-qemu/i386-linux-user/qemu-i386 /work/hacknote
-</code></pre></div><h2 id="persistent-mode">Persistent Mode</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work --privileged zjuchenyuan/honggfuzz:latest /bin/bash
+</span></span></code></pre></div><p>為了黑箱測試必須啟用 qemu 模式，相關模塊需要另外編譯 。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd qemu_mode/
+</span></span><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt install libglib2.0-dev libpixman-1-dev
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>cd honggfuzz-qemu/ <span style="color:#f92672">&amp;&amp;</span> make
+</span></span></code></pre></div><p>如果出現 <code>run if fatal: unable to access 'https://git.qemu.org/git/capstone.git/': server certificate verification failed.</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export GIT_SSL_NO_VERIFY<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>返回並且測試 qemu 模式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /honggfuzz
+</span></span></code></pre></div><p>開始 fuzzing，似乎沒有啟用 qemu 模式也可以找到 crash ，這邊取 pwnable.tw 的題目，可以找到一些 crash 但效率非常低(存疑，等待驗證)。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>honggfuzz -i /work/in/ -t <span style="color:#ae81ff">1</span> -s -- /work/silver_bullet
+</span></span></code></pre></div><p>而 qemu 選擇正確的架構集之後，可以修復<code>EXITED, exit code: 255</code> 的問題，而且找非常容易找到 crash，跑30 分鐘大概可以找到 500 左右個獨特的 crash (存疑，等待驗證)。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>honggfuzz -i /work/in/ -t <span style="color:#ae81ff">1</span> -s -- ./qemu_mode/honggfuzz-qemu/i386-linux-user/qemu-i386 /work/hacknote
+</span></span></code></pre></div><h2 id="persistent-mode">Persistent Mode</h2>
 <h2 id="問題">問題</h2>
 <h3 id="exited-with-status-exited-exit-code-255">exited with status: EXITED, exit code: 255</h3>
 <p>請確保使用正確的架構，不同架構會導致 qemu 退出</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./qemu_mode/honggfuzz-qemu/x86_64-linux-user/qemu-x86_64 ./a.out
-./qemu_mode/honggfuzz-qemu/i386-linux-user/qemu-i386
-</code></pre></div><h2 id="參考">參考</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./qemu_mode/honggfuzz-qemu/x86_64-linux-user/qemu-x86_64 ./a.out
+</span></span><span style="display:flex;"><span>./qemu_mode/honggfuzz-qemu/i386-linux-user/qemu-i386
+</span></span></code></pre></div><h2 id="參考">參考</h2>
 <ul>
 <li><a href="http://matshao.com/2019/11/11/Redhat2019-Kaleidoscope/">[Redhat2019] Kaleidoscope</a></li>
 <li><a href="https://blog.csdn.net/lhk124/article/details/107786394">honggfuzz 安装_lhk124的博客-CSDN博客</a></li>
@@ -185,7 +184,7 @@ make
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

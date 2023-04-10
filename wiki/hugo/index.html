@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -107,45 +106,45 @@ if (!doNotTrack) {
     <p>存放一些<code>hugo</code>的指令與筆記</p>
 <h2 id="指令">指令</h2>
 <p>列出所有草稿</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo list drafts
-</code></pre></div><p>啟動草稿伺服器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D server
-hugo -D server --bind<span style="color:#f92672">=</span>0.0.0.0
-</code></pre></div><p>也可以使用<a href="https://github.com/r888800009/script/blob/master/hugo-draft-server">hugo-draft-server</a>腳本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo list drafts
+</span></span></code></pre></div><p>啟動草稿伺服器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo -D server
+</span></span><span style="display:flex;"><span>hugo -D server --bind<span style="color:#f92672">=</span>0.0.0.0
+</span></span></code></pre></div><p>也可以使用<a href="https://github.com/r888800009/script/blob/master/hugo-draft-server">hugo-draft-server</a>腳本</p>
 <p>建立新文章</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/post1.md
-</code></pre></div><p>建立文章透過<code>vim</code>編輯</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new wiki/grep.md --editor vim  
-</code></pre></div><p>也可以使用<a href="https://github.com/r888800009/script/blob/master/hugo-new">hugo-new</a>腳本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new posts/post1.md
+</span></span></code></pre></div><p>建立文章透過<code>vim</code>編輯</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new wiki/grep.md --editor vim  
+</span></span></code></pre></div><p>也可以使用<a href="https://github.com/r888800009/script/blob/master/hugo-new">hugo-new</a>腳本</p>
 <h2 id="管理hugo腳本">管理hugo腳本</h2>
 <p>以下腳本假設在blog的基目錄運行。</p>
 <h3 id="自動-commit">自動 commit</h3>
 <p>如果 hugo 搭配 git 使用，可能會想要自動 commit 的功能</p>
 <p>可以透過 <code>gitwitch</code> 來自動檢查檔案變化</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gitwatch ./content
-</code></pre></div><h3 id="找尋文章符合檔名">找尋文章符合檔名</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitwatch ./content
+</span></span></code></pre></div><h3 id="找尋文章符合檔名">找尋文章符合檔名</h3>
 <p>找出所有檔名包含<code>leet</code>的文章。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find content -name <span style="color:#e6db74">&#39;*leet*&#39;</span> 
-</code></pre></div><p>批量編輯，參見<a href="/wiki/vim/">vim</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim <span style="color:#66d9ef">$(</span>find content -name <span style="color:#e6db74">&#39;*leet*&#39;</span><span style="color:#66d9ef">)</span> 
-vim <span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#39;linux&#39;</span> content/* -Rl<span style="color:#66d9ef">)</span>
-</code></pre></div><h3 id="內文搜尋">內文搜尋</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find content -name <span style="color:#e6db74">&#39;*leet*&#39;</span> 
+</span></span></code></pre></div><p>批量編輯，參見<a href="/wiki/vim/">vim</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim <span style="color:#66d9ef">$(</span>find content -name <span style="color:#e6db74">&#39;*leet*&#39;</span><span style="color:#66d9ef">)</span> 
+</span></span><span style="display:flex;"><span>vim <span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#39;linux&#39;</span> content/* -Rl<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h3 id="內文搜尋">內文搜尋</h3>
 <p>透過<code>fzf</code>對內文模糊搜尋，在<code>content</code>目錄進行搜尋</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">grep --line-buffered --color<span style="color:#f92672">=</span>never -r <span style="color:#e6db74">&#34;&#34;</span> * | fzf
-</code></pre></div><p>其實我建議直接用 typora 或 obsidian 進行全文搜尋比較快。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grep --line-buffered --color<span style="color:#f92672">=</span>never -r <span style="color:#e6db74">&#34;&#34;</span> * | fzf
+</span></span></code></pre></div><p>其實我建議直接用 typora 或 obsidian 進行全文搜尋比較快。</p>
 <h2 id="文檔語法">文檔語法</h2>
 <p>將某個文章檔名轉換成絕對路徑，效果如Wikipadia內部連結類似。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{&lt; <span style="color:#f92672">relref</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">document</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">md</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">anchor</span><span style="color:#960050;background-color:#1e0010">&#34;</span> &gt;}}
-</code></pre></div><p>為了方便這邊再給一個</p>
-<pre><code>[doc]({{&lt; relref &quot;document.md#anchor&quot; &gt;}})
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{&lt; <span style="color:#f92672">relref</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">document</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">md</span><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">anchor</span><span style="color:#960050;background-color:#1e0010">&#34;</span> &gt;}}
+</span></span></code></pre></div><p>為了方便這邊再給一個</p>
+<pre tabindex="0"><code>[doc]({{&lt; relref &#34;document.md#anchor&#34; &gt;}})
 </code></pre><p>細節參見<a href="https://gohugo.io/content-management/cross-references/">官方文檔</a></p>
 <h3 id="設定html錨點">設定html錨點</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"><span style="color:#75715e">## link 1 {#link-123}
-</span><span style="color:#75715e"></span>[<span style="color:#f92672">link-123</span>](<span style="color:#a6e22e">#link-123</span>)
-</code></pre></div><h2 id="配置檔">配置檔</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#75715e">## link 1 {#link-123}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[<span style="color:#f92672">link-123</span>](<span style="color:#a6e22e">#link-123</span>)
+</span></span></code></pre></div><h2 id="配置檔">配置檔</h2>
 <p>啟用git資訊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">enableGitInfo</span> = <span style="color:#66d9ef">true</span>
-</code></pre></div><h2 id="參見">參見</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">enableGitInfo</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h2 id="參見">參見</h2>
 <ul>
 <li><a href="https://gohugo.io/commands/">Hugo官方指令文檔</a></li>
 <li><a href="/wiki/markdown/">Markdown</a></li>
@@ -199,7 +198,7 @@ vim <span style="color:#66d9ef">$(</span>grep <span style="color:#e6db74">&#39;l
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

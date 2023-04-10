@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -112,45 +111,44 @@ if (!doNotTrack) {
 <h2 id="安裝">安裝</h2>
 <h3 id="webgoat">WebGoat</h3>
 <p>首先我們必須找到 WebGoat 的 image，在這裡我們透過 <code>docker</code> 的指令搜尋</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search webgoat
-</code></pre></div><p>返回結果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">NAME                         DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
-webgoat/webgoat-8.0          Latest development version of WebGoat, see h…   44
-webgoat/webgoat-7.1          Latest stable version of WebGoat, see https:…   29
-szsecurity/webgoat           WebGoat Image                                   9
-webgoat/webwolf                                                              6
-vimagick/webgoat             A deliberately insecure Web Application         2    
-</code></pre></div><p>我們挑選穩定版本的 image 為 <code>webgoat/webgoat-7.1</code>，pull 並運行，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker search webgoat
+</span></span></code></pre></div><p>返回結果</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>NAME                         DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+</span></span><span style="display:flex;"><span>webgoat/webgoat-8.0          Latest development version of WebGoat, see h…   44
+</span></span><span style="display:flex;"><span>webgoat/webgoat-7.1          Latest stable version of WebGoat, see https:…   29
+</span></span><span style="display:flex;"><span>szsecurity/webgoat           WebGoat Image                                   9
+</span></span><span style="display:flex;"><span>webgoat/webwolf                                                              6
+</span></span><span style="display:flex;"><span>vimagick/webgoat             A deliberately insecure Web Application         2    
+</span></span></code></pre></div><p>我們挑選穩定版本的 image 為 <code>webgoat/webgoat-7.1</code>，pull 並運行，
 運行後監聽本機 <code>8080</code> 端口。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p 8080:8080 -t webgoat/webgoat-7.1
-</code></pre></div><p>之後我們可以瀏覽 http://localhost:8080/WebGoat 來查看 WebGoat 環境是否搭建完成，進入後註冊一個帳號使用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -p 8080:8080 -t webgoat/webgoat-7.1
+</span></span></code></pre></div><p>之後我們可以瀏覽 http://localhost:8080/WebGoat 來查看 WebGoat 環境是否搭建完成，進入後註冊一個帳號使用。</p>
 <p>關於 webgoat 的解答，可以參考測資 <a href="https://github.com/WebGoat/WebGoat/tree/develop/webgoat-integration-tests/src/test/java/org/owasp/webgoat">WebGoat/webgoat-integration-tests/src/test/java/org/owasp/webgoat</a></p>
 <h3 id="damn-vulnerable-web-application">Damn Vulnerable Web Application</h3>
 <p>這次我們安裝的 image 為 <code>vulnerables/web-dvwa</code>，鍵入以下指令</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -it -p 80:80 vulnerables/web-dvwa
-</code></pre></div><p>由於預設端口為<code>80</code>，因此我們鍵入 http://localhost/ 即可看到 DVWA 網站。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --rm -it -p 80:80 vulnerables/web-dvwa
+</span></span></code></pre></div><p>由於預設端口為<code>80</code>，因此我們鍵入 http://localhost/ 即可看到 DVWA 網站。
 我們可以看到登入界面，在配置環境的時候不用帳號密碼即可進入，並且執行安裝程序。
 我們點擊<code>Create / Reset Database</code>之後重新登入。</p>
 <p>之後我們透過預設密碼登入，即可看到環境。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">帳號: admin
-密碼: password
-</code></pre></div><p>這樣就搭建完成 <code>dvwa</code> 的測試環境了，DVWA 打不進去的話可以調整難度為 low，預設是 high。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>帳號: admin
+</span></span><span style="display:flex;"><span>密碼: password
+</span></span></code></pre></div><p>這樣就搭建完成 <code>dvwa</code> 的測試環境了，DVWA 打不進去的話可以調整難度為 low，預設是 high。</p>
 <h3 id="broken-web-applications">Broken Web Applications</h3>
 <p>直接使用 <code>docker</code> 找尋 image 找尋恰當的版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search mutillidae
-</code></pre></div><p>返回內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">NAME                                DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
-citizenstig/nowasp                  OWASP Mutillidae II Web Pen-Test Practice Ap…   31                                      [OK]
-bltsec/mutillidae-docker            Docker container for Mutillidae II **LATEST**   4
-feltsecure/owasp-mutillidae         This is a docker image containing OWASP Muti…   4                                       [OK]
-szsecurity/mutillidae               Mutillidae Image                                4
-vulnerables/web-owasp-mutillidae2   Mutillidae is a deliberately vulnerable web-…   3                                       [OK]
-
-</code></pre></div><p>這裡我們採用 <code>citizenstig/nowasp</code> 這個映像檔進行安裝，鍵入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -d -p 80:80 citizenstig/nowasp
-</code></pre></div><p>上面指令所產生的容器 <code>mysql</code> 密碼是隨機產生的，詳情可參見 <a href="https://hub.docker.com/r/citizenstig/nowasp/">docker hub頁面</a>，可以自己設定密碼。下方指令就可以設定密碼為<code>Chang3ME</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -d -p 80:80 -p 3306:3306 -e MYSQL_PASS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Chang3ME!&#34;</span> citizenstig/nowasp
-</code></pre></div><p>之後我們可以透過 http://localhost/ 連入我們的測試環境，不過進入的時候
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker search mutillidae
+</span></span></code></pre></div><p>返回內容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>NAME                                DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+</span></span><span style="display:flex;"><span>citizenstig/nowasp                  OWASP Mutillidae II Web Pen-Test Practice Ap…   31                                      [OK]
+</span></span><span style="display:flex;"><span>bltsec/mutillidae-docker            Docker container for Mutillidae II **LATEST**   4
+</span></span><span style="display:flex;"><span>feltsecure/owasp-mutillidae         This is a docker image containing OWASP Muti…   4                                       [OK]
+</span></span><span style="display:flex;"><span>szsecurity/mutillidae               Mutillidae Image                                4
+</span></span><span style="display:flex;"><span>vulnerables/web-owasp-mutillidae2   Mutillidae is a deliberately vulnerable web-…   3                                       [OK]
+</span></span></code></pre></div><p>這裡我們採用 <code>citizenstig/nowasp</code> 這個映像檔進行安裝，鍵入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d -p 80:80 citizenstig/nowasp
+</span></span></code></pre></div><p>上面指令所產生的容器 <code>mysql</code> 密碼是隨機產生的，詳情可參見 <a href="https://hub.docker.com/r/citizenstig/nowasp/">docker hub頁面</a>，可以自己設定密碼。下方指令就可以設定密碼為<code>Chang3ME</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d -p 80:80 -p 3306:3306 -e MYSQL_PASS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Chang3ME!&#34;</span> citizenstig/nowasp
+</span></span></code></pre></div><p>之後我們可以透過 http://localhost/ 連入我們的測試環境，不過進入的時候
 我們會連到 <code>database-offline.php</code>，這個時候點選 <a href="http://localhost/set-up-database.php">setup/reset the DB</a>
 即可解決問題。</p>
 <p>這樣就完成環境的搭建了。</p>
@@ -210,7 +208,7 @@ vulnerables/web-owasp-mutillidae2   Mutillidae is a deliberately vulnerable web-
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

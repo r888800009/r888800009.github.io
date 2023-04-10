@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -122,16 +121,16 @@ if (!doNotTrack) {
 <h2 id="基本語法">基本語法</h2>
 <h3 id="create">CREATE</h3>
 <p>以下建立一個 node 的 label 為 Person，當中 Person 的 Properties 有 name 與 job</p>
-<pre><code>CREATE (n:Person {name: '人名', job: '工程師'})
+<pre tabindex="0"><code>CREATE (n:Person {name: &#39;人名&#39;, job: &#39;工程師&#39;})
 </code></pre><p>或者可以直接建立 node 以及關聯性 (Relationship)，下面會建立兩個節點，並且 test ，</p>
-<pre><code>create (a)-[r:test]-&gt;()
+<pre tabindex="0"><code>create (a)-[r:test]-&gt;()
 </code></pre><p>也可以同時建立多個路徑，可以參見官方文件的 <a href="https://neo4j.com/docs/cypher-manual/current/clauses/create/#create-create-a-full-path">Create a full path</a></p>
 <h3 id="match--where">MATCH / WHERE</h3>
 <p>為了檢視資料庫，需要透過 match 把相關的圖設定到 c 這個變數，並且透過 return 檢視 c</p>
-<pre><code>match (c) return c
+<pre tabindex="0"><code>match (c) return c
 </code></pre><p>要找到特定目標比如要替 a 創建一個 relationship 到一個新的節點，可以這樣下</p>
-<pre><code>match (a)
-where a.job = &quot;工程師&quot;
+<pre tabindex="0"><code>match (a)
+where a.job = &#34;工程師&#34;
 create (a)-[r:test]-&gt;()
 return a
 </code></pre><p>也可以同時 match 兩個節點，並且建立關聯性，參見<a href="https://neo4j.com/docs/cypher-manual/current/clauses/create/#create-create-a-relationship-between-two-nodes">官方文件</a></p>
@@ -190,7 +189,7 @@ return a
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

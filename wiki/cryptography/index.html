@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -134,13 +133,13 @@ if (!doNotTrack) {
 </ul>
 <h3 id="質因數工具">質因數工具</h3>
 <p><a href="https://github.com/ryosan-470/factordb-pycli">factordb-pycli</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install factordb-pycli
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> factordb.factordb <span style="color:#f92672">import</span> FactorDB
-f <span style="color:#f92672">=</span> FactorDB(<span style="color:#ae81ff">16</span>)
-f<span style="color:#f92672">.</span>connect()
-f<span style="color:#f92672">.</span>get_factor_list()
-f<span style="color:#f92672">.</span>is_prime()
-</code></pre></div><h2 id="block-cipher">Block Cipher</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install factordb-pycli
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> factordb.factordb <span style="color:#f92672">import</span> FactorDB
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">=</span> FactorDB(<span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>f<span style="color:#f92672">.</span>connect()
+</span></span><span style="display:flex;"><span>f<span style="color:#f92672">.</span>get_factor_list()
+</span></span><span style="display:flex;"><span>f<span style="color:#f92672">.</span>is_prime()
+</span></span></code></pre></div><h2 id="block-cipher">Block Cipher</h2>
 <p>Feistel Cipher <a href="https://github.com/r888800009/practice/blob/master/crypto/feistel.py">範例</a></p>
 <h3 id="參見">參見</h3>
 <ul>
@@ -152,12 +151,12 @@ f<span style="color:#f92672">.</span>is_prime()
 <li>使用者向發行者索取公鑰，並且對簽章進行解密，
 並且比對其hash值是否與資料相同。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">發行者:
-    file -&gt; encrypt(hash(file), private_key) -&gt; 發行
-
-使用者:
-    released_file -&gt; decrypt(released_file, public_key) -&gt; 檢查hash值
-</code></pre></div><h3 id="參見-1">參見</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>發行者:
+</span></span><span style="display:flex;"><span>    file -&gt; encrypt(hash(file), private_key) -&gt; 發行
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>使用者:
+</span></span><span style="display:flex;"><span>    released_file -&gt; decrypt(released_file, public_key) -&gt; 檢查hash值
+</span></span></code></pre></div><h3 id="參見-1">參見</h3>
 <ul>
 <li><a href="/network-security/net-sec3/">公鑰與訊息認證</a></li>
 <li><a href="/network-security/net-sec4/">金鑰分發 用戶認證</a></li>
@@ -225,7 +224,7 @@ f<span style="color:#f92672">.</span>is_prime()
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

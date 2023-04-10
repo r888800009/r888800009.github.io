@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -88,43 +87,43 @@ if (!doNotTrack) {
 
     <h1 id="理解莖葉圖">理解莖葉圖</h1>
 <p>首先輸入以下兩個指令(以IPSUR作為範例)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">sort</span>(rivers)
-<span style="color:#a6e22e">stem</span>(rivers)
-</code></pre></div><p>為了方便觀察莖葉圖，因此將<code>rivers</code>排序，此為<code>sort(rivers)</code>的輸出</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">  [1]  135  202  210  210  215  217  230  230  233  237  246  250  250
- [14]  250  255  259  260  260  265  268  270  276  280  280  280  281
- [27]  286  290  291  300  300  300  301  306  310  310  314  315  320
- [40]  325  327  329  330  332  336  338  340  350  350  350  350  352
- [53]  360  360  360  360  375  377  380  380  383  390  390  392  407
- [66]  410  411  420  420  424  425  430  431  435  444  445  450  460
- [79]  460  465  470  490  500  500  505  524  525  525  529  538  540
- [92]  545  560  570  600  600  600  605  610  618  620  625  630  652
-[105]  671  680  696  710  720  720  730  735  735  760  780  800  840
-[118]  850  870  890  900  900  906  981 1000 1038 1054 1100 1171 1205
-[131] 1243 1270 1306 1450 1459 1770 1885 2315 2348 2533 3710
-</code></pre></div><p>此為<code>stem(rivers)</code>的輸出，以第二位數字作為右邊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">  The decimal point is 2 digit(s) to the right of the |
-
-   0 | 4
-   2 | 011223334555566667778888899900001111223333344455555666688888999
-   4 | 111222333445566779001233344567
-   6 | 000112233578012234468
-   8 | 045790018
-  10 | 04507
-  12 | 1471
-  14 | 56
-  16 | 7
-  18 | 9
-  20 | 
-  22 | 25
-  24 | 3
-  26 | 
-  28 | 
-  30 | 
-  32 | 
-  34 | 
-  36 | 1
-</code></pre></div><p>上面所輸出的為莖葉圖，莖的部份為第二位前面的數字，可能會有變化不一定相等，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span><span style="color:#a6e22e">sort</span>(rivers)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">stem</span>(rivers)
+</span></span></code></pre></div><p>為了方便觀察莖葉圖，因此將<code>rivers</code>排序，此為<code>sort(rivers)</code>的輸出</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>  [1]  135  202  210  210  215  217  230  230  233  237  246  250  250
+</span></span><span style="display:flex;"><span> [14]  250  255  259  260  260  265  268  270  276  280  280  280  281
+</span></span><span style="display:flex;"><span> [27]  286  290  291  300  300  300  301  306  310  310  314  315  320
+</span></span><span style="display:flex;"><span> [40]  325  327  329  330  332  336  338  340  350  350  350  350  352
+</span></span><span style="display:flex;"><span> [53]  360  360  360  360  375  377  380  380  383  390  390  392  407
+</span></span><span style="display:flex;"><span> [66]  410  411  420  420  424  425  430  431  435  444  445  450  460
+</span></span><span style="display:flex;"><span> [79]  460  465  470  490  500  500  505  524  525  525  529  538  540
+</span></span><span style="display:flex;"><span> [92]  545  560  570  600  600  600  605  610  618  620  625  630  652
+</span></span><span style="display:flex;"><span>[105]  671  680  696  710  720  720  730  735  735  760  780  800  840
+</span></span><span style="display:flex;"><span>[118]  850  870  890  900  900  906  981 1000 1038 1054 1100 1171 1205
+</span></span><span style="display:flex;"><span>[131] 1243 1270 1306 1450 1459 1770 1885 2315 2348 2533 3710
+</span></span></code></pre></div><p>此為<code>stem(rivers)</code>的輸出，以第二位數字作為右邊</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>  The decimal point is 2 digit(s) to the right of the |
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   0 | 4
+</span></span><span style="display:flex;"><span>   2 | 011223334555566667778888899900001111223333344455555666688888999
+</span></span><span style="display:flex;"><span>   4 | 111222333445566779001233344567
+</span></span><span style="display:flex;"><span>   6 | 000112233578012234468
+</span></span><span style="display:flex;"><span>   8 | 045790018
+</span></span><span style="display:flex;"><span>  10 | 04507
+</span></span><span style="display:flex;"><span>  12 | 1471
+</span></span><span style="display:flex;"><span>  14 | 56
+</span></span><span style="display:flex;"><span>  16 | 7
+</span></span><span style="display:flex;"><span>  18 | 9
+</span></span><span style="display:flex;"><span>  20 | 
+</span></span><span style="display:flex;"><span>  22 | 25
+</span></span><span style="display:flex;"><span>  24 | 3
+</span></span><span style="display:flex;"><span>  26 | 
+</span></span><span style="display:flex;"><span>  28 | 
+</span></span><span style="display:flex;"><span>  30 | 
+</span></span><span style="display:flex;"><span>  32 | 
+</span></span><span style="display:flex;"><span>  34 | 
+</span></span><span style="display:flex;"><span>  36 | 1
+</span></span></code></pre></div><p>上面所輸出的為莖葉圖，莖的部份為第二位前面的數字，可能會有變化不一定相等，
 葉的部份<strong>四捨五入</strong>後第二位的值放入。</p>
 <p>可以對照排序後的結果與莖葉圖之間的關聯。</p>
 
@@ -180,7 +179,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

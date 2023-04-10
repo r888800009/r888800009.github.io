@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -108,35 +107,35 @@ if (!doNotTrack) {
 <p>(2022 年 3 月 13日更新)</p>
 </blockquote>
 <h2 id="安裝-pwntools">安裝 pwntools</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install pwntools
-</code></pre></div><p>MacBook m1 安装 pwntools path 參照這篇</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pwntools
+</span></span></code></pre></div><p>MacBook m1 安装 pwntools path 參照這篇</p>
 <ul>
 <li><a href="https://www.mac-soft.cn/t/4259">https://www.mac-soft.cn/t/4259</a></li>
 </ul>
 <h2 id="could-not-find-as-installed">Could not find &lsquo;as&rsquo; installed</h2>
 <p>完成安裝後依然會遇到問題</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Could not find <span style="color:#e6db74">&#39;as&#39;</span> installed <span style="color:#66d9ef">for</span> ContextType<span style="color:#f92672">()</span>
-    Try installing binutils <span style="color:#66d9ef">for</span> this architecture:
-    https://docs.pwntools.com/en/stable/install/binutils.html
-</code></pre></div><p>預設 brew 的 binutils 沒有 as ，並且參照官網的單行指令 binuntils 一直安裝失敗，因此必須透過以下方法安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/Gallopsled/pwntools-binutils.git
-cd pwntools-binutils/macos
-./install_all.sh
-</code></pre></div><p>重新開啟 python 並且檢查</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&gt;&gt;&gt; from pwn import *
-&gt;&gt;&gt; asm(&#39;pop eax&#39;)
-b&#39;X&#39;
-</code></pre></div><p>成功組譯</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>ERROR<span style="color:#f92672">]</span> Could not find <span style="color:#e6db74">&#39;as&#39;</span> installed <span style="color:#66d9ef">for</span> ContextType<span style="color:#f92672">()</span>
+</span></span><span style="display:flex;"><span>    Try installing binutils <span style="color:#66d9ef">for</span> this architecture:
+</span></span><span style="display:flex;"><span>    https://docs.pwntools.com/en/stable/install/binutils.html
+</span></span></code></pre></div><p>預設 brew 的 binutils 沒有 as ，並且參照官網的單行指令 binuntils 一直安裝失敗，因此必須透過以下方法安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/Gallopsled/pwntools-binutils.git
+</span></span><span style="display:flex;"><span>cd pwntools-binutils/macos
+</span></span><span style="display:flex;"><span>./install_all.sh
+</span></span></code></pre></div><p>重新開啟 python 並且檢查</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&gt;&gt;&gt; from pwn import *
+</span></span><span style="display:flex;"><span>&gt;&gt;&gt; asm(&#39;pop eax&#39;)
+</span></span><span style="display:flex;"><span>b&#39;X&#39;
+</span></span></code></pre></div><p>成功組譯</p>
 <h2 id="unicorn-engine-bus-error">Unicorn Engine Bus Error</h2>
-<p>在執行 ELF('./a.out') 時會發生 bus error</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 exploit.py                                                                                                                                                                      CTF-Solve/pwnable.tw/death_note master
-<span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Opening connection to example.com on port 1337: Done
-zsh: bus error  python3 exploit.py
-</code></pre></div><p>我們可以透過 lldb 除錯 python 來定位 bug，並且輸入執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-ELF(<span style="color:#e6db74">&#39;./a.out&#39;</span>)
-</code></pre></div><p>這時崩潰，透過 bt 可以發現問題出在 libunicorn.dylib</p>
-<pre><code>* frame #0: 0x0000000108bb7c00
+<p>在執行 ELF(&rsquo;./a.out&rsquo;) 時會發生 bus error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 exploit.py                                                                                                                                                                      CTF-Solve/pwnable.tw/death_note master
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>+<span style="color:#f92672">]</span> Opening connection to example.com on port 1337: Done
+</span></span><span style="display:flex;"><span>zsh: bus error  python3 exploit.py
+</span></span></code></pre></div><p>我們可以透過 lldb 除錯 python 來定位 bug，並且輸入執行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>ELF(<span style="color:#e6db74">&#39;./a.out&#39;</span>)
+</span></span></code></pre></div><p>這時崩潰，透過 bt 可以發現問題出在 libunicorn.dylib</p>
+<pre tabindex="0"><code>* frame #0: 0x0000000108bb7c00
     frame #1: 0x00000001063d194c libunicorn.dylib`cpu_x86_exec + 732
     frame #2: 0x00000001063d1550 libunicorn.dylib`resume_all_vcpus_x86_64 + 148
     frame #3: 0x00000001063d14b0 libunicorn.dylib`vm_start_x86_64 + 12
@@ -144,7 +143,7 @@ ELF(<span style="color:#e6db74">&#39;./a.out&#39;</span>)
     frame #5: 0x0000000196fe0050 libffi.dylib`ffi_call_SYSV + 80
     frame #6: 0x0000000196fe89d8 libffi.dylib`ffi_call_int + 944
 </code></pre><p>透過 lldb 進行定位 <code>image dump sections</code> 發現 pwntools 本身帶有的 lib 有問題 (是否有可能在未來的版本解決？)</p>
-<pre><code>/opt/homebrew/Cellar/pwntools/4.3.1/libexec/lib/python3.9/site-packages/unicorn/lib/libunicorn.dylib
+<pre tabindex="0"><code>/opt/homebrew/Cellar/pwntools/4.3.1/libexec/lib/python3.9/site-packages/unicorn/lib/libunicorn.dylib
 </code></pre><p>而 DYLD_LIBRARY_PATH 不可用  (可能受到 SIP 限制 ) 可以使用 install_name_tool 或 disable SIP 之類的，不過這裡打算用打補丁的方式，或許某天 unicorn 或 pwntools 會釋出解決方案等等。</p>
 <p>透過 <code>brew install --build-from-source unicorn</code> 安裝的 unicorn 依然會有這樣的問題，就算確保路徑在 <code>opt/homebrew/Cellar/unicorn/1.0.2_1</code> ，而解決方案是：</p>
 <ol>
@@ -152,16 +151,16 @@ ELF(<span style="color:#e6db74">&#39;./a.out&#39;</span>)
 <li>建立軟連結取代 pwntools 的 unicorn</li>
 </ol>
 <p>檢視安裝的路徑</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ibrew info unicorn
-</code></pre></div><p>之後可以得到我們自行安裝的 unicorn 位置</p>
-<pre><code>/usr/local/Cellar/unicorn/1.0.2_1/lib/python3.9/site-packages/unicorn/lib
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ibrew info unicorn
+</span></span></code></pre></div><p>之後可以得到我們自行安裝的 unicorn 位置</p>
+<pre tabindex="0"><code>/usr/local/Cellar/unicorn/1.0.2_1/lib/python3.9/site-packages/unicorn/lib
 </code></pre><p>執行腳本，透過軟連結覆蓋掉檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">x86_unicorn_path<span style="color:#f92672">=</span>/usr/local/Cellar/unicorn/1.0.2_1/lib/python3.9/site-packages/unicorn/lib
-pwntools_unicorn_path<span style="color:#f92672">=</span>/opt/homebrew/Cellar/pwntools/4.3.1/libexec/lib/python3.9/site-packages/unicorn/lib/
-mkdir $pwntools_unicorn_path/back/
-mv $pwntools_unicorn_path/* $pwntools_unicorn_path/back/
-ln -s $x86_unicorn_path/* $pwntools_unicorn_path/
-</code></pre></div><p>這個腳本保留了原始檔案以便還原，如果修改不回來，重新安裝 pwntools 應該也可以還原原始檔案。接下來執行 exploit.py 就可以正常執行 <code>ELF()</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>x86_unicorn_path<span style="color:#f92672">=</span>/usr/local/Cellar/unicorn/1.0.2_1/lib/python3.9/site-packages/unicorn/lib
+</span></span><span style="display:flex;"><span>pwntools_unicorn_path<span style="color:#f92672">=</span>/opt/homebrew/Cellar/pwntools/4.3.1/libexec/lib/python3.9/site-packages/unicorn/lib/
+</span></span><span style="display:flex;"><span>mkdir $pwntools_unicorn_path/back/
+</span></span><span style="display:flex;"><span>mv $pwntools_unicorn_path/* $pwntools_unicorn_path/back/
+</span></span><span style="display:flex;"><span>ln -s $x86_unicorn_path/* $pwntools_unicorn_path/
+</span></span></code></pre></div><p>這個腳本保留了原始檔案以便還原，如果修改不回來，重新安裝 pwntools 應該也可以還原原始檔案。接下來執行 exploit.py 就可以正常執行 <code>ELF()</code>。</p>
 <h3 id="參見">參見</h3>
 
     
@@ -216,7 +215,7 @@ ln -s $x86_unicorn_path/* $pwntools_unicorn_path/
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

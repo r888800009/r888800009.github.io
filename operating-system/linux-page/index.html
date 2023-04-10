@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -141,6 +140,11 @@ if (!doNotTrack) {
 <li>Page Table entry (PTE Table)</li>
 <li>Data frame (12 bits)</li>
 </ul>
+<p>why need five/four level page table?</p>
+<ul>
+<li>主要是因為對於大的定址空間，保存太大的定址空間，並且實際上  x64 系統並不會使用到所有的記憶體，因此將定址空間表示成稀疏分頁目錄，可以節省空間，但會比較慢一點。</li>
+<li><a href="https://lwn.net/Articles/717293/">Five-level page tables [LWN.net]</a></li>
+</ul>
 <h2 id="ref">ref</h2>
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/102293437">Cache的基本原理 - 知乎</a></li>
@@ -205,7 +209,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

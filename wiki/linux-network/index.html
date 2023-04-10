@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -112,53 +111,53 @@ if (!doNotTrack) {
 </ul>
 <h2 id="monitor-mode">Monitor Mode</h2>
 <p>啟用 monitor mode</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ip link set down dev &lt;interface&gt;
-sudo iw &lt;interface&gt; set monitor none
-sudo ip link set up dev &lt;interface&gt;
-</code></pre></div><p>還原</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo ip link set down dev &lt;interface&gt;
-sudo iw &lt;interface&gt; set type managed
-sudo ip link set up dev &lt;interface&gt;
-</code></pre></div><h2 id="wifi">WiFi</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip link set down dev &lt;interface&gt;
+</span></span><span style="display:flex;"><span>sudo iw &lt;interface&gt; set monitor none
+</span></span><span style="display:flex;"><span>sudo ip link set up dev &lt;interface&gt;
+</span></span></code></pre></div><p>還原</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ip link set down dev &lt;interface&gt;
+</span></span><span style="display:flex;"><span>sudo iw &lt;interface&gt; set type managed
+</span></span><span style="display:flex;"><span>sudo ip link set up dev &lt;interface&gt;
+</span></span></code></pre></div><h2 id="wifi">WiFi</h2>
 <h3 id="wpa_cli">wpa_cli</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wpa_cli
-</code></pre></div><p>建立一個新的網路配置，執行之後返回id</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">add_network
-</code></pre></div><p>設定ssid並且根據上一個返回的數值(假設上次回傳0)選定設定網路</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">set_network 0 ssid &#34;my wifi&#34;
-</code></pre></div><p>設定密碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">set_network 0 psk &#34;pass&#34;
-</code></pre></div><h2 id="端口查看">端口查看</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wpa_cli
+</span></span></code></pre></div><p>建立一個新的網路配置，執行之後返回id</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>add_network
+</span></span></code></pre></div><p>設定ssid並且根據上一個返回的數值(假設上次回傳0)選定設定網路</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>set_network 0 ssid &#34;my wifi&#34;
+</span></span></code></pre></div><p>設定密碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>set_network 0 psk &#34;pass&#34;
+</span></span></code></pre></div><h2 id="端口查看">端口查看</h2>
 <p>linux列出特定端口的process</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fuser 8080/tcp
-</code></pre></div><p>linux停止特定端口的process</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fuser 8080/tcp -k 
-</code></pre></div><h2 id="pppoe上網">PPPoE上網</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fuser 8080/tcp
+</span></span></code></pre></div><p>linux停止特定端口的process</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fuser 8080/tcp -k 
+</span></span></code></pre></div><h2 id="pppoe上網">PPPoE上網</h2>
 <p>安裝<code>ppp</code></p>
 <h2 id="iptables">iptables</h2>
 <p>封鎖特定網域(該方法在背後會轉成IP)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables -A OUTPUT -d <span style="color:#e6db74">&#34;facebook.com&#34;</span> -j DROP
-iptables -A OUTPUT -d <span style="color:#e6db74">&#34;facebook.net&#34;</span> -j DROP
-</code></pre></div><p>批配字串進行丟棄</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables -A OUTPUT -p tcp -m string --string <span style="color:#e6db74">&#34;facebook.com&#34;</span> --algo kmp -j DROP
-iptables -A OUTPUT -p tcp -m string --string <span style="color:#e6db74">&#34;facebook.net&#34;</span> --algo kmp -j DROP
-</code></pre></div><p>保存或編輯<code>iptables.rules</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo iptable-save
-sudo vim /etc/iptables/iptables.rules
-sudo systemctl enable iptables.service
-sudo systemctl start iptables.service
-</code></pre></div><p>移除規則時將<code>-A</code>改成<code>-D</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>iptables -A OUTPUT -d <span style="color:#e6db74">&#34;facebook.com&#34;</span> -j DROP
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -d <span style="color:#e6db74">&#34;facebook.net&#34;</span> -j DROP
+</span></span></code></pre></div><p>批配字串進行丟棄</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>iptables -A OUTPUT -p tcp -m string --string <span style="color:#e6db74">&#34;facebook.com&#34;</span> --algo kmp -j DROP
+</span></span><span style="display:flex;"><span>iptables -A OUTPUT -p tcp -m string --string <span style="color:#e6db74">&#34;facebook.net&#34;</span> --algo kmp -j DROP
+</span></span></code></pre></div><p>保存或編輯<code>iptables.rules</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo iptable-save
+</span></span><span style="display:flex;"><span>sudo vim /etc/iptables/iptables.rules
+</span></span><span style="display:flex;"><span>sudo systemctl enable iptables.service
+</span></span><span style="display:flex;"><span>sudo systemctl start iptables.service
+</span></span></code></pre></div><p>移除規則時將<code>-A</code>改成<code>-D</code></p>
 <h3 id="轉發">轉發</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
-iptables -t nat -A POSTROUTING -j MASQUERADE
-iptables -t nat -A PREROUTING -p tcp --dport <span style="color:#f92672">[</span>port<span style="color:#f92672">]</span> -j DNAT --to-destination <span style="color:#f92672">[</span>LAN ip<span style="color:#f92672">]</span>:<span style="color:#f92672">[</span>port<span style="color:#f92672">]</span>
-</code></pre></div><p>關於 linux 網路</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#ae81ff">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+</span></span><span style="display:flex;"><span>iptables -t nat -A POSTROUTING -j MASQUERADE
+</span></span><span style="display:flex;"><span>iptables -t nat -A PREROUTING -p tcp --dport <span style="color:#f92672">[</span>port<span style="color:#f92672">]</span> -j DNAT --to-destination <span style="color:#f92672">[</span>LAN ip<span style="color:#f92672">]</span>:<span style="color:#f92672">[</span>port<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>關於 linux 網路</p>
 <h2 id="修改-mac">修改 MAC</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -i
-ip link set dev eth0 down
-ip link set dev eth0 address 00:11:22:33:44:55
-ip link set dev eth0 up
-</code></pre></div><p>參見</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -i
+</span></span><span style="display:flex;"><span>ip link set dev eth0 down
+</span></span><span style="display:flex;"><span>ip link set dev eth0 address 00:11:22:33:44:55
+</span></span><span style="display:flex;"><span>ip link set dev eth0 up
+</span></span></code></pre></div><p>參見</p>
 <ul>
 <li><a href="https://wiki.archlinux.org/index.php/MAC_address_spoofing">MAC address spoofing</a></li>
 <li><a href="https://gist.github.com/aallan/b4bb86db86079509e6159810ae9bd3e4">List of MAC addresses with vendors identities</a></li>
@@ -214,7 +213,7 @@ ip link set dev eth0 up
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -110,36 +109,36 @@ if (!doNotTrack) {
 <li><code>/</code>除法含小數</li>
 <li><code>//</code>除法無小數</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#開根號</span>
-<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">**</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)i
-<span style="color:#ae81ff">4.0</span>
-</code></pre></div><h2 id="自訂模塊">自訂模塊</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#開根號</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#ae81ff">16</span> <span style="color:#f92672">**</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)i
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.0</span>
+</span></span></code></pre></div><h2 id="自訂模塊">自訂模塊</h2>
 <p>loadTestA.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
-<span style="color:#f92672">import</span> loadTestB
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;A out&#39;</span>)
-</code></pre></div><p>loadTestB.py</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;B out&#34;</span>)
-</code></pre></div><p>輸入<code>./loadTestA.py</code>執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">B out
-A out
-</code></pre></div><h2 id="簡易伺服器">簡易伺服器</h2>
-<pre><code>#python3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> loadTestB
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;A out&#39;</span>)
+</span></span></code></pre></div><p>loadTestB.py</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env python</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;B out&#34;</span>)
+</span></span></code></pre></div><p>輸入<code>./loadTestA.py</code>執行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>B out
+</span></span><span style="display:flex;"><span>A out
+</span></span></code></pre></div><h2 id="簡易伺服器">簡易伺服器</h2>
+<pre tabindex="0"><code>#python3
 $ python -m http.server 8080
 </code></pre><h2 id="迴圈">迴圈</h2>
 <p>雙陣列迴圈</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> x, y <span style="color:#f92672">in</span> zip(l1,l2):
-    <span style="color:#66d9ef">print</span>()
-</code></pre></div><p>單行for loop</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#66d9ef">print</span>(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> <span style="color:#e6db74">&#34;123&#34;</span>]
-</code></pre></div><h2 id="常見問題">常見問題</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> x, y <span style="color:#f92672">in</span> zip(l1,l2):
+</span></span><span style="display:flex;"><span>    print()
+</span></span></code></pre></div><p>單行for loop</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>[print(i) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> <span style="color:#e6db74">&#34;123&#34;</span>]
+</span></span></code></pre></div><h2 id="常見問題">常見問題</h2>
 <h3 id="如何解決lambda會用到全域變數">如何解決Lambda會用到全域變數</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">lambda</span>: v<span style="color:#f92672">=</span>v
-</code></pre></div><h3 id="conda與預設環境衝突">conda與預設環境衝突</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">lambda</span>: v<span style="color:#f92672">=</span>v
+</span></span></code></pre></div><h3 id="conda與預設環境衝突">conda與預設環境衝突</h3>
 <p>從conda環境返回基本環境</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda deactivate
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda deactivate
+</span></span></code></pre></div>
 
     
       <hr>
@@ -189,7 +188,7 @@ $ python -m http.server 8080
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

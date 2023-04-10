@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -117,21 +116,21 @@ if (!doNotTrack) {
 <p>第二行為每月所需人數。</p>
 <h2 id="範例">範例</h2>
 <p>測資一</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">4 22 14 84
-10 4 14 10
-</code></pre></div><p>測資一結果: 980</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>4 22 14 84
+</span></span><span style="display:flex;"><span>10 4 14 10
+</span></span></code></pre></div><p>測資一結果: 980</p>
 <p>測資二</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">3 21 13 84
-10 11 12
-</code></pre></div><p>測資二結果: 681</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>3 21 13 84
+</span></span><span style="display:flex;"><span>10 11 12
+</span></span></code></pre></div><p>測資二結果: 681</p>
 <p>測資三</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">3 21 13 84
-13 14 15
-</code></pre></div><p>測資三結果: 861</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>3 21 13 84
+</span></span><span style="display:flex;"><span>13 14 15
+</span></span></code></pre></div><p>測資三結果: 861</p>
 <p>測資四</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">7 10 20 30
-3 7 4 5 1 8 9
-</code></pre></div><p>測資四結果: 1050</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>7 10 20 30
+</span></span><span style="display:flex;"><span>3 7 4 5 1 8 9
+</span></span></code></pre></div><p>測資四結果: 1050</p>
 <h2 id="解法">解法</h2>
 <p>透過dp動態規劃下去處理，計算一個月當中所有可能派遣與調回的情況，以及
 沒有變化的情況，用上次最小值作為當前計算的基底，
@@ -139,47 +138,47 @@ if (!doNotTrack) {
 <p><a href="https://github.com/r888800009/practice/blob/master/army-dispatch-problem.c">程式碼</a></p>
 <p>原先複雜度是<code>O(max(A)*n)</code>，觀察兩個測資發現似乎可以壓到<code>O(n)</code></p>
 <p>測資一</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">7 10 20 30
-3 7 4 5 1 8 9
-   x    x    x    x    x    x    x  270  300  330
-   x    x    x    x  440  430  420  410  440  470
-   x    x    x    x    x  570  560  550  580  610
-   x  750  740  730  720  710  700  690  720  750
-   x    x    x    x    x    x    x    x  860  890
-   x    x    x    x    x    x    x    x    x 1050
-1050
-</code></pre></div><p>測資二</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">7 10 20 30
-3 7 4 5 1 8 12
-   x    x    x    x    x    x    x  270  300  330  360  390  420
-   x    x    x    x  440  430  420  410  440  470  500  530  560
-   x    x    x    x    x  570  560  550  580  610  640  670  700
-   x *750**740* 730  720  710  700  690  720  750  780 *810**840*
-   x    x    x    x    x    x    x    x  860  890  920  950  980
-   x    x    x    x    x    x    x    x    x    x    x    x 1140
-1140
-</code></pre></div><h3 id="第一次優化">第一次優化</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>7 10 20 30
+</span></span><span style="display:flex;"><span>3 7 4 5 1 8 9
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x  270  300  330
+</span></span><span style="display:flex;"><span>   x    x    x    x  440  430  420  410  440  470
+</span></span><span style="display:flex;"><span>   x    x    x    x    x  570  560  550  580  610
+</span></span><span style="display:flex;"><span>   x  750  740  730  720  710  700  690  720  750
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x    x  860  890
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x    x    x 1050
+</span></span><span style="display:flex;"><span>1050
+</span></span></code></pre></div><p>測資二</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>7 10 20 30
+</span></span><span style="display:flex;"><span>3 7 4 5 1 8 12
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x  270  300  330  360  390  420
+</span></span><span style="display:flex;"><span>   x    x    x    x  440  430  420  410  440  470  500  530  560
+</span></span><span style="display:flex;"><span>   x    x    x    x    x  570  560  550  580  610  640  670  700
+</span></span><span style="display:flex;"><span>   x *750**740* 730  720  710  700  690  720  750  780 *810**840*
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x    x  860  890  920  950  980
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x    x    x    x    x    x 1140
+</span></span><span style="display:flex;"><span>1140
+</span></span></code></pre></div><h3 id="第一次優化">第一次優化</h3>
 <p>觀察後發現或許子迴圈超過3個值時可以抓取兩側，
 算出兩個線性方程式，透過交點找到周圍的最小值，
 無解就表示兩側有一邊是最小值，透過斜率判斷左邊右邊。</p>
 <p>為了確定是不是線性函數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">solve = dp[i - 1][pre_people] + y * j + z * -(j - pre_people)
-solve = dp[i - 1][pre_people] + y * j + x * (j - pre_people)
-</code></pre></div><p>展開之後重新分配可以得到</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">solve = (dp[i - 1][pre_people] + z * pre_people) + (y - z) * j
-solve = (dp[i - 1][pre_people] - x * pre_people) + (y + x) * j
-</code></pre></div><p>確定是線性(其實不重新分配好像也看得出現性)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>solve = dp[i - 1][pre_people] + y * j + z * -(j - pre_people)
+</span></span><span style="display:flex;"><span>solve = dp[i - 1][pre_people] + y * j + x * (j - pre_people)
+</span></span></code></pre></div><p>展開之後重新分配可以得到</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>solve = (dp[i - 1][pre_people] + z * pre_people) + (y - z) * j
+</span></span><span style="display:flex;"><span>solve = (dp[i - 1][pre_people] - x * pre_people) + (y + x) * j
+</span></span></code></pre></div><p>確定是線性(其實不重新分配好像也看得出現性)</p>
 <p>測資三</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">7 10 30 20
-3 7 4 5 1 8 12
-   x    x    x    x    x    x    x  370  410  450  490  530  570
-   x    x    x    x  550  560  570  580  620  660  700  740  780
-   x    x    x    x    x  710  750  790  830  870  910  950  990
-   x  820  830  840  850  860  900  940  980 1020 1060 1100 1140
-   x    x    x    x    x    x    x    x 1130 1170 1210 1250 1290
-   x    x    x    x    x    x    x    x    x    x    x    x 1530
-1530
-</code></pre></div><p><code>y - z</code>有可能是正或負，可能還需要考慮這種情況
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>7 10 30 20
+</span></span><span style="display:flex;"><span>3 7 4 5 1 8 12
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x  370  410  450  490  530  570
+</span></span><span style="display:flex;"><span>   x    x    x    x  550  560  570  580  620  660  700  740  780
+</span></span><span style="display:flex;"><span>   x    x    x    x    x  710  750  790  830  870  910  950  990
+</span></span><span style="display:flex;"><span>   x  820  830  840  850  860  900  940  980 1020 1060 1100 1140
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x    x 1130 1170 1210 1250 1290
+</span></span><span style="display:flex;"><span>   x    x    x    x    x    x    x    x    x    x    x    x 1530
+</span></span><span style="display:flex;"><span>1530
+</span></span></code></pre></div><p><code>y - z</code>有可能是正或負，可能還需要考慮這種情況
 ，合理的情況<code>y + x</code>恆正(假設花費金額都為正數)，這個時候就是最左側。</p>
 <h3 id="第二次優化">第二次優化</h3>
 <p>應該可以從這個<a href="https://github.com/r888800009/practice/blob/6133f11140e3eb4f8b9674bb79ccaa2f262849f2/army-dispatch-problem.c#L29-L33">程式碼</a>
@@ -256,7 +255,7 @@ solve = (dp[i - 1][pre_people] - x * pre_people) + (y + x) * j
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

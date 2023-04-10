@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -112,16 +111,20 @@ if (!doNotTrack) {
     </li>
     <li><a href="#視訊">視訊</a></li>
     <li><a href="#通知中心">通知中心</a></li>
-    <li><a href="#xclip">xclip</a></li>
-    <li><a href="#輸入法">輸入法</a></li>
-    <li><a href="#查詢按鍵">查詢按鍵</a></li>
-    <li><a href="#模擬按下">模擬按下</a></li>
     <li><a href="#檢查-xorg-錯誤日誌">檢查 Xorg 錯誤日誌</a></li>
     <li><a href="#影片播放">影片播放</a></li>
     <li><a href="#ranger">ranger</a></li>
     <li><a href="#編輯-pdf-metadata">編輯 PDF metadata</a></li>
     <li><a href="#nvidia-optimus">NVIDIA Optimus</a></li>
     <li><a href="#錄製螢幕閃爍">錄製螢幕閃爍</a></li>
+    <li><a href="#鍵盤">鍵盤</a>
+      <ul>
+        <li><a href="#xclip">xclip</a></li>
+        <li><a href="#輸入法">輸入法</a></li>
+        <li><a href="#查詢按鍵">查詢按鍵</a></li>
+        <li><a href="#模擬按下">模擬按下</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </aside>
@@ -139,29 +142,33 @@ if (!doNotTrack) {
 <h4 id="透過rofi連上ssh">透過rofi連上ssh</h4>
 <p>rofi有兩種模式適用於ssh，分別是<code>ssh</code>與<code>combi</code>，前者僅會有
 ssh連線相關選項，後者則是通用的切換選項。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rofi -show ssh 
-rofi -show combi
-</code></pre></div><h2 id="平鋪式視窗管理器">平鋪式視窗管理器</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rofi -show ssh 
+</span></span><span style="display:flex;"><span>rofi -show combi
+</span></span></code></pre></div><h2 id="平鋪式視窗管理器">平鋪式視窗管理器</h2>
 <ul>
-<li><a href="https://github.com/baskerville/bspwm">bspwm</a></li>
+<li><a href="https://github.com/baskerville/bspwm">bspwm</a>
+<ul>
+<li>如果切換到 macos 的使用者，也有採用類似概念的 <a href="https://github.com/koekeishiya/yabai">yabai wm</a></li>
+</ul>
+</li>
 <li>i3-wm</li>
 <li>qtile，可以透過python編寫配置</li>
 <li>awesome wm，可以透過lua編寫配置</li>
 </ul>
 <h3 id="bspwm-指令">bspwm 指令</h3>
 <p>交換桌面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bspc desktop --swap <span style="color:#ae81ff">\^</span><span style="color:#ae81ff">1</span> 
-</code></pre></div><p>移除桌面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bspc desktop <span style="color:#ae81ff">\^</span><span style="color:#ae81ff">6</span> --remove
-</code></pre></div><p>重新命名桌面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bspc desktop focused --rename newname
-</code></pre></div><p>建立桌面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bspc monitor focused --add-desktops <span style="color:#ae81ff">3321</span>
-</code></pre></div><p>將桌面像前後移動</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bspc desktop focused --swap prev 
-</code></pre></div><p>取得當前名稱</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bspc query -D -d focused --names 
-</code></pre></div><h2 id="繪圖軟體">繪圖軟體</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bspc desktop --swap <span style="color:#ae81ff">\^</span><span style="color:#ae81ff">1</span> 
+</span></span></code></pre></div><p>移除桌面</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bspc desktop <span style="color:#ae81ff">\^</span><span style="color:#ae81ff">6</span> --remove
+</span></span></code></pre></div><p>重新命名桌面</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bspc desktop focused --rename newname
+</span></span></code></pre></div><p>建立桌面</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bspc monitor focused --add-desktops <span style="color:#ae81ff">3321</span>
+</span></span></code></pre></div><p>將桌面像前後移動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bspc desktop focused --swap prev 
+</span></span></code></pre></div><p>取得當前名稱</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bspc query -D -d focused --names 
+</span></span></code></pre></div><h2 id="繪圖軟體">繪圖軟體</h2>
 <ul>
 <li>Krita</li>
 <li>Gimp</li>
@@ -175,28 +182,28 @@ rofi -show combi
 </ul>
 <h2 id="linux-字形">Linux 字形</h2>
 <p>列出可用的字體</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fc-list
-</code></pre></div><h2 id="man-網頁輸出">man 網頁輸出</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fc-list
+</span></span></code></pre></div><h2 id="man-網頁輸出">man 網頁輸出</h2>
 <p>透過瀏覽器檢視<code>man</code>文檔，以html進行排版。以下示範將瀏覽器
 設定成<code>chromium</code>並讀取<code>less</code>的文檔。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export BROWSER<span style="color:#f92672">=</span>chromium 
-man -H less  
-</code></pre></div><h2 id="display-manager">Display Manager</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export BROWSER<span style="color:#f92672">=</span>chromium 
+</span></span><span style="display:flex;"><span>man -H less  
+</span></span></code></pre></div><h2 id="display-manager">Display Manager</h2>
 <h3 id="gdm3-大頭照profile-picture">gdm3 大頭照(profile picture)</h3>
 <p>將圖片放在<code>~/.face</code>。</p>
 <h3 id="kde-大頭貼">KDE 大頭貼</h3>
 <p>如果使用 gdm3 的位置的話可以建立一個軟連結 <code>~/.face.icon</code>即可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ln -s ~/.face ~/.face.icon
-</code></pre></div><h2 id="xdg-open">xdg-open</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ln -s ~/.face ~/.face.icon
+</span></span></code></pre></div><h2 id="xdg-open">xdg-open</h2>
 <h3 id="配置-pdf-預設啟動程式">配置 pdf 預設啟動程式</h3>
 <p>查詢 pdf 開啟程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime query default application/pdf
-</code></pre></div><p>設定成 evince</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime default org.gnome.Evince.desktop application/pdf
-</code></pre></div><p>無法設定請參考以下指令進行除錯</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">XDG_UTILS_DEBUG_LEVEL<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> xdg-mime query default application/pdf
-vim .config/mimeapps.list
-</code></pre></div><p>參見</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xdg-mime query default application/pdf
+</span></span></code></pre></div><p>設定成 evince</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xdg-mime default org.gnome.Evince.desktop application/pdf
+</span></span></code></pre></div><p>無法設定請參考以下指令進行除錯</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>XDG_UTILS_DEBUG_LEVEL<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> xdg-mime query default application/pdf
+</span></span><span style="display:flex;"><span>vim .config/mimeapps.list
+</span></span></code></pre></div><p>參見</p>
 <ul>
 <li><a href="https://bbs.archlinux.org/viewtopic.php?id=241084">Can&rsquo;t stop xdg-open from using Mendeley for PDFs</a></li>
 <li><a href="https://superuser.com/questions/962687/problems-with-using-xdg-mime-default-the-default-was-successfully-set-but-it-is">Problems with using xdg-mime default. The default was successfully set but it is not used via xdg-open</a></li>
@@ -210,24 +217,12 @@ vim .config/mimeapps.list
 <p>參見<a href="https://wiki.archlinux.org/index.php/List_of_applications/Multimedia#Webcam">archlinux wiki</a></p>
 <h2 id="通知中心">通知中心</h2>
 <p>image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">notify-send -i ~/tux.png <span style="color:#e6db74">&#34;hi&#34;</span>
-</code></pre></div><p>ask button</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dunstify -A true,yes -A false,no <span style="color:#e6db74">&#34;yes or no&#34;</span> 
-</code></pre></div><h2 id="xclip">xclip</h2>
-<p>xclip獲取選取的內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sleep <span style="color:#ae81ff">2</span>
-xclip -out -selection primary
-</code></pre></div><h2 id="輸入法">輸入法</h2>
-<p>參見<a href="/wiki/linux-ime/">Linux 輸入法</a></p>
-<h2 id="查詢按鍵">查詢按鍵</h2>
-<p><code>xev</code>用來查詢key code，
-配置各種程式鍵綁定時需要查詢按鍵</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xev | grep keycode 
-</code></pre></div><h2 id="模擬按下">模擬按下</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdotool key x
-</code></pre></div><h2 id="檢查-xorg-錯誤日誌">檢查 Xorg 錯誤日誌</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim .xsession-errors 
-</code></pre></div><h2 id="影片播放">影片播放</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>notify-send -i ~/tux.png <span style="color:#e6db74">&#34;hi&#34;</span>
+</span></span></code></pre></div><p>ask button</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dunstify -A true,yes -A false,no <span style="color:#e6db74">&#34;yes or no&#34;</span> 
+</span></span></code></pre></div><h2 id="檢查-xorg-錯誤日誌">檢查 Xorg 錯誤日誌</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim .xsession-errors 
+</span></span></code></pre></div><h2 id="影片播放">影片播放</h2>
 <p>mpv快捷鍵</p>
 <ul>
 <li><code>[</code>, <code>]</code>, <code>{</code>, <code>}</code>: 播放速度調整</li>
@@ -237,12 +232,12 @@ xclip -out -selection primary
 <p>配置 <code>xdg-open</code> 可以透過 <code>ranger</code> 啟動程式</p>
 <h2 id="編輯-pdf-metadata">編輯 PDF metadata</h2>
 <p>安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S  perl-image-exiftool
-</code></pre></div><p>檢視 metadata</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool file.pdf
-</code></pre></div><p>修改 pdf 標題</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exiftool -Title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new title&#34;</span> pdf
-</code></pre></div><h2 id="nvidia-optimus">NVIDIA Optimus</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S  perl-image-exiftool
+</span></span></code></pre></div><p>檢視 metadata</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool file.pdf
+</span></span></code></pre></div><p>修改 pdf 標題</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exiftool -Title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;new title&#34;</span> pdf
+</span></span></code></pre></div><h2 id="nvidia-optimus">NVIDIA Optimus</h2>
 <p>在筆電雙顯示卡按需求執行時切換寫卡，比方說 Linux 執行 3D 遊戲，可以使用 Bumblebee</p>
 <ul>
 <li>optirun:  當前 process?</li>
@@ -250,6 +245,20 @@ xclip -out -selection primary
 </ul>
 <h2 id="錄製螢幕閃爍">錄製螢幕閃爍</h2>
 <p>如 AnyDesk 會閃爍，可以發現 compositor 是開的，關閉就會正常了</p>
+<h2 id="鍵盤">鍵盤</h2>
+<h3 id="xclip">xclip</h3>
+<p>xclip獲取選取的內容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sleep <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>xclip -out -selection primary
+</span></span></code></pre></div><h3 id="輸入法">輸入法</h3>
+<p>參見<a href="/wiki/linux-ime/">Linux 輸入法</a></p>
+<h3 id="查詢按鍵">查詢按鍵</h3>
+<p><code>xev</code>用來查詢key code，
+配置各種程式鍵綁定時需要查詢按鍵</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xev | grep keycode 
+</span></span></code></pre></div><h3 id="模擬按下">模擬按下</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xdotool key x
+</span></span></code></pre></div>
 
     
       <hr>
@@ -299,7 +308,7 @@ xclip -out -selection primary
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

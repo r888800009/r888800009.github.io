@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -119,8 +118,8 @@ if (!doNotTrack) {
 </ul>
 <h2 id="檢測">檢測</h2>
 <p>透過大量的<code>%s</code>使程式崩潰，用來確認漏洞的存在。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
-</code></pre></div><p>或者採用動態分析工具，比方說 gef 的 <a href="https://gef.readthedocs.io/en/master/commands/format-string-helper/">format-string-helper</a> 會在不安全時暫停程式執行。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
+</span></span></code></pre></div><p>或者採用動態分析工具，比方說 gef 的 <a href="https://gef.readthedocs.io/en/master/commands/format-string-helper/">format-string-helper</a> 會在不安全時暫停程式執行。</p>
 <h2 id="利用方式">利用方式</h2>
 <ul>
 <li>洩漏堆疊
@@ -153,21 +152,21 @@ if (!doNotTrack) {
 <p>透過腳本簡單迴圈進行 <code>%?$p</code> 的列印，同時透過 gdb 列印 <code>vmmap(proc.libs())</code></p>
 </li>
 <li>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">                         +-----------------+
-                         |     fmtstr      |
-+------------+  %{}$p    |    primitive    |
-| for range  +----------&gt;|  +-----------+  |
-|            |           |  |  fmtstr   |  |
-+------------+           |  | processes |  |
-                         |  +-----------+  |
-+------------+           |                 |
-| stack info |&lt;----------+  +-----------+  |
-|    save    |  0x7f...  |  |  fmtstr   |  |
-+------------+           |  |  remote   |  |
-                         |  +-----------+  |
-                         |                 |
-                         +-----------------+
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>                         +-----------------+
+</span></span><span style="display:flex;"><span>                         |     fmtstr      |
+</span></span><span style="display:flex;"><span>+------------+  %{}$p    |    primitive    |
+</span></span><span style="display:flex;"><span>| for range  +----------&gt;|  +-----------+  |
+</span></span><span style="display:flex;"><span>|            |           |  |  fmtstr   |  |
+</span></span><span style="display:flex;"><span>+------------+           |  | processes |  |
+</span></span><span style="display:flex;"><span>                         |  +-----------+  |
+</span></span><span style="display:flex;"><span>+------------+           |                 |
+</span></span><span style="display:flex;"><span>| stack info |&lt;----------+  +-----------+  |
+</span></span><span style="display:flex;"><span>|    save    |  0x7f...  |  |  fmtstr   |  |
+</span></span><span style="display:flex;"><span>+------------+           |  |  remote   |  |
+</span></span><span style="display:flex;"><span>                         |  +-----------+  |
+</span></span><span style="display:flex;"><span>                         |                 |
+</span></span><span style="display:flex;"><span>                         +-----------------+
+</span></span></code></pre></div></li>
 <li>
 <p>簡單分析地址前綴，輸出結果後可以用 grep 等等方式檢查前綴，基本上 ELF 裡面後三個 nibble 不會變化，這點可以用來檢測 return address，rbp 的值在 stack 中後三 nibble 可能會變化。</p>
 </li>
@@ -199,9 +198,9 @@ if (!doNotTrack) {
 <li><a href="https://docs.pwntools.com/en/stable/fmtstr.html#module-pwnlib.fmtstr"><code>pwnlib.fmtstr</code></a></li>
 </ul>
 <h3 id="任意寫入地址">任意寫入地址</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pwnlib
-fmtstr_payload(<span style="color:#ae81ff">6</span>, {<span style="color:#ae81ff">0x404050</span>: <span style="color:#ae81ff">0xfaceb00c</span>}, write_size<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;byte&#39;</span>, numbwritten<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
-</code></pre></div><p><code>%?%p</code> 的起始位置為 <code>%1%p</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pwnlib
+</span></span><span style="display:flex;"><span>fmtstr_payload(<span style="color:#ae81ff">6</span>, {<span style="color:#ae81ff">0x404050</span>: <span style="color:#ae81ff">0xfaceb00c</span>}, write_size<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;byte&#39;</span>, numbwritten<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><p><code>%?%p</code> 的起始位置為 <code>%1%p</code></p>
 <ul>
 <li>
 <p>6 是可控 buffer 位置在 <code>%6$p</code></p>
@@ -212,11 +211,11 @@ fmtstr_payload(<span style="color:#ae81ff">6</span>, {<span style="color:#ae81ff
 </ul>
 <p>該工具使用時機如 BreakAllCTF 的 fmt-2</p>
 <p>而如果並非要寫 int32 的話，透過 <code>pwnlib.fmtstr.make_atoms</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pwn<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_payload_dollar(<span style="color:#ae81ff">2</span>, [pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>AtomWrite(<span style="color:#ae81ff">0x0</span>, <span style="color:#ae81ff">0x1</span>, <span style="color:#ae81ff">0xff</span>), pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>AtomWrite(<span style="color:#ae81ff">0x0</span>, <span style="color:#ae81ff">0x1</span>, <span style="color:#ae81ff">0x10</span>)])
-</code></pre></div><p>該用法在 0x13371111 寫入 0x1234 ，而該方法的 offset 是指向第一個寫入的 address 的意思</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pwn<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_payload_dollar(<span style="color:#ae81ff">2</span>, [pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>AtomWrite(<span style="color:#ae81ff">0x0</span>, <span style="color:#ae81ff">0x1</span>, <span style="color:#ae81ff">0xff</span>), pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>AtomWrite(<span style="color:#ae81ff">0x0</span>, <span style="color:#ae81ff">0x1</span>, <span style="color:#ae81ff">0x10</span>)])
+</span></span></code></pre></div><p>該用法在 0x13371111 寫入 0x1234 ，而該方法的 offset 是指向第一個寫入的 address 的意思</p>
 <p>而該方法需要找到傳入的目標 address 所在的 offset ，可以計算前面 fmt 花費多少 byte 進而推導出 offset</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_payload_dollar(<span style="color:#ae81ff">6</span>, pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_atoms({<span style="color:#ae81ff">0x13371111</span>:<span style="color:#ae81ff">0x1234</span>}, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;fast&#39;</span>, []),countersize<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><h2 id="除錯">除錯</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_payload_dollar(<span style="color:#ae81ff">6</span>, pwnlib<span style="color:#f92672">.</span>fmtstr<span style="color:#f92672">.</span>make_atoms({<span style="color:#ae81ff">0x13371111</span>:<span style="color:#ae81ff">0x1234</span>}, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#39;fast&#39;</span>, []),countersize<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h2 id="除錯">除錯</h2>
 <ol>
 <li>檢查 printf 的參數，攻擊的 payload 是否有前綴</li>
 <li>若有必須考慮前綴所產生的字元，會導致 payload 所修改的值不是目標數值</li>
@@ -293,7 +292,7 @@ fmtstr_payload(<span style="color:#ae81ff">6</span>, {<span style="color:#ae81ff
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -95,27 +94,27 @@ if (!doNotTrack) {
     <p>heroku設定紀錄，透過範例檔案修改成自己的程式。</p>
 <h2 id="配置">配置</h2>
 <p>下載範例檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/heroku/python-getting-started.git
-cd python-getting-started
-</code></pre></div><p>創建一個虛擬機</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">heroku create
-git push heroku master
-</code></pre></div><p>為了運行自己的程式建立一個python檔案<code>python_module.py</code>，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/heroku/python-getting-started.git
+</span></span><span style="display:flex;"><span>cd python-getting-started
+</span></span></code></pre></div><p>創建一個虛擬機</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>heroku create
+</span></span><span style="display:flex;"><span>git push heroku master
+</span></span></code></pre></div><p>為了運行自己的程式建立一個python檔案<code>python_module.py</code>，
 <code>procfile</code>要改成下面內容，注意<code>python_module</code>要改成對映的名子</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">web: gunicorn python_module:app
-</code></pre></div><p>安裝仰賴透過<code>requirements.txt</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">flask
-gunicorn
-</code></pre></div><h2 id="執行">執行</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>web: gunicorn python_module:app
+</span></span></code></pre></div><p>安裝仰賴透過<code>requirements.txt</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>flask
+</span></span><span style="display:flex;"><span>gunicorn
+</span></span></code></pre></div><h2 id="執行">執行</h2>
 <p>在瀏覽器顯示該專案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">heroku open
-</code></pre></div><p>出錯時透過以下指令檢查<code>log</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">heroku logs --tail
-</code></pre></div><p>可能想要邊推邊檢查錯誤</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push heroku master; heroku logs --tail
-</code></pre></div><p>重新啟動</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">heroku restart
-</code></pre></div><h2 id="參考">參考</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>heroku open
+</span></span></code></pre></div><p>出錯時透過以下指令檢查<code>log</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>heroku logs --tail
+</span></span></code></pre></div><p>可能想要邊推邊檢查錯誤</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push heroku master; heroku logs --tail
+</span></span></code></pre></div><p>重新啟動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>heroku restart
+</span></span></code></pre></div><h2 id="參考">參考</h2>
 <ul>
 <li><a href="https://xiaosean.github.io/server/2018-04-11-Flask_Heroku/">Python Flask 結合 Heroku 部署Https的伺服器</a></li>
 </ul>
@@ -170,7 +169,7 @@ gunicorn
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

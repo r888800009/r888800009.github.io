@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -98,35 +97,35 @@ if (!doNotTrack) {
     </aside>
 
     <h2 id="url表示方法">URL表示方法</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">http://[::1]:8080/
-</code></pre></div><p>詳細資訊請參見RFC 2732<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>http://[::1]:8080/
+</span></span></code></pre></div><p>詳細資訊請參見RFC 2732<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <h2 id="應用程式">應用程式</h2>
 <h3 id="瀏覽器">瀏覽器</h3>
-<p>瀏覽器大多可以使用RFC 2732<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>定義的URL進行連線。
+<p>瀏覽器大多可以使用RFC 2732<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>定義的URL進行連線。
 如chrome、firefox均支援此URL表示法。</p>
 <h3 id="netcat">netcat</h3>
 <p>GNU的<code>netcat</code>並不支援IPv6格式地址，
 因此需要採用nmap所提供的<code>ncat</code>，並且加上
 <code>-6</code>來採用IPv6。</p>
 <p>監聽的方式如同GNU netcat</p>
-<pre><code>ncat -l -p 3333 -6 
+<pre tabindex="0"><code>ncat -l -p 3333 -6 
 </code></pre><p>連線時不需要用中括號包覆IP</p>
-<pre><code>ncat -6 ::1 3333
+<pre tabindex="0"><code>ncat -6 ::1 3333
 </code></pre><h3 id="ssh">SSH</h3>
 <p><code>ssh</code>連線時，不需要用中括號將地址包覆</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh ::1
-</code></pre></div><p><code>scp</code>進行檔案傳輸採用<code>[IPv6]</code>的格式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scp <span style="color:#f92672">[</span>::1<span style="color:#f92672">]</span>:~/test ./test
-</code></pre></div><p>註: <code>ssh</code>與<code>scp</code>都支援<code>-6</code>參數，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh ::1
+</span></span></code></pre></div><p><code>scp</code>進行檔案傳輸採用<code>[IPv6]</code>的格式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scp <span style="color:#f92672">[</span>::1<span style="color:#f92672">]</span>:~/test ./test
+</span></span></code></pre></div><p>註: <code>ssh</code>與<code>scp</code>都支援<code>-6</code>參數，
 可以強制以IPv6的方式進行連線。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://tools.ietf.org/html/rfc2732#section-2">RFC 2732</a> Literal IPv6 Address Format in URL&rsquo;s Syntax <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p><a href="https://tools.ietf.org/html/rfc2732#section-2">RFC 2732</a> Literal IPv6 Address Format in URL&rsquo;s Syntax&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
     
       <hr>
@@ -176,7 +175,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

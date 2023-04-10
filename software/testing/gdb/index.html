@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -118,29 +117,29 @@ if (!doNotTrack) {
 <h2 id="自動化-gdb-腳本">自動化 GDB 腳本</h2>
 <p>python 控 gdb 自動化腳本可以透過以下方法使用</p>
 <p>這個確保 <code>-x</code> 這個參數開啟腳本就可以 <code>import gdb</code> 了</p>
-<pre><code>gdb -x debug-script.py
+<pre tabindex="0"><code>gdb -x debug-script.py
 </code></pre><p>python script 中可以輸入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> gdb 
-</code></pre></div><p>相關的 API 可以查詢 <a href="https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html#Python">Python (Debugging with GDB)</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> gdb 
+</span></span></code></pre></div><p>相關的 API 可以查詢 <a href="https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html#Python">Python (Debugging with GDB)</a></p>
 <p>也可以在 pwntool 中 <code>pwntool.gdb.attach(foo, api=True)</code> 來啟用 gdb api</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pid, gdb2 <span style="color:#f92672">=</span> gdb<span style="color:#f92672">.</span>attach(c, api<span style="color:#f92672">=</span>True)
-gdb2<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#39;c&#39;</span>)
-</code></pre></div><p>如果需要進行運算或顯示暫存器可以透過</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">gdb<span style="color:#f92672">.</span>parse_and_eval(<span style="color:#e6db74">&#39;$rax + 0x10&#39;</span>)
-</code></pre></div><p>這個部分在 reversing 或 pwn 的時候，可以根據條件進行操作等等</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pid, gdb2 <span style="color:#f92672">=</span> gdb<span style="color:#f92672">.</span>attach(c, api<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>gdb2<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#39;c&#39;</span>)
+</span></span></code></pre></div><p>如果需要進行運算或顯示暫存器可以透過</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>gdb<span style="color:#f92672">.</span>parse_and_eval(<span style="color:#e6db74">&#39;$rax + 0x10&#39;</span>)
+</span></span></code></pre></div><p>這個部分在 reversing 或 pwn 的時候，可以根據條件進行操作等等</p>
 <p>在 gdb 當中使用 <code>pi</code> 指令可以進入 Python interpreter</p>
-<pre><code>pi print('a')
+<pre tabindex="0"><code>pi print(&#39;a&#39;)
 </code></pre><p>另外如果要開發的話可以使用 <code>gef.py</code> 裡面的 API</p>
 <h2 id="gdb-script">GDB Script</h2>
 <p>透過GDB script來保存重複的行為提昇除錯效率。</p>
 <p>這裡假設建立檔案<code>example.gdbscript</code>，內容如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">l
-b main
-r
-s
-</code></pre></div><p>之後在<code>gdb</code>當中執行script</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source example.gdbscript
-</code></pre></div><p><strong>註:gdb在每次除錯的時候會留下<code>.gdb_history</code>，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>l
+</span></span><span style="display:flex;"><span>b main
+</span></span><span style="display:flex;"><span>r
+</span></span><span style="display:flex;"><span>s
+</span></span></code></pre></div><p>之後在<code>gdb</code>當中執行script</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>source example.gdbscript
+</span></span></code></pre></div><p><strong>註:gdb在每次除錯的時候會留下<code>.gdb_history</code>，
 可以用來當成script的素材</strong></p>
 <p>其他請參見<a href="https://wwssllabcd.github.io/blog/2013/03/25/how-to-write-gdb-scritp/">簡易 GDB Script 教學，應用</a></p>
 <h2 id="工具">工具</h2>
@@ -156,23 +155,23 @@ s
 <li><code>c</code>: 持續執行到中斷點</li>
 </ul>
 <p>中斷點使用範例，在特定地址中斷</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">b *0x12345678
-</code></pre></div><h3 id="watch-point">watch point</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>b *0x12345678
+</span></span></code></pre></div><h3 id="watch-point">watch point</h3>
 <p>檢測特定 syscall 呼叫時發生斷點</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">catch syscall write
-</code></pre></div><h3 id="檢視特定-struct">檢視特定 struct</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">p *(struct link_map*) 0x00123113
-</code></pre></div><p>如果有除錯符號可以使用  <code>ptype &lt;symbol&gt;</code> 檢視</p>
-<pre><code>ptype fp
-</code></pre><pre><code>ptype FILE
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>catch syscall write
+</span></span></code></pre></div><h3 id="檢視特定-struct">檢視特定 struct</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>p *(struct link_map*) 0x00123113
+</span></span></code></pre></div><p>如果有除錯符號可以使用  <code>ptype &lt;symbol&gt;</code> 檢視</p>
+<pre tabindex="0"><code>ptype fp
+</code></pre><pre tabindex="0"><code>ptype FILE
 </code></pre><h3 id="檢視-section-相關資訊">檢視 section 相關資訊</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">maintenance info sections
-</code></pre></div><h3 id="找出地址所屬的-mapping">找出地址所屬的 mapping</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>maintenance info sections
+</span></span></code></pre></div><h3 id="找出地址所屬的-mapping">找出地址所屬的 mapping</h3>
 <p>採用 gef 提供的 <code>vmmap</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">vmmap 0x0x404040
-</code></pre></div><h2 id="傳入參數執行">傳入參數執行</h2>
-<pre><code>run arg1 arg2 arg3...
-run $(printf &quot;123&quot;)123
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>vmmap 0x0x404040
+</span></span></code></pre></div><h2 id="傳入參數執行">傳入參數執行</h2>
+<pre tabindex="0"><code>run arg1 arg2 arg3...
+run $(printf &#34;123&#34;)123
 run $(shell)
 </code></pre><h2 id="gdb界面">gdb界面</h2>
 <ul>
@@ -185,27 +184,27 @@ run $(shell)
 </ul>
 <h2 id="跨架構除錯">跨架構除錯</h2>
 <p>我們可以透過 qemu-linux-user 執行 gdb server 之後安裝 gdb-multiarch</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install gdb-multiarch
-</code></pre></div><p>如果是 archlinux</p>
-<pre><code>gpg --recv-keys 92EDB04BFF325CF3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install gdb-multiarch
+</span></span></code></pre></div><p>如果是 archlinux</p>
+<pre tabindex="0"><code>gpg --recv-keys 92EDB04BFF325CF3
 pacaur -S gdb-multiarch
 </code></pre><h2 id="kernel-mode-debugging">Kernel-Mode Debugging</h2>
 <p>在研究 kernel 或 kernel exploit 時需要透過 Qemu 執行 kernel 並且 attach gdb</p>
-<pre><code>qemu-system-x86_64 --kernel /boot/vmlinuz-linux -nographic -s -S
+<pre tabindex="0"><code>qemu-system-x86_64 --kernel /boot/vmlinuz-linux -nographic -s -S
 </code></pre><p>確保 gdb 擁有 root 權限，否則會出現 <code>[!] Command 'gef-remote' failed to execute properly, reason: [Errno 13] Permission denied: '/proc/1/maps'</code></p>
-<pre><code>sudo gdb
+<pre tabindex="0"><code>sudo gdb
 </code></pre><p>啟動 gdb 並且設置目標主機架構</p>
-<pre><code>set architecture i386:x86-64
+<pre tabindex="0"><code>set architecture i386:x86-64
 </code></pre><p>透過 gef attach 上 qemu，確保有加上 <code>--qemu-mode</code></p>
-<pre><code>gef-remote --qemu-mode localhost:1234
+<pre tabindex="0"><code>gef-remote --qemu-mode localhost:1234
 </code></pre><h2 id="問題排解">問題排解</h2>
 <h3 id="qemu">QEMU</h3>
 <p>qemu 除錯時，報錯 <code>Command 'context' failed to execute properly, reason: 'NoneType' object has no attribute 'all_registers'</code></p>
 <p>確保 <code>set arch</code> 之後使用 <code>gef-remote --qemu-mode </code> 而不是 <code>target remote</code></p>
-<pre><code>set arch i386:x86-64
+<pre tabindex="0"><code>set arch i386:x86-64
 gef-remote --qemu-mode addr:port
 </code></pre><p>pwndbg 似乎直接 target remote 就可以，並且可以看到 stack，但 gdb 不行</p>
-<pre><code>target remote:3333
+<pre tabindex="0"><code>target remote:3333
 </code></pre><p>不過 pwndbg 和 gef 如果運作不正常可以嘗試用 root 執行</p>
 <h3 id="參見">參見</h3>
 <ul>
@@ -272,7 +271,7 @@ gef-remote --qemu-mode addr:port
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

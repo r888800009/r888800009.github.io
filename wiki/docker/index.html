@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -123,58 +122,58 @@ if (!doNotTrack) {
 <p>設定使用者群組，以便之後可以使用 <code>docker</code> 指令而不需要使用 <code>sudo</code>。</p>
 <h2 id="常用指令">常用指令</h2>
 <p>查看開啟的容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps
-</code></pre></div><p>停止容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker stop 容器ID
-</code></pre></div><p>查看未啟動的容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker container ls -a
-</code></pre></div><p>移除容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rm 容器ID
-</code></pre></div><p>搜尋 image</p>
-<pre><code>docker search 名稱
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps
+</span></span></code></pre></div><p>停止容器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker stop 容器ID
+</span></span></code></pre></div><p>查看未啟動的容器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker container ls -a
+</span></span></code></pre></div><p>移除容器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rm 容器ID
+</span></span></code></pre></div><p>搜尋 image</p>
+<pre tabindex="0"><code>docker search 名稱
 </code></pre><p>獲取容器地址，<a href="https://stackoverflow.com/questions/17157721/how-to-get-a-docker-containers-ip-address-from-the-host">出處</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker inspect -f <span style="color:#e6db74">&#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> 容器名稱
-</code></pre></div><h2 id="作弊表">作弊表</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker inspect -f <span style="color:#e6db74">&#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> 容器名稱
+</span></span></code></pre></div><h2 id="作弊表">作弊表</h2>
 <h3 id="危險區">危險區</h3>
 <p>移除所有未開啟的容器，<strong>請確認沒有要保留的容器在使用此指令!!</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker rm <span style="color:#66d9ef">$(</span>sudo docker container ls -a | awk <span style="color:#e6db74">&#39;{ if (NR &gt;= 2) { print $1 } }&#39;</span><span style="color:#66d9ef">)</span>
-</code></pre></div><p>移除<code>&lt;none&gt;</code>的image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker image rm <span style="color:#66d9ef">$(</span>sudo docker image ls -a | grep <span style="color:#e6db74">&#39;&lt;none&gt;&#39;</span>| awk <span style="color:#e6db74">&#39;{ print $3 }&#39;</span><span style="color:#66d9ef">)</span>
-</code></pre></div><h2 id="bash">bash</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker rm <span style="color:#66d9ef">$(</span>sudo docker container ls -a | awk <span style="color:#e6db74">&#39;{ if (NR &gt;= 2) { print $1 } }&#39;</span><span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><p>移除<code>&lt;none&gt;</code>的image</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker image rm <span style="color:#66d9ef">$(</span>sudo docker image ls -a | grep <span style="color:#e6db74">&#39;&lt;none&gt;&#39;</span>| awk <span style="color:#e6db74">&#39;{ print $3 }&#39;</span><span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h2 id="bash">bash</h2>
 <p>啟動並執行bash</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name http1 -it httpd bash 
-</code></pre></div><p>執行後啟動bash</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it 容器id /bin/bash
-</code></pre></div><p>ARG 參數
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --name http1 -it httpd bash 
+</span></span></code></pre></div><p>執行後啟動bash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker exec -it 容器id /bin/bash
+</span></span></code></pre></div><p>ARG 參數
 可以使用 <code>--build-arg</code> 帶入參數</p>
 <h2 id="掛載">掛載</h2>
 <p>volumes掛載</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -v 主機地址:容器地址 image-name
-</code></pre></div><h2 id="檔案">檔案</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -v 主機地址:容器地址 image-name
+</span></span></code></pre></div><h2 id="檔案">檔案</h2>
 <p>複製的指令為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker cp /hostPath container:/containerPath
-</code></pre></div><p>複製容器內部的檔案，以<code>httpd</code>作為範例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker create --name temp httpd
-sudo docker cp temp:/usr/local/apache2/conf/httpd.conf httpd.conf
-sudo docker rm temp
-</code></pre></div><h2 id="dockerfile">Dockerfile</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker cp /hostPath container:/containerPath
+</span></span></code></pre></div><p>複製容器內部的檔案，以<code>httpd</code>作為範例</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker create --name temp httpd
+</span></span><span style="display:flex;"><span>sudo docker cp temp:/usr/local/apache2/conf/httpd.conf httpd.conf
+</span></span><span style="display:flex;"><span>sudo docker rm temp
+</span></span></code></pre></div><h2 id="dockerfile">Dockerfile</h2>
 <p>建立Dockerfile</p>
-<pre><code>FROM httpd
+<pre tabindex="0"><code>FROM httpd
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 </code></pre><p>build image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker build -t my-httpd . 
-</code></pre></div><h2 id="docker-停止與刪除所有容器">Docker 停止與刪除所有容器</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker stop <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
-docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
-</code></pre></div><h2 id="docker-compose">Docker Compose</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker build -t my-httpd . 
+</span></span></code></pre></div><h2 id="docker-停止與刪除所有容器">Docker 停止與刪除所有容器</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker stop <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h2 id="docker-compose">Docker Compose</h2>
 <h2 id="docker-remote">Docker Remote</h2>
 <p>docker 設定遠程</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker context create &lt;context_name&gt; --docker <span style="color:#e6db74">&#34;host=ssh://user@host:port&#34;</span>
-</code></pre></div><p>切換 context</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker context use &lt;context_name&gt;
-</code></pre></div><p>列出 context 列表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker context list
-</code></pre></div><p>參見文檔 <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Context</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker context create &lt;context_name&gt; --docker <span style="color:#e6db74">&#34;host=ssh://user@host:port&#34;</span>
+</span></span></code></pre></div><p>切換 context</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker context use &lt;context_name&gt;
+</span></span></code></pre></div><p>列出 context 列表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker context list
+</span></span></code></pre></div><p>參見文檔 <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Context</a></p>
 
     
       <hr>
@@ -224,7 +223,7 @@ docker rm <span style="color:#66d9ef">$(</span>docker ps -a -q<span style="color
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

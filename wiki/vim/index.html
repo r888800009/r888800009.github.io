@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -117,18 +116,18 @@ if (!doNotTrack) {
     <p>存放vim的筆記。</p>
 <h2 id="使用">使用</h2>
 <p>比較差異</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim -d file1 file2
-</code></pre></div><p>檔案格式轉換(dos to unix)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:set ff=unix
-</code></pre></div><p>將單行字首轉成大寫</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">s/\&lt;./\u&amp;/g
-</code></pre></div><p>出處<a href="https://stackoverflow.com/a/17440797">Capitalize first letter of each word in a selection using vim</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim -d file1 file2
+</span></span></code></pre></div><p>檔案格式轉換(dos to unix)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>:set ff=unix
+</span></span></code></pre></div><p>將單行字首轉成大寫</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>s/\&lt;./\u&amp;/g
+</span></span></code></pre></div><p>出處<a href="https://stackoverflow.com/a/17440797">Capitalize first letter of each word in a selection using vim</a></p>
 <h3 id="遠程編輯">遠程編輯</h3>
 <p>透過scp協議編輯遠端檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vim scp://user@ssh.example.com/file1.txt
-</code></pre></div><p>在vim開啟遠程檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:e scp://user@ssh.example.com/file1.txt
-</code></pre></div><h3 id="作為二進位編輯器">作為二進位編輯器</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim scp://user@ssh.example.com/file1.txt
+</span></span></code></pre></div><p>在vim開啟遠程檔案</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>:e scp://user@ssh.example.com/file1.txt
+</span></span></code></pre></div><h3 id="作為二進位編輯器">作為二進位編輯器</h3>
 <ol>
 <li>使用<code>vim -b binary</code>開啟檔案</li>
 <li><code>:%!xxd</code></li>
@@ -226,47 +225,47 @@ if (!doNotTrack) {
 </ul>
 <h3 id="部份取代-vim-regex-group">部份取代 (vim regex group)</h3>
 <p>比方說以下內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gameA
-gameB
-gameC
-gameD
-</code></pre></div><p>希望能夠取代成以下內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">mapA
-mapB
-mapC
-mapD
-</code></pre></div><p>這時可以鍵入以下指令達成此功能。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:%s/\(game\)\(\w\)/map\2/g
-</code></pre></div><p><code>\2</code>代表group 2，<code>\1</code>代表group 1。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>gameA
+</span></span><span style="display:flex;"><span>gameB
+</span></span><span style="display:flex;"><span>gameC
+</span></span><span style="display:flex;"><span>gameD
+</span></span></code></pre></div><p>希望能夠取代成以下內容</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>mapA
+</span></span><span style="display:flex;"><span>mapB
+</span></span><span style="display:flex;"><span>mapC
+</span></span><span style="display:flex;"><span>mapD
+</span></span></code></pre></div><p>這時可以鍵入以下指令達成此功能。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>:%s/\(game\)\(\w\)/map\2/g
+</span></span></code></pre></div><p><code>\2</code>代表group 2，<code>\1</code>代表group 1。</p>
 <h3 id="多buffer取代">多buffer取代</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:bufdo %s/被取代/取代/ge | update
-</code></pre></div><p>參見<a href="https://vim.fandom.com/wiki/Search_and_replace_in_multiple_buffers">Search and replace in multiple buffers</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>:bufdo %s/被取代/取代/ge | update
+</span></span></code></pre></div><p>參見<a href="https://vim.fandom.com/wiki/Search_and_replace_in_multiple_buffers">Search and replace in multiple buffers</a></p>
 <!-- raw HTML omitted -->
 <h2 id="插件">插件</h2>
 <p>ycm配置</p>
-<pre><code>./install.py --clang-completer --go-completer --java-completer
+<pre tabindex="0"><code>./install.py --clang-completer --go-completer --java-completer
 </code></pre><p>採用mkdx輔助編寫markdown文件，含有相關鍵綁定。</p>
 <h2 id="modeline">Modeline</h2>
 <p>參見手冊，可以對特定檔案做個別的配置，不過因為安全問題<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>不建議開啟</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">:h modeline
-</code></pre></div><p>example 設定檔案格式為<code>markdown</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">; vim: set ft=markdown :
-</code></pre></div><h2 id="vim-自動加入-header">vim 自動加入 header</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>:h modeline
+</span></span></code></pre></div><p>example 設定檔案格式為<code>markdown</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>; vim: set ft=markdown :
+</span></span></code></pre></div><h2 id="vim-自動加入-header">vim 自動加入 header</h2>
 <p>如 Bash 或 Python</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufNewFile</span> *.<span style="color:#a6e22e">py</span> <span style="color:#ae81ff">0</span>put =\<span style="color:#e6db74">&#34;#!/usr/bin/env python\&lt;nl&gt;\&#34;</span>|$<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufNewFile</span> *.<span style="color:#a6e22e">sh</span> <span style="color:#ae81ff">0</span>put =\<span style="color:#e6db74">&#34;#!/bin/bash\&lt;nl&gt;\&#34;</span>|$<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>參考
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufNewFile</span> *.<span style="color:#a6e22e">py</span> <span style="color:#ae81ff">0</span>put =\<span style="color:#e6db74">&#34;#!/usr/bin/env python\&lt;nl&gt;\&#34;</span>|$<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">autocmd</span> <span style="color:#a6e22e">BufNewFile</span> *.<span style="color:#a6e22e">sh</span> <span style="color:#ae81ff">0</span>put =\<span style="color:#e6db74">&#34;#!/bin/bash\&lt;nl&gt;\&#34;</span>|$<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>參考
 <a href="https://stackoverflow.com/questions/13279520/automatically-inserting-a-header-in-vim">Automatically inserting a header in vim</a></p>
 <h2 id="環境變數">環境變數</h2>
 <p>如果要讀取環境變數，採用 <code>$</code> 作為前綴就可以讀取。</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-12735">CVE-2019-12735</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p><a href="https://nvd.nist.gov/vuln/detail/CVE-2019-12735">CVE-2019-12735</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
     
       <hr>
@@ -318,7 +317,7 @@ mapD
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

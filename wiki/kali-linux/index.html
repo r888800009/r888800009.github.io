@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -106,33 +105,33 @@ if (!doNotTrack) {
 <h2 id="virtual-box-載入-ova">Virtual Box 載入 ova</h2>
 <p>下載 <a href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/">Kali Linux 64-bit VirtualBox</a></p>
 <p>archlinux lts kernel 執行 virtualbox 可能需要安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S linux-lts-headers virtualbox-host-dkms
-</code></pre></div><p>kali預設帳號密碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">帳號: root
-密碼: toor
-</code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/VirtualBox">VirtualBox</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S linux-lts-headers virtualbox-host-dkms
+</span></span></code></pre></div><p>kali預設帳號密碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>帳號: root
+</span></span><span style="display:flex;"><span>密碼: toor
+</span></span></code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/VirtualBox">VirtualBox</a></p>
 <h2 id="透過docker安裝kali-linux">透過docker安裝Kali Linux</h2>
 <p>查詢docker hub上面的資訊，找到恰當的image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search kali 
-</code></pre></div><p>輸出如下方所示，我們抓取第一個image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">NAME                                                     DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
-kalilinux/kali-linux-docker                              Kali Linux Rolling Distribution Base Image      669                                     [OK]
-linuxkonsult/kali-metasploit                             Kali base image with metasploit                 69                                      [OK]
-jgamblin/kalibrowser                                     Kali in a Browser                               31
-booyaabes/kali-linux-full                                Kali image with kali-linux-full metapackage …   19
-</code></pre></div><p>抓取image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker pull kalilinux/kali-linux-docker
-</code></pre></div><p>啟動並開啟<code>bash</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run --name kali1 -it kalilinux/kali-linux-docker bash
-</code></pre></div><p>根據官方所說，預設的docker image為最小基礎安裝板。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker search kali 
+</span></span></code></pre></div><p>輸出如下方所示，我們抓取第一個image</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>NAME                                                     DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+</span></span><span style="display:flex;"><span>kalilinux/kali-linux-docker                              Kali Linux Rolling Distribution Base Image      669                                     [OK]
+</span></span><span style="display:flex;"><span>linuxkonsult/kali-metasploit                             Kali base image with metasploit                 69                                      [OK]
+</span></span><span style="display:flex;"><span>jgamblin/kalibrowser                                     Kali in a Browser                               31
+</span></span><span style="display:flex;"><span>booyaabes/kali-linux-full                                Kali image with kali-linux-full metapackage …   19
+</span></span></code></pre></div><p>抓取image</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker pull kalilinux/kali-linux-docker
+</span></span></code></pre></div><p>啟動並開啟<code>bash</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker run --name kali1 -it kalilinux/kali-linux-docker bash
+</span></span></code></pre></div><p>根據官方所說，預設的docker image為最小基礎安裝板。
 我們在此安裝<code>metasploit</code>，Kali linux為debian系列的發行板，
 因此可以採用<code>apt</code>來安裝軟件，Kali的metasploit的<a href="https://pkg.kali.org/pkg/metasploit-framework">軟件包</a>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
-apt upgrade
-apt install metasploit-framework
-</code></pre></div><p>再來測試<code>metasploit</code>是否成功安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfconsole
-</code></pre></div><h3 id="參見">參見</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt upgrade
+</span></span><span style="display:flex;"><span>apt install metasploit-framework
+</span></span></code></pre></div><p>再來測試<code>metasploit</code>是否成功安裝</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfconsole
+</span></span></code></pre></div><h3 id="參見">參見</h3>
 <ul>
 <li><a href="/wiki/docker/">Docker筆記</a></li>
 <li><a href="https://www.kali.org/news/official-kali-linux-docker-images/">Official Kali Linux Docker Images Released</a></li>
@@ -188,7 +187,7 @@ apt install metasploit-framework
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

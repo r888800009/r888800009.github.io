@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -118,61 +117,61 @@ if (!doNotTrack) {
 </ul>
 <h2 id="lex">lex</h2>
 <p>安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S flex
-</code></pre></div><p>使用stdin輸入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex
-</code></pre></div><p>使用檔案輸入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lex file.l
-</code></pre></div><h3 id="多次lexing">多次lexing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S flex
+</span></span></code></pre></div><p>使用stdin輸入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lex
+</span></span></code></pre></div><p>使用檔案輸入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lex file.l
+</span></span></code></pre></div><h3 id="多次lexing">多次lexing</h3>
 <p>如果要多次lexing需要採用<code>yyrestart(fp)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">yyrestart</span>(FILE <span style="color:#f92672">*</span>pt);
-</code></pre></div><h3 id="範例程式">範例程式</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%option noyywrap
-%%
-[0-9]+ number(yytext);
-%%
-
-void number(char *str){
-  printf(&#34;hello world: %s\n&#34;, str);
-}
-
-int main() {
-  yylex();
-  return 0;
-}
-</code></pre></div><p><a href="https://github.com/r888800009/practice/blob/master/firstLex.l">原始碼</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">yyrestart</span>(FILE <span style="color:#f92672">*</span>pt);
+</span></span></code></pre></div><h3 id="範例程式">範例程式</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>%option noyywrap
+</span></span><span style="display:flex;"><span>%%
+</span></span><span style="display:flex;"><span>[0-9]+ number(yytext);
+</span></span><span style="display:flex;"><span>%%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>void number(char *str){
+</span></span><span style="display:flex;"><span>  printf(&#34;hello world: %s\n&#34;, str);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>int main() {
+</span></span><span style="display:flex;"><span>  yylex();
+</span></span><span style="display:flex;"><span>  return 0;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://github.com/r888800009/practice/blob/master/firstLex.l">原始碼</a></p>
 <p>範例二</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">digit ([0-9])
-integer ({digit}+)
-keywords int|float|byte|bool|func|return
-delimiter [,()\[\]{}]
-
-%%
-{integer} {
-  printf(&#34;int: %s\n&#34;, yytext);
-}
-
-{delimiter} {
-  printf(&#34;de: %s\n&#34;, yytext);
-}
-
-{keywords} {
-  printf(&#34;keywords: %s\n&#34;, yytext);
-}
-
-%%
-
-int main() {
-  yylex();
-  return 0;
-}
-</code></pre></div><h3 id="常見問題">常見問題</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>digit ([0-9])
+</span></span><span style="display:flex;"><span>integer ({digit}+)
+</span></span><span style="display:flex;"><span>keywords int|float|byte|bool|func|return
+</span></span><span style="display:flex;"><span>delimiter [,()\[\]{}]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%%
+</span></span><span style="display:flex;"><span>{integer} {
+</span></span><span style="display:flex;"><span>  printf(&#34;int: %s\n&#34;, yytext);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{delimiter} {
+</span></span><span style="display:flex;"><span>  printf(&#34;de: %s\n&#34;, yytext);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{keywords} {
+</span></span><span style="display:flex;"><span>  printf(&#34;keywords: %s\n&#34;, yytext);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%%
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>int main() {
+</span></span><span style="display:flex;"><span>  yylex();
+</span></span><span style="display:flex;"><span>  return 0;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="常見問題">常見問題</h3>
 <p>出現<code>undefined reference to `yywrap'</code>無法編譯</p>
 <p>使用<code>flex</code>要連結<code>-lfl</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">gcc lex.yy.c -lfl  
-</code></pre></div><p>或採用<code>noyywrap</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%option noyywrap
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>gcc lex.yy.c -lfl  
+</span></span></code></pre></div><p>或採用<code>noyywrap</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>%option noyywrap
+</span></span></code></pre></div>
 
     
       <hr>
@@ -222,7 +221,7 @@ int main() {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -94,36 +93,35 @@ if (!doNotTrack) {
 
     <h2 id="添加腳注">添加腳注</h2>
 <p>可以參見Markdown Guide<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">出處[^footnote]
-腳註2[^123 aaa]
-
-[^footnote]: [<span style="color:#f92672">Markdown Guide Extended Syntax</span>](<span style="color:#a6e22e">https://www.markdownguide.org/extended-syntax/#footnotes</span>)
-[^123 aaa]: 這邊放任意文字
-</code></pre></div><p>腳註似乎支援任意格式的輸入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>出處[^footnote]
+</span></span><span style="display:flex;"><span>腳註2[^123 aaa]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[^footnote]: [<span style="color:#f92672">Markdown Guide Extended Syntax</span>](<span style="color:#a6e22e">https://www.markdownguide.org/extended-syntax/#footnotes</span>)
+</span></span><span style="display:flex;"><span>[^123 aaa]: 這邊放任意文字
+</span></span></code></pre></div><p>腳註似乎支援任意格式的輸入</p>
 <h2 id="轉換其他格式">轉換其他格式</h2>
 <p>markdown to docx</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pandoc README.md -o test.docx  
-</code></pre></div><p>markdown to html</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pandoc README.md -o test.html
-</code></pre></div><p>參見<a href="https://pandoc.org/demos.html">Pandoc Demos</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pandoc README.md -o test.docx  
+</span></span></code></pre></div><p>markdown to html</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pandoc README.md -o test.html
+</span></span></code></pre></div><p>參見<a href="https://pandoc.org/demos.html">Pandoc Demos</a></p>
 <p>製作簡報可以採用 HackMD 的功能，請參見 <a href="https://hackmd.io/c/tutorials-tw/%2Fs%2Fhow-to-create-slide-deck-tw">HackMD 教學</a></p>
 <h2 id="重音符號">重音符號</h2>
 <p>重音符號放置</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">``test`test``
-</code></pre></div><p>輸出結果為<code>test`test</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>``test`test``
+</span></span></code></pre></div><p>輸出結果為<code>test`test</code></p>
 <p>在code block內放置code block</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">​```` plaintext
-​``` plaintext
-```
-````
-
-</code></pre></div><p>輸出結果為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">​``` plaintext
-```
-</code></pre></div><p>多個重音符號
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>​```` plaintext
+</span></span><span style="display:flex;"><span>​``` plaintext
+</span></span><span style="display:flex;"><span>```
+</span></span><span style="display:flex;"><span>````
+</span></span></code></pre></div><p>輸出結果為</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>​``` plaintext
+</span></span><span style="display:flex;"><span>```
+</span></span></code></pre></div><p>多個重音符號
 ​```` plaintext
 ​<code>test``test</code></p>
-<pre><code>
+<pre tabindex="0"><code>
 輸出結果為
 ```test``test```
 
@@ -201,14 +199,15 @@ hugo因為安全性，採用html標籤時必須進行相關設定才會顯示。
 | 預設    |       靠右 | 靠左       |    置中    |
 | ------- | ---------: | :--------- | :--------: |
 | 預設    |       靠右 | 靠左       |    置中    |
-| 預設123 | 靠右 12312 | 靠左321312 | 31312 置中 |</code></pre><section class="footnotes" role="doc-endnotes">
+| 預設123 | 靠右 12312 | 靠左321312 | 31312 置中 |
+</code></pre><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="https://www.markdownguide.org/extended-syntax/#footnotes">Markdown Guide Extended Syntax</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p><a href="https://www.markdownguide.org/extended-syntax/#footnotes">Markdown Guide Extended Syntax</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
     
       <hr>
@@ -258,7 +257,7 @@ hugo因為安全性，採用html標籤時必須進行相關設定才會顯示。
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

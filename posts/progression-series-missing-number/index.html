@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -108,9 +107,9 @@ if (!doNotTrack) {
 <p>考慮<strong>大於解</strong>與<strong>小於解</strong>的邊界情況。</p>
 <p><strong>小於解</strong>時，由於輸入皆為等差級數和缺少一項，總和永遠小於<strong>解</strong>，
 而答案只需要找出最小總和即可，因此取得第一個吻合條件的<strong>解</strong>。</p>
-<p><strong>大於解</strong>時，思考邊界情況**<code>n+1</code>**，並且證明加上大於<code>n</code>的數值就會超過**解**。
-考量一個**n+1**所產生的結果，若缺少<code>n+1</code>實際上只會是<code>n</code>的級數總和，
-而缺少小於<code>n+1</code>的情況，數值總和永遠大於**解**。</p>
+<p><strong>大於解</strong>時，思考邊界情況**<code>n+1</code><strong>，並且證明加上大於<code>n</code>的數值就會超過</strong>解**。
+考量一個<strong>n+1</strong>所產生的結果，若缺少<code>n+1</code>實際上只會是<code>n</code>的級數總和，
+而缺少小於<code>n+1</code>的情況，數值總和永遠大於<strong>解</strong>。</p>
 <p><strong>註: 如果以上描述含有邏輯瑕疵，或者有更清楚的證明方法，
 煩請打開一個<a href="https://github.com/r888800009/r888800009.github.io/issues/new">issue</a>
 指正我的邏輯錯誤，筆者感激不盡</strong></p>
@@ -121,22 +120,22 @@ if (!doNotTrack) {
 $$
 \frac{n(1 + n)}{2} = 100000000
 $$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-<span style="color:#f92672">from</span> mpmath <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
-
-n <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;n&#39;</span>)
-e1 <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> n) <span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">100000000</span> 
-solve(e1)
-ans <span style="color:#f92672">=</span> solve(e1)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>evalf()
-ans
-</code></pre></div><p>其中<code>ans</code>結果為<code>14141.6356325698</code>，取<code>14141</code>時無法滿足輸入的最大值，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sympy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> mpmath <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> symbols(<span style="color:#e6db74">&#39;n&#39;</span>)
+</span></span><span style="display:flex;"><span>e1 <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> n) <span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">100000000</span> 
+</span></span><span style="display:flex;"><span>solve(e1)
+</span></span><span style="display:flex;"><span>ans <span style="color:#f92672">=</span> solve(e1)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>evalf()
+</span></span><span style="display:flex;"><span>ans
+</span></span></code></pre></div><p>其中<code>ans</code>結果為<code>14141.6356325698</code>，取<code>14141</code>時無法滿足輸入的最大值，
 因此無條件進位取得<code>14142</code>，其級數和為<code>100005153</code>滿足輸入條件。</p>
 <p>這裡進行驗算，確保<code>log</code>取出的數值大於<code>10 ^ 8</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> <span style="color:#ae81ff">14142</span>
-s <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> n) <span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
-s
-mp<span style="color:#f92672">.</span>log10(s)
-</code></pre></div><h2 id="編寫程式">編寫程式</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">14142</span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> n) <span style="color:#f92672">*</span> n <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>s
+</span></span><span style="display:flex;"><span>mp<span style="color:#f92672">.</span>log10(s)
+</span></span></code></pre></div><h2 id="編寫程式">編寫程式</h2>
 <p>透過迭代的方式編寫二分搜尋法。</p>
 <p>參見<a href="https://github.com/r888800009/practice/blob/master/progression-series-missing-number.py">範例程式</a></p>
 <h2 id="延伸">延伸</h2>
@@ -192,7 +191,7 @@ mp<span style="color:#f92672">.</span>log10(s)
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

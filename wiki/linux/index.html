@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -86,6 +85,7 @@ if (!doNotTrack) {
       <nav id="TableOfContents">
   <ul>
     <li><a href="#索引">索引</a></li>
+    <li><a href="#man">man</a></li>
     <li><a href="#模塊">模塊</a></li>
     <li><a href="#備份考量">備份考量</a></li>
     <li><a href="#工作管理">工作管理</a>
@@ -120,13 +120,16 @@ if (!doNotTrack) {
 <li><a href="/wiki/linux-desktop/">Linux桌面使用</a></li>
 <li><a href="/wiki/shell/">Shell</a></li>
 </ul>
-<h2 id="模塊">模塊</h2>
+<h2 id="man">man</h2>
+<p>關於 man 有一個技巧可以搜尋所有 manual</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>man -wK ssh
+</span></span></code></pre></div><h2 id="模塊">模塊</h2>
 <p>列出已加載的模塊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsmod
-</code></pre></div><p>搖桿需要加載模塊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modprobe joydev
-</code></pre></div><h2 id="備份考量">備份考量</h2>
-<pre><code>/home
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsmod
+</span></span></code></pre></div><p>搖桿需要加載模塊</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>modprobe joydev
+</span></span></code></pre></div><h2 id="備份考量">備份考量</h2>
+<pre tabindex="0"><code>/home
 /etc
 /boot
 /root
@@ -136,51 +139,51 @@ if (!doNotTrack) {
 <p>暫停工作<code>Ctrl + z</code>參見<a href="/wiki/shell/">Shell</a></p>
 <h3 id="jobs">jobs</h3>
 <p>在暫停工作之後輸入<code>jobs</code>得出結果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">[1]  - suspended  python
-[2]    suspended  python
-[3]  + suspended  vim
-</code></pre></div><p>透過jobID選擇job</p>
-<pre><code>$ jobs %3
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>[1]  - suspended  python
+</span></span><span style="display:flex;"><span>[2]    suspended  python
+</span></span><span style="display:flex;"><span>[3]  + suspended  vim
+</span></span></code></pre></div><p>透過jobID選擇job</p>
+<pre tabindex="0"><code>$ jobs %3
 [3]  + suspended  vim
 $ jobs %1
 [1]  - suspended  python
 </code></pre><h3 id="fgbg">fg/bg</h3>
-<pre><code>$ jobs %+
+<pre tabindex="0"><code>$ jobs %+
 [3]    continued  vim
 </code></pre><p><code>bg</code>類似<code>fg</code>不過在背景執行</p>
 <h3 id="kill">kill</h3>
 <p>對job1傳送kill signal</p>
-<pre><code>$ kill %1
+<pre tabindex="0"><code>$ kill %1
 [1]  + terminated  python
 </code></pre><h3 id="ps">ps</h3>
 <p>顯示進程資訊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ps ax | grep bash
-</code></pre></div><h2 id="檔案系統">檔案系統</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps ax | grep bash
+</span></span></code></pre></div><h2 id="檔案系統">檔案系統</h2>
 <p><code>lsblk</code>顯示<code>sdX,大小,標籤名</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsblk -o name,size,label
-</code></pre></div><p>修改分割名稱如<code>ext4</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">e2label /dev/sda1 name111
-</code></pre></div><h3 id="sd-card">SD card</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk -o name,size,label
+</span></span></code></pre></div><p>修改分割名稱如<code>ext4</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>e2label /dev/sda1 name111
+</span></span></code></pre></div><h3 id="sd-card">SD card</h3>
 <p>先導入模塊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo modprobe ohci_hcd
-</code></pre></div><p>重新插入 SD Card並檢查有無<code>mmcblk</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lsblk
-ls /dev/mmcb* 
-</code></pre></div><h2 id="雜項指令">雜項指令</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo modprobe ohci_hcd
+</span></span></code></pre></div><p>重新插入 SD Card並檢查有無<code>mmcblk</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk
+</span></span><span style="display:flex;"><span>ls /dev/mmcb* 
+</span></span></code></pre></div><h2 id="雜項指令">雜項指令</h2>
 <p>超時自動結束程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">timeout <span style="color:#66d9ef">$((</span><span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">))</span> ./a.out
-</code></pre></div><p>睡眠至記憶體</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">systemctl suspend
-</code></pre></div><p>檢視系統錯誤日誌</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">journalctl -p <span style="color:#ae81ff">3</span> -x 
-</code></pre></div><h2 id="控制-process-使用的核心數量">控制 Process 使用的核心數量</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timeout <span style="color:#66d9ef">$((</span><span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span><span style="color:#66d9ef">))</span> ./a.out
+</span></span></code></pre></div><p>睡眠至記憶體</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>systemctl suspend
+</span></span></code></pre></div><p>檢視系統錯誤日誌</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>journalctl -p <span style="color:#ae81ff">3</span> -x 
+</span></span></code></pre></div><h2 id="控制-process-使用的核心數量">控制 Process 使用的核心數量</h2>
 <p>比方說限制 <code>./a.out</code> 只能使用 CPU 0</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">taskset --cpu-list <span style="color:#ae81ff">0</span> ./a.out 
-</code></pre></div><h2 id="其他問題">其他問題</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>taskset --cpu-list <span style="color:#ae81ff">0</span> ./a.out 
+</span></span></code></pre></div><h2 id="其他問題">其他問題</h2>
 <h3 id="arduino無法連接板子">Arduino無法連接板子</h3>
 <p>使用下列指令給予權限。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod a+rw /dev/ttyACM0
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod a+rw /dev/ttyACM0
+</span></span></code></pre></div>
 
     
       <hr>
@@ -230,7 +233,7 @@ ls /dev/mmcb*
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -128,36 +127,36 @@ if (!doNotTrack) {
 <h2 id="一般文件處理">一般文件處理</h2>
 <h3 id="rm">rm</h3>
 <p>如果不小心創建 dash 開頭的程式比方說 <code> --force</code> 可以透過以下指令刪除</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rm -rf -- --force
-</code></pre></div><h3 id="shred">shred</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf -- --force
+</span></span></code></pre></div><h3 id="shred">shred</h3>
 <p>覆寫檔案內容，使檔案難以復原</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">shred file
-</code></pre></div><h3 id="ls">ls</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>shred file
+</span></span></code></pre></div><h3 id="ls">ls</h3>
 <p>排除指定檔名</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -I <span style="color:#e6db74">&#34;*.md&#34;</span>
-</code></pre></div><h3 id="autojump">autojump</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -I <span style="color:#e6db74">&#34;*.md&#34;</span>
+</span></span></code></pre></div><h3 id="autojump">autojump</h3>
 <p>自動批配並進入目錄，參見 <a href="/wiki/autojump/">Autojump</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">j 目錄部份名稱
-</code></pre></div><h3 id="trash">trash</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>j 目錄部份名稱
+</span></span></code></pre></div><h3 id="trash">trash</h3>
 <p>垃圾桶的功能，避免直接<code>rm</code>誤刪檔案。</p>
 <h3 id="du">du</h3>
 <p>用於統計大小。</p>
 <p>只顯示一層</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du --max-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-</code></pre></div><p>將輸出的大小轉成kb, mb, gb的格式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">du . -h
-</code></pre></div><h3 id="ncdu">ncdu</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>du --max-depth<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>將輸出的大小轉成kb, mb, gb的格式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>du . -h
+</span></span></code></pre></div><h3 id="ncdu">ncdu</h3>
 <p>找出目錄佔有空間的檔案與目錄，並且提供交互界面查看報表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S ncdu
-ncdu .
-</code></pre></div><h3 id="find">find</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S ncdu
+</span></span><span style="display:flex;"><span>ncdu .
+</span></span></code></pre></div><h3 id="find">find</h3>
 <p>搜尋該目錄含有<code>linux</code>的文件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -exec grep -H <span style="color:#e6db74">&#34;linux&#34;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>  
-</code></pre></div><h3 id="rsync">rsync</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -exec grep -H <span style="color:#e6db74">&#34;linux&#34;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>  
+</span></span></code></pre></div><h3 id="rsync">rsync</h3>
 <p>同步工具</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync 參數 來源 目標 
-rsync -avh test1/ test2/  
-</code></pre></div><h2 id="壓縮">壓縮</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync 參數 來源 目標 
+</span></span><span style="display:flex;"><span>rsync -avh test1/ test2/  
+</span></span></code></pre></div><h2 id="壓縮">壓縮</h2>
 <h3 id="tar">tar</h3>
 <p>壓縮解壓縮。</p>
 <h4 id="常用參數">常用參數</h4>
@@ -169,30 +168,30 @@ rsync -avh test1/ test2/
 </ul>
 <h4 id="列出內容">列出內容</h4>
 <p>列出<code>file.tar</code>裡面的內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tar -tf file.tar 
-</code></pre></div><h2 id="file">file</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -tf file.tar 
+</span></span></code></pre></div><h2 id="file">file</h2>
 <p>用於識別檔案類型</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">file ./a.out
-</code></pre></div><h2 id="stat">stat</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file ./a.out
+</span></span></code></pre></div><h2 id="stat">stat</h2>
 <p>顯示文件的詳細資訊，如日期、權限等相關資訊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">stat file
-</code></pre></div><h2 id="內容處理">內容處理</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>stat file
+</span></span></code></pre></div><h2 id="內容處理">內容處理</h2>
 <h3 id="sort">sort</h3>
 <p>多種排序功能，可依字典序、數字大小等</p>
 <p>數字大小排序</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sort file --numeric-sort  
-</code></pre></div><p>按照字典序</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sort file 
-</code></pre></div><h3 id="fdupes">fdupes</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sort file --numeric-sort  
+</span></span></code></pre></div><p>按照字典序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sort file 
+</span></span></code></pre></div><h3 id="fdupes">fdupes</h3>
 <p>找尋重複的檔案</p>
-<pre><code>fdupes -d ./
+<pre tabindex="0"><code>fdupes -d ./
 </code></pre><p>選取完成之後鍵入 <code>prune</code> 之後就會移除檔案，之後可以透過<code>exit</code> 退出</p>
 <h3 id="diff">diff</h3>
 <p>比較兩個檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">diff file1 file2
-</code></pre></div><p>比較兩個資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">diff --brief -r dir1/ dir2/
-</code></pre></div><h3 id="未分類">未分類</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff file1 file2
+</span></span></code></pre></div><p>比較兩個資料夾</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff --brief -r dir1/ dir2/
+</span></span></code></pre></div><h3 id="未分類">未分類</h3>
 <ul>
 <li><code>shuf</code>: 隨機排序</li>
 <li><code>sed</code></li>
@@ -214,6 +213,7 @@ rsync -avh test1/ test2/
 <h2 id="參見">參見</h2>
 <ul>
 <li><a href="/wiki/linux-permission/">Linux權限</a></li>
+<li><a href="https://astrobiomike.github.io/unix/six-glorious-commands">Six glorious commands</a> -  推薦此清單有介紹一些常用的 unix 指令</li>
 </ul>
 
     
@@ -268,7 +268,7 @@ rsync -avh test1/ test2/
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

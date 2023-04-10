@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -102,65 +101,65 @@ if (!doNotTrack) {
 並且透過此伺服器運行CGI程式。</p>
 <h2 id="配置apache">配置apache</h2>
 <p>找到對應的image並且pull</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker search apache 
-sudo docker pull httpd
-</code></pre></div><h3 id="httpdconf">httpd.conf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker search apache 
+</span></span><span style="display:flex;"><span>sudo docker pull httpd
+</span></span></code></pre></div><h3 id="httpdconf">httpd.conf</h3>
 <p>取得預設的httpd.conf</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker create --name temp httpd
-sudo docker cp temp:/usr/local/apache2/conf/httpd.conf httpd.conf
-sudo docker rm temp
-</code></pre></div><p>修改cgi的部份</p>
-<pre><code>&lt;Directory &quot;/usr/local/apache2/cgi-bin&quot;&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker create --name temp httpd
+</span></span><span style="display:flex;"><span>sudo docker cp temp:/usr/local/apache2/conf/httpd.conf httpd.conf
+</span></span><span style="display:flex;"><span>sudo docker rm temp
+</span></span></code></pre></div><p>修改cgi的部份</p>
+<pre tabindex="0"><code>&lt;Directory &#34;/usr/local/apache2/cgi-bin&#34;&gt;
     AllowOverride None
     Options None
     Require all granted
 &lt;/Directory&gt;
 </code></pre><p>修改成</p>
-<pre><code>&lt;Directory &quot;/usr/local/apache2/cgi-bin&quot;&gt;
+<pre tabindex="0"><code>&lt;Directory &#34;/usr/local/apache2/cgi-bin&#34;&gt;
     AllowOverride None
     Options ExecCGI
     SetHandler cgi-script
     Require all granted
 &lt;/Directory&gt;
 </code></pre><p>取消<code>mod_cgid.so</code>註解</p>
-<pre><code>LoadModule cgid_module modules/mod_cgid.so
+<pre tabindex="0"><code>LoadModule cgid_module modules/mod_cgid.so
 </code></pre><h3 id="build-dockerfile">Build Dockerfile</h3>
 <p>建立Dockerfile</p>
-<pre><code>FROM httpd
+<pre tabindex="0"><code>FROM httpd
 COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 </code></pre><p>build image</p>
-<pre><code>sudo docker build -t my-httpd . 
+<pre tabindex="0"><code>sudo docker build -t my-httpd . 
 </code></pre><p>使用當前目錄作為cgi-bin</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run -p 8080:80 -v <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">&#34;</span>:/usr/local/apache2/cgi-bin/ my-httpd
-</code></pre></div><h2 id="測試配置結果">測試配置結果</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo docker run -p 8080:80 -v <span style="color:#e6db74">&#34;</span>$PWD<span style="color:#e6db74">&#34;</span>:/usr/local/apache2/cgi-bin/ my-httpd
+</span></span></code></pre></div><h2 id="測試配置結果">測試配置結果</h2>
 <p>編寫測試CGI，假設名稱為<code>cgi</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span>echo Content-Type: text; charset<span style="color:#f92672">=</span>utf-8
-echo
-echo cgi working
-</code></pre></div><p>連上http://localhost:8080/cgi-bin/cgi 可以看到CGI正常運作。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo Content-Type: text; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>echo cgi working
+</span></span></code></pre></div><p>連上http://localhost:8080/cgi-bin/cgi 可以看到CGI正常運作。</p>
 <h2 id="get-method">GET method</h2>
 <p>將下列程式取名為<code>cgi-get</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span>echo Content-Type: text; charset<span style="color:#f92672">=</span>utf-8
-echo
-echo $QUERY_STRING
-</code></pre></div><p>連上 http://localhost:8080/cgi-bin/cgi-get?foo=a&amp;bar=123</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo Content-Type: text; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>echo $QUERY_STRING
+</span></span></code></pre></div><p>連上 http://localhost:8080/cgi-bin/cgi-get?foo=a&amp;bar=123</p>
 <h2 id="post-method">POST method</h2>
 <p>將下列程式取名為<code>cgi-post</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
-</span><span style="color:#75715e"></span>echo Content-Type: text; charset<span style="color:#f92672">=</span>utf-8
-echo
-
-a<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat<span style="color:#66d9ef">)</span>
-echo $a
-</code></pre></div><p>透過firefox連上http://localhost:8080/cgi-bin/cgi-post
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>echo Content-Type: text; charset<span style="color:#f92672">=</span>utf-8
+</span></span><span style="display:flex;"><span>echo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>echo $a
+</span></span></code></pre></div><p>透過firefox連上http://localhost:8080/cgi-bin/cgi-post
 此時應該可以看到一個空白頁</p>
 <p>透過內建的開發人員工具，在HTTP Header的地方補上</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Content-Length: 15
-</code></pre></div><p>並且在Request Body填上</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">foo=aaa&amp;bar=bbb
-</code></pre></div><p>透過POST發送應該可以看見Request Body顯示在頁面上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Content-Length: 15
+</span></span></code></pre></div><p>並且在Request Body填上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>foo=aaa&amp;bar=bbb
+</span></span></code></pre></div><p>透過POST發送應該可以看見Request Body顯示在頁面上</p>
 
     
       <hr>
@@ -216,7 +215,7 @@ echo $a
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

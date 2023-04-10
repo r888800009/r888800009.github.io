@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -107,15 +106,15 @@ if (!doNotTrack) {
 </ul>
 <h2 id="與lex結合">與lex結合</h2>
 <p>透過在yacc的<code>%union</code>定義數值，之後可以透過lex在分詞的時候定義</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%union {
-  int intVar;
-  char *str;
-}
-</code></pre></div><p>此時可以保存整數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">yylval.intVar <span style="color:#f92672">=</span> atoi(yytext);
-</code></pre></div><p>字串的話採用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">yylval.str <span style="color:#f92672">=</span> strdup(yytext);
-</code></pre></div><h2 id="yacc採用c">yacc採用c++</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>%union {
+</span></span><span style="display:flex;"><span>  int intVar;
+</span></span><span style="display:flex;"><span>  char *str;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>此時可以保存整數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>yylval.intVar <span style="color:#f92672">=</span> <span style="color:#a6e22e">atoi</span>(yytext);
+</span></span></code></pre></div><p>字串的話採用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>yylval.str <span style="color:#f92672">=</span> <span style="color:#a6e22e">strdup</span>(yytext);
+</span></span></code></pre></div><h2 id="yacc採用c">yacc採用c++</h2>
 <p>參考該篇<a href="http://tldp.org/HOWTO/Lex-YACC-HOWTO-5.html">文章</a>
 在yacc中編寫c++，在lex編寫c。</p>
 <p>或採用flex <code>-+</code>方法生成c++檔案</p>
@@ -178,7 +177,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

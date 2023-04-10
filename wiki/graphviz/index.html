@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -94,27 +93,27 @@ if (!doNotTrack) {
 </nav>
     </aside>
 
-    <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dot in.dot -o out.png
-</code></pre></div><p>建議複雜的圖形使用 HTML-like label</p>
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dot in.dot -o out.png
+</span></span></code></pre></div><p>建議複雜的圖形使用 HTML-like label</p>
 <h2 id="record-node-使用">record node 使用</h2>
 <p>這個可以在 <code>label</code> 中透過 <code>|</code> 去分割，並且使用 <code>{}</code> 作為子分割</p>
-<pre><code>digraph G {
+<pre tabindex="0"><code>digraph G {
    graph[rankdir=LR]
-   node[shape=Mrecord, fontname=&quot;consolas&quot;]
+   node[shape=Mrecord, fontname=&#34;consolas&#34;]
    
     subgraph rank1 {
-        root[label=&quot;root1&quot;];
-        n1[label=&quot;&lt;p&gt; parrent | &lt;k&gt; key | &lt;d&gt; degree | &lt;m&gt; mark | {&lt;l&gt; left | &lt;c&gt; child | &lt;r&gt; right } &quot;];
+        root[label=&#34;root1&#34;];
+        n1[label=&#34;&lt;p&gt; parrent | &lt;k&gt; key | &lt;d&gt; degree | &lt;m&gt; mark | {&lt;l&gt; left | &lt;c&gt; child | &lt;r&gt; right } &#34;];
         root-&gt; n1:p;
     } 
     
     subgraph rank2 {
-        n2[label=&quot;&lt;p&gt; parrent | &lt;k&gt; key | &lt;d&gt; degree | &lt;m&gt; mark | {&lt;l&gt; left | &lt;c&gt; child | &lt;r&gt; right } &quot;];
+        n2[label=&#34;&lt;p&gt; parrent | &lt;k&gt; key | &lt;d&gt; degree | &lt;m&gt; mark | {&lt;l&gt; left | &lt;c&gt; child | &lt;r&gt; right } &#34;];
         root-&gt; n2:p;
     } 
     
     subgraph rank3 {
-        n3[label=&quot;&lt;p&gt; parrent | &lt;k&gt; key | &lt;d&gt; degree | &lt;m&gt; mark | {&lt;l&gt; left | &lt;c&gt; child | &lt;r&gt; right } &quot;];
+        n3[label=&#34;&lt;p&gt; parrent | &lt;k&gt; key | &lt;d&gt; degree | &lt;m&gt; mark | {&lt;l&gt; left | &lt;c&gt; child | &lt;r&gt; right } &#34;];
         root-&gt; n3:p;
     } 
     
@@ -125,12 +124,12 @@ if (!doNotTrack) {
 <p>參見文件 <a href="https://www.graphviz.org/docs/attr-types/portPos/">portPos</a> 的方法，如直接設定 attribute <code>headport</code>, <code>tailport</code> 會發生奇怪的事情</p>
 <h2 id="關於節點間隙過小">關於節點間隙過小</h2>
 <p>設定 <code>nodesep</code> (注意這個不是 node 的 margin)</p>
-<pre><code>graph[nodesep=3]
+<pre tabindex="0"><code>graph[nodesep=3]
 </code></pre><h2 id="邊與節點連接的縫隙太大">邊與節點連接的縫隙太大</h2>
 <p>可能使用 HTML-like table 的時候，設定到 margin，但是沒有看到邊框，實際上邊框是 margin 的大小，但 nodesep 太小，誤用 margin 的問題。</p>
 <h2 id="問題-lost-node">問題 lost node</h2>
 <p>發生在 record 形式的時候，改用</p>
-<pre><code>Warning: flat edge between adjacent nodes one of which has a record shape - replace records with HTML-like labels
+<pre tabindex="0"><code>Warning: flat edge between adjacent nodes one of which has a record shape - replace records with HTML-like labels
 </code></pre>
 
     
@@ -181,7 +180,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

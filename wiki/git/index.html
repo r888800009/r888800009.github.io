@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -100,39 +99,39 @@ if (!doNotTrack) {
 
     <h2 id="常用指令">常用指令</h2>
 <p>顯示commit的詳細變化</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log --stat
-</code></pre></div><p>將commit紀錄以可視化的樹狀結構顯示</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log --graph --oneline 
-</code></pre></div><p>合併兩個分支</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git merge a b
-<span style="color:#75715e"># 或</span>
-git merge b 
-</code></pre></div><p>移除或修改commit，移除使用<code>drop</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git rebase -i <span style="color:#f92672">[</span>SHA<span style="color:#f92672">]</span>
-</code></pre></div><p>檢視變化</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git log -p
-</code></pre></div><h2 id="模板">模板</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --stat
+</span></span></code></pre></div><p>將commit紀錄以可視化的樹狀結構顯示</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --graph --oneline 
+</span></span></code></pre></div><p>合併兩個分支</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git merge a b
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 或</span>
+</span></span><span style="display:flex;"><span>git merge b 
+</span></span></code></pre></div><p>移除或修改commit，移除使用<code>drop</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git rebase -i <span style="color:#f92672">[</span>SHA<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>檢視變化</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log -p
+</span></span></code></pre></div><h2 id="模板">模板</h2>
 <p>配置模板</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config commit.template filename
-</code></pre></div><p>全域模板</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global commit.template filename
-</code></pre></div><p>移除模板</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --unset commit.template 
-</code></pre></div><p>若把模板檔案移除之後，會導致git無法commit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config commit.template filename
+</span></span></code></pre></div><p>全域模板</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global commit.template filename
+</span></span></code></pre></div><p>移除模板</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --unset commit.template 
+</span></span></code></pre></div><p>若把模板檔案移除之後，會導致git無法commit</p>
 <h2 id="技巧">技巧</h2>
 <h3 id="抓取大repo">抓取大repo</h3>
 <p>如果要抓取如linux原始碼的大repo(3G左右)僅僅用來編譯，下載速度太慢以及
 消耗浪費空間，因此採用只抓最後一個commit可以使用<code>--depth 1</code>的方式只抓取最後一個，
 commit。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --depth <span style="color:#ae81ff">1</span> git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
-</code></pre></div><h2 id="gpg簽章">GPG簽章</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+</span></span></code></pre></div><h2 id="gpg簽章">GPG簽章</h2>
 <p>啟用commit gpg</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config user.signingkey your_GPG_KEY
-git config commit.gpgsign true
-</code></pre></div><p>測試commit，如果GPG金鑰正確的話應該可以成功commit</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">test &gt; test
-git add test ; git commit -m <span style="color:#e6db74">&#34;test gpg&#34;</span>
-</code></pre></div><h2 id="git-實用工具列表">Git 實用工具列表</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config user.signingkey your_GPG_KEY
+</span></span><span style="display:flex;"><span>git config commit.gpgsign true
+</span></span></code></pre></div><p>測試commit，如果GPG金鑰正確的話應該可以成功commit</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>test &gt; test
+</span></span><span style="display:flex;"><span>git add test ; git commit -m <span style="color:#e6db74">&#34;test gpg&#34;</span>
+</span></span></code></pre></div><h2 id="git-實用工具列表">Git 實用工具列表</h2>
 <ul>
 <li><a href="https://github.com/rw251/git-summary">git-summary</a>用來檢查git的狀態</li>
 <li><a href="https://gitea.io">Gitea</a>輕量級git程式碼託管</li>
@@ -190,7 +189,7 @@ git add test ; git commit -m <span style="color:#e6db74">&#34;test gpg&#34;</spa
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

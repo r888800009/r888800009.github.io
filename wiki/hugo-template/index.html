@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -113,12 +112,12 @@ if (!doNotTrack) {
 非模板內容參見 <a href="/wiki/hugo/">hugo</a>。</p>
 <h2 id="文章-tags">文章 Tags</h2>
 <p>透過以下版模顯示文章的 <code>tags</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ with .Params.tags }}
-  {{ range . }}
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">tags</span><span style="color:#960050;background-color:#1e0010">/&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}}{{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt;
-  {{ end }}
-{{ end }}
-</code></pre></div><p>參見 <a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ with .Params.tags }}
+</span></span><span style="display:flex;"><span>  {{ range . }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#a6e22e">tags</span><span style="color:#960050;background-color:#1e0010">/&#34;</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">absURL</span> <span style="color:#960050;background-color:#1e0010">}}{{</span> <span style="color:#960050;background-color:#1e0010">.</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#a6e22e">urlize</span> <span style="color:#960050;background-color:#1e0010">}}&#34;</span>&gt;{{ . }}&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ end }}
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div><p>參見 <a href="https://gohugo.io/templates/single-page-templates/">Single Page Templates</a></p>
 <p>關於 Tags 頁的模板透過 <code>layouts/_default/terms.html</code> 設定</p>
 <h2 id="關於條件判斷式">關於條件判斷式</h2>
 <p>hugo 的 <code>if</code> 當中的 <code>and</code> <code>or</code>是採用波蘭表達式 (Polish Notation)，因此需要把運算子放在前面。</p>
@@ -130,23 +129,23 @@ if (!doNotTrack) {
 <h2 id="pluralize">Pluralize</h2>
 <p>有的時候為了避免標題變成複數型態，可以關閉 Pluralize</p>
 <p>只需要在 <code>config.toml</code> 加入</p>
-<pre><code>pluralizelisttitles = &quot;false&quot;
+<pre tabindex="0"><code>pluralizelisttitles = &#34;false&#34;
 </code></pre><p>並且輸入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo config
-</code></pre></div><h2 id="format">Format</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo config
+</span></span></code></pre></div><h2 id="format">Format</h2>
 <p>參見 <a href="https://gohugo.io/functions/dateformat/">time.Format | Hugo</a></p>
 <h2 id="判斷是否在開發伺服器上">判斷是否在開發伺服器上</h2>
-<pre><code>{{ if .Site.IsServer }}
+<pre tabindex="0"><code>{{ if .Site.IsServer }}
 {{ end }}
 </code></pre><h2 id="根據修改日期排序">根據修改日期排序</h2>
 <p>可以用以下寫法</p>
-<pre><code>{{ $sortedPosts := .Data.Pages.ByLastmod.Reverse  }}
+<pre tabindex="0"><code>{{ $sortedPosts := .Data.Pages.ByLastmod.Reverse  }}
 {{ $paginator := .Paginate $sortedPosts }}
 
 {{ range $paginator.Pages }}
 {{ end }}
 </code></pre><p>其實我們可以直接在 where 後面加上 <code>.ByLastmod.Reverse </code>，因為他會是一個 <code>.Pages</code> 的型別，範例如下</p>
-<pre><code>{{ range first 5 (where .Site.RegularPages &quot;Section&quot; .Section).ByLastmod.Reverse }}
+<pre tabindex="0"><code>{{ range first 5 (where .Site.RegularPages &#34;Section&#34; .Section).ByLastmod.Reverse }}
 </code></pre><h3 id="參考">參考</h3>
 <ul>
 <li><a href="https://discourse.gohugo.io/t/ordering-content-by-modified-date/3175">Ordering content by modified date? - support - HUGO</a></li>
@@ -169,8 +168,8 @@ if (!doNotTrack) {
 </ul>
 <h2 id="table-of-contents">Table of Contents</h2>
 <p>顯示內容清單，只在模板作用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">{{ .TableOfContents }}
-</code></pre></div><p>參見<a href="https://gohugo.io/content-management/toc/">Table of Contents</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>{{ .TableOfContents }}
+</span></span></code></pre></div><p>參見<a href="https://gohugo.io/content-management/toc/">Table of Contents</a></p>
 <h2 id="其他">其他</h2>
 <ul>
 <li><a href="https://zwbetz.com/make-a-hugo-blog-from-scratch/#better-title-logic">Make a Hugo blog from scratch</a> 一堆<code>hugo</code>模板的片段</li>
@@ -224,7 +223,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

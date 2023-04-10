@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on r809&#39;s Notes</title>
+    <link>https://r888800009.github.io/tags/research/</link>
+    <description>Recent content in Research on r809&#39;s Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 06 Nov 2022 02:23:50 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Security Lab List</title>
+      <link>https://r888800009.github.io/system-security-lab-list/</link>
+      <pubDate>Sun, 06 Nov 2022 02:23:50 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/system-security-lab-list/</guid>
+      <description>&lt;p&gt;I collected some lab I interested, about the system security, fuzzing, vulnerability discovery, symbolic execution or taint.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

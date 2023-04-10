@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -118,18 +117,18 @@ if (!doNotTrack) {
 </ul>
 <h2 id="相關指令">相關指令</h2>
 <p>顯示dynamic relocation資料</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -R a.out 
-</code></pre></div><p>顯示符號表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nm ./a.out
-</code></pre></div><p>顯示區段</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">readelf -x .text ./a.out
-objdump -s -j .text ./a.out
-</code></pre></div><p>反組譯</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">objdump -M intel -d ./a.out | less
-</code></pre></div><h2 id="透過python-提取pe-header">透過python 提取PE header</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pefile
-pe <span style="color:#f92672">=</span> pefile<span style="color:#f92672">.</span>PE(<span style="color:#e6db74">&#39;./example.exe&#39;</span>)
-</code></pre></div><p>參見<a href="https://wenqingfu.me/post/pe_file/">Python pefile 模块读写 PE 文件</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>objdump -R a.out 
+</span></span></code></pre></div><p>顯示符號表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nm ./a.out
+</span></span></code></pre></div><p>顯示區段</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>readelf -x .text ./a.out
+</span></span><span style="display:flex;"><span>objdump -s -j .text ./a.out
+</span></span></code></pre></div><p>反組譯</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>objdump -M intel -d ./a.out | less
+</span></span></code></pre></div><h2 id="透過python-提取pe-header">透過python 提取PE header</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pefile
+</span></span><span style="display:flex;"><span>pe <span style="color:#f92672">=</span> pefile<span style="color:#f92672">.</span>PE(<span style="color:#e6db74">&#39;./example.exe&#39;</span>)
+</span></span></code></pre></div><p>參見<a href="https://wenqingfu.me/post/pe_file/">Python pefile 模块读写 PE 文件</a></p>
 <h2 id="相關連結">相關連結</h2>
 <ul>
 <li><a href="https://ctf-wiki.github.io/ctf-wiki/reverse/introduction-zh/">Software Reverse Engineering Introduction | CTF Wiki</a></li>
@@ -185,7 +184,7 @@ pe <span style="color:#f92672">=</span> pefile<span style="color:#f92672">.</spa
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

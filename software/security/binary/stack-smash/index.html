@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -113,13 +112,13 @@ if (!doNotTrack) {
 <h3 id="方法二">方法二</h3>
 <p>可以透過除錯工具傳入<strong>辨識用參數</strong>，
 並且找到相關檔名下面應該是<strong>辨識用參數</strong>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./a.out 辨識用
-</code></pre></div><p>之後透過除錯工具將堆疊打印出來，找出該數值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./a.out 辨識用
+</span></span></code></pre></div><p>之後透過除錯工具將堆疊打印出來，找出該數值。</p>
 <h2 id="常見問題">常見問題</h2>
 <h3 id="unknown">Unknown</h3>
 <p>似乎找到正確位置卻輸出</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">*** stack smashing detected ***: &lt;unknown&gt; terminated
-</code></pre></div><p>原因? 系統或libc?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>*** stack smashing detected ***: &lt;unknown&gt; terminated
+</span></span></code></pre></div><p>原因? 系統或libc?</p>
 <p>經過測試之後(掛其他版本的libc)之後就正常顯示。<a href="/software/security/binary/pwn-notes/#指定libc">掛libc</a></p>
 <h3 id="argc">argc</h3>
 <p>基本上不用理會<code>argc</code>，因為報錯訊息依然是輸出<code>argv[0]</code>。</p>
@@ -181,7 +180,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

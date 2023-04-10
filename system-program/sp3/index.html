@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -137,13 +136,13 @@ if (!doNotTrack) {
 </ul>
 <h3 id="linkage-editor">Linkage Editor</h3>
 <p>行為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">obj and library -&gt; linkage Editor -&gt; Linked Program (disk file)
-</code></pre></div><p>載入程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Linked Program -&gt; Relocation Loader -&gt; Memory
-</code></pre></div><h3 id="linking-loader">Linking Loader</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>obj and library -&gt; linkage Editor -&gt; Linked Program (disk file)
+</span></span></code></pre></div><p>載入程式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Linked Program -&gt; Relocation Loader -&gt; Memory
+</span></span></code></pre></div><h3 id="linking-loader">Linking Loader</h3>
 <p>連結載入器直接連結obj file並載入記憶體執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">obj and library -&gt; linking Loader  -&gt; Memory
-</code></pre></div><h2 id="32-absolute-loader">3.2 absolute Loader</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>obj and library -&gt; linking Loader  -&gt; Memory
+</span></span></code></pre></div><h2 id="32-absolute-loader">3.2 absolute Loader</h2>
 <p>載入程式時，會將程式擺放到固定的主記憶體絕對位置</p>
 <h3 id="四大功能分配">四大功能分配</h3>
 <p>absolute loader只做loading不做linking與relocation</p>
@@ -218,56 +217,56 @@ if (!doNotTrack) {
 <p>在pass1的時候產生external symbol table，內容為function與function內的D紀錄的地址找出。</p>
 <h3 id="pseudo-code">pseudo code</h3>
 <p>pass1</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">void pass1() {
-  faddr = progAddr = os.getProgAddr() // 從作業系統獲取分配的地址
-  while (!eof) {
-    func = file.headerRecord()
-    flth = func.length
-    
-    find func.name in ESTAB then
-      throw duplicate &#34;External symbol&#34;
-    unfounded
-      ESTAB[func.name] = func.addr
-
-    while (recode.type != &#39;E&#39;) {
-      file.nextRecord()
-      if (record.type == &#39;D&#39;) {
-        for (symbol in record) {
-            find func.name in ESTAB then
-              throw duplicate &#34;External symbol&#34;
-            unfounded
-               ESTAB[func.name] = func.addr + record.D.address
-        }
-      }      
-    }
-  }
-}
-</code></pre></div><p>pass2， loading, reloaction, linking，後兩者要從modification records找</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">void pass2() {
-  faddr = execaddr = progAddr
-  while (!eof) {
-    func = file.headerRecord()
-    flth = func.length
-
-    while (recode.type != &#39;E&#39;) {
-      file.nextRecord()
-      if (record.type == &#39;T&#39;) {
-        faddr[specified addr] =  file.objectCode()
-      } else if (record.type == &#39;M&#39;) {
-        // relocation and linking
-        find modifyName in ESTAB then
-          if (&#39;+&#39; or &#39;-&#39;) {
-            faddr[specified addr] =  + or -            
-          } else {
-            get offset of symbol location            
-          }
-        unfounded
-          throw duplicate &#34;External symbol&#34;
-      }
-    }
-  }
-}
-</code></pre></div><h2 id="35-the-other-loaders">3.5 The other Loaders</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>void pass1() {
+</span></span><span style="display:flex;"><span>  faddr = progAddr = os.getProgAddr() // 從作業系統獲取分配的地址
+</span></span><span style="display:flex;"><span>  while (!eof) {
+</span></span><span style="display:flex;"><span>    func = file.headerRecord()
+</span></span><span style="display:flex;"><span>    flth = func.length
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    find func.name in ESTAB then
+</span></span><span style="display:flex;"><span>      throw duplicate &#34;External symbol&#34;
+</span></span><span style="display:flex;"><span>    unfounded
+</span></span><span style="display:flex;"><span>      ESTAB[func.name] = func.addr
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    while (recode.type != &#39;E&#39;) {
+</span></span><span style="display:flex;"><span>      file.nextRecord()
+</span></span><span style="display:flex;"><span>      if (record.type == &#39;D&#39;) {
+</span></span><span style="display:flex;"><span>        for (symbol in record) {
+</span></span><span style="display:flex;"><span>            find func.name in ESTAB then
+</span></span><span style="display:flex;"><span>              throw duplicate &#34;External symbol&#34;
+</span></span><span style="display:flex;"><span>            unfounded
+</span></span><span style="display:flex;"><span>               ESTAB[func.name] = func.addr + record.D.address
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }      
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>pass2， loading, reloaction, linking，後兩者要從modification records找</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>void pass2() {
+</span></span><span style="display:flex;"><span>  faddr = execaddr = progAddr
+</span></span><span style="display:flex;"><span>  while (!eof) {
+</span></span><span style="display:flex;"><span>    func = file.headerRecord()
+</span></span><span style="display:flex;"><span>    flth = func.length
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    while (recode.type != &#39;E&#39;) {
+</span></span><span style="display:flex;"><span>      file.nextRecord()
+</span></span><span style="display:flex;"><span>      if (record.type == &#39;T&#39;) {
+</span></span><span style="display:flex;"><span>        faddr[specified addr] =  file.objectCode()
+</span></span><span style="display:flex;"><span>      } else if (record.type == &#39;M&#39;) {
+</span></span><span style="display:flex;"><span>        // relocation and linking
+</span></span><span style="display:flex;"><span>        find modifyName in ESTAB then
+</span></span><span style="display:flex;"><span>          if (&#39;+&#39; or &#39;-&#39;) {
+</span></span><span style="display:flex;"><span>            faddr[specified addr] =  + or -            
+</span></span><span style="display:flex;"><span>          } else {
+</span></span><span style="display:flex;"><span>            get offset of symbol location            
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>        unfounded
+</span></span><span style="display:flex;"><span>          throw duplicate &#34;External symbol&#34;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="35-the-other-loaders">3.5 The other Loaders</h2>
 <h3 id="the-other-loaders">The Other Loaders</h3>
 <ol>
 <li>Linking Loader: allocation, linking, relocation, loading</li>
@@ -348,7 +347,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

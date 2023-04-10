@@ -6,7 +6,16 @@
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 02 Apr 2022 22:49:53 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Nov 2022 02:23:50 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Security Lab List</title>
+      <link>https://r888800009.github.io/system-security-lab-list/</link>
+      <pubDate>Sun, 06 Nov 2022 02:23:50 +0800</pubDate>
+      
+      <guid>https://r888800009.github.io/system-security-lab-list/</guid>
+      <description>&lt;p&gt;I collected some lab I interested, about the system security, fuzzing, vulnerability discovery, symbolic execution or taint.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Windows Heap</title>
       <link>https://r888800009.github.io/software/security/binary/windows-heap/</link>
@@ -314,7 +323,7 @@
     </item>
     
     <item>
-      <title>韌體逆向</title>
+      <title>Firmware Reversing</title>
       <link>https://r888800009.github.io/firmware/reverse/</link>
       <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
       
@@ -346,7 +355,7 @@
       <pubDate>Sat, 23 May 2020 22:54:42 +0800</pubDate>
       
       <guid>https://r888800009.github.io/wiki/json-web-token/</guid>
-      <description>用途  SSO 一次性認證  誤用  作為 Session  相關資料  RFC 7519  </description>
+      <description>用途 SSO 一次性認證 誤用 作為 Session 相關資料 RFC 7519 </description>
     </item>
     
     <item>
@@ -1297,7 +1306,7 @@
       <pubDate>Fri, 06 Sep 2019 04:38:57 +0800</pubDate>
       
       <guid>https://r888800009.github.io/software/security/binary/pwn-notes/</guid>
-      <description>&lt;p&gt;pwn常用指令以及概念紀錄&lt;/p&gt;</description>
+      <description>&lt;p&gt;pwn 常用指令以及概念紀錄&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1586,7 +1595,7 @@ GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;
       <pubDate>Thu, 07 Mar 2019 00:30:34 +0800</pubDate>
       
       <guid>https://r888800009.github.io/posts/online-judge-list/</guid>
-      <description> UVa Online Judge LeetCode Codeforces 高中生程式解題系統 台中女中程式解題系統 PKU JudgeOnline Codewars Timus Online Judge  </description>
+      <description> UVa Online Judge LeetCode Codeforces 高中生程式解題系統 台中女中程式解題系統 PKU JudgeOnline Codewars Timus Online Judge </description>
     </item>
     
     <item>
@@ -1595,7 +1604,7 @@ GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;
       <pubDate>Sat, 18 Aug 2018 21:15:58 +0800</pubDate>
       
       <guid>https://r888800009.github.io/portfolio/</guid>
-      <description>Useful  r888800009/CTF-tool fcitx-jszhuyin Fcitx Wrapper for jszhuyin  Stuff  Notes Scientific Notation Generator demo Tetris JS demo Snake JS demo Tree generator demo How Long Ago demo Sokoban JS demo  Practice/Solve  CTF-Solve practice  </description>
+      <description>Useful r888800009/CTF-tool fcitx-jszhuyin Fcitx Wrapper for jszhuyin Stuff Notes Scientific Notation Generator demo Tetris JS demo Snake JS demo Tree generator demo How Long Ago demo Sokoban JS demo r888800009/gnugo-python-binding: python wrapper for gnugo 3.8 Practice/Solve CTF-Solve practice </description>
     </item>
     
   </channel>

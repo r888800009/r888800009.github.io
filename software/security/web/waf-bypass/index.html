@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -97,16 +96,16 @@ if (!doNotTrack) {
 
     <h2 id="透過content-type的charset繞過waf">透過Content-Type的charset繞過waf</h2>
 <p>未編碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">id=123&amp;pass=pass%3d1
-</code></pre></div><p>透過<code>IBM037</code>編碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">%89%84=%F1%F2%F3&amp;%97%81%A2%A2=%97%81%A2%A2~%F1
-</code></pre></div><p>在發送時必須補上http header</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Content-Type: application/x-www-form-urlencoded; charset=ibm037
-</code></pre></div><p>作弊表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> urllib.parse
-s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;payload&#39;</span>
-urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>quote(s<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ibm037&#39;</span>))
-</code></pre></div><h3 id="參考">參考</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>id=123&amp;pass=pass%3d1
+</span></span></code></pre></div><p>透過<code>IBM037</code>編碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>%89%84=%F1%F2%F3&amp;%97%81%A2%A2=%97%81%A2%A2~%F1
+</span></span></code></pre></div><p>在發送時必須補上http header</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Content-Type: application/x-www-form-urlencoded; charset=ibm037
+</span></span></code></pre></div><p>作弊表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> urllib.parse
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;payload&#39;</span>
+</span></span><span style="display:flex;"><span>urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</span>quote(s<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;ibm037&#39;</span>))
+</span></span></code></pre></div><h3 id="參考">參考</h3>
 <ul>
 <li><a href="https://www.slideshare.net/SoroushDalili/waf-bypass-techniques-using-http-standard-and-web-servers-behaviour">WAF Bypass Techniques - Using HTTP Standard and Web Servers’ Behaviour</a></li>
 </ul>
@@ -169,7 +168,7 @@ urllib<span style="color:#f92672">.</span>parse<span style="color:#f92672">.</sp
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

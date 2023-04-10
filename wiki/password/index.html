@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -113,35 +112,35 @@ if (!doNotTrack) {
 </ul>
 <h2 id="簡易弱密碼範例">簡易弱密碼範例</h2>
 <p>保存為<code>index.php</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#a6e22e">Username</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">required</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-
-  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#a6e22e">Password</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pw&#34;</span> <span style="color:#a6e22e">required</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
-
-    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Login</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">button</span><span style="color:#f92672">&gt;</span>
-<span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">form</span><span style="color:#f92672">&gt;</span>
-
-<span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
-$id <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;id&#39;</span><span style="color:#a6e22e">simple</span><span style="color:#f92672">-</span><span style="color:#a6e22e">login</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span>];
-$pw <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;pw&#39;</span>];
-
-<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($id) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isset</span>($pw)) {
-  <span style="color:#66d9ef">if</span> ($id <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#f92672">&amp;&amp;</span> $pw <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;pass&#34;</span>)
-    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;hi, user&#34;</span>;
-  <span style="color:#66d9ef">else</span>
-    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Incorrect account or password&#34;</span>;
-}
-
-<span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>透過以下指令啟動php臨時伺服器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">php -S 127.0.0.1:8080 -t ./
-</code></pre></div><p>注意: 採用<code>localhost</code>可能會因為伺服器監聽的是IPv6導致無法正常連入。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">form</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Username</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;id&#34;</span> <span style="color:#a6e22e">required</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Password</span><span style="color:#f92672">:</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">br</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pw&#34;</span> <span style="color:#a6e22e">required</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Login</span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">button</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/</span><span style="color:#a6e22e">form</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>$id <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;id&#39;</span><span style="color:#a6e22e">simple</span><span style="color:#f92672">-</span><span style="color:#a6e22e">login</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span>];
+</span></span><span style="display:flex;"><span>$pw <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;pw&#39;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($id) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">isset</span>($pw)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> ($id <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;user&#34;</span> <span style="color:#f92672">&amp;&amp;</span> $pw <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;pass&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;hi, user&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;Incorrect account or password&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">?&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>透過以下指令啟動php臨時伺服器</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>php -S 127.0.0.1:8080 -t ./
+</span></span></code></pre></div><p>注意: 採用<code>localhost</code>可能會因為伺服器監聽的是IPv6導致無法正常連入。</p>
 <p>現在連到<a href="http://localhost:8080/">剛剛建立的範例</a>
 應該可以看到登入表單。</p>
 <h2 id="暴力破解">暴力破解</h2>
@@ -152,26 +151,26 @@ $pw <span style="color:#f92672">=</span> $_GET[<span style="color:#e6db74">&#39;
 <h3 id="字典檔">字典檔</h3>
 <p>為了方便實驗，這邊建立兩個最小的弱密碼字典檔</p>
 <p><code>user.txt</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">root
-admin
-user
-</code></pre></div><p><code>pass.txt</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">root
-admin
-user
-password
-pass
-</code></pre></div><h3 id="hydra破解">hydra破解</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>root
+</span></span><span style="display:flex;"><span>admin
+</span></span><span style="display:flex;"><span>user
+</span></span></code></pre></div><p><code>pass.txt</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>root
+</span></span><span style="display:flex;"><span>admin
+</span></span><span style="display:flex;"><span>user
+</span></span><span style="display:flex;"><span>password
+</span></span><span style="display:flex;"><span>pass
+</span></span></code></pre></div><h3 id="hydra破解">hydra破解</h3>
 <p>透過<code>hydra</code>對前面的簡易弱密碼範例進行破解，
 細節請自行參閱手冊。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hydra -L user.txt -P pass.txt 127.0.0.1 -s <span style="color:#ae81ff">8080</span> http-get-form <span style="color:#e6db74">&#34;/index.php:id=^USER^&amp;pw=^PASS^:Incorrect account or password&#34;</span>
-</code></pre></div><h2 id="雜項">雜項</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hydra -L user.txt -P pass.txt 127.0.0.1 -s <span style="color:#ae81ff">8080</span> http-get-form <span style="color:#e6db74">&#34;/index.php:id=^USER^&amp;pw=^PASS^:Incorrect account or password&#34;</span>
+</span></span></code></pre></div><h2 id="雜項">雜項</h2>
 <h3 id="hash">Hash</h3>
 <p>處理密碼、簽章等CTF經常需要使用hash，
 下面產生相關的hash值</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | md5sum
-echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | sha512sum  
-</code></pre></div><p>注意: 請務必加上<code>-n</code>避免<code>\n</code>也被用於計算hash</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | md5sum
+</span></span><span style="display:flex;"><span>echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | sha512sum  
+</span></span></code></pre></div><p>注意: 請務必加上<code>-n</code>避免<code>\n</code>也被用於計算hash</p>
 
     
       <hr>
@@ -221,7 +220,7 @@ echo -n <span style="color:#e6db74">&#39;123456&#39;</span> | sha512sum
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

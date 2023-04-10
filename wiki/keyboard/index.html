@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -105,22 +104,22 @@ if (!doNotTrack) {
 </ol>
 <h3 id="環境">環境</h3>
 <p>QMK需要<code>avr-gcc</code>編譯韌體</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S avr-gcc avr-libc dfu-programmer
-</code></pre></div><p>如果在clone時沒有複製到子模塊，
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S avr-gcc avr-libc dfu-programmer
+</span></span></code></pre></div><p>如果在clone時沒有複製到子模塊，
 可能會導致LUFA錯誤，鍵入以下指令修復。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make git-submodule
-</code></pre></div><p>參見<a href="https://beta.docs.qmk.fm/newbs/newbs_getting_started">Getting Started</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make git-submodule
+</span></span></code></pre></div><p>參見<a href="https://beta.docs.qmk.fm/newbs/newbs_getting_started">Getting Started</a></p>
 <h3 id="編譯">編譯</h3>
 <p>以<code>v60 type r</code>為例，鍵入以下指令沒有出錯即可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make v60_type_r:default
-</code></pre></div><p>刷入韌體</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo make v60_type_r:default:flash  
-</code></pre></div><p>建立新鍵位</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./new_keymap.sh v60_type_r your_github_name 
-</code></pre></div><p>現在<code>ls keyboards/v60_type_r/keymaps</code>應該看到自己的鍵位</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make v60_type_r:default
+</span></span></code></pre></div><p>刷入韌體</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo make v60_type_r:default:flash  
+</span></span></code></pre></div><p>建立新鍵位</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./new_keymap.sh v60_type_r your_github_name 
+</span></span></code></pre></div><p>現在<code>ls keyboards/v60_type_r/keymaps</code>應該看到自己的鍵位</p>
 <p>嘗試刷入自己的鍵位映射</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo make v60_type_r:r888800009:flash  
-</code></pre></div><p>編輯<code>keymap.c</code>來修改鍵位</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo make v60_type_r:r888800009:flash  
+</span></span></code></pre></div><p>編輯<code>keymap.c</code>來修改鍵位</p>
 <p>參見<a href="https://docs.qmk.fm/#/newbs_building_firmware">Building Your First Firmware</a></p>
 
     
@@ -166,7 +165,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

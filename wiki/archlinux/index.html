@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -104,30 +103,30 @@ if (!doNotTrack) {
     <h2 id="archlinux-安裝腳本">Archlinux 安裝腳本</h2>
 <p>用來輔助安裝archlinux，下載腳本並且執行。
 <a href="https://github.com/MatMoul/archfi">archfi</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget archfi.sf.net/archfi
-sh archfi
-</code></pre></div><h2 id="包管理">包管理</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget archfi.sf.net/archfi
+</span></span><span style="display:flex;"><span>sh archfi
+</span></span></code></pre></div><h2 id="包管理">包管理</h2>
 <ul>
 <li><a href="http://kmkeen.com/pacgraph/index.html">Pacgraph</a> 用來檢測無用的 package</li>
 </ul>
 <h3 id="pacman">Pacman</h3>
 <p>顯示本地包</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Qqm
-</code></pre></div><p>重新安裝一切</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -Syu <span style="color:#66d9ef">$(</span>pacman -Qnq<span style="color:#66d9ef">)</span>
-</code></pre></div><h3 id="pacaur">pacaur</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -Qqm
+</span></span></code></pre></div><p>重新安裝一切</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -Syu <span style="color:#66d9ef">$(</span>pacman -Qnq<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h3 id="pacaur">pacaur</h3>
 <p>安裝pacaur或更新時可用以下腳本。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /tmp
-git clone https://aur.archlinux.org/pacaur.git
-cd pacaur
-makepkg -is
-cd ..
-git clone https://aur.archlinux.org/auracle-git.git
-cd auracle-git
-makepkg -is
-</code></pre></div><h2 id="java缺少中文字體">java缺少中文字體</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S ttf-arphic-uming
-</code></pre></div><h2 id="java-6">java 6</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /tmp
+</span></span><span style="display:flex;"><span>git clone https://aur.archlinux.org/pacaur.git
+</span></span><span style="display:flex;"><span>cd pacaur
+</span></span><span style="display:flex;"><span>makepkg -is
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>git clone https://aur.archlinux.org/auracle-git.git
+</span></span><span style="display:flex;"><span>cd auracle-git
+</span></span><span style="display:flex;"><span>makepkg -is
+</span></span></code></pre></div><h2 id="java缺少中文字體">java缺少中文字體</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S ttf-arphic-uming
+</span></span></code></pre></div><h2 id="java-6">java 6</h2>
 <p>按照參考1對於<code>/usr/lib/jvm/java-6-jdk/jre/lib/fontconfig.properties</code>進行配置。</p>
 <ul>
 <li><a href="http://linux-wiki.cn/wiki/Java%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E9%85%8D%E7%BD%AE">參考1</a></li>
@@ -136,38 +135,38 @@ makepkg -is
 <h2 id="採用-lts-kernel">採用 LTS kernel</h2>
 <p>由於新版的kernel可能會有一些錯誤，為了系統穩定性切換到LTS kernel，
 首先確保安裝lts版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S linux-lts 
-</code></pre></div><p>這裡採用systemd-boot，不必安裝GRUB，可以透過UEFI引導。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S linux-lts 
+</span></span></code></pre></div><p>這裡採用systemd-boot，不必安裝GRUB，可以透過UEFI引導。
 配置一個conf為<code>arch-lts.conf</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">title   Arch Linux LTS
-linux   /vmlinuz-linux-lts
-initrd  /intel-ucode.img
-initrd  /initramfs-linux-lts.img
-options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
-</code></pre></div><p><code>option</code>細節請參見<a href="https://wiki.archlinux.org/index.php/kernel_parameters">archlinux wiki</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>title   Arch Linux LTS
+</span></span><span style="display:flex;"><span>linux   /vmlinuz-linux-lts
+</span></span><span style="display:flex;"><span>initrd  /intel-ucode.img
+</span></span><span style="display:flex;"><span>initrd  /initramfs-linux-lts.img
+</span></span><span style="display:flex;"><span>options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
+</span></span></code></pre></div><p><code>option</code>細節請參見<a href="https://wiki.archlinux.org/index.php/kernel_parameters">archlinux wiki</a></p>
 <p>開機時按<code>esc</code>切換boot menu</p>
 <p>或透過<code>systemctl</code>選定arch-lts進行啟動</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl reboot --boot-loader-entry<span style="color:#f92672">=</span>arch-lts
-</code></pre></div><p>或者修改<code>/boot/loader/loader.conf</code>使預設透過lts啟動</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">default arch-lts
-</code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/systemd-boot#">archliunux wiki</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl reboot --boot-loader-entry<span style="color:#f92672">=</span>arch-lts
+</span></span></code></pre></div><p>或者修改<code>/boot/loader/loader.conf</code>使預設透過lts啟動</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>default arch-lts
+</span></span></code></pre></div><p>參見<a href="https://wiki.archlinux.org/index.php/systemd-boot#">archliunux wiki</a></p>
 <h2 id="清理">清理</h2>
 <p>分析硬碟使用空間</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncdu -x / 
-</code></pre></div><p>類似 ncdu 的工具例如 kdirstat 則有 GUI 介面可視</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ncdu -x / 
+</span></span></code></pre></div><p>類似 ncdu 的工具例如 kdirstat 則有 GUI 介面可視</p>
 <p>分析軟件包花費空間</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacgraph -c   
-</code></pre></div><p>清理快取</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -r
-</code></pre></div><p>只保留快取一個版本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -rk1    
-</code></pre></div><p>移除被解除安裝的快取</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">paccache -ruk0
-</code></pre></div><p>參考<a href="https://bbs.archlinux.org/viewtopic.php?id=121474">Free up space on root disk</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacgraph -c   
+</span></span></code></pre></div><p>清理快取</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>paccache -r
+</span></span></code></pre></div><p>只保留快取一個版本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>paccache -rk1    
+</span></span></code></pre></div><p>移除被解除安裝的快取</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>paccache -ruk0
+</span></span></code></pre></div><p>參考<a href="https://bbs.archlinux.org/viewtopic.php?id=121474">Free up space on root disk</a></p>
 <h2 id="package-integrity">package integrity</h2>
 <p>如果 <code>-Syu</code> 時遇到 package integrity 的問題，可以先做以下動作</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S archlinux-keyring
-</code></pre></div><p>之後再嘗試更新基本沒問題</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S archlinux-keyring
+</span></span></code></pre></div><p>之後再嘗試更新基本沒問題</p>
 
     
       <hr>
@@ -219,7 +218,7 @@ options root=UUID=輸入uuid rootfstype=ext4 rw quiet sysrq_always_enabled=1
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

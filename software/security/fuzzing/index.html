@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -153,7 +152,7 @@ if (!doNotTrack) {
 </ul>
 <h2 id="fuzzing-的前置準備">Fuzzing 的前置準備</h2>
 <ul>
-<li>花費 90% 閱讀文檔，來分析可能出現問題的位置<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>花費 90% 閱讀文檔，來分析可能出現問題的位置<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
 </ul>
 <h2 id="基本的-fuzzer-演算法">基本的 Fuzzer 演算法</h2>
 <ol>
@@ -162,7 +161,7 @@ if (!doNotTrack) {
 <li>異變輸入</li>
 <li>餵食測資</li>
 <li>如果 crash 就保存輸入</li>
-<li>回到第二步驟 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>回到第二步驟 <sup id="fnref2:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
 </ol>
 <h2 id="mutator">Mutator</h2>
 <ul>
@@ -170,61 +169,61 @@ if (!doNotTrack) {
 </ul>
 <h3 id="radamsa">radamsa</h3>
 <p>安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S radamsa
-</code></pre></div><p>使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;if(x &gt; 8)&#34;</span> | radamsa   
-</code></pre></div><p>或許可以搭配自己的 fuzz 腳本使用？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S radamsa
+</span></span></code></pre></div><p>使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;if(x &gt; 8)&#34;</span> | radamsa   
+</span></span></code></pre></div><p>或許可以搭配自己的 fuzz 腳本使用？</p>
 <h2 id="afl">AFL</h2>
 <h3 id="安裝">安裝</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo pacman -S afl
-</code></pre></div><h3 id="白箱測試">白箱測試</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S afl
+</span></span></code></pre></div><h3 id="白箱測試">白箱測試</h3>
 <p>編譯被測試程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-gcc main.c
-</code></pre></div><p>編寫測資後，測試程式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out
-</code></pre></div><p>或使用參數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i in -o out ./a.out @@
-</code></pre></div><h3 id="黑箱測試">黑箱測試</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afl-gcc main.c
+</span></span></code></pre></div><p>編寫測資後，測試程式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afl-fuzz -i in -o out ./a.out
+</span></span></code></pre></div><p>或使用參數</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afl-fuzz -i in -o out ./a.out @@
+</span></span></code></pre></div><h3 id="黑箱測試">黑箱測試</h3>
 <p>黑箱測試可以採用</p>
 <ul>
 <li>afl-dyninst</li>
 <li>afl qemu</li>
 </ul>
 <p>如果需要黑箱測試就必須編譯 qemu，這邊先 pull image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull aflplusplus/aflplusplus
-docker run -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work aflplusplus/aflplusplus:latest /bin/bash
-docker exec -it $id bash -i
-cd /work
-</code></pre></div><p>之後進入 docker 進行編譯，會把 qemu 之類的東西編譯好</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make
-</code></pre></div><p>之後我們就可以下指令</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">afl-fuzz -i ./in -o ./out -Q -- ./a.out
-</code></pre></div><p>或者採用 docker image (不過這個版本，比較舊, 少人使用)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -t -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/fuzz pl0nk/afl-qemu afl-fuzz -i /fuzz/in -o /fuzz/out -Q -- /fuzz/binary
-</code></pre></div><h4 id="persistent-mode">Persistent Mode</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">AFL_QEMU_SNAPSHOT<span style="color:#f92672">=</span>0x????
-</code></pre></div><p><a href="https://github.com/AFLplusplus/AFLplusplus/blob/stable/qemu_mode/README.persistent.md">AFLplusplus/README.persistent.md at stable · AFLplusplus/AFLplusplus</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull aflplusplus/aflplusplus
+</span></span><span style="display:flex;"><span>docker run -it -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/work aflplusplus/aflplusplus:latest /bin/bash
+</span></span><span style="display:flex;"><span>docker exec -it $id bash -i
+</span></span><span style="display:flex;"><span>cd /work
+</span></span></code></pre></div><p>之後進入 docker 進行編譯，會把 qemu 之類的東西編譯好</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>之後我們就可以下指令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>afl-fuzz -i ./in -o ./out -Q -- ./a.out
+</span></span></code></pre></div><p>或者採用 docker image (不過這個版本，比較舊, 少人使用)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -t -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>:/fuzz pl0nk/afl-qemu afl-fuzz -i /fuzz/in -o /fuzz/out -Q -- /fuzz/binary
+</span></span></code></pre></div><h4 id="persistent-mode">Persistent Mode</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>AFL_QEMU_SNAPSHOT<span style="color:#f92672">=</span>0x????
+</span></span></code></pre></div><p><a href="https://github.com/AFLplusplus/AFLplusplus/blob/stable/qemu_mode/README.persistent.md">AFLplusplus/README.persistent.md at stable · AFLplusplus/AFLplusplus</a></p>
 <h3 id="常見問題">常見問題</h3>
-<pre><code>Hmm, looks like the target binary terminated before we could complete a
+<pre tabindex="0"><code>Hmm, looks like the target binary terminated before we could complete a
 handshake with the injected code. You can try the following
 </code></pre><p>也可能是 libc 的版本不正確導致無法正常運作</p>
 <p>把 libc, ld 抓出來之後，透過 ld 開始跑，<strong>並且確保</strong> <code>mv libc-2.33.so libc.so.6</code> 不過這樣跑似乎蠻慢的</p>
-<pre><code>afl-fuzz -i ./in -o ./out -Q -- ./ld-2.33.so --library-path . ./binary
+<pre tabindex="0"><code>afl-fuzz -i ./in -o ./out -Q -- ./ld-2.33.so --library-path . ./binary
 </code></pre><p>啟動持久模式，可以加速 qemu</p>
-<section class="footnotes" role="doc-endnotes">
+<div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>參考 <a href="https://zhuanlan.zhihu.com/p/55066549">简单高效的模糊测试——Fuzzing</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>參考 <a href="https://zhuanlan.zhihu.com/p/55066549">简单高效的模糊测试——Fuzzing</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
-<p><strong>建議閱讀</strong> <a href="https://ma3k4h3d.top/2018/10/27/Fuzzing%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/">Fuzzing技术总结与工具列表</a>，而該篇應該是轉載自<a href="https://blog.csdn.net/wcventure/article/details/82085251">原始貼文</a> ，而原始貼文似乎有更新過 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:2">
+<p><strong>建議閱讀</strong> <a href="https://ma3k4h3d.top/2018/10/27/Fuzzing%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B7%A5%E5%85%B7%E5%88%97%E8%A1%A8/">Fuzzing技术总结与工具列表</a>，而該篇應該是轉載自<a href="https://blog.csdn.net/wcventure/article/details/82085251">原始貼文</a> ，而原始貼文似乎有更新過&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
-<p><a href="https://paper.seebug.org/323/">初识 Fuzzing 工具 WinAFL</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:3">
+<p><a href="https://paper.seebug.org/323/">初识 Fuzzing 工具 WinAFL</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
     
       <hr>
@@ -282,7 +281,7 @@ handshake with the injected code. You can try the following
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -183,28 +182,28 @@ if (!doNotTrack) {
 <p>16 bit，將資料分成多份16bit之後相加，
 溢位後加到最小位bit上。</p>
 <p>example，傳輸資料為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">1011 0100 1010 1111 1001 0000 1010 0000
-</code></pre></div><h4 id="step-1">step 1</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>1011 0100 1010 1111 1001 0000 1010 0000
+</span></span></code></pre></div><h4 id="step-1">step 1</h4>
 <p>將資料以多個16 bit 分組，之後相加如下。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">   1011 0100 1010 1111
-   1001 0000 1010 0000
-=========================
- 1 0100 0101 0100 1111
-</code></pre></div><p>可以發現結果多出一個bit，將它加到最小位得到</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext"> 0100 0101 0101 0000
-</code></pre></div><h4 id="step-2">step 2</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>   1011 0100 1010 1111
+</span></span><span style="display:flex;"><span>   1001 0000 1010 0000
+</span></span><span style="display:flex;"><span>=========================
+</span></span><span style="display:flex;"><span> 1 0100 0101 0100 1111
+</span></span></code></pre></div><p>可以發現結果多出一個bit，將它加到最小位得到</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span> 0100 0101 0101 0000
+</span></span></code></pre></div><h4 id="step-2">step 2</h4>
 <p>將總和取<strong>一補數</strong>，得出checksum</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">~(0100 0101 0101 0000)
-=======================
-  1011 1010 1010 1111
-</code></pre></div><h4 id="setp-3-驗證">setp 3 驗證</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>~(0100 0101 0101 0000)
+</span></span><span style="display:flex;"><span>=======================
+</span></span><span style="display:flex;"><span>  1011 1010 1010 1111
+</span></span></code></pre></div><h4 id="setp-3-驗證">setp 3 驗證</h4>
 <p>checksum與數值相加應該全部都是1才算正確，
 以下示範驗證。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext"> 0100 0101 0101 0000
- 1011 1010 1010 1111
-=====================
- 1111 1111 1111 1111
-</code></pre></div><p>可以看到得出的結果全部都是1</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span> 0100 0101 0101 0000
+</span></span><span style="display:flex;"><span> 1011 1010 1010 1111
+</span></span><span style="display:flex;"><span>=====================
+</span></span><span style="display:flex;"><span> 1111 1111 1111 1111
+</span></span></code></pre></div><p>可以看到得出的結果全部都是1</p>
 <p>不過Checksum依然有缺陷，如果任意兩個不同的bit在不同的16 bit word中反轉，
 <code>1011 0100 1010 1110</code>與<code>1001 0000 1010 0001</code>(顛倒了最小位)的總和與
 原本正確的相同，這時就會被當成正確的傳輸。</p>
@@ -364,7 +363,7 @@ Receive windows</p>
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

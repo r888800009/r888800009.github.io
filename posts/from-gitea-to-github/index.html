@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -97,24 +96,24 @@ if (!doNotTrack) {
 為了後續維護方便統一管理，修復Gitea之後將Gitea所有的repo載下來。</p>
 <h2 id="移動腳本">移動腳本</h2>
 <p>pull 所有的分支<a href="https://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches">參考stack overflow</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git branch -r | grep -v <span style="color:#e6db74">&#39;\-&gt;&#39;</span> | <span style="color:#66d9ef">while</span> read remote; <span style="color:#66d9ef">do</span> git branch --track <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>remote#origin/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$remote<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
-git fetch --all
-git pull --all
-</code></pre></div><p>寫下腳本</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>pwd1<span style="color:#f92672">=</span>$PWD
-<span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>ls<span style="color:#66d9ef">)</span>
-<span style="color:#66d9ef">do</span>
-  cd $i
-  git branch -r | grep -v <span style="color:#e6db74">&#39;\-&gt;&#39;</span> | <span style="color:#66d9ef">while</span> read remote; <span style="color:#66d9ef">do</span> git branch --track <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>remote#origin/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$remote<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
-  git fetch --all
-  git pull --all
-  cd $pwd1
-<span style="color:#66d9ef">done</span>
-</code></pre></div><p>設定到GitHub之後，將所有分支推到GitHub上面</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git remote set-url origin git@GitHub.com:r888800009/PixelChemisry.git
-git push --all
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -r | grep -v <span style="color:#e6db74">&#39;\-&gt;&#39;</span> | <span style="color:#66d9ef">while</span> read remote; <span style="color:#66d9ef">do</span> git branch --track <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>remote#origin/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$remote<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>git fetch --all
+</span></span><span style="display:flex;"><span>git pull --all
+</span></span></code></pre></div><p>寫下腳本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>pwd1<span style="color:#f92672">=</span>$PWD
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>ls<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>  cd $i
+</span></span><span style="display:flex;"><span>  git branch -r | grep -v <span style="color:#e6db74">&#39;\-&gt;&#39;</span> | <span style="color:#66d9ef">while</span> read remote; <span style="color:#66d9ef">do</span> git branch --track <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>remote#origin/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#e6db74">&#34;</span>$remote<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span>  git fetch --all
+</span></span><span style="display:flex;"><span>  git pull --all
+</span></span><span style="display:flex;"><span>  cd $pwd1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>設定到GitHub之後，將所有分支推到GitHub上面</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote set-url origin git@GitHub.com:r888800009/PixelChemisry.git
+</span></span><span style="display:flex;"><span>git push --all
+</span></span></code></pre></div>
 
     
       <hr>
@@ -166,7 +165,7 @@ git push --all
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

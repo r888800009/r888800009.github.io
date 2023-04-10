@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -102,38 +101,38 @@ if (!doNotTrack) {
 
     <h2 id="透過docker安裝mysql">透過docker安裝MySQL</h2>
 <p>查詢MySQL的image</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search mysql
-</code></pre></div><p>回傳</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">NAME                              DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
-mysql                             MySQL is a widely used, open-source relation…   8684                [OK]
-mariadb                           MariaDB is a community-developed fork of MyS…   3023                [OK]
-mysql/mysql-server                Optimized MySQL Server Docker images. Create…   642                                     [OK]
-centos/mysql-57-centos7           MySQL 5.7 SQL database server                   63
-centurylink/mysql                 Image containing mysql. Optimized to be link…   61                                      [OK]
-</code></pre></div><p>挑選第一個image，<a href="https://hub.docker.com/_/mysql">docker hub</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull mysql
-</code></pre></div><p>啟動，以下密碼<code>my-secret-pw</code>為<code>root</code>的密碼可以使用</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name some-mysql -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>my-secret-pw -d mysql
-</code></pre></div><h3 id="透過mysql-clinet連線">透過mysql clinet連線</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker search mysql
+</span></span></code></pre></div><p>回傳</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>NAME                              DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
+</span></span><span style="display:flex;"><span>mysql                             MySQL is a widely used, open-source relation…   8684                [OK]
+</span></span><span style="display:flex;"><span>mariadb                           MariaDB is a community-developed fork of MyS…   3023                [OK]
+</span></span><span style="display:flex;"><span>mysql/mysql-server                Optimized MySQL Server Docker images. Create…   642                                     [OK]
+</span></span><span style="display:flex;"><span>centos/mysql-57-centos7           MySQL 5.7 SQL database server                   63
+</span></span><span style="display:flex;"><span>centurylink/mysql                 Image containing mysql. Optimized to be link…   61                                      [OK]
+</span></span></code></pre></div><p>挑選第一個image，<a href="https://hub.docker.com/_/mysql">docker hub</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull mysql
+</span></span></code></pre></div><p>啟動，以下密碼<code>my-secret-pw</code>為<code>root</code>的密碼可以使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --name some-mysql -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>my-secret-pw -d mysql
+</span></span></code></pre></div><h3 id="透過mysql-clinet連線">透過mysql clinet連線</h3>
 <p>由於最新板的登入認證被改變，因此沒辦法透過mysql client連上，
 可以舊版的mysql，<a href="https://github.com/passbolt/passbolt_docker/issues/103#issuecomment-383645601">參見</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --name some-mysql -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>my-secret-pw -d mysql:5.7
-</code></pre></div><p>獲取容器的地址</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker inspect -f <span style="color:#e6db74">&#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> some-mysql 
-</code></pre></div><p>連上伺服器，並且輸入自己設定的密碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -h 容器ip -u root -p 
-</code></pre></div><h3 id="清理">清理</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run --name some-mysql -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>my-secret-pw -d mysql:5.7
+</span></span></code></pre></div><p>獲取容器的地址</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker inspect -f <span style="color:#e6db74">&#39;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&#39;</span> some-mysql 
+</span></span></code></pre></div><p>連上伺服器，並且輸入自己設定的密碼</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -h 容器ip -u root -p 
+</span></span></code></pre></div><h3 id="清理">清理</h3>
 <p>停止容器並且刪除容器</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker stop some-mysql
-docker rm some-mysql
-</code></pre></div><h2 id="mysql-client">mysql client</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker stop some-mysql
+</span></span><span style="display:flex;"><span>docker rm some-mysql
+</span></span></code></pre></div><h2 id="mysql-client">mysql client</h2>
 <p><a href="https://www.archlinux.org/packages/extra/x86_64/mariadb-clients/">package</a></p>
 <h3 id="安裝與使用">安裝與使用</h3>
 <p>安裝</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pacman -S mariadb-clients
-</code></pre></div><p>連線方式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mysql -h mysql.example.com -u root -p
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S mariadb-clients
+</span></span></code></pre></div><p>連線方式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mysql -h mysql.example.com -u root -p
+</span></span></code></pre></div>
 
     
       <hr>
@@ -187,7 +186,7 @@ docker rm some-mysql
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

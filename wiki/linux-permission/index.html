@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -108,29 +107,29 @@ if (!doNotTrack) {
 <p>待補</p>
 <h2 id="權限">權限</h2>
 <p>透過<code>ls -l</code>可以看到類似下面所列出的權限。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">d421421421
-drwxrwxrwx
-
-ex:
-drwxr---w- = 742
--rw-r--r-- = 644
--rwxrwxrwx = 777
-</code></pre></div><p>下表為權限所對映的數字。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">--- = 0
---x = 1
--w- = 2
--wx = 3
-r-- = 4
-r-x = 5
-rw- = 6
-rwx = 7
-</code></pre></div><h2 id="指令">指令</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>d421421421
+</span></span><span style="display:flex;"><span>drwxrwxrwx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ex:
+</span></span><span style="display:flex;"><span>drwxr---w- = 742
+</span></span><span style="display:flex;"><span>-rw-r--r-- = 644
+</span></span><span style="display:flex;"><span>-rwxrwxrwx = 777
+</span></span></code></pre></div><p>下表為權限所對映的數字。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>--- = 0
+</span></span><span style="display:flex;"><span>--x = 1
+</span></span><span style="display:flex;"><span>-w- = 2
+</span></span><span style="display:flex;"><span>-wx = 3
+</span></span><span style="display:flex;"><span>r-- = 4
+</span></span><span style="display:flex;"><span>r-x = 5
+</span></span><span style="display:flex;"><span>rw- = 6
+</span></span><span style="display:flex;"><span>rwx = 7
+</span></span></code></pre></div><h2 id="指令">指令</h2>
 <p>快速重設資料夾與檔案的權限</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 資料夾</span>
-find . -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-<span style="color:#75715e"># 檔案</span>
-find . -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
-</code></pre></div><h2 id="參見">參見</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 資料夾</span>
+</span></span><span style="display:flex;"><span>find . -type d -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 檔案</span>
+</span></span><span style="display:flex;"><span>find . -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>
+</span></span></code></pre></div><h2 id="參見">參見</h2>
 <ul>
 <li><a href="/wiki/selinux/">selinux</a></li>
 </ul>
@@ -189,7 +188,7 @@ find . -type f -exec chmod <span style="color:#ae81ff">644</span> <span style="c
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   

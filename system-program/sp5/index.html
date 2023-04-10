@@ -22,7 +22,6 @@ if (!doNotTrack) {
 </script>
 
 
-
 <link rel="icon" type="image/png" href="/favicon.png">
 
 
@@ -133,11 +132,11 @@ if (!doNotTrack) {
     </aside>
 
     <h2 id="51-basic-compiler-concepts">5.1 Basic Compiler Concepts</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">source -&gt; lexical analysis (token) -&gt; syntax analysis (parse tree) 
--&gt; intermediate code generation (intermediate code) 
--&gt; code optimization  (intermediate code) -&gt; code generation 
--&gt; machine code
-</code></pre></div><p>注: 直譯器不做程式碼最佳化，編譯器則會。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>source -&gt; lexical analysis (token) -&gt; syntax analysis (parse tree) 
+</span></span><span style="display:flex;"><span>-&gt; intermediate code generation (intermediate code) 
+</span></span><span style="display:flex;"><span>-&gt; code optimization  (intermediate code) -&gt; code generation 
+</span></span><span style="display:flex;"><span>-&gt; machine code
+</span></span></code></pre></div><p>注: 直譯器不做程式碼最佳化，編譯器則會。</p>
 <h3 id="lexical-analysis">Lexical Analysis</h3>
 <p>lexical analyzer (Scanner)同一時間內只讀入<strong>一個 char</strong>，
 產生的<strong>最小單位</strong>稱為<strong>token</strong>(type, value)。</p>
@@ -149,8 +148,8 @@ if (!doNotTrack) {
 <li>LLVM Intermediate Representation (IR)</li>
 </ul>
 <p>three address code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(operator, operand1, operand2, result)
-</code></pre></div><p>註解: tree address代表<code>op1</code>, <code>op2</code>, <code>result</code>的address</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>(operator, operand1, operand2, result)
+</span></span></code></pre></div><p>註解: tree address代表<code>op1</code>, <code>op2</code>, <code>result</code>的address</p>
 <p>分解 statements 成多個 Three Address Code (TAC)
 文法樹的形成引導中間碼 (Intermediate Code) 產生</p>
 <h3 id="code-optimization">Code Optimization</h3>
@@ -167,8 +166,8 @@ if (!doNotTrack) {
 <h2 id="52-grammar">5.2 Grammar</h2>
 <h3 id="文法">文法</h3>
 <p>Backus–Naur form Grammar</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;cond&gt; ::= &lt;cond&gt; * &lt;cond&gt; | &lt;cond&gt; / &lt;cond&gt;
-</code></pre></div><p>terminal symbol (token)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&lt;cond&gt; ::= &lt;cond&gt; * &lt;cond&gt; | &lt;cond&gt; / &lt;cond&gt;
+</span></span></code></pre></div><p>terminal symbol (token)
 non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
 <p>將輸入的內容分解non-terminal symbol直到成為terminal symbol (文法批配token)</p>
 <h3 id="parse-tree-syntex-tree">Parse Tree (Syntex Tree)</h3>
@@ -178,10 +177,10 @@ non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
 </ul>
 <h3 id="ambiguous-grammar">Ambiguous Grammar</h3>
 <p>混搖不清的文法，相同token可以產生多種不同的parse tree。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">id - id + id
-((id - id) + id)
-(id - (id + id))
-</code></pre></div><p>如何產生unambigous grammar</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>id - id + id
+</span></span><span style="display:flex;"><span>((id - id) + id)
+</span></span><span style="display:flex;"><span>(id - (id + id))
+</span></span></code></pre></div><p>如何產生unambigous grammar</p>
 <p>混淆不清為一個statement,不只一種parse tree</p>
 <h3 id="precedence-and-associativity">Precedence and Associativity</h3>
 <ul>
@@ -197,10 +196,10 @@ non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
 <li>constant integer, float, string</li>
 </ul>
 <h3 id="identifier">Identifier</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;ident&gt; ::= &lt;letter&gt; | &lt;ident&gt;&lt;letter&gt; | &lt;ident&gt;&lt;digit&gt;
-&lt;letter&gt; ::= [a-zA-Z]
-&lt;digit&gt; ::= [0-9]
-</code></pre></div><h3 id="token-table">Token Table</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&lt;ident&gt; ::= &lt;letter&gt; | &lt;ident&gt;&lt;letter&gt; | &lt;ident&gt;&lt;digit&gt;
+</span></span><span style="display:flex;"><span>&lt;letter&gt; ::= [a-zA-Z]
+</span></span><span style="display:flex;"><span>&lt;digit&gt; ::= [0-9]
+</span></span></code></pre></div><h3 id="token-table">Token Table</h3>
 <ul>
 <li>delimiter與reserved word: 根據程式語言定義的delimiter與reserved word建立table</li>
 <li>integer, string</li>
@@ -231,29 +230,29 @@ non-terminal symbol  (尚未分解成token，可以包含其他文法的)</p>
 <p>假設輸入<code>READ(id)</code>，stack變化，<strong>如果遇到stack top比較大的情況，
 則可以找出一個文法(問: 在stack top的是不是總是最大？)</strong>，
 之後就可以做reduce to non terminal symbol</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;id-list&gt; ::= id
-&lt;read&gt; ::= READ(&lt;id-list&gt;)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;
-&lt;READ
-&lt;READ = ( 
-&lt;READ = (  &lt;id
-&lt;READ = (  &lt;id&gt; 
-&lt;READ = (  = id-list ) 
-&lt;READ = (  = id-list )&gt;
-read
-</code></pre></div><p>註解: non terminal symbol不需要處理優先級</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&lt;id-list&gt; ::= id
+</span></span><span style="display:flex;"><span>&lt;read&gt; ::= READ(&lt;id-list&gt;)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&lt;
+</span></span><span style="display:flex;"><span>&lt;READ
+</span></span><span style="display:flex;"><span>&lt;READ = ( 
+</span></span><span style="display:flex;"><span>&lt;READ = (  &lt;id
+</span></span><span style="display:flex;"><span>&lt;READ = (  &lt;id&gt; 
+</span></span><span style="display:flex;"><span>&lt;READ = (  = id-list ) 
+</span></span><span style="display:flex;"><span>&lt;READ = (  = id-list )&gt;
+</span></span><span style="display:flex;"><span>read
+</span></span></code></pre></div><p>註解: non terminal symbol不需要處理優先級</p>
 <p><code>id + id - id</code>為混淆不清的文法，而調整混搖不清的文法，可以有由左至右或由右自左等調整</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;
-&lt;id
-&lt;term + 
-&lt;term + &lt; id 
-&lt;term + &lt; id &gt;
-&lt;term + term &gt; // top 為 +
-&lt;term - &lt; // 因為 + &gt; -  所以轉non terminal symbol
-&lt;term - &lt; id &gt;
-&lt;term - term &gt;
-term
-</code></pre></div><p>註解: 轉成 non terminal symbol 當 stack empty</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>&lt;
+</span></span><span style="display:flex;"><span>&lt;id
+</span></span><span style="display:flex;"><span>&lt;term + 
+</span></span><span style="display:flex;"><span>&lt;term + &lt; id 
+</span></span><span style="display:flex;"><span>&lt;term + &lt; id &gt;
+</span></span><span style="display:flex;"><span>&lt;term + term &gt; // top 為 +
+</span></span><span style="display:flex;"><span>&lt;term - &lt; // 因為 + &gt; -  所以轉non terminal symbol
+</span></span><span style="display:flex;"><span>&lt;term - &lt; id &gt;
+</span></span><span style="display:flex;"><span>&lt;term - term &gt;
+</span></span><span style="display:flex;"><span>term
+</span></span></code></pre></div><p>註解: 轉成 non terminal symbol 當 stack empty</p>
 <p>reduce to 時候就在生成樹</p>
 <h4 id="error">Error</h4>
 <ol>
@@ -272,8 +271,8 @@ term
 <h2 id="56-intermediate-form">5.6 Intermediate Form</h2>
 <p>Three address code(Quadruple From)</p>
 <p>如<code>&lt;term&gt; = &lt;term&gt;1 + &lt;term&gt;2</code>可以翻成</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(+, &lt;term&gt;1, &lt;term&gt;2, &lt;term&gt;)
-</code></pre></div><h2 id="57-machine-independent-compiler-features">5.7 Machine Independent Compiler Features</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>(+, &lt;term&gt;1, &lt;term&gt;2, &lt;term&gt;)
+</span></span></code></pre></div><h2 id="57-machine-independent-compiler-features">5.7 Machine Independent Compiler Features</h2>
 <h3 id="storage-allocation">Storage Allocation</h3>
 <ul>
 <li><strong>Static Allocation</strong>: 在編譯器時間分配空間</li>
@@ -395,7 +394,7 @@ term
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2022.
+    r888800009©2018-2023.
     All Rights Reserved.
   </div>
   
