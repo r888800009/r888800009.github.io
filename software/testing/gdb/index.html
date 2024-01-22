@@ -195,8 +195,12 @@ pacaur -S gdb-multiarch
 <pre tabindex="0"><code>sudo gdb
 </code></pre><p>啟動 gdb 並且設置目標主機架構</p>
 <pre tabindex="0"><code>set architecture i386:x86-64
+# 如果上面指令沒有效果用這個指令
+pi reset_architecture(&#34;X86_64&#34;)
 </code></pre><p>透過 gef attach 上 qemu，確保有加上 <code>--qemu-mode</code></p>
 <pre tabindex="0"><code>gef-remote --qemu-mode localhost:1234
+</code></pre><p>另外參見 gdb 的 qemu monitor 指令 <a href="https://qemu-project.gitlab.io/qemu/system/monitor.html">QEMU Monitor — QEMU documentation</a>可以用下列方法使用</p>
+<pre tabindex="0"><code>monitor system_reset
 </code></pre><h2 id="問題排解">問題排解</h2>
 <h3 id="qemu">QEMU</h3>
 <p>qemu 除錯時，報錯 <code>Command 'context' failed to execute properly, reason: 'NoneType' object has no attribute 'all_registers'</code></p>

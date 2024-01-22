@@ -89,6 +89,7 @@ if (!doNotTrack) {
     <li><a href="#快照">快照</a></li>
     <li><a href="#kvm">KVM</a></li>
     <li><a href="#網路">網路</a></li>
+    <li><a href="#vnc">VNC</a></li>
     <li><a href="#參考">參考</a></li>
   </ul>
 </nav>
@@ -127,7 +128,10 @@ if (!doNotTrack) {
 </span></span></code></pre></div><ul>
 <li>port格式<code>tcp::host-:guest</code></li>
 </ul>
-<h2 id="參考">參考</h2>
+<h2 id="vnc">VNC</h2>
+<p>透過 vnc 連上 headless server，當中 <code>192.168.1.123:0</code> 代表我們 vnc 連上 <code>192.168.1.123:5900</code></p>
+<pre tabindex="0"><code>qemu-system-x86_64 -vnc 192.168.1.123:0
+</code></pre><h2 id="參考">參考</h2>
 <ul>
 <li><a href="https://en.wikibooks.org/wiki/QEMU/Images">QEMU/Images</a></li>
 </ul>

@@ -84,16 +84,22 @@ if (!doNotTrack) {
       </span>
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#arch-linux查dns">Arch Linux查DNS</a></li>
-    <li><a href="#透過docker架設bind伺服器">透過Docker架設BIND伺服器</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#arch-linux-查-dns">Arch Linux 查 DNS</a></li>
+    <li><a href="#透過-docker-架設-bind-伺服器">透過 Docker 架設 BIND 伺服器</a></li>
     <li><a href="#nslookup-查詢各種紀錄">nslookup 查詢各種紀錄</a></li>
-    <li><a href="#dig查詢dns">dig查詢DNS</a></li>
+    <li><a href="#dig-查詢-dns">dig 查詢 DNS</a></li>
     <li><a href="#參考">參考</a></li>
   </ul>
 </nav>
     </aside>
 
-    <h2 id="arch-linux查dns">Arch Linux查DNS</h2>
+    <h2 id="tools">Tools</h2>
+<ul>
+<li><a href="https://github.com/zmap/zdns">zmap/zdns</a></li>
+<li><a href="https://github.com/blechschmidt/massdns">blechschmidt/massdns</a></li>
+</ul>
+<h2 id="arch-linux-查-dns">Arch Linux 查 DNS</h2>
 <p>查詢dns</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>drill google.com
 </span></span></code></pre></div><p>跟蹤模式</p>
@@ -101,7 +107,7 @@ if (!doNotTrack) {
 </span></span></code></pre></div><p>或者安裝<code>bind-tools</code></p>
 <p>查詢<code>host</code>，archlinux預設不能直接用<code>host</code>，除非安裝<code>bind-tools</code>，我們可以用下面指令代替</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>getent hosts google.com
-</span></span></code></pre></div><h2 id="透過docker架設bind伺服器">透過Docker架設BIND伺服器</h2>
+</span></span></code></pre></div><h2 id="透過-docker-架設-bind-伺服器">透過 Docker 架設 BIND 伺服器</h2>
 <p>獲取<code>bind</code>伺服器，如果需要其他版本可以用<code>docker search</code>找尋</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull sameersbn/bind
 </span></span></code></pre></div><p>啟動伺服器</p>
@@ -123,7 +129,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nslookup -type<span style="color:#f92672">=</span>NS google.com
 </span></span><span style="display:flex;"><span>nslookup -type<span style="color:#f92672">=</span>A google.com
 </span></span><span style="display:flex;"><span>nslookup -type<span style="color:#f92672">=</span>MX google.com 
-</span></span></code></pre></div><h2 id="dig查詢dns">dig查詢DNS</h2>
+</span></span></code></pre></div><h2 id="dig-查詢-dns">dig 查詢 DNS</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dig +norecurse @ns2.google.com any google.com 
 </span></span></code></pre></div><h2 id="參考">參考</h2>
 <ul>

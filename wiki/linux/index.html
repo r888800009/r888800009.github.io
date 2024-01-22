@@ -108,6 +108,8 @@ if (!doNotTrack) {
         <li><a href="#arduino無法連接板子">Arduino無法連接板子</a></li>
       </ul>
     </li>
+    <li><a href="#系統安全">系統安全</a></li>
+    <li><a href="#查看系統-process-監聽-port">查看系統 process 監聽 port</a></li>
   </ul>
 </nav>
     </aside>
@@ -183,6 +185,12 @@ $ jobs %1
 <h3 id="arduino無法連接板子">Arduino無法連接板子</h3>
 <p>使用下列指令給予權限。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod a+rw /dev/ttyACM0
+</span></span></code></pre></div><h2 id="系統安全">系統安全</h2>
+<ul>
+<li><a href="https://hackmd.io/@0xff07/BkW8c6PYt">系統程式設計 - Linux Capabilities - HackMD</a></li>
+</ul>
+<h2 id="查看系統-process-監聽-port">查看系統 process 監聽 port</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo lsof -i -P -n
 </span></span></code></pre></div>
 
     

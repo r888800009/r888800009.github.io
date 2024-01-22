@@ -94,7 +94,9 @@ if (!doNotTrack) {
         <li><a href="#du">du</a></li>
         <li><a href="#ncdu">ncdu</a></li>
         <li><a href="#find">find</a></li>
+        <li><a href="#updatedb--locate">updatedb / locate</a></li>
         <li><a href="#rsync">rsync</a></li>
+        <li><a href="#borg">borg</a></li>
       </ul>
     </li>
     <li><a href="#壓縮">壓縮</a>
@@ -152,11 +154,15 @@ if (!doNotTrack) {
 </span></span></code></pre></div><h3 id="find">find</h3>
 <p>搜尋該目錄含有<code>linux</code>的文件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find . -exec grep -H <span style="color:#e6db74">&#34;linux&#34;</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span>  
-</span></span></code></pre></div><h3 id="rsync">rsync</h3>
+</span></span></code></pre></div><h3 id="updatedb--locate">updatedb / locate</h3>
+<p>檔案索引工具，可以用於搜尋檔案，需要先建立索引</p>
+<h3 id="rsync">rsync</h3>
 <p>同步工具</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync 參數 來源 目標 
 </span></span><span style="display:flex;"><span>rsync -avh test1/ test2/  
-</span></span></code></pre></div><h2 id="壓縮">壓縮</h2>
+</span></span></code></pre></div><h3 id="borg">borg</h3>
+<p>borg backup 是一個備份工具，可以自動去重減少備份所需的空間</p>
+<h2 id="壓縮">壓縮</h2>
 <h3 id="tar">tar</h3>
 <p>壓縮解壓縮。</p>
 <h4 id="常用參數">常用參數</h4>
@@ -186,12 +192,14 @@ if (!doNotTrack) {
 <p>找尋重複的檔案</p>
 <pre tabindex="0"><code>fdupes -d ./
 </code></pre><p>選取完成之後鍵入 <code>prune</code> 之後就會移除檔案，之後可以透過<code>exit</code> 退出</p>
+<p>如果在 btrfs 上，也許會對 <a href="https://github.com/markfasheh/duperemove">markfasheh/duperemove</a>感興趣</p>
 <h3 id="diff">diff</h3>
 <p>比較兩個檔案</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff file1 file2
 </span></span></code></pre></div><p>比較兩個資料夾</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff --brief -r dir1/ dir2/
-</span></span></code></pre></div><h3 id="未分類">未分類</h3>
+</span></span></code></pre></div><p>另外也參見 <code>vbindiff</code></p>
+<h3 id="未分類">未分類</h3>
 <ul>
 <li><code>shuf</code>: 隨機排序</li>
 <li><code>sed</code></li>

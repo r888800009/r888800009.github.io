@@ -113,7 +113,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#queue-delay">Queue delay</a></li>
         <li><a href="#real-routing">real routing</a></li>
-        <li><a href="#tranceroute">tranceroute</a></li>
+        <li><a href="#traceroute">traceroute</a></li>
       </ul>
     </li>
     <li><a href="#144-throughput">1.4.4 throughput</a></li>
@@ -305,11 +305,16 @@ d_trans = L / R
 <p>減少封包長度L，使得多台元件可以同時工作，而不會閒置</p>
 <h3 id="real-routing">real routing</h3>
 <p>Traceroute原理，送ping</p>
-<h3 id="tranceroute">tranceroute</h3>
+<h3 id="traceroute">traceroute</h3>
 <p>參見<a href="https://github.com/r888800009/practice/blob/master/traceroute.sh">traceroute.sh</a></p>
 <p>透過ping當中TTL設定較小的值，在routers中超時，routers會回傳錯誤訊息，透過此方法得知。
 直到送到目的之後會出現不同的錯誤訊息(通常目的地不回ping會傳錯誤訊息)。</p>
 <p>注: TTL限制封包的距離，避免跨ISP之後拓樸過大產生loop。</p>
+<p>traceroute 在診斷網路環境為什麼不通的時候很好用:</p>
+<ul>
+<li>虛擬機網路不通的時候，比如架設 openstack 某個環節出錯</li>
+<li>實體路由器哪個環節有問題</li>
+</ul>
 <h2 id="144-throughput">1.4.4 throughput</h2>
 <ul>
 <li>發送端，接收端</li>

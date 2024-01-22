@@ -104,6 +104,7 @@ if (!doNotTrack) {
     <li><a href="#docker-停止與刪除所有容器">Docker 停止與刪除所有容器</a></li>
     <li><a href="#docker-compose">Docker Compose</a></li>
     <li><a href="#docker-remote">Docker Remote</a></li>
+    <li><a href="#安全性">安全性</a></li>
   </ul>
 </nav>
     </aside>
@@ -174,6 +175,8 @@ COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 </span></span></code></pre></div><p>列出 context 列表</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker context list
 </span></span></code></pre></div><p>參見文檔 <a href="https://docs.docker.com/engine/context/working-with-contexts/">Docker Context</a></p>
+<h2 id="安全性">安全性</h2>
+<p>docker group 之使用者，可以透過 <a href="https://gtfobins.github.io/gtfobins/docker/">docker | GTFOBins</a> 描述方法提權</p>
 
     
       <hr>
