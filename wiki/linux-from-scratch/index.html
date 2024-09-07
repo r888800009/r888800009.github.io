@@ -92,6 +92,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#busybox編譯">busyBox編譯</a></li>
+    <li><a href="#製作-initramfs">製作 initramfs</a></li>
     <li><a href="#編譯grub">編譯grub</a></li>
     <li><a href="#將grub安裝到image">將grub安裝到image</a>
       <ul>
@@ -117,7 +118,16 @@ if (!doNotTrack) {
     <h2 id="工具">工具</h2>
 <p>練習qemu啟動kernel</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>qemu-system-x86_64 --kernel /boot/vmlinuz-linux 
-</span></span></code></pre></div><h2 id="kernel">kernel</h2>
+</span></span></code></pre></div><p><a href="https://github.com/r888800009/kernel-tools">r888800009/kernel-tools</a> to create a <a href="https://docs.kernel.org/admin-guide/initrd.html">initramfs</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/r888800009/kernel-tools
+</span></span><span style="display:flex;"><span>cd kernel-tools
+</span></span><span style="display:flex;"><span>./initramfs-script.sh
+</span></span><span style="display:flex;"><span>cd ..
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果自行編譯</span>
+</span></span><span style="display:flex;"><span>qemu-system-x86_64 -kernel ./arch/x86_64/boot/bzImage  -m 1024M  -nographic -initrd ./kernel-tools/initramfs.img -append <span style="color:#e6db74">&#34;console=ttyS0&#34;</span> -s -S
+</span></span></code></pre></div><p>About <code>-append</code> please see <a href="https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html">The kernel’s command-line parameters — The Linux Kernel documentation</a></p>
+<h2 id="kernel">kernel</h2>
 <h3 id="抓取kernel">抓取kernel</h3>
 <p>花費的空間實在太大也太慢，直接抓取最新的提交，加上<code>-depth 1</code>。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
@@ -128,7 +138,8 @@ if (!doNotTrack) {
 </span></span></code></pre></div><p>這邊也有寫好的腳本 <a href="https://github.com/r888800009/script/blob/master/linux-clone">linux-clone</a>，可以抓取特定版本的 kernel</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>linux-clone 5.13.4
 </span></span></code></pre></div><h3 id="編譯kernel">編譯kernel</h3>
-<p>先配置內核設定，這邊使用預設設定所以直接退出</p>
+<p><a href="https://docs.kernel.org/kbuild/index.html#">Kernel Build System — The Linux Kernel documentation</a>
+先配置內核設定，這邊使用預設設定所以直接退出</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make menuconfig
 </span></span></code></pre></div><p>透過多線程下去編譯內核</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make bzImage -j <span style="color:#ae81ff">4</span>
@@ -147,7 +158,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make
 </span></span></code></pre></div><p>安裝</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make install 
-</span></span></code></pre></div><h2 id="編譯grub">編譯grub</h2>
+</span></span></code></pre></div><h2 id="製作-initramfs">製作 initramfs</h2>
+<p><a href="https://github.com/r888800009/kernel-tools/blob/main/initramfs-script.sh">kernel-tools/initramfs-script.sh at main · r888800009/kernel-tools</a></p>
+<h2 id="編譯grub">編譯grub</h2>
 <p>首先獲取grub</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://git.savannah.gnu.org/git/grub.git
 </span></span><span style="display:flex;"><span>cd grub
