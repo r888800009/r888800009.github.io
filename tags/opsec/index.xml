@@ -4,17 +4,16 @@
     <title>OpSec on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/opsec/</link>
     <description>Recent content in OpSec on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 27 Aug 2019 15:23:28 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/opsec/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Nov 2021 04:23:17 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/opsec/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>辨識Web伺服與應用程式</title>
       <link>https://r888800009.github.io/software/security/web/fingerprint/</link>
       <pubDate>Tue, 27 Aug 2019 15:23:28 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/web/fingerprint/</guid>
       <description>&lt;p&gt;辨識Web伺服器或應用程式的方法。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

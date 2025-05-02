@@ -4,26 +4,23 @@
     <title>RSS on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/rss/</link>
     <description>Recent content in RSS on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 19 Jan 2020 05:21:11 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Dec 2021 12:45:52 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RSS</title>
       <link>https://r888800009.github.io/wiki/rss/</link>
       <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/rss/</guid>
       <description>&lt;p&gt;RSS 常用資訊&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>newsboat終端機RSS訂閱器</title>
       <link>https://r888800009.github.io/wiki/newsboat/</link>
       <pubDate>Tue, 15 Oct 2019 21:56:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/newsboat/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -4,35 +4,30 @@
     <title>Linux File on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/linux-file/</link>
     <description>Recent content in Linux File on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 19 May 2020 18:26:59 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/linux-file/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Oct 2023 17:02:59 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/linux-file/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Autojump</title>
       <link>https://r888800009.github.io/wiki/autojump/</link>
       <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/autojump/</guid>
       <description>&lt;p&gt;可容錯輸入部份目錄批配，並且進入目錄&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Linux權限</title>
       <link>https://r888800009.github.io/wiki/linux-permission/</link>
       <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
       <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Linux 文件管理</title>
       <link>https://r888800009.github.io/wiki/linux-file/</link>
       <pubDate>Thu, 05 Sep 2019 05:47:01 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-file/</guid>
       <description>&lt;p&gt;Linux一些常用於文件管理的筆記。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

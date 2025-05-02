@@ -8,18 +8,20 @@
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-19124306-5', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDKCMHMJDK"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TDKCMHMJDK');
+        }
+      </script>
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -79,6 +81,27 @@ if (!doNotTrack) {
 
 
     <div class="posts">
+      <h1><a href="https://r888800009.github.io/wiki/hugo-template/" class="post-link">Hugo 模板的一些配置</a></h1>
+      <time class="date" datetime="2021-12-11 15:53:17 &#43;0800 CST">
+        Dec 11, 2021
+      </time>
+
+      <p>存放一些<code>hugo</code>配置版模會用到的筆記，
+非模板內容參見 <a href="/wiki/hugo/">hugo</a>。</p>
+    </div>
+
+
+    <div class="posts">
+      <h1><a href="https://r888800009.github.io/wiki/log-notes/" class="post-link">日誌檢視相關筆記</a></h1>
+      <time class="date" datetime="2021-11-10 21:28:00 &#43;0800 CST">
+        Nov 10, 2021
+      </time>
+
+      
+    </div>
+
+
+    <div class="posts">
       <h1><a href="https://r888800009.github.io/wiki/terminal-tools/" class="post-link">終端機常用工具</a></h1>
       <time class="date" datetime="2021-11-01 03:50:34 &#43;0800 CST">
         Nov 1, 2021
@@ -129,16 +152,6 @@ if (!doNotTrack) {
 
 
     <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/verilog/" class="post-link">Verilog</a></h1>
-      <time class="date" datetime="2020-08-26 11:27:40 &#43;0800 CST">
-        Aug 26, 2020
-      </time>
-
-      
-    </div>
-
-
-    <div class="posts">
       <h1><a href="https://r888800009.github.io/wiki/password/" class="post-link">密碼安全</a></h1>
       <time class="date" datetime="2020-08-24 15:44:04 &#43;0800 CST">
         Aug 24, 2020
@@ -168,16 +181,6 @@ if (!doNotTrack) {
     </div>
 
 
-    <div class="posts">
-      <h1><a href="https://r888800009.github.io/wiki/json-web-token/" class="post-link">Json Web Token</a></h1>
-      <time class="date" datetime="2020-05-23 22:59:50 &#43;0800 CST">
-        May 23, 2020
-      </time>
-
-      用途 SSO 一次性認證 誤用 作為 Session 相關資料 RFC 7519 
-    </div>
-
-
 <div style="text-align: left;  margin-top: 3em;">
     
     <a href=/wiki/page/3/>
@@ -204,7 +207,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2024.
+    r888800009©2018-2025.
     All Rights Reserved.
   </div>
   

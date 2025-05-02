@@ -8,18 +8,20 @@
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-19124306-5', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDKCMHMJDK"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TDKCMHMJDK');
+        }
+      </script>
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -124,7 +126,19 @@ if (!doNotTrack) {
         May 23, 2020
       </time>
 
-      用途 SSO 一次性認證 誤用 作為 Session 相關資料 RFC 7519 
+      <h2 id="用途">用途</h2>
+<ul>
+<li>SSO</li>
+<li><strong>一次性</strong>認證</li>
+</ul>
+<h2 id="誤用">誤用</h2>
+<ul>
+<li>作為 Session</li>
+</ul>
+<h2 id="相關資料">相關資料</h2>
+<ul>
+<li>RFC 7519</li>
+</ul>
     </div>
 
 
@@ -199,7 +213,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2024.
+    r888800009©2018-2025.
     All Rights Reserved.
   </div>
   

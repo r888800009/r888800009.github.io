@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://r888800009.github.io/</loc>
-    <lastmod>2024-10-03T21:18:07+08:00</lastmod>
+    <lastmod>2025-03-19T00:21:20+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/research/</loc>
     <lastmod>2022-11-06T02:50:38+08:00</lastmod>
@@ -12,7 +12,7 @@
     <lastmod>2022-11-06T02:50:38+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/</loc>
-    <lastmod>2024-10-03T21:18:07+08:00</lastmod>
+    <lastmod>2025-03-19T00:21:20+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/binary-exploitation/</loc>
     <lastmod>2023-10-02T15:44:59+08:00</lastmod>
@@ -33,16 +33,19 @@
     <lastmod>2023-10-02T15:44:59+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/network/ieee-802.11/</loc>
-    <lastmod>2022-03-30T01:41:27+08:00</lastmod>
+    <lastmod>2025-03-13T21:03:41+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/network/</loc>
-    <lastmod>2023-06-18T10:49:17+08:00</lastmod>
+    <lastmod>2025-03-13T21:03:41+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/network/</loc>
+    <lastmod>2025-03-19T00:20:11+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/wifi/</loc>
-    <lastmod>2022-03-30T01:41:27+08:00</lastmod>
+    <lastmod>2025-03-13T21:03:41+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/ssh/</loc>
-    <lastmod>2022-12-11T17:28:45+08:00</lastmod>
+    <lastmod>2025-03-19T00:20:11+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/network/ssh-protocol/</loc>
     <lastmod>2022-04-01T01:03:35+08:00</lastmod>
@@ -63,22 +66,22 @@
     <lastmod>2024-08-29T17:26:35+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/container/</loc>
-    <lastmod>2022-03-08T04:32:11+08:00</lastmod>
+    <lastmod>2025-03-13T21:26:22+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/helm/</loc>
     <lastmod>2022-03-08T04:30:41+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/kubernetes/</loc>
-    <lastmod>2022-03-08T04:32:11+08:00</lastmod>
+    <lastmod>2025-03-13T21:26:22+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/</loc>
-    <lastmod>2024-09-05T19:20:29+08:00</lastmod>
+    <lastmod>2025-03-19T00:21:20+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/tags/knowledge-graph/</loc>
-    <lastmod>2024-04-26T10:36:18+08:00</lastmod>
+    <loc>https://r888800009.github.io/tags/knowledgegraph/</loc>
+    <lastmod>2025-03-13T21:27:27+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/neo4j/</loc>
-    <lastmod>2024-04-26T10:36:18+08:00</lastmod>
+    <lastmod>2025-03-13T21:27:27+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/allocator/</loc>
     <lastmod>2022-02-17T21:58:26+08:00</lastmod>
@@ -92,10 +95,10 @@
     <loc>https://r888800009.github.io/tags/emulation/</loc>
     <lastmod>2023-11-03T15:09:02+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/tags/firmware/</loc>
+    <loc>https://r888800009.github.io/firmware/</loc>
     <lastmod>2023-04-11T10:32:49+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/firmware/</loc>
+    <loc>https://r888800009.github.io/tags/firmware/</loc>
     <lastmod>2023-04-11T10:32:49+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/hooking/</loc>
@@ -110,17 +113,17 @@
     <loc>https://r888800009.github.io/tags/reverse-engineering/</loc>
     <lastmod>2023-11-15T12:11:26+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/tags/file-system/</loc>
+    <loc>https://r888800009.github.io/operating-system/file-system/</loc>
     <lastmod>2022-01-18T21:41:33+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/operating-system/file-system/</loc>
+    <loc>https://r888800009.github.io/tags/file-system/</loc>
     <lastmod>2022-01-18T21:41:33+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/operating-system/</loc>
     <lastmod>2024-08-29T17:26:35+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/linux/</loc>
-    <lastmod>2024-09-05T19:20:29+08:00</lastmod>
+    <lastmod>2025-03-19T00:20:11+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/operating-system/linux-page/</loc>
     <lastmod>2022-11-29T15:07:27+08:00</lastmod>
@@ -143,10 +146,10 @@
     <loc>https://r888800009.github.io/wiki/assembly/</loc>
     <lastmod>2022-02-17T18:57:03+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/tags/codeql/</loc>
+    <loc>https://r888800009.github.io/software/security/codeql/</loc>
     <lastmod>2023-04-11T10:41:54+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/software/security/codeql/</loc>
+    <loc>https://r888800009.github.io/tags/codeql/</loc>
     <lastmod>2023-04-11T10:41:54+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/static-analysis/</loc>
@@ -163,6 +166,9 @@
   </url><url>
     <loc>https://r888800009.github.io/operating-system/process-address-space/</loc>
     <lastmod>2022-03-31T23:35:34+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/posts/</loc>
+    <lastmod>2023-04-16T16:37:08+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2023-10-02T15:44:59+08:00</lastmod>
@@ -213,7 +219,7 @@
     <lastmod>2021-07-07T22:42:07+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/chatbot/</loc>
-    <lastmod>2024-04-26T10:36:18+08:00</lastmod>
+    <lastmod>2025-03-19T00:21:20+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/rnn/</loc>
     <lastmod>2024-04-26T10:36:18+08:00</lastmod>
@@ -284,11 +290,14 @@
     <loc>https://r888800009.github.io/software/security/symbolic-execution/</loc>
     <lastmod>2021-12-16T01:57:56+08:00</lastmod>
   </url><url>
+    <loc>https://r888800009.github.io/tags/cloud/</loc>
+    <lastmod>2025-03-13T21:26:22+08:00</lastmod>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/kubernetes/</loc>
-    <lastmod>2022-03-08T04:32:11+08:00</lastmod>
+    <lastmod>2025-03-13T21:26:22+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/terms/</loc>
-    <lastmod>2023-04-07T13:34:47+08:00</lastmod>
+    <lastmod>2025-03-15T04:02:38+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/ru-terms/</loc>
     <lastmod>2021-03-21T16:33:34+08:00</lastmod>
@@ -386,9 +395,6 @@
     <loc>https://r888800009.github.io/posts/leetcode-322/</loc>
     <lastmod>2020-05-02T23:34:53+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/posts/</loc>
-    <lastmod>2023-04-16T16:37:08+08:00</lastmod>
-  </url><url>
     <loc>https://r888800009.github.io/operating-system/os6/</loc>
     <lastmod>2020-05-11T06:08:14+08:00</lastmod>
   </url><url>
@@ -447,10 +453,10 @@
     <lastmod>2020-05-10T04:11:44+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/glossary/</loc>
-    <lastmod>2023-04-07T13:34:47+08:00</lastmod>
+    <lastmod>2025-03-15T04:02:38+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/terms-and-symbols/</loc>
-    <lastmod>2023-04-07T13:34:47+08:00</lastmod>
+    <lastmod>2025-03-15T04:02:38+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/apt/</loc>
     <lastmod>2021-12-18T07:19:14+08:00</lastmod>
@@ -561,7 +567,7 @@
     <lastmod>2022-02-04T23:33:13+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/blog/</loc>
-    <lastmod>2021-12-25T12:45:52+08:00</lastmod>
+    <lastmod>2025-03-13T20:45:25+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/rss/</loc>
     <lastmod>2021-12-25T12:45:52+08:00</lastmod>
@@ -599,11 +605,14 @@
     <loc>https://r888800009.github.io/system-program/sp8/</loc>
     <lastmod>2019-12-17T14:26:39+08:00</lastmod>
   </url><url>
+    <loc>https://r888800009.github.io/tags/hardware/</loc>
+    <lastmod>2025-03-13T20:58:25+08:00</lastmod>
+  </url><url>
     <loc>https://r888800009.github.io/wiki/verilog/</loc>
-    <lastmod>2020-08-26T11:27:40+08:00</lastmod>
+    <lastmod>2025-03-13T20:58:25+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/veriolog/</loc>
-    <lastmod>2020-08-26T11:27:40+08:00</lastmod>
+    <lastmod>2025-03-13T20:58:25+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/password/</loc>
     <lastmod>2020-08-24T15:44:04+08:00</lastmod>
@@ -619,9 +628,6 @@
   </url><url>
     <loc>https://r888800009.github.io/wiki/ipv6/</loc>
     <lastmod>2019-11-28T19:08:34+08:00</lastmod>
-  </url><url>
-    <loc>https://r888800009.github.io/tags/network/</loc>
-    <lastmod>2023-06-18T10:49:17+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/system-program/sp6/</loc>
     <lastmod>2019-11-26T22:26:52+08:00</lastmod>
@@ -656,11 +662,14 @@
     <loc>https://r888800009.github.io/wiki/python-math/</loc>
     <lastmod>2022-01-18T23:14:20+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/tags/chat-bot/</loc>
-    <lastmod>2019-10-31T23:02:46+08:00</lastmod>
+    <loc>https://r888800009.github.io/tags/bot/</loc>
+    <lastmod>2025-03-19T00:21:20+08:00</lastmod>
+  </url><url>
+    <loc>https://r888800009.github.io/tags/chat/</loc>
+    <lastmod>2025-03-19T00:21:20+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/line-bot/</loc>
-    <lastmod>2019-10-31T23:02:46+08:00</lastmod>
+    <lastmod>2025-03-19T00:21:20+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/network/netcat/</loc>
     <lastmod>2022-03-31T21:20:58+08:00</lastmod>
@@ -722,10 +731,10 @@
     <loc>https://r888800009.github.io/wiki/web-crawler/</loc>
     <lastmod>2022-04-01T00:28:44+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/tags/dns/</loc>
+    <loc>https://r888800009.github.io/network/dns/</loc>
     <lastmod>2023-06-18T10:49:17+08:00</lastmod>
   </url><url>
-    <loc>https://r888800009.github.io/network/dns/</loc>
+    <loc>https://r888800009.github.io/tags/dns/</loc>
     <lastmod>2023-06-18T10:49:17+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/bash/</loc>
@@ -893,6 +902,9 @@
     <loc>https://r888800009.github.io/wiki/linux-permission/</loc>
     <lastmod>2022-03-13T01:53:40+08:00</lastmod>
   </url><url>
+    <loc>https://r888800009.github.io/tags/mandatory-access-control--/</loc>
+    <lastmod>2022-03-13T01:53:40+08:00</lastmod>
+  </url><url>
     <loc>https://r888800009.github.io/tags/unix/</loc>
     <lastmod>2023-10-03T17:02:59+08:00</lastmod>
   </url><url>
@@ -942,10 +954,10 @@
     <lastmod>2021-11-09T04:23:17+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/secure-shell/</loc>
-    <lastmod>2022-12-11T17:28:45+08:00</lastmod>
+    <lastmod>2025-03-19T00:20:11+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/socks5/</loc>
-    <lastmod>2022-12-11T17:28:45+08:00</lastmod>
+    <lastmod>2025-03-19T00:20:11+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/qemu/</loc>
     <lastmod>2023-11-03T15:09:02+08:00</lastmod>
@@ -972,10 +984,10 @@
     <lastmod>2019-08-30T05:02:22+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/tags/hugo/</loc>
-    <lastmod>2022-01-21T18:41:42+08:00</lastmod>
+    <lastmod>2025-03-13T20:45:25+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/hugo/</loc>
-    <lastmod>2022-01-21T18:41:42+08:00</lastmod>
+    <lastmod>2025-03-13T20:45:25+08:00</lastmod>
   </url><url>
     <loc>https://r888800009.github.io/wiki/hugo-template/</loc>
     <lastmod>2021-12-11T15:53:17+08:00</lastmod>

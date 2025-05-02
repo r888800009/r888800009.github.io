@@ -4,216 +4,163 @@
     <title>Posts on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/posts/</link>
     <description>Recent content in Posts on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 02 May 2020 20:03:10 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Apr 2023 16:37:08 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leetcode 322 找零錢</title>
       <link>https://r888800009.github.io/posts/leetcode-322/</link>
       <pubDate>Sat, 02 May 2020 20:03:10 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-322/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>打破 Kill Chain</title>
       <link>https://r888800009.github.io/posts/breaking-kill-chain/</link>
       <pubDate>Wed, 01 Apr 2020 02:09:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/breaking-kill-chain/</guid>
-      <description>&lt;p&gt;Cyber Kill Chain為Lockheed Martin發展出的framework，
-用於解釋APT攻擊，並且探討如何打破Kill chain進行。&lt;/p&gt;
-&lt;p&gt;該文為 &lt;a href=&#34;https://www.youtube.com/watch?v=II91fiUax2g&#34;&gt;Breaking The Kill Chain: A Defensive Approach&lt;/a&gt;
-的筆記與補充&lt;/p&gt;</description>
+      <description>&lt;p&gt;Cyber Kill Chain為Lockheed Martin發展出的framework，&#xA;用於解釋APT攻擊，並且探討如何打破Kill chain進行。&lt;/p&gt;&#xA;&lt;p&gt;該文為 &lt;a href=&#34;https://www.youtube.com/watch?v=II91fiUax2g&#34;&gt;Breaking The Kill Chain: A Defensive Approach&lt;/a&gt;&#xA;的筆記與補充&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Dijkstra</title>
       <link>https://r888800009.github.io/posts/dijkstra/</link>
       <pubDate>Fri, 31 Jan 2020 23:38:44 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/dijkstra/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>霍夫曼編碼</title>
       <link>https://r888800009.github.io/posts/huffman/</link>
       <pubDate>Mon, 27 Jan 2020 14:52:58 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/huffman/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Rabin-Karp演算法</title>
       <link>https://r888800009.github.io/posts/rabin-karp/</link>
       <pubDate>Tue, 14 Jan 2020 03:20:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/rabin-karp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>等差級數缺少數字</title>
       <link>https://r888800009.github.io/posts/progression-series-missing-number/</link>
       <pubDate>Tue, 31 Dec 2019 13:37:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/progression-series-missing-number/</guid>
-      <description>&lt;p&gt;給定一個不完全的等差數列總和，其中缺少一項數字。&lt;/p&gt;
-&lt;p&gt;題目給定總和界限 &lt;code&gt;1 &amp;lt;= sum &amp;lt;= 10 ^ 8&lt;/code&gt;，並要求找出缺少值。&lt;/p&gt;</description>
+      <description>&lt;p&gt;給定一個不完全的等差數列總和，其中缺少一項數字。&lt;/p&gt;&#xA;&lt;p&gt;題目給定總和界限 &lt;code&gt;1 &amp;lt;= sum &amp;lt;= 10 ^ 8&lt;/code&gt;，並要求找出缺少值。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>透過Docker架設Apache啟用CGI</title>
       <link>https://r888800009.github.io/posts/cgi-apache/</link>
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/cgi-apache/</guid>
-      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，
-並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，&#xA;並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHP傳入POST與GET導致FPD漏洞</title>
       <link>https://r888800009.github.io/posts/php-post-get-fpd/</link>
       <pubDate>Thu, 05 Sep 2019 22:20:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/php-post-get-fpd/</guid>
       <description>&lt;p&gt;php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>軍隊派遣問題</title>
       <link>https://r888800009.github.io/posts/army-dispatch-problem/</link>
       <pubDate>Sat, 31 Aug 2019 02:01:14 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/army-dispatch-problem/</guid>
-      <description>&lt;p&gt;軍隊派遣人力不可低於需求人力，派遣與調回需要花費金錢，
-常駐的也需要花錢。派遣當月需要給付常駐補給費，調回不須。
-給予一個陣列A代表每個月的人力需求，求最低預算。&lt;/p&gt;</description>
+      <description>&lt;p&gt;軍隊派遣人力不可低於需求人力，派遣與調回需要花費金錢，&#xA;常駐的也需要花錢。派遣當月需要給付常駐補給費，調回不須。&#xA;給予一個陣列A代表每個月的人力需求，求最低預算。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>理解堆疊</title>
       <link>https://r888800009.github.io/posts/what-can-stack-can-do/</link>
       <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/what-can-stack-can-do/</guid>
-      <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，
-但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
+      <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，&#xA;但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Gitea搬到Github</title>
       <link>https://r888800009.github.io/posts/from-gitea-to-github/</link>
       <pubDate>Mon, 26 Aug 2019 20:13:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/from-gitea-to-github/</guid>
       <description>&lt;p&gt;紀錄一下，從Gitea搬移檔案到GitHub&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Heroku Setup With Flask</title>
       <link>https://r888800009.github.io/posts/heroku-setup-with-flask/</link>
       <pubDate>Fri, 23 Aug 2019 22:58:44 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/heroku-setup-with-flask/</guid>
       <description>&lt;p&gt;heroku設定紀錄，透過範例檔案修改成自己的程式。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Leetcode刷題筆記7</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-7/</link>
       <pubDate>Sun, 18 Aug 2019 23:14:40 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-practice-7/</guid>
       <description>&lt;p&gt;繼續解leetcode保持進度，有幾題是之前解過類似類型的題目。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Leetcode刷題筆記6</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-6/</link>
       <pubDate>Fri, 16 Aug 2019 23:20:14 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-practice-6/</guid>
       <description>&lt;p&gt;保持每日解題進度，不過今天解比較少就是了。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Leetcode刷題筆記5</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-5/</link>
       <pubDate>Thu, 15 Aug 2019 20:28:33 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-practice-5/</guid>
       <description>&lt;p&gt;刷leetcode簡單的題目，參考之前用過的手法與學新的手法，如前綴和。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>比較SSRF與LFI/RFI</title>
       <link>https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/</link>
       <pubDate>Wed, 14 Aug 2019 17:34:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/</guid>
       <description>&lt;p&gt;LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Leetcode刷題筆記4</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-4/</link>
       <pubDate>Wed, 14 Aug 2019 11:25:25 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-practice-4/</guid>
       <description>&lt;p&gt;刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Leetcode刷題筆記3</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-3/</link>
       <pubDate>Tue, 13 Aug 2019 14:33:30 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-practice-3/</guid>
       <description>&lt;p&gt;開始刷&lt;code&gt;leetcode&lt;/code&gt;一些中等的題目，主要都是刷&lt;code&gt;Top 100&lt;/code&gt;的題目。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Leetcode刷題筆記2</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-2/</link>
       <pubDate>Mon, 12 Aug 2019 21:07:48 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-practice-2/</guid>
       <description>&lt;p&gt;leetcode 解題&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Leetcode刷題筆記1</title>
       <link>https://r888800009.github.io/posts/leetcode-practice-1/</link>
       <pubDate>Sun, 11 Aug 2019 00:04:14 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/leetcode-practice-1/</guid>
       <description>&lt;p&gt;一些leetcode的&lt;code&gt;easy&lt;/code&gt;等級的解法。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>探討blog或repo做筆記的優缺點</title>
       <link>https://r888800009.github.io/posts/blog-or-repo-for-notes/</link>
       <pubDate>Fri, 09 Aug 2019 22:55:09 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/blog-or-repo-for-notes/</guid>
-      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式
-的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、
-保存方式、索引方式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式&#xA;的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、&#xA;保存方式、索引方式。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Online Judge 列表</title>
       <link>https://r888800009.github.io/posts/online-judge-list/</link>
       <pubDate>Thu, 07 Mar 2019 00:30:34 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/online-judge-list/</guid>
-      <description> UVa Online Judge LeetCode Codeforces 高中生程式解題系統 台中女中程式解題系統 PKU JudgeOnline Codewars Timus Online Judge </description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://uva.onlinejudge.org/&#34;&gt;UVa Online Judge&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://leetcode.com/&#34;&gt;LeetCode&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://codeforces.com/&#34;&gt;Codeforces&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://zerojudge.tw/&#34;&gt;高中生程式解題系統&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.tcgs.tc.edu.tw:1218/&#34;&gt;台中女中程式解題系統&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://poj.org/&#34;&gt;PKU JudgeOnline&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.codewars.com/&#34;&gt;Codewars&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://acm.timus.ru/&#34;&gt;Timus Online Judge&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

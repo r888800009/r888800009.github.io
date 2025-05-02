@@ -4,37 +4,37 @@
     <title>Blog on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/blog/</link>
     <description>Recent content in Blog on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 19 Jan 2020 05:21:11 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Mar 2025 20:45:25 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>RSS</title>
       <link>https://r888800009.github.io/wiki/rss/</link>
       <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/rss/</guid>
       <description>&lt;p&gt;RSS 常用資訊&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>newsboat終端機RSS訂閱器</title>
       <link>https://r888800009.github.io/wiki/newsboat/</link>
       <pubDate>Tue, 15 Oct 2019 21:56:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/newsboat/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Hugo</title>
+      <link>https://r888800009.github.io/wiki/hugo/</link>
+      <pubDate>Sun, 18 Aug 2019 21:23:53 +0800</pubDate>
+      <guid>https://r888800009.github.io/wiki/hugo/</guid>
+      <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;的指令與筆記&lt;/p&gt;</description>
+    </item>
     <item>
       <title>探討blog或repo做筆記的優缺點</title>
       <link>https://r888800009.github.io/posts/blog-or-repo-for-notes/</link>
       <pubDate>Fri, 09 Aug 2019 22:55:09 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/blog-or-repo-for-notes/</guid>
-      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式
-的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、
-保存方式、索引方式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式&#xA;的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、&#xA;保存方式、索引方式。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

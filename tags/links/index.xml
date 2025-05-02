@@ -4,35 +4,30 @@
     <title>Links on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/links/</link>
     <description>Recent content in Links on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 04 Apr 2020 00:40:00 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/links/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 May 2020 04:03:19 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/links/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>學者網頁索引</title>
       <link>https://r888800009.github.io/wiki/scholar-index/</link>
       <pubDate>Sat, 04 Apr 2020 00:40:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/scholar-index/</guid>
       <description>&lt;p&gt;收集各種學界或產業界人士的個人網站，以便了解思想方式。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>資訊安全</title>
       <link>https://r888800009.github.io/wiki/information-security/</link>
       <pubDate>Mon, 02 Dec 2019 09:21:51 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/information-security/</guid>
       <description>&lt;p&gt;資訊安全相關索引&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Online Judge 列表</title>
       <link>https://r888800009.github.io/posts/online-judge-list/</link>
       <pubDate>Thu, 07 Mar 2019 00:30:34 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/online-judge-list/</guid>
-      <description> UVa Online Judge LeetCode Codeforces 高中生程式解題系統 台中女中程式解題系統 PKU JudgeOnline Codewars Timus Online Judge </description>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://uva.onlinejudge.org/&#34;&gt;UVa Online Judge&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://leetcode.com/&#34;&gt;LeetCode&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://codeforces.com/&#34;&gt;Codeforces&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://zerojudge.tw/&#34;&gt;高中生程式解題系統&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.tcgs.tc.edu.tw:1218/&#34;&gt;台中女中程式解題系統&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://poj.org/&#34;&gt;PKU JudgeOnline&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.codewars.com/&#34;&gt;Codewars&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://acm.timus.ru/&#34;&gt;Timus Online Judge&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
   </channel>
 </rss>

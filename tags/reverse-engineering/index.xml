@@ -4,64 +4,51 @@
     <title>Reverse Engineering on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/reverse-engineering/</link>
     <description>Recent content in Reverse Engineering on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 18 Jan 2022 21:04:27 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Nov 2023 12:11:26 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/reverse-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Qiling</title>
       <link>https://r888800009.github.io/firmware/qiling/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/firmware/qiling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Firmware Reversing</title>
       <link>https://r888800009.github.io/firmware/reverse/</link>
       <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/firmware/reverse/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>逆向相關資料</title>
       <link>https://r888800009.github.io/software/reversing/</link>
       <pubDate>Sat, 16 Nov 2019 20:31:53 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/reversing/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Radare2</title>
       <link>https://r888800009.github.io/software/reversing/radare2/</link>
       <pubDate>Sat, 05 Oct 2019 19:43:04 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/reversing/radare2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Windows Pwn 筆記</title>
       <link>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</link>
       <pubDate>Tue, 10 Sep 2019 10:27:36 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Ghidra</title>
       <link>https://r888800009.github.io/software/reversing/ghidra/</link>
       <pubDate>Fri, 16 Aug 2019 23:57:31 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/reversing/ghidra/</guid>
-      <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，
-&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及
-GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，&#xA;&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及&#xA;GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

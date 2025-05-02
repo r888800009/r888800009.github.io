@@ -8,18 +8,20 @@
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-19124306-5', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDKCMHMJDK"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TDKCMHMJDK');
+        }
+      </script>
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -104,8 +106,7 @@ if (!doNotTrack) {
 <p>(2021 年 8 月 23日 更新)</p>
 <p>I buy an M1 MacBook, and I think it is not suitable for x86/x86-64 to exploit development for CTF challenge, that has two ways I have been tried to running on M1 mac, once is using qemu-user-mode, and also docker through qemu-user to running elf executable, but memory mapping is different from x86 Linux host system, that would make some address could not leaking, another like a Qiling framework I don&rsquo;t try, but I think that is not out-of-the-box, the second way is to install and emulation x86_64 Linux system, using like qemu-system, but is too slowly than x86 host, you open vim is slowly, you save the exploit is slowly, run exploit is slowly.</p>
 <p>if you want to use M1 to solve the x86/x86_64 challenge, I do not recommend, the current best way to save your productivity, using x86 host, and ssh to the host, that is my current solution, if someone has another solution you can open an issue with this or send an email to me. I would update my post to save other people time.</p>
-<p>(2022 年 3 月 13日更新)</p>
-</blockquote>
+<p>(2022 年 3 月 13日更新)</p></blockquote>
 <h2 id="安裝-pwntools">安裝 pwntools</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install pwntools
 </span></span></code></pre></div><p>MacBook m1 安装 pwntools path 參照這篇</p>
@@ -215,7 +216,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2024.
+    r888800009©2018-2025.
     All Rights Reserved.
   </div>
   

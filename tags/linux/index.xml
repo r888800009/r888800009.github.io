@@ -4,188 +4,149 @@
     <title>Linux on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/linux/</link>
     <description>Recent content in Linux on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 08 Jan 2022 22:21:09 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Mar 2025 00:20:11 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Page</title>
       <link>https://r888800009.github.io/operating-system/linux-page/</link>
       <pubDate>Sat, 08 Jan 2022 22:21:09 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/operating-system/linux-page/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Autojump</title>
       <link>https://r888800009.github.io/wiki/autojump/</link>
       <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/autojump/</guid>
       <description>&lt;p&gt;可容錯輸入部份目錄批配，並且進入目錄&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>SELinux</title>
       <link>https://r888800009.github.io/wiki/selinux/</link>
       <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/selinux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux輸入法</title>
       <link>https://r888800009.github.io/wiki/linux-ime/</link>
       <pubDate>Mon, 13 Jan 2020 22:30:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-ime/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>終端機常用工具</title>
       <link>https://r888800009.github.io/wiki/terminal-tools/</link>
       <pubDate>Fri, 15 Nov 2019 17:15:19 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/terminal-tools/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Shell</title>
       <link>https://r888800009.github.io/wiki/shell/</link>
       <pubDate>Sun, 10 Nov 2019 23:22:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/shell/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux桌面使用</title>
       <link>https://r888800009.github.io/wiki/linux-desktop/</link>
       <pubDate>Sat, 09 Nov 2019 16:48:26 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-desktop/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>從 0 安裝Linux</title>
       <link>https://r888800009.github.io/wiki/linux-from-scratch/</link>
       <pubDate>Sat, 19 Oct 2019 21:50:48 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-from-scratch/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Bash</title>
       <link>https://r888800009.github.io/wiki/bash/</link>
       <pubDate>Sat, 05 Oct 2019 19:50:13 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/bash/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Kali Linux筆記</title>
       <link>https://r888800009.github.io/wiki/kali-linux/</link>
       <pubDate>Sat, 05 Oct 2019 19:37:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/kali-linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux網路</title>
       <link>https://r888800009.github.io/wiki/linux-network/</link>
       <pubDate>Sun, 29 Sep 2019 21:21:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-network/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux</title>
       <link>https://r888800009.github.io/wiki/linux/</link>
       <pubDate>Sat, 21 Sep 2019 23:00:56 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Grep</title>
       <link>https://r888800009.github.io/wiki/grep/</link>
       <pubDate>Sun, 15 Sep 2019 11:49:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/grep/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux權限</title>
       <link>https://r888800009.github.io/wiki/linux-permission/</link>
       <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
       <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Linux 文件管理</title>
       <link>https://r888800009.github.io/wiki/linux-file/</link>
       <pubDate>Thu, 05 Sep 2019 05:47:01 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/linux-file/</guid>
       <description>&lt;p&gt;Linux一些常用於文件管理的筆記。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Arch Linux</title>
       <link>https://r888800009.github.io/wiki/archlinux/</link>
       <pubDate>Thu, 05 Sep 2019 05:29:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/archlinux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vim</title>
       <link>https://r888800009.github.io/wiki/vim/</link>
       <pubDate>Fri, 30 Aug 2019 05:13:14 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/vim/</guid>
       <description>&lt;p&gt;存放vim的筆記。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GDB</title>
       <link>https://r888800009.github.io/software/testing/gdb/</link>
       <pubDate>Thu, 29 Aug 2019 02:03:01 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/testing/gdb/</guid>
       <description>&lt;p&gt;存放gdb筆記&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Secure Shell</title>
       <link>https://r888800009.github.io/wiki/secure-shell/</link>
       <pubDate>Tue, 27 Aug 2019 11:58:33 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/secure-shell/</guid>
       <description>&lt;p&gt;SSH筆記&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Qemu</title>
       <link>https://r888800009.github.io/wiki/qemu/</link>
       <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/qemu/</guid>
       <description>&lt;p&gt;QEMU常用參數紀錄&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

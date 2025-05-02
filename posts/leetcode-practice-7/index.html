@@ -8,18 +8,20 @@
 
 
   
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-19124306-5', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDKCMHMJDK"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-TDKCMHMJDK');
+        }
+      </script>
 
 
 <link rel="icon" type="image/png" href="/favicon.png">
@@ -91,7 +93,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#shortest-unsorted-continuous-subarray">Shortest Unsorted Continuous Subarray</a>
       <ul>
-        <li><a href="#heading"></a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -107,7 +109,7 @@ if (!doNotTrack) {
 最後會有一開始偷與不偷所獲得的金額並且回傳最大值。</p>
 <h2 id="shortest-unsorted-continuous-subarray">Shortest Unsorted Continuous Subarray</h2>
 <p>給予一個陣列，找出需要排序的子陣列大小。</p>
-<h3 id="heading"></h3>
+<h3></h3>
 <p>這題可以透過如<a href="/posts/leetcode-practice-3/">刷題筆記3</a>堆疊
 的方式解決。leetcode也有給出空間複雜度為<code>O(1)</code>的結法，不過作為複習這邊採用堆疊解決。</p>
 <p>透過兩個方向的堆疊，來找出需要排序的左邊與右邊之後相減得出答案。
@@ -167,7 +169,7 @@ if (!doNotTrack) {
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2024.
+    r888800009©2018-2025.
     All Rights Reserved.
   </div>
   

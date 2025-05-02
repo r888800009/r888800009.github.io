@@ -4,28 +4,23 @@
     <title>紀錄 on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/%E7%B4%80%E9%8C%84/</link>
     <description>Recent content in 紀錄 on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 26 Aug 2019 20:13:11 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Jan 2020 21:09:27 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gitea搬到Github</title>
       <link>https://r888800009.github.io/posts/from-gitea-to-github/</link>
       <pubDate>Mon, 26 Aug 2019 20:13:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/from-gitea-to-github/</guid>
       <description>&lt;p&gt;紀錄一下，從Gitea搬移檔案到GitHub&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>探討blog或repo做筆記的優缺點</title>
       <link>https://r888800009.github.io/posts/blog-or-repo-for-notes/</link>
       <pubDate>Fri, 09 Aug 2019 22:55:09 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/blog-or-repo-for-notes/</guid>
-      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式
-的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、
-保存方式、索引方式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式&#xA;的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、&#xA;保存方式、索引方式。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

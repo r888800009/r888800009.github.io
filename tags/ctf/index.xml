@@ -4,62 +4,51 @@
     <title>CTF on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/ctf/</link>
     <description>Recent content in CTF on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 10 Aug 2020 04:38:37 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Dec 2023 19:38:55 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Heap Exploit</title>
       <link>https://r888800009.github.io/software/security/binary/heap/</link>
       <pubDate>Mon, 10 Aug 2020 04:38:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/binary/heap/</guid>
       <description>&lt;p&gt;堆積利用筆記&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>密碼學</title>
       <link>https://r888800009.github.io/wiki/cryptography/</link>
       <pubDate>Fri, 28 Feb 2020 23:29:26 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/cryptography/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CTF鑑識</title>
       <link>https://r888800009.github.io/wiki/ctf-forensics/</link>
       <pubDate>Sun, 23 Feb 2020 22:21:31 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/ctf-forensics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Stack Smash</title>
       <link>https://r888800009.github.io/software/security/binary/stack-smash/</link>
       <pubDate>Wed, 02 Oct 2019 19:31:07 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/binary/stack-smash/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>格式化字串攻擊 (Format String Attack)</title>
       <link>https://r888800009.github.io/software/security/binary/format-string-attack/</link>
       <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/binary/format-string-attack/</guid>
       <description>&lt;p&gt;格式化字串筆記 Format String Bug (FSB)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PWN 常用指令與概念</title>
       <link>https://r888800009.github.io/software/security/binary/pwn-notes/</link>
       <pubDate>Fri, 06 Sep 2019 04:38:57 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/binary/pwn-notes/</guid>
       <description>&lt;p&gt;pwn 常用指令以及概念紀錄&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

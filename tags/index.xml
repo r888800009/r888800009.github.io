@@ -4,1394 +4,1115 @@
     <title>Tags on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/</link>
     <description>Recent content in Tags on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 06 Nov 2022 02:23:50 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Mar 2025 00:21:20 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Research</title>
       <link>https://r888800009.github.io/tags/research/</link>
       <pubDate>Sun, 06 Nov 2022 02:23:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/research/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Binary Exploitation</title>
       <link>https://r888800009.github.io/tags/binary-exploitation/</link>
       <pubDate>Sat, 02 Apr 2022 22:49:53 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/binary-exploitation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Heap</title>
       <link>https://r888800009.github.io/tags/heap/</link>
       <pubDate>Sat, 02 Apr 2022 22:49:53 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/heap/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>PWN</title>
       <link>https://r888800009.github.io/tags/pwn/</link>
       <pubDate>Sat, 02 Apr 2022 22:49:53 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/pwn/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Windows</title>
       <link>https://r888800009.github.io/tags/windows/</link>
       <pubDate>Sat, 02 Apr 2022 22:49:53 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/windows/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Network</title>
+      <link>https://r888800009.github.io/tags/network/</link>
+      <pubDate>Wed, 30 Mar 2022 01:40:12 +0800</pubDate>
+      <guid>https://r888800009.github.io/tags/network/</guid>
+      <description></description>
+    </item>
     <item>
       <title>WIFI</title>
       <link>https://r888800009.github.io/tags/wifi/</link>
       <pubDate>Wed, 30 Mar 2022 01:40:12 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/wifi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SSH</title>
       <link>https://r888800009.github.io/tags/ssh/</link>
       <pubDate>Wed, 30 Mar 2022 01:38:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/ssh/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Samba</title>
       <link>https://r888800009.github.io/tags/samba/</link>
       <pubDate>Sun, 27 Mar 2022 11:36:43 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/samba/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Kernel</title>
       <link>https://r888800009.github.io/tags/kernel/</link>
       <pubDate>Tue, 22 Mar 2022 15:48:15 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/kernel/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>container</title>
+      <title>Container</title>
       <link>https://r888800009.github.io/tags/container/</link>
       <pubDate>Tue, 08 Mar 2022 04:30:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/container/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Kubernetes</title>
       <link>https://r888800009.github.io/tags/kubernetes/</link>
       <pubDate>Tue, 08 Mar 2022 04:30:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Knowledge Graph</title>
-      <link>https://r888800009.github.io/tags/knowledge-graph/</link>
+      <title>KnowledgeGraph</title>
+      <link>https://r888800009.github.io/tags/knowledgegraph/</link>
       <pubDate>Mon, 07 Mar 2022 07:54:55 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/knowledge-graph/</guid>
+      <guid>https://r888800009.github.io/tags/knowledgegraph/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Allocator</title>
       <link>https://r888800009.github.io/tags/allocator/</link>
       <pubDate>Tue, 25 Jan 2022 02:09:21 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/allocator/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Kernel Exploit</title>
       <link>https://r888800009.github.io/tags/kernel-exploit/</link>
       <pubDate>Tue, 25 Jan 2022 02:09:21 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/kernel-exploit/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Emulation</title>
       <link>https://r888800009.github.io/tags/emulation/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/emulation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Firmware</title>
       <link>https://r888800009.github.io/tags/firmware/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/firmware/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hooking</title>
       <link>https://r888800009.github.io/tags/hooking/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/hooking/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>IoT Security</title>
       <link>https://r888800009.github.io/tags/iot-security/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/iot-security/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Reverse Engineering</title>
       <link>https://r888800009.github.io/tags/reverse-engineering/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/reverse-engineering/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>File System</title>
       <link>https://r888800009.github.io/tags/file-system/</link>
       <pubDate>Sat, 08 Jan 2022 22:37:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/file-system/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Operating System</title>
       <link>https://r888800009.github.io/tags/operating-system/</link>
       <pubDate>Sat, 08 Jan 2022 22:37:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/operating-system/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux</title>
       <link>https://r888800009.github.io/tags/linux/</link>
       <pubDate>Sat, 08 Jan 2022 22:21:09 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Memory Management</title>
       <link>https://r888800009.github.io/tags/memory-management/</link>
       <pubDate>Sat, 08 Jan 2022 22:21:09 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/memory-management/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Page</title>
       <link>https://r888800009.github.io/tags/page/</link>
       <pubDate>Sat, 08 Jan 2022 22:21:09 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/page/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>System Program</title>
       <link>https://r888800009.github.io/tags/system-program/</link>
       <pubDate>Fri, 07 Jan 2022 02:04:31 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/system-program/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Assembly</title>
       <link>https://r888800009.github.io/tags/assembly/</link>
       <pubDate>Thu, 06 Jan 2022 20:25:43 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/assembly/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CodeQL</title>
       <link>https://r888800009.github.io/tags/codeql/</link>
       <pubDate>Sun, 26 Dec 2021 08:31:06 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/codeql/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Static Analysis</title>
       <link>https://r888800009.github.io/tags/static-analysis/</link>
       <pubDate>Sun, 26 Dec 2021 08:31:06 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/static-analysis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Taint Analysis</title>
       <link>https://r888800009.github.io/tags/taint-analysis/</link>
       <pubDate>Sun, 26 Dec 2021 08:31:06 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/taint-analysis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Whitebox</title>
       <link>https://r888800009.github.io/tags/whitebox/</link>
       <pubDate>Sun, 26 Dec 2021 08:31:06 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/whitebox/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Process</title>
       <link>https://r888800009.github.io/tags/process/</link>
       <pubDate>Sat, 25 Dec 2021 06:42:02 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/process/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>C&#43;&#43;</title>
       <link>https://r888800009.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Thu, 16 Dec 2021 10:15:54 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Graphviz</title>
       <link>https://r888800009.github.io/tags/graphviz/</link>
       <pubDate>Thu, 16 Dec 2021 06:05:32 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/graphviz/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linker</title>
       <link>https://r888800009.github.io/tags/linker/</link>
       <pubDate>Tue, 09 Nov 2021 04:08:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/linker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Browser</title>
       <link>https://r888800009.github.io/tags/browser/</link>
       <pubDate>Sat, 06 Nov 2021 03:50:30 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/browser/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>NLP</title>
       <link>https://r888800009.github.io/tags/nlp/</link>
       <pubDate>Wed, 07 Jul 2021 22:37:34 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/nlp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OpenCC</title>
       <link>https://r888800009.github.io/tags/opencc/</link>
       <pubDate>Wed, 07 Jul 2021 22:37:34 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/opencc/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Chatbot</title>
       <link>https://r888800009.github.io/tags/chatbot/</link>
       <pubDate>Tue, 22 Jun 2021 09:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/chatbot/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>RNN</title>
       <link>https://r888800009.github.io/tags/rnn/</link>
       <pubDate>Tue, 22 Jun 2021 09:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/rnn/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>seq2seq</title>
+      <title>Seq2seq</title>
       <link>https://r888800009.github.io/tags/seq2seq/</link>
       <pubDate>Tue, 22 Jun 2021 09:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/seq2seq/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tokenizer</title>
       <link>https://r888800009.github.io/tags/tokenizer/</link>
       <pubDate>Tue, 22 Jun 2021 09:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/tokenizer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Transformer</title>
       <link>https://r888800009.github.io/tags/transformer/</link>
       <pubDate>Tue, 22 Jun 2021 09:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/transformer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Exploit Mitigation</title>
       <link>https://r888800009.github.io/tags/exploit-mitigation/</link>
       <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/exploit-mitigation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Intel</title>
       <link>https://r888800009.github.io/tags/intel/</link>
       <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/intel/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Shadow Stack</title>
       <link>https://r888800009.github.io/tags/shadow-stack/</link>
       <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/shadow-stack/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apple Silicon</title>
       <link>https://r888800009.github.io/tags/apple-silicon/</link>
       <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/apple-silicon/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>macOS</title>
+      <title>MacOS</title>
       <link>https://r888800009.github.io/tags/macos/</link>
       <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/macos/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Fuzzing</title>
       <link>https://r888800009.github.io/tags/fuzzing/</link>
       <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/fuzzing/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Testing</title>
       <link>https://r888800009.github.io/tags/testing/</link>
       <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/testing/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Vulnerability</title>
       <link>https://r888800009.github.io/tags/vulnerability/</link>
       <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/vulnerability/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Zero-Day</title>
       <link>https://r888800009.github.io/tags/zero-day/</link>
       <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/zero-day/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AEG</title>
       <link>https://r888800009.github.io/tags/aeg/</link>
       <pubDate>Tue, 29 Sep 2020 13:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/aeg/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SMT</title>
       <link>https://r888800009.github.io/tags/smt/</link>
       <pubDate>Tue, 29 Sep 2020 13:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/smt/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Symbolic Execution</title>
       <link>https://r888800009.github.io/tags/symbolic-execution/</link>
       <pubDate>Tue, 29 Sep 2020 13:29:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/symbolic-execution/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Cloud</title>
+      <link>https://r888800009.github.io/tags/cloud/</link>
+      <pubDate>Sun, 23 Aug 2020 16:55:35 +0800</pubDate>
+      <guid>https://r888800009.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Terms</title>
       <link>https://r888800009.github.io/tags/terms/</link>
       <pubDate>Mon, 17 Aug 2020 04:06:47 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/terms/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OSINT</title>
       <link>https://r888800009.github.io/tags/osint/</link>
       <pubDate>Mon, 10 Aug 2020 05:19:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/osint/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Reconnaissance</title>
       <link>https://r888800009.github.io/tags/reconnaissance/</link>
       <pubDate>Mon, 10 Aug 2020 05:19:18 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/reconnaissance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CTF</title>
       <link>https://r888800009.github.io/tags/ctf/</link>
       <pubDate>Mon, 10 Aug 2020 04:38:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/ctf/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web</title>
       <link>https://r888800009.github.io/tags/web/</link>
       <pubDate>Sat, 23 May 2020 22:54:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/web/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Indicators of Compromise</title>
       <link>https://r888800009.github.io/tags/indicators-of-compromise/</link>
       <pubDate>Fri, 22 May 2020 01:57:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/indicators-of-compromise/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Malware Analysis</title>
       <link>https://r888800009.github.io/tags/malware-analysis/</link>
       <pubDate>Fri, 22 May 2020 01:57:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/malware-analysis/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Efficiency</title>
       <link>https://r888800009.github.io/tags/efficiency/</link>
       <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/efficiency/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Fuzzy Search</title>
       <link>https://r888800009.github.io/tags/fuzzy-search/</link>
       <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/fuzzy-search/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux File</title>
       <link>https://r888800009.github.io/tags/linux-file/</link>
       <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/linux-file/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Mandatory Access Control  </title>
+      <title>Mandatory Access Control</title>
       <link>https://r888800009.github.io/tags/mandatory-access-control/</link>
       <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/mandatory-access-control/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SELinux</title>
       <link>https://r888800009.github.io/tags/selinux/</link>
       <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/selinux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Obfuscate</title>
       <link>https://r888800009.github.io/tags/obfuscate/</link>
       <pubDate>Thu, 14 May 2020 14:15:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/obfuscate/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Obfuscator</title>
       <link>https://r888800009.github.io/tags/obfuscator/</link>
       <pubDate>Thu, 14 May 2020 14:15:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/obfuscator/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Software</title>
       <link>https://r888800009.github.io/tags/software/</link>
       <pubDate>Thu, 14 May 2020 14:15:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/software/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Algorithm</title>
       <link>https://r888800009.github.io/tags/algorithm/</link>
       <pubDate>Sat, 02 May 2020 20:03:10 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/algorithm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Divide and Conquer</title>
       <link>https://r888800009.github.io/tags/divide-and-conquer/</link>
       <pubDate>Sat, 02 May 2020 20:03:10 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/divide-and-conquer/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Dynamic programming</title>
+      <title>Dynamic Programming</title>
       <link>https://r888800009.github.io/tags/dynamic-programming/</link>
       <pubDate>Sat, 02 May 2020 20:03:10 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/dynamic-programming/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>LeetCode</title>
       <link>https://r888800009.github.io/tags/leetcode/</link>
       <pubDate>Sat, 02 May 2020 20:03:10 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/leetcode/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Software Engineering</title>
       <link>https://r888800009.github.io/tags/software-engineering/</link>
       <pubDate>Tue, 21 Apr 2020 19:07:20 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/software-engineering/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Log</title>
       <link>https://r888800009.github.io/tags/log/</link>
       <pubDate>Wed, 08 Apr 2020 22:42:16 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/log/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SIEM</title>
       <link>https://r888800009.github.io/tags/siem/</link>
       <pubDate>Wed, 08 Apr 2020 22:42:16 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/siem/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cryptography</title>
       <link>https://r888800009.github.io/tags/cryptography/</link>
       <pubDate>Tue, 07 Apr 2020 04:44:29 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/cryptography/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Information Security</title>
       <link>https://r888800009.github.io/tags/information-security/</link>
       <pubDate>Tue, 07 Apr 2020 04:44:29 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/information-security/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Network Security</title>
       <link>https://r888800009.github.io/tags/network-security/</link>
       <pubDate>Tue, 07 Apr 2020 04:44:29 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/network-security/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Algorithm Analysis</title>
       <link>https://r888800009.github.io/tags/algorithm-analysis/</link>
       <pubDate>Mon, 06 Apr 2020 02:25:16 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/algorithm-analysis/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>index</title>
+      <title>Index</title>
       <link>https://r888800009.github.io/tags/index/</link>
       <pubDate>Sat, 04 Apr 2020 00:40:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/index/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Links</title>
       <link>https://r888800009.github.io/tags/links/</link>
       <pubDate>Sat, 04 Apr 2020 00:40:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/links/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>glossary</title>
+      <title>Glossary</title>
       <link>https://r888800009.github.io/tags/glossary/</link>
       <pubDate>Fri, 03 Apr 2020 05:35:58 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/glossary/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>APT</title>
       <link>https://r888800009.github.io/tags/apt/</link>
       <pubDate>Wed, 01 Apr 2020 02:09:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/apt/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Pentest</title>
       <link>https://r888800009.github.io/tags/pentest/</link>
       <pubDate>Wed, 01 Apr 2020 02:09:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/pentest/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Exploiting</title>
       <link>https://r888800009.github.io/tags/exploiting/</link>
       <pubDate>Thu, 12 Mar 2020 20:40:03 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/exploiting/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Compiler</title>
       <link>https://r888800009.github.io/tags/compiler/</link>
       <pubDate>Fri, 06 Mar 2020 12:01:03 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/compiler/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Programming Language</title>
       <link>https://r888800009.github.io/tags/programming-language/</link>
       <pubDate>Fri, 06 Mar 2020 12:01:03 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/programming-language/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Haskell</title>
       <link>https://r888800009.github.io/tags/haskell/</link>
       <pubDate>Wed, 04 Mar 2020 21:18:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/haskell/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Isolation</title>
       <link>https://r888800009.github.io/tags/isolation/</link>
       <pubDate>Sun, 09 Feb 2020 23:45:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/isolation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Privilege Separation</title>
       <link>https://r888800009.github.io/tags/privilege-separation/</link>
       <pubDate>Sun, 09 Feb 2020 23:45:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/privilege-separation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Sandbox</title>
       <link>https://r888800009.github.io/tags/sandbox/</link>
       <pubDate>Sun, 09 Feb 2020 23:45:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/sandbox/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>seccomp</title>
+      <title>Seccomp</title>
       <link>https://r888800009.github.io/tags/seccomp/</link>
       <pubDate>Sun, 09 Feb 2020 23:45:08 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/seccomp/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Priority Queue</title>
       <link>https://r888800009.github.io/tags/priority-queue/</link>
       <pubDate>Fri, 31 Jan 2020 23:38:44 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/priority-queue/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Compression</title>
       <link>https://r888800009.github.io/tags/compression/</link>
       <pubDate>Mon, 27 Jan 2020 14:52:58 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/compression/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Tree</title>
       <link>https://r888800009.github.io/tags/tree/</link>
       <pubDate>Mon, 27 Jan 2020 14:52:58 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/tree/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Blog</title>
       <link>https://r888800009.github.io/tags/blog/</link>
       <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/blog/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>RSS</title>
       <link>https://r888800009.github.io/tags/rss/</link>
       <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/rss/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hash</title>
       <link>https://r888800009.github.io/tags/hash/</link>
       <pubDate>Tue, 14 Jan 2020 03:20:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/hash/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>String Searching</title>
       <link>https://r888800009.github.io/tags/string-searching/</link>
       <pubDate>Tue, 14 Jan 2020 03:20:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/string-searching/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Linux Desktop</title>
       <link>https://r888800009.github.io/tags/linux-desktop/</link>
       <pubDate>Mon, 13 Jan 2020 22:30:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/linux-desktop/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>輸入法</title>
       <link>https://r888800009.github.io/tags/%E8%BC%B8%E5%85%A5%E6%B3%95/</link>
       <pubDate>Mon, 13 Jan 2020 22:30:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/%E8%BC%B8%E5%85%A5%E6%B3%95/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Binary Search</title>
       <link>https://r888800009.github.io/tags/binary-search/</link>
       <pubDate>Tue, 31 Dec 2019 13:37:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/binary-search/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Hardware</title>
+      <link>https://r888800009.github.io/tags/hardware/</link>
+      <pubDate>Mon, 16 Dec 2019 23:46:11 +0800</pubDate>
+      <guid>https://r888800009.github.io/tags/hardware/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Veriolog</title>
       <link>https://r888800009.github.io/tags/veriolog/</link>
       <pubDate>Mon, 16 Dec 2019 23:46:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/veriolog/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://r888800009.github.io/tags/network/</link>
-      <pubDate>Thu, 28 Nov 2019 18:50:49 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/network/</guid>
-      <description></description>
-    </item>
-    
     <item>
       <title>Tools</title>
       <link>https://r888800009.github.io/tags/tools/</link>
       <pubDate>Fri, 15 Nov 2019 17:15:19 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/tools/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Shell</title>
       <link>https://r888800009.github.io/tags/shell/</link>
       <pubDate>Sun, 10 Nov 2019 23:22:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/shell/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
       <link>https://r888800009.github.io/tags/python/</link>
       <pubDate>Fri, 01 Nov 2019 21:48:55 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Chat Bot</title>
-      <link>https://r888800009.github.io/tags/chat-bot/</link>
+      <title>Bot</title>
+      <link>https://r888800009.github.io/tags/bot/</link>
       <pubDate>Thu, 31 Oct 2019 22:57:26 +0800</pubDate>
-      
-      <guid>https://r888800009.github.io/tags/chat-bot/</guid>
+      <guid>https://r888800009.github.io/tags/bot/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Chat</title>
+      <link>https://r888800009.github.io/tags/chat/</link>
+      <pubDate>Thu, 31 Oct 2019 22:57:26 +0800</pubDate>
+      <guid>https://r888800009.github.io/tags/chat/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Markdown</title>
       <link>https://r888800009.github.io/tags/markdown/</link>
       <pubDate>Wed, 16 Oct 2019 21:54:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/markdown/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Fuzz</title>
       <link>https://r888800009.github.io/tags/fuzz/</link>
       <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/fuzz/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DBMS</title>
       <link>https://r888800009.github.io/tags/dbms/</link>
       <pubDate>Sat, 12 Oct 2019 19:21:25 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/dbms/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Docker</title>
       <link>https://r888800009.github.io/tags/docker/</link>
       <pubDate>Sat, 12 Oct 2019 19:21:25 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SQL</title>
       <link>https://r888800009.github.io/tags/sql/</link>
       <pubDate>Sat, 12 Oct 2019 19:21:25 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/sql/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web Crawler</title>
       <link>https://r888800009.github.io/tags/web-crawler/</link>
       <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/web-crawler/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DNS</title>
       <link>https://r888800009.github.io/tags/dns/</link>
       <pubDate>Mon, 07 Oct 2019 19:53:47 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/dns/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>WAF</title>
       <link>https://r888800009.github.io/tags/waf/</link>
       <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/waf/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web安全</title>
       <link>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</link>
       <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/web%E5%AE%89%E5%85%A8/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Apache</title>
       <link>https://r888800009.github.io/tags/apache/</link>
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/apache/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>HTTP</title>
       <link>https://r888800009.github.io/tags/http/</link>
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/http/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Big Data</title>
       <link>https://r888800009.github.io/tags/big-data/</link>
       <pubDate>Fri, 27 Sep 2019 23:30:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/big-data/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Probability And Statistic</title>
+      <title>Probability and Statistic</title>
       <link>https://r888800009.github.io/tags/probability-and-statistic/</link>
       <pubDate>Fri, 27 Sep 2019 23:30:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/probability-and-statistic/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>R</title>
       <link>https://r888800009.github.io/tags/r/</link>
       <pubDate>Fri, 27 Sep 2019 23:30:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/r/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Application Layer</title>
       <link>https://r888800009.github.io/tags/application-layer/</link>
       <pubDate>Tue, 24 Sep 2019 23:25:13 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/application-layer/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Debug</title>
       <link>https://r888800009.github.io/tags/debug/</link>
       <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/debug/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>C</title>
       <link>https://r888800009.github.io/tags/c/</link>
       <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/c/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Debugger</title>
       <link>https://r888800009.github.io/tags/debugger/</link>
       <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/debugger/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gdb</title>
+      <title>Gdb</title>
       <link>https://r888800009.github.io/tags/gdb/</link>
       <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/gdb/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CSRF</title>
       <link>https://r888800009.github.io/tags/csrf/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/csrf/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Exploit</title>
       <link>https://r888800009.github.io/tags/exploit/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/exploit/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Javascript</title>
       <link>https://r888800009.github.io/tags/javascript/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>LFI</title>
       <link>https://r888800009.github.io/tags/lfi/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/lfi/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>PHP</title>
       <link>https://r888800009.github.io/tags/php/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/php/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>XSS</title>
       <link>https://r888800009.github.io/tags/xss/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/xss/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>git</title>
+      <title>Git</title>
       <link>https://r888800009.github.io/tags/git/</link>
       <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/git/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Version Control</title>
       <link>https://r888800009.github.io/tags/version-control/</link>
       <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/version-control/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>Mandatory Access Control  </title>
+      <link>https://r888800009.github.io/tags/mandatory-access-control--/</link>
+      <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
+      <guid>https://r888800009.github.io/tags/mandatory-access-control--/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Unix</title>
       <link>https://r888800009.github.io/tags/unix/</link>
       <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/unix/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Arch Linux</title>
       <link>https://r888800009.github.io/tags/arch-linux/</link>
       <pubDate>Thu, 05 Sep 2019 05:29:37 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/arch-linux/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Editor</title>
       <link>https://r888800009.github.io/tags/editor/</link>
       <pubDate>Fri, 30 Aug 2019 05:13:14 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/editor/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Data Structures</title>
       <link>https://r888800009.github.io/tags/data-structures/</link>
       <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/data-structures/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Stack</title>
       <link>https://r888800009.github.io/tags/stack/</link>
       <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/stack/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Django</title>
       <link>https://r888800009.github.io/tags/django/</link>
       <pubDate>Wed, 28 Aug 2019 23:57:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/django/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OpSec</title>
       <link>https://r888800009.github.io/tags/opsec/</link>
       <pubDate>Tue, 27 Aug 2019 15:23:28 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/opsec/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Socks5</title>
       <link>https://r888800009.github.io/tags/socks5/</link>
       <pubDate>Tue, 27 Aug 2019 11:58:33 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/socks5/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Qemu</title>
       <link>https://r888800009.github.io/tags/qemu/</link>
       <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/qemu/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Virtual Machine</title>
       <link>https://r888800009.github.io/tags/virtual-machine/</link>
       <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/virtual-machine/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>紀錄</title>
       <link>https://r888800009.github.io/tags/%E7%B4%80%E9%8C%84/</link>
       <pubDate>Mon, 26 Aug 2019 20:13:11 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/%E7%B4%80%E9%8C%84/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hugo</title>
       <link>https://r888800009.github.io/tags/hugo/</link>
       <pubDate>Sun, 18 Aug 2019 21:23:53 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/hugo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Recursion</title>
       <link>https://r888800009.github.io/tags/recursion/</link>
       <pubDate>Thu, 15 Aug 2019 20:28:33 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/recursion/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Linked list</title>
+      <title>Linked List</title>
       <link>https://r888800009.github.io/tags/linked-list/</link>
       <pubDate>Tue, 13 Aug 2019 14:33:30 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/linked-list/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Two Pointers</title>
       <link>https://r888800009.github.io/tags/two-pointers/</link>
       <pubDate>Tue, 13 Aug 2019 14:33:30 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/two-pointers/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Hash Table</title>
       <link>https://r888800009.github.io/tags/hash-table/</link>
       <pubDate>Mon, 12 Aug 2019 21:07:48 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/hash-table/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Bit Manipulation</title>
       <link>https://r888800009.github.io/tags/bit-manipulation/</link>
       <pubDate>Sun, 11 Aug 2019 00:04:14 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/bit-manipulation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Merge</title>
       <link>https://r888800009.github.io/tags/merge/</link>
       <pubDate>Sun, 11 Aug 2019 00:04:14 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/tags/merge/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

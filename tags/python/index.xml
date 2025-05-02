@@ -4,53 +4,44 @@
     <title>Python on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/python/</link>
     <description>Recent content in Python on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 01 Nov 2019 21:48:55 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 00:28:44 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python數學運算與科學運算</title>
       <link>https://r888800009.github.io/wiki/python-math/</link>
       <pubDate>Fri, 01 Nov 2019 21:48:55 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/python-math/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>python 模糊搜尋</title>
       <link>https://r888800009.github.io/wiki/python-fuzz/</link>
       <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/python-fuzz/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web 爬蟲筆記</title>
       <link>https://r888800009.github.io/wiki/web-crawler/</link>
       <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/web-crawler/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
       <link>https://r888800009.github.io/wiki/python/</link>
       <pubDate>Fri, 06 Sep 2019 12:42:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/python/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Django</title>
       <link>https://r888800009.github.io/wiki/django/</link>
       <pubDate>Wed, 28 Aug 2019 23:57:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/django/</guid>
       <description>&lt;p&gt;紀錄Django安裝、新增專案以及使用方式等。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,117 +4,93 @@
     <title>Web on r809&#39;s Notes</title>
     <link>https://r888800009.github.io/tags/web/</link>
     <description>Recent content in Web on r809&#39;s Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 23 May 2020 22:54:42 +0800</lastBuildDate><atom:link href="https://r888800009.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 00:28:44 +0800</lastBuildDate>
+    <atom:link href="https://r888800009.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Json Web Token</title>
       <link>https://r888800009.github.io/wiki/json-web-token/</link>
       <pubDate>Sat, 23 May 2020 22:54:42 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/json-web-token/</guid>
-      <description>用途 SSO 一次性認證 誤用 作為 Session 相關資料 RFC 7519 </description>
+      <description>&lt;h2 id=&#34;用途&#34;&gt;用途&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;SSO&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;一次性&lt;/strong&gt;認證&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;誤用&#34;&gt;誤用&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;作為 Session&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相關資料&#34;&gt;相關資料&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RFC 7519&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Web 爬蟲筆記</title>
       <link>https://r888800009.github.io/wiki/web-crawler/</link>
       <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/web-crawler/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>WAF繞過</title>
       <link>https://r888800009.github.io/software/security/web/waf-bypass/</link>
       <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/web/waf-bypass/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web滲透測試工具</title>
       <link>https://r888800009.github.io/software/security/web/penetration-testing-tools/</link>
       <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/web/penetration-testing-tools/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web安全筆記</title>
       <link>https://r888800009.github.io/software/security/web/security-notes/</link>
       <pubDate>Tue, 01 Oct 2019 23:09:38 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/web/security-notes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>透過Docker架設Apache啟用CGI</title>
       <link>https://r888800009.github.io/posts/cgi-apache/</link>
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/cgi-apache/</guid>
-      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，
-並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
+      <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，&#xA;並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Web 網頁漏洞與利用方法</title>
       <link>https://r888800009.github.io/software/security/web/vulnerability/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/web/vulnerability/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>PHP</title>
       <link>https://r888800009.github.io/wiki/php/</link>
       <pubDate>Tue, 10 Sep 2019 11:10:20 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/php/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>PHP傳入POST與GET導致FPD漏洞</title>
       <link>https://r888800009.github.io/posts/php-post-get-fpd/</link>
       <pubDate>Thu, 05 Sep 2019 22:20:35 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/php-post-get-fpd/</guid>
       <description>&lt;p&gt;php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Django</title>
       <link>https://r888800009.github.io/wiki/django/</link>
       <pubDate>Wed, 28 Aug 2019 23:57:23 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/wiki/django/</guid>
       <description>&lt;p&gt;紀錄Django安裝、新增專案以及使用方式等。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>辨識Web伺服與應用程式</title>
       <link>https://r888800009.github.io/software/security/web/fingerprint/</link>
       <pubDate>Tue, 27 Aug 2019 15:23:28 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/software/security/web/fingerprint/</guid>
       <description>&lt;p&gt;辨識Web伺服器或應用程式的方法。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Heroku Setup With Flask</title>
       <link>https://r888800009.github.io/posts/heroku-setup-with-flask/</link>
       <pubDate>Fri, 23 Aug 2019 22:58:44 +0800</pubDate>
-      
       <guid>https://r888800009.github.io/posts/heroku-setup-with-flask/</guid>
       <description>&lt;p&gt;heroku設定紀錄，透過範例檔案修改成自己的程式。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
