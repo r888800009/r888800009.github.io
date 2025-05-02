@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+
+<link rel="preload stylesheet" as="style" type="text/css" href="/css/css.css">
+
+
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+
+<title>實作 Decompiler (Make a Decompiler) | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/xt256.min.css">
+
+<a id="website-top"></a>
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        GitHub
+        
+    </a>
+    
+    <a href="/about/" title="About">
+        
+        About
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+    <a href="#website-top">Top</a>
+</nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 10 || prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
+<div id="main"><h1 class="website-name" id="website-name"><a href="http://localhost:1313/" class="website-name">實作 Decompiler (Make a Decompiler)</a></h1>
+<div id="content">Draft<div class="date">
+        <time datetime="2021-12-16 21:23:09 &#43;0800 CST">Thu, 2021 Dec 16</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概念">概念</a></li>
+    <li><a href="#初步了解">初步了解</a>
+      <ul>
+        <li><a href="#關於-if-else-to-asm">關於 if else to asm</a></li>
+        <li><a href="#關於-while-to-asm">關於 while to asm</a></li>
+      </ul>
+    </li>
+    <li><a href="#基本思路">基本思路</a></li>
+    <li><a href="#幾個-level-挑戰">幾個 level 挑戰</a></li>
+    <li><a href="#處理">處理</a></li>
+    <li><a href="#參考">參考</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <p>研究中</p>
+<h2 id="概念">概念</h2>
+<ul>
+<li>
+<p>P-code</p>
+</li>
+<li>
+<p>如何轉換 if-else, for 與 function 成 asm?</p>
+</li>
+</ul>
+<h2 id="初步了解">初步了解</h2>
+<p>Survey 找到 <a href="https://link.springer.com/content/pdf/10.1007%2F978-1-4302-0739-9_5.pdf">Decompiler Design</a> 與 ghidra 反編譯器相關檔案，</p>
+<p>看了一下 ghidra 是不是也是拿 antlr 或 yacc 去 剖析 pcode，底下有相關的檔案。
+<a href="https://github.com/NationalSecurityAgency/ghidra/tree/master/Ghidra/Features/Decompiler/src/decompile/cpp">https://github.com/NationalSecurityAgency/ghidra/tree/master/Ghidra/Features/Decompiler/src/decompile/cpp</a></p>
+<p>為了瞭解編譯器如何產生組合語言，我們可以透過 <a href="https://godbolt.org/">https://godbolt.org/</a> 下去分析這三個 function。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">foo</span>(<span style="color:#66d9ef">int</span> num, <span style="color:#66d9ef">short</span> num2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> num <span style="color:#f92672">+</span> num2;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> num;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bar</span>(<span style="color:#66d9ef">int</span> num, <span style="color:#66d9ef">short</span> num2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">40</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> num <span style="color:#f92672">+</span> num2;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> num;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> num;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bar2</span>(<span style="color:#66d9ef">int</span> num, <span style="color:#66d9ef">short</span> num2) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (num <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">40</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> num <span style="color:#f92672">+</span> num2;
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            num <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        num <span style="color:#f92672">=</span> num2;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> num;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> num;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="關於-if-else-to-asm">關於 if else to asm</h3>
+<p>由於編譯的時候會把 if else 轉成 asm</p>
+<pre tabindex="0"><code>If (cond)
+  statement1;
+else
+  statement2;
+</code></pre><p>可以轉換成下面的偽代碼</p>
+<pre tabindex="0"><code>  cmp cond
+  If (!cond)
+    jmp false
+
+  statement1
+  
+  jmp done
+false:
+  statement2
+done:
+</code></pre><p>看到上面這種方法，就在思考 decompiler 是不是可以拿 antlr 去實作啊?如果有辦法，反過來做以上思路，就可以達成反編譯的效果。</p>
+<p>我們先把偽代碼改成以下形式，可能需要做 multiple-pass，我們一開始先做第一個 pass，如果遇到 jmp 先解析 xref，並且在該位置標上 <code>xref_mark:</code>，為了方便剖析 <code>xref_mark:</code> 可以重複。</p>
+<pre tabindex="0"><code>  instr_cmp
+  instr_jmp
+
+  statement*
+  
+  instr_jmp
+xref_mark:
+
+  statement*
+xref_mark:
+</code></pre><p>但是實際下去研究時，我們會發現，雖然我們可以做 mark，但是得到的依然不是上面的語法。而這個問題要怎麼解決呢?</p>
+<h3 id="關於-while-to-asm">關於 while to asm</h3>
+<h2 id="基本思路">基本思路</h2>
+<ul>
+<li>透過 objdump 產生 intel 格式的反組譯結果</li>
+<li>透過</li>
+</ul>
+<h2 id="幾個-level-挑戰">幾個 level 挑戰</h2>
+<ol>
+<li>對單一函數進行反編譯</li>
+<li>原始 gcc 編譯出來的程式，對每個函數進行反編譯</li>
+<li>透過 <code>strip --strip-unneeded</code> 進行處理 strip symbol，之後嘗試找出 Prologue 與 Epilogue 的片段</li>
+</ol>
+<h2 id="處理">處理</h2>
+<p>為了取得 mnemonic ，可以將反組譯的結果傳入以下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>awk -F <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#e6db74">&#39;{ print $1 }&#39;</span> | sort | uniq
+</span></span></code></pre></div><p><a href="https://r888800009.github.io/system-program/antlr4/">https://r888800009.github.io/system-program/antlr4/</a></p>
+<p>而一開始程式抓到如 <code>0000000000001400 &lt;main&gt;:</code>之類的</p>
+<p>然後需要參考各種指令格式</p>
+<p><a href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">https://www.cs.virginia.edu/~evans/cs216/guides/x86.html</a></p>
+<p>然後需要編寫一段程式對 objdump 的結果進行分析。</p>
+<h2 id="參考">參考</h2>
+<ul>
+<li>Computer systems: a programmer&rsquo;s perspective - 3.6.5</li>
+</ul>
+
+    
+      <hr>
+      
+        <a href="http://localhost:1313/tags/reverse-engineering" class="tags">Reverse Engineering</a>
+      
+        <a href="http://localhost:1313/tags/compiler" class="tags">Compiler</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+  </div>
+  <div>
+    r888800009©2018-2025.
+    All Rights Reserved.
+  </div>
+  
+  <div id="sentences-locate">
+  </div>
+
+<br>
+
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/haskell.min.js"></script>
+<script>
+  hljs.highlightAll()
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<script>
+  function print_sentence(){
+    document.getElementById('sentences-locate').innerHTML = '<blockquote id="random-sentences"></blockquote>';
+
+    var sentence_list = [
+        {
+            'text': 'Hacker:<p>A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.</p>',
+            'url': 'https://datatracker.ietf.org/doc/html/rfc1392',
+            'ref_title': 'RFC1392 Internet Users\' Glossary'
+        },
+      ]
+    var selected_sentence = sentence_list[0];
+    var footer_sentence = document.getElementById('random-sentences')
+    footer_sentence.innerHTML += selected_sentence['text'];
+    var href1 = "<a href=\"" + selected_sentence['url'] +"\">"
+    footer_sentence.innerHTML +=  "- " + href1 + selected_sentence['ref_title'] + "</a>";
+    footer_sentence.setAttribute("cite", selected_sentence['url']);
+  }
+
+  if (Math.floor(Math.random() * 0x100) == 0)
+    print_sentence();
+
+</script>
+</body>
+</html>

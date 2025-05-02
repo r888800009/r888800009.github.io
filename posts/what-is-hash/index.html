@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="theme-color" content="#000000">
+
+<link rel="preload stylesheet" as="style" type="text/css" href="/css/css.css">
+
+
+
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+
+
+<title>What Is Hash | r809&#39;s Notes</title>
+
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/xt256.min.css">
+
+<a id="website-top"></a>
+
+</head>
+    <body><nav id="main-menu">
+    
+    
+    <a href="https://github.com/r888800009" title="">
+        GitHub
+        
+    </a>
+    
+    <a href="/about/" title="About">
+        
+        About
+    </a>
+    
+    <a href="/portfolio/" title="Portfolio">
+        
+        Portfolio
+    </a>
+    
+    <a href="#website-top">Top</a>
+</nav>
+
+<script>
+  var prevScrollpos = window.pageYOffset;
+  var menu = document.getElementById("main-menu");
+
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 10 || prevScrollpos > currentScrollPos) {
+      menu.style.top = "0";
+    } else {
+      menu.style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  }
+</script>
+<div id="main"><h1 class="website-name" id="website-name"><a href="http://localhost:1313/" class="website-name">What Is Hash</a></h1>
+<div id="content">Draft<div class="date">
+        <time datetime="2019-08-30 05:29:50 &#43;0800 CST">Fri, 2019 Aug 30</time>
+    </div>
+
+    <aside>
+      <span onclick="tocToggle()" id="TOCStyle">
+        <b>TOC</b>
+        <span id="TOCState"></span>
+      </span>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#理解hash">理解Hash</a></li>
+    <li><a href="#hash應該有什麼特性">hash應該有什麼特性?</a></li>
+    <li><a href="#hash的應用">Hash的應用</a>
+      <ul>
+        <li><a href="#密碼雜湊函式">密碼雜湊函式</a></li>
+        <li><a href="#哈希表">哈希表</a></li>
+      </ul>
+    </li>
+    <li><a href="#編寫雜湊表">編寫雜湊表</a></li>
+  </ul>
+</nav>
+    </aside>
+
+    <h2 id="理解hash">理解Hash</h2>
+<p>在我們談論雜湊(Hash)之前，我們先看看hash這個單字在英文究竟是什麼意思，比方說 hash brown 的中文為薯餅，其意義將馬鈴薯切碎之後將煎成褐色的薯餅。由馬鈴薯變成薯餅的這個行為，就像雜湊函數(Hash function)將資料加工成雜湊值一般。</p>
+<p>可是hash function好多種，究竟要從哪個學起呢，這邊我們不從SHA-256、MD5談起，這樣實在太難理解了。</p>
+<p>於是我們將<code>f(x) = x % 2048</code>寫成下面這個函數:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hash</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>str)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">*</span>str <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;\0&#39;</span>) {
+</span></span><span style="display:flex;"><span>        result <span style="color:#f92672">=</span> (result <span style="color:#f92672">+</span> <span style="color:#f92672">*</span>str) <span style="color:#f92672">%</span> <span style="color:#ae81ff">2048</span>;
+</span></span><span style="display:flex;"><span>        str<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>這時我們把字串&quot;hash me&quot;給帶進去，之後我們就得到662這個結果，他就是你的雜湊值</p>
+<p>雜湊有什麼好處呢，雜湊可以利用本身的特性達到十分快速的效果，不過相對的也必須付出代價
+碰撞</p>
+<h2 id="hash應該有什麼特性">hash應該有什麼特性?</h2>
+<p>為了讓hash有更好的效果，因此需要。</p>
+<ul>
+<li>質數</li>
+</ul>
+<h2 id="hash的應用">Hash的應用</h2>
+<h3 id="密碼雜湊函式">密碼雜湊函式</h3>
+<h3 id="哈希表">哈希表</h3>
+<h2 id="編寫雜湊表">編寫雜湊表</h2>
+
+    
+      <hr>
+      
+        <a href="http://localhost:1313/tags/hash" class="tags">Hash</a>
+      
+        <a href="http://localhost:1313/tags/data-structures" class="tags">Data Structures</a>
+      
+    
+
+    <script>
+      (function addHeadingLinks(){
+        var article = document.getElementById('content');
+        var headings = article.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        headings.forEach(function(heading){
+          if(heading.id){
+            heading.innerHTML =
+                    '<a class="subheader" ' +
+                    'href="' + '#' + heading.id + '"'+
+                    '>'+
+                    heading.innerHTML +
+                    '</a>';
+          }
+        });
+      })();
+    </script>
+
+    <script>
+      function tocToggle() {
+        var toc = document.getElementById("TableOfContents");
+        var state = document.getElementById("TOCState");
+        if (toc.style.display === "none") {
+          state.innerHTML = "[hide]";
+          toc.style.display = "block";
+        } else {
+          state.innerHTML = "[show]";
+          toc.style.display = "none";
+        }
+      }
+      
+      tocToggle();
+      tocToggle();
+    </script>
+
+
+            </div>
+        </div><footer>
+  <div>
+    <a href="/tags" class="footer">Tags</a>
+  </div>
+  <div>
+    r888800009©2018-2025.
+    All Rights Reserved.
+  </div>
+  
+  <div id="sentences-locate">
+  </div>
+
+<br>
+
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/r.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/haskell.min.js"></script>
+<script>
+  hljs.highlightAll()
+  hljs.registerLanguage("plaintext",function(e){return{disableAutodetect:!0}});
+</script>
+
+<script>
+  function print_sentence(){
+    document.getElementById('sentences-locate').innerHTML = '<blockquote id="random-sentences"></blockquote>';
+
+    var sentence_list = [
+        {
+            'text': 'Hacker:<p>A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.</p>',
+            'url': 'https://datatracker.ietf.org/doc/html/rfc1392',
+            'ref_title': 'RFC1392 Internet Users\' Glossary'
+        },
+      ]
+    var selected_sentence = sentence_list[0];
+    var footer_sentence = document.getElementById('random-sentences')
+    footer_sentence.innerHTML += selected_sentence['text'];
+    var href1 = "<a href=\"" + selected_sentence['url'] +"\">"
+    footer_sentence.innerHTML +=  "- " + href1 + selected_sentence['ref_title'] + "</a>";
+    footer_sentence.setAttribute("cite", selected_sentence['url']);
+  }
+
+  if (Math.floor(Math.random() * 0x100) == 0)
+    print_sentence();
+
+</script>
+</body>
+</html>

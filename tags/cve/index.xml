@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CVE on r809&#39;s Notes</title>
+    <link>http://localhost:1313/tags/cve/</link>
+    <description>Recent content in CVE on r809&#39;s Notes</description>
+    <generator>Hugo</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 17 Dec 2021 07:30:41 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cve/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>復現 log4j CVE-2021-44228</title>
+      <link>http://localhost:1313/posts/log4j-cve-2021-44228/</link>
+      <pubDate>Sun, 12 Dec 2021 08:23:54 +0800</pubDate>
+      <guid>http://localhost:1313/posts/log4j-cve-2021-44228/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
