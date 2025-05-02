@@ -208,12 +208,3 @@ blockquote {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-
-.hljs {
-    background: #000;
-    color: #fff;
-}
-
-.hljs-keyword {
-    color: #0ee;
-}
