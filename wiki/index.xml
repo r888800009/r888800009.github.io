@@ -2,431 +2,431 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wiki on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/wiki/</link>
+    <link>https://r809.tw/wiki/</link>
     <description>Recent content in Wiki on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 02 May 2025 11:28:59 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/wiki/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jun 2025 10:07:08 +0800</lastBuildDate>
+    <atom:link href="https://r809.tw/wiki/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Helm</title>
-      <link>https://r888800009.github.io/wiki/helm/</link>
+      <link>https://r809.tw/wiki/helm/</link>
       <pubDate>Tue, 08 Mar 2022 04:30:00 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/helm/</guid>
+      <guid>https://r809.tw/wiki/helm/</guid>
       <description></description>
     </item>
     <item>
       <title>Neo4j</title>
-      <link>https://r888800009.github.io/wiki/neo4j/</link>
+      <link>https://r809.tw/wiki/neo4j/</link>
       <pubDate>Mon, 07 Mar 2022 07:54:55 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/neo4j/</guid>
+      <guid>https://r809.tw/wiki/neo4j/</guid>
       <description></description>
     </item>
     <item>
       <title>Assembly</title>
-      <link>https://r888800009.github.io/wiki/assembly/</link>
+      <link>https://r809.tw/wiki/assembly/</link>
       <pubDate>Thu, 06 Jan 2022 20:25:43 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/assembly/</guid>
+      <guid>https://r809.tw/wiki/assembly/</guid>
       <description></description>
     </item>
     <item>
       <title>Graphviz</title>
-      <link>https://r888800009.github.io/wiki/graphviz/</link>
+      <link>https://r809.tw/wiki/graphviz/</link>
       <pubDate>Thu, 16 Dec 2021 06:05:32 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/graphviz/</guid>
+      <guid>https://r809.tw/wiki/graphviz/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>https://r888800009.github.io/wiki/kubernetes/</link>
+      <link>https://r809.tw/wiki/kubernetes/</link>
       <pubDate>Sun, 23 Aug 2020 16:55:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/kubernetes/</guid>
+      <guid>https://r809.tw/wiki/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>俄文資訊科學與資訊安全專有名詞收集</title>
-      <link>https://r888800009.github.io/wiki/ru-terms/</link>
+      <link>https://r809.tw/wiki/ru-terms/</link>
       <pubDate>Mon, 17 Aug 2020 04:06:47 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/ru-terms/</guid>
+      <guid>https://r809.tw/wiki/ru-terms/</guid>
       <description></description>
     </item>
     <item>
       <title>OSINT</title>
-      <link>https://r888800009.github.io/wiki/osint/</link>
+      <link>https://r809.tw/wiki/osint/</link>
       <pubDate>Mon, 10 Aug 2020 05:19:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/osint/</guid>
+      <guid>https://r809.tw/wiki/osint/</guid>
       <description>&lt;p&gt;Open-Source Intelligence 公開來源情報&lt;/p&gt;</description>
     </item>
     <item>
       <title>Json Web Token</title>
-      <link>https://r888800009.github.io/wiki/json-web-token/</link>
+      <link>https://r809.tw/wiki/json-web-token/</link>
       <pubDate>Sat, 23 May 2020 22:54:42 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/json-web-token/</guid>
+      <guid>https://r809.tw/wiki/json-web-token/</guid>
       <description>&lt;h2 id=&#34;用途&#34;&gt;用途&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;SSO&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;一次性&lt;/strong&gt;認證&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;誤用&#34;&gt;誤用&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;作為 Session&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相關資料&#34;&gt;相關資料&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RFC 7519&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Autojump</title>
-      <link>https://r888800009.github.io/wiki/autojump/</link>
+      <link>https://r809.tw/wiki/autojump/</link>
       <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/autojump/</guid>
+      <guid>https://r809.tw/wiki/autojump/</guid>
       <description>&lt;p&gt;可容錯輸入部份目錄批配，並且進入目錄&lt;/p&gt;</description>
     </item>
     <item>
       <title>SELinux</title>
-      <link>https://r888800009.github.io/wiki/selinux/</link>
+      <link>https://r809.tw/wiki/selinux/</link>
       <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/selinux/</guid>
+      <guid>https://r809.tw/wiki/selinux/</guid>
       <description></description>
     </item>
     <item>
       <title>量子計算</title>
-      <link>https://r888800009.github.io/wiki/quantum-computer/</link>
+      <link>https://r809.tw/wiki/quantum-computer/</link>
       <pubDate>Sat, 25 Apr 2020 05:23:04 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/quantum-computer/</guid>
+      <guid>https://r809.tw/wiki/quantum-computer/</guid>
       <description></description>
     </item>
     <item>
       <title>最大子陣列問題</title>
-      <link>https://r888800009.github.io/wiki/maximum-subarray/</link>
+      <link>https://r809.tw/wiki/maximum-subarray/</link>
       <pubDate>Tue, 14 Apr 2020 22:36:34 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/maximum-subarray/</guid>
+      <guid>https://r809.tw/wiki/maximum-subarray/</guid>
       <description></description>
     </item>
     <item>
       <title>日誌檢視相關筆記</title>
-      <link>https://r888800009.github.io/wiki/log-notes/</link>
+      <link>https://r809.tw/wiki/log-notes/</link>
       <pubDate>Wed, 08 Apr 2020 22:42:16 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/log-notes/</guid>
+      <guid>https://r809.tw/wiki/log-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>演算法分析筆記</title>
-      <link>https://r888800009.github.io/wiki/algorithm-analysis-notes/</link>
+      <link>https://r809.tw/wiki/algorithm-analysis-notes/</link>
       <pubDate>Mon, 06 Apr 2020 02:25:16 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/algorithm-analysis-notes/</guid>
+      <guid>https://r809.tw/wiki/algorithm-analysis-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>學者網頁索引</title>
-      <link>https://r888800009.github.io/wiki/scholar-index/</link>
+      <link>https://r809.tw/wiki/scholar-index/</link>
       <pubDate>Sat, 04 Apr 2020 00:40:00 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/scholar-index/</guid>
+      <guid>https://r809.tw/wiki/scholar-index/</guid>
       <description>&lt;p&gt;收集各種學界或產業界人士的個人網站，以便了解思想方式。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Haskell</title>
-      <link>https://r888800009.github.io/wiki/haskell/</link>
+      <link>https://r809.tw/wiki/haskell/</link>
       <pubDate>Wed, 04 Mar 2020 21:18:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/haskell/</guid>
+      <guid>https://r809.tw/wiki/haskell/</guid>
       <description></description>
     </item>
     <item>
       <title>密碼學</title>
-      <link>https://r888800009.github.io/wiki/cryptography/</link>
+      <link>https://r809.tw/wiki/cryptography/</link>
       <pubDate>Fri, 28 Feb 2020 23:29:26 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/cryptography/</guid>
+      <guid>https://r809.tw/wiki/cryptography/</guid>
       <description></description>
     </item>
     <item>
       <title>CTF鑑識</title>
-      <link>https://r888800009.github.io/wiki/ctf-forensics/</link>
+      <link>https://r809.tw/wiki/ctf-forensics/</link>
       <pubDate>Sun, 23 Feb 2020 22:21:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/ctf-forensics/</guid>
+      <guid>https://r809.tw/wiki/ctf-forensics/</guid>
       <description></description>
     </item>
     <item>
       <title>鍵盤</title>
-      <link>https://r888800009.github.io/wiki/keyboard/</link>
+      <link>https://r809.tw/wiki/keyboard/</link>
       <pubDate>Sun, 26 Jan 2020 23:52:41 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/keyboard/</guid>
+      <guid>https://r809.tw/wiki/keyboard/</guid>
       <description></description>
     </item>
     <item>
       <title>Chrome</title>
-      <link>https://r888800009.github.io/wiki/chrome/</link>
+      <link>https://r809.tw/wiki/chrome/</link>
       <pubDate>Mon, 20 Jan 2020 23:26:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/chrome/</guid>
+      <guid>https://r809.tw/wiki/chrome/</guid>
       <description></description>
     </item>
     <item>
       <title>RSS</title>
-      <link>https://r888800009.github.io/wiki/rss/</link>
+      <link>https://r809.tw/wiki/rss/</link>
       <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/rss/</guid>
+      <guid>https://r809.tw/wiki/rss/</guid>
       <description>&lt;p&gt;RSS 常用資訊&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux輸入法</title>
-      <link>https://r888800009.github.io/wiki/linux-ime/</link>
+      <link>https://r809.tw/wiki/linux-ime/</link>
       <pubDate>Mon, 13 Jan 2020 22:30:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-ime/</guid>
+      <guid>https://r809.tw/wiki/linux-ime/</guid>
       <description></description>
     </item>
     <item>
       <title>Verilog</title>
-      <link>https://r888800009.github.io/wiki/verilog/</link>
+      <link>https://r809.tw/wiki/verilog/</link>
       <pubDate>Mon, 16 Dec 2019 23:46:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/verilog/</guid>
+      <guid>https://r809.tw/wiki/verilog/</guid>
       <description></description>
     </item>
     <item>
       <title>密碼安全</title>
-      <link>https://r888800009.github.io/wiki/password/</link>
+      <link>https://r809.tw/wiki/password/</link>
       <pubDate>Wed, 11 Dec 2019 22:27:04 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/password/</guid>
+      <guid>https://r809.tw/wiki/password/</guid>
       <description></description>
     </item>
     <item>
       <title>資訊安全</title>
-      <link>https://r888800009.github.io/wiki/information-security/</link>
+      <link>https://r809.tw/wiki/information-security/</link>
       <pubDate>Mon, 02 Dec 2019 09:21:51 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/information-security/</guid>
+      <guid>https://r809.tw/wiki/information-security/</guid>
       <description>&lt;p&gt;資訊安全相關索引&lt;/p&gt;</description>
     </item>
     <item>
       <title>IPv6</title>
-      <link>https://r888800009.github.io/wiki/ipv6/</link>
+      <link>https://r809.tw/wiki/ipv6/</link>
       <pubDate>Thu, 28 Nov 2019 18:50:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/ipv6/</guid>
+      <guid>https://r809.tw/wiki/ipv6/</guid>
       <description></description>
     </item>
     <item>
       <title>終端機常用工具</title>
-      <link>https://r888800009.github.io/wiki/terminal-tools/</link>
+      <link>https://r809.tw/wiki/terminal-tools/</link>
       <pubDate>Fri, 15 Nov 2019 17:15:19 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/terminal-tools/</guid>
+      <guid>https://r809.tw/wiki/terminal-tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Shell</title>
-      <link>https://r888800009.github.io/wiki/shell/</link>
+      <link>https://r809.tw/wiki/shell/</link>
       <pubDate>Sun, 10 Nov 2019 23:22:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/shell/</guid>
+      <guid>https://r809.tw/wiki/shell/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux桌面使用</title>
-      <link>https://r888800009.github.io/wiki/linux-desktop/</link>
+      <link>https://r809.tw/wiki/linux-desktop/</link>
       <pubDate>Sat, 09 Nov 2019 16:48:26 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-desktop/</guid>
+      <guid>https://r809.tw/wiki/linux-desktop/</guid>
       <description></description>
     </item>
     <item>
       <title>Python數學運算與科學運算</title>
-      <link>https://r888800009.github.io/wiki/python-math/</link>
+      <link>https://r809.tw/wiki/python-math/</link>
       <pubDate>Fri, 01 Nov 2019 21:48:55 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/python-math/</guid>
+      <guid>https://r809.tw/wiki/python-math/</guid>
       <description></description>
     </item>
     <item>
       <title>Line Bot</title>
-      <link>https://r888800009.github.io/wiki/line-bot/</link>
+      <link>https://r809.tw/wiki/line-bot/</link>
       <pubDate>Thu, 31 Oct 2019 22:57:26 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/line-bot/</guid>
+      <guid>https://r809.tw/wiki/line-bot/</guid>
       <description></description>
     </item>
     <item>
       <title>WebAuthn</title>
-      <link>https://r888800009.github.io/wiki/web-authn/</link>
+      <link>https://r809.tw/wiki/web-authn/</link>
       <pubDate>Wed, 23 Oct 2019 21:28:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/web-authn/</guid>
+      <guid>https://r809.tw/wiki/web-authn/</guid>
       <description></description>
     </item>
     <item>
       <title>各種程式坑集合</title>
-      <link>https://r888800009.github.io/wiki/bug/</link>
+      <link>https://r809.tw/wiki/bug/</link>
       <pubDate>Tue, 22 Oct 2019 21:55:44 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/bug/</guid>
+      <guid>https://r809.tw/wiki/bug/</guid>
       <description></description>
     </item>
     <item>
       <title>從 0 安裝Linux</title>
-      <link>https://r888800009.github.io/wiki/linux-from-scratch/</link>
+      <link>https://r809.tw/wiki/linux-from-scratch/</link>
       <pubDate>Sat, 19 Oct 2019 21:50:48 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-from-scratch/</guid>
+      <guid>https://r809.tw/wiki/linux-from-scratch/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>https://r888800009.github.io/wiki/markdown/</link>
+      <link>https://r809.tw/wiki/markdown/</link>
       <pubDate>Wed, 16 Oct 2019 21:54:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/markdown/</guid>
+      <guid>https://r809.tw/wiki/markdown/</guid>
       <description></description>
     </item>
     <item>
       <title>newsboat終端機RSS訂閱器</title>
-      <link>https://r888800009.github.io/wiki/newsboat/</link>
+      <link>https://r809.tw/wiki/newsboat/</link>
       <pubDate>Tue, 15 Oct 2019 21:56:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/newsboat/</guid>
+      <guid>https://r809.tw/wiki/newsboat/</guid>
       <description></description>
     </item>
     <item>
       <title>python 模糊搜尋</title>
-      <link>https://r888800009.github.io/wiki/python-fuzz/</link>
+      <link>https://r809.tw/wiki/python-fuzz/</link>
       <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/python-fuzz/</guid>
+      <guid>https://r809.tw/wiki/python-fuzz/</guid>
       <description></description>
     </item>
     <item>
       <title>MySQL</title>
-      <link>https://r888800009.github.io/wiki/mysql/</link>
+      <link>https://r809.tw/wiki/mysql/</link>
       <pubDate>Sat, 12 Oct 2019 19:21:25 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/mysql/</guid>
+      <guid>https://r809.tw/wiki/mysql/</guid>
       <description></description>
     </item>
     <item>
       <title>Web 爬蟲筆記</title>
-      <link>https://r888800009.github.io/wiki/web-crawler/</link>
+      <link>https://r809.tw/wiki/web-crawler/</link>
       <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/web-crawler/</guid>
+      <guid>https://r809.tw/wiki/web-crawler/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>https://r888800009.github.io/wiki/bash/</link>
+      <link>https://r809.tw/wiki/bash/</link>
       <pubDate>Sat, 05 Oct 2019 19:50:13 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/bash/</guid>
+      <guid>https://r809.tw/wiki/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Kali Linux筆記</title>
-      <link>https://r888800009.github.io/wiki/kali-linux/</link>
+      <link>https://r809.tw/wiki/kali-linux/</link>
       <pubDate>Sat, 05 Oct 2019 19:37:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/kali-linux/</guid>
+      <guid>https://r809.tw/wiki/kali-linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux網路</title>
-      <link>https://r888800009.github.io/wiki/linux-network/</link>
+      <link>https://r809.tw/wiki/linux-network/</link>
       <pubDate>Sun, 29 Sep 2019 21:21:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-network/</guid>
+      <guid>https://r809.tw/wiki/linux-network/</guid>
       <description></description>
     </item>
     <item>
       <title>莖葉圖</title>
-      <link>https://r888800009.github.io/wiki/stem-and-leaf/</link>
+      <link>https://r809.tw/wiki/stem-and-leaf/</link>
       <pubDate>Mon, 23 Sep 2019 17:29:20 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/stem-and-leaf/</guid>
+      <guid>https://r809.tw/wiki/stem-and-leaf/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://r888800009.github.io/wiki/linux/</link>
+      <link>https://r809.tw/wiki/linux/</link>
       <pubDate>Sat, 21 Sep 2019 23:00:56 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux/</guid>
+      <guid>https://r809.tw/wiki/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Grep</title>
-      <link>https://r888800009.github.io/wiki/grep/</link>
+      <link>https://r809.tw/wiki/grep/</link>
       <pubDate>Sun, 15 Sep 2019 11:49:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/grep/</guid>
+      <guid>https://r809.tw/wiki/grep/</guid>
       <description></description>
     </item>
     <item>
       <title>PHP</title>
-      <link>https://r888800009.github.io/wiki/php/</link>
+      <link>https://r809.tw/wiki/php/</link>
       <pubDate>Tue, 10 Sep 2019 11:10:20 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/php/</guid>
+      <guid>https://r809.tw/wiki/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://r888800009.github.io/wiki/git/</link>
+      <link>https://r809.tw/wiki/git/</link>
       <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/git/</guid>
+      <guid>https://r809.tw/wiki/git/</guid>
       <description></description>
     </item>
     <item>
       <title>R</title>
-      <link>https://r888800009.github.io/wiki/r/</link>
+      <link>https://r809.tw/wiki/r/</link>
       <pubDate>Tue, 10 Sep 2019 10:26:15 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/r/</guid>
+      <guid>https://r809.tw/wiki/r/</guid>
       <description></description>
     </item>
     <item>
       <title>GCC</title>
-      <link>https://r888800009.github.io/wiki/gcc/</link>
+      <link>https://r809.tw/wiki/gcc/</link>
       <pubDate>Tue, 10 Sep 2019 10:20:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/gcc/</guid>
+      <guid>https://r809.tw/wiki/gcc/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://r888800009.github.io/wiki/python/</link>
+      <link>https://r809.tw/wiki/python/</link>
       <pubDate>Fri, 06 Sep 2019 12:42:42 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/python/</guid>
+      <guid>https://r809.tw/wiki/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>https://r888800009.github.io/wiki/docker/</link>
+      <link>https://r809.tw/wiki/docker/</link>
       <pubDate>Thu, 05 Sep 2019 06:44:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/docker/</guid>
+      <guid>https://r809.tw/wiki/docker/</guid>
       <description>&lt;p&gt;Docker的筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux權限</title>
-      <link>https://r888800009.github.io/wiki/linux-permission/</link>
+      <link>https://r809.tw/wiki/linux-permission/</link>
       <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
+      <guid>https://r809.tw/wiki/linux-permission/</guid>
       <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux 文件管理</title>
-      <link>https://r888800009.github.io/wiki/linux-file/</link>
+      <link>https://r809.tw/wiki/linux-file/</link>
       <pubDate>Thu, 05 Sep 2019 05:47:01 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-file/</guid>
+      <guid>https://r809.tw/wiki/linux-file/</guid>
       <description>&lt;p&gt;Linux一些常用於文件管理的筆記。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Arch Linux</title>
-      <link>https://r888800009.github.io/wiki/archlinux/</link>
+      <link>https://r809.tw/wiki/archlinux/</link>
       <pubDate>Thu, 05 Sep 2019 05:29:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/archlinux/</guid>
+      <guid>https://r809.tw/wiki/archlinux/</guid>
       <description></description>
     </item>
     <item>
       <title>Vim</title>
-      <link>https://r888800009.github.io/wiki/vim/</link>
+      <link>https://r809.tw/wiki/vim/</link>
       <pubDate>Fri, 30 Aug 2019 05:13:14 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/vim/</guid>
+      <guid>https://r809.tw/wiki/vim/</guid>
       <description>&lt;p&gt;存放vim的筆記。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Django</title>
-      <link>https://r888800009.github.io/wiki/django/</link>
+      <link>https://r809.tw/wiki/django/</link>
       <pubDate>Wed, 28 Aug 2019 23:57:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/django/</guid>
+      <guid>https://r809.tw/wiki/django/</guid>
       <description>&lt;p&gt;紀錄Django安裝、新增專案以及使用方式等。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Secure Shell</title>
-      <link>https://r888800009.github.io/wiki/secure-shell/</link>
+      <link>https://r809.tw/wiki/secure-shell/</link>
       <pubDate>Tue, 27 Aug 2019 11:58:33 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/secure-shell/</guid>
+      <guid>https://r809.tw/wiki/secure-shell/</guid>
       <description>&lt;p&gt;SSH筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Qemu</title>
-      <link>https://r888800009.github.io/wiki/qemu/</link>
+      <link>https://r809.tw/wiki/qemu/</link>
       <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/qemu/</guid>
+      <guid>https://r809.tw/wiki/qemu/</guid>
       <description>&lt;p&gt;QEMU常用參數紀錄&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://r888800009.github.io/wiki/hugo/</link>
+      <link>https://r809.tw/wiki/hugo/</link>
       <pubDate>Sun, 18 Aug 2019 21:23:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/hugo/</guid>
+      <guid>https://r809.tw/wiki/hugo/</guid>
       <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;的指令與筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo 模板的一些配置</title>
-      <link>https://r888800009.github.io/wiki/hugo-template/</link>
+      <link>https://r809.tw/wiki/hugo-template/</link>
       <pubDate>Sun, 18 Aug 2019 21:19:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/hugo-template/</guid>
-      <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;配置版模會用到的筆記，&#xA;非模板內容參見 &lt;a href=&#34;https://r888800009.github.io/wiki/hugo/&#34;&gt;hugo&lt;/a&gt;。&lt;/p&gt;</description>
+      <guid>https://r809.tw/wiki/hugo-template/</guid>
+      <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;配置版模會用到的筆記，&#xA;非模板內容參見 &lt;a href=&#34;https://r809.tw/wiki/hugo/&#34;&gt;hugo&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

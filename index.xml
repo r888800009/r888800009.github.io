@@ -2,1242 +2,1242 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/</link>
+    <link>https://r809.tw/</link>
     <description>Recent content on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 02 May 2025 11:28:59 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jun 2025 10:07:08 +0800</lastBuildDate>
+    <atom:link href="https://r809.tw/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Security Lab List</title>
-      <link>https://r888800009.github.io/system-security-lab-list/</link>
+      <link>https://r809.tw/system-security-lab-list/</link>
       <pubDate>Sun, 06 Nov 2022 02:23:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-security-lab-list/</guid>
+      <guid>https://r809.tw/system-security-lab-list/</guid>
       <description>&lt;p&gt;I collected some lab I interested, about the system security, fuzzing, vulnerability discovery, symbolic execution or taint.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Windows Heap</title>
-      <link>https://r888800009.github.io/software/security/binary/windows-heap/</link>
+      <link>https://r809.tw/software/security/binary/windows-heap/</link>
       <pubDate>Sat, 02 Apr 2022 22:49:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/windows-heap/</guid>
+      <guid>https://r809.tw/software/security/binary/windows-heap/</guid>
       <description></description>
     </item>
     <item>
       <title>IEEE 802.11</title>
-      <link>https://r888800009.github.io/network/ieee-802.11/</link>
+      <link>https://r809.tw/network/ieee-802.11/</link>
       <pubDate>Wed, 30 Mar 2022 01:40:12 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/ieee-802.11/</guid>
+      <guid>https://r809.tw/network/ieee-802.11/</guid>
       <description></description>
     </item>
     <item>
       <title>SSH Protocol</title>
-      <link>https://r888800009.github.io/network/ssh-protocol/</link>
+      <link>https://r809.tw/network/ssh-protocol/</link>
       <pubDate>Wed, 30 Mar 2022 01:38:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/ssh-protocol/</guid>
+      <guid>https://r809.tw/network/ssh-protocol/</guid>
       <description></description>
     </item>
     <item>
       <title>Talloc</title>
-      <link>https://r888800009.github.io/software/security/binary/talloc/</link>
+      <link>https://r809.tw/software/security/binary/talloc/</link>
       <pubDate>Sun, 27 Mar 2022 11:36:43 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/talloc/</guid>
+      <guid>https://r809.tw/software/security/binary/talloc/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux Kernel Module</title>
-      <link>https://r888800009.github.io/operating-system/linux-kernel-module/</link>
+      <link>https://r809.tw/operating-system/linux-kernel-module/</link>
       <pubDate>Tue, 22 Mar 2022 15:48:15 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/linux-kernel-module/</guid>
+      <guid>https://r809.tw/operating-system/linux-kernel-module/</guid>
       <description></description>
     </item>
     <item>
       <title>Helm</title>
-      <link>https://r888800009.github.io/wiki/helm/</link>
+      <link>https://r809.tw/wiki/helm/</link>
       <pubDate>Tue, 08 Mar 2022 04:30:00 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/helm/</guid>
+      <guid>https://r809.tw/wiki/helm/</guid>
       <description></description>
     </item>
     <item>
       <title>Neo4j</title>
-      <link>https://r888800009.github.io/wiki/neo4j/</link>
+      <link>https://r809.tw/wiki/neo4j/</link>
       <pubDate>Mon, 07 Mar 2022 07:54:55 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/neo4j/</guid>
+      <guid>https://r809.tw/wiki/neo4j/</guid>
       <description></description>
     </item>
     <item>
       <title>Kmalloc</title>
-      <link>https://r888800009.github.io/software/security/binary/kmalloc/</link>
+      <link>https://r809.tw/software/security/binary/kmalloc/</link>
       <pubDate>Tue, 25 Jan 2022 02:09:21 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/kmalloc/</guid>
+      <guid>https://r809.tw/software/security/binary/kmalloc/</guid>
       <description></description>
     </item>
     <item>
       <title>Qiling</title>
-      <link>https://r888800009.github.io/firmware/qiling/</link>
+      <link>https://r809.tw/firmware/qiling/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      <guid>https://r888800009.github.io/firmware/qiling/</guid>
+      <guid>https://r809.tw/firmware/qiling/</guid>
       <description></description>
     </item>
     <item>
       <title>File System</title>
-      <link>https://r888800009.github.io/operating-system/file-system/</link>
+      <link>https://r809.tw/operating-system/file-system/</link>
       <pubDate>Sat, 08 Jan 2022 22:37:59 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/file-system/</guid>
+      <guid>https://r809.tw/operating-system/file-system/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux Page</title>
-      <link>https://r888800009.github.io/operating-system/linux-page/</link>
+      <link>https://r809.tw/operating-system/linux-page/</link>
       <pubDate>Sat, 08 Jan 2022 22:21:09 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/linux-page/</guid>
+      <guid>https://r809.tw/operating-system/linux-page/</guid>
       <description></description>
     </item>
     <item>
       <title>BIOS and UEFI</title>
-      <link>https://r888800009.github.io/firmware/bios-and-uefi/</link>
+      <link>https://r809.tw/firmware/bios-and-uefi/</link>
       <pubDate>Fri, 07 Jan 2022 02:04:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/firmware/bios-and-uefi/</guid>
+      <guid>https://r809.tw/firmware/bios-and-uefi/</guid>
       <description></description>
     </item>
     <item>
       <title>Assembly</title>
-      <link>https://r888800009.github.io/wiki/assembly/</link>
+      <link>https://r809.tw/wiki/assembly/</link>
       <pubDate>Thu, 06 Jan 2022 20:25:43 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/assembly/</guid>
+      <guid>https://r809.tw/wiki/assembly/</guid>
       <description></description>
     </item>
     <item>
       <title>CodeQL</title>
-      <link>https://r888800009.github.io/software/security/codeql/</link>
+      <link>https://r809.tw/software/security/codeql/</link>
       <pubDate>Sun, 26 Dec 2021 08:31:06 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/codeql/</guid>
+      <guid>https://r809.tw/software/security/codeql/</guid>
       <description></description>
     </item>
     <item>
       <title>Process Address Space</title>
-      <link>https://r888800009.github.io/operating-system/process-address-space/</link>
+      <link>https://r809.tw/operating-system/process-address-space/</link>
       <pubDate>Sat, 25 Dec 2021 06:42:02 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/process-address-space/</guid>
+      <guid>https://r809.tw/operating-system/process-address-space/</guid>
       <description></description>
     </item>
     <item>
       <title>VTable Hijacking</title>
-      <link>https://r888800009.github.io/software/security/binary/vtable-hijacking/</link>
+      <link>https://r809.tw/software/security/binary/vtable-hijacking/</link>
       <pubDate>Thu, 16 Dec 2021 10:15:54 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/vtable-hijacking/</guid>
+      <guid>https://r809.tw/software/security/binary/vtable-hijacking/</guid>
       <description></description>
     </item>
     <item>
       <title>Graphviz</title>
-      <link>https://r888800009.github.io/wiki/graphviz/</link>
+      <link>https://r809.tw/wiki/graphviz/</link>
       <pubDate>Thu, 16 Dec 2021 06:05:32 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/graphviz/</guid>
+      <guid>https://r809.tw/wiki/graphviz/</guid>
       <description></description>
     </item>
     <item>
       <title>Kernel Exploit</title>
-      <link>https://r888800009.github.io/software/security/binary/kernel-exploit/</link>
+      <link>https://r809.tw/software/security/binary/kernel-exploit/</link>
       <pubDate>Tue, 09 Nov 2021 10:14:38 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/kernel-exploit/</guid>
+      <guid>https://r809.tw/software/security/binary/kernel-exploit/</guid>
       <description></description>
     </item>
     <item>
       <title>連結器 (Linker)</title>
-      <link>https://r888800009.github.io/system-program/linker/</link>
+      <link>https://r809.tw/system-program/linker/</link>
       <pubDate>Tue, 09 Nov 2021 04:08:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/linker/</guid>
+      <guid>https://r809.tw/system-program/linker/</guid>
       <description></description>
     </item>
     <item>
       <title>PartitionAlloc</title>
-      <link>https://r888800009.github.io/software/security/binary/partitionalloc/</link>
+      <link>https://r809.tw/software/security/binary/partitionalloc/</link>
       <pubDate>Sat, 06 Nov 2021 03:50:30 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/partitionalloc/</guid>
+      <guid>https://r809.tw/software/security/binary/partitionalloc/</guid>
       <description></description>
     </item>
     <item>
       <title>About</title>
-      <link>https://r888800009.github.io/about/</link>
+      <link>https://r809.tw/about/</link>
       <pubDate>Thu, 07 Oct 2021 14:47:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/about/</guid>
+      <guid>https://r809.tw/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Taint Analysis</title>
-      <link>https://r888800009.github.io/software/security/taint-analysis/</link>
+      <link>https://r809.tw/software/security/taint-analysis/</link>
       <pubDate>Thu, 29 Jul 2021 23:28:24 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/taint-analysis/</guid>
+      <guid>https://r809.tw/software/security/taint-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>OpenCC 臺灣繁體轉換常見問題</title>
-      <link>https://r888800009.github.io/nlp/opencc-tw-faq/</link>
+      <link>https://r809.tw/nlp/opencc-tw-faq/</link>
       <pubDate>Wed, 07 Jul 2021 22:37:34 +0800</pubDate>
-      <guid>https://r888800009.github.io/nlp/opencc-tw-faq/</guid>
+      <guid>https://r809.tw/nlp/opencc-tw-faq/</guid>
       <description></description>
     </item>
     <item>
       <title>自然語言處理</title>
-      <link>https://r888800009.github.io/nlp/nlp/</link>
+      <link>https://r809.tw/nlp/nlp/</link>
       <pubDate>Tue, 22 Jun 2021 09:29:42 +0800</pubDate>
-      <guid>https://r888800009.github.io/nlp/nlp/</guid>
+      <guid>https://r809.tw/nlp/nlp/</guid>
       <description></description>
     </item>
     <item>
       <title>Intel SDE 軟模擬 CET</title>
-      <link>https://r888800009.github.io/software/security/binary/intel-sde-cet/</link>
+      <link>https://r809.tw/software/security/binary/intel-sde-cet/</link>
       <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/intel-sde-cet/</guid>
+      <guid>https://r809.tw/software/security/binary/intel-sde-cet/</guid>
       <description></description>
     </item>
     <item>
       <title>Mac M1 Install Pwntools, Solve &#39;as&#39; and bus error</title>
-      <link>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</link>
+      <link>https://r809.tw/software/security/binary/pwntools-mac-m1-install/</link>
       <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</guid>
+      <guid>https://r809.tw/software/security/binary/pwntools-mac-m1-install/</guid>
       <description>&lt;p&gt;解決 Mac M1 安裝 pwntools 找不到 as 的問題，與其他如 bus error 等等的問題。由於 M1 剛出沒多久，配適上可能還沒完成，或許在未來 pwntools 的版本會解決的這些問題，而目前這些方法可以使 pwntools 在 M1 上面運行。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Honggfuzz</title>
-      <link>https://r888800009.github.io/software/security/honggfuzz/</link>
+      <link>https://r809.tw/software/security/honggfuzz/</link>
       <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/honggfuzz/</guid>
+      <guid>https://r809.tw/software/security/honggfuzz/</guid>
       <description>&lt;p&gt;Honggfuzz 筆記，透過 docker 執行 Honggfuzz 並啟用 qemu 模式進行 fuzzing。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Angr</title>
-      <link>https://r888800009.github.io/software/security/angr/</link>
+      <link>https://r809.tw/software/security/angr/</link>
       <pubDate>Tue, 29 Sep 2020 13:29:42 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/angr/</guid>
+      <guid>https://r809.tw/software/security/angr/</guid>
       <description></description>
     </item>
     <item>
       <title>AEG</title>
-      <link>https://r888800009.github.io/software/security/aeg/</link>
+      <link>https://r809.tw/software/security/aeg/</link>
       <pubDate>Sun, 20 Sep 2020 22:23:22 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/aeg/</guid>
+      <guid>https://r809.tw/software/security/aeg/</guid>
       <description></description>
     </item>
     <item>
       <title>符號執行</title>
-      <link>https://r888800009.github.io/software/security/symbolic-execution/</link>
+      <link>https://r809.tw/software/security/symbolic-execution/</link>
       <pubDate>Sat, 19 Sep 2020 04:26:02 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/symbolic-execution/</guid>
+      <guid>https://r809.tw/software/security/symbolic-execution/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>https://r888800009.github.io/wiki/kubernetes/</link>
+      <link>https://r809.tw/wiki/kubernetes/</link>
       <pubDate>Sun, 23 Aug 2020 16:55:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/kubernetes/</guid>
+      <guid>https://r809.tw/wiki/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>俄文資訊科學與資訊安全專有名詞收集</title>
-      <link>https://r888800009.github.io/wiki/ru-terms/</link>
+      <link>https://r809.tw/wiki/ru-terms/</link>
       <pubDate>Mon, 17 Aug 2020 04:06:47 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/ru-terms/</guid>
+      <guid>https://r809.tw/wiki/ru-terms/</guid>
       <description></description>
     </item>
     <item>
       <title>OSINT</title>
-      <link>https://r888800009.github.io/wiki/osint/</link>
+      <link>https://r809.tw/wiki/osint/</link>
       <pubDate>Mon, 10 Aug 2020 05:19:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/osint/</guid>
+      <guid>https://r809.tw/wiki/osint/</guid>
       <description>&lt;p&gt;Open-Source Intelligence 公開來源情報&lt;/p&gt;</description>
     </item>
     <item>
       <title>Heap Exploit</title>
-      <link>https://r888800009.github.io/software/security/binary/heap/</link>
+      <link>https://r809.tw/software/security/binary/heap/</link>
       <pubDate>Mon, 10 Aug 2020 04:38:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/heap/</guid>
+      <guid>https://r809.tw/software/security/binary/heap/</guid>
       <description>&lt;p&gt;堆積利用筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Firmware Reversing</title>
-      <link>https://r888800009.github.io/firmware/reverse/</link>
+      <link>https://r809.tw/firmware/reverse/</link>
       <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/firmware/reverse/</guid>
+      <guid>https://r809.tw/firmware/reverse/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] Virtual Memory</title>
-      <link>https://r888800009.github.io/operating-system/os9/</link>
+      <link>https://r809.tw/operating-system/os9/</link>
       <pubDate>Sun, 07 Jun 2020 06:44:13 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os9/</guid>
+      <guid>https://r809.tw/operating-system/os9/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] Memory Management</title>
-      <link>https://r888800009.github.io/operating-system/os8/</link>
+      <link>https://r809.tw/operating-system/os8/</link>
       <pubDate>Mon, 25 May 2020 23:14:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os8/</guid>
+      <guid>https://r809.tw/operating-system/os8/</guid>
       <description></description>
     </item>
     <item>
       <title>Json Web Token</title>
-      <link>https://r888800009.github.io/wiki/json-web-token/</link>
+      <link>https://r809.tw/wiki/json-web-token/</link>
       <pubDate>Sat, 23 May 2020 22:54:42 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/json-web-token/</guid>
+      <guid>https://r809.tw/wiki/json-web-token/</guid>
       <description>&lt;h2 id=&#34;用途&#34;&gt;用途&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;SSO&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;一次性&lt;/strong&gt;認證&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;誤用&#34;&gt;誤用&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;作為 Session&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;相關資料&#34;&gt;相關資料&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;RFC 7519&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Yara</title>
-      <link>https://r888800009.github.io/software/security/yara/</link>
+      <link>https://r809.tw/software/security/yara/</link>
       <pubDate>Fri, 22 May 2020 01:57:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/yara/</guid>
+      <guid>https://r809.tw/software/security/yara/</guid>
       <description></description>
     </item>
     <item>
       <title>Autojump</title>
-      <link>https://r888800009.github.io/wiki/autojump/</link>
+      <link>https://r809.tw/wiki/autojump/</link>
       <pubDate>Tue, 19 May 2020 18:26:59 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/autojump/</guid>
+      <guid>https://r809.tw/wiki/autojump/</guid>
       <description>&lt;p&gt;可容錯輸入部份目錄批配，並且進入目錄&lt;/p&gt;</description>
     </item>
     <item>
       <title>SELinux</title>
-      <link>https://r888800009.github.io/wiki/selinux/</link>
+      <link>https://r809.tw/wiki/selinux/</link>
       <pubDate>Mon, 18 May 2020 23:41:08 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/selinux/</guid>
+      <guid>https://r809.tw/wiki/selinux/</guid>
       <description></description>
     </item>
     <item>
       <title>漏洞緩解技術</title>
-      <link>https://r888800009.github.io/software/security/exploit-mitigation/</link>
+      <link>https://r809.tw/software/security/exploit-mitigation/</link>
       <pubDate>Sun, 17 May 2020 20:47:41 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/exploit-mitigation/</guid>
+      <guid>https://r809.tw/software/security/exploit-mitigation/</guid>
       <description></description>
     </item>
     <item>
       <title>混淆</title>
-      <link>https://r888800009.github.io/software/security/obfuscation/</link>
+      <link>https://r809.tw/software/security/obfuscation/</link>
       <pubDate>Thu, 14 May 2020 14:15:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/obfuscation/</guid>
+      <guid>https://r809.tw/software/security/obfuscation/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] Deadlock</title>
-      <link>https://r888800009.github.io/operating-system/os7/</link>
+      <link>https://r809.tw/operating-system/os7/</link>
       <pubDate>Tue, 12 May 2020 21:13:39 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os7/</guid>
+      <guid>https://r809.tw/operating-system/os7/</guid>
       <description></description>
     </item>
     <item>
       <title>Leetcode 322 找零錢</title>
-      <link>https://r888800009.github.io/posts/leetcode-322/</link>
+      <link>https://r809.tw/posts/leetcode-322/</link>
       <pubDate>Sat, 02 May 2020 20:03:10 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-322/</guid>
+      <guid>https://r809.tw/posts/leetcode-322/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] Process Synchronization</title>
-      <link>https://r888800009.github.io/operating-system/os6/</link>
+      <link>https://r809.tw/operating-system/os6/</link>
       <pubDate>Tue, 28 Apr 2020 04:42:16 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os6/</guid>
+      <guid>https://r809.tw/operating-system/os6/</guid>
       <description></description>
     </item>
     <item>
       <title>量子計算</title>
-      <link>https://r888800009.github.io/wiki/quantum-computer/</link>
+      <link>https://r809.tw/wiki/quantum-computer/</link>
       <pubDate>Sat, 25 Apr 2020 05:23:04 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/quantum-computer/</guid>
+      <guid>https://r809.tw/wiki/quantum-computer/</guid>
       <description></description>
     </item>
     <item>
       <title>軟體文件產生</title>
-      <link>https://r888800009.github.io/software/document-generation/</link>
+      <link>https://r809.tw/software/document-generation/</link>
       <pubDate>Tue, 21 Apr 2020 19:07:20 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/document-generation/</guid>
+      <guid>https://r809.tw/software/document-generation/</guid>
       <description></description>
     </item>
     <item>
       <title>惡意程式分析</title>
-      <link>https://r888800009.github.io/software/security/malware-analysis/</link>
+      <link>https://r809.tw/software/security/malware-analysis/</link>
       <pubDate>Thu, 16 Apr 2020 23:51:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/malware-analysis/</guid>
+      <guid>https://r809.tw/software/security/malware-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>最大子陣列問題</title>
-      <link>https://r888800009.github.io/wiki/maximum-subarray/</link>
+      <link>https://r809.tw/wiki/maximum-subarray/</link>
       <pubDate>Tue, 14 Apr 2020 22:36:34 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/maximum-subarray/</guid>
+      <guid>https://r809.tw/wiki/maximum-subarray/</guid>
       <description></description>
     </item>
     <item>
       <title>日誌檢視相關筆記</title>
-      <link>https://r888800009.github.io/wiki/log-notes/</link>
+      <link>https://r809.tw/wiki/log-notes/</link>
       <pubDate>Wed, 08 Apr 2020 22:42:16 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/log-notes/</guid>
+      <guid>https://r809.tw/wiki/log-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>[網路安全] 網路存取控制</title>
-      <link>https://r888800009.github.io/network-security/net-sec5/</link>
+      <link>https://r809.tw/network-security/net-sec5/</link>
       <pubDate>Tue, 07 Apr 2020 04:44:29 +0800</pubDate>
-      <guid>https://r888800009.github.io/network-security/net-sec5/</guid>
+      <guid>https://r809.tw/network-security/net-sec5/</guid>
       <description></description>
     </item>
     <item>
       <title>演算法分析筆記</title>
-      <link>https://r888800009.github.io/wiki/algorithm-analysis-notes/</link>
+      <link>https://r809.tw/wiki/algorithm-analysis-notes/</link>
       <pubDate>Mon, 06 Apr 2020 02:25:16 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/algorithm-analysis-notes/</guid>
+      <guid>https://r809.tw/wiki/algorithm-analysis-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>學者網頁索引</title>
-      <link>https://r888800009.github.io/wiki/scholar-index/</link>
+      <link>https://r809.tw/wiki/scholar-index/</link>
       <pubDate>Sat, 04 Apr 2020 00:40:00 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/scholar-index/</guid>
+      <guid>https://r809.tw/wiki/scholar-index/</guid>
       <description>&lt;p&gt;收集各種學界或產業界人士的個人網站，以便了解思想方式。&lt;/p&gt;</description>
     </item>
     <item>
       <title>術語與符號</title>
-      <link>https://r888800009.github.io/terms-and-symbols/</link>
+      <link>https://r809.tw/terms-and-symbols/</link>
       <pubDate>Fri, 03 Apr 2020 05:35:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/terms-and-symbols/</guid>
+      <guid>https://r809.tw/terms-and-symbols/</guid>
       <description>&lt;p&gt;收集與定義各種學科的術語與符號，以便更精確的描述&#xA;任何事物。&lt;/p&gt;</description>
     </item>
     <item>
       <title>打破 Kill Chain</title>
-      <link>https://r888800009.github.io/posts/breaking-kill-chain/</link>
+      <link>https://r809.tw/posts/breaking-kill-chain/</link>
       <pubDate>Wed, 01 Apr 2020 02:09:08 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/breaking-kill-chain/</guid>
+      <guid>https://r809.tw/posts/breaking-kill-chain/</guid>
       <description>&lt;p&gt;Cyber Kill Chain為Lockheed Martin發展出的framework，&#xA;用於解釋APT攻擊，並且探討如何打破Kill chain進行。&lt;/p&gt;&#xA;&lt;p&gt;該文為 &lt;a href=&#34;https://www.youtube.com/watch?v=II91fiUax2g&#34;&gt;Breaking The Kill Chain: A Defensive Approach&lt;/a&gt;&#xA;的筆記與補充&lt;/p&gt;</description>
     </item>
     <item>
       <title>[OS] CPU 排程方法</title>
-      <link>https://r888800009.github.io/operating-system/os5/</link>
+      <link>https://r809.tw/operating-system/os5/</link>
       <pubDate>Tue, 31 Mar 2020 23:21:09 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os5/</guid>
+      <guid>https://r809.tw/operating-system/os5/</guid>
       <description></description>
     </item>
     <item>
       <title>[網路安全] 金鑰分發 用戶認證</title>
-      <link>https://r888800009.github.io/network-security/net-sec4/</link>
+      <link>https://r809.tw/network-security/net-sec4/</link>
       <pubDate>Mon, 30 Mar 2020 21:00:40 +0800</pubDate>
-      <guid>https://r888800009.github.io/network-security/net-sec4/</guid>
+      <guid>https://r809.tw/network-security/net-sec4/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] Process</title>
-      <link>https://r888800009.github.io/operating-system/os4/</link>
+      <link>https://r809.tw/operating-system/os4/</link>
       <pubDate>Mon, 23 Mar 2020 10:47:48 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os4/</guid>
+      <guid>https://r809.tw/operating-system/os4/</guid>
       <description></description>
     </item>
     <item>
       <title>[網路安全] 公鑰與訊息認證</title>
-      <link>https://r888800009.github.io/network-security/net-sec3/</link>
+      <link>https://r809.tw/network-security/net-sec3/</link>
       <pubDate>Fri, 20 Mar 2020 23:39:44 +0800</pubDate>
-      <guid>https://r888800009.github.io/network-security/net-sec3/</guid>
+      <guid>https://r809.tw/network-security/net-sec3/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] Operating System Structure</title>
-      <link>https://r888800009.github.io/operating-system/os3/</link>
+      <link>https://r809.tw/operating-system/os3/</link>
       <pubDate>Tue, 17 Mar 2020 09:20:08 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os3/</guid>
+      <guid>https://r809.tw/operating-system/os3/</guid>
       <description></description>
     </item>
     <item>
       <title>[網路安全] 對稱加密與訊息機密性</title>
-      <link>https://r888800009.github.io/network-security/net-sec2/</link>
+      <link>https://r809.tw/network-security/net-sec2/</link>
       <pubDate>Sun, 15 Mar 2020 22:38:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/network-security/net-sec2/</guid>
+      <guid>https://r809.tw/network-security/net-sec2/</guid>
       <description></description>
     </item>
     <item>
       <title>[Exploiting Software] 第六節 製造惡意輸入</title>
-      <link>https://r888800009.github.io/book-notes/exploiting-software/ch6-notes/</link>
+      <link>https://r809.tw/book-notes/exploiting-software/ch6-notes/</link>
       <pubDate>Thu, 12 Mar 2020 20:40:03 +0800</pubDate>
-      <guid>https://r888800009.github.io/book-notes/exploiting-software/ch6-notes/</guid>
+      <guid>https://r809.tw/book-notes/exploiting-software/ch6-notes/</guid>
       <description>&lt;p&gt;關於本書閱讀的隨筆筆記，尚有不完備之處&lt;/p&gt;</description>
     </item>
     <item>
       <title>[網路安全] 簡介</title>
-      <link>https://r888800009.github.io/network-security/net-sec1/</link>
+      <link>https://r809.tw/network-security/net-sec1/</link>
       <pubDate>Mon, 09 Mar 2020 22:23:42 +0800</pubDate>
-      <guid>https://r888800009.github.io/network-security/net-sec1/</guid>
+      <guid>https://r809.tw/network-security/net-sec1/</guid>
       <description></description>
     </item>
     <item>
       <title>編寫Recursive Descent Parser的方法</title>
-      <link>https://r888800009.github.io/programming-language/a-way-to-writing-recursive-descent-parser/</link>
+      <link>https://r809.tw/programming-language/a-way-to-writing-recursive-descent-parser/</link>
       <pubDate>Fri, 06 Mar 2020 12:01:03 +0800</pubDate>
-      <guid>https://r888800009.github.io/programming-language/a-way-to-writing-recursive-descent-parser/</guid>
+      <guid>https://r809.tw/programming-language/a-way-to-writing-recursive-descent-parser/</guid>
       <description></description>
     </item>
     <item>
       <title>Haskell</title>
-      <link>https://r888800009.github.io/wiki/haskell/</link>
+      <link>https://r809.tw/wiki/haskell/</link>
       <pubDate>Wed, 04 Mar 2020 21:18:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/haskell/</guid>
+      <guid>https://r809.tw/wiki/haskell/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] Computer System Structure </title>
-      <link>https://r888800009.github.io/operating-system/os2/</link>
+      <link>https://r809.tw/operating-system/os2/</link>
       <pubDate>Tue, 03 Mar 2020 17:43:22 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os2/</guid>
+      <guid>https://r809.tw/operating-system/os2/</guid>
       <description></description>
     </item>
     <item>
       <title>密碼學</title>
-      <link>https://r888800009.github.io/wiki/cryptography/</link>
+      <link>https://r809.tw/wiki/cryptography/</link>
       <pubDate>Fri, 28 Feb 2020 23:29:26 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/cryptography/</guid>
+      <guid>https://r809.tw/wiki/cryptography/</guid>
       <description></description>
     </item>
     <item>
       <title>CTF鑑識</title>
-      <link>https://r888800009.github.io/wiki/ctf-forensics/</link>
+      <link>https://r809.tw/wiki/ctf-forensics/</link>
       <pubDate>Sun, 23 Feb 2020 22:21:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/ctf-forensics/</guid>
+      <guid>https://r809.tw/wiki/ctf-forensics/</guid>
       <description></description>
     </item>
     <item>
       <title>[OS] 作業系統簡介</title>
-      <link>https://r888800009.github.io/operating-system/os1/</link>
+      <link>https://r809.tw/operating-system/os1/</link>
       <pubDate>Mon, 17 Feb 2020 23:43:40 +0800</pubDate>
-      <guid>https://r888800009.github.io/operating-system/os1/</guid>
+      <guid>https://r809.tw/operating-system/os1/</guid>
       <description></description>
     </item>
     <item>
       <title>沙箱 (Sandbox)</title>
-      <link>https://r888800009.github.io/software/security/sandbox/</link>
+      <link>https://r809.tw/software/security/sandbox/</link>
       <pubDate>Sun, 09 Feb 2020 23:45:08 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/sandbox/</guid>
+      <guid>https://r809.tw/software/security/sandbox/</guid>
       <description></description>
     </item>
     <item>
       <title>Dijkstra</title>
-      <link>https://r888800009.github.io/posts/dijkstra/</link>
+      <link>https://r809.tw/posts/dijkstra/</link>
       <pubDate>Fri, 31 Jan 2020 23:38:44 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/dijkstra/</guid>
+      <guid>https://r809.tw/posts/dijkstra/</guid>
       <description></description>
     </item>
     <item>
       <title>霍夫曼編碼</title>
-      <link>https://r888800009.github.io/posts/huffman/</link>
+      <link>https://r809.tw/posts/huffman/</link>
       <pubDate>Mon, 27 Jan 2020 14:52:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/huffman/</guid>
+      <guid>https://r809.tw/posts/huffman/</guid>
       <description></description>
     </item>
     <item>
       <title>鍵盤</title>
-      <link>https://r888800009.github.io/wiki/keyboard/</link>
+      <link>https://r809.tw/wiki/keyboard/</link>
       <pubDate>Sun, 26 Jan 2020 23:52:41 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/keyboard/</guid>
+      <guid>https://r809.tw/wiki/keyboard/</guid>
       <description></description>
     </item>
     <item>
       <title>Antlr4</title>
-      <link>https://r888800009.github.io/system-program/antlr4/</link>
+      <link>https://r809.tw/system-program/antlr4/</link>
       <pubDate>Tue, 21 Jan 2020 23:38:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/antlr4/</guid>
+      <guid>https://r809.tw/system-program/antlr4/</guid>
       <description>&lt;p&gt;antlr4相關筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Chrome</title>
-      <link>https://r888800009.github.io/wiki/chrome/</link>
+      <link>https://r809.tw/wiki/chrome/</link>
       <pubDate>Mon, 20 Jan 2020 23:26:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/chrome/</guid>
+      <guid>https://r809.tw/wiki/chrome/</guid>
       <description></description>
     </item>
     <item>
       <title>RSS</title>
-      <link>https://r888800009.github.io/wiki/rss/</link>
+      <link>https://r809.tw/wiki/rss/</link>
       <pubDate>Sun, 19 Jan 2020 05:21:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/rss/</guid>
+      <guid>https://r809.tw/wiki/rss/</guid>
       <description>&lt;p&gt;RSS 常用資訊&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rabin-Karp演算法</title>
-      <link>https://r888800009.github.io/posts/rabin-karp/</link>
+      <link>https://r809.tw/posts/rabin-karp/</link>
       <pubDate>Tue, 14 Jan 2020 03:20:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/rabin-karp/</guid>
+      <guid>https://r809.tw/posts/rabin-karp/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux輸入法</title>
-      <link>https://r888800009.github.io/wiki/linux-ime/</link>
+      <link>https://r809.tw/wiki/linux-ime/</link>
       <pubDate>Mon, 13 Jan 2020 22:30:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-ime/</guid>
+      <guid>https://r809.tw/wiki/linux-ime/</guid>
       <description></description>
     </item>
     <item>
       <title>等差級數缺少數字</title>
-      <link>https://r888800009.github.io/posts/progression-series-missing-number/</link>
+      <link>https://r809.tw/posts/progression-series-missing-number/</link>
       <pubDate>Tue, 31 Dec 2019 13:37:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/progression-series-missing-number/</guid>
+      <guid>https://r809.tw/posts/progression-series-missing-number/</guid>
       <description>&lt;p&gt;給定一個不完全的等差數列總和，其中缺少一項數字。&lt;/p&gt;&#xA;&lt;p&gt;題目給定總和界限 &lt;code&gt;1 &amp;lt;= sum &amp;lt;= 10 ^ 8&lt;/code&gt;，並要求找出缺少值。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bison Yacc</title>
-      <link>https://r888800009.github.io/system-program/yacc/</link>
+      <link>https://r809.tw/system-program/yacc/</link>
       <pubDate>Fri, 27 Dec 2019 23:36:06 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/yacc/</guid>
+      <guid>https://r809.tw/system-program/yacc/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]軟體工程</title>
-      <link>https://r888800009.github.io/system-program/sp8/</link>
+      <link>https://r809.tw/system-program/sp8/</link>
       <pubDate>Tue, 17 Dec 2019 14:24:07 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp8/</guid>
+      <guid>https://r809.tw/system-program/sp8/</guid>
       <description></description>
     </item>
     <item>
       <title>Verilog</title>
-      <link>https://r888800009.github.io/wiki/verilog/</link>
+      <link>https://r809.tw/wiki/verilog/</link>
       <pubDate>Mon, 16 Dec 2019 23:46:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/verilog/</guid>
+      <guid>https://r809.tw/wiki/verilog/</guid>
       <description></description>
     </item>
     <item>
       <title>密碼安全</title>
-      <link>https://r888800009.github.io/wiki/password/</link>
+      <link>https://r809.tw/wiki/password/</link>
       <pubDate>Wed, 11 Dec 2019 22:27:04 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/password/</guid>
+      <guid>https://r809.tw/wiki/password/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]資料庫系統</title>
-      <link>https://r888800009.github.io/system-program/sp7/</link>
+      <link>https://r809.tw/system-program/sp7/</link>
       <pubDate>Sat, 07 Dec 2019 23:42:07 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp7/</guid>
+      <guid>https://r809.tw/system-program/sp7/</guid>
       <description></description>
     </item>
     <item>
       <title>資訊安全</title>
-      <link>https://r888800009.github.io/wiki/information-security/</link>
+      <link>https://r809.tw/wiki/information-security/</link>
       <pubDate>Mon, 02 Dec 2019 09:21:51 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/information-security/</guid>
+      <guid>https://r809.tw/wiki/information-security/</guid>
       <description>&lt;p&gt;資訊安全相關索引&lt;/p&gt;</description>
     </item>
     <item>
       <title>滲透</title>
-      <link>https://r888800009.github.io/software/security/pentest/</link>
+      <link>https://r809.tw/software/security/pentest/</link>
       <pubDate>Sat, 30 Nov 2019 22:07:46 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/pentest/</guid>
+      <guid>https://r809.tw/software/security/pentest/</guid>
       <description>&lt;p&gt;Penetration Testing 筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>IPv6</title>
-      <link>https://r888800009.github.io/wiki/ipv6/</link>
+      <link>https://r809.tw/wiki/ipv6/</link>
       <pubDate>Thu, 28 Nov 2019 18:50:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/ipv6/</guid>
+      <guid>https://r809.tw/wiki/ipv6/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]Francis Compiler</title>
-      <link>https://r888800009.github.io/system-program/sp6/</link>
+      <link>https://r809.tw/system-program/sp6/</link>
       <pubDate>Sat, 23 Nov 2019 21:51:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp6/</guid>
+      <guid>https://r809.tw/system-program/sp6/</guid>
       <description></description>
     </item>
     <item>
       <title>逆向相關資料</title>
-      <link>https://r888800009.github.io/software/reversing/</link>
+      <link>https://r809.tw/software/reversing/</link>
       <pubDate>Sat, 16 Nov 2019 20:31:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/reversing/</guid>
+      <guid>https://r809.tw/software/reversing/</guid>
       <description></description>
     </item>
     <item>
       <title>終端機常用工具</title>
-      <link>https://r888800009.github.io/wiki/terminal-tools/</link>
+      <link>https://r809.tw/wiki/terminal-tools/</link>
       <pubDate>Fri, 15 Nov 2019 17:15:19 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/terminal-tools/</guid>
+      <guid>https://r809.tw/wiki/terminal-tools/</guid>
       <description></description>
     </item>
     <item>
       <title>[計網]傳送層</title>
-      <link>https://r888800009.github.io/network/network3/</link>
+      <link>https://r809.tw/network/network3/</link>
       <pubDate>Tue, 12 Nov 2019 13:28:54 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/network3/</guid>
+      <guid>https://r809.tw/network/network3/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP] 編譯器</title>
-      <link>https://r888800009.github.io/system-program/sp5/</link>
+      <link>https://r809.tw/system-program/sp5/</link>
       <pubDate>Mon, 11 Nov 2019 23:06:51 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp5/</guid>
+      <guid>https://r809.tw/system-program/sp5/</guid>
       <description></description>
     </item>
     <item>
       <title>Shell</title>
-      <link>https://r888800009.github.io/wiki/shell/</link>
+      <link>https://r809.tw/wiki/shell/</link>
       <pubDate>Sun, 10 Nov 2019 23:22:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/shell/</guid>
+      <guid>https://r809.tw/wiki/shell/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux桌面使用</title>
-      <link>https://r888800009.github.io/wiki/linux-desktop/</link>
+      <link>https://r809.tw/wiki/linux-desktop/</link>
       <pubDate>Sat, 09 Nov 2019 16:48:26 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-desktop/</guid>
+      <guid>https://r809.tw/wiki/linux-desktop/</guid>
       <description></description>
     </item>
     <item>
       <title>Python數學運算與科學運算</title>
-      <link>https://r888800009.github.io/wiki/python-math/</link>
+      <link>https://r809.tw/wiki/python-math/</link>
       <pubDate>Fri, 01 Nov 2019 21:48:55 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/python-math/</guid>
+      <guid>https://r809.tw/wiki/python-math/</guid>
       <description></description>
     </item>
     <item>
       <title>Line Bot</title>
-      <link>https://r888800009.github.io/wiki/line-bot/</link>
+      <link>https://r809.tw/wiki/line-bot/</link>
       <pubDate>Thu, 31 Oct 2019 22:57:26 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/line-bot/</guid>
+      <guid>https://r809.tw/wiki/line-bot/</guid>
       <description></description>
     </item>
     <item>
       <title>Netcat</title>
-      <link>https://r888800009.github.io/network/netcat/</link>
+      <link>https://r809.tw/network/netcat/</link>
       <pubDate>Sat, 26 Oct 2019 16:01:06 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/netcat/</guid>
+      <guid>https://r809.tw/network/netcat/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]系統程式筆記4</title>
-      <link>https://r888800009.github.io/system-program/sp4/</link>
+      <link>https://r809.tw/system-program/sp4/</link>
       <pubDate>Sat, 26 Oct 2019 15:42:52 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp4/</guid>
+      <guid>https://r809.tw/system-program/sp4/</guid>
       <description></description>
     </item>
     <item>
       <title>WebAuthn</title>
-      <link>https://r888800009.github.io/wiki/web-authn/</link>
+      <link>https://r809.tw/wiki/web-authn/</link>
       <pubDate>Wed, 23 Oct 2019 21:28:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/web-authn/</guid>
+      <guid>https://r809.tw/wiki/web-authn/</guid>
       <description></description>
     </item>
     <item>
       <title>各種程式坑集合</title>
-      <link>https://r888800009.github.io/wiki/bug/</link>
+      <link>https://r809.tw/wiki/bug/</link>
       <pubDate>Tue, 22 Oct 2019 21:55:44 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/bug/</guid>
+      <guid>https://r809.tw/wiki/bug/</guid>
       <description></description>
     </item>
     <item>
       <title>從 0 安裝Linux</title>
-      <link>https://r888800009.github.io/wiki/linux-from-scratch/</link>
+      <link>https://r809.tw/wiki/linux-from-scratch/</link>
       <pubDate>Sat, 19 Oct 2019 21:50:48 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-from-scratch/</guid>
+      <guid>https://r809.tw/wiki/linux-from-scratch/</guid>
       <description></description>
     </item>
     <item>
       <title>HTTP</title>
-      <link>https://r888800009.github.io/network/http/</link>
+      <link>https://r809.tw/network/http/</link>
       <pubDate>Fri, 18 Oct 2019 21:55:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/http/</guid>
+      <guid>https://r809.tw/network/http/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>https://r888800009.github.io/wiki/markdown/</link>
+      <link>https://r809.tw/wiki/markdown/</link>
       <pubDate>Wed, 16 Oct 2019 21:54:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/markdown/</guid>
+      <guid>https://r809.tw/wiki/markdown/</guid>
       <description></description>
     </item>
     <item>
       <title>newsboat終端機RSS訂閱器</title>
-      <link>https://r888800009.github.io/wiki/newsboat/</link>
+      <link>https://r809.tw/wiki/newsboat/</link>
       <pubDate>Tue, 15 Oct 2019 21:56:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/newsboat/</guid>
+      <guid>https://r809.tw/wiki/newsboat/</guid>
       <description></description>
     </item>
     <item>
       <title>詞法分析</title>
-      <link>https://r888800009.github.io/system-program/lexical-analysis/</link>
+      <link>https://r809.tw/system-program/lexical-analysis/</link>
       <pubDate>Mon, 14 Oct 2019 19:10:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/lexical-analysis/</guid>
+      <guid>https://r809.tw/system-program/lexical-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>python 模糊搜尋</title>
-      <link>https://r888800009.github.io/wiki/python-fuzz/</link>
+      <link>https://r809.tw/wiki/python-fuzz/</link>
       <pubDate>Sun, 13 Oct 2019 21:21:52 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/python-fuzz/</guid>
+      <guid>https://r809.tw/wiki/python-fuzz/</guid>
       <description></description>
     </item>
     <item>
       <title>MySQL</title>
-      <link>https://r888800009.github.io/wiki/mysql/</link>
+      <link>https://r809.tw/wiki/mysql/</link>
       <pubDate>Sat, 12 Oct 2019 19:21:25 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/mysql/</guid>
+      <guid>https://r809.tw/wiki/mysql/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]系統程式參考資料列表</title>
-      <link>https://r888800009.github.io/system-program/reference/</link>
+      <link>https://r809.tw/system-program/reference/</link>
       <pubDate>Fri, 11 Oct 2019 20:25:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/reference/</guid>
+      <guid>https://r809.tw/system-program/reference/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]系統程式筆記3</title>
-      <link>https://r888800009.github.io/system-program/sp3/</link>
+      <link>https://r809.tw/system-program/sp3/</link>
       <pubDate>Thu, 10 Oct 2019 19:57:27 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp3/</guid>
+      <guid>https://r809.tw/system-program/sp3/</guid>
       <description></description>
     </item>
     <item>
       <title>Web 爬蟲筆記</title>
-      <link>https://r888800009.github.io/wiki/web-crawler/</link>
+      <link>https://r809.tw/wiki/web-crawler/</link>
       <pubDate>Tue, 08 Oct 2019 23:48:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/web-crawler/</guid>
+      <guid>https://r809.tw/wiki/web-crawler/</guid>
       <description></description>
     </item>
     <item>
       <title>DNS</title>
-      <link>https://r888800009.github.io/network/dns/</link>
+      <link>https://r809.tw/network/dns/</link>
       <pubDate>Mon, 07 Oct 2019 19:53:47 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/dns/</guid>
+      <guid>https://r809.tw/network/dns/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>https://r888800009.github.io/wiki/bash/</link>
+      <link>https://r809.tw/wiki/bash/</link>
       <pubDate>Sat, 05 Oct 2019 19:50:13 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/bash/</guid>
+      <guid>https://r809.tw/wiki/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Radare2</title>
-      <link>https://r888800009.github.io/software/reversing/radare2/</link>
+      <link>https://r809.tw/software/reversing/radare2/</link>
       <pubDate>Sat, 05 Oct 2019 19:43:04 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/reversing/radare2/</guid>
+      <guid>https://r809.tw/software/reversing/radare2/</guid>
       <description></description>
     </item>
     <item>
       <title>Kali Linux筆記</title>
-      <link>https://r888800009.github.io/wiki/kali-linux/</link>
+      <link>https://r809.tw/wiki/kali-linux/</link>
       <pubDate>Sat, 05 Oct 2019 19:37:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/kali-linux/</guid>
+      <guid>https://r809.tw/wiki/kali-linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Stack Smash</title>
-      <link>https://r888800009.github.io/software/security/binary/stack-smash/</link>
+      <link>https://r809.tw/software/security/binary/stack-smash/</link>
       <pubDate>Wed, 02 Oct 2019 19:31:07 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/stack-smash/</guid>
+      <guid>https://r809.tw/software/security/binary/stack-smash/</guid>
       <description></description>
     </item>
     <item>
       <title>WAF繞過</title>
-      <link>https://r888800009.github.io/software/security/web/waf-bypass/</link>
+      <link>https://r809.tw/software/security/web/waf-bypass/</link>
       <pubDate>Wed, 02 Oct 2019 13:07:33 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/waf-bypass/</guid>
+      <guid>https://r809.tw/software/security/web/waf-bypass/</guid>
       <description></description>
     </item>
     <item>
       <title>Web滲透測試工具</title>
-      <link>https://r888800009.github.io/software/security/web/penetration-testing-tools/</link>
+      <link>https://r809.tw/software/security/web/penetration-testing-tools/</link>
       <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/penetration-testing-tools/</guid>
+      <guid>https://r809.tw/software/security/web/penetration-testing-tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Web安全筆記</title>
-      <link>https://r888800009.github.io/software/security/web/security-notes/</link>
+      <link>https://r809.tw/software/security/web/security-notes/</link>
       <pubDate>Tue, 01 Oct 2019 23:09:38 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/security-notes/</guid>
+      <guid>https://r809.tw/software/security/web/security-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux網路</title>
-      <link>https://r888800009.github.io/wiki/linux-network/</link>
+      <link>https://r809.tw/wiki/linux-network/</link>
       <pubDate>Sun, 29 Sep 2019 21:21:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-network/</guid>
+      <guid>https://r809.tw/wiki/linux-network/</guid>
       <description></description>
     </item>
     <item>
       <title>透過Docker架設Apache啟用CGI</title>
-      <link>https://r888800009.github.io/posts/cgi-apache/</link>
+      <link>https://r809.tw/posts/cgi-apache/</link>
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/cgi-apache/</guid>
+      <guid>https://r809.tw/posts/cgi-apache/</guid>
       <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，&#xA;並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
     </item>
     <item>
       <title>機率與統計</title>
-      <link>https://r888800009.github.io/probability-and-statistics/probability-and-statistics/</link>
+      <link>https://r809.tw/probability-and-statistics/probability-and-statistics/</link>
       <pubDate>Fri, 27 Sep 2019 23:30:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/probability-and-statistics/probability-and-statistics/</guid>
+      <guid>https://r809.tw/probability-and-statistics/probability-and-statistics/</guid>
       <description></description>
     </item>
     <item>
       <title>[計網] 應用層 (Application Layer)</title>
-      <link>https://r888800009.github.io/network/network2/</link>
+      <link>https://r809.tw/network/network2/</link>
       <pubDate>Tue, 24 Sep 2019 23:25:13 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/network2/</guid>
+      <guid>https://r809.tw/network/network2/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]系統程式筆記2</title>
-      <link>https://r888800009.github.io/system-program/sp2/</link>
+      <link>https://r809.tw/system-program/sp2/</link>
       <pubDate>Tue, 24 Sep 2019 21:49:03 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp2/</guid>
+      <guid>https://r809.tw/system-program/sp2/</guid>
       <description></description>
     </item>
     <item>
       <title>[計網]計算機網路練習實做</title>
-      <link>https://r888800009.github.io/network/network-exercises/</link>
+      <link>https://r809.tw/network/network-exercises/</link>
       <pubDate>Tue, 24 Sep 2019 19:13:16 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/network-exercises/</guid>
+      <guid>https://r809.tw/network/network-exercises/</guid>
       <description></description>
     </item>
     <item>
       <title>[計網]電腦網路與網際網路</title>
-      <link>https://r888800009.github.io/network/network/</link>
+      <link>https://r809.tw/network/network/</link>
       <pubDate>Mon, 23 Sep 2019 17:41:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/network/</guid>
+      <guid>https://r809.tw/network/network/</guid>
       <description></description>
     </item>
     <item>
       <title>莖葉圖</title>
-      <link>https://r888800009.github.io/wiki/stem-and-leaf/</link>
+      <link>https://r809.tw/wiki/stem-and-leaf/</link>
       <pubDate>Mon, 23 Sep 2019 17:29:20 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/stem-and-leaf/</guid>
+      <guid>https://r809.tw/wiki/stem-and-leaf/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://r888800009.github.io/wiki/linux/</link>
+      <link>https://r809.tw/wiki/linux/</link>
       <pubDate>Sat, 21 Sep 2019 23:00:56 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux/</guid>
+      <guid>https://r809.tw/wiki/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>[SP]系統程式</title>
-      <link>https://r888800009.github.io/system-program/sp/</link>
+      <link>https://r809.tw/system-program/sp/</link>
       <pubDate>Thu, 19 Sep 2019 22:50:47 +0800</pubDate>
-      <guid>https://r888800009.github.io/system-program/sp/</guid>
+      <guid>https://r809.tw/system-program/sp/</guid>
       <description></description>
     </item>
     <item>
       <title>Fuzzing</title>
-      <link>https://r888800009.github.io/software/security/fuzzing/</link>
+      <link>https://r809.tw/software/security/fuzzing/</link>
       <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/fuzzing/</guid>
+      <guid>https://r809.tw/software/security/fuzzing/</guid>
       <description></description>
     </item>
     <item>
       <title>Grep</title>
-      <link>https://r888800009.github.io/wiki/grep/</link>
+      <link>https://r809.tw/wiki/grep/</link>
       <pubDate>Sun, 15 Sep 2019 11:49:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/grep/</guid>
+      <guid>https://r809.tw/wiki/grep/</guid>
       <description></description>
     </item>
     <item>
       <title>gdbgui</title>
-      <link>https://r888800009.github.io/software/testing/gdbgui/</link>
+      <link>https://r809.tw/software/testing/gdbgui/</link>
       <pubDate>Sun, 15 Sep 2019 11:33:06 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/testing/gdbgui/</guid>
+      <guid>https://r809.tw/software/testing/gdbgui/</guid>
       <description></description>
     </item>
     <item>
       <title>除錯</title>
-      <link>https://r888800009.github.io/software/testing/debug/</link>
+      <link>https://r809.tw/software/testing/debug/</link>
       <pubDate>Sun, 15 Sep 2019 04:39:57 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/testing/debug/</guid>
+      <guid>https://r809.tw/software/testing/debug/</guid>
       <description>&lt;p&gt;筆記各種除錯的方式，如斷言、反向除錯等&lt;/p&gt;</description>
     </item>
     <item>
       <title>Web 網頁漏洞與利用方法</title>
-      <link>https://r888800009.github.io/software/security/web/vulnerability/</link>
+      <link>https://r809.tw/software/security/web/vulnerability/</link>
       <pubDate>Sat, 14 Sep 2019 05:33:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/vulnerability/</guid>
+      <guid>https://r809.tw/software/security/web/vulnerability/</guid>
       <description></description>
     </item>
     <item>
       <title>PHP</title>
-      <link>https://r888800009.github.io/wiki/php/</link>
+      <link>https://r809.tw/wiki/php/</link>
       <pubDate>Tue, 10 Sep 2019 11:10:20 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/php/</guid>
+      <guid>https://r809.tw/wiki/php/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://r888800009.github.io/wiki/git/</link>
+      <link>https://r809.tw/wiki/git/</link>
       <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/git/</guid>
+      <guid>https://r809.tw/wiki/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows Pwn 筆記</title>
-      <link>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</link>
+      <link>https://r809.tw/software/security/binary/windows-pwn-notes/</link>
       <pubDate>Tue, 10 Sep 2019 10:27:36 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</guid>
+      <guid>https://r809.tw/software/security/binary/windows-pwn-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>Metasploit</title>
-      <link>https://r888800009.github.io/software/security/metasploit/</link>
+      <link>https://r809.tw/software/security/metasploit/</link>
       <pubDate>Tue, 10 Sep 2019 10:26:29 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/metasploit/</guid>
+      <guid>https://r809.tw/software/security/metasploit/</guid>
       <description></description>
     </item>
     <item>
       <title>R</title>
-      <link>https://r888800009.github.io/wiki/r/</link>
+      <link>https://r809.tw/wiki/r/</link>
       <pubDate>Tue, 10 Sep 2019 10:26:15 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/r/</guid>
+      <guid>https://r809.tw/wiki/r/</guid>
       <description></description>
     </item>
     <item>
       <title>GCC</title>
-      <link>https://r888800009.github.io/wiki/gcc/</link>
+      <link>https://r809.tw/wiki/gcc/</link>
       <pubDate>Tue, 10 Sep 2019 10:20:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/gcc/</guid>
+      <guid>https://r809.tw/wiki/gcc/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://r888800009.github.io/wiki/python/</link>
+      <link>https://r809.tw/wiki/python/</link>
       <pubDate>Fri, 06 Sep 2019 12:42:42 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/python/</guid>
+      <guid>https://r809.tw/wiki/python/</guid>
       <description></description>
     </item>
     <item>
       <title>格式化字串攻擊 (Format String Attack)</title>
-      <link>https://r888800009.github.io/software/security/binary/format-string-attack/</link>
+      <link>https://r809.tw/software/security/binary/format-string-attack/</link>
       <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/format-string-attack/</guid>
+      <guid>https://r809.tw/software/security/binary/format-string-attack/</guid>
       <description>&lt;p&gt;格式化字串筆記 Format String Bug (FSB)&lt;/p&gt;</description>
     </item>
     <item>
       <title>PWN 常用指令與概念</title>
-      <link>https://r888800009.github.io/software/security/binary/pwn-notes/</link>
+      <link>https://r809.tw/software/security/binary/pwn-notes/</link>
       <pubDate>Fri, 06 Sep 2019 04:38:57 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/pwn-notes/</guid>
+      <guid>https://r809.tw/software/security/binary/pwn-notes/</guid>
       <description>&lt;p&gt;pwn 常用指令以及概念紀錄&lt;/p&gt;</description>
     </item>
     <item>
       <title>PHP傳入POST與GET導致FPD漏洞</title>
-      <link>https://r888800009.github.io/posts/php-post-get-fpd/</link>
+      <link>https://r809.tw/posts/php-post-get-fpd/</link>
       <pubDate>Thu, 05 Sep 2019 22:20:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/php-post-get-fpd/</guid>
+      <guid>https://r809.tw/posts/php-post-get-fpd/</guid>
       <description>&lt;p&gt;php傳入POST與GET沒有檢查輸入內容導致頁面異常產生FPD漏洞。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker</title>
-      <link>https://r888800009.github.io/wiki/docker/</link>
+      <link>https://r809.tw/wiki/docker/</link>
       <pubDate>Thu, 05 Sep 2019 06:44:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/docker/</guid>
+      <guid>https://r809.tw/wiki/docker/</guid>
       <description>&lt;p&gt;Docker的筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux權限</title>
-      <link>https://r888800009.github.io/wiki/linux-permission/</link>
+      <link>https://r809.tw/wiki/linux-permission/</link>
       <pubDate>Thu, 05 Sep 2019 05:57:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-permission/</guid>
+      <guid>https://r809.tw/wiki/linux-permission/</guid>
       <description>&lt;p&gt;關於Linux權限的筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Linux 文件管理</title>
-      <link>https://r888800009.github.io/wiki/linux-file/</link>
+      <link>https://r809.tw/wiki/linux-file/</link>
       <pubDate>Thu, 05 Sep 2019 05:47:01 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-file/</guid>
+      <guid>https://r809.tw/wiki/linux-file/</guid>
       <description>&lt;p&gt;Linux一些常用於文件管理的筆記。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Arch Linux</title>
-      <link>https://r888800009.github.io/wiki/archlinux/</link>
+      <link>https://r809.tw/wiki/archlinux/</link>
       <pubDate>Thu, 05 Sep 2019 05:29:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/archlinux/</guid>
+      <guid>https://r809.tw/wiki/archlinux/</guid>
       <description></description>
     </item>
     <item>
       <title>軍隊派遣問題</title>
-      <link>https://r888800009.github.io/posts/army-dispatch-problem/</link>
+      <link>https://r809.tw/posts/army-dispatch-problem/</link>
       <pubDate>Sat, 31 Aug 2019 02:01:14 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/army-dispatch-problem/</guid>
+      <guid>https://r809.tw/posts/army-dispatch-problem/</guid>
       <description>&lt;p&gt;軍隊派遣人力不可低於需求人力，派遣與調回需要花費金錢，&#xA;常駐的也需要花錢。派遣當月需要給付常駐補給費，調回不須。&#xA;給予一個陣列A代表每個月的人力需求，求最低預算。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Vim</title>
-      <link>https://r888800009.github.io/wiki/vim/</link>
+      <link>https://r809.tw/wiki/vim/</link>
       <pubDate>Fri, 30 Aug 2019 05:13:14 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/vim/</guid>
+      <guid>https://r809.tw/wiki/vim/</guid>
       <description>&lt;p&gt;存放vim的筆記。&lt;/p&gt;</description>
     </item>
     <item>
       <title>理解堆疊</title>
-      <link>https://r888800009.github.io/posts/what-can-stack-can-do/</link>
+      <link>https://r809.tw/posts/what-can-stack-can-do/</link>
       <pubDate>Fri, 30 Aug 2019 04:13:00 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/what-can-stack-can-do/</guid>
+      <guid>https://r809.tw/posts/what-can-stack-can-do/</guid>
       <description>&lt;p&gt;堆疊是一個先進後出(FILO, First-in-Last-out)特性的資料結構，&#xA;但應用堆疊則必須更深入的理解相關算法的原理。&lt;/p&gt;</description>
     </item>
     <item>
       <title>URL Obfuscation</title>
-      <link>https://r888800009.github.io/software/security/url-obfuscation/</link>
+      <link>https://r809.tw/software/security/url-obfuscation/</link>
       <pubDate>Thu, 29 Aug 2019 18:05:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/url-obfuscation/</guid>
+      <guid>https://r809.tw/software/security/url-obfuscation/</guid>
       <description>&lt;p&gt;混淆式網址(URL Obfuscation)透過十六或八進位的數字來混淆URL。&lt;/p&gt;</description>
     </item>
     <item>
       <title>GDB</title>
-      <link>https://r888800009.github.io/software/testing/gdb/</link>
+      <link>https://r809.tw/software/testing/gdb/</link>
       <pubDate>Thu, 29 Aug 2019 02:03:01 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/testing/gdb/</guid>
+      <guid>https://r809.tw/software/testing/gdb/</guid>
       <description>&lt;p&gt;存放gdb筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Django</title>
-      <link>https://r888800009.github.io/wiki/django/</link>
+      <link>https://r809.tw/wiki/django/</link>
       <pubDate>Wed, 28 Aug 2019 23:57:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/django/</guid>
+      <guid>https://r809.tw/wiki/django/</guid>
       <description>&lt;p&gt;紀錄Django安裝、新增專案以及使用方式等。&lt;/p&gt;</description>
     </item>
     <item>
       <title>辨識Web伺服與應用程式</title>
-      <link>https://r888800009.github.io/software/security/web/fingerprint/</link>
+      <link>https://r809.tw/software/security/web/fingerprint/</link>
       <pubDate>Tue, 27 Aug 2019 15:23:28 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/fingerprint/</guid>
+      <guid>https://r809.tw/software/security/web/fingerprint/</guid>
       <description>&lt;p&gt;辨識Web伺服器或應用程式的方法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Secure Shell</title>
-      <link>https://r888800009.github.io/wiki/secure-shell/</link>
+      <link>https://r809.tw/wiki/secure-shell/</link>
       <pubDate>Tue, 27 Aug 2019 11:58:33 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/secure-shell/</guid>
+      <guid>https://r809.tw/wiki/secure-shell/</guid>
       <description>&lt;p&gt;SSH筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Qemu</title>
-      <link>https://r888800009.github.io/wiki/qemu/</link>
+      <link>https://r809.tw/wiki/qemu/</link>
       <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/qemu/</guid>
+      <guid>https://r809.tw/wiki/qemu/</guid>
       <description>&lt;p&gt;QEMU常用參數紀錄&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gitea搬到Github</title>
-      <link>https://r888800009.github.io/posts/from-gitea-to-github/</link>
+      <link>https://r809.tw/posts/from-gitea-to-github/</link>
       <pubDate>Mon, 26 Aug 2019 20:13:11 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/from-gitea-to-github/</guid>
+      <guid>https://r809.tw/posts/from-gitea-to-github/</guid>
       <description>&lt;p&gt;紀錄一下，從Gitea搬移檔案到GitHub&lt;/p&gt;</description>
     </item>
     <item>
       <title>Heroku Setup With Flask</title>
-      <link>https://r888800009.github.io/posts/heroku-setup-with-flask/</link>
+      <link>https://r809.tw/posts/heroku-setup-with-flask/</link>
       <pubDate>Fri, 23 Aug 2019 22:58:44 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/heroku-setup-with-flask/</guid>
+      <guid>https://r809.tw/posts/heroku-setup-with-flask/</guid>
       <description>&lt;p&gt;heroku設定紀錄，透過範例檔案修改成自己的程式。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Sqlmap</title>
-      <link>https://r888800009.github.io/software/security/web/sqlmap/</link>
+      <link>https://r809.tw/software/security/web/sqlmap/</link>
       <pubDate>Tue, 20 Aug 2019 12:51:25 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/sqlmap/</guid>
+      <guid>https://r809.tw/software/security/web/sqlmap/</guid>
       <description></description>
     </item>
     <item>
       <title>Leetcode刷題筆記7</title>
-      <link>https://r888800009.github.io/posts/leetcode-practice-7/</link>
+      <link>https://r809.tw/posts/leetcode-practice-7/</link>
       <pubDate>Sun, 18 Aug 2019 23:14:40 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-practice-7/</guid>
+      <guid>https://r809.tw/posts/leetcode-practice-7/</guid>
       <description>&lt;p&gt;繼續解leetcode保持進度，有幾題是之前解過類似類型的題目。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://r888800009.github.io/wiki/hugo/</link>
+      <link>https://r809.tw/wiki/hugo/</link>
       <pubDate>Sun, 18 Aug 2019 21:23:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/hugo/</guid>
+      <guid>https://r809.tw/wiki/hugo/</guid>
       <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;的指令與筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hugo 模板的一些配置</title>
-      <link>https://r888800009.github.io/wiki/hugo-template/</link>
+      <link>https://r809.tw/wiki/hugo-template/</link>
       <pubDate>Sun, 18 Aug 2019 21:19:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/hugo-template/</guid>
-      <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;配置版模會用到的筆記，&#xA;非模板內容參見 &lt;a href=&#34;https://r888800009.github.io/wiki/hugo/&#34;&gt;hugo&lt;/a&gt;。&lt;/p&gt;</description>
+      <guid>https://r809.tw/wiki/hugo-template/</guid>
+      <description>&lt;p&gt;存放一些&lt;code&gt;hugo&lt;/code&gt;配置版模會用到的筆記，&#xA;非模板內容參見 &lt;a href=&#34;https://r809.tw/wiki/hugo/&#34;&gt;hugo&lt;/a&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ghidra</title>
-      <link>https://r888800009.github.io/software/reversing/ghidra/</link>
+      <link>https://r809.tw/software/reversing/ghidra/</link>
       <pubDate>Fri, 16 Aug 2019 23:57:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/reversing/ghidra/</guid>
+      <guid>https://r809.tw/software/reversing/ghidra/</guid>
       <description>&lt;p&gt;&lt;code&gt;Ghidra&lt;/code&gt;為NSA開發的反編譯工具，在2019年3月釋放給公眾使用，&#xA;&lt;a href=&#34;https://ghidra-sre.org/&#34;&gt;官方網站&lt;/a&gt;以及&#xA;GitHub &lt;a href=&#34;https://github.com/NationalSecurityAgency/Ghidra&#34;&gt;repo&lt;/a&gt;位址。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leetcode刷題筆記6</title>
-      <link>https://r888800009.github.io/posts/leetcode-practice-6/</link>
+      <link>https://r809.tw/posts/leetcode-practice-6/</link>
       <pubDate>Fri, 16 Aug 2019 23:20:14 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-practice-6/</guid>
+      <guid>https://r809.tw/posts/leetcode-practice-6/</guid>
       <description>&lt;p&gt;保持每日解題進度，不過今天解比較少就是了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leetcode刷題筆記5</title>
-      <link>https://r888800009.github.io/posts/leetcode-practice-5/</link>
+      <link>https://r809.tw/posts/leetcode-practice-5/</link>
       <pubDate>Thu, 15 Aug 2019 20:28:33 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-practice-5/</guid>
+      <guid>https://r809.tw/posts/leetcode-practice-5/</guid>
       <description>&lt;p&gt;刷leetcode簡單的題目，參考之前用過的手法與學新的手法，如前綴和。&lt;/p&gt;</description>
     </item>
     <item>
       <title>比較SSRF與LFI/RFI</title>
-      <link>https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/</link>
+      <link>https://r809.tw/posts/ssrf-vs-lfi-rfi-different/</link>
       <pubDate>Wed, 14 Aug 2019 17:34:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/ssrf-vs-lfi-rfi-different/</guid>
+      <guid>https://r809.tw/posts/ssrf-vs-lfi-rfi-different/</guid>
       <description>&lt;p&gt;LFI/RFI漏洞與SSRF漏洞表徵看起來相似，探討三個漏洞的區別。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leetcode刷題筆記4</title>
-      <link>https://r888800009.github.io/posts/leetcode-practice-4/</link>
+      <link>https://r809.tw/posts/leetcode-practice-4/</link>
       <pubDate>Wed, 14 Aug 2019 11:25:25 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-practice-4/</guid>
+      <guid>https://r809.tw/posts/leetcode-practice-4/</guid>
       <description>&lt;p&gt;刷中等題目，主要遇到的問題是對算法的應用不熟悉無法實做。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leetcode刷題筆記3</title>
-      <link>https://r888800009.github.io/posts/leetcode-practice-3/</link>
+      <link>https://r809.tw/posts/leetcode-practice-3/</link>
       <pubDate>Tue, 13 Aug 2019 14:33:30 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-practice-3/</guid>
+      <guid>https://r809.tw/posts/leetcode-practice-3/</guid>
       <description>&lt;p&gt;開始刷&lt;code&gt;leetcode&lt;/code&gt;一些中等的題目，主要都是刷&lt;code&gt;Top 100&lt;/code&gt;的題目。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leetcode刷題筆記2</title>
-      <link>https://r888800009.github.io/posts/leetcode-practice-2/</link>
+      <link>https://r809.tw/posts/leetcode-practice-2/</link>
       <pubDate>Mon, 12 Aug 2019 21:07:48 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-practice-2/</guid>
+      <guid>https://r809.tw/posts/leetcode-practice-2/</guid>
       <description>&lt;p&gt;leetcode 解題&lt;/p&gt;</description>
     </item>
     <item>
       <title>Leetcode刷題筆記1</title>
-      <link>https://r888800009.github.io/posts/leetcode-practice-1/</link>
+      <link>https://r809.tw/posts/leetcode-practice-1/</link>
       <pubDate>Sun, 11 Aug 2019 00:04:14 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-practice-1/</guid>
+      <guid>https://r809.tw/posts/leetcode-practice-1/</guid>
       <description>&lt;p&gt;一些leetcode的&lt;code&gt;easy&lt;/code&gt;等級的解法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>探討blog或repo做筆記的優缺點</title>
-      <link>https://r888800009.github.io/posts/blog-or-repo-for-notes/</link>
+      <link>https://r809.tw/posts/blog-or-repo-for-notes/</link>
       <pubDate>Fri, 09 Aug 2019 22:55:09 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/blog-or-repo-for-notes/</guid>
+      <guid>https://r809.tw/posts/blog-or-repo-for-notes/</guid>
       <description>&lt;p&gt;最近一直在糾結採用Hugo(部落格形式)或repo的方式保存筆記，寫下本文思考兩種方式&#xA;的優缺點。筆記本身都是採用git下去保存，兩者差別在於md檔的描述方式、&#xA;保存方式、索引方式。&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Web安全筆記] 透過 docker 配置漏洞測試網站</title>
-      <link>https://r888800009.github.io/software/security/web/get-start/</link>
+      <link>https://r809.tw/software/security/web/get-start/</link>
       <pubDate>Thu, 08 Aug 2019 15:08:09 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/get-start/</guid>
+      <guid>https://r809.tw/software/security/web/get-start/</guid>
       <description>&lt;p&gt;為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，&#xA;在本文當中我們將採用 &lt;code&gt;docker&lt;/code&gt; 來配置測試環境，並安裝 &lt;code&gt;WebGoat&lt;/code&gt;、&#xA;&lt;code&gt;Damn Vulnerable Web Application&lt;/code&gt;、&lt;code&gt;Broken Web Applications&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Online Judge 列表</title>
-      <link>https://r888800009.github.io/posts/online-judge-list/</link>
+      <link>https://r809.tw/posts/online-judge-list/</link>
       <pubDate>Thu, 07 Mar 2019 00:30:34 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/online-judge-list/</guid>
+      <guid>https://r809.tw/posts/online-judge-list/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://uva.onlinejudge.org/&#34;&gt;UVa Online Judge&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://leetcode.com/&#34;&gt;LeetCode&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://codeforces.com/&#34;&gt;Codeforces&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://zerojudge.tw/&#34;&gt;高中生程式解題系統&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.tcgs.tc.edu.tw:1218/&#34;&gt;台中女中程式解題系統&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://poj.org/&#34;&gt;PKU JudgeOnline&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.codewars.com/&#34;&gt;Codewars&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://acm.timus.ru/&#34;&gt;Timus Online Judge&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Portfolio</title>
-      <link>https://r888800009.github.io/portfolio/</link>
+      <link>https://r809.tw/portfolio/</link>
       <pubDate>Sat, 18 Aug 2018 21:15:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/portfolio/</guid>
+      <guid>https://r809.tw/portfolio/</guid>
       <description>&lt;h2 id=&#34;useful&#34;&gt;Useful&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/CTF-tool&#34;&gt;r888800009/CTF-tool&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://github.com/r888800009/fcitx-jszhuyin&#34;&gt;fcitx-jszhuyin&lt;/a&gt; Fcitx Wrapper for jszhuyin&lt;/del&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;stuff&#34;&gt;Stuff&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/notes&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/sheet-latex-scientific-notation-generator&#34;&gt;Scientific Notation Generator&lt;/a&gt; &lt;a href=&#34;https://r888800009.github.io/sheet-latex-scientific-notation-generator/&#34;&gt;demo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/tetris-js&#34;&gt;Tetris JS&lt;/a&gt; &lt;a href=&#34;https://r888800009.github.io/tetris-js/&#34;&gt;demo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/snake-js&#34;&gt;Snake JS&lt;/a&gt; &lt;a href=&#34;https://r888800009.github.io/snake-js/&#34;&gt;demo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/tree-generator&#34;&gt;Tree generator&lt;/a&gt; &lt;a href=&#34;https://r888800009.github.io/tree-generator/&#34;&gt;demo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/how-long-ago&#34;&gt;How Long Ago&lt;/a&gt; &lt;a href=&#34;https://r888800009.github.io/how-long-ago/&#34;&gt;demo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/sokoban-js&#34;&gt;Sokoban JS&lt;/a&gt; &lt;a href=&#34;https://r888800009.github.io/sokoban-js/&#34;&gt;demo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/gnugo-python-binding&#34;&gt;r888800009/gnugo-python-binding: python wrapper for gnugo 3.8&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;practicesolve&#34;&gt;Practice/Solve&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/CTF-Solve&#34;&gt;CTF-Solve&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/r888800009/practice&#34;&gt;practice&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>

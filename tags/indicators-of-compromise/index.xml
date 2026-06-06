@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Indicators of Compromise on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/indicators-of-compromise/</link>
+    <link>https://r809.tw/tags/indicators-of-compromise/</link>
     <description>Recent content in Indicators of Compromise on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 22 May 2020 04:24:48 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/indicators-of-compromise/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/indicators-of-compromise/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Yara</title>
-      <link>https://r888800009.github.io/software/security/yara/</link>
+      <link>https://r809.tw/software/security/yara/</link>
       <pubDate>Fri, 22 May 2020 01:57:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/yara/</guid>
+      <guid>https://r809.tw/software/security/yara/</guid>
       <description></description>
     </item>
   </channel>

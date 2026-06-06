@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/tools/</link>
+    <link>https://r809.tw/tags/tools/</link>
     <description>Recent content in Tools on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 31 Mar 2022 21:20:58 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>終端機常用工具</title>
-      <link>https://r888800009.github.io/wiki/terminal-tools/</link>
+      <link>https://r809.tw/wiki/terminal-tools/</link>
       <pubDate>Fri, 15 Nov 2019 17:15:19 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/terminal-tools/</guid>
+      <guid>https://r809.tw/wiki/terminal-tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Netcat</title>
-      <link>https://r888800009.github.io/network/netcat/</link>
+      <link>https://r809.tw/network/netcat/</link>
       <pubDate>Sat, 26 Oct 2019 16:01:06 +0800</pubDate>
-      <guid>https://r888800009.github.io/network/netcat/</guid>
+      <guid>https://r809.tw/network/netcat/</guid>
       <description></description>
     </item>
     <item>
       <title>Web滲透測試工具</title>
-      <link>https://r888800009.github.io/software/security/web/penetration-testing-tools/</link>
+      <link>https://r809.tw/software/security/web/penetration-testing-tools/</link>
       <pubDate>Tue, 01 Oct 2019 23:30:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/penetration-testing-tools/</guid>
+      <guid>https://r809.tw/software/security/web/penetration-testing-tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://r888800009.github.io/wiki/git/</link>
+      <link>https://r809.tw/wiki/git/</link>
       <pubDate>Tue, 10 Sep 2019 10:57:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/git/</guid>
+      <guid>https://r809.tw/wiki/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Sqlmap</title>
-      <link>https://r888800009.github.io/software/security/web/sqlmap/</link>
+      <link>https://r809.tw/software/security/web/sqlmap/</link>
       <pubDate>Tue, 20 Aug 2019 12:51:25 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/sqlmap/</guid>
+      <guid>https://r809.tw/software/security/web/sqlmap/</guid>
       <description></description>
     </item>
   </channel>

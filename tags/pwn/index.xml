@@ -2,122 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PWN on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/pwn/</link>
+    <link>https://r809.tw/tags/pwn/</link>
     <description>Recent content in PWN on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sun, 03 Dec 2023 19:38:55 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/pwn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows Heap</title>
-      <link>https://r888800009.github.io/software/security/binary/windows-heap/</link>
+      <link>https://r809.tw/software/security/binary/windows-heap/</link>
       <pubDate>Sat, 02 Apr 2022 22:49:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/windows-heap/</guid>
+      <guid>https://r809.tw/software/security/binary/windows-heap/</guid>
       <description></description>
     </item>
     <item>
       <title>VTable Hijacking</title>
-      <link>https://r888800009.github.io/software/security/binary/vtable-hijacking/</link>
+      <link>https://r809.tw/software/security/binary/vtable-hijacking/</link>
       <pubDate>Thu, 16 Dec 2021 10:15:54 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/vtable-hijacking/</guid>
+      <guid>https://r809.tw/software/security/binary/vtable-hijacking/</guid>
       <description></description>
     </item>
     <item>
       <title>Kernel Exploit</title>
-      <link>https://r888800009.github.io/software/security/binary/kernel-exploit/</link>
+      <link>https://r809.tw/software/security/binary/kernel-exploit/</link>
       <pubDate>Tue, 09 Nov 2021 10:14:38 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/kernel-exploit/</guid>
+      <guid>https://r809.tw/software/security/binary/kernel-exploit/</guid>
       <description></description>
     </item>
     <item>
       <title>PartitionAlloc</title>
-      <link>https://r888800009.github.io/software/security/binary/partitionalloc/</link>
+      <link>https://r809.tw/software/security/binary/partitionalloc/</link>
       <pubDate>Sat, 06 Nov 2021 03:50:30 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/partitionalloc/</guid>
+      <guid>https://r809.tw/software/security/binary/partitionalloc/</guid>
       <description></description>
     </item>
     <item>
       <title>Taint Analysis</title>
-      <link>https://r888800009.github.io/software/security/taint-analysis/</link>
+      <link>https://r809.tw/software/security/taint-analysis/</link>
       <pubDate>Thu, 29 Jul 2021 23:28:24 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/taint-analysis/</guid>
+      <guid>https://r809.tw/software/security/taint-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Intel SDE 軟模擬 CET</title>
-      <link>https://r888800009.github.io/software/security/binary/intel-sde-cet/</link>
+      <link>https://r809.tw/software/security/binary/intel-sde-cet/</link>
       <pubDate>Tue, 09 Feb 2021 22:18:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/intel-sde-cet/</guid>
+      <guid>https://r809.tw/software/security/binary/intel-sde-cet/</guid>
       <description></description>
     </item>
     <item>
       <title>Mac M1 Install Pwntools, Solve &#39;as&#39; and bus error</title>
-      <link>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</link>
+      <link>https://r809.tw/software/security/binary/pwntools-mac-m1-install/</link>
       <pubDate>Thu, 14 Jan 2021 05:35:39 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/pwntools-mac-m1-install/</guid>
+      <guid>https://r809.tw/software/security/binary/pwntools-mac-m1-install/</guid>
       <description>&lt;p&gt;解決 Mac M1 安裝 pwntools 找不到 as 的問題，與其他如 bus error 等等的問題。由於 M1 剛出沒多久，配適上可能還沒完成，或許在未來 pwntools 的版本會解決的這些問題，而目前這些方法可以使 pwntools 在 M1 上面運行。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Honggfuzz</title>
-      <link>https://r888800009.github.io/software/security/honggfuzz/</link>
+      <link>https://r809.tw/software/security/honggfuzz/</link>
       <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/honggfuzz/</guid>
+      <guid>https://r809.tw/software/security/honggfuzz/</guid>
       <description>&lt;p&gt;Honggfuzz 筆記，透過 docker 執行 Honggfuzz 並啟用 qemu 模式進行 fuzzing。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Heap Exploit</title>
-      <link>https://r888800009.github.io/software/security/binary/heap/</link>
+      <link>https://r809.tw/software/security/binary/heap/</link>
       <pubDate>Mon, 10 Aug 2020 04:38:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/heap/</guid>
+      <guid>https://r809.tw/software/security/binary/heap/</guid>
       <description>&lt;p&gt;堆積利用筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>漏洞緩解技術</title>
-      <link>https://r888800009.github.io/software/security/exploit-mitigation/</link>
+      <link>https://r809.tw/software/security/exploit-mitigation/</link>
       <pubDate>Sun, 17 May 2020 20:47:41 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/exploit-mitigation/</guid>
+      <guid>https://r809.tw/software/security/exploit-mitigation/</guid>
       <description></description>
     </item>
     <item>
       <title>逆向相關資料</title>
-      <link>https://r888800009.github.io/software/reversing/</link>
+      <link>https://r809.tw/software/reversing/</link>
       <pubDate>Sat, 16 Nov 2019 20:31:53 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/reversing/</guid>
+      <guid>https://r809.tw/software/reversing/</guid>
       <description></description>
     </item>
     <item>
       <title>Stack Smash</title>
-      <link>https://r888800009.github.io/software/security/binary/stack-smash/</link>
+      <link>https://r809.tw/software/security/binary/stack-smash/</link>
       <pubDate>Wed, 02 Oct 2019 19:31:07 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/stack-smash/</guid>
+      <guid>https://r809.tw/software/security/binary/stack-smash/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows Pwn 筆記</title>
-      <link>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</link>
+      <link>https://r809.tw/software/security/binary/windows-pwn-notes/</link>
       <pubDate>Tue, 10 Sep 2019 10:27:36 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/windows-pwn-notes/</guid>
+      <guid>https://r809.tw/software/security/binary/windows-pwn-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>Metasploit</title>
-      <link>https://r888800009.github.io/software/security/metasploit/</link>
+      <link>https://r809.tw/software/security/metasploit/</link>
       <pubDate>Tue, 10 Sep 2019 10:26:29 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/metasploit/</guid>
+      <guid>https://r809.tw/software/security/metasploit/</guid>
       <description></description>
     </item>
     <item>
       <title>格式化字串攻擊 (Format String Attack)</title>
-      <link>https://r888800009.github.io/software/security/binary/format-string-attack/</link>
+      <link>https://r809.tw/software/security/binary/format-string-attack/</link>
       <pubDate>Fri, 06 Sep 2019 12:24:08 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/format-string-attack/</guid>
+      <guid>https://r809.tw/software/security/binary/format-string-attack/</guid>
       <description>&lt;p&gt;格式化字串筆記 Format String Bug (FSB)&lt;/p&gt;</description>
     </item>
     <item>
       <title>PWN 常用指令與概念</title>
-      <link>https://r888800009.github.io/software/security/binary/pwn-notes/</link>
+      <link>https://r809.tw/software/security/binary/pwn-notes/</link>
       <pubDate>Fri, 06 Sep 2019 04:38:57 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/pwn-notes/</guid>
+      <guid>https://r809.tw/software/security/binary/pwn-notes/</guid>
       <description>&lt;p&gt;pwn 常用指令以及概念紀錄&lt;/p&gt;</description>
     </item>
   </channel>

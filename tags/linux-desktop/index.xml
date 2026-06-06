@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux Desktop on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/linux-desktop/</link>
+    <link>https://r809.tw/tags/linux-desktop/</link>
     <description>Recent content in Linux Desktop on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 24 Feb 2022 20:54:12 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/linux-desktop/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/linux-desktop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux輸入法</title>
-      <link>https://r888800009.github.io/wiki/linux-ime/</link>
+      <link>https://r809.tw/wiki/linux-ime/</link>
       <pubDate>Mon, 13 Jan 2020 22:30:37 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/linux-ime/</guid>
+      <guid>https://r809.tw/wiki/linux-ime/</guid>
       <description></description>
     </item>
   </channel>

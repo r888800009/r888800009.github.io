@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shell on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/shell/</link>
+    <link>https://r809.tw/tags/shell/</link>
     <description>Recent content in Shell on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 23 Feb 2023 00:24:07 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shell</title>
-      <link>https://r888800009.github.io/wiki/shell/</link>
+      <link>https://r809.tw/wiki/shell/</link>
       <pubDate>Sun, 10 Nov 2019 23:22:23 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/shell/</guid>
+      <guid>https://r809.tw/wiki/shell/</guid>
       <description></description>
     </item>
     <item>
       <title>Bash</title>
-      <link>https://r888800009.github.io/wiki/bash/</link>
+      <link>https://r809.tw/wiki/bash/</link>
       <pubDate>Sat, 05 Oct 2019 19:50:13 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/bash/</guid>
+      <guid>https://r809.tw/wiki/bash/</guid>
       <description></description>
     </item>
   </channel>

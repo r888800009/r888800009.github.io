@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emulation on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/emulation/</link>
+    <link>https://r809.tw/tags/emulation/</link>
     <description>Recent content in Emulation on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 03 Nov 2023 15:09:02 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/emulation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/emulation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Qiling</title>
-      <link>https://r888800009.github.io/firmware/qiling/</link>
+      <link>https://r809.tw/firmware/qiling/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      <guid>https://r888800009.github.io/firmware/qiling/</guid>
+      <guid>https://r809.tw/firmware/qiling/</guid>
       <description></description>
     </item>
     <item>
       <title>Qemu</title>
-      <link>https://r888800009.github.io/wiki/qemu/</link>
+      <link>https://r809.tw/wiki/qemu/</link>
       <pubDate>Tue, 27 Aug 2019 11:03:59 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/qemu/</guid>
+      <guid>https://r809.tw/wiki/qemu/</guid>
       <description>&lt;p&gt;QEMU常用參數紀錄&lt;/p&gt;</description>
     </item>
   </channel>

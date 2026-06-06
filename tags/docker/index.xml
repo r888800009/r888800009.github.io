@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/docker/</link>
+    <link>https://r809.tw/tags/docker/</link>
     <description>Recent content in Docker on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sun, 02 Jul 2023 16:11:36 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL</title>
-      <link>https://r888800009.github.io/wiki/mysql/</link>
+      <link>https://r809.tw/wiki/mysql/</link>
       <pubDate>Sat, 12 Oct 2019 19:21:25 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/mysql/</guid>
+      <guid>https://r809.tw/wiki/mysql/</guid>
       <description></description>
     </item>
     <item>
       <title>Kali Linux筆記</title>
-      <link>https://r888800009.github.io/wiki/kali-linux/</link>
+      <link>https://r809.tw/wiki/kali-linux/</link>
       <pubDate>Sat, 05 Oct 2019 19:37:18 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/kali-linux/</guid>
+      <guid>https://r809.tw/wiki/kali-linux/</guid>
       <description></description>
     </item>
     <item>
       <title>透過Docker架設Apache啟用CGI</title>
-      <link>https://r888800009.github.io/posts/cgi-apache/</link>
+      <link>https://r809.tw/posts/cgi-apache/</link>
       <pubDate>Sat, 28 Sep 2019 14:17:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/cgi-apache/</guid>
+      <guid>https://r809.tw/posts/cgi-apache/</guid>
       <description>&lt;p&gt;本文將採用docker建立一個apache http伺服器，&#xA;並且透過此伺服器運行CGI程式。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Docker</title>
-      <link>https://r888800009.github.io/wiki/docker/</link>
+      <link>https://r809.tw/wiki/docker/</link>
       <pubDate>Thu, 05 Sep 2019 06:44:35 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/docker/</guid>
+      <guid>https://r809.tw/wiki/docker/</guid>
       <description>&lt;p&gt;Docker的筆記&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Web安全筆記] 透過 docker 配置漏洞測試網站</title>
-      <link>https://r888800009.github.io/software/security/web/get-start/</link>
+      <link>https://r809.tw/software/security/web/get-start/</link>
       <pubDate>Thu, 08 Aug 2019 15:08:09 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/web/get-start/</guid>
+      <guid>https://r809.tw/software/security/web/get-start/</guid>
       <description>&lt;p&gt;為了有效的學習進行網站漏洞練習，我們必須建立一個漏洞測試環境，&#xA;在本文當中我們將採用 &lt;code&gt;docker&lt;/code&gt; 來配置測試環境，並安裝 &lt;code&gt;WebGoat&lt;/code&gt;、&#xA;&lt;code&gt;Damn Vulnerable Web Application&lt;/code&gt;、&lt;code&gt;Broken Web Applications&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
   </channel>

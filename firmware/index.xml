@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firmware on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/firmware/</link>
+    <link>https://r809.tw/firmware/</link>
     <description>Recent content in Firmware on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 11 Apr 2023 10:32:49 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/firmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Qiling</title>
-      <link>https://r888800009.github.io/firmware/qiling/</link>
+      <link>https://r809.tw/firmware/qiling/</link>
       <pubDate>Tue, 18 Jan 2022 21:04:27 +0800</pubDate>
-      <guid>https://r888800009.github.io/firmware/qiling/</guid>
+      <guid>https://r809.tw/firmware/qiling/</guid>
       <description></description>
     </item>
     <item>
       <title>BIOS and UEFI</title>
-      <link>https://r888800009.github.io/firmware/bios-and-uefi/</link>
+      <link>https://r809.tw/firmware/bios-and-uefi/</link>
       <pubDate>Fri, 07 Jan 2022 02:04:31 +0800</pubDate>
-      <guid>https://r888800009.github.io/firmware/bios-and-uefi/</guid>
+      <guid>https://r809.tw/firmware/bios-and-uefi/</guid>
       <description></description>
     </item>
     <item>
       <title>Firmware Reversing</title>
-      <link>https://r888800009.github.io/firmware/reverse/</link>
+      <link>https://r809.tw/firmware/reverse/</link>
       <pubDate>Sun, 19 Jul 2020 00:12:50 +0800</pubDate>
-      <guid>https://r888800009.github.io/firmware/reverse/</guid>
+      <guid>https://r809.tw/firmware/reverse/</guid>
       <description></description>
     </item>
   </channel>

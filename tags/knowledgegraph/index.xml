@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>KnowledgeGraph on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/knowledgegraph/</link>
+    <link>https://r809.tw/tags/knowledgegraph/</link>
     <description>Recent content in KnowledgeGraph on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 13 Mar 2025 21:27:27 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/knowledgegraph/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/knowledgegraph/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Neo4j</title>
-      <link>https://r888800009.github.io/wiki/neo4j/</link>
+      <link>https://r809.tw/wiki/neo4j/</link>
       <pubDate>Mon, 07 Mar 2022 07:54:55 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/neo4j/</guid>
+      <guid>https://r809.tw/wiki/neo4j/</guid>
       <description></description>
     </item>
   </channel>

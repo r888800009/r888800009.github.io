@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algorithm on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/algorithm/</link>
+    <link>https://r809.tw/tags/algorithm/</link>
     <description>Recent content in Algorithm on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Wed, 08 Sep 2021 17:50:17 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leetcode 322 找零錢</title>
-      <link>https://r888800009.github.io/posts/leetcode-322/</link>
+      <link>https://r809.tw/posts/leetcode-322/</link>
       <pubDate>Sat, 02 May 2020 20:03:10 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/leetcode-322/</guid>
+      <guid>https://r809.tw/posts/leetcode-322/</guid>
       <description></description>
     </item>
     <item>
       <title>最大子陣列問題</title>
-      <link>https://r888800009.github.io/wiki/maximum-subarray/</link>
+      <link>https://r809.tw/wiki/maximum-subarray/</link>
       <pubDate>Tue, 14 Apr 2020 22:36:34 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/maximum-subarray/</guid>
+      <guid>https://r809.tw/wiki/maximum-subarray/</guid>
       <description></description>
     </item>
     <item>
       <title>演算法分析筆記</title>
-      <link>https://r888800009.github.io/wiki/algorithm-analysis-notes/</link>
+      <link>https://r809.tw/wiki/algorithm-analysis-notes/</link>
       <pubDate>Mon, 06 Apr 2020 02:25:16 +0800</pubDate>
-      <guid>https://r888800009.github.io/wiki/algorithm-analysis-notes/</guid>
+      <guid>https://r809.tw/wiki/algorithm-analysis-notes/</guid>
       <description></description>
     </item>
     <item>
       <title>Dijkstra</title>
-      <link>https://r888800009.github.io/posts/dijkstra/</link>
+      <link>https://r809.tw/posts/dijkstra/</link>
       <pubDate>Fri, 31 Jan 2020 23:38:44 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/dijkstra/</guid>
+      <guid>https://r809.tw/posts/dijkstra/</guid>
       <description></description>
     </item>
     <item>
       <title>霍夫曼編碼</title>
-      <link>https://r888800009.github.io/posts/huffman/</link>
+      <link>https://r809.tw/posts/huffman/</link>
       <pubDate>Mon, 27 Jan 2020 14:52:58 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/huffman/</guid>
+      <guid>https://r809.tw/posts/huffman/</guid>
       <description></description>
     </item>
     <item>
       <title>Rabin-Karp演算法</title>
-      <link>https://r888800009.github.io/posts/rabin-karp/</link>
+      <link>https://r809.tw/posts/rabin-karp/</link>
       <pubDate>Tue, 14 Jan 2020 03:20:49 +0800</pubDate>
-      <guid>https://r888800009.github.io/posts/rabin-karp/</guid>
+      <guid>https://r809.tw/posts/rabin-karp/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Taint Analysis on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/taint-analysis/</link>
+    <link>https://r809.tw/tags/taint-analysis/</link>
     <description>Recent content in Taint Analysis on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Tue, 11 Apr 2023 10:41:54 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/taint-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/taint-analysis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CodeQL</title>
-      <link>https://r888800009.github.io/software/security/codeql/</link>
+      <link>https://r809.tw/software/security/codeql/</link>
       <pubDate>Sun, 26 Dec 2021 08:31:06 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/codeql/</guid>
+      <guid>https://r809.tw/software/security/codeql/</guid>
       <description></description>
     </item>
     <item>
       <title>Taint Analysis</title>
-      <link>https://r888800009.github.io/software/security/taint-analysis/</link>
+      <link>https://r809.tw/software/security/taint-analysis/</link>
       <pubDate>Thu, 29 Jul 2021 23:28:24 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/taint-analysis/</guid>
+      <guid>https://r809.tw/software/security/taint-analysis/</guid>
       <description></description>
     </item>
   </channel>

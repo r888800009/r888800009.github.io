@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Allocator on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/allocator/</link>
+    <link>https://r809.tw/tags/allocator/</link>
     <description>Recent content in Allocator on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Thu, 17 Feb 2022 21:58:26 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/allocator/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/allocator/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kmalloc</title>
-      <link>https://r888800009.github.io/software/security/binary/kmalloc/</link>
+      <link>https://r809.tw/software/security/binary/kmalloc/</link>
       <pubDate>Tue, 25 Jan 2022 02:09:21 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/binary/kmalloc/</guid>
+      <guid>https://r809.tw/software/security/binary/kmalloc/</guid>
       <description></description>
     </item>
   </channel>

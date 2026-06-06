@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Testing on r809&#39;s Notes</title>
-    <link>https://r888800009.github.io/tags/testing/</link>
+    <link>https://r809.tw/tags/testing/</link>
     <description>Recent content in Testing on r809&#39;s Notes</description>
     <generator>Hugo</generator>
     <language>zh-tw</language>
     <lastBuildDate>Fri, 01 Apr 2022 00:27:48 +0800</lastBuildDate>
-    <atom:link href="https://r888800009.github.io/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://r809.tw/tags/testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Honggfuzz</title>
-      <link>https://r888800009.github.io/software/security/honggfuzz/</link>
+      <link>https://r809.tw/software/security/honggfuzz/</link>
       <pubDate>Sat, 03 Oct 2020 10:35:32 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/honggfuzz/</guid>
+      <guid>https://r809.tw/software/security/honggfuzz/</guid>
       <description>&lt;p&gt;Honggfuzz 筆記，透過 docker 執行 Honggfuzz 並啟用 qemu 模式進行 fuzzing。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fuzzing</title>
-      <link>https://r888800009.github.io/software/security/fuzzing/</link>
+      <link>https://r809.tw/software/security/fuzzing/</link>
       <pubDate>Sun, 15 Sep 2019 12:25:38 +0800</pubDate>
-      <guid>https://r888800009.github.io/software/security/fuzzing/</guid>
+      <guid>https://r809.tw/software/security/fuzzing/</guid>
       <description></description>
     </item>
   </channel>
