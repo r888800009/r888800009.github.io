@@ -93,6 +93,7 @@
     <li><a href="#linux-virtual-memory">Linux Virtual Memory</a>
       <ul>
         <li><a href="#linux-page-fault">linux page fault</a></li>
+        <li><a href="#參考連結references">參考連結（References）</a></li>
       </ul>
     </li>
   </ul>
@@ -121,6 +122,68 @@
 <ul>
 <li>MAJFL: major fault</li>
 <li>MINFL: minor fault</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">功能領域</th>
+          <th style="text-align: left">Intel x86_64</th>
+          <th style="text-align: left">ARM (AArch64)</th>
+          <th style="text-align: left">RISC-V</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>系統規範文件</strong></td>
+          <td style="text-align: left"><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Volume 3A/3B</a></td>
+          <td style="text-align: left"><a href="https://developer.arm.com/documentation/ddi0487/latest/">Arm ARM (DDI 0487)</a></td>
+          <td style="text-align: left"><a href="https://docs.riscv.org/reference/isa/index.html">Privileged Architecture</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>特權階層</strong></td>
+          <td style="text-align: left">Ring 0 (Kernel) / Ring 3 (User)</td>
+          <td style="text-align: left">EL1 (Kernel) / EL0 (User)</td>
+          <td style="text-align: left">S-mode (Kernel) / U-mode (User)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>頁表/MMU</strong></td>
+          <td style="text-align: left"><a href="https://www.intel.com/content/www/us/en/content-details/671442/5-level-paging-and-5-level-ept-white-paper.html">4/5-Level Paging (CR3)</a></td>
+          <td style="text-align: left">VMSA (TTBR0/1_EL1)</td>
+          <td style="text-align: left">Sv39 / Sv48 / Sv57 (satp)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>中斷控制器</strong></td>
+          <td style="text-align: left">Local APIC + IOAPIC</td>
+          <td style="text-align: left"><a href="https://developer.arm.com/documentation/ihi0069/latest/">GIC (IHI 0069)</a></td>
+          <td style="text-align: left">PLIC / APLIC / <a href="https://github.com/riscv/riscv-aia">AIA</a></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>系統呼叫指令</strong></td>
+          <td style="text-align: left">SYSCALL / SYSRET</td>
+          <td style="text-align: left">SVC / ERET</td>
+          <td style="text-align: left">ECALL / SRET</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="參考連結references">參考連結（References）</h3>
+<h4 id="架構與特權規範">架構與特權規範</h4>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Intel® 64 and IA-32 SDM</a> — 系統程式設計指南在 Volume 3A–3D（<a href="https://cdrdv2.intel.com/v1/dl/getContent/671447">合併卷 PDF</a>）</li>
+<li><a href="https://www.intel.com/content/www/us/en/content-details/671442/5-level-paging-and-5-level-ept-white-paper.html">5-Level Paging and 5-Level EPT White Paper</a> — x86_64 五級頁表</li>
+<li><a href="https://developer.arm.com/documentation/ddi0487/latest/">Arm® Architecture Reference Manual for A-profile (DDI 0487)</a> — VMSA、Exception Level</li>
+<li><a href="https://developer.arm.com/documentation/ihi0069/latest/">Arm® Generic Interrupt Controller Architecture Specification (IHI 0069)</a> — GICv3/v4</li>
+<li><a href="https://docs.riscv.org/reference/isa/index.html">RISC-V Ratified Specifications Library</a> — 含 Volume II: Privileged Architecture（Sv39/48/57）</li>
+<li><a href="https://github.com/riscv/riscv-aia">RISC-V Advanced Interrupt Architecture (AIA)</a> — APLIC / IMSIC</li>
+</ul>
+<h4 id="虛擬記憶體與-linux-核心">虛擬記憶體與 Linux 核心</h4>
+<ul>
+<li><a href="https://www.kernel.org/doc/html/latest/mm/index.html">Linux Kernel Memory Management (developer docs)</a> — 頁表、page fault 內部機制</li>
+<li><a href="https://www.kernel.org/doc/html/latest/admin-guide/mm/index.html">Linux Admin Guide: Memory Management</a> — THP、hugetlbfs 等調校</li>
+<li><a href="https://www.kernel.org/doc/gorman/">Understanding the Linux Virtual Memory Manager</a> — Mel Gorman, 2004（Linux 2.4/2.6）</li>
+<li><a href="https://man7.org/linux/man-pages/man2/getrusage.2.html">getrusage(2)</a> — <code>ru_majflt</code> / <code>ru_minflt</code></li>
+<li><a href="https://man7.org/linux/man-pages/man5/proc.5.html">proc(5)</a> — <code>/proc/[pid]/stat</code> 的 <code>majflt</code> / <code>minflt</code></li>
+<li><a href="https://man7.org/linux/man-pages/man1/ps.1.html">ps(1)</a> — <code>MAJFL</code> / <code>MINFL</code> 欄位</li>
 </ul>
 
     
@@ -171,7 +234,7 @@
     <a href="/tags" class="footer">Tags</a>
   </div>
   <div>
-    r888800009©2018-2025.
+    r888800009©2018-2026.
     All Rights Reserved.
   </div>
   
